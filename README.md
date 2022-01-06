@@ -1,6 +1,6 @@
 # Family Promie Case Management - Frontend
 
-### Introduction to Family Promise 
+### Introduction
 
 Family Promise helps local communities coordinate their compassion to address the root causes of family homelessness. They tap existing local resources to empower families towards economic stability. Families come to them in crisis; they help them rebuild their lives with new skills and ongoing support. They address the issue holistically, providing prevention services before families reach a crisis, shelter and case management when they become homeless, and stabilization programs once they have secured housing to ensure they remain independent.
 
