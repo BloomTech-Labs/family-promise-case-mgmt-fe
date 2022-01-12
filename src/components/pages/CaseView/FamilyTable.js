@@ -84,6 +84,7 @@ const FamilyMembersTable = () => {
           name: 'John Brown',
           gender: 'Male',
           birthDate: 12-5-1498,
+          relationshipToGuardian: "Guardian",
           ssn: '123-45-678',
           veteran: "No",
           education: "Some High School",

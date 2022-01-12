@@ -6,8 +6,8 @@ const CaseViewPage = () => {
   const family = {
     householdId: 123456789,
     active: true,
-    returning: false,
     familySize: 5,
+    history: "https://www.google.com", 
     documents: "https://www.google.com", 
     applications: "https://www.google.com", 
     headOfHousehold: {
