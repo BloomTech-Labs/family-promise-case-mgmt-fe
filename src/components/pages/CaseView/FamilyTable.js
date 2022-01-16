@@ -56,16 +56,11 @@ const FamilyMembersTable = ({ familyData }) => {
       employment: e.employment,
     };
   });
-  console.log('familyMemebers data', data);
-
-  function onChange(pagination, filters, sorter, extra) {
-    console.log('params', pagination, filters, sorter, extra);
-  }
 
   return (
     <div>
       <h2>Family Members Table</h2>
-      <Table columns={columns} dataSource={data} onChange={onChange} />
+      <Table columns={columns} dataSource={data} />
     </div>
   );
 };
