@@ -24,6 +24,7 @@ const FamilyListTable = ({ family }) => {
       title: 'Name',
       key: 'key',
       dataIndex: 'name',
+      render: name => <a href="/case-view">{name}</a>,
     },
     {
       title: 'Case Manager',
