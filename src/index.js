@@ -19,6 +19,7 @@ import { LandingPage } from './components/pages/Landing';
 import { ExampleDataViz } from './components/pages/ExampleDataViz';
 import { config } from './utils/oktaConfig';
 import { LoadingComponent } from './components/common';
+import { CaseViewPage} from './components/pages/CaseView';
 
 ReactDOM.render(
   <Router>
@@ -52,6 +53,7 @@ function App() {
           exact
           component={() => <HomePage LoadingComponent={LoadingComponent} />}
         />
+        <SecureRoute path="/case-view" component={CaseViewPage} />
         <SecureRoute path="/example-list" component={ExampleListPage} />
         <SecureRoute path="/profile-list" component={ProfileListPage} />
         <SecureRoute path="/datavis" component={ExampleDataViz} />
