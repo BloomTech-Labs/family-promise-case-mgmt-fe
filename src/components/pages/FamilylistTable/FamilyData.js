@@ -40,9 +40,7 @@ export default function FamilyData() {
   return (
     <>
       <div>
-        {familyData.map((family, index) => (
-          <FamilyListTable key={index} family={family} />
-        ))}
+        <FamilyListTable family={familyData} />
       </div>
     </>
   );
