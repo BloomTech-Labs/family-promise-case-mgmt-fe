@@ -19,7 +19,7 @@ import { LandingPage } from './components/pages/Landing';
 import { ExampleDataViz } from './components/pages/ExampleDataViz';
 import { config } from './utils/oktaConfig';
 import { LoadingComponent } from './components/common';
-import { FamilyListPage } from './components/pages/FamilylistTable';
+import { FamilyListPage } from './components/common/FamilylistTable';
 import { CaseViewPage } from './components/pages/CaseView';
 
 ReactDOM.render(
