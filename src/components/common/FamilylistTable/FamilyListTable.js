@@ -1,5 +1,5 @@
 import React from 'react';
-import { Table } from 'antd';
+import { Table, Tag } from 'antd';
 
 const FamilyListTable = ({ family }) => {
   const { Column, ColumnGroup } = Table;
@@ -32,7 +32,25 @@ const FamilyListTable = ({ family }) => {
           dataIndex="case_manager"
           key="case_manager"
         />
-        <Column title="Case Status" dataIndex="status" key="status" />
+        <Column
+          title="Case Status"
+          dataIndex="status"
+          key="status"
+          render={status => {
+            let color = 'orange';
+            if (status === 'Completed') {
+              color = 'green';
+            }
+            if (status === 'Needs Follow-Up') {
+              color = 'red';
+            }
+            return (
+              <Tag color={color} key="status">
+                {status}
+              </Tag>
+            );
+          }}
+        />
         <Column
           key="view_case"
           render={text => <a href="/case-view">View Case</a>}

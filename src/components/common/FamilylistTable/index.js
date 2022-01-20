@@ -1,1 +1,1 @@
-export { default as FamilyListPage } from './FamilyData';
+export { default as FamilyListTable } from './FamilyData';

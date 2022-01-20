@@ -19,7 +19,7 @@ import { LandingPage } from './components/pages/Landing';
 import { ExampleDataViz } from './components/pages/ExampleDataViz';
 import { config } from './utils/oktaConfig';
 import { LoadingComponent } from './components/common';
-import { FamilyListPage } from './components/common/FamilylistTable';
+import { FamilyListTable } from './components/common/FamilylistTable';
 import { CaseViewPage } from './components/pages/CaseView';
 
 ReactDOM.render(
@@ -54,7 +54,7 @@ function App() {
           exact
           component={() => <HomePage LoadingComponent={LoadingComponent} />}
         />
-        <SecureRoute path="/family-list" component={FamilyListPage} />
+        <SecureRoute path="/family-list" component={FamilyListTable} />
         <SecureRoute path="/case-view" component={CaseViewPage} />
         <SecureRoute path="/example-list" component={ExampleListPage} />
         <SecureRoute path="/profile-list" component={ProfileListPage} />
