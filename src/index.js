@@ -23,7 +23,6 @@ import { config } from './utils/oktaConfig';
 import { LoadingComponent } from './components/common';
 import { CaseViewPage} from './components/pages/CaseView';
 
-import TestState from './components/pages/TestState';
 
 ReactDOM.render(
   <Router>
@@ -59,7 +58,6 @@ function App() {
           exact
           component={() => <HomePage LoadingComponent={LoadingComponent} />}
         />
-        <Route path = "/test" component={TestState} />
         <SecureRoute path="/case-view" component={CaseViewPage} />
         <SecureRoute path="/example-list" component={ExampleListPage} />
         <SecureRoute path="/profile-list" component={ProfileListPage} />
