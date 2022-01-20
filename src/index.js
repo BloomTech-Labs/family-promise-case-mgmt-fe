@@ -19,11 +19,8 @@ import { LandingPage } from './components/pages/Landing';
 import { ExampleDataViz } from './components/pages/ExampleDataViz';
 import { config } from './utils/oktaConfig';
 import { LoadingComponent } from './components/common';
-<<<<<<< HEAD
-import { CaseViewPage} from './components/pages/CaseView';
-=======
-import FamilyIntake from './components/common/FamilyIntake';
->>>>>>> 7862e1c (Added text area for family members names and prior history)
+import { FamilyIntake } from './components/common';
+import { CaseViewPage } from './components/pages/CaseView';
 
 ReactDOM.render(
   <Router>
@@ -57,12 +54,10 @@ function App() {
           exact
           component={() => <HomePage LoadingComponent={LoadingComponent} />}
         />
-<<<<<<< HEAD
+
         <SecureRoute path="/case-view" component={CaseViewPage} />
         <SecureRoute path="/example-list" component={ExampleListPage} />
-=======
         <SecureRoute path="/family-intake-form" component={FamilyIntake} />
->>>>>>> 7862e1c (Added text area for family members names and prior history)
         <SecureRoute path="/profile-list" component={ProfileListPage} />
         <SecureRoute path="/datavis" component={ExampleDataViz} />
         <Route component={NotFoundPage} />
