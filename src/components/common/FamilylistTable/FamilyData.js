@@ -23,8 +23,6 @@ export default function FamilyData() {
       .catch(err => console.log(err));
   }, []);
 
-  console.log('family', familyData);
-
   return (
     <>
       <div>
