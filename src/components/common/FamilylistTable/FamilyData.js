@@ -5,29 +5,17 @@ import axios from 'axios';
 export default function FamilyData() {
   const [familyData, setFamilyData] = useState([
     {
-      address: {
-        street: 'Kulas Light',
-        suite: 'Apt. 556',
-        city: 'Gwenborough',
-        zipcode: '92998-3874',
-      },
-      company: {
-        name: 'Romaguera-Crona',
-        catchPhrase: 'Multi-layered client-server neural-net',
-        bs: 'harness real-time e-markets',
-      },
-      email: 'Sincere@april.biz',
-      id: 1,
-      name: 'Leanne Graham',
-      phone: '1-770-736-8031 x56442',
-      username: 'Bret',
-      website: 'hildegard.org',
+      id: 'FP0001',
+      first_name: 'Michael',
+      last_name: 'Lawson',
+      case_manager: 'James Browns',
+      status: 'In Progress',
     },
   ]);
 
   useEffect(() => {
     axios
-      .get(`https://jsonplaceholder.typicode.com/users`)
+      .get(`https://mocki.io/v1/12303c12-5fe2-42b4-843c-dd141d203cba`)
       .then(res => {
         console.log('family data', res);
         setFamilyData(res.data);
