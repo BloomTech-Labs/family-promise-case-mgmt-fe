@@ -11,7 +11,7 @@ import { Security, LoginCallback, SecureRoute } from '@okta/okta-react';
 import 'antd/dist/antd.less';
 
 import { NotFoundPage } from './components/pages/NotFound';
-import { ExampleListPage } from './components/pages/ExampleList';
+// import { ExampleListPage } from './components/pages/ExampleList';
 import { ProfileListPage } from './components/pages/ProfileList';
 import { LoginPage } from './components/pages/Login';
 import { HomePage } from './components/pages/Home';
@@ -19,7 +19,11 @@ import { LandingPage } from './components/pages/Landing';
 import { ExampleDataViz } from './components/pages/ExampleDataViz';
 import { config } from './utils/oktaConfig';
 import { LoadingComponent } from './components/common';
+<<<<<<< HEAD
 import { CaseViewPage} from './components/pages/CaseView';
+=======
+import FamilyIntake from './components/common/FamilyIntake';
+>>>>>>> 7862e1c (Added text area for family members names and prior history)
 
 ReactDOM.render(
   <Router>
@@ -53,8 +57,12 @@ function App() {
           exact
           component={() => <HomePage LoadingComponent={LoadingComponent} />}
         />
+<<<<<<< HEAD
         <SecureRoute path="/case-view" component={CaseViewPage} />
         <SecureRoute path="/example-list" component={ExampleListPage} />
+=======
+        <SecureRoute path="/family-intake-form" component={FamilyIntake} />
+>>>>>>> 7862e1c (Added text area for family members names and prior history)
         <SecureRoute path="/profile-list" component={ProfileListPage} />
         <SecureRoute path="/datavis" component={ExampleDataViz} />
         <Route component={NotFoundPage} />

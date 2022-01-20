@@ -16,7 +16,7 @@ function RenderHomePage(props) {
           <Link to="/profile-list">Profiles Example</Link>
         </p>
         <p>
-          <Link to="/example-list">Example List of Items</Link>
+          <Link to="/family-intake-form">Family Intake Form</Link>
         </p>
         <p>
           <Link to="/datavis">Data Visualizations Example</Link>
