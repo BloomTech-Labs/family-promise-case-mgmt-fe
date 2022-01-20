@@ -3,6 +3,11 @@
 
 import { combineReducers } from 'redux';
 
-const rootReducer = combineReducers({});
+import { reducer as client } from './clientReducer';
+
+const rootReducer = combineReducers({
+    // add reducers here
+    client
+});
 
 export default rootReducer;
