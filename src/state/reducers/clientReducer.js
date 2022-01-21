@@ -4,7 +4,7 @@ const intialState = {
     id: 1,
     name: 'test',
     status: 'active',
-}
+};
 
 export const reducer = (state = intialState, action) => {
     switch (action.type) {
@@ -14,8 +14,8 @@ export const reducer = (state = intialState, action) => {
                 id: action.payload.id,
                 name: action.payload.name,
                 status: action.payload.status,
-            }
+            };
         default:
             return state;
-    }
-}
+    };
+};
