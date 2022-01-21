@@ -40,29 +40,34 @@ function FamilyIntake() {
           value={familyInfo.head_of_household}
           onChange={formChanges}
         >
-          <Input name="head_of_household" />
+          <Input name="head_of_household" placeholder="Head of Household" />
         </Form.Item>
         <Form.Item
-          label="Names of Family Members"
+          label="Name of Family Members"
           value={familyInfo.family_members}
           onChange={formChanges}
         >
-          <TextArea rows={4} name="family_members" />
+          <TextArea
+            rows={4}
+            name="family_members"
+            placeholder="Name of Family Members"
+          />
         </Form.Item>
         <Form.Item
-          label="Number of Family Members"
+          label="Family Size"
           value={familyInfo.family_size}
           onChange={formChanges}
         >
           <InputNumber name="family_size" />
         </Form.Item>
         <Form.Item
-          label="Education Level"
+          label="Education Status"
           value={familyInfo.education_level}
           onChange={formChanges}
         >
           <Select
             value={familyInfo.education_level}
+            placeholder="Education Status"
             name="education_level"
             onChange={value => {
               setFamilyInfo({ ...familyInfo, education_level: value });
@@ -78,7 +83,11 @@ function FamilyIntake() {
           value={familyInfo.homeless_history}
           onChange={formChanges}
         >
-          <TextArea rows={4} name="homeless_history" />
+          <TextArea
+            rows={4}
+            name="homeless_history"
+            placeholder="Prior History/Prior Episodes of Homelessness"
+          />
         </Form.Item>
         <Form.Item
           label="Employment Status"
