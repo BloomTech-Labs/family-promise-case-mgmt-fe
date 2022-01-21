@@ -10,7 +10,7 @@ function RenderHomePage(props) {
       <div>
         <p>
           This is an example of a common example of how we'd like for you to
-          approach components. This is an additional sentence to test commits.
+          approach components.
         </p>
         <p>
           <Link to="/profile-list">Profiles Example</Link>
