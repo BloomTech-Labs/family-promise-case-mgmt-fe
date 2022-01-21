@@ -20,10 +20,6 @@ import { ExampleDataViz } from './components/pages/ExampleDataViz';
 import { config } from './utils/oktaConfig';
 import { CaseViewPage} from './components/pages/CaseView';
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 2d10f59 (removed TestState component)
 ReactDOM.render(
   <Router>
     <React.StrictMode>
@@ -52,10 +48,6 @@ function App() {
         <Route path="/login" component={LoginPage} />
         <Route path="/implicit/callback" component={LoginCallback} />
         {/* any of the routes you need secured should be registered as SecureRoutes */}
-<<<<<<< HEAD
-=======
-
->>>>>>> 2d10f59 (removed TestState component)
         <SecureRoute path="/case-view" component={CaseViewPage} />
         <SecureRoute path="/example-list" component={ExampleListPage} />
         <SecureRoute path="/profile-list" component={ProfileListPage} />
