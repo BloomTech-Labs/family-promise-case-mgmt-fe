@@ -16,7 +16,9 @@ import { ProfileListPage } from './components/pages/ProfileList';
 import { LoginPage } from './components/pages/Login';
 import { ExampleDataViz } from './components/pages/ExampleDataViz';
 import { config } from './utils/oktaConfig';
-import { CaseViewPage} from './components/pages/CaseView';
+import { LoadingComponent } from './components/common';
+import { FamilyListTable } from './components/common/FamilylistTable';
+import { CaseViewPage } from './components/pages/CaseView';
 
 ReactDOM.render(
   <Router>
@@ -44,6 +46,14 @@ function App() {
         <Route path="/login" component={LoginPage} />
         <Route path="/implicit/callback" component={LoginCallback} />
         {/* any of the routes you need secured should be registered as SecureRoutes */}
+
+        <SecureRoute
+          path="/"
+          exact
+          component={() => <HomePage LoadingComponent={LoadingComponent} />}
+        />
+        <SecureRoute path="/family-list" component={FamilyListTable} />
+
         <SecureRoute path="/case-view" component={CaseViewPage} />
         <SecureRoute path="/example-list" component={ExampleListPage} />
         <SecureRoute path="/profile-list" component={ProfileListPage} />
