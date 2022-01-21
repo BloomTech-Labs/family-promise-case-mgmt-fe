@@ -20,6 +20,7 @@ import { ExampleDataViz } from './components/pages/ExampleDataViz';
 import { config } from './utils/oktaConfig';
 import { CaseViewPage} from './components/pages/CaseView';
 
+
 ReactDOM.render(
   <Router>
     <React.StrictMode>
