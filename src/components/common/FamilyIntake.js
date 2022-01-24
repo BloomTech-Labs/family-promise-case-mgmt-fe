@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Form, Input, Button, Select, InputNumber } from 'antd';
+import axios from 'axios'; 
 
 function FamilyIntake() {
   const { TextArea } = Input;
@@ -23,7 +24,15 @@ function FamilyIntake() {
   };
   // antd's answer to onSubmit
   const onFinish = () => {
-    console.log(familyInfo);
+    // The endpoint used is a placeholder. The response will always be the submitted data.
+    axios.post('https://jsonplaceholder.typicode.com/posts',
+    {title:'Mock POST', body:familyInfo})
+    .then((res) => {
+      alert('Sucess! Data submitted:\n' + JSON.stringify(res.data.body));
+    })
+    .catch(() => {
+      console.error('Something Went Wrong'); 
+    })
   };
 
   return (

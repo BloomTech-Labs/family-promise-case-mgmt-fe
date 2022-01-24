@@ -16,7 +16,7 @@ import { ProfileListPage } from './components/pages/ProfileList';
 import { LoginPage } from './components/pages/Login';
 import { ExampleDataViz } from './components/pages/ExampleDataViz';
 import { config } from './utils/oktaConfig';
-import LoadingComponent  from './components/common';
+import {LoadingComponent}  from './components/common';
 import { CaseViewPage } from './components/pages/CaseView';
 import FamilyIntake from './components/common/FamilyIntake';
 
