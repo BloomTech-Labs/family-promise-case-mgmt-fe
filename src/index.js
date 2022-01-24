@@ -18,6 +18,7 @@ import { ExampleDataViz } from './components/pages/ExampleDataViz';
 import { config } from './utils/oktaConfig';
 import {LoadingComponent}  from './components/common';
 import { CaseViewPage } from './components/pages/CaseView';
+
 import FamilyIntake from './components/common/FamilyIntake';
 
 ReactDOM.render(

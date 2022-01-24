@@ -32,7 +32,7 @@ function FamilyIntake() {
     })
     .catch(() => {
       console.error('Something Went Wrong'); 
-    })
+    }); 
   };
 
   return (
