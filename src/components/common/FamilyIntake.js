@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Form, Input, Button, Select, InputNumber } from 'antd';
 import axios from 'axios'; 
 
-function FamilyIntake() {
+export const FamilyIntake = () => {
   const { TextArea } = Input;
 
   // Initial Empty Values for form
@@ -126,6 +126,6 @@ function FamilyIntake() {
       </Form>
     </div>
   );
-}
+};
 
-export default FamilyIntake;
+
