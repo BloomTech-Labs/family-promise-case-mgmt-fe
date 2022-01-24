@@ -14,13 +14,12 @@ import { NotFoundPage } from './components/pages/NotFound';
 import { ExampleListPage } from './components/pages/ExampleList';
 import { ProfileListPage } from './components/pages/ProfileList';
 import { LoginPage } from './components/pages/Login';
-import { HomePage } from './components/pages/Home';
 import { LandingPage } from './components/pages/Landing';
 import { ExampleDataViz } from './components/pages/ExampleDataViz';
 import { config } from './utils/oktaConfig';
 import { LoadingComponent } from './components/common';
-import FamilyIntake from './components/common/FamilyIntake';
 import { CaseViewPage } from './components/pages/CaseView';
+import FamilyIntake from './components/common/FamilyIntake';
 
 ReactDOM.render(
   <Router>

@@ -1,6 +1,6 @@
 import FamilyIntake from '../components/common/FamilyIntake';
 import React from 'react';
-import { fireEvent, render, screen } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 // mocking matchmedia to bypass error.
@@ -16,18 +16,21 @@ Object.defineProperty(window, 'matchMedia', {
     removeEventListener: jest.fn(),
     dispatchEvent: jest.fn(),
   })),
+  
 });
 
 describe('<FamilyIntake/> test suite ', () => {
+  
   afterEach(() => {
     jest.clearAllMocks();
   });
+
   test('Sanity Check: renders without error', () => {
-    render(<FamilyIntake />);
+    render(<FamilyIntake/>);
   });
 
   test('All inputs reflect the value the user has typed', () => {
-    render(<FamilyIntake />);
+    render(<FamilyIntake/>);
     const inputs = screen.queryAllByRole('textbox');
     inputs.forEach(testField => {
       userEvent.type(testField, 'Hello, this is a test');
