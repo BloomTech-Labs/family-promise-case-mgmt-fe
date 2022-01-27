@@ -2,16 +2,14 @@
 
 ### Introduction
 
-The following are initial wireframes for the Services page which is listed as a link from the main CMS Dashboard. The Services page is where users (Case Managers) can see a list of services that are offered by the organization for a specific case.
+The following are initial wireframes for the Services page which is listed as a link from the main CMS Dashboard. The Services page is where users (Case Managers) can see a list of services that are offered by the organization for a specific case. The links below will open up in the same page (right-click and select "Open in New Tab").
 
 <br>
 <br>
 
 ### Mobile App Wireframes
 
-[Screenshot of Mobile App Wireframes](/Mobile App Wireframes.png)
-
-<!-- (https://docs.google.com/document/d/10l1nowRy50QKU2QmOuSco78KIBNVvgI6BtFhkXKUYjE/edit?usp=sharing) -->
+[Screenshot of Mobile App Wireframes](https://docs.google.com/document/d/10l1nowRy50QKU2QmOuSco78KIBNVvgI6BtFhkXKUYjE/edit?usp=sharing)
 
 ### Tablet App Wireframes
 
