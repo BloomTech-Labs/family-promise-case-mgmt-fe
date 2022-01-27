@@ -9,7 +9,9 @@ The following are initial wireframes for the Services page which is listed as a 
 
 ### Mobile App Wireframes
 
-[Screenshot of Mobile App Wireframes](https://docs.google.com/document/d/10l1nowRy50QKU2QmOuSco78KIBNVvgI6BtFhkXKUYjE/edit?usp=sharing)
+[Screenshot of Mobile App Wireframes](/Mobile App Wireframes.png)
+
+<!-- (https://docs.google.com/document/d/10l1nowRy50QKU2QmOuSco78KIBNVvgI6BtFhkXKUYjE/edit?usp=sharing) -->
 
 ### Tablet App Wireframes
 
