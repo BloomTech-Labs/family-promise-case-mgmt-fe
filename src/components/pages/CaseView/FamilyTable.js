@@ -92,7 +92,9 @@ const FamilyMembersTable = ({ familyData }) => {
   // };
   return (
     <div>
-      <Button type="primary">Edit</Button>
+      <Button type="primary" style={{ disply: 'flex' }}>
+        Edit
+      </Button>
       <h2>Family Members Table</h2>
       <Table columns={columns} dataSource={data} />
     </div>
