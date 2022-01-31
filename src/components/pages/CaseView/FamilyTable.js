@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-//import { FamilyIntake } from '../../common/FamilyIntake';
+import { FamilyIntake } from '../../common/FamilyIntake';
 import { Table, Button, Modal, Form, Input } from 'antd';
 
 const FamilyMembersTable = ({ familyData }) => {
@@ -64,8 +64,9 @@ const FamilyMembersTable = ({ familyData }) => {
     return (
       <Modal
         visible={visible}
-        title="Create a new collection"
-        okText="Create"
+        width={'91%'}
+        title="Manage Family Information"
+        okText="Submit"
         cancelText="Cancel"
         onCancel={onCancel}
         onOk={() => {
@@ -79,7 +80,9 @@ const FamilyMembersTable = ({ familyData }) => {
               console.log('Validate Failed:', info);
             });
         }}
-      ></Modal>
+      >
+        <FamilyIntake />
+      </Modal>
     );
   };
 
