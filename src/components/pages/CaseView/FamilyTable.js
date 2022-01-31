@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import { FamilyIntake } from '../../common/FamilyIntake';
+//import { FamilyIntake } from '../../common/FamilyIntake';
 import { Table, Button, Modal, Form, Input } from 'antd';
 
 const FamilyMembersTable = ({ familyData }) => {
-  console.log('familyData', familyData);
+  const [visible, setVisible] = useState(false);
+  //console.log('familyData', familyData);
   const columns = [
     {
       title: 'Name',
@@ -78,28 +79,39 @@ const FamilyMembersTable = ({ familyData }) => {
               console.log('Validate Failed:', info);
             });
         }}
-      >
-        <FamilyIntake />
-      </Modal>
+      ></Modal>
     );
   };
-  // const CollectionsPage = () => {
-  //   const [visible, setVisible] = useState(false);
-  //   const onCreate = values => {
-  //     console.log('Received values of form: ', values);
-  //     setVisible(false);
-  //   };
-  // };
+
+  const onCreate = values => {
+    console.log('Received values of form: ', values);
+    setVisible(false);
+  };
+
   return (
     <div>
-      <div style={{ display: 'flex' }}>
-        <h2>Family Members Table</h2>
-        <Button type="primary" style={{ marginLeft: '12px' }}>
-          Edit
-        </Button>
+      <div>
+        <div style={{ display: 'flex' }}>
+          <h2>Family Members Table</h2>
+          <Button
+            type="primary"
+            style={{ marginLeft: '12px' }}
+            onClick={() => {
+              setVisible(true);
+            }}
+          >
+            Edit
+          </Button>
+          <CollectionCreateForm
+            visible={visible}
+            onCreate={onCreate}
+            onCancel={() => {
+              setVisible(false);
+            }}
+          />
+        </div>
+        <Table columns={columns} dataSource={data} />
       </div>
-
-      <Table columns={columns} dataSource={data} />
     </div>
   );
 };
