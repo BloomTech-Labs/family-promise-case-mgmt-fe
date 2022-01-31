@@ -92,10 +92,13 @@ const FamilyMembersTable = ({ familyData }) => {
   // };
   return (
     <div>
-      <Button type="primary" style={{ disply: 'flex' }}>
-        Edit
-      </Button>
-      <h2>Family Members Table</h2>
+      <div style={{ display: 'flex' }}>
+        <h2>Family Members Table</h2>
+        <Button type="primary" style={{ marginLeft: '12px' }}>
+          Edit
+        </Button>
+      </div>
+
       <Table columns={columns} dataSource={data} />
     </div>
   );
