@@ -16,7 +16,6 @@ import { ProfileListPage } from './components/pages/ProfileList';
 import { LoginPage } from './components/pages/Login';
 import { ExampleDataViz } from './components/pages/ExampleDataViz';
 import { config } from './utils/oktaConfig';
-import { LoadingComponent } from './components/common';
 import { FamilyListTable } from './components/common/FamilylistTable';
 import { CaseViewPage } from './components/pages/CaseView';
 import { FamilyIntake } from './components/common/FamilyIntake';
@@ -49,7 +48,6 @@ function App() {
         {/* any of the routes you need secured should be registered as SecureRoutes */}
 
         <SecureRoute path="/family-list" component={FamilyListTable} />
-
         <SecureRoute path="/case-view" component={CaseViewPage} />
         <SecureRoute path="/example-list" component={ExampleListPage} />
         <SecureRoute path="/family-intake-form" component={FamilyIntake} />
