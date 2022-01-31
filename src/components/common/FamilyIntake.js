@@ -1,9 +1,12 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 import { Form, Input, Button, Select, InputNumber, Space } from 'antd';
 import { MinusCircleOutlined, PlusOutlined } from '@ant-design/icons';
 import axios from 'axios';
 
 export const FamilyIntake = () => {
+  const { push } = useHistory();
+
   const { TextArea } = Input;
 
   // antd's answer to onSubmit
@@ -17,6 +20,7 @@ export const FamilyIntake = () => {
       })
       .then(res => {
         alert('Sucess! Data submitted:\n' + JSON.stringify(res.data.body));
+        push('/case-view');
       })
       .catch(() => {
         console.error('Something Went Wrong');
