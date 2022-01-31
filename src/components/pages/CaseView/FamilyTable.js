@@ -59,27 +59,15 @@ const FamilyMembersTable = ({ familyData }) => {
     };
   });
 
-  const CollectionCreateForm = ({ visible, onCreate, onCancel }) => {
-    const [form] = Form.useForm();
+  const CollectionCreateForm = ({ visible, onCancel }) => {
     return (
       <Modal
         visible={visible}
         width={'91%'}
         title="Manage Family Information"
-        okText="Submit"
         cancelText="Cancel"
         onCancel={onCancel}
-        onOk={() => {
-          form
-            .validateFields()
-            .then(values => {
-              form.resetFields();
-              onCreate(values);
-            })
-            .catch(info => {
-              console.log('Validate Failed:', info);
-            });
-        }}
+        footer={null}
       >
         <FamilyIntake />
       </Modal>
