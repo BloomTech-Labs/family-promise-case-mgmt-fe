@@ -1,38 +1,26 @@
-import React, { useState } from 'react';
-import { Form, Input, Button, Select, InputNumber } from 'antd';
-import axios from 'axios'; 
+import React from 'react';
+import { Form, Input, Button, Select, InputNumber, Space } from 'antd';
+import { MinusCircleOutlined, PlusOutlined } from '@ant-design/icons';
+import axios from 'axios';
 
 export const FamilyIntake = () => {
   const { TextArea } = Input;
 
-  // Initial Empty Values for form
-  const familyInput = {
-    head_of_household: '',
-    family_members: '',
-    family_size: null,
-    education_level: '',
-    homeless_history: '',
-    employment: '',
-  };
-
-  const [familyInfo, setFamilyInfo] = useState(familyInput);
-
-  // Change Handler used for all fields except Select.
-  const formChanges = event => {
-    const { name, value } = event.target;
-    setFamilyInfo({ ...familyInfo, [name]: value });
-  };
   // antd's answer to onSubmit
-  const onFinish = () => {
+  const onFinish = e => {
     // The endpoint used is a placeholder. The response will always be the submitted data.
-    axios.post('https://jsonplaceholder.typicode.com/posts',
-    {title:'Mock POST', body:familyInfo})
-    .then((res) => {
-      alert('Sucess! Data submitted:\n' + JSON.stringify(res.data.body));
-    })
-    .catch(() => {
-      console.error('Something Went Wrong'); 
-    }); 
+    console.log(e);
+    axios
+      .post('https://jsonplaceholder.typicode.com/posts', {
+        title: 'Mock POST',
+        body: e,
+      })
+      .then(res => {
+        alert('Sucess! Data submitted:\n' + JSON.stringify(res.data.body));
+      })
+      .catch(() => {
+        console.error('Something Went Wrong');
+      });
   };
 
   return (
@@ -44,71 +32,70 @@ export const FamilyIntake = () => {
         onFinish={onFinish}
         style={{ paddingTop: '2rem' }}
       >
-        <Form.Item
-          label="Head of Household"
-          value={familyInfo.head_of_household}
-          onChange={formChanges}
-        >
-          <Input name="head_of_household" placeholder="Head of Household" />
+        <Form.Item label="Head of Household" name="head_of_household">
+          <Input placeholder="Head of Household" />
         </Form.Item>
-        <Form.Item
-          label="Name of Family Members"
-          value={familyInfo.family_members}
-          onChange={formChanges}
-        >
-          <TextArea
-            rows={4}
-            name="family_members"
-            placeholder="Name of Family Members"
-          />
+        <Form.Item label="Name of Family Members">
+          <Form.List name="Name of Family Members">
+            {(fields, { add, remove }) => (
+              <>
+                {fields.map(({ key, name, ...restField }) => (
+                  <Space
+                    key={key}
+                    style={{ display: 'flex', marginBottom: 8 }}
+                    align="baseline"
+                  >
+                    <Form.Item
+                      {...restField}
+                      name={[name, 'first_name']}
+                      rules={[
+                        { required: true, message: 'Missing first name' },
+                      ]}
+                    >
+                      <Input placeholder="First Name" />
+                    </Form.Item>
+                    <Form.Item
+                      {...restField}
+                      name={[name, 'last_name']}
+                      rules={[{ required: true, message: 'Missing last name' }]}
+                    >
+                      <Input placeholder="Last Name" />
+                    </Form.Item>
+                    <MinusCircleOutlined onClick={() => remove(name)} />
+                  </Space>
+                ))}
+                <Form.Item>
+                  <Button
+                    type="dashed"
+                    onClick={() => add()}
+                    block
+                    icon={<PlusOutlined />}
+                  >
+                    Add field
+                  </Button>
+                </Form.Item>
+              </>
+            )}
+          </Form.List>
         </Form.Item>
-        <Form.Item
-          label="Family Size"
-          value={familyInfo.family_size}
-          onChange={formChanges}
-        >
-          <InputNumber name="family_size" />
+        <Form.Item label="Family Size" name="family_size">
+          <InputNumber />
         </Form.Item>
-        <Form.Item
-          label="Education Status"
-          value={familyInfo.education_level}
-          onChange={formChanges}
-        >
-          <Select
-            value={familyInfo.education_level}
-            placeholder="Education Status"
-            name="education_level"
-            onChange={value => {
-              setFamilyInfo({ ...familyInfo, education_level: value });
-            }}
-          >
+        <Form.Item label="Education Status" name="education_level">
+          <Select placeholder="Education Status">
             <Select.Option value="High School Graduate" />
             <Select.Option value="Some College" />
             <Select.Option value="College Graduate" />
           </Select>
         </Form.Item>
-        <Form.Item
-          label="Prior History"
-          value={familyInfo.homeless_history}
-          onChange={formChanges}
-        >
+        <Form.Item label="Prior History" name="homeless_history">
           <TextArea
             rows={4}
-            name="homeless_history"
             placeholder="Prior History/Prior Episodes of Homelessness"
           />
         </Form.Item>
-        <Form.Item
-          label="Employment Status"
-          value={familyInfo.employment}
-          onChange={formChanges}
-        >
-          <Select
-            name="employment"
-            onChange={value => {
-              setFamilyInfo({ ...familyInfo, employment: value });
-            }}
-          >
+        <Form.Item label="Employment Status" name="employment">
+          <Select>
             <Select.Option value="Employed" />
             <Select.Option value="Unemployed" />
           </Select>
@@ -127,5 +114,3 @@ export const FamilyIntake = () => {
     </div>
   );
 };
-
-
