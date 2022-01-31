@@ -1,5 +1,6 @@
-import React from 'react';
-import { Table } from 'antd';
+import React, { useState } from 'react';
+import { FamilyIntake } from '../../common/FamilyIntake';
+import { Table, Button, Modal, Form, Input } from 'antd';
 
 const FamilyMembersTable = ({ familyData }) => {
   console.log('familyData', familyData);
@@ -57,8 +58,41 @@ const FamilyMembersTable = ({ familyData }) => {
     };
   });
 
+  const CollectionCreateForm = ({ visible, onCreate, onCancel }) => {
+    const [form] = Form.useForm();
+    return (
+      <Modal
+        visible={visible}
+        title="Create a new collection"
+        okText="Create"
+        cancelText="Cancel"
+        onCancel={onCancel}
+        onOk={() => {
+          form
+            .validateFields()
+            .then(values => {
+              form.resetFields();
+              onCreate(values);
+            })
+            .catch(info => {
+              console.log('Validate Failed:', info);
+            });
+        }}
+      >
+        <FamilyIntake />
+      </Modal>
+    );
+  };
+  // const CollectionsPage = () => {
+  //   const [visible, setVisible] = useState(false);
+  //   const onCreate = values => {
+  //     console.log('Received values of form: ', values);
+  //     setVisible(false);
+  //   };
+  // };
   return (
     <div>
+      <Button type="primary">Edit</Button>
       <h2>Family Members Table</h2>
       <Table columns={columns} dataSource={data} />
     </div>
