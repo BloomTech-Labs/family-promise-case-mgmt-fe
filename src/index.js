@@ -18,6 +18,7 @@ import { ExampleDataViz } from './components/pages/ExampleDataViz';
 import { config } from './utils/oktaConfig';
 import { FamilyListTable } from './components/common/FamilylistTable';
 import { CaseViewPage } from './components/pages/CaseView';
+import Navigation from './components/common/Navigation';
 
 ReactDOM.render(
   <Router>
@@ -41,6 +42,7 @@ function App() {
 
   return (
     <Security {...config} onAuthRequired={authHandler}>
+      <Navigation /> 
       <Switch>
         <Route path="/login" component={LoginPage} />
         <Route path="/implicit/callback" component={LoginCallback} />
