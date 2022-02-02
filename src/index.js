@@ -20,6 +20,7 @@ import { ExampleDataViz } from './components/pages/ExampleDataViz';
 import { config } from './utils/oktaConfig';
 import { FamilyListTable } from './components/common/FamilylistTable';
 import { CaseViewPage } from './components/pages/CaseView';
+import {FamilyIntake} from './components/common/FamilyIntake'; 
 
 ReactDOM.render(
   <Router>
@@ -53,6 +54,7 @@ function App() {
 
         <SecureRoute path="/case-view" component={CaseViewPage} />
         <SecureRoute path="/example-list" component={ExampleListPage} />
+        <SecureRoute path="/family-intake-form" component={FamilyIntake} />
         <SecureRoute path="/profile-list" component={ProfileListPage} />
         <SecureRoute path="/datavis" component={ExampleDataViz} />
         <Route component={NotFoundPage} />
