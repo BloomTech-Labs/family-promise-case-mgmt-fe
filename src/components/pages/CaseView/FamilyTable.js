@@ -4,7 +4,8 @@ import { Table, Button, Modal, Form, Input } from 'antd';
 
 const FamilyMembersTable = ({ familyData }) => {
   const [visible, setVisible] = useState(false);
-  //console.log('familyData', familyData);
+  const [viewNotes, setViewNotes] = useState(false);
+
   const columns = [
     {
       title: 'Name',
@@ -59,6 +60,24 @@ const FamilyMembersTable = ({ familyData }) => {
     };
   });
 
+  const notesData = [
+    {
+      body:
+        "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+      timestamp: new Date().toDateString(),
+    },
+    {
+      body:
+        "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+      timestamp: new Date().toDateString(),
+    },
+    {
+      body:
+        "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+      timestamp: new Date().toDateString(),
+    },
+  ];
+
   const CollectionCreateForm = ({ visible, onCancel }) => {
     return (
       <Modal
@@ -72,6 +91,52 @@ const FamilyMembersTable = ({ familyData }) => {
         <FamilyIntake />
       </Modal>
     );
+  };
+
+  const NotesModal = ({ viewNotes, onCancel }) => {
+    return (
+      <Modal
+        visible={viewNotes}
+        width={'91%'}
+        title="Notes"
+        cancelText="Cancel"
+        onCancel={onCancel}
+        footer={null}
+      >
+        <Form onFinish={e => addNote(e)}>
+          <Form.Item name="body">
+            <Input.TextArea />
+          </Form.Item>
+          <Button
+            type="primary"
+            htmlType="submit"
+            style={{ marginLeft: '12px' }}
+          >
+            Add Note
+          </Button>
+        </Form>
+        <br />
+        <br />
+
+        {notesData.map(note => {
+          return (
+            <div>
+              <h4>{note.timestamp}</h4>
+              <p>{note.body}</p>
+            </div>
+          );
+        })}
+      </Modal>
+    );
+  };
+
+  const addNote = note => {
+    const newNote = {
+      body: note.body,
+      timestamp: new Date().toDateString(),
+    };
+    notesData.push(newNote);
+    console.log(notesData);
   };
 
   const onCreate = values => {
@@ -93,11 +158,27 @@ const FamilyMembersTable = ({ familyData }) => {
           >
             Edit
           </Button>
+          <Button
+            type="primary"
+            style={{ marginLeft: '12px' }}
+            onClick={() => {
+              setViewNotes(true);
+            }}
+          >
+            Notes
+          </Button>
           <CollectionCreateForm
             visible={visible}
             onCreate={onCreate}
             onCancel={() => {
               setVisible(false);
+            }}
+          />
+          <NotesModal
+            viewNotes={viewNotes}
+            // onCreate={onCreate}
+            onCancel={() => {
+              setViewNotes(false);
             }}
           />
         </div>
