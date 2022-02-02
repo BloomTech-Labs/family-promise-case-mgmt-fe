@@ -1,4 +1,4 @@
-# Family Promie Case Management - Frontend
+# Family Promise Case Management - Frontend
 
 ### Introduction
 
@@ -30,3 +30,4 @@ Remember that this project is licensed under the MIT license, and by submitting 
 ## Documentation
 
 See [Backend Documentation](https://github.com/BloomTech-Labs/family-promise-case-mgmt-be) for details on the backend of our project.
+
