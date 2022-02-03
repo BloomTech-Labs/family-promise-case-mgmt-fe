@@ -46,7 +46,7 @@ const LoginContainer = () => {
         throw err;
       }
     );
-    return () => { widget.remove() };    
+    return () => { widget.remove(); };    
   }, []);
 
 
