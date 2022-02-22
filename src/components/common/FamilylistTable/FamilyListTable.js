@@ -14,7 +14,6 @@ const FamilyListTable = ({ family }) => {
       status: oneFamily.status,
     };
   });
-  console.log(data);
   return (
     <div>
       <Table dataSource={data}>
