@@ -1,1 +1,4 @@
-This component is due for a major refactor and redo. The product vision has changed. It is assumed that profiles are for case woekers, and a case worker can see their profile/list of caseworkers and their contact information.
+- This component is due for a major refactor and redo.
+- It is assumed that profiles are for case workers; a case
+  worker can click on Profiles and see required identifying
+  information for themselves and other case workers
