@@ -14,7 +14,6 @@ const FamilyListTable = ({ family }) => {
       status: oneFamily.status,
     };
   });
-
   return (
     <div>
       <Table dataSource={data}>
@@ -53,7 +52,7 @@ const FamilyListTable = ({ family }) => {
         />
         <Column
           key="view_case"
-          render={text => <a href="/case-view">View Case</a>}
+          render={text => <a href={`/cases/:caseID`}>View Case</a>}
         />
       </Table>
     </div>
