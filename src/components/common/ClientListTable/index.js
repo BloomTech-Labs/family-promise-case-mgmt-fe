@@ -1,1 +1,1 @@
-export { default as FamilyListTable } from './FamilyData';
+export { default as ClientListTable } from './ClientData';
