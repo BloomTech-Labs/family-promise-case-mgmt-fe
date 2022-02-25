@@ -1,20 +1,25 @@
 import React from 'react';
 import { Table, Tag } from 'antd';
 
-const FamilyListTable = ({ family }) => {
+const ClientListTable = ({ clients }) => {
   const { Column, ColumnGroup } = Table;
 
-  const data = family.map(oneFamily => {
+  const data = clients.map(client => {
     return {
-      key: oneFamily.household_id,
-      household_id: oneFamily.household_id,
-      first_name: oneFamily.first_name,
-      last_name: oneFamily.last_name,
-      case_manager: oneFamily.case_manager,
-      status: oneFamily.status,
+      key: client.household_id,
+      household_id: client.household_id,
+      first_name: client.first_name,
+      last_name: client.last_name,
+      case_manager: client.case_manager,
+      status: client.status,
     };
   });
   return (
+    /*
+      Everything in this table will be hard coded until:
+        - Table is updated to current product vision
+        - Table's headers and data values are updated to match the DB
+    */
     <div>
       <Table dataSource={data}>
         <Column
@@ -59,4 +64,4 @@ const FamilyListTable = ({ family }) => {
   );
 };
 
-export default FamilyListTable;
+export default ClientListTable;
