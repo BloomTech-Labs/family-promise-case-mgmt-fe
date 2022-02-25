@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import FamilyListTable from './FamilyListTable';
+import ClientListTable from './ClientListTable';
 import axios from 'axios';
 
-export default function FamilyData() {
-  const [familyData, setFamilyData] = useState([
+export default function ClientData() {
+  // clientData will be an array of objects, with each object pertaining to a client
+  const [clientData, setClientData] = useState([
     {
       id: 'FP0001',
       first_name: 'Michael',
@@ -18,7 +19,7 @@ export default function FamilyData() {
       .get(`https://mocki.io/v1/12303c12-5fe2-42b4-843c-dd141d203cba`)
       .then(res => {
         console.log('family data', res);
-        setFamilyData(res.data);
+        setClientData(res.data);
       })
       .catch(err => console.log(err));
   }, []);
@@ -26,7 +27,7 @@ export default function FamilyData() {
   return (
     <>
       <div>
-        <FamilyListTable family={familyData} />
+        <ClientListTable clients={clientData} />
       </div>
     </>
   );
