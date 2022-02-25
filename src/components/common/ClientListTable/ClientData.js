@@ -18,7 +18,7 @@ export default function ClientData() {
     axios
       .get(`https://mocki.io/v1/12303c12-5fe2-42b4-843c-dd141d203cba`)
       .then(res => {
-        console.log('family data', res);
+        // console.log('client data', res);
         setClientData(res.data);
       })
       .catch(err => console.log(err));
