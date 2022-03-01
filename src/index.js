@@ -5,7 +5,7 @@ import {
   Route,
   useHistory,
   Switch,
-  useLocation,
+  useLocation, // this is used to conditionally hide Navigation
 } from 'react-router-dom';
 import { Security, LoginCallback, SecureRoute } from '@okta/okta-react';
 import { Provider } from 'react-redux';
