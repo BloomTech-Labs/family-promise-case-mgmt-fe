@@ -1,11 +1,11 @@
 import React from 'react';
-import { Layout, Breadcrumb, Menu } from 'antd';
-
+import { Layout, Breadcrumb, Menu, Card } from 'antd';
+import './RenderLayoutTemplate.css';
 const { Header, Content, Footer } = Layout;
 
 const RenderLayoutTemplate = () => {
   return (
-    <div>
+    <div className="RenderLayoutTemplate">
       <Layout className="layout">
         <Header>
           <div className="logo" />
@@ -22,7 +22,11 @@ const RenderLayoutTemplate = () => {
             <Breadcrumb.Item>List</Breadcrumb.Item>
             <Breadcrumb.Item>App</Breadcrumb.Item>
           </Breadcrumb>
-          <div className="site-layout-content">Content</div>
+          <div className="site-layout-content">
+            <Card className="Card">
+              <p>Test card</p>
+            </Card>
+          </div>
         </Content>
         <Footer style={{ textAlign: 'center' }}>
           Ant Design ©2018 Created by Ant UED
