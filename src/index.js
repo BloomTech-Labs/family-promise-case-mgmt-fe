@@ -16,12 +16,12 @@ import { NotFoundPage } from './components/pages/NotFound';
 import { ExampleListPage } from './components/pages/ExampleList';
 import { ProfileListPage } from './components/pages/ProfileList';
 import { LoginPage } from './components/pages/Login';
-import { ExampleDataViz } from './components/pages/ExampleDataViz';
 import { config } from './utils/oktaConfig';
 import { ClientListTable } from './components/common/ClientListTable';
 import { CaseViewPage } from './components/pages/CaseView';
 import { ClientIntake } from './components/common/ClientIntakeForm';
 import Navigation from './components/common/Navigation';
+import { LayoutTemplate } from './components/pages/LayoutTemplate';
 
 ReactDOM.render(
   <Router>
@@ -47,7 +47,7 @@ function App() {
 
   return (
     <Security {...config} onAuthRequired={authHandler}>
-      <Navigation />
+      {/* <Navigation /> */}
       <Switch>
         <Route path="/login" component={LoginPage} />
         <Route path="/implicit/callback" component={LoginCallback} />
@@ -58,7 +58,7 @@ function App() {
         <SecureRoute path="/example-list" component={ExampleListPage} />
         <SecureRoute path="/client-intake-form" component={ClientIntake} />
         <SecureRoute path="/profile-list" component={ProfileListPage} />
-        <SecureRoute path="/datavis" component={ExampleDataViz} />
+        <SecureRoute path="/layouttemplate" component={LayoutTemplate} />
         <Route component={NotFoundPage} />
       </Switch>
     </Security>
