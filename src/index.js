@@ -18,9 +18,9 @@ import { ProfileListPage } from './components/pages/ProfileList';
 import { LoginPage } from './components/pages/Login';
 import { ExampleDataViz } from './components/pages/ExampleDataViz';
 import { config } from './utils/oktaConfig';
-import { FamilyListTable } from './components/common/FamilylistTable';
+import { ClientListTable } from './components/common/ClientListTable';
 import { CaseViewPage } from './components/pages/CaseView';
-import { FamilyIntake } from './components/common/FamilyIntake';
+import { ClientIntake } from './components/common/ClientIntakeForm';
 import Navigation from './components/common/Navigation';
 
 ReactDOM.render(
@@ -52,11 +52,11 @@ function App() {
         <Route path="/login" component={LoginPage} />
         <Route path="/implicit/callback" component={LoginCallback} />
         {/* any of the routes you need secured should be registered as SecureRoutes */}
-        <SecureRoute path="/cases" component={FamilyListTable} />
+        <SecureRoute path="/cases" component={ClientListTable} />
 
         <SecureRoute path="/case-view" component={CaseViewPage} />
         <SecureRoute path="/example-list" component={ExampleListPage} />
-        <SecureRoute path="/family-intake-form" component={FamilyIntake} />
+        <SecureRoute path="/client-intake-form" component={ClientIntake} />
         <SecureRoute path="/profile-list" component={ProfileListPage} />
         <SecureRoute path="/datavis" component={ExampleDataViz} />
         <Route component={NotFoundPage} />
