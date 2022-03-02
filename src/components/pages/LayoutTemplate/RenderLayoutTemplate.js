@@ -1,9 +1,12 @@
 import React from 'react';
-import { Layout, Breadcrumb, Menu, Card } from 'antd';
+import { useLocation } from 'react-router-dom';
+import { Layout, Menu, Card } from 'antd';
 import './RenderLayoutTemplate.css';
+import BreadCrumbs from '../../common/BreadCrumbs';
 const { Header, Content, Footer } = Layout;
 
 const RenderLayoutTemplate = () => {
+  const location = useLocation();
   return (
     <div className="RenderLayoutTemplate">
       <Layout className="layout">
@@ -17,11 +20,7 @@ const RenderLayoutTemplate = () => {
           </Menu>
         </Header>
         <Content style={{ padding: '0 50px' }}>
-          <Breadcrumb style={{ margin: '16px 0' }}>
-            <Breadcrumb.Item>Home</Breadcrumb.Item>
-            <Breadcrumb.Item>List</Breadcrumb.Item>
-            <Breadcrumb.Item>App</Breadcrumb.Item>
-          </Breadcrumb>
+          <BreadCrumbs pathname={location.pathname} />
           <div className="site-layout-content">
             <Card className="Card">
               <p>Test card</p>
