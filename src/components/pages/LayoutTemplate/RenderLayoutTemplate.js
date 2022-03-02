@@ -1,6 +1,6 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
-import { Layout, Menu, Card } from 'antd';
+import { Layout, Card } from 'antd';
 import './RenderLayoutTemplate.css';
 import NavHeader from '../../common/NavHeader';
 import BreadCrumbs from '../../common/BreadCrumbs';
@@ -11,7 +11,7 @@ const RenderLayoutTemplate = () => {
   return (
     <div className="RenderLayoutTemplate">
       <Layout className="layout">
-        <Header>
+        <Header style={{ background: 'white', height: '8%' }}>
           <NavHeader />
         </Header>
         <Content style={{ padding: '0 50px' }}>
@@ -23,7 +23,7 @@ const RenderLayoutTemplate = () => {
           </div>
         </Content>
         <Footer style={{ textAlign: 'center' }}>
-          Ant Design ©2018 Created by Ant UED
+          Family Promise of Spokane ©2022 Created by BloomTech Labs
         </Footer>
       </Layout>
     </div>
