@@ -2,32 +2,17 @@ import React from 'react';
 import { Menu } from 'antd';
 import { Link } from 'react-router-dom';
 import fpLogo from '../../assets/fplogo.png';
+import './NavHeader.css';
 
 const NavHeader = () => {
   return (
-    <div
-      style={{
-        display: 'flex',
-        justifyContent: 'space-between',
-        height: '6vh',
-        marginTop: '1%',
-      }}
-    >
-      <img
-        src={fpLogo}
-        alt="Family Promise of Spokane"
-        style={{ height: 'auto', width: '18%' }}
-      />
+    <div className="NavHeader">
+      <img className="logo" src={fpLogo} alt="Family Promise of Spokane" />
       <Menu
+        className="Menu"
         theme="light"
         mode="horizontal"
         defaultSelectedKeys={['2']}
-        style={{
-          height: 'auto',
-          width: '40%',
-          display: 'flex',
-          justifyContent: 'space-around',
-        }}
       >
         <Menu.Item key="home">
           <Link to="/" />

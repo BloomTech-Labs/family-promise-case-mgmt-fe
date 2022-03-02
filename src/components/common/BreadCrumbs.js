@@ -1,5 +1,6 @@
 import React from 'react';
 import { Breadcrumb } from 'antd';
+import './BreadCrumbs.css';
 
 const breadCrumbNameMap = {
   '/layouttemplate': 'Layout Template',
@@ -7,7 +8,7 @@ const breadCrumbNameMap = {
 
 const BreadCrumbs = ({ pathname }) => {
   return (
-    <Breadcrumb style={{ margin: '16px 0' }}>
+    <Breadcrumb className="BreadCrumbs">
       <Breadcrumb.Item>Home</Breadcrumb.Item>
       <Breadcrumb.Item>{breadCrumbNameMap[pathname]}</Breadcrumb.Item>
     </Breadcrumb>

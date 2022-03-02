@@ -8,19 +8,20 @@ const { Header, Content, Footer } = Layout;
 
 const RenderLayoutTemplate = () => {
   const location = useLocation();
+
   return (
     <div className="RenderLayoutTemplate">
       <Layout className="layout">
-        <Header style={{ background: 'white', height: '8%' }}>
+        <Header className="Header">
           <NavHeader />
         </Header>
-        <Content style={{ padding: '0 50px' }}>
+        <Content className="Content">
           <BreadCrumbs pathname={location.pathname} />
           <div className="site-layout-content">
             <Card className="Card"></Card>
           </div>
         </Content>
-        <Footer style={{ textAlign: 'center' }}>
+        <Footer className="Footer">
           Family Promise of Spokane ©2022 Created by BloomTech Labs
         </Footer>
       </Layout>
