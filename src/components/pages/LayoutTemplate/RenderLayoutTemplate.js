@@ -2,6 +2,7 @@ import React from 'react';
 import { useLocation } from 'react-router-dom';
 import { Layout, Menu, Card } from 'antd';
 import './RenderLayoutTemplate.css';
+import NavHeader from '../../common/NavHeader';
 import BreadCrumbs from '../../common/BreadCrumbs';
 const { Header, Content, Footer } = Layout;
 
@@ -11,13 +12,7 @@ const RenderLayoutTemplate = () => {
     <div className="RenderLayoutTemplate">
       <Layout className="layout">
         <Header>
-          <div className="logo" />
-          <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['2']}>
-            {new Array(15).fill(null).map((_, index) => {
-              const key = index + 1;
-              return <Menu.Item key={key}>{`nav ${key}`}</Menu.Item>;
-            })}
-          </Menu>
+          <NavHeader />
         </Header>
         <Content style={{ padding: '0 50px' }}>
           <BreadCrumbs pathname={location.pathname} />
