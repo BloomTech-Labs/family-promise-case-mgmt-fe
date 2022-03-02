@@ -17,9 +17,7 @@ const RenderLayoutTemplate = () => {
         <Content style={{ padding: '0 50px' }}>
           <BreadCrumbs pathname={location.pathname} />
           <div className="site-layout-content">
-            <Card className="Card">
-              <p>Test card</p>
-            </Card>
+            <Card className="Card"></Card>
           </div>
         </Content>
         <Footer style={{ textAlign: 'center' }}>
