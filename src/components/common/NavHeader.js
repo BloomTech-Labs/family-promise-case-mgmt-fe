@@ -2,7 +2,7 @@ import React from 'react';
 import { Menu } from 'antd';
 import { Link } from 'react-router-dom';
 import fpLogo from '../../assets/fplogo.png';
-import './NavHeader.css';
+import '../../styles/css/NavHeader.css';
 
 const NavHeader = () => {
   return (

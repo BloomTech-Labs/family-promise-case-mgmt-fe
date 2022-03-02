@@ -1,0 +1,16 @@
+.NavHeader {
+  display: flex;
+  justify-content: space-between;
+  height: 6vh;
+  margin-top: 1%;
+}
+.logo {
+  height: auto;
+  width: 18%;
+}
+.Menu {
+  height: auto;
+  width: 40%;
+  display: flex;
+  justify-content: space-around;
+}
