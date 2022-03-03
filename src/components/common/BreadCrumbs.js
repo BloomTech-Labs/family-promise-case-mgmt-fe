@@ -1,6 +1,5 @@
 import React from 'react';
 import { Breadcrumb } from 'antd';
-import '../../styles/css/BreadCrumbs.css';
 
 const breadCrumbNameMap = {
   '/layouttemplate': 'Layout Template',

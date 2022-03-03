@@ -1,0 +1,43 @@
+/***  Variables  ***/
+/*** COMPONENTS  ***/
+.NavHeader {
+  display: flex;
+  justify-content: space-between;
+  height: 6vh;
+  margin-top: 1%;
+}
+.NavHeader .logo {
+  height: auto;
+  width: 18%;
+}
+.NavHeader .Menu {
+  height: auto;
+  width: 40%;
+  display: flex;
+  justify-content: space-around;
+}
+.RenderLayoutTemplate {
+  height: 100vh;
+}
+.RenderLayoutTemplate .layout {
+  height: 100%;
+}
+.RenderLayoutTemplate .Header {
+  background: white;
+  height: 8%;
+}
+.RenderLayoutTemplate .Content {
+  padding: 0 50px;
+}
+.RenderLayoutTemplate .site-layout-content {
+  height: 90%;
+}
+.RenderLayoutTemplate .Card {
+  height: 100%;
+}
+.RenderLayoutTemplate .Footer {
+  text-align: center;
+}
+.BreadCrumbs {
+  margin: 16px 0;
+}
