@@ -10,14 +10,14 @@ const RenderLayoutTemplate = () => {
 
   return (
     <div className="RenderLayoutTemplate">
-      <Layout className="layout">
+      <Layout className="Layout">
         <Header className="Header">
           <NavHeader />
         </Header>
         <Content className="Content">
           <BreadCrumbs pathname={location.pathname} />
-          <div className="site-layout-content">
-            <Card className="Card"></Card>
+          <div className="Content__Container">
+            <Card className="Content__Container-Card"></Card>
           </div>
         </Content>
         <Footer className="Footer">

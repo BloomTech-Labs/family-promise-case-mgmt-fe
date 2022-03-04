@@ -6,9 +6,13 @@ import fpLogo from '../../assets/fplogo.png';
 const NavHeader = () => {
   return (
     <div className="NavHeader">
-      <img className="logo" src={fpLogo} alt="Family Promise of Spokane" />
+      <img
+        className="NavHeader__logo"
+        src={fpLogo}
+        alt="Family Promise of Spokane"
+      />
       <Menu
-        className="Menu"
+        className="NavHeader__Menu"
         theme="light"
         mode="horizontal"
         defaultSelectedKeys={['2']}

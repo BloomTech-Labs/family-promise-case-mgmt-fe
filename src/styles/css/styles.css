@@ -6,11 +6,11 @@
   height: 6vh;
   margin-top: 1%;
 }
-.NavHeader .logo {
+.NavHeader__logo {
   height: auto;
   width: 18%;
 }
-.NavHeader .Menu {
+.NavHeader__Menu {
   height: auto;
   width: 40%;
   display: flex;
@@ -19,23 +19,23 @@
 .RenderLayoutTemplate {
   height: 100vh;
 }
-.RenderLayoutTemplate .layout {
+.RenderLayoutTemplate .Layout {
   height: 100%;
 }
-.RenderLayoutTemplate .Header {
+.RenderLayoutTemplate .Layout .Header {
   background: white;
   height: 8%;
 }
-.RenderLayoutTemplate .Content {
+.RenderLayoutTemplate .Layout .Content {
   padding: 0 50px;
 }
-.RenderLayoutTemplate .site-layout-content {
+.RenderLayoutTemplate .Layout .Content__Container {
   height: 90%;
 }
-.RenderLayoutTemplate .Card {
+.RenderLayoutTemplate .Layout .Content__Container-Card {
   height: 100%;
 }
-.RenderLayoutTemplate .Footer {
+.RenderLayoutTemplate .Layout .Footer {
   text-align: center;
 }
 .BreadCrumbs {

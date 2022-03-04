@@ -6,13 +6,11 @@
   justify-content: space-between;
   height: 6vh;
   margin-top: 1%;
-
-  .logo {
+  &__logo {
     height: auto;
     width: 18%;
   }
-
-  .Menu {
+  &__Menu {
     height: auto;
     width: 40%;
     display: flex;
@@ -22,30 +20,24 @@
 
 .RenderLayoutTemplate {
   height: 100vh;
-
-  .layout {
+  .Layout {
     height: 100%;
-
     .Header {
       background: white;
       height: 8%;
     }
-
     .Content {
       padding: 0 50px;
-
-      .site-layout-content {
+      &__Container {
         height: 90%;
+        &-Card {
+          height: 100%;
+        }
       }
     }
-
     .Footer {
       text-align: center;
     }
-  }
-
-  .Card {
-    height: 100%;
   }
 }
 
