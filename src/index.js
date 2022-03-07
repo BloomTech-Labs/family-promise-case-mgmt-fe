@@ -5,6 +5,7 @@ import {
   Route,
   useHistory,
   Switch,
+  useLocation, // this is used to conditionally hide Navigation
 } from 'react-router-dom';
 import { Security, LoginCallback, SecureRoute } from '@okta/okta-react';
 import { Provider } from 'react-redux';
@@ -38,6 +39,7 @@ function App() {
   // The reason to declare App this way is so that we can use any helper functions we'd need for business logic, in our case auth.
   // React Router has a nifty useHistory hook we can use at this level to ensure we have security around our routes.
   const history = useHistory();
+  const location = useLocation();
 
   const authHandler = () => {
     // We pass this to our <Security /> component that wraps our routes.
@@ -47,7 +49,9 @@ function App() {
 
   return (
     <Security {...config} onAuthRequired={authHandler}>
-      <Navigation />
+      {/* hides the Navigation menu when at the login page, since the login page's purpose is singular */}
+      {location.pathname === '/login' ? null : <Navigation />}
+
       <Switch>
         <Route path="/login" component={LoginPage} />
         <Route path="/implicit/callback" component={LoginCallback} />
