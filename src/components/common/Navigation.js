@@ -2,9 +2,11 @@ import React, { useState } from 'react';
 import 'antd/dist/antd.css';
 import { Menu } from 'antd';
 import { Link } from 'react-router-dom';
+import { useOktaAuth } from '@okta/okta-react';
 
 function Navigation() {
   const [current, setCurrent] = useState(null);
+  const { authService } = useOktaAuth();
 
   return (
     <Menu
@@ -31,6 +33,15 @@ function Navigation() {
       <Menu.Item key="services">
         <Link to="/services" />
         Services
+      </Menu.Item>
+      <Menu.Item
+        key="logout"
+        onClick={() => {
+          authService.logout();
+        }}
+      >
+        <Link to="/login" />
+        Logout
       </Menu.Item>
     </Menu>
   );
