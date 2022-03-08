@@ -22,6 +22,7 @@ import { ClientListTable } from './components/common/ClientListTable';
 import { CaseViewPage } from './components/pages/CaseView';
 import { ClientIntake } from './components/common/ClientIntakeForm';
 import { LayoutTemplate } from './components/pages/LayoutTemplate';
+import NavHeader from './components/common/NavHeader';
 
 import './styles/css/styles.css';
 
@@ -50,7 +51,9 @@ function App() {
 
   return (
     <Security {...config} onAuthRequired={authHandler}>
-      {location.pathname === '/login' ? null : <Navigation />}
+      {/* hides the Navigation menu when at the login page, since the login page's purpose is singular */}
+      {location.pathname === '/login' ? null : <NavHeader />}
+
       <Switch>
         <Route path="/login" component={LoginPage} />
         <Route path="/implicit/callback" component={LoginCallback} />
