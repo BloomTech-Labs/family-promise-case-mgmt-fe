@@ -40,7 +40,7 @@ function Navigation() {
           authService.logout();
         }}
       >
-        <Link to="/login" />
+        <Link to="/" />
         Logout
       </Menu.Item>
     </Menu>
