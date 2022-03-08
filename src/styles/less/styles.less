@@ -1,0 +1,46 @@
+/***  Variables  ***/
+
+/*** COMPONENTS  ***/
+.NavHeader {
+  display: flex;
+  justify-content: space-between;
+  height: 6vh;
+  margin-top: 1%;
+  &__logo {
+    height: auto;
+    width: 18%;
+  }
+  &__Menu {
+    height: auto;
+    width: 40%;
+    display: flex;
+    justify-content: space-around;
+  }
+}
+
+.RenderLayoutTemplate {
+  height: 100vh;
+  .Layout {
+    height: 100%;
+    .Header {
+      background: white;
+      height: 8%;
+    }
+    .Content {
+      padding: 0 50px;
+      &__Container {
+        height: 90%;
+        &-Card {
+          height: 100%;
+        }
+      }
+    }
+    .Footer {
+      text-align: center;
+    }
+  }
+}
+
+.BreadCrumbs {
+  margin: 16px 0;
+}

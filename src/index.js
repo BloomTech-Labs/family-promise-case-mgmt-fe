@@ -17,12 +17,14 @@ import { NotFoundPage } from './components/pages/NotFound';
 import { ExampleListPage } from './components/pages/ExampleList';
 import { ProfileListPage } from './components/pages/ProfileList';
 import { LoginPage } from './components/pages/Login';
-import { ExampleDataViz } from './components/pages/ExampleDataViz';
 import { config } from './utils/oktaConfig';
 import { ClientListTable } from './components/common/ClientListTable';
 import { CaseViewPage } from './components/pages/CaseView';
 import { ClientIntake } from './components/common/ClientIntakeForm';
-import Navigation from './components/common/Navigation';
+import { LayoutTemplate } from './components/pages/LayoutTemplate';
+import NavHeader from './components/common/NavHeader';
+
+import './styles/css/styles.css';
 
 ReactDOM.render(
   <Router>
@@ -50,7 +52,7 @@ function App() {
   return (
     <Security {...config} onAuthRequired={authHandler}>
       {/* hides the Navigation menu when at the login page, since the login page's purpose is singular */}
-      {location.pathname === '/login' ? null : <Navigation />}
+      {location.pathname === '/login' ? null : <NavHeader />}
 
       <Switch>
         <Route path="/login" component={LoginPage} />
@@ -62,7 +64,7 @@ function App() {
         <SecureRoute path="/example-list" component={ExampleListPage} />
         <SecureRoute path="/client-intake-form" component={ClientIntake} />
         <SecureRoute path="/profile-list" component={ProfileListPage} />
-        <SecureRoute path="/datavis" component={ExampleDataViz} />
+        <SecureRoute path="/layouttemplate" component={LayoutTemplate} />
         <Route component={NotFoundPage} />
       </Switch>
     </Security>
