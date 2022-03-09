@@ -4,6 +4,7 @@ import { Collapse } from 'antd';
 const { Panel } = Collapse;
 
 const CaseDetailsCollapse = () => {
+  // logs which panels are currently open, remove console.log in production
   function callback(key) {
     console.log(key);
   }
@@ -15,9 +16,16 @@ const CaseDetailsCollapse = () => {
   return (
     <div>
       <h1>Case Details Collapse</h1>
-      <Collapse defaultActiveKey={['clientNotes']} onChange={callback}>
-        <Panel header="Client Notes" key="clientNotes">
-          <p>{text}</p>
+      <Collapse defaultActiveKey={['notesPreview']} onChange={callback}>
+        <Panel header="Client Notes" key="notesPreview">
+          <p>display most recent note, this panel is default active</p>
+          <Collapse onChange={callback}>
+            <Panel header="Show All Notes" key="showAllNotes">
+              <p>note 2 visible in secondary exapndable panel</p>
+              <p>note 3 visible in secondary exapndable panel</p>
+              <p>note 4 visible in secondary exapndable panel</p>
+            </Panel>
+          </Collapse>
         </Panel>
         <Panel header="Client/Family Information" key="clientFamilyInformation">
           <p>{text}</p>
