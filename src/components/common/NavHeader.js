@@ -2,8 +2,10 @@ import React from 'react';
 import { Menu } from 'antd';
 import { Link } from 'react-router-dom';
 import fpLogo from '../../assets/fplogo.png';
+import { useOktaAuth } from '@okta/okta-react';
 
 const NavHeader = () => {
+  const { authService } = useOktaAuth();
   return (
     <div className="NavHeader">
       <img
@@ -32,6 +34,15 @@ const NavHeader = () => {
         <Menu.Item key="services">
           <Link to="/services" />
           Services
+        </Menu.Item>
+        <Menu.Item
+          key="logout"
+          onClick={() => {
+            authService.logout();
+          }}
+        >
+          <Link to="/" />
+          Logout
         </Menu.Item>
       </Menu>
     </div>
