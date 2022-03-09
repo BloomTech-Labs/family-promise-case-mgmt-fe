@@ -25,6 +25,7 @@ import { LayoutTemplate } from './components/pages/LayoutTemplate';
 import NavHeader from './components/common/NavHeader';
 
 import './styles/css/styles.css';
+import ClientFamilyInfoForm from './components/common/ClientFamilyInfoForm';
 
 ReactDOM.render(
   <Router>
@@ -65,6 +66,10 @@ function App() {
         <SecureRoute path="/client-intake-form" component={ClientIntake} />
         <SecureRoute path="/profile-list" component={ProfileListPage} />
         <SecureRoute path="/layouttemplate" component={LayoutTemplate} />
+        <SecureRoute
+          path="/client-family-information-form"
+          component={ClientFamilyInfoForm}
+        />
         <Route component={NotFoundPage} />
       </Switch>
     </Security>
