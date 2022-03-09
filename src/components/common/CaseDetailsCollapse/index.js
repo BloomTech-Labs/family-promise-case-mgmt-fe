@@ -1,1 +1,1 @@
-// export default here
+export { default as CaseDetailsCollapse } from './CaseDetailsCollapse';
