@@ -30,6 +30,9 @@ const ClientFamilyInfoForm = () => {
     self_describe: '',
     sexual_orientation: '',
     other: '',
+    veteran: '',
+    pregnant: '',
+    family_member: '',
     homeless_history: '',
     employment: '',
   };
@@ -182,7 +185,6 @@ const ClientFamilyInfoForm = () => {
             <Select.Option value="Other" />
           </Select>
         </Form.Item>
-
         <Form.Item
           label="If, Other"
           value={clientInfo.other}
@@ -191,61 +193,76 @@ const ClientFamilyInfoForm = () => {
           <Input name="other" placeholder="Other" />
         </Form.Item>
 
+        <Form.Item label="Last Known Address" style={{ marginBottom: 0 }}>
+          <Form.Item
+            name="address"
+            rules={[{ required: true }]}
+            style={{ display: 'inline-block', width: 'calc(50% - 8px)' }}
+          >
+            <Input placeholder="Address Line" />
+          </Form.Item>
+          <Form.Item
+            name="address"
+            rules={[{ required: true }]}
+            style={{
+              display: 'inline-block',
+              width: 'calc(50% - 8px)',
+              margin: '0 8px',
+            }}
+          >
+            <Input placeholder="City, State, Zip" />
+          </Form.Item>
+        </Form.Item>
         <Form.Item
-          label="Name of Family Members"
+          label="Veteran"
+          value={clientInfo.veteran}
+          onChange={formChanges}
+        >
+          <Select
+            value={clientInfo.veteran}
+            name="veteran"
+            onChange={value => {
+              setClientInfo({ ...clientInfo, veteran: value });
+            }}
+          >
+            <Select.Option value="Yes" />
+            <Select.Option value="No" />
+          </Select>
+        </Form.Item>
+        <Form.Item
+          label="Client or Family Member Pregnant"
+          value={clientInfo.pregnant}
+          onChange={formChanges}
+        >
+          <Select
+            value={clientInfo.pregnant}
+            name="pregnant"
+            onChange={value => {
+              setClientInfo({ ...clientInfo, pregnant: value });
+            }}
+          >
+            <Select.Option value="Yes" />
+            <Select.Option value="No" />
+          </Select>
+        </Form.Item>
+
+        <Form.Item label="If Yes, Due Date" onChange={formChanges}>
+          <DatePicker format={dateFormat} />
+        </Form.Item>
+
+        <Form.Item
+          label="Which Family Member?"
           value={clientInfo.family_members}
           onChange={formChanges}
         >
           <TextArea
             rows={4}
             name="family_members"
-            placeholder="Name of Family Members"
+            placeholder="Spouse, Domestic Partner, Child, Etc..."
           />
+          <Button type="primary">+ Add Member</Button>
         </Form.Item>
-        <Form.Item
-          label="Education Status"
-          value={clientInfo.education_level}
-          onChange={formChanges}
-        >
-          <Select
-            value={clientInfo.education_level}
-            placeholder="Education Status"
-            name="education_level"
-            onChange={value => {
-              setClientInfo({ ...clientInfo, education_level: value });
-            }}
-          >
-            <Select.Option value="High School Graduate" />
-            <Select.Option value="Some College" />
-            <Select.Option value="College Graduate" />
-          </Select>
-        </Form.Item>
-        <Form.Item
-          label="Prior History"
-          value={clientInfo.homeless_history}
-          onChange={formChanges}
-        >
-          <TextArea
-            rows={4}
-            name="homeless_history"
-            placeholder="Prior History/Prior Episodes of Homelessness"
-          />
-        </Form.Item>
-        <Form.Item
-          label="Employment Status"
-          value={clientInfo.employment}
-          onChange={formChanges}
-        >
-          <Select
-            name="employment"
-            onChange={value => {
-              setClientInfo({ ...clientInfo, employment: value });
-            }}
-          >
-            <Select.Option value="Employed" />
-            <Select.Option value="Unemployed" />
-          </Select>
-        </Form.Item>
+
         <Form.Item>
           <Button
             htmlType="submit"
