@@ -7,6 +7,7 @@ import {
   Select,
   InputNumber,
   DatePicker,
+  Radio,
   Checkbox,
   Dropdown,
 } from 'antd';
@@ -214,20 +215,14 @@ const ClientFamilyInfoForm = () => {
           </Form.Item>
         </Form.Item>
         <Form.Item
-          label="Veteran"
+          label="Veteran?"
           value={clientInfo.veteran}
           onChange={formChanges}
         >
-          <Select
-            value={clientInfo.veteran}
-            name="veteran"
-            onChange={value => {
-              setClientInfo({ ...clientInfo, veteran: value });
-            }}
-          >
-            <Select.Option value="Yes" />
-            <Select.Option value="No" />
-          </Select>
+          <Radio.Group onChange={formChanges}>
+            <Radio value={1}>Yes</Radio>
+            <Radio value={2}>No</Radio>
+          </Radio.Group>
         </Form.Item>
         <Form.Item
           label="Client or Family Member Pregnant"
