@@ -39,34 +39,42 @@ const CaseDetailsCollapse = () => {
           <p>display most recent note, this panel is default active</p>
           <Collapse onChange={callback}>
             <Panel header="Show All Notes" key="showAllNotes">
-              <p>note 2 visible in secondary exapndable panel</p>
-              <p>note 3 visible in secondary exapndable panel</p>
-              <p>note 4 visible in secondary exapndable panel</p>
+              <p>note 2 visible in secondary expandable panel</p>
+              <p>note 3 visible in secondary expandable panel</p>
+              <p>note 4 visible in secondary expandable panel</p>
             </Panel>
           </Collapse>
         </Panel>
         <Panel header="Client/Family Information" key="clientFamilyInformation">
+          {/* insert Client/Family Information Form here */}
           <p>{text}</p>
         </Panel>
         <Panel header="Household Information" key="householdInformation">
+          {/* insert Household Information Form here */}
           <p>{text}</p>
         </Panel>
         <Panel header="Education" key="education">
+          {/* insert Education Form here */}
           <p>{text}</p>
         </Panel>
         <Panel header="Employment" key="employment">
+          {/* insert Employment Form here */}
           <p>{text}</p>
         </Panel>
         <Panel header="Finances" key="finances">
+          {/* insert Finances Form here */}
           <p>{text}</p>
         </Panel>
         <Panel header="Insurance" key="insurance">
+          {/* insert Insurance Form here */}
           <p>{text}</p>
         </Panel>
         <Panel header="Documents" key="documents">
+          {/* insert Documents Form here */}
           <p>{text}</p>
         </Panel>
         <Panel header="Goals/Strengths/Obstacles" key="goalsStrengthsObstacles">
+          {/* insert Goals/Strengths/Obstacles Form here */}
           <p>{text}</p>
         </Panel>
       </Collapse>
