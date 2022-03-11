@@ -23,13 +23,15 @@ const CaseDetailsCollapse = () => {
     </Button>
   );
 
+  // dummy text, can delete when forms are added to collapse panels
   const text = `
   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
   `;
 
   return (
     <div>
-      <h1>Case Details Collapse</h1>
+      {/* change h1 text to read appropriate API data when availible */}
+      <h1>Case Details</h1>
       <Collapse defaultActiveKey={['notesPreview']} onChange={callback}>
         <Panel
           header="Client Notes"
@@ -46,35 +48,35 @@ const CaseDetailsCollapse = () => {
           </Collapse>
         </Panel>
         <Panel header="Client/Family Information" key="clientFamilyInformation">
-          {/* insert Client/Family Information Form here */}
+          {/* insert Client/Family Information Form here and delete p tag w/ dummy text */}
           <p>{text}</p>
         </Panel>
         <Panel header="Household Information" key="householdInformation">
-          {/* insert Household Information Form here */}
+          {/* insert Household Information Form here and delete p tag w/ dummy text */}
           <p>{text}</p>
         </Panel>
         <Panel header="Education" key="education">
-          {/* insert Education Form here */}
+          {/* insert Education Form here and delete p tag w/ dummy text */}
           <p>{text}</p>
         </Panel>
         <Panel header="Employment" key="employment">
-          {/* insert Employment Form here */}
+          {/* insert Employment Form here and delete p tag w/ dummy text */}
           <p>{text}</p>
         </Panel>
         <Panel header="Finances" key="finances">
-          {/* insert Finances Form here */}
+          {/* insert Finances Form here and delete p tag w/ dummy text */}
           <p>{text}</p>
         </Panel>
         <Panel header="Insurance" key="insurance">
-          {/* insert Insurance Form here */}
+          {/* insert Insurance Form here and delete p tag w/ dummy text */}
           <p>{text}</p>
         </Panel>
         <Panel header="Documents" key="documents">
-          {/* insert Documents Form here */}
+          {/* insert Documents Form here and delete p tag w/ dummy text */}
           <p>{text}</p>
         </Panel>
         <Panel header="Goals/Strengths/Obstacles" key="goalsStrengthsObstacles">
-          {/* insert Goals/Strengths/Obstacles Form here */}
+          {/* insert Goals/Strengths/Obstacles Form here and delete p tag w/ dummy text */}
           <p>{text}</p>
         </Panel>
       </Collapse>
