@@ -3,9 +3,11 @@ import { Breadcrumb } from 'antd';
 
 const breadCrumbNameMap = {
   '/layouttemplate': 'Layout Template',
+  '/cases': 'Cases',
 };
 
 const BreadCrumbs = ({ pathname }) => {
+  console.log(pathname);
   return (
     <Breadcrumb className="BreadCrumbs">
       <Breadcrumb.Item>Home</Breadcrumb.Item>
