@@ -17,7 +17,7 @@ import { ExampleListPage } from './components/pages/ExampleList';
 import { ProfileListPage } from './components/pages/ProfileList';
 import { LoginPage } from './components/pages/Login';
 import { config } from './utils/oktaConfig';
-import { ClientListTable } from './components/common/ClientListTable';
+import { Cases } from './components/pages/Cases';
 import { CaseView } from './components/pages/CaseView';
 import { ClientIntake } from './components/common/ClientIntakeForm';
 import { LayoutTemplate } from './components/pages/LayoutTemplate';
@@ -52,7 +52,7 @@ function App() {
         <Route path="/login" component={LoginPage} />
         <Route path="/implicit/callback" component={LoginCallback} />
         {/* any of the routes you need secured should be registered as SecureRoutes */}
-        <SecureRoute path="/cases" component={ClientListTable} />
+        <SecureRoute path="/cases" component={Cases} />
 
         <SecureRoute path="/case-view" component={CaseView} />
         <SecureRoute path="/example-list" component={ExampleListPage} />
