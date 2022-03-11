@@ -23,13 +23,13 @@ const NavHeader = () => {
           <Link to="/" />
           Home
         </Menu.Item>
-        <Menu.Item key="cases">
-          <Link to="/cases" />
-          Cases
-        </Menu.Item>
         <Menu.Item key="calandar">
           <Link to="/calendar" />
           Calendar
+        </Menu.Item>
+        <Menu.Item key="cases">
+          <Link to="/cases" />
+          Cases
         </Menu.Item>
         <Menu.Item key="services">
           <Link to="/services" />
