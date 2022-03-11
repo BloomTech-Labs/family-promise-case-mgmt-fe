@@ -23,6 +23,10 @@ const NavHeader = () => {
           <Link to="/" />
           Home
         </Menu.Item>
+        <Menu.Item>
+          <Link to="dashboard" />
+          Dashboard
+        </Menu.Item>
         <Menu.Item key="calandar">
           <Link to="/calendar" />
           Calendar
@@ -32,14 +36,16 @@ const NavHeader = () => {
           Cases
         </Menu.Item>
         <Menu.Item>
-          <Link>Resources</Link>
+          <Link to="resources" />
+          Resources
         </Menu.Item>
         <Menu.Item key="services">
           <Link to="/services" />
           Services
         </Menu.Item>
         <Menu.Item>
-          <Link>Intake</Link>
+          <Link to="client-intake-form" />
+          Intake
         </Menu.Item>
         <Menu.Item
           key="logout"
