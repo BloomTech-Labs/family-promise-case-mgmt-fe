@@ -31,9 +31,15 @@ const NavHeader = () => {
           <Link to="/cases" />
           Cases
         </Menu.Item>
+        <Menu.Item>
+          <Link>Resources</Link>
+        </Menu.Item>
         <Menu.Item key="services">
           <Link to="/services" />
           Services
+        </Menu.Item>
+        <Menu.Item>
+          <Link>Intake</Link>
         </Menu.Item>
         <Menu.Item
           key="logout"
