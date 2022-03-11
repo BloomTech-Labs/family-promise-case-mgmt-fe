@@ -7,7 +7,6 @@ const breadCrumbNameMap = {
 };
 
 const BreadCrumbs = ({ pathname }) => {
-  console.log(pathname);
   return (
     <Breadcrumb className="BreadCrumbs">
       <Breadcrumb.Item>Home</Breadcrumb.Item>
