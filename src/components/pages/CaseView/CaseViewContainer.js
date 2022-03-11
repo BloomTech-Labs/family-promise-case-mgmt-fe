@@ -1,6 +1,5 @@
 import React from 'react';
-import CaseDashboard from './Dashboard';
-import FamilyMembersTable from './FamilyTable';
+import RenderCaseView from './RenderCaseView';
 
 const CaseView = () => {
   const family = {
@@ -70,15 +69,9 @@ const CaseView = () => {
   };
 
   return (
-    <div>
-      <h1>
-        {family.headOfHousehold.firstname}
-        {family.headOfHousehold.lastname}'s family (household ID:{' '}
-        {family.householdId})
-      </h1>
-      <CaseDashboard familyData={family} />
-      <FamilyMembersTable familyData={family} />
-    </div>
+    <>
+      <RenderCaseView family={family} />
+    </>
   );
 };
 
