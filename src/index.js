@@ -1,3 +1,4 @@
+// this is a comment
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {
@@ -5,7 +6,6 @@ import {
   Route,
   useHistory,
   Switch,
-  useLocation, // this is used to conditionally hide Navigation
 } from 'react-router-dom';
 import { Security, LoginCallback, SecureRoute } from '@okta/okta-react';
 import { Provider } from 'react-redux';
@@ -22,7 +22,6 @@ import { ClientListTable } from './components/common/ClientListTable';
 import { CaseViewPage } from './components/pages/CaseView';
 import { ClientIntake } from './components/common/ClientIntakeForm';
 import { LayoutTemplate } from './components/pages/LayoutTemplate';
-import NavHeader from './components/common/NavHeader';
 
 import './styles/css/styles.css';
 
@@ -41,7 +40,6 @@ function App() {
   // The reason to declare App this way is so that we can use any helper functions we'd need for business logic, in our case auth.
   // React Router has a nifty useHistory hook we can use at this level to ensure we have security around our routes.
   const history = useHistory();
-  const location = useLocation();
 
   const authHandler = () => {
     // We pass this to our <Security /> component that wraps our routes.
@@ -51,9 +49,6 @@ function App() {
 
   return (
     <Security {...config} onAuthRequired={authHandler}>
-      {/* hides the Navigation menu when at the login page, since the login page's purpose is singular */}
-      {location.pathname === '/login' ? null : <NavHeader />}
-
       <Switch>
         <Route path="/login" component={LoginPage} />
         <Route path="/implicit/callback" component={LoginCallback} />
