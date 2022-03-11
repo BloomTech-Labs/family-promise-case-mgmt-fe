@@ -1,5 +1,18 @@
 /***  Variables  ***/
 /*** COMPONENTS  ***/
+.Layout {
+  height: 100%;
+}
+.Layout .Header {
+  background: white;
+  height: 8%;
+}
+.Layout .Content {
+  padding: 0 50px;
+}
+.Layout .Footer {
+  text-align: center;
+}
 .NavHeader {
   display: flex;
   justify-content: space-between;
@@ -19,24 +32,11 @@
 .RenderLayoutTemplate {
   height: 100vh;
 }
-.RenderLayoutTemplate .Layout {
-  height: 100%;
-}
-.RenderLayoutTemplate .Layout .Header {
-  background: white;
-  height: 8%;
-}
-.RenderLayoutTemplate .Layout .Content {
-  padding: 0 50px;
-}
-.RenderLayoutTemplate .Layout .Content__Container {
+.RenderLayoutTemplate .Content__Container {
   height: 90%;
 }
-.RenderLayoutTemplate .Layout .Content__Container-Card {
+.RenderLayoutTemplate .Content__Container-Card {
   height: 100%;
-}
-.RenderLayoutTemplate .Layout .Footer {
-  text-align: center;
 }
 .BreadCrumbs {
   margin: 16px 0;
