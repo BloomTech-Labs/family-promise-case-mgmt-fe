@@ -19,7 +19,7 @@ const NavHeader = () => {
         mode="horizontal"
         defaultSelectedKeys={['2']}
       >
-        <Menu.Item>
+        <Menu.Item key="dashboard">
           <Link to="dashboard" />
           Dashboard
         </Menu.Item>
@@ -31,7 +31,7 @@ const NavHeader = () => {
           <Link to="/cases" />
           Cases
         </Menu.Item>
-        <Menu.Item>
+        <Menu.Item key="resources">
           <Link to="resources" />
           Resources
         </Menu.Item>
@@ -39,7 +39,7 @@ const NavHeader = () => {
           <Link to="/services" />
           Services
         </Menu.Item>
-        <Menu.Item>
+        <Menu.Item key="client-intake-form">
           <Link to="client-intake-form" />
           Intake
         </Menu.Item>
