@@ -19,10 +19,6 @@ const NavHeader = () => {
         mode="horizontal"
         defaultSelectedKeys={['2']}
       >
-        <Menu.Item key="home">
-          <Link to="/" />
-          Home
-        </Menu.Item>
         <Menu.Item>
           <Link to="dashboard" />
           Dashboard
