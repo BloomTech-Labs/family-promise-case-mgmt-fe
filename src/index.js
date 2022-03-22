@@ -1,3 +1,4 @@
+// this is a comment
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {
@@ -23,6 +24,7 @@ import { ClientIntake } from './components/common/ClientIntakeForm';
 import { LayoutTemplate } from './components/pages/LayoutTemplate';
 
 import './styles/css/styles.css';
+import { CaseDetails } from './components/pages/CaseDetails';
 
 ReactDOM.render(
   <Router>
@@ -55,6 +57,9 @@ function App() {
         <SecureRoute path="/" exact />
         <SecureRoute path="/cases" component={Cases} />
         <SecureRoute path="/case-view" component={CaseView} />
+        <SecureRoute path="/cases/:caseID" component={CaseDetails} />
+        <SecureRoute path="/cases" component={ClientListTable} />
+        <SecureRoute path="/case-view" component={CaseViewPage} />
         <SecureRoute path="/example-list" component={ExampleListPage} />
         <SecureRoute path="/client-intake-form" component={ClientIntake} />
         <SecureRoute path="/profile-list" component={ProfileListPage} />

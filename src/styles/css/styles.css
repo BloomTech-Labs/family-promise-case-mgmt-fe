@@ -30,7 +30,7 @@
   justify-content: space-around;
 }
 .RenderLayoutTemplate {
-  height: 100vh;
+  height: 100%;
 }
 .RenderLayoutTemplate .Content__Container {
   height: 90%;
