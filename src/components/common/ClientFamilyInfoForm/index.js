@@ -11,6 +11,7 @@ import {
   InputNumber,
   // PageHeader,
 } from 'antd';
+import { Content } from 'antd/lib/layout/layout';
 
 // Initial Empty Values for form
 const initialFormValues = {
