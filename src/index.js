@@ -54,16 +54,13 @@ function App() {
         <Route path="/login" component={LoginPage} />
         <Route path="/implicit/callback" component={LoginCallback} />
         {/* any of the routes you need secured should be registered as SecureRoutes */}
-        <SecureRoute path="/" exact />
+        <SecureRoute path="/cases/:caseID" component={CaseView} />
         <SecureRoute path="/cases" component={Cases} />
-        <SecureRoute path="/case-view" component={CaseView} />
-        <SecureRoute path="/cases/:caseID" component={CaseDetails} />
-        <SecureRoute path="/cases" component={ClientListTable} />
-        <SecureRoute path="/case-view" component={CaseViewPage} />
-        <SecureRoute path="/example-list" component={ExampleListPage} />
         <SecureRoute path="/client-intake-form" component={ClientIntake} />
         <SecureRoute path="/profile-list" component={ProfileListPage} />
+        <SecureRoute path="/example-list" component={ExampleListPage} />
         <SecureRoute path="/layouttemplate" component={LayoutTemplate} />
+        <SecureRoute path="/" exact />
         <Route component={NotFoundPage} />
       </Switch>
     </Security>
