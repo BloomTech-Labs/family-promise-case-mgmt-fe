@@ -22,7 +22,6 @@ import { ClientListTable } from './components/common/ClientListTable';
 import { CaseViewPage } from './components/pages/CaseView';
 import { ClientIntake } from './components/common/ClientIntakeForm';
 import { LayoutTemplate } from './components/pages/LayoutTemplate';
-
 import './styles/css/styles.css';
 
 ReactDOM.render(
