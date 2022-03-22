@@ -24,7 +24,6 @@ import { ClientIntake } from './components/common/ClientIntakeForm';
 import { LayoutTemplate } from './components/pages/LayoutTemplate';
 
 import './styles/css/styles.css';
-import { CaseDetails } from './components/pages/CaseDetails';
 
 ReactDOM.render(
   <Router>
