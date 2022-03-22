@@ -1,5 +1,5 @@
-import { Form, Checkbox, Input, InputNumber, Radio } from 'antd';
-import React from 'react';
+import { Form, Checkbox, Input, InputNumber, Radio, Button } from 'antd';
+import React, { useState } from 'react';
 import FormButton from '../FormButton';
 
 const initialFormValues = {
@@ -45,6 +45,7 @@ const initialFormValues = {
 
 export const HouseholdInformationForm = props => {
   const [form] = Form.useForm();
+  const [disabled, setDisabled] = useState(true);
 
   const onFinish = values => {
     const updatedHousehold = values;
@@ -66,6 +67,7 @@ export const HouseholdInformationForm = props => {
     width: '80%',
     padding: '2rem',
     margin: '0 20rem ',
+    background: '#3f3f3f',
   };
 
   const grid = {
@@ -91,8 +93,13 @@ export const HouseholdInformationForm = props => {
     width: '20rem',
   };
 
+  const disableFormItem = () => {
+    console.log(disabled);
+    setDisabled(!disabled);
+  };
+
   return (
-    <div className="HouseholdCase">
+    <div className="HouseholdCase" disabled>
       <Form
         form={form}
         name="householdCaseView"
@@ -104,44 +111,47 @@ export const HouseholdInformationForm = props => {
         layout="horizontal"
         style={style}
         labelWrap
+
         // style={{ paddingTop: '2rem' }}
       >
         <section className="CircumstancesCaseView" style={sec1}>
           <h4>What Circumstances Brought Client to Open Doors?</h4>
           <Form.Item name="fleeingDomV" valuePropName="checked">
-            <Checkbox>Fleeing Domestic Violence</Checkbox>
+            <Checkbox disabled={disabled}>Fleeing Domestic Violence</Checkbox>
           </Form.Item>
 
           <Form.Item name="lackOfIncome" valuePropName="checked">
-            <Checkbox>Lack of Income</Checkbox>
+            <Checkbox disabled={disabled}>Lack of Income</Checkbox>
           </Form.Item>
 
           <Form.Item name="lostJob" valuePropName="checked">
-            <Checkbox>Lost Job</Checkbox>
+            <Checkbox disabled={disabled}>Lost Job</Checkbox>
           </Form.Item>
 
           <Form.Item name="familyConflict" valuePropName="checked">
-            <Checkbox>Family Conflict</Checkbox>
+            <Checkbox disabled={disabled}>Family Conflict</Checkbox>
           </Form.Item>
 
           <Form.Item name="familyRej" valuePropName="checked">
-            <Checkbox>Family Rejection/LGBTQ+ Issue</Checkbox>
+            <Checkbox disabled={disabled}>
+              Family Rejection/LGBTQ+ Issue
+            </Checkbox>
           </Form.Item>
 
           <Form.Item name="lackOfAffHous" valuePropName="checked">
-            <Checkbox>Lack of Affordable Housing</Checkbox>
+            <Checkbox disabled={disabled}>Lack of Affordable Housing</Checkbox>
           </Form.Item>
 
           <Form.Item name="eviction" valuePropName="checked">
-            <Checkbox>Eviction</Checkbox>
+            <Checkbox disabled={disabled}>Eviction</Checkbox>
           </Form.Item>
 
           <Form.Item name="other" valuePropName="checked">
-            <Checkbox>Other</Checkbox>
+            <Checkbox disabled={disabled}>Other</Checkbox>
           </Form.Item>
 
           <Form.Item name="otherText" label="" style={inputs}>
-            <Input />
+            <Input disabled={disabled} />
           </Form.Item>
 
           <p>
@@ -153,7 +163,7 @@ export const HouseholdInformationForm = props => {
             rules={[{ type: 'number', message: 'Number Required' }]}
             placeholder={0}
           >
-            <InputNumber style={{ width: '20rem' }} />
+            <InputNumber style={{ width: '20rem' }} disabled={disabled} />
           </Form.Item>
           <p>Total time spent homeless in the past 3 years</p>
           <Form.Item
@@ -161,7 +171,7 @@ export const HouseholdInformationForm = props => {
             rules={[{ type: 'number', message: 'Number Required' }]}
             placeholder={0}
           >
-            <InputNumber style={{ width: '20rem' }} />
+            <InputNumber style={{ width: '20rem' }} disabled={disabled} />
           </Form.Item>
           <p>Length of stay in previous living situation</p>
           <Form.Item
@@ -170,7 +180,7 @@ export const HouseholdInformationForm = props => {
             rules={[{ type: 'number', message: 'Number Required' }]}
             placeholder={0}
           >
-            <InputNumber />
+            <InputNumber disabled={disabled} />
           </Form.Item>
 
           <Form.Item
@@ -179,19 +189,19 @@ export const HouseholdInformationForm = props => {
             rules={[{ type: 'number', message: 'Number Required' }]}
             placeholder={0}
           >
-            <InputNumber />
+            <InputNumber disabled={disabled} />
           </Form.Item>
 
           <p>Does Client or family member have a disability</p>
           <Form.Item name="disability">
-            <Radio.Group>
+            <Radio.Group disabled={disabled}>
               <Radio value={true}>Yes</Radio>
               <Radio value={false}>No</Radio>
             </Radio.Group>
           </Form.Item>
           <p>If yes, who has the disability and what is it?</p>
           <Form.Item name="disabilityText">
-            <Input placeholder="Text Here" style={inputs} />
+            <Input disabled={disabled} placeholder="Text Here" style={inputs} />
           </Form.Item>
         </section>
 
@@ -203,7 +213,7 @@ export const HouseholdInformationForm = props => {
             rules={[{ type: 'number', message: 'Number Required' }]}
             placeholder={0}
           >
-            <InputNumber />
+            <InputNumber disabled={disabled} />
           </Form.Item>
 
           <Form.Item
@@ -212,7 +222,7 @@ export const HouseholdInformationForm = props => {
             rules={[{ type: 'number', message: 'Number Required' }]}
             placeholder={0}
           >
-            <InputNumber />
+            <InputNumber disabled={disabled} />
           </Form.Item>
 
           <Form.Item
@@ -221,7 +231,7 @@ export const HouseholdInformationForm = props => {
             rules={[{ type: 'number', message: 'Number Required' }]}
             placeholder={0}
           >
-            <InputNumber />
+            <InputNumber disabled={disabled} />
           </Form.Item>
 
           <Form.Item
@@ -230,7 +240,7 @@ export const HouseholdInformationForm = props => {
             rules={[{ type: 'number', message: 'Number Required' }]}
             placeholder={0}
           >
-            <InputNumber />
+            <InputNumber disabled={disabled} />
           </Form.Item>
 
           <Form.Item
@@ -239,7 +249,7 @@ export const HouseholdInformationForm = props => {
             rules={[{ type: 'number', message: 'Number Required' }]}
             placeholder={0}
           >
-            <InputNumber />
+            <InputNumber disabled={disabled} />
           </Form.Item>
 
           <Form.Item
@@ -248,34 +258,34 @@ export const HouseholdInformationForm = props => {
             rules={[{ type: 'number', message: 'Number Required' }]}
             placeholder={0}
           >
-            <InputNumber />
+            <InputNumber disabled={disabled} />
           </Form.Item>
         </section>
 
         <section className="CPSInvolvement" style={formSecs}>
           <h4>CPS Involvement</h4>
           <Form.Item name="activeCase" valuePropName="checked">
-            <Checkbox>Active Case</Checkbox>
+            <Checkbox disabled={disabled}>Active Case</Checkbox>
           </Form.Item>
           <Form.Item name="pastIncident" valuePropName="checked">
-            <Checkbox>Past Incident</Checkbox>
+            <Checkbox disabled={disabled}>Past Incident</Checkbox>
           </Form.Item>
           <Form.Item name="pastExplanation" label="">
-            <Input placeholder="Text Here" style={inputs} />
+            <Input disabled={disabled} placeholder="Text Here" style={inputs} />
           </Form.Item>
 
           <Form.Item name="moreThanOnePastIncident" valuePropName="checked">
-            <Checkbox>Past Incident</Checkbox>
+            <Checkbox disabled={disabled}>Past Incident</Checkbox>
           </Form.Item>
           <Form.Item name="moreThanONeExplanation" label="">
-            <Input placeholder="Text Here" style={inputs} />
+            <Input disabled={disabled} placeholder="Text Here" style={inputs} />
           </Form.Item>
 
           <Form.Item
             name="receiveSec8Vouch"
             label="Received a Section 8 Housing Voucher in the past three years"
           >
-            <Radio.Group>
+            <Radio.Group disabled={disabled}>
               <Radio value={true}>Yes</Radio>
               <Radio value={false}>No</Radio>
             </Radio.Group>
@@ -284,18 +294,22 @@ export const HouseholdInformationForm = props => {
 
         <section className="PreviousLivSitCase" style={grid}>
           <Form.Item name="prevLivSit" label="Previous Living Situation">
-            <Input placeholder="Description Here" style={inputs} />
+            <Input
+              disabled={disabled}
+              placeholder="Description Here"
+              style={inputs}
+            />
           </Form.Item>
 
           <Form.Item name="interpreter" label="Client needs interpreter?">
-            <Radio.Group>
+            <Radio.Group disabled={disabled}>
               <Radio value={true}>Yes</Radio>
               <Radio value={false}>No</Radio>
             </Radio.Group>
           </Form.Item>
 
           <Form.Item name="transportationAcc" label="Access to transportation?">
-            <Radio.Group>
+            <Radio.Group disabled={disabled}>
               <Radio value={true}>Yes</Radio>
               <Radio value={false}>No</Radio>
             </Radio.Group>
@@ -305,42 +319,59 @@ export const HouseholdInformationForm = props => {
         <section className="FamilyHistoryCase" style={formSecs}>
           <h4>Client or family member have a history of:</h4>
           <Form.Item name="physIll" valuePropName="checked">
-            <Checkbox>Physical Illness</Checkbox>
+            <Checkbox disabled={disabled}>Physical Illness</Checkbox>
           </Form.Item>
           <Form.Item name="mentalIll" valuePropName="checked">
-            <Checkbox>Mental Illness</Checkbox>
+            <Checkbox disabled={disabled}>Mental Illness</Checkbox>
           </Form.Item>
           <Form.Item name="famConflictHist" valuePropName="checked">
-            <Checkbox>Family Conflict</Checkbox>
+            <Checkbox disabled={disabled}>Family Conflict</Checkbox>
           </Form.Item>
           <Form.Item name="personalViol" valuePropName="checked">
-            <Checkbox>
+            <Checkbox disabled={disabled}>
               Personal Violence (being physically, sexually, verbally, or
               emotionally abused)
             </Checkbox>
           </Form.Item>
           <Form.Item name="subAbuse" valuePropName="checked">
-            <Checkbox>Substance Abuse</Checkbox>
+            <Checkbox disabled={disabled}>Substance Abuse</Checkbox>
           </Form.Item>
         </section>
 
         <section className="SocialWorkerCase" style={socWork}>
           <h4>Social Worker Contact Information</h4>
           <Form.Item name="socialWorkerName" label="Name">
-            <Input placeholder="Firstname Lastname" style={inputs} />
+            <Input
+              disabled={disabled}
+              placeholder="Firstname Lastname"
+              style={inputs}
+            />
           </Form.Item>
           <Form.Item name="socialWorkerEmail" label="Email">
-            <Input placeholder="email@email.com" style={inputs} />
+            <Input
+              disabled={disabled}
+              placeholder="email@email.com"
+              style={inputs}
+            />
           </Form.Item>
           <Form.Item name="socialWorkerName" label="Name">
-            <Input placeholder="Firstname Lastname" style={inputs} />
+            <Input
+              disabled={disabled}
+              placeholder="Firstname Lastname"
+              style={inputs}
+            />
           </Form.Item>
           <Form.Item name="socialWorkerPhone" label="Phone Number">
-            <Input placeholder="(###) ###-####" style={inputs} />
+            <Input
+              disabled={disabled}
+              placeholder="(###) ###-####"
+              style={inputs}
+            />
           </Form.Item>
         </section>
         <section className="CaseSubmit">
-          <FormButton buttonText="Save Changes" />
+          <Button>Save Changes</Button>
+          <Button onClick={disableFormItem}>Edit</Button>
         </section>
       </Form>
     </div>
