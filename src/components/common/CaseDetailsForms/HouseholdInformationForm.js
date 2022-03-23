@@ -64,7 +64,7 @@ export const HouseholdInformationForm = props => {
     paddingTop: '2rem',
     width: '80%',
     padding: '2rem',
-    margin: '0 20rem ',
+    margin: '0 12rem ',
     background: '#3f3f3f',
     color: '#ffffff',
   };
