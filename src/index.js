@@ -61,10 +61,6 @@ function App() {
         <SecureRoute path="/client-intake-form" component={ClientIntake} />
         <SecureRoute path="/profile-list" component={ProfileListPage} />
         <SecureRoute path="/layouttemplate" component={LayoutTemplate} />
-        <SecureRoute
-          path="/client-family-information-form"
-          component={ClientFamilyInfoForm}
-        />
         <Route component={NotFoundPage} />
       </Switch>
     </Security>

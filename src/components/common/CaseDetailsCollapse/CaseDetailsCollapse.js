@@ -1,5 +1,8 @@
 import React from 'react';
 import { Button, Collapse } from 'antd';
+import ClientFamilyInfoForm from '../CaseDetailsForms/ClientFamilyInformation';
+
+import { HouseholdInformationForm } from '../CaseDetailsForms/HouseholdInformationForm';
 
 const { Panel } = Collapse;
 
@@ -48,12 +51,10 @@ const CaseDetailsCollapse = () => {
           </Collapse>
         </Panel>
         <Panel header="Client/Family Information" key="clientFamilyInformation">
-          {/* insert Client/Family Information Form here and delete p tag w/ dummy text */}
-          <p>{text}</p>
+          <ClientFamilyInfoForm />
         </Panel>
         <Panel header="Household Information" key="householdInformation">
-          {/* insert Household Information Form here and delete p tag w/ dummy text */}
-          <p>{text}</p>
+          <HouseholdInformationForm />
         </Panel>
         <Panel header="Education" key="education">
           {/* insert Education Form here and delete p tag w/ dummy text */}
