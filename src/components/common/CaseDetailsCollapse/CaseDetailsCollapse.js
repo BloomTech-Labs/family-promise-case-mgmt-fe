@@ -32,13 +32,14 @@ const CaseDetailsCollapse = () => {
   `;
 
   return (
-    <div>
+    <div className="CaseDetailsCollapse">
       {/* change h1 text to read appropriate API data when availible */}
       <h1>Case Details</h1>
       <Collapse defaultActiveKey={['notesPreview']} onChange={callback}>
         <Panel
           header="Client Notes"
           key="notesPreview"
+          // style={{ backgroundColor: 'red' }}
           extra={genAddNoteButton()}
         >
           <p>display most recent note, this panel is default active</p>
