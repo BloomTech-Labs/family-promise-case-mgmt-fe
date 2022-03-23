@@ -22,24 +22,24 @@ const initialFormValues = {
   pastExplanation: 'Explanation',
   moreThanOnePast: false,
   moreThanOneExplanation: 'Explanation',
-  receiveSec8Vouch: false,
-  howLongA: 0,
+  receiveSec8Vouch: true,
+  howLongA: 1,
   howLongB: 0,
   howLongC: 0,
-  howLongD: 0,
+  howLongD: 2,
   howLongE: 0,
-  howLongTotal: 0,
+  howLongTotal: 3,
   prevLivSit: 'Description Here',
   interpreter: false,
   transportationAcc: false,
-  physIll: false,
+  physIll: true,
   mentalIll: false,
   famConflictHist: false,
   personalViol: false,
   subAbuse: false,
   socialWorkerName: 'Firstname Lastname',
-  socialWorkerEmail: 'email here',
-  socialWorkerPhone: '(###) ###-####',
+  socialWorkerEmail: 'email@email.com',
+  socialWorkerPhone: '(555) 123-4567',
 };
 
 export const HouseholdInformationForm = props => {
@@ -101,7 +101,12 @@ export const HouseholdInformationForm = props => {
   };
 
   const labelTextDis = {
-    colof: '#fcfcfc',
+    color: '#fcfcfc',
+  };
+
+  const checkBox = {
+    color: disabled === true ? labelTextDis : labelText,
+    // background: '#007fd4',
   };
 
   return (
@@ -391,7 +396,7 @@ export const HouseholdInformationForm = props => {
               Past Incident
             </Checkbox>
           </Form.Item>
-          <Form.Item name="moreThanONeExplanation" label="">
+          <Form.Item name="moreThanOneExplanation" label="">
             <Input disabled={disabled} placeholder="Text Here" style={inputs} />
           </Form.Item>
 
@@ -577,16 +582,37 @@ export const HouseholdInformationForm = props => {
           >
             <Input
               disabled={disabled}
-              placeholder="(###) ###-####"
+              placeholder="(555) 555-5555"
               style={inputs}
             />
           </Form.Item>
         </section>
         <section className="CaseSubmit">
-          <Button htmlType="submit" disabled={disabled}>
+          <Button
+            htmlType="submit"
+            disabled={disabled}
+            style={{
+              margin: '1rem',
+              color: '#CDCDCD',
+              background: '#007FD4',
+              borderColor: '#007FD4',
+            }}
+            type="primary"
+          >
             Save Changes
           </Button>
-          <Button onClick={disableFormItem}>Edit</Button>
+          <Button
+            onClick={disableFormItem}
+            style={{
+              margin: '1rem',
+              color: '#CDCDCD',
+              background: '#007FD4',
+              borderColor: '#007FD4',
+            }}
+            type="primary"
+          >
+            Edit
+          </Button>
         </section>
       </Form>
     </div>
