@@ -1,273 +1,296 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {
-  Menu,
   Form,
+  Select,
   Input,
   Button,
-  Select,
-  InputNumber,
-  DatePicker,
   Radio,
-  Checkbox,
-  Dropdown,
+  DatePicker,
+  // TextArea,
+  // Checkbox,
+  InputNumber,
+  // PageHeader,
 } from 'antd';
-import axios from 'axios';
+
+// Initial Empty Values for form
+const initialFormValues = {
+  first_name: '',
+  last_name: '',
+  head_of_household: '',
+  family_members: '',
+  ssn: null,
+  ethnicity: '',
+  race: '',
+  gender: '',
+  self_describe: '',
+  sexual_orientation: '',
+  other: '',
+  veteran: '',
+  pregnant: '',
+  family_member: '',
+  homeless_history: '',
+  employment: '',
+};
 
 const ClientFamilyInfoForm = () => {
-  const { TextArea } = Input;
+  const [form] = Form.useForm();
+
+  const style = {
+    gridTemplateColumns: 'repeat(2, 1fr)',
+    gap: '5px',
+    gridAutoFlow: 'row dense',
+    paddingTop: '2rem',
+    width: '55%',
+    padding: '3rem',
+    margin: '0 20rem',
+    background: '#3f3f3f',
+    color: '#ffffff',
+  };
+
+  const sec3 = {
+    display: 'flex',
+    justifyContent: 'space-between',
+  };
+
+  const labelText = {
+    color: '#cdcdcd',
+    textAlign: 'center',
+  };
+
+  const sec1 = {
+    gridRow: '1 / span 2',
+  };
+
+  const inputs = {
+    width: '20rem',
+  };
 
   const dateFormat = 'MM/DD/YYYY';
 
-  // Initial Empty Values for form
-  const clientInput = {
-    first_name: '',
-    last_name: '',
-    head_of_household: '',
-    family_members: '',
-    ssn: null,
-    ethnicity: '',
-    race: '',
-    gender: '',
-    self_describe: '',
-    sexual_orientation: '',
-    other: '',
-    veteran: '',
-    pregnant: '',
-    family_member: '',
-    homeless_history: '',
-    employment: '',
-  };
-
-  const [clientInfo, setClientInfo] = useState(clientInput);
-
-  // Change Handler used for all fields except Select.
-  const formChanges = event => {
-    const { name, value } = event.target;
-    setClientInfo({ ...clientInfo, [name]: value });
-  };
-  // antd's answer to onSubmit
-  const onFinish = () => {
-    // The endpoint used is a placeholder. The response will always be the submitted data.
-    axios
-      .post('https://jsonplaceholder.typicode.com/posts', {
-        title: 'Mock POST',
-        body: clientInfo,
-      })
-      .then(res => {
-        alert('Sucess! Data submitted:\n' + JSON.stringify(res.data.body));
-      })
-      .catch(() => {
-        console.error('Something Went Wrong');
-      });
+  const sec2 = {
+    display: 'flex',
+    justifyContent: 'space-evenly',
   };
 
   return (
-    <div>
-      <h1>Client and Family Information</h1>
+    <div className="ClientFamilyForm">
       <Form
-        labelCol={{ span: 4 }}
-        wrapperCol={{ span: 14 }}
-        layout="horizontal"
-        onFinish={onFinish}
-        style={{ paddingTop: '2rem' }}
+        form={form}
+        style={style}
+        initialValues={initialFormValues}
+        layout="vertical"
+        labelCol={{ span: 8 }}
+        wrapperCol={{ span: 100 }}
+        labelWrap
       >
-        <Form.Item label="Initial Date" onChange={formChanges}>
-          <DatePicker format={dateFormat} />
-        </Form.Item>
         <Form.Item
-          label="First Name"
-          value={clientInfo.first_name}
-          onChange={formChanges}
+          style={{ margin: '0 0 2rem 35rem' }}
+          label={<label style={{ color: '#FFFFFF' }}>Initial Date:</label>}
         >
-          <Input name="First Name" placeholder="First Name" />
+          <DatePicker placeholder="MM-DD-YYYY" format={dateFormat} />
         </Form.Item>
-        <Form.Item
-          label="Last Name"
-          value={clientInfo.last_name}
-          onChange={formChanges}
-        >
-          <Input name="Last Name" placeholder="Last Name" />
-        </Form.Item>
-        <Form.Item label="SSN" value={clientInfo.ssn} onChange={formChanges}>
-          <InputNumber name="SSN" />
-        </Form.Item>
-        <Form.Item label="DOB" onChange={formChanges}>
-          <DatePicker format={dateFormat} />
-        </Form.Item>
-        <Form.Item
-          label="Ethnicity"
-          value={clientInfo.ethnicity}
-          onChange={formChanges}
-        >
-          <Select
-            value={clientInfo.ethnicity}
-            placeholder="ethnicity"
-            name="ethnicity"
-            onChange={value => {
-              setClientInfo({ ...clientInfo, ethnicity: value });
-            }}
-          >
-            <Select.Option value="American Indian or Alaska Native" />
-            <Select.Option value="Asian" />
-            <Select.Option value="Black or African American" />
-            <Select.Option value="Native Hawaiian or Other Pacific Islander" />
-            <Select.Option value="White or Caucasian" />
-            <Select.Option value="Hispanic or Latino or Spanish Origin" />
-            <Select.Option value="Non-Resident Alien (of any race or ethnicity)" />
-            <Select.Option value="Multiracial or Biracial" />
-          </Select>
-        </Form.Item>
-        <Form.Item label="Race" value={clientInfo.race} onChange={formChanges}>
-          <Select
-            value={clientInfo.race}
-            placeholder="race"
-            name="race"
-            onChange={value => {
-              setClientInfo({ ...clientInfo, race: value });
-            }}
-          >
-            <Select.Option value="American Indian or Alaska Native" />
-            <Select.Option value="Asian" />
-            <Select.Option value="Black or African American" />
-            <Select.Option value="Native Hawaiian or Other Pacific Islander" />
-            <Select.Option value="White" />
-          </Select>
-        </Form.Item>
-        <Form.Item
-          label="Gender"
-          value={clientInfo.gender}
-          onChange={formChanges}
-        >
-          <Select
-            value={clientInfo.gender}
-            placeholder="gender"
-            name="gender"
-            onChange={value => {
-              setClientInfo({ ...clientInfo, gender: value });
-            }}
-          >
-            <Select.Option value="Male" />
-            <Select.Option value="Female" />
-            <Select.Option value="Transgender Male" />
-            <Select.Option value="Transgender Female" />
-            <Select.Option value="Non-Binary" />
-            <Select.Option value="Prefer to Self-Describe" />
-          </Select>
-        </Form.Item>
-        <Form.Item
-          label="Self-Describe"
-          value={clientInfo.self_describe}
-          onChange={formChanges}
-        >
-          <Input name="self-describe" placeholder="Self-Describe" />
-        </Form.Item>
-        <Form.Item
-          label="Sexual Orientation"
-          value={clientInfo.sexual_orientation}
-          onChange={formChanges}
-        >
-          <Select
-            value={clientInfo.sexual_orientation}
-            placeholder="Sexual Orientation"
-            name="sexual Orientation"
-            onChange={value => {
-              setClientInfo({ ...clientInfo, sexual_orientation: value });
-            }}
-          >
-            <Select.Option value="Asexual" />
-            <Select.Option value="Bisexual" />
-            <Select.Option value="Gay" />
-            <Select.Option value="Lesbian" />
-            <Select.Option value="Heterosexual/Straight" />
-            <Select.Option value="Pansexual" />
-            <Select.Option value="Pansexual" />
-            <Select.Option value="Queer" />
-            <Select.Option value="Preferred Not to Answer" />
-            <Select.Option value="Other" />
-          </Select>
-        </Form.Item>
-        <Form.Item
-          label="If, Other"
-          value={clientInfo.other}
-          onChange={formChanges}
-        >
-          <Input name="other" placeholder="Other" />
-        </Form.Item>
-
-        <Form.Item label="Last Known Address" style={{ marginBottom: 0 }}>
-          <Form.Item
-            name="address"
-            rules={[{ required: true }]}
-            style={{ display: 'inline-block', width: 'calc(50% - 8px)' }}
-          >
-            <Input placeholder="Address Line" />
-          </Form.Item>
-          <Form.Item
-            name="address"
-            rules={[{ required: true }]}
-            style={{
-              display: 'inline-block',
-              width: 'calc(50% - 8px)',
-              margin: '0 8px',
-            }}
-          >
-            <Input placeholder="City, State, Zip" />
-          </Form.Item>
-        </Form.Item>
-        <Form.Item
-          label="Veteran?"
-          value={clientInfo.veteran}
-          onChange={formChanges}
-        >
-          <Radio.Group onChange={formChanges}>
-            <Radio value={1}>Yes</Radio>
-            <Radio value={2}>No</Radio>
-          </Radio.Group>
-        </Form.Item>
-        <Form.Item
-          label="Client or Family Member Pregnant"
-          value={clientInfo.pregnant}
-          onChange={formChanges}
-        >
-          <Select
-            value={clientInfo.pregnant}
-            name="pregnant"
-            onChange={value => {
-              setClientInfo({ ...clientInfo, pregnant: value });
-            }}
-          >
-            <Select.Option value="Yes" />
-            <Select.Option value="No" />
-          </Select>
-        </Form.Item>
-
-        <Form.Item label="If Yes, Due Date" onChange={formChanges}>
-          <DatePicker format={dateFormat} />
-        </Form.Item>
-
-        <Form.Item
-          label="Which Family Member?"
-          value={clientInfo.family_members}
-          onChange={formChanges}
-        >
-          <TextArea
-            rows={4}
-            name="family_members"
-            placeholder="Spouse, Domestic Partner, Child, Etc..."
-          />
-          <Button type="primary">+ Add Member</Button>
-        </Form.Item>
-
-        <Form.Item>
-          <Button
-            htmlType="submit"
-            style={{
-              marginLeft: '30%',
-            }}
-          >
-            Submit
-          </Button>
-        </Form.Item>
+        <h1 style={labelText}>Head of Household</h1>
+        <div className="sec1Container" style={sec2}>
+          <section style={sec1}>
+            <Form.Item
+              label={<label style={{ color: '#FFFFFF' }}>First Name:</label>}
+            >
+              <Input placeholder="First Name" style={inputs} />
+            </Form.Item>
+            <Form.Item label={<label style={{ color: '#FFFFFF' }}>SSN:</label>}>
+              <InputNumber
+                placeholder="XXX - XXX - XXXX"
+                style={inputs}
+                name="SSN"
+              />
+            </Form.Item>
+            <Form.Item
+              label={<label style={{ color: '#FFFFFF' }}>Ethnicity:</label>}
+            >
+              <Select style={inputs} placeholder="-- Select --">
+                <Select.Option value="American Indian or Alaska Native" />
+                <Select.Option value="Asian" />
+                <Select.Option value="Black or African American" />
+                <Select.Option value="Native Hawaiian or Other Pacific Islander" />
+                <Select.Option value="White or Caucasian" />
+                <Select.Option value="Hispanic or Latino or Spanish Origin" />
+                <Select.Option value="Non-Resident Alien (of any race or ethnicity)" />
+                <Select.Option value="Multiracial or Biracial" />
+              </Select>
+            </Form.Item>
+            <Form.Item
+              label={<label style={{ color: '#FFFFFF' }}>Gender:</label>}
+            >
+              <Select style={inputs} placeholder="-- Select --">
+                <Select.Option value="Male" />
+                <Select.Option value="Female" />
+                <Select.Option value="Transgender Male" />
+                <Select.Option value="Transgender Female" />
+                <Select.Option value="Non-Binary" />
+                <Select.Option value="Prefer to Self-Describe" />
+              </Select>
+            </Form.Item>
+            <Form.Item
+              label={
+                <label style={{ color: '#FFFFFF' }}>
+                  If Gender Self-Describe:
+                </label>
+              }
+            >
+              <Input placeholder="Self Describe" style={inputs} />
+            </Form.Item>
+          </section>
+          <section style={sec1}>
+            <Form.Item
+              label={<label style={{ color: '#FFFFFF' }}>Last Name:</label>}
+            >
+              <Input placeholder="Last Name" style={inputs} />
+            </Form.Item>
+            <Form.Item label={<label style={{ color: '#FFFFFF' }}>DOB:</label>}>
+              <DatePicker placeholder="MM-DD-YYYY" format={dateFormat} />
+            </Form.Item>
+            <Form.Item
+              label={<label style={{ color: '#FFFFFF' }}>Race:</label>}
+            >
+              <Select style={inputs} placeholder="-- Select --">
+                <Select.Option value="American Indian or Alaska Native" />
+                <Select.Option value="Asian" />
+                <Select.Option value="Black or African American" />
+                <Select.Option value="Native Hawaiian or Other Pacific Islander" />
+                <Select.Option value="White" />
+              </Select>
+            </Form.Item>
+            <Form.Item
+              label={
+                <label style={{ color: '#FFFFFF' }}>Sexual Orientation:</label>
+              }
+            >
+              <Select style={inputs} placeholder="-- Select --">
+                <Select.Option value="Asexual" />
+                <Select.Option value="Bisexual" />
+                <Select.Option value="Gay" />
+                <Select.Option value="Lesbian" />
+                <Select.Option value="Heterosexual/Straight" />
+                <Select.Option value="Pansexual" />
+                <Select.Option value="Pansexual" />
+                <Select.Option value="Queer" />
+                <Select.Option value="Preferred Not to Answer" />
+                <Select.Option value="Other" />
+              </Select>
+            </Form.Item>
+            <Form.Item
+              label={
+                <label style={{ color: '#FFFFFF' }}>
+                  If Sexual Orientation Other:
+                </label>
+              }
+            >
+              <Input placeholder="Other" style={inputs} />
+            </Form.Item>
+          </section>
+        </div>
+        <h1 style={labelText}>Last Known Address</h1>
+        <div className="section2Container">
+          <section style={sec2}>
+            <Form.Item
+              label={<label style={{ color: '#FFFFFF' }}>Address:</label>}
+            >
+              <Input placeholder="Address" style={inputs} />
+            </Form.Item>
+            <Form.Item
+              label={<label style={{ color: '#FFFFFF' }}>Apt #:</label>}
+            >
+              <Input placeholder="Apt #" style={inputs} />
+            </Form.Item>
+          </section>
+          <section style={{ display: 'flex', justifyContent: 'space-around' }}>
+            <Form.Item
+              label={<label style={{ color: '#FFFFFF' }}>City:</label>}
+            >
+              <Input placeholder="City Name" style={inputs} />
+            </Form.Item>
+            <Form.Item
+              label={<label style={{ color: '#FFFFFF' }}>State:</label>}
+            >
+              <Input placeholder="State Abbrv." style={{ width: '7rem' }} />
+            </Form.Item>
+            <Form.Item
+              label={<label style={{ color: '#FFFFFF' }}>Zip::</label>}
+            >
+              <InputNumber placeholder="Zip Code" style={{ width: '7rem' }} />
+            </Form.Item>
+          </section>
+          <section style={{ display: 'flex', flexDirection: 'row-reverse' }}>
+            <Form.Item
+              label={<label style={{ color: '#FFFFFF' }}>Veteran?:</label>}
+            >
+              <Radio.Group>
+                <Radio style={{ color: '#FFFFFF' }} value={1}>
+                  Yes
+                </Radio>
+                <Radio style={{ color: '#FFFFFF' }} value={2}>
+                  No
+                </Radio>
+              </Radio.Group>
+            </Form.Item>
+          </section>
+        </div>
+        <div style={sec3} className="section3Container">
+          <section>
+            <h1 style={labelText}>Family Members</h1>
+            <Button
+              style={{
+                margin: '1rem',
+                color: '#CDCDCD',
+                background: '#007FD4',
+                borderColor: '#007FD4',
+              }}
+              type="primary"
+            >
+              + Add Member
+            </Button>
+          </section>
+          <section>
+            <h1 style={labelText}>Client Or Family Member Pregnant</h1>
+            <div style={{ display: 'flex' }}>
+              <Form.Item
+                style={{ display: 'contents' }}
+                label={
+                  <label style={{ color: '#FFFFFF' }}>
+                    Client or Family Member is Pregnant
+                  </label>
+                }
+              >
+                <Radio.Group>
+                  <Radio style={{ color: '#FFFFFF' }} value={1}>
+                    Yes
+                  </Radio>
+                  <Radio style={{ color: '#FFFFFF' }} value={2}>
+                    No
+                  </Radio>
+                </Radio.Group>
+              </Form.Item>
+              <Form.Item
+                style={{ display: 'flow-root' }}
+                label={
+                  <label style={{ color: '#FFFFFF' }}>If Yes, Due Date:</label>
+                }
+              >
+                <DatePicker placeholder="MM-DD-YYYY" format={dateFormat} />
+              </Form.Item>
+            </div>
+            <Form.Item
+              label={
+                <label style={{ color: '#FFFFFF' }}>Which Family Member?</label>
+              }
+            >
+              <Input
+                style={inputs}
+                placeholder="Spouse, Domestic Partner, Child, Etc..."
+              />
+            </Form.Item>
+          </section>
+        </div>
       </Form>
     </div>
   );
