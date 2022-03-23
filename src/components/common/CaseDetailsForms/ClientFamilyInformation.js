@@ -39,17 +39,18 @@ const ClientFamilyInfoForm = () => {
     gridTemplateColumns: 'repeat(2, 1fr)',
     gap: '5px',
     gridAutoFlow: 'row dense',
-    paddingTop: '2rem',
-    width: '55%',
-    padding: '3rem',
-    margin: '0 20rem',
+    // paddingTop: '2rem',
+    // width: '55%',
+    // padding: '3rem',
+    // margin: '0 20rem',
     background: '#3f3f3f',
     color: '#ffffff',
   };
 
   const sec3 = {
     display: 'flex',
-    justifyContent: 'space-between',
+    justifyContent: 'space-around',
+    margin: '0rem 6rem',
   };
 
   const labelText = {
@@ -84,7 +85,7 @@ const ClientFamilyInfoForm = () => {
         labelWrap
       >
         <Form.Item
-          style={{ margin: '0 0 2rem 35rem' }}
+          style={{ margin: '0 0 2rem 62rem', paddingTop: '2rem' }}
           label={<label style={{ color: '#FFFFFF' }}>Initial Date:</label>}
         >
           <DatePicker placeholder="MM-DD-YYYY" format={dateFormat} />
@@ -162,7 +163,9 @@ const ClientFamilyInfoForm = () => {
             </Form.Item>
             <Form.Item
               label={
-                <label style={{ color: '#FFFFFF' }}>Sexual Orientation:</label>
+                <label style={{ color: '#FFFFFF', display: 'contents' }}>
+                  Sexual Orientation:
+                </label>
               }
             >
               <Select style={inputs} placeholder="-- Select --">
@@ -189,6 +192,7 @@ const ClientFamilyInfoForm = () => {
             </Form.Item>
           </section>
         </div>
+        <br />
         <h1 style={labelText}>Last Known Address</h1>
         <div className="section2Container">
           <section style={sec2}>
@@ -203,7 +207,13 @@ const ClientFamilyInfoForm = () => {
               <Input placeholder="Apt #" style={inputs} />
             </Form.Item>
           </section>
-          <section style={{ display: 'flex', justifyContent: 'space-around' }}>
+          <section
+            style={{
+              display: 'flex',
+              justifyContent: 'space-evenly',
+              margin: '0rem 3rem',
+            }}
+          >
             <Form.Item
               label={<label style={{ color: '#FFFFFF' }}>City:</label>}
             >
@@ -220,7 +230,13 @@ const ClientFamilyInfoForm = () => {
               <InputNumber placeholder="Zip Code" style={{ width: '7rem' }} />
             </Form.Item>
           </section>
-          <section style={{ display: 'flex', flexDirection: 'row-reverse' }}>
+          <section
+            style={{
+              display: 'flex',
+              flexDirection: 'row-reverse',
+              margin: '0rem 11rem',
+            }}
+          >
             <Form.Item
               label={<label style={{ color: '#FFFFFF' }}>Veteran?:</label>}
             >
