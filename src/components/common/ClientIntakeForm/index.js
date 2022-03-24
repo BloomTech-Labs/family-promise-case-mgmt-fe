@@ -131,6 +131,9 @@ export const ClientIntake = () => {
     //       </Button>
     //     </Form.Item>
     //   </Form>
-    <ClientFamilyIntake />
+    <div>
+      <h1 style={{ textAlign: 'center' }}> Intake Form</h1>
+      <ClientFamilyIntake />
+    </div>
   );
 };

@@ -1,5 +1,5 @@
-import { DatePicker, Form, Input, Select } from 'antd';
-import TextArea from 'antd/lib/input/TextArea';
+import { DatePicker, Form, Input, Select, Radio, Divider } from 'antd';
+
 import React from 'react';
 
 const ClientFamilyIntake = () => {
@@ -12,108 +12,153 @@ const ClientFamilyIntake = () => {
   const inputStylesShort = {
     width: '7rem',
   };
+
+  const formStyles = {
+    display: 'flex',
+    justifyContent: 'center',
+  };
+
+  const sectionLeft = {
+    margin: '20px',
+  };
+
+  const sectionRight = {
+    margin: '20px',
+  };
+
+  const { TextArea } = Input;
   return (
     <Form form={form} layout="vertical">
       <Form.Item label="Inital Intake Date">
         <DatePicker format="MM/DD/YYYY" />
       </Form.Item>
 
-      <h2>Head of Household</h2>
-      <div className="hohContainer">
-        <Form.Item label="First Name">
-          <Input placeholder="First Name" style={inputStyles} />
-        </Form.Item>
+      <h2 style={{ textAlign: 'center', marginBottom: '50px' }}>
+        Client/Family Information
+      </h2>
 
-        <Form.Item label="Last Name">
-          <Input placeholder="Last Name" style={inputStyles} />
-        </Form.Item>
+      <Divider>Head of Household</Divider>
+      <div className="hohContainer" style={formStyles}>
+        <section style={sectionLeft}>
+          <Form.Item label="First Name">
+            <Input placeholder="First Name" style={inputStyles} />
+          </Form.Item>
 
-        <Form.Item label="SSN">
-          <Input placeholder="XXX-XX-XXXX" style={inputStyles} />
-        </Form.Item>
+          <Form.Item label="SSN">
+            <Input placeholder="XXX-XX-XXXX" style={inputStyles} />
+          </Form.Item>
 
-        <Form.Item label="DOB">
-          <DatePicker format="MM/DD/YYYY" />
-        </Form.Item>
+          <Form.Item label="Ethnicity">
+            <Select style={inputStyles} placeholder="-- Select --">
+              <Select.Option value="American Indian or Alaska Native" />
+              <Select.Option value="Asian" />
+              <Select.Option value="Black or African American" />
+              <Select.Option value="Native Hawaiian or Other Pacific Islander" />
+              <Select.Option value="White or Caucasian" />
+              <Select.Option value="Hispanic or Latino or Spanish Origin" />
+              <Select.Option value="Non-Resident Alien (of any race or ethnicity)" />
+              <Select.Option value="Multiracial or Biracial" />
+            </Select>
+          </Form.Item>
 
-        <Form.Item label="Ethnicity">
-          <Select style={inputStyles} placeholder="-- Select --">
-            <Select.Option value="American Indian or Alaska Native" />
-            <Select.Option value="Asian" />
-            <Select.Option value="Black or African American" />
-            <Select.Option value="Native Hawaiian or Other Pacific Islander" />
-            <Select.Option value="White or Caucasian" />
-            <Select.Option value="Hispanic or Latino or Spanish Origin" />
-            <Select.Option value="Non-Resident Alien (of any race or ethnicity)" />
-            <Select.Option value="Multiracial or Biracial" />
-          </Select>
-        </Form.Item>
+          <Form.Item label="Sexual Orientation">
+            <Select style={inputStyles} placeholder="-- Select --">
+              <Select.Option value="Asexual" />
+              <Select.Option value="Bisexual" />
+              <Select.Option value="Gay" />
+              <Select.Option value="Lesbian" />
+              <Select.Option value="Heterosexual/Straight" />
+              <Select.Option value="Pansexual" />
+              <Select.Option value="Pansexual" />
+              <Select.Option value="Queer" />
+              <Select.Option value="Preferred Not to Answer" />
+              <Select.Option value="Other" />
+            </Select>
+          </Form.Item>
 
-        <Form.Item label="Race">
-          <Select style={inputStyles} placeholder="-- Select --">
-            <Select.Option value="American Indian or Alaska Native" />
-            <Select.Option value="Asian" />
-            <Select.Option value="Black or African American" />
-            <Select.Option value="Native Hawaiian or Other Pacific Islander" />
-            <Select.Option value="White" />
-          </Select>
-        </Form.Item>
+          <Form.Item label="If Other">
+            <TextArea placeholder="Other" style={inputStyles} />
+          </Form.Item>
 
-        <Form.Item label="Gender">
-          <Select style={inputStyles} placeholder="-- Select --">
-            <Select.Option value="Male" />
-            <Select.Option value="Female" />
-            <Select.Option value="Transgender Male" />
-            <Select.Option value="Transgender Female" />
-            <Select.Option value="Non-Binary" />
-            <Select.Option value="Prefer to Self-Describe" />
-          </Select>
-        </Form.Item>
+          <Form.Item label="Veteran?">
+            <Radio.Group>
+              <Radio value={true}>Yes</Radio>
+              <Radio value={false}>No</Radio>
+            </Radio.Group>
+          </Form.Item>
+        </section>
 
-        <Form.Item label="Self-Describe">
-          <TextArea placeholder="Self-Describe" style={inputStyles} />
-        </Form.Item>
+        <section style={sectionRight}>
+          <Form.Item label="Last Name">
+            <Input placeholder="Last Name" style={inputStyles} />
+          </Form.Item>
 
-        <Form.Item label="Sexual Orientation">
-          <Select style={inputStyles} placeholder="-- Select --">
-            <Select.Option value="Asexual" />
-            <Select.Option value="Bisexual" />
-            <Select.Option value="Gay" />
-            <Select.Option value="Lesbian" />
-            <Select.Option value="Heterosexual/Straight" />
-            <Select.Option value="Pansexual" />
-            <Select.Option value="Pansexual" />
-            <Select.Option value="Queer" />
-            <Select.Option value="Preferred Not to Answer" />
-            <Select.Option value="Other" />
-          </Select>
-        </Form.Item>
+          <Form.Item label="DOB">
+            <DatePicker format="MM/DD/YYYY" />
+          </Form.Item>
 
-        <Form.Item label="If Other">
-          <TextArea placeholder="Other" style={inputStyles} />
-        </Form.Item>
+          <Form.Item label="Race">
+            <Select style={inputStyles} placeholder="-- Select --">
+              <Select.Option value="American Indian or Alaska Native" />
+              <Select.Option value="Asian" />
+              <Select.Option value="Black or African American" />
+              <Select.Option value="Native Hawaiian or Other Pacific Islander" />
+              <Select.Option value="White" />
+            </Select>
+          </Form.Item>
+
+          <Form.Item label="Gender">
+            <Select style={inputStyles} placeholder="-- Select --">
+              <Select.Option value="Male" />
+              <Select.Option value="Female" />
+              <Select.Option value="Transgender Male" />
+              <Select.Option value="Transgender Female" />
+              <Select.Option value="Non-Binary" />
+              <Select.Option value="Prefer to Self-Describe" />
+            </Select>
+          </Form.Item>
+
+          <Form.Item label="Self-Describe">
+            <TextArea placeholder="Self-Describe" style={inputStyles} />
+          </Form.Item>
+
+          <Form.Item label="Pregnant?">
+            <Radio.Group>
+              <Radio value={true}>Yes</Radio>
+              <Radio value={false}>No</Radio>
+            </Radio.Group>
+          </Form.Item>
+
+          <Form.Item label="If yes, when is due date?">
+            <DatePicker format={'MM-DD-YYYY'} />
+          </Form.Item>
+        </section>
       </div>
-      <h2>Last Known Address</h2>
-      <div className="addressContainer">
-        <Form.Item label="Address 1">
-          <Input placeholder="123 Somewhere Rd." style={inputStyles} />
-        </Form.Item>
 
-        <Form.Item label="Address 2">
-          <Input placeholder="Apt. #" style={inputStyles} />
-        </Form.Item>
+      <Divider>Last Known Address</Divider>
+      <div style={formStyles}>
+        <container style={sectionLeft}>
+          <Form.Item label="Address 1">
+            <Input placeholder="123 Somewhere Rd." style={inputStyles} />
+          </Form.Item>
+          <Form.Item label="City">
+            <Input placeholder="City Name" style={inputStyles} />
+          </Form.Item>
+        </container>
 
-        <Form.Item label="City">
-          <Input placeholder="City Name" style={inputStyles} />
-        </Form.Item>
+        <container style={sectionRight}>
+          <Form.Item label="Address 2">
+            <Input placeholder="Apt. #" style={inputStyles} />
+          </Form.Item>
 
-        <Form.Item label="State">
-          <Input placeholder="State Abbrv." style={inputStylesShort} />
-        </Form.Item>
+          <Form.Item label="State">
+            <Input placeholder="State Abbrv." style={inputStylesShort} />
+          </Form.Item>
 
-        <Form.Item label="Zip">
-          <Input placeholder="Zip Code" style={inputStylesShort} />
-        </Form.Item>
+          <Form.Item label="Zip">
+            <Input placeholder="Zip Code" style={inputStylesShort} />
+          </Form.Item>
+        </container>
       </div>
     </Form>
   );
