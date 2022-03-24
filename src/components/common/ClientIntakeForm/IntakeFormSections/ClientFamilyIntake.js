@@ -1,4 +1,12 @@
-import { DatePicker, Form, Input, Select, Radio, Divider } from 'antd';
+import {
+  DatePicker,
+  Form,
+  Input,
+  Select,
+  Radio,
+  Divider,
+  Checkbox,
+} from 'antd';
 
 import React from 'react';
 
@@ -32,7 +40,19 @@ const ClientFamilyIntake = () => {
     margin: '0 10px',
   };
 
+  const checkboxStyles = {
+    display: 'flex',
+    flexDirection: 'column',
+    flexWrap: 'wrap',
+  };
   const { TextArea } = Input;
+
+  const historyOptions = [
+    { label: 'Physical Illness', value: 'physicalIllness' },
+    { label: 'Mental Illness', value: 'mentalIllenss' },
+    { label: 'Personal Violence', value: 'personalViolence' },
+    { label: 'Substance Dependence', value: 'substanceDependence' },
+  ];
   return (
     <Form form={form} layout="vertical">
       <Form.Item label="Inital Intake Date" style={{ margin: '20px 110px' }}>
@@ -92,6 +112,17 @@ const ClientFamilyIntake = () => {
               <Radio value={false}>No</Radio>
             </Radio.Group>
           </Form.Item>
+
+          <Form.Item label="Does Client have Documented Disabilities?">
+            <Radio.Group>
+              <Radio value={true}>Yes</Radio>
+              <Radio value={false}>No</Radio>
+            </Radio.Group>
+          </Form.Item>
+
+          <Form.Item label="If yes what disablities?">
+            <TextArea placeholder="Describe Disabilities" style={inputStyles} />
+          </Form.Item>
         </section>
 
         <section style={sectionRight}>
@@ -137,6 +168,10 @@ const ClientFamilyIntake = () => {
 
           <Form.Item label="If yes, when is due date?">
             <DatePicker format={'MM-DD-YYYY'} />
+          </Form.Item>
+
+          <Form.Item label="Does Client have a history of:">
+            <Checkbox.Group options={historyOptions} style={checkboxStyles} />
           </Form.Item>
         </section>
       </div>
@@ -220,6 +255,16 @@ const ClientFamilyIntake = () => {
               <Radio value={false}>No</Radio>
             </Radio.Group>
           </Form.Item>
+          <Form.Item label="Does Family Member have Documented Disabilities?">
+            <Radio.Group>
+              <Radio value={true}>Yes</Radio>
+              <Radio value={false}>No</Radio>
+            </Radio.Group>
+          </Form.Item>
+
+          <Form.Item label="If yes what disablities?">
+            <TextArea placeholder="Describe Disabilities" style={inputStyles} />
+          </Form.Item>
         </section>
 
         <section style={sectionRight}>
@@ -267,6 +312,10 @@ const ClientFamilyIntake = () => {
 
           <Form.Item label="If yes, when are they due?">
             <DatePicker format="MM-DD-YYYY" />
+          </Form.Item>
+
+          <Form.Item label="Does Family Member have a history of:">
+            <Checkbox.Group options={historyOptions} style={checkboxStyles} />
           </Form.Item>
         </section>
       </div>
@@ -321,6 +370,17 @@ const ClientFamilyIntake = () => {
           <Form.Item label="Last Grade Completed">
             <Input placeholder="Grade #" style={inputStylesShort} />
           </Form.Item>
+
+          <Form.Item label="Does Family Member have Documented Disabilities?">
+            <Radio.Group>
+              <Radio value={true}>Yes</Radio>
+              <Radio value={false}>No</Radio>
+            </Radio.Group>
+          </Form.Item>
+
+          <Form.Item label="If yes what disablities?">
+            <TextArea placeholder="Describe Disabilities" style={inputStyles} />
+          </Form.Item>
         </section>
 
         <section style={sectionRight}>
@@ -367,6 +427,10 @@ const ClientFamilyIntake = () => {
           </Form.Item>
           <Form.Item label="If yes, when is due date?">
             <DatePicker format="MM-DD-YYYY" />
+          </Form.Item>
+
+          <Form.Item label="Does Family Member have a history of:">
+            <Checkbox.Group options={historyOptions} style={checkboxStyles} />
           </Form.Item>
         </section>
       </div>
