@@ -2,7 +2,6 @@ import React from 'react';
 import { Table } from 'antd';
 
 const FamilyMembersTable = ({ familyData }) => {
-  console.log('familyData', familyData);
   const columns = [
     {
       title: 'Name',

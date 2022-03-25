@@ -1,1 +1,1 @@
-export { default as CaseViewPage } from './CaseViewContainer';
+export { default as CaseView } from './CaseViewContainer';

@@ -1,6 +1,20 @@
 /***  Variables  ***/
 
 /*** COMPONENTS  ***/
+.Layout {
+  height: 100%;
+  .Header {
+    background: white;
+    height: 8%;
+  }
+  .Content {
+    padding: 0 50px;
+  }
+  .Footer {
+    text-align: center;
+  }
+}
+
 .NavHeader {
   display: flex;
   justify-content: space-between;
@@ -19,6 +33,11 @@
 }
 
 .RenderLayoutTemplate {
+  height: 100vh;
+  .Content__Container {
+    height: 90%;
+    &-Card {
+      height: 100%;
   height: 100%;
   .Layout {
     height: 100%;
@@ -43,4 +62,12 @@
 
 .BreadCrumbs {
   margin: 16px 0;
+}
+
+.RenderCases {
+  height: 100vh;
+}
+
+.RenderCaseView {
+  height: 100vh;
 }
