@@ -3,6 +3,7 @@ import { Breadcrumb } from 'antd';
 
 const breadCrumbNameMap = {
   '/layouttemplate': 'Layout Template',
+  '/cases': 'Cases',
 };
 
 // renders breadcrumbs for dynamic routes

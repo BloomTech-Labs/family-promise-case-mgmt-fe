@@ -18,12 +18,11 @@ import { ExampleListPage } from './components/pages/ExampleList';
 import { ProfileListPage } from './components/pages/ProfileList';
 import { LoginPage } from './components/pages/Login';
 import { config } from './utils/oktaConfig';
-import { ClientListTable } from './components/common/ClientListTable';
-import { CaseViewPage } from './components/pages/CaseView';
+import { Cases } from './components/pages/Cases';
+import { CaseView } from './components/pages/CaseView';
 import { ClientIntake } from './components/common/ClientIntakeForm';
 import { LayoutTemplate } from './components/pages/LayoutTemplate';
 import './styles/css/styles.css';
-import { CaseDetails } from './components/pages/CaseDetails';
 
 ReactDOM.render(
   <Router>
@@ -53,14 +52,13 @@ function App() {
         <Route path="/login" component={LoginPage} />
         <Route path="/implicit/callback" component={LoginCallback} />
         {/* any of the routes you need secured should be registered as SecureRoutes */}
-        <SecureRoute path="/" exact />
-        <SecureRoute path="/cases/:caseID" component={CaseDetails} />
-        <SecureRoute path="/cases" component={ClientListTable} />
-        <SecureRoute path="/case-view" component={CaseViewPage} />
-        <SecureRoute path="/example-list" component={ExampleListPage} />
+        <SecureRoute path="/cases/:caseID" component={CaseView} />
+        <SecureRoute path="/cases" component={Cases} />
         <SecureRoute path="/client-intake-form" component={ClientIntake} />
         <SecureRoute path="/profile-list" component={ProfileListPage} />
+        <SecureRoute path="/example-list" component={ExampleListPage} />
         <SecureRoute path="/layouttemplate" component={LayoutTemplate} />
+        <SecureRoute path="/" exact />
         <Route component={NotFoundPage} />
       </Switch>
     </Security>
