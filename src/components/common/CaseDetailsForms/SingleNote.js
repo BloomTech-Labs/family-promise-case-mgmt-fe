@@ -13,7 +13,7 @@ function SingleNote(props) {
     gridTemplateColumns: 'repeat(5, 1fr)',
     gap: '5px',
     gridAutoFlow: 'row dense',
-    width: '50%',
+    width: '50vw',
   };
 
   const contentStyle = {
@@ -42,6 +42,7 @@ function SingleNote(props) {
     gridColumn: '1',
     marginLeft: '1rem',
   };
+  const h4Style = { color: '#fcfcfc' };
 
   const [thisNote, setThisNote] = useState(note);
 
@@ -63,8 +64,8 @@ function SingleNote(props) {
         {props.props.picture}
       </div>
       <section className="basicInfo" style={infoStyle}>
-        <div>Case Manager: {props.props.name}</div>
-        <div>Date Created: {props.props.date}</div>
+        <h4 style={h4Style}>Case Manager: {props.props.name}</h4>
+        <h4 style={h4Style}>Date Created: {props.props.date}</h4>
       </section>
       <section className="noteText" style={contentStyle}>
         {props.props.note}

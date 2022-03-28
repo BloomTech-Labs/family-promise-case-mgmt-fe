@@ -3,6 +3,7 @@ import { Button } from 'antd';
 import React, { useState } from 'react';
 import SingleNote from './SingleNote';
 import PlaceholderProfileImage from '../../../assets/PlaceholderProfileImage.png';
+import Search from 'antd/lib/input/Search';
 
 export const initialFormValues = {
   name: 'Firstname Lastname',
@@ -58,6 +59,14 @@ export const Notes = () => {
     color: '#CDCDCD',
     background: '#007FD4',
     borderColor: '#007FD4',
+    width: '18vw',
+  };
+
+  const searchStyle = {
+    width: '10vw',
+    margin: '1rem',
+    color: '#cdcdcd',
+    backgroundColor: '#cdcdcd',
   };
 
   return (
@@ -69,10 +78,12 @@ export const Notes = () => {
         <Button style={buttonStyle} onClick={showArchive}>
           Archive
         </Button>
+        <Search placeholder="filter" style={searchStyle} />
       </span>
 
       {archived === true ? (
         <div>
+          <SingleNote props={initialFormValuesArchived} />
           <SingleNote props={initialFormValuesArchived} />
         </div>
       ) : (
