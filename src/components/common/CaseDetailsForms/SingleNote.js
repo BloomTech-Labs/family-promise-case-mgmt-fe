@@ -8,7 +8,7 @@ function SingleNote(props) {
     borderStyle: 'groove',
     background: '#3f3f3f',
     color: '#fcfcfc',
-    margin: '0 2% 0 0',
+    margin: '0 auto 1rem',
     display: 'grid',
     gridTemplateColumns: 'repeat(5, 1fr)',
     gap: '5px',
@@ -19,14 +19,20 @@ function SingleNote(props) {
   const contentStyle = {
     gridRow: '2',
     gridColumn: '2 / span 4',
+    paddingRight: '1rem',
   };
 
   const buttonStyle = {
     gridRow: '3',
     gridColumn: '5',
+    margin: '1rem',
+    color: '#CDCDCD',
+    background: '#9E5291',
+    borderColor: '#9E5291',
   };
 
   const infoStyle = {
+    margin: '.5rem 0',
     gridRow: '1',
     gridColumn: '3 / span 2',
   };
@@ -37,7 +43,6 @@ function SingleNote(props) {
     marginLeft: '1rem',
   };
 
-  //   const [archived, setArchived] = useState(note.archived);
   const [thisNote, setThisNote] = useState(note);
 
   const restoreNote = () => {

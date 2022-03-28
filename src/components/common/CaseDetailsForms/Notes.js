@@ -4,13 +4,22 @@ import React, { useState } from 'react';
 import SingleNote from './SingleNote';
 import PlaceholderProfileImage from '../../../assets/PlaceholderProfileImage.png';
 
-const initialFormValues = {
+export const initialFormValues = {
   name: 'Firstname Lastname',
   date: 'mm/dd/yyyy xx:xx:xx',
   picture: <img src={PlaceholderProfileImage} alt="Profile"></img>,
   note:
     'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
   archived: false,
+};
+
+export const initialFormValuesArchived = {
+  name: 'Firstname Lastname',
+  date: 'mm/dd/yyyy xx:xx:xx',
+  picture: <img src={PlaceholderProfileImage} alt="Profile"></img>,
+  note:
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+  archived: true,
 };
 
 export const Notes = () => {
@@ -30,16 +39,41 @@ export const Notes = () => {
     setDisabled(!disabled);
   };
 
+  const notesContainerStyle = {
+    margin: 'auto',
+  };
+
   const onFinishFailed = errorInfo => {
     console.log('Failed:', errorInfo);
   };
-  //   const [form] = Form.useForm();
+
+  const notesSwitchPanelStyle = {
+    margin: 'auto',
+    display: 'flex',
+    justifyContent: 'center',
+  };
+
+  const buttonStyle = {
+    margin: '1rem',
+    color: '#CDCDCD',
+    background: '#007FD4',
+    borderColor: '#007FD4',
+  };
 
   return (
-    <div className="notesContainer">
+    <div className="notesContainer" style={notesContainerStyle}>
+      <span className="notesSwitchPanel" style={notesSwitchPanelStyle}>
+        <Button style={buttonStyle} onClick={showCurrent}>
+          Current
+        </Button>
+        <Button style={buttonStyle} onClick={showArchive}>
+          Archive
+        </Button>
+      </span>
+
       {archived === true ? (
         <div>
-          <SingleNote props={initialFormValues} />
+          <SingleNote props={initialFormValuesArchived} />
         </div>
       ) : (
         <div>
@@ -49,8 +83,6 @@ export const Notes = () => {
           <SingleNote props={initialFormValues} />
         </div>
       )}
-      <Button onClick={showArchive}> Archive</Button>
-      <Button onClick={showCurrent}>Current</Button>
     </div>
   );
 };

@@ -3,6 +3,8 @@ import { Button, Collapse } from 'antd';
 import ClientFamilyInfoForm from '../CaseDetailsForms/ClientFamilyInformation';
 
 import { HouseholdInformationForm } from '../CaseDetailsForms/HouseholdInformationForm';
+import { initialFormValues, Notes } from '../CaseDetailsForms/Notes';
+import SingleNote from '../CaseDetailsForms/SingleNote';
 
 const { Panel } = Collapse;
 
@@ -15,6 +17,11 @@ const CaseDetailsCollapse = () => {
   // adds new note button to notes preview panel
   const genAddNoteButton = () => (
     <Button
+      style={{
+        color: '#CDCDCD',
+        background: '#9E5291',
+        borderColor: '#9E5291',
+      }}
       onClick={event => {
         // prevents panel collapse when clicked
         event.stopPropagation();
@@ -39,15 +46,14 @@ const CaseDetailsCollapse = () => {
         <Panel
           header="Client Notes"
           key="notesPreview"
+          style={{ margin: 'auto' }}
           // style={{ backgroundColor: 'red' }}
           extra={genAddNoteButton()}
         >
-          <p>display most recent note, this panel is default active</p>
+          <SingleNote props={initialFormValues} />
           <Collapse onChange={callback}>
             <Panel header="Show All Notes" key="showAllNotes">
-              <p>note 2 visible in secondary expandable panel</p>
-              <p>note 3 visible in secondary expandable panel</p>
-              <p>note 4 visible in secondary expandable panel</p>
+              <Notes />
             </Panel>
           </Collapse>
         </Panel>

@@ -22,6 +22,9 @@ import { Cases } from './components/pages/Cases';
 import { CaseView } from './components/pages/CaseView';
 import { ClientIntake } from './components/common/ClientIntakeForm';
 import { LayoutTemplate } from './components/pages/LayoutTemplate';
+import { Notes } from './components/common/CaseDetailsForms/Notes';
+import { CaseDetails } from './components/pages/CaseDetails';
+
 import './styles/css/styles.css';
 
 ReactDOM.render(
@@ -49,10 +52,12 @@ function App() {
   return (
     <Security {...config} onAuthRequired={authHandler}>
       <Switch>
+        <Route path="/discard" component={Notes} />
         <Route path="/login" component={LoginPage} />
         <Route path="/implicit/callback" component={LoginCallback} />
         {/* any of the routes you need secured should be registered as SecureRoutes */}
         <SecureRoute path="/cases/:caseID" component={CaseView} />
+        <SecureRoute path="/case-details" component={CaseDetails} />
         <SecureRoute path="/cases" component={Cases} />
         <SecureRoute path="/client-intake-form" component={ClientIntake} />
         <SecureRoute path="/profile-list" component={ProfileListPage} />
