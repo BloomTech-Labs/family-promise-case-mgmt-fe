@@ -41,7 +41,6 @@
 .BreadCrumbs {
   margin: 16px 0;
 }
-<<<<<<< HEAD
 .ant-collapse .ant-collapse-item .ant-collapse-header {
   color: white;
 }
@@ -56,11 +55,4 @@
 .ant-collapse-content-box {
   background-color: #3f3f3f;
   color: #cdcdcd;
-=======
-.RenderCases {
-  height: 100vh;
-}
-.RenderCaseView {
-  height: 100vh;
->>>>>>> 190f63de2cb5e6378e150879f2ea3c6e4ef822eb
 }
