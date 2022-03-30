@@ -104,10 +104,10 @@ export const HouseholdInformationForm = props => {
     color: '#fcfcfc',
   };
 
-  const checkBox = {
-    color: disabled === true ? labelTextDis : labelText,
-    // background: '#007fd4',
-  };
+  //   const checkBox = {
+  //     color: disabled === true ? labelTextDis : labelText,
+  //     // background: '#007fd4',
+  //   };
 
   return (
     <div className="HouseholdCase" style={caseContainer}>

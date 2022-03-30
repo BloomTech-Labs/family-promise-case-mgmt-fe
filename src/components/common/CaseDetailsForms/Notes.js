@@ -25,7 +25,6 @@ export const initialFormValuesArchived = {
 
 export const Notes = () => {
   const [archived, setArchived] = useState(false);
-  const [disabled, setDisabled] = useState(false);
 
   const showArchive = () => {
     setArchived(true);
@@ -34,18 +33,13 @@ export const Notes = () => {
     setArchived(false);
   };
 
-  const onFinish = values => {
-    const updatedHousehold = values;
-    console.log(updatedHousehold);
-    setDisabled(!disabled);
-  };
-
   const notesContainerStyle = {
     margin: 'auto',
   };
 
-  const onFinishFailed = errorInfo => {
-    console.log('Failed:', errorInfo);
+  const showNotes = {
+    overflowY: 'scroll',
+    maxHeight: '30vh',
   };
 
   const notesSwitchPanelStyle = {
@@ -66,7 +60,6 @@ export const Notes = () => {
     width: '10vw',
     margin: '1rem',
     color: '#cdcdcd',
-    backgroundColor: '#cdcdcd',
   };
 
   return (
@@ -78,22 +71,38 @@ export const Notes = () => {
         <Button style={buttonStyle} onClick={showArchive}>
           Archive
         </Button>
-        <Search placeholder="filter" style={searchStyle} />
+        <Search
+          placeholder="filter"
+          bordered={false}
+          style={searchStyle}
+          enterButton={
+            <Button
+              style={{
+                color: '#CDCDCD',
+                background: '#007FD4',
+                borderColor: '#007FD4',
+              }}
+            >
+              Filter
+            </Button>
+          }
+        />
       </span>
-
-      {archived === true ? (
-        <div>
-          <SingleNote props={initialFormValuesArchived} />
-          <SingleNote props={initialFormValuesArchived} />
-        </div>
-      ) : (
-        <div>
-          <SingleNote props={initialFormValues} />
-          <SingleNote props={initialFormValues} />
-          <SingleNote props={initialFormValues} />
-          <SingleNote props={initialFormValues} />
-        </div>
-      )}
+      <div className="showNotes" style={showNotes}>
+        {archived === true ? (
+          <div>
+            <SingleNote props={initialFormValuesArchived} />
+            <SingleNote props={initialFormValuesArchived} />
+          </div>
+        ) : (
+          <div>
+            <SingleNote props={initialFormValues} />
+            <SingleNote props={initialFormValues} />
+            <SingleNote props={initialFormValues} />
+            <SingleNote props={initialFormValues} />
+          </div>
+        )}
+      </div>
     </div>
   );
 };

@@ -40,7 +40,8 @@ function SingleNote(props) {
   const pictureStyle = {
     gridRow: '2',
     gridColumn: '1',
-    marginLeft: '1rem',
+    // marginLeft: '3rem',
+    margin: 'auto',
   };
   const h4Style = { color: '#fcfcfc' };
 

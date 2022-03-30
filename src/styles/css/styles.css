@@ -1,18 +1,5 @@
 /***  Variables  ***/
 /*** COMPONENTS  ***/
-.Layout {
-  height: 100%;
-}
-.Layout .Header {
-  background: white;
-  height: 8%;
-}
-.Layout .Content {
-  padding: 0 50px;
-}
-.Layout .Footer {
-  text-align: center;
-}
 .NavHeader {
   display: flex;
   justify-content: space-between;
@@ -32,11 +19,24 @@
 .RenderLayoutTemplate {
   height: 100%;
 }
-.RenderLayoutTemplate .Content__Container {
+.RenderLayoutTemplate .Layout {
+  height: 100%;
+}
+.RenderLayoutTemplate .Layout .Header {
+  background: white;
+  height: 8%;
+}
+.RenderLayoutTemplate .Layout .Content {
+  padding: 0 50px;
+}
+.RenderLayoutTemplate .Layout .Content__Container {
   height: 90%;
 }
-.RenderLayoutTemplate .Content__Container-Card {
+.RenderLayoutTemplate .Layout .Content__Container-Card {
   height: 100%;
+}
+.RenderLayoutTemplate .Layout .Footer {
+  text-align: center;
 }
 .BreadCrumbs {
   margin: 16px 0;
@@ -55,4 +55,9 @@
 .ant-collapse-content-box {
   background-color: #3f3f3f;
   color: #cdcdcd;
+}
+.ant-collapse-header {
+  background: #007fd4;
+  color: white;
+  font-size: 1.25rem;
 }
