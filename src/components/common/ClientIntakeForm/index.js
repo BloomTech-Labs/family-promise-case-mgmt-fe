@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Form, Input, Button, Select, InputNumber } from 'antd';
 import axios from 'axios';
+import ClientFamilyInfo from './IntakeForms/ClientFamilyInfo';
 
 // the structure of this component is supposed to mirror that of ClientListTable, in which we have a folder with a file index.js as the default export containing all other components within. When you import a folder and it has index.js, you don't need to specify a file as index.js is the default. This allows us to group a main component and its subcomponents in a single folder that can be seamlessly imported.
 
@@ -43,7 +44,7 @@ export const ClientIntake = () => {
 
   return (
     <div>
-      <Form
+      {/* <Form
         labelCol={{ span: 4 }}
         wrapperCol={{ span: 14 }}
         layout="horizontal"
@@ -129,7 +130,9 @@ export const ClientIntake = () => {
             Submit
           </Button>
         </Form.Item>
-      </Form>
+      </Form> */}
+      <h2 style={{ textAlign: 'center' }}>Intake Form</h2>
+      <ClientFamilyInfo />
     </div>
   );
 };
