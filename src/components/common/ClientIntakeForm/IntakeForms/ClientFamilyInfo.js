@@ -8,6 +8,7 @@ import {
   Checkbox,
   Button,
 } from 'antd';
+import { PlusOutlined } from '@ant-design/icons';
 import React from 'react';
 
 const ClientFamilyInfo = () => {
@@ -124,7 +125,7 @@ const ClientFamilyInfo = () => {
             <TextArea placeholder="Other" style={inputStyles} />
           </Form.Item>
 
-          <Form.Item label="Veteran?" name="hohVeteran" initialValue={false}>
+          <Form.Item label="Veteran?" name="hohVeteran" initialValue="">
             <Radio.Group>
               <Radio value={true}>Yes</Radio>
               <Radio value={false}>No</Radio>
@@ -134,7 +135,7 @@ const ClientFamilyInfo = () => {
           <Form.Item
             label="Does Client have Documented Disabilities?"
             name="hohHasDisabilities"
-            initialValue={false}
+            initialValue=""
           >
             <Radio.Group>
               <Radio value={true}>Yes</Radio>
@@ -243,9 +244,15 @@ const ClientFamilyInfo = () => {
       </div>
 
       <Divider style={{ marginBottom: '50px' }}>Family Members</Divider>
-
+      <Button icon={<PlusOutlined />}>Add Family Member</Button>
+      <Divider />
       <Form.Item>
-        <Button htmlType="submit">Submit</Button>
+        <Button htmlType="submit" type="primary">
+          Submit
+        </Button>
+      </Form.Item>
+      <Form.Item>
+        <Button type="default">Cancel</Button>
       </Form.Item>
     </Form>
   );
