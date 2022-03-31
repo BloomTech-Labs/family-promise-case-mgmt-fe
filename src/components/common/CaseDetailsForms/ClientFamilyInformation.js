@@ -6,10 +6,7 @@ import {
   Button,
   Radio,
   DatePicker,
-  // TextArea,
-  // Checkbox,
   InputNumber,
-  // PageHeader,
 } from 'antd';
 
 // Initial Empty Values for form
@@ -39,10 +36,6 @@ const ClientFamilyInfoForm = () => {
     gridTemplateColumns: 'repeat(2, 1fr)',
     gap: '5px',
     gridAutoFlow: 'row dense',
-    // paddingTop: '2rem',
-    // width: '55%',
-    // padding: '3rem',
-    // margin: '0 20rem',
     background: '#3f3f3f',
     color: '#ffffff',
   };

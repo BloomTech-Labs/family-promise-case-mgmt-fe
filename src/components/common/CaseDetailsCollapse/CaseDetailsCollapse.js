@@ -47,7 +47,6 @@ const CaseDetailsCollapse = () => {
           header="Client Notes"
           key="notesPreview"
           style={{ margin: 'auto' }}
-          // style={{ backgroundColor: 'red' }}
           extra={genAddNoteButton()}
         >
           <SingleNote props={initialFormValues} />
