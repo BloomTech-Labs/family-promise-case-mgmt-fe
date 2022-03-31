@@ -83,6 +83,7 @@ const AdultFamilyMember = () => {
               <Select.Option value="Other" />
             </Select>
           </Form.Item>
+
           <Form.Item label="Other">
             <TextArea style={inputStyles} />
           </Form.Item>

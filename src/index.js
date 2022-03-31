@@ -20,7 +20,7 @@ import { LoginPage } from './components/pages/Login';
 import { config } from './utils/oktaConfig';
 import { Cases } from './components/pages/Cases';
 import { CaseView } from './components/pages/CaseView';
-import { ClientIntake } from './components/common/ClientIntakeForm';
+import { ClientIntakeForm } from './components/common/ClientIntakeForm';
 import { LayoutTemplate } from './components/pages/LayoutTemplate';
 
 import './styles/css/styles.css';
@@ -55,7 +55,7 @@ function App() {
         {/* any of the routes you need secured should be registered as SecureRoutes */}
         <SecureRoute path="/cases/:caseID" component={CaseView} />
         <SecureRoute path="/cases" component={Cases} />
-        <SecureRoute path="/client-intake-form" component={ClientIntake} />
+        <SecureRoute path="/client-intake-form" component={ClientIntakeForm} />
         <SecureRoute path="/profile-list" component={ProfileListPage} />
         <SecureRoute path="/example-list" component={ExampleListPage} />
         <SecureRoute path="/layouttemplate" component={LayoutTemplate} />
