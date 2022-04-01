@@ -18,8 +18,13 @@ const prime = {
 };
 
 const ClientIntakeForm = () => {
+  const [form] = Form.useForm();
+
+  const onFinish = values => {
+    console.log('Form Values: ', values);
+  };
   return (
-    <Form.Provider>
+    <Form form={form} onFinish={onFinish} layout="vertical">
       <h2 style={{ textAlign: 'center' }}>Intake Form</h2>
       <ClientFamilyInfo />
 
@@ -36,7 +41,7 @@ const ClientIntakeForm = () => {
           </Button>
         </Form.Item>
       </div>
-    </Form.Provider>
+    </Form>
   );
 };
 

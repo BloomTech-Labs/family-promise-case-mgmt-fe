@@ -47,19 +47,23 @@ const AdultFamilyMember = () => {
       <h3 style={{ textAlign: 'center' }}>Adult</h3>
       <div style={formStyles}>
         <section style={sectionLeft}>
-          <Form.Item label="First Name" name="adultFirstname">
+          <Form.Item label="First Name" name="adultFirstname" initialValue="">
             <Input placeholder="First Name" style={inputStyles} />
           </Form.Item>
 
-          <Form.Item label="Relation to HoH" name="adultRealtionHoh">
+          <Form.Item
+            label="Relation to HoH"
+            name="adultRealtionHoh"
+            initialValue=""
+          >
             <Input placeholder="Relation" style={inputStyles} />
           </Form.Item>
 
-          <Form.Item label="SSN" name="adultSSN">
+          <Form.Item label="SSN" name="adultSSN" initialValue="">
             <Input placeholder="XXX-XX-XXXX" style={inputStyles} />
           </Form.Item>
 
-          <Form.Item label="Race">
+          <Form.Item label="Race" name="adultrace" initialValue="">
             <Select style={inputStyles} placeholder="-- Select --">
               <Select.Option value="American Indian or Alaska Native" />
               <Select.Option value="Asian" />

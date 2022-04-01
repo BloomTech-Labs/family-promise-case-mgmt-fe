@@ -1,3 +1,4 @@
+import React from 'react';
 import {
   DatePicker,
   Form,
@@ -7,9 +8,10 @@ import {
   Divider,
   Checkbox,
   Button,
+  Space,
 } from 'antd';
-import { PlusOutlined } from '@ant-design/icons';
-import React from 'react';
+import { PlusOutlined, DeleteOutlined } from '@ant-design/icons';
+import AdultFamilyMember from './FamilyMembers/AdultFamilyMember';
 
 const ClientFamilyInfo = () => {
   const [form] = Form.useForm();
@@ -18,6 +20,12 @@ const ClientFamilyInfo = () => {
     console.log('Form Values: ', values);
   };
 
+  const subsectionHeader = {
+    textAlign: 'center',
+    marginBottom: '50px',
+    backgroundColor: '#706f6f',
+    padding: '20px',
+  };
   const inputStyles = {
     width: '20rem',
   };
@@ -59,12 +67,7 @@ const ClientFamilyInfo = () => {
     { label: 'Substance Dependence', value: 'substanceDependence' },
   ];
   return (
-    <Form
-      form={form}
-      layout="vertical"
-      name="ClientFamilyInfo"
-      onFinish={onFinish}
-    >
+    <div>
       <Form.Item
         label="Inital Intake Date"
         style={{ margin: '20px 110px' }}
@@ -74,9 +77,7 @@ const ClientFamilyInfo = () => {
         <DatePicker format="MM/DD/YYYY" />
       </Form.Item>
 
-      <h2 style={{ textAlign: 'center', marginBottom: '50px' }}>
-        Client/Family Information
-      </h2>
+      <h2 style={subsectionHeader}>Client/Family Information</h2>
 
       <Divider>Head of Household</Divider>
       <div className="hohContainer" style={formStyles}>
@@ -244,12 +245,34 @@ const ClientFamilyInfo = () => {
       </div>
 
       <Divider style={{ marginBottom: '50px' }}>Family Members</Divider>
-      <Form.Item>
-        <Button icon={<PlusOutlined />}>Add Family Member</Button>
-      </Form.Item>
-
-      <Divider />
-    </Form>
+      <Form.List name="familyMembers">
+        {(fields, { add, remove }) => (
+          <div>
+            {fields.map(({ key, name, ...restField }) => (
+              <Space key={key} style={formStyles}>
+                <Form.Item {...restField} name={[name, 'adult']}>
+                  <AdultFamilyMember />
+                </Form.Item>
+                <DeleteOutlined
+                  style={{ position: 'relative', bottom: '365px' }}
+                  onClick={() => remove(name)}
+                />
+              </Space>
+            ))}
+            <Form.Item>
+              <Button
+                className="btn-long "
+                onClick={() => add()}
+                block
+                icon={<PlusOutlined />}
+              >
+                Add Family Member
+              </Button>
+            </Form.Item>
+          </div>
+        )}
+      </Form.List>
+    </div>
   );
 };
 
