@@ -1,20 +1,7 @@
 /***  Variables  ***/
+// @primary-color: #007fd4
 
 /*** COMPONENTS  ***/
-.Layout {
-  height: 100%;
-  .Header {
-    background: white;
-    height: 8%;
-  }
-  .Content {
-    padding: 0 50px;
-  }
-  .Footer {
-    text-align: center;
-  }
-}
-
 .NavHeader {
   display: flex;
   justify-content: space-between;
@@ -33,11 +20,6 @@
 }
 
 .RenderLayoutTemplate {
-  height: 100vh;
-  .Content__Container {
-    height: 90%;
-    &-Card {
-      height: 100%;
   height: 100%;
   .Layout {
     height: 100%;
@@ -64,10 +46,29 @@
   margin: 16px 0;
 }
 
-.RenderCases {
-  height: 100vh;
+.ant-collapse {
+  .ant-collapse-item {
+    .ant-collapse-header {
+      color: white;
+    }
+  }
+
+  &-header {
+    background: #007fd4;
+    color: white;
+    font-size: 1.25rem;
+  }
+  &-item {
+    color: white;
+  }
+  &-content-box {
+    background-color: #3f3f3f;
+    color: #cdcdcd;
+  }
 }
 
-.RenderCaseView {
-  height: 100vh;
+.ant-collapse-header {
+  background: #007fd4;
+  color: white;
+  font-size: 1.25rem;
 }
