@@ -244,16 +244,11 @@ const ClientFamilyInfo = () => {
       </div>
 
       <Divider style={{ marginBottom: '50px' }}>Family Members</Divider>
-      <Button icon={<PlusOutlined />}>Add Family Member</Button>
+      <Form.Item>
+        <Button icon={<PlusOutlined />}>Add Family Member</Button>
+      </Form.Item>
+
       <Divider />
-      <Form.Item>
-        <Button htmlType="submit" type="primary">
-          Submit
-        </Button>
-      </Form.Item>
-      <Form.Item>
-        <Button type="default">Cancel</Button>
-      </Form.Item>
     </Form>
   );
 };
