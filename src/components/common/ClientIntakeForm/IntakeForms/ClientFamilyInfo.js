@@ -14,12 +14,6 @@ import { PlusOutlined, DeleteOutlined } from '@ant-design/icons';
 import AdultFamilyMember from './FamilyMembers/AdultFamilyMember';
 
 const ClientFamilyInfo = () => {
-  const [form] = Form.useForm();
-
-  const onFinish = values => {
-    console.log('Form Values: ', values);
-  };
-
   const subsectionHeader = {
     textAlign: 'center',
     marginBottom: '50px',
@@ -72,7 +66,6 @@ const ClientFamilyInfo = () => {
         label="Inital Intake Date"
         style={{ margin: '20px 110px' }}
         name="intakeDate"
-        initialValue={''}
       >
         <DatePicker format="MM/DD/YYYY" />
       </Form.Item>

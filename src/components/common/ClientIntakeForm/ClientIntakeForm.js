@@ -1,7 +1,7 @@
 import { Form, Button } from 'antd';
 import React from 'react';
 import ClientFamilyInfo from './IntakeForms/ClientFamilyInfo';
-
+//NOTE: Inline Styles added temporarily.
 const buttonSection = {
   display: 'flex',
   justifyContent: 'center',
@@ -20,12 +20,19 @@ const prime = {
 const ClientIntakeForm = () => {
   const [form] = Form.useForm();
 
+  //onFinish is AntDs version on onSubmit;
   const onFinish = values => {
     console.log('Form Values: ', values);
   };
   return (
-    <Form form={form} onFinish={onFinish} layout="vertical">
-      <h2 style={{ textAlign: 'center' }}>Intake Form</h2>
+    <Form
+      name="clientIntakeForm"
+      form={form}
+      onFinish={onFinish}
+      onSubmit={e => e.preventDefault()}
+      layout="vertical"
+    >
+      <h1 style={{ textAlign: 'center' }}>Intake Form</h1>
       <ClientFamilyInfo />
 
       <div style={buttonSection}>

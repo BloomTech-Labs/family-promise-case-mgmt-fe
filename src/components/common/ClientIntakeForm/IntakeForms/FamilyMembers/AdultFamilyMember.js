@@ -6,10 +6,6 @@ const AdultFamilyMember = () => {
     width: '20rem',
   };
 
-  const inputStylesShort = {
-    width: '7rem',
-  };
-
   const formStyles = {
     display: 'flex',
     justifyContent: 'center',
@@ -21,12 +17,6 @@ const AdultFamilyMember = () => {
 
   const sectionRight = {
     margin: '20px',
-  };
-
-  const shortInputContainer = {
-    display: 'flex',
-    justifyContent: 'space-between',
-    margin: '0 10px',
   };
 
   const checkboxStyles = {
