@@ -2,6 +2,7 @@ import React from 'react';
 import { DatePicker, Form, Input, Select, Radio, Checkbox } from 'antd';
 
 const AdultFamilyMember = () => {
+  //Inline Styles added temporarily
   const inputStyles = {
     width: '20rem',
   };

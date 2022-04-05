@@ -8,16 +8,16 @@ import {
   Divider,
   Checkbox,
   Button,
-  Space,
 } from 'antd';
-import { PlusOutlined, DeleteOutlined } from '@ant-design/icons';
-import AdultFamilyMember from './FamilyMembers/AdultFamilyMember';
+import { PlusOutlined } from '@ant-design/icons';
 
 const ClientFamilyInfo = () => {
+  //Inline styles added temporarily
   const subsectionHeader = {
     textAlign: 'center',
     marginBottom: '50px',
-    backgroundColor: '#706f6f',
+    backgroundColor: '#101010',
+    color: '#9e9e9e',
     padding: '20px',
   };
   const inputStyles = {
@@ -62,10 +62,18 @@ const ClientFamilyInfo = () => {
   ];
   return (
     <div>
+      {/* 
+        Note:
+        The Form's states and props are encapsulated in the form component using antd's Form or Form.Item. Only a name prop needs to be provided. The data is stored in an object with each form item being a key-value pair. 
+
+        The initial value for each input can be stored within the form component with the 'initialValue' prop. 
+      
+      */}
       <Form.Item
         label="Inital Intake Date"
         style={{ margin: '20px 110px' }}
         name="intakeDate"
+        initialValue=""
       >
         <DatePicker format="MM/DD/YYYY" />
       </Form.Item>
@@ -211,16 +219,16 @@ const ClientFamilyInfo = () => {
 
       <Divider>Last Known Address</Divider>
       <div style={formStyles}>
-        <container style={sectionLeft}>
+        <section style={sectionLeft}>
           <Form.Item label="Address 1" name="address1" initialValue="">
             <Input placeholder="123 Somewhere Rd." style={inputStyles} />
           </Form.Item>
           <Form.Item label="City" name="city" initialValue="">
             <Input placeholder="City Name" style={inputStyles} />
           </Form.Item>
-        </container>
+        </section>
 
-        <container style={sectionRight}>
+        <section style={sectionRight}>
           <Form.Item label="Address 2" name="address2" initialValue="">
             <Input placeholder="Apt. #" style={inputStyles} />
           </Form.Item>
@@ -234,37 +242,16 @@ const ClientFamilyInfo = () => {
               <Input placeholder="Zip Code" style={inputStylesShort} />
             </Form.Item>
           </section>
-        </container>
+        </section>
       </div>
 
       <Divider style={{ marginBottom: '50px' }}>Family Members</Divider>
-      <Form.List name="familyMembers">
-        {(fields, { add, remove }) => (
-          <div>
-            {fields.map(({ key, name, ...restField }) => (
-              <Space key={key} style={formStyles}>
-                <Form.Item {...restField} name={[name, 'adult']}>
-                  <AdultFamilyMember />
-                </Form.Item>
-                <DeleteOutlined
-                  style={{ position: 'relative', bottom: '365px' }}
-                  onClick={() => remove(name)}
-                />
-              </Space>
-            ))}
-            <Form.Item>
-              <Button
-                className="btn-long "
-                onClick={() => add()}
-                block
-                icon={<PlusOutlined />}
-              >
-                Add Family Member
-              </Button>
-            </Form.Item>
-          </div>
-        )}
-      </Form.List>
+      {/* The button below should be used to add a new family member subform to the ClinentFamilyInfo component. This  subform will be an adult or child family member, see the family members folder for each subform component. See the client intake wireframe for an example of how adding a family member should work.  */}
+      <Form.Item>
+        <Button className="btn-long " icon={<PlusOutlined />}>
+          Add Family Member
+        </Button>
+      </Form.Item>
     </div>
   );
 };

@@ -1,4 +1,4 @@
-import { Form, Button } from 'antd';
+import { Form, Button, Divider } from 'antd';
 import React from 'react';
 import ClientFamilyInfo from './IntakeForms/ClientFamilyInfo';
 //NOTE: Inline Styles added temporarily.
@@ -34,7 +34,7 @@ const ClientIntakeForm = () => {
     >
       <h1 style={{ textAlign: 'center' }}>Intake Form</h1>
       <ClientFamilyInfo />
-
+      <Divider />
       <div style={buttonSection}>
         <Form.Item>
           <Button style={prime} htmlType="submit" type="primary">
