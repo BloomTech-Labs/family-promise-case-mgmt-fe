@@ -116,7 +116,6 @@ const ClientFamilyInfo = () => {
               <Select.Option value="Lesbian" />
               <Select.Option value="Heterosexual/Straight" />
               <Select.Option value="Pansexual" />
-              <Select.Option value="Pansexual" />
               <Select.Option value="Queer" />
               <Select.Option value="Preferred Not to Answer" />
               <Select.Option value="Other" />

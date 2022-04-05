@@ -23,6 +23,7 @@ const ClientIntakeForm = () => {
   //onFinish is AntDs version on onSubmit;
   const onFinish = values => {
     console.log('Form Values: ', values);
+    form.resetFields();
   };
   return (
     <Form
