@@ -92,11 +92,11 @@ const AdultFamilyMember = () => {
             </Select>
           </Form.Item>
 
-          <Form.Item label="Other" name="adultOther" intialValue="">
+          <Form.Item label="Other" name="adultOther" initialValue="">
             <TextArea style={inputStyles} />
           </Form.Item>
 
-          <Form.Item label="Veteran?" name="adultIsVeteran" initialValue="">
+          <Form.Item label="Veteran?" name="isAdultVeteran" initialValue="">
             <Radio.Group>
               <Radio value={true}>Yes</Radio>
               <Radio value={false}>No</Radio>
@@ -104,8 +104,8 @@ const AdultFamilyMember = () => {
           </Form.Item>
           <Form.Item
             label="Does Family Member have Documented Disabilities?"
-            name="adultIsDisabled"
-            intialValue=""
+            name="isAdultDisabled"
+            initialValue=""
           >
             <Radio.Group>
               <Radio value={true}>Yes</Radio>
@@ -116,7 +116,7 @@ const AdultFamilyMember = () => {
           <Form.Item
             label="If yes what disablities?"
             name="adultDisabilities"
-            intialValue=""
+            initialValue=""
           >
             <TextArea placeholder="Describe Disabilities" style={inputStyles} />
           </Form.Item>
@@ -127,7 +127,7 @@ const AdultFamilyMember = () => {
             <Input placeholder="Last Name" style={inputStyles} />
           </Form.Item>
 
-          <Form.Item label="DOB" name="adultDOB" intialValue="">
+          <Form.Item label="DOB" name="adultDOB" initialValue="">
             <DatePicker format="MM-DD-YYYY" />
           </Form.Item>
 
@@ -157,7 +157,7 @@ const AdultFamilyMember = () => {
           <Form.Item
             label="Self-Describe:"
             name="adultSelfDescribe"
-            intialValue=""
+            initialValue=""
           >
             <TextArea style={inputStyles} />
           </Form.Item>
