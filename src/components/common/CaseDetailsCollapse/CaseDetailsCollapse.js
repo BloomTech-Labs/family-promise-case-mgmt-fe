@@ -6,9 +6,13 @@ import { HouseholdInformationForm } from '../CaseDetailsForms/HouseholdInformati
 import { initialFormValues, Notes } from '../CaseDetailsForms/Notes';
 import SingleNote from '../CaseDetailsForms/SingleNote';
 
+// test case for redux
+import { connect } from 'react-redux';
+import { logSuccess } from '../../../state/actions/caseDetailsActions';
+
 const { Panel } = Collapse;
 
-const CaseDetailsCollapse = () => {
+const CaseDetailsCollapse = props => {
   // logs which panels are currently open, remove console.log in production
   function callback(key) {
     console.log(key);
@@ -27,6 +31,8 @@ const CaseDetailsCollapse = () => {
         event.stopPropagation();
         // logic to add new note here
         console.log('add new note triggered');
+        // redux test case
+        props.logSuccess('Redux is working!!!');
       }}
     >
       Add Note
@@ -91,4 +97,10 @@ const CaseDetailsCollapse = () => {
   );
 };
 
-export default CaseDetailsCollapse;
+const mapStateToProps = state => {
+  return {
+    testMessage: state.caseDetails.testMessage,
+  };
+};
+
+export default connect(mapStateToProps, { logSuccess })(CaseDetailsCollapse);

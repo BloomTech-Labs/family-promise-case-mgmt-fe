@@ -4,6 +4,7 @@ const intialState = {
   id: 1,
   name: 'test',
   status: 'active',
+  testMessage: '',
 };
 
 export const reducer = (state = intialState, action) => {
@@ -11,6 +12,12 @@ export const reducer = (state = intialState, action) => {
     case caseDetails.GET_CASE_DETAILS:
       return {
         ...state,
+      };
+    // test case
+    case caseDetails.LOG_SUCCESS:
+      return {
+        ...state,
+        testMessage: action.payload,
       };
     default:
       return state;
