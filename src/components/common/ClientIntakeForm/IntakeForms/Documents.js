@@ -13,21 +13,16 @@ const Documents = () => {
     marginRight: '30px',
   };
 
-  const formStyles = {
-    display: 'flex',
-    justifyContent: 'center',
-  };
-
   const checkboxStyles = {
     display: 'flex',
     flexDirection: 'column',
     flexWrap: 'wrap',
   };
 
-  const spreadOut = {
-    display: 'flex',
-    justifyContent: 'space-between',
-    flexWrap: 'wrap',
+  const grid = {
+    display: 'grid',
+    gridTemplateColumns: '1fr 1fr 1fr 1fr',
+    margin: '0px 40px',
   };
 
   const documentsOptionsA = [
@@ -86,37 +81,26 @@ const Documents = () => {
     <div>
       <h2 style={subsectionHeader}>Documents</h2>
 
-      <div style={formStyles}>
-        <section style={spreadOut}>
-          <Form.Item label="Adults in family have:" style={marginRight}>
-            <Checkbox.Group
-              options={documentsOptionsA}
-              style={checkboxStyles}
-            />
-          </Form.Item>
-          <Form.Item label="(If Applicable)" style={marginRight}>
-            <Checkbox.Group options={childrenOptions} style={checkboxStyles} />
-          </Form.Item>
-          <Form.Item
-            label="Would you like to receive information about:"
-            style={marginRight}
-          >
-            <Checkbox.Group
-              options={assistanceOptions}
-              style={checkboxStyles}
-            />
-          </Form.Item>
-          <Form.Item
-            label="Would you like to receive text updates about:"
-            style={marginRight}
-          >
-            <Checkbox.Group
-              options={textUpdateOptions}
-              style={checkboxStyles}
-            />
-          </Form.Item>
-        </section>
-      </div>
+      <section style={grid}>
+        <Form.Item label="Adults in family have:" style={marginRight}>
+          <Checkbox.Group options={documentsOptionsA} style={checkboxStyles} />
+        </Form.Item>
+        <Form.Item label="(If Applicable)" style={marginRight}>
+          <Checkbox.Group options={childrenOptions} style={checkboxStyles} />
+        </Form.Item>
+        <Form.Item
+          label="Would you like to receive information about:"
+          style={marginRight}
+        >
+          <Checkbox.Group options={assistanceOptions} style={checkboxStyles} />
+        </Form.Item>
+        <Form.Item
+          label="Would you like to receive text updates about:"
+          style={marginRight}
+        >
+          <Checkbox.Group options={textUpdateOptions} style={checkboxStyles} />
+        </Form.Item>
+      </section>
     </div>
   );
 };

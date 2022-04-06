@@ -14,6 +14,7 @@ const EmploymentHistory = () => {
     justifyContent: 'space-around',
     minWidth: '400px',
     flexWrap: 'wrap',
+    marginLeft: '40px',
   };
 
   const { TextArea } = Input;
@@ -46,12 +47,18 @@ const EmploymentHistory = () => {
     { label: 'Truck Driving', value: 'truckDriving' },
   ];
 
+  const grid = {
+    display: 'grid',
+    gridTemplateColumns: '1fr 1fr 1fr',
+    margin: '0px 40px',
+  };
+
   return (
     <div>
       <h2 style={subsectionHeader}>Employment History</h2>
 
       <div>
-        <section style={formSectionStyles}>
+        <section style={grid}>
           <Form.Item label="Employment History">
             <Input
               placeholder="Employment History THIS NEEDS UPDATING"
@@ -71,20 +78,20 @@ const EmploymentHistory = () => {
               <Radio value={'no'}>No</Radio>
             </Radio.Group>
           </Form.Item>
-          <Form.Item label="Skills / Certifications?">
-            <Radio.Group>
-              <Radio value={true}>Yes</Radio>
-              <Radio value={false}>No</Radio>
-            </Radio.Group>
-          </Form.Item>
-          <Form.Item label="If Yes, what are they?">
-            <TextArea
-              placeholder="List Skills and Certifications"
-              style={inputStyles}
-            />
-          </Form.Item>
-        </section>
-        <section style={sectionRight}>
+          <section>
+            <Form.Item label="Skills / Certifications?">
+              <Radio.Group>
+                <Radio value={true}>Yes</Radio>
+                <Radio value={false}>No</Radio>
+              </Radio.Group>
+            </Form.Item>
+            <Form.Item label="If Yes, what are they?">
+              <TextArea
+                placeholder="List Skills and Certifications"
+                style={inputStyles}
+              />
+            </Form.Item>
+          </section>
           <Form.Item label="Interested in working in:">
             <Checkbox.Group options={workOptions} style={checkboxStyles} />
           </Form.Item>

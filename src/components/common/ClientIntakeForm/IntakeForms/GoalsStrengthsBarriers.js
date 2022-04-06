@@ -24,6 +24,25 @@ const GoalsStrengthsBarriers = () => {
 
   const buttonStyle = {
     width: '100px',
+    marginLeft: '40px',
+    backgroundColor: '#007FD3',
+    border: 'none',
+    color: '#fff',
+  };
+
+  const borderStyled = {
+    width: '20rem',
+    border: '1px solid black',
+  };
+
+  const grid = {
+    display: 'grid',
+    gridTemplateColumns: '1fr 1fr 1fr',
+    margin: '0px 40px',
+  };
+
+  const goalsAdded = {
+    marginLeft: '40px',
   };
 
   return (
@@ -31,29 +50,29 @@ const GoalsStrengthsBarriers = () => {
       <h2 style={subsectionHeader}>Goals, Strengths, and Barriers</h2>
 
       <div>
-        <section style={formSectionStyles}>
+        <section style={grid}>
           <Form.Item label="Area:">
-            <Input placeholder="Housing" />
+            <Input placeholder="Housing" style={borderStyled} />
           </Form.Item>
           <Form.Item label="Target Date">
-            <DatePicker format="MM/DD/YYYY" />
+            <DatePicker format="MM/DD/YYYY" style={borderStyled} />
           </Form.Item>
           <Form.Item label="Steps:">
-            <TextArea placeholder="Enter steps here" />
+            <TextArea placeholder="Enter steps here" style={borderStyled} />
           </Form.Item>
           <Form.Item label="CM Task">
-            <Input placeholder="Task Here" />
+            <Input placeholder="Task Here" style={borderStyled} />
           </Form.Item>
           <Form.Item label="Date Achieved:">
-            <DatePicker format="MM/DD/YYYY" />
+            <DatePicker format="MM/DD/YYYY" style={borderStyled} />
           </Form.Item>
           <Form.Item label="Notes">
-            <TextArea placeholder="Notes" />
+            <TextArea placeholder="Notes" style={borderStyled} />
           </Form.Item>
         </section>
-        <Button style={buttonStyle}>+ Goal (THIS NEEDS TO BE FIXED)</Button>
+        <Button style={buttonStyle}>+ Goal</Button>
         <section style={sectionHeading}>
-          <h3>Goals:</h3>
+          <h3 style={goalsAdded}>Goals:</h3>
         </section>
         <Divider />
         <section style={formSectionStyles}>

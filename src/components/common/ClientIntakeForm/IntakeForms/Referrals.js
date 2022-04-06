@@ -14,19 +14,23 @@ const Referrals = () => {
     border: '1px solid black',
   };
 
-  const marginRight = {
-    marginRight: '30px',
-  };
-
   const grid = {
     display: 'grid',
     gridTemplateColumns: '1fr 1fr 1fr',
+    margin: '0px 40px',
   };
 
   const prime = {
     backgroundColor: '#007FD3',
-    margin: '0px',
+    marginLeft: '40px',
     border: 'none',
+    width: '110px',
+    textAlign: 'center',
+  };
+
+  const referralsAdded = {
+    marginTop: '10px',
+    marginLeft: '40px',
   };
 
   return (
@@ -35,48 +39,50 @@ const Referrals = () => {
 
       <div>
         <section style={grid}>
-          <Form.Item label="Name:" style={marginRight}>
+          <Form.Item label="Name:">
             <Input placeholder="John Doe" style={borderStyled} />
           </Form.Item>
-          <Form.Item label="First Meeting" style={marginRight}>
+          <Form.Item label="First Meeting">
             <DatePicker
               format="MM/DD/YYYY"
               style={{ border: '1px solid black' }}
             />
           </Form.Item>
-          <Form.Item label="Address(If Available):" style={marginRight}>
+          <Form.Item label="Address(If Available):">
             <Input placeholder="123 Anywhere Street" style={borderStyled} />
           </Form.Item>
-          <Form.Item label="Apt. #:" style={marginRight}>
+          <Form.Item label="Apt. #:">
             <Input placeholder="Apt #" style={borderStyled} />
           </Form.Item>
-          <Form.Item label="City:" style={marginRight}>
+          <Form.Item label="City:">
             <Input placeholder="City Name" style={borderStyled} />
           </Form.Item>
-          <Form.Item label="State:" style={marginRight}>
+          <Form.Item label="State:">
             <Input placeholder="State Abbrv." style={borderStyled} />
           </Form.Item>
-          <Form.Item label="Zip:" style={marginRight}>
+          <Form.Item label="Zip:">
             <Input placeholder="Zip Code" style={borderStyled} />
           </Form.Item>
-          <Form.Item label="Email:" style={marginRight}>
+          <Form.Item label="Email:">
             <Input placeholder="user@email.com" style={borderStyled} />
           </Form.Item>
-          <Form.Item label="Cell:" style={marginRight}>
+          <Form.Item label="Cell:">
             <Input placeholder="555-555-5555" style={borderStyled} />
           </Form.Item>
-          <Form.Item label="Work:" style={marginRight}>
+          <Form.Item label="Work:">
             <Input placeholder="555-555-5555" style={borderStyled} />
           </Form.Item>
-          <Form.Item label="Home:" style={marginRight}>
+          <Form.Item label="Home:">
             <Input placeholder="555-555-5555" style={borderStyled} />
           </Form.Item>
         </section>
 
         <Button style={prime} type="primary">
-          Add Referral Button (THIS NEEDS TO BE FIXED)
+          + Referral
         </Button>
-        <h3>Referrals: (referrals added will show up here...)</h3>
+        <h3 style={referralsAdded}>
+          Referrals: (referrals added will show up here...)
+        </h3>
       </div>
       <Divider />
     </div>

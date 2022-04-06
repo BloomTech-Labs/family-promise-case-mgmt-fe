@@ -9,29 +9,6 @@ const Finances = () => {
     padding: '20px',
   };
 
-  const inputStyles = {
-    width: '20rem',
-  };
-
-  const formStyles = {
-    display: 'flex',
-    justifyContent: 'center',
-  };
-
-  const sectionLeft = {
-    margin: '20px',
-  };
-
-  const sectionRight = {
-    margin: '20px',
-  };
-
-  const checkboxStyles = {
-    display: 'flex',
-    flexDirection: 'column',
-    flexWrap: 'wrap',
-  };
-
   const financeHistoryOptions = [
     { label: 'Eviction', value: 'eviction' },
     { label: 'Landlord Debt', value: 'landlordDebt' },
@@ -47,76 +24,61 @@ const Finances = () => {
     { label: 'Child Support', value: 'childSupport' },
   ];
 
+  const borderStyled = {
+    width: '5rem',
+    border: '1px solid black',
+  };
+
+  const grid = {
+    display: 'grid',
+    gridTemplateColumns: '1fr 1fr 1fr 1fr',
+    margin: '0px 40px',
+  };
+
+  const containerStyles = {
+    display: 'flex',
+    flexWrap: 'wrap',
+    justifyContent: 'start',
+    marginLeft: '40px',
+  };
+
   return (
-    <div>
+    <>
       <h2 style={subsectionHeader}>Finances</h2>
 
-      <div style={formStyles}>
-        <section style={sectionLeft}>
-          <Form.Item label="Family have history of:">
-            <Checkbox.Group
-              options={financeHistoryOptions}
-              style={checkboxStyles}
-            />
-          </Form.Item>
-
-          <Form.Item label="Types of Debt:">
-            <Checkbox
-              value="studentLoan"
-              style={{
-                lineHeight: '32px',
-              }}
-            >
-              Student Loan
-            </Checkbox>
+      <section style={containerStyles}>
+        <Form.Item label="Family have history of:">
+          <Checkbox.Group options={financeHistoryOptions} />
+        </Form.Item>
+      </section>
+      <section style={containerStyles}>
+        <Form.Item label="Types of Debt:" style={{ fontWeight: 'bold' }}>
+          <div style={containerStyles}>
+            <Checkbox value="studentLoan">Student Loan</Checkbox>
             <Form.Item label="Amount">
-              <Input placeholder="$0" style={inputStyles} />
+              <Input placeholder="$0" style={borderStyled} />
             </Form.Item>
-            <Checkbox
-              value="creditCard"
-              style={{
-                lineHeight: '32px',
-              }}
-            >
-              Credit Card
-            </Checkbox>
+            <Checkbox value="creditCard">Credit Card</Checkbox>
             <Form.Item label="Amount">
-              <Input placeholder="$0" style={inputStyles} />
+              <Input placeholder="$0" style={borderStyled} />
             </Form.Item>
-            <Checkbox
-              value="medicalBills"
-              style={{
-                lineHeight: '32px',
-              }}
-            >
-              Medical Bills
-            </Checkbox>
+            <Checkbox value="medicalBills">Medical Bills</Checkbox>
             <Form.Item label="Amount">
-              <Input placeholder="$0" style={inputStyles} />
+              <Input placeholder="$0" style={borderStyled} />
             </Form.Item>
-            <Checkbox
-              value="autoLoan"
-              style={{
-                lineHeight: '32px',
-              }}
-            >
-              Auto Loan
-            </Checkbox>
+            <Checkbox value="autoLoan">Auto Loan</Checkbox>
             <Form.Item label="Amount">
-              <Input placeholder="$0" style={inputStyles} />
+              <Input placeholder="$0" style={borderStyled} />
             </Form.Item>
-          </Form.Item>
-        </section>
-        <section style={sectionRight}>
-          <Form.Item label="Source of Income:">
-            <Checkbox.Group
-              options={incomeSourceOptions}
-              style={checkboxStyles}
-            />
-          </Form.Item>
-        </section>
-      </div>
-    </div>
+          </div>
+        </Form.Item>
+      </section>
+      <section style={containerStyles}>
+        <Form.Item label="Source of Income:">
+          <Checkbox.Group options={incomeSourceOptions} style={grid} />
+        </Form.Item>
+      </section>
+    </>
   );
 };
 
