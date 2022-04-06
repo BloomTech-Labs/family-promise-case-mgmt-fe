@@ -1,10 +1,20 @@
-import { Form, Button, Divider } from 'antd';
+import { Form, Button, DatePicker } from 'antd';
 import React from 'react';
 import ClientFamilyInfo from './IntakeForms/ClientFamilyInfo';
 //NOTE: Inline Styles added temporarily.
+const sectionContainer = {
+  width: '80%',
+  display: 'flex',
+  flexDirection: 'column',
+  justifyContent: 'center',
+  alignContent: 'center',
+  margin: 'auto',
+};
+
 const buttonSection = {
   display: 'flex',
   justifyContent: 'center',
+  marginTop: '50px',
 };
 
 const btn = {
@@ -32,10 +42,19 @@ const ClientIntakeForm = () => {
       onFinish={onFinish}
       onSubmit={e => e.preventDefault()}
       layout="vertical"
+      style={sectionContainer}
     >
       <h1 style={{ textAlign: 'center' }}>Intake Form</h1>
+      <Form.Item
+        label="Inital Intake Date"
+        style={{ marginBottom: '50px' }}
+        name="intakeDate"
+        initialValue=""
+      >
+        <DatePicker format="MM/DD/YYYY" />
+      </Form.Item>
       <ClientFamilyInfo />
-      <Divider />
+
       <div style={buttonSection}>
         <Form.Item>
           <Button style={prime} htmlType="submit" type="primary">

@@ -10,14 +10,20 @@ import {
   Button,
 } from 'antd';
 import { PlusOutlined } from '@ant-design/icons';
+import AdultFamilyMember from './FamilyMembers/AdultFamilyMember';
+import ChildFamilyMember from './FamilyMembers/ChildFamilyMember';
 
 const ClientFamilyInfo = () => {
   //Inline styles added temporarily
+
+  const subsectionContainer = {
+    border: 'solid 1px #6e6e6e',
+  };
   const subsectionHeader = {
     textAlign: 'center',
     marginBottom: '50px',
-    backgroundColor: '#101010',
-    color: '#9e9e9e',
+    backgroundColor: 'whiteSmoke',
+    color: '#101010',
     padding: '20px',
   };
   const inputStyles = {
@@ -61,7 +67,7 @@ const ClientFamilyInfo = () => {
     { label: 'Substance Dependence', value: 'substanceDependence' },
   ];
   return (
-    <div>
+    <div style={subsectionContainer}>
       {/* 
         Note:
         The Form's states and props are encapsulated in the form component using antd's Form or Form.Item. Only a name prop needs to be provided. The data is stored in an object with each form item being a key-value pair. 
@@ -69,14 +75,6 @@ const ClientFamilyInfo = () => {
         The initial value for each input can be stored within the form component with the 'initialValue' prop. 
       
       */}
-      <Form.Item
-        label="Inital Intake Date"
-        style={{ margin: '20px 110px' }}
-        name="intakeDate"
-        initialValue=""
-      >
-        <DatePicker format="MM/DD/YYYY" />
-      </Form.Item>
 
       <h2 style={subsectionHeader}>Client/Family Information</h2>
 
@@ -247,10 +245,12 @@ const ClientFamilyInfo = () => {
       <Divider style={{ marginBottom: '50px' }}>Family Members</Divider>
       {/* The button below should be used to add a new family member subform to the ClinentFamilyInfo component. This  subform will be an adult or child family member, see the family members folder for each subform component. See the client intake wireframe for an example of how adding a family member should work.  */}
       <Form.Item>
-        <Button className="btn-long " icon={<PlusOutlined />}>
+        <Button style={{ margin: '0 20px' }} icon={<PlusOutlined />}>
           Add Family Member
         </Button>
       </Form.Item>
+      <AdultFamilyMember />
+      <ChildFamilyMember />
     </div>
   );
 };

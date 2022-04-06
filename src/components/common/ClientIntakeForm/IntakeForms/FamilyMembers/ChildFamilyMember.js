@@ -1,5 +1,13 @@
 import React from 'react';
-import { DatePicker, Form, Input, Select, Radio, Checkbox } from 'antd';
+import {
+  DatePicker,
+  Form,
+  Input,
+  Select,
+  Radio,
+  Checkbox,
+  Divider,
+} from 'antd';
 
 const ChildFamilyMember = () => {
   const inputStyles = {
@@ -23,12 +31,6 @@ const ChildFamilyMember = () => {
     margin: '20px',
   };
 
-  const shortInputContainer = {
-    display: 'flex',
-    justifyContent: 'space-between',
-    margin: '0 10px',
-  };
-
   const checkboxStyles = {
     display: 'flex',
     flexDirection: 'column',
@@ -44,7 +46,9 @@ const ChildFamilyMember = () => {
   ];
   return (
     <div>
-      <h3 style={{ textAlign: 'center' }}>Child</h3>
+      <Divider orientation="left" orientationMargin={'20px'}>
+        Child
+      </Divider>
       <div style={formStyles}>
         <section style={sectionLeft}>
           <Form.Item label="First Name">
