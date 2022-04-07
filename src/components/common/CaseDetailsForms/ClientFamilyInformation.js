@@ -11,21 +11,21 @@ import {
 
 // Initial Empty Values for form
 const initialFormValues = {
-  first_name: '',
-  last_name: '',
-  head_of_household: '',
-  family_members: '',
+  firstName: '',
+  lastName: '',
+  headOfHousehold: '',
+  familyMembers: '',
   ssn: null,
   ethnicity: '',
   race: '',
   gender: '',
-  self_describe: '',
-  sexual_orientation: '',
+  selfDescribe: '',
+  sexualOrientation: '',
   other: '',
   veteran: '',
   pregnant: '',
-  family_member: '',
-  homeless_history: '',
+  familyMember: '',
+  homelessHistory: '',
   employment: '',
 };
 
