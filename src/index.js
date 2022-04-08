@@ -20,7 +20,7 @@ import { LoginPage } from './components/pages/Login';
 import { config } from './utils/oktaConfig';
 import { Cases } from './components/pages/Cases';
 import { CaseView } from './components/pages/CaseView';
-import { ClientIntake } from './components/common/ClientIntakeForm';
+import { ClientIntakeForm } from './components/common/ClientIntakeForm';
 import { LayoutTemplate } from './components/pages/LayoutTemplate';
 import { Notes } from './components/common/CaseDetailsForms/Notes';
 import { CaseDetails } from './components/pages/CaseDetails';
@@ -58,7 +58,7 @@ function App() {
         <SecureRoute path="/cases/:caseID" component={CaseView} />
         <SecureRoute path="/case-details" component={CaseDetails} />
         <SecureRoute path="/cases" component={Cases} />
-        <SecureRoute path="/client-intake-form" component={ClientIntake} />
+        <SecureRoute path="/client-intake-form" component={ClientIntakeForm} />
         <SecureRoute path="/profile-list" component={ProfileListPage} />
         <SecureRoute path="/example-list" component={ExampleListPage} />
         <SecureRoute path="/layouttemplate" component={LayoutTemplate} />
