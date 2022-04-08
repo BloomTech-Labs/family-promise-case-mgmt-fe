@@ -19,8 +19,8 @@ const CaseDetailsCollapse = () => {
     <Button
       style={{
         color: '#CDCDCD',
-        background: '#9E5291',
-        borderColor: '#9E5291',
+        background: '#007fd4',
+        borderColor: '#CDCDCD',
       }}
       onClick={event => {
         // prevents panel collapse when clicked
