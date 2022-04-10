@@ -8,22 +8,22 @@ import {
   Divider,
   Checkbox,
   Button,
-  Space,
 } from 'antd';
-import { PlusOutlined, DeleteOutlined } from '@ant-design/icons';
+import { PlusOutlined } from '@ant-design/icons';
 import AdultFamilyMember from './FamilyMembers/AdultFamilyMember';
+import ChildFamilyMember from './FamilyMembers/ChildFamilyMember';
 
 const ClientFamilyInfo = () => {
-  const [form] = Form.useForm();
+  //Inline styles added temporarily
 
-  const onFinish = values => {
-    console.log('Form Values: ', values);
+  const subsectionContainer = {
+    border: 'solid 1px #6e6e6e',
   };
-
   const subsectionHeader = {
     textAlign: 'center',
     marginBottom: '50px',
-    backgroundColor: '#706f6f',
+    backgroundColor: 'whiteSmoke',
+    color: '#101010',
     padding: '20px',
   };
   const inputStyles = {
@@ -67,15 +67,14 @@ const ClientFamilyInfo = () => {
     { label: 'Substance Dependence', value: 'substanceDependence' },
   ];
   return (
-    <div>
-      <Form.Item
-        label="Inital Intake Date"
-        style={{ margin: '20px 110px' }}
-        name="intakeDate"
-        initialValue={''}
-      >
-        <DatePicker format="MM/DD/YYYY" />
-      </Form.Item>
+    <div style={subsectionContainer}>
+      {/* 
+        Note:
+        The Form's states and props are encapsulated in the form component using antd's Form or Form.Item. Only a name prop needs to be provided. The data is stored in an object with each form item being a key-value pair. 
+
+        The initial value for each input can be stored within the form component with the 'initialValue' prop. 
+      
+      */}
 
       <h2 style={subsectionHeader}>Client/Family Information</h2>
 
@@ -114,7 +113,6 @@ const ClientFamilyInfo = () => {
               <Select.Option value="Gay" />
               <Select.Option value="Lesbian" />
               <Select.Option value="Heterosexual/Straight" />
-              <Select.Option value="Pansexual" />
               <Select.Option value="Pansexual" />
               <Select.Option value="Queer" />
               <Select.Option value="Preferred Not to Answer" />
@@ -218,16 +216,16 @@ const ClientFamilyInfo = () => {
 
       <Divider>Last Known Address</Divider>
       <div style={formStyles}>
-        <container style={sectionLeft}>
+        <section style={sectionLeft}>
           <Form.Item label="Address 1" name="address1" initialValue="">
             <Input placeholder="123 Somewhere Rd." style={inputStyles} />
           </Form.Item>
           <Form.Item label="City" name="city" initialValue="">
             <Input placeholder="City Name" style={inputStyles} />
           </Form.Item>
-        </container>
+        </section>
 
-        <container style={sectionRight}>
+        <section style={sectionRight}>
           <Form.Item label="Address 2" name="address2" initialValue="">
             <Input placeholder="Apt. #" style={inputStyles} />
           </Form.Item>
@@ -241,37 +239,18 @@ const ClientFamilyInfo = () => {
               <Input placeholder="Zip Code" style={inputStylesShort} />
             </Form.Item>
           </section>
-        </container>
+        </section>
       </div>
 
       <Divider style={{ marginBottom: '50px' }}>Family Members</Divider>
-      <Form.List name="familyMembers">
-        {(fields, { add, remove }) => (
-          <div>
-            {fields.map(({ key, name, ...restField }) => (
-              <Space key={key} style={formStyles}>
-                <Form.Item {...restField} name={[name, 'adult']}>
-                  <AdultFamilyMember />
-                </Form.Item>
-                <DeleteOutlined
-                  style={{ position: 'relative', bottom: '365px' }}
-                  onClick={() => remove(name)}
-                />
-              </Space>
-            ))}
-            <Form.Item>
-              <Button
-                className="btn-long "
-                onClick={() => add()}
-                block
-                icon={<PlusOutlined />}
-              >
-                Add Family Member
-              </Button>
-            </Form.Item>
-          </div>
-        )}
-      </Form.List>
+      {/* The button below should be used to add a new family member subform to the ClinentFamilyInfo component. This  subform will be an adult or child family member, see the family members folder for each subform component. See the client intake wireframe for an example of how adding a family member should work.  */}
+      <Form.Item>
+        <Button style={{ margin: '0 20px' }} icon={<PlusOutlined />}>
+          Add Family Member
+        </Button>
+      </Form.Item>
+      <AdultFamilyMember />
+      <ChildFamilyMember />
     </div>
   );
 };

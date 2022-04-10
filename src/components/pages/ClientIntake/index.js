@@ -1,1 +1,1 @@
-export { default as ClientIntakeForm } from './ClientIntakeContainer';
+export { default as ClientIntakeForm } from './ClientIntakeForm';

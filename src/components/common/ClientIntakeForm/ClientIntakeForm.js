@@ -1,17 +1,20 @@
-import { Form, Button } from 'antd';
+import { Form, Button, DatePicker } from 'antd';
 import React from 'react';
 import ClientFamilyInfo from './IntakeForms/ClientFamilyInfo';
-import GoalsStrengthsBarriers from './IntakeForms/GoalsStrengthsBarriers';
-import Education from './IntakeForms/Education';
-import EmploymentHistory from './IntakeForms/EmploymentHistory';
-import Finances from './IntakeForms/Finances';
-import Insurance from './IntakeForms/Insurance';
-import Documents from './IntakeForms/Documents';
-import Referrals from './IntakeForms/Referrals';
+//NOTE: Inline Styles added temporarily.
+const sectionContainer = {
+  width: '80%',
+  display: 'flex',
+  flexDirection: 'column',
+  justifyContent: 'center',
+  alignContent: 'center',
+  margin: 'auto',
+};
 
 const buttonSection = {
   display: 'flex',
   justifyContent: 'center',
+  marginTop: '50px',
 };
 
 const btn = {
@@ -27,20 +30,30 @@ const prime = {
 const ClientIntakeForm = () => {
   const [form] = Form.useForm();
 
+  //onFinish is AntDs version on onSubmit;
   const onFinish = values => {
     console.log('Form Values: ', values);
+    form.resetFields();
   };
   return (
-    <Form form={form} onFinish={onFinish} layout="vertical">
-      <h2 style={{ textAlign: 'center' }}>Intake Form</h2>
+    <Form
+      name="clientIntakeForm"
+      form={form}
+      onFinish={onFinish}
+      onSubmit={e => e.preventDefault()}
+      layout="vertical"
+      style={sectionContainer}
+    >
+      <h1 style={{ textAlign: 'center' }}>Intake Form</h1>
+      <Form.Item
+        label="Inital Intake Date"
+        style={{ marginBottom: '50px' }}
+        name="intakeDate"
+        initialValue=""
+      >
+        <DatePicker format="MM/DD/YYYY" />
+      </Form.Item>
       <ClientFamilyInfo />
-      <GoalsStrengthsBarriers />
-      <Education />
-      <EmploymentHistory />
-      <Finances />
-      <Insurance />
-      <Documents />
-      <Referrals />
 
       <div style={buttonSection}>
         <Form.Item>

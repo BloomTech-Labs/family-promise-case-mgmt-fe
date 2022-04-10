@@ -1,5 +1,13 @@
 import React from 'react';
-import { DatePicker, Form, Input, Select, Radio, Checkbox } from 'antd';
+import {
+  DatePicker,
+  Form,
+  Input,
+  Select,
+  Radio,
+  Checkbox,
+  Divider,
+} from 'antd';
 
 const ChildFamilyMember = () => {
   const inputStyles = {
@@ -23,12 +31,6 @@ const ChildFamilyMember = () => {
     margin: '20px',
   };
 
-  const shortInputContainer = {
-    display: 'flex',
-    justifyContent: 'space-between',
-    margin: '0 10px',
-  };
-
   const checkboxStyles = {
     display: 'flex',
     flexDirection: 'column',
@@ -44,22 +46,28 @@ const ChildFamilyMember = () => {
   ];
   return (
     <div>
-      <h3 style={{ textAlign: 'center' }}>Child</h3>
+      <Divider orientation="left" orientationMargin={'20px'}>
+        Child
+      </Divider>
       <div style={formStyles}>
         <section style={sectionLeft}>
-          <Form.Item label="First Name">
+          <Form.Item label="First Name" name="childFirstName" initialValue="">
             <Input placeholder="First Name" style={inputStyles} />
           </Form.Item>
 
-          <Form.Item label="Relation to HoH">
+          <Form.Item
+            label="Relation to HoH"
+            name="childRelationHoh"
+            initialValue=""
+          >
             <Input placeholder="Relation" style={inputStyles} />
           </Form.Item>
 
-          <Form.Item label="SSN">
+          <Form.Item label="SSN" name="childSSN" initialValue="">
             <Input placeholder="XXX-XX-XXXX" style={inputStyles} />
           </Form.Item>
 
-          <Form.Item label="Race">
+          <Form.Item label="Race" name="childRace" initialValue="">
             <Select style={inputStyles} placeholder="-- Select --">
               <Select.Option value="American Indian or Alaska Native" />
               <Select.Option value="Asian" />
@@ -69,7 +77,11 @@ const ChildFamilyMember = () => {
             </Select>
           </Form.Item>
 
-          <Form.Item label="Sexual Orientation">
+          <Form.Item
+            label="Sexual Orientation"
+            name="childSexualOrientation"
+            initialValue=""
+          >
             <Select style={inputStyles} placeholder="-- Select --">
               <Select.Option value="Asexual" />
               <Select.Option value="Bisexual" />
@@ -77,46 +89,61 @@ const ChildFamilyMember = () => {
               <Select.Option value="Lesbian" />
               <Select.Option value="Heterosexual/Straight" />
               <Select.Option value="Pansexual" />
-              <Select.Option value="Pansexual" />
               <Select.Option value="Queer" />
               <Select.Option value="Preferred Not to Answer" />
               <Select.Option value="Other" />
             </Select>
           </Form.Item>
-          <Form.Item label="Other">
+          <Form.Item label="Other" name="childOther" initialValue="">
             <TextArea style={inputStyles} />
           </Form.Item>
 
-          <Form.Item label="Last School Attended">
+          <Form.Item
+            label="Last School Attended"
+            name="childLastSchool"
+            initialValue=""
+          >
             <Input placeholder="School Name" style={inputStyles} />
           </Form.Item>
 
-          <Form.Item label="Last Grade Completed">
+          <Form.Item
+            label="Last Grade Completed"
+            name="childLastGrade"
+            initialValue=""
+          >
             <Input placeholder="Grade #" style={inputStylesShort} />
           </Form.Item>
 
-          <Form.Item label="Does Family Member have Documented Disabilities?">
+          <Form.Item
+            label="Does Family Member have Documented Disabilities?"
+            name="isChildDisabled"
+            initialValue=""
+          >
             <Radio.Group>
               <Radio value={true}>Yes</Radio>
               <Radio value={false}>No</Radio>
             </Radio.Group>
           </Form.Item>
 
-          <Form.Item label="If yes what disablities?">
+          <Form.Item
+            label="If yes what disablities?"
+            name="childDisabilities"
+            initialValue=""
+          >
             <TextArea placeholder="Describe Disabilities" style={inputStyles} />
           </Form.Item>
         </section>
 
         <section style={sectionRight}>
-          <Form.Item label="Last Name">
+          <Form.Item label="Last Name" name="childLastName" initialValue="">
             <Input placeholder="Last Name" style={inputStyles} />
           </Form.Item>
 
-          <Form.Item label="DOB">
+          <Form.Item label="DOB" name="childDOB" initialValue="">
             <DatePicker format="MM-DD-YYYY" />
           </Form.Item>
 
-          <Form.Item label="Ethnicity">
+          <Form.Item label="Ethnicity" name="childEthnicity" initialValue="">
             <Select style={inputStyles} placeholder="-- Select --">
               <Select.Option value="American Indian or Alaska Native" />
               <Select.Option value="Asian" />
@@ -129,7 +156,7 @@ const ChildFamilyMember = () => {
             </Select>
           </Form.Item>
 
-          <Form.Item label="Gender">
+          <Form.Item label="Gender" name="childGender" initialValue="">
             <Select style={inputStyles} placeholder="-- Select --">
               <Select.Option value="Male" />
               <Select.Option value="Female" />
@@ -139,21 +166,33 @@ const ChildFamilyMember = () => {
               <Select.Option value="Prefer to Self-Describe" />
             </Select>
           </Form.Item>
-          <Form.Item label="Self-Describe:">
+          <Form.Item
+            label="Self-Describe:"
+            name="childSelfDescribe"
+            initialValue=""
+          >
             <TextArea style={inputStyles} />
           </Form.Item>
 
-          <Form.Item label="Pregnant?">
+          <Form.Item label="Pregnant?" name="isChildPregnant" initialValue="">
             <Radio.Group>
               <Radio value={true}>Yes</Radio>
               <Radio value={false}>No</Radio>
             </Radio.Group>
           </Form.Item>
-          <Form.Item label="If yes, when is due date?">
+          <Form.Item
+            label="If yes, when is due date?"
+            name="childDueDate"
+            initialValue=""
+          >
             <DatePicker format="MM-DD-YYYY" />
           </Form.Item>
 
-          <Form.Item label="Does Family Member have a history of:">
+          <Form.Item
+            label="Does Family Member have a history of:"
+            name="childHistory"
+            initialValue=""
+          >
             <Checkbox.Group options={historyOptions} style={checkboxStyles} />
           </Form.Item>
         </section>

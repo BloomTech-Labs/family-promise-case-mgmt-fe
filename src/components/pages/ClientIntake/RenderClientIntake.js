@@ -19,7 +19,7 @@ const RenderClientIntake = () => {
         <Content className="Content">
           <BreadCrumbs pathname={location.pathname} />
           <div className="Content__Container">
-            <Card className="Content__Container-Card">
+            <Card className="Content__Container">
               <ClientIntakeForm />
             </Card>
           </div>
