@@ -2,6 +2,12 @@ import React from 'react';
 import { Button, Collapse } from 'antd';
 import ClientFamilyInfoForm from '../CaseDetailsForms/ClientFamilyInformation';
 
+import Insurance from '../ClientIntakeForm/IntakeForms/Insurance';
+import GoalsStrBar from '../ClientIntakeForm/IntakeForms/GoalsStrengthsBarriers';
+import Documents from '../ClientIntakeForm/IntakeForms/Documents';
+import Finances from '../ClientIntakeForm/IntakeForms/Finances';
+import Employment from '../ClientIntakeForm/IntakeForms/EmploymentHistory';
+import Education from '../ClientIntakeForm/IntakeForms/Education';
 import { HouseholdInformationForm } from '../CaseDetailsForms/HouseholdInformationForm';
 import { initialFormValues, Notes } from '../CaseDetailsForms/Notes';
 import SingleNote from '../CaseDetailsForms/SingleNote';
@@ -63,28 +69,22 @@ const CaseDetailsCollapse = () => {
           <HouseholdInformationForm />
         </Panel>
         <Panel header="Education" key="education">
-          {/* insert Education Form here and delete p tag w/ dummy text */}
-          <p>{text}</p>
+          <Education />
         </Panel>
         <Panel header="Employment" key="employment">
-          {/* insert Employment Form here and delete p tag w/ dummy text */}
-          <p>{text}</p>
+          <Employment />
         </Panel>
         <Panel header="Finances" key="finances">
-          {/* insert Finances Form here and delete p tag w/ dummy text */}
-          <p>{text}</p>
+          <Finances />
         </Panel>
         <Panel header="Insurance" key="insurance">
-          {/* insert Insurance Form here and delete p tag w/ dummy text */}
-          <p>{text}</p>
+          <Insurance />
         </Panel>
         <Panel header="Documents" key="documents">
-          {/* insert Documents Form here and delete p tag w/ dummy text */}
-          <p>{text}</p>
+          <Documents />
         </Panel>
         <Panel header="Goals/Strengths/Obstacles" key="goalsStrengthsObstacles">
-          {/* insert Goals/Strengths/Obstacles Form here and delete p tag w/ dummy text */}
-          <p>{text}</p>
+          <GoalsStrBar />
         </Panel>
       </Collapse>
     </div>
