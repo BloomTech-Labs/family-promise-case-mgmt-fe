@@ -73,3 +73,158 @@
   font-size: 1.25rem;
 }
 
+//.ant-btn {
+// &-primary {
+//     margin: 1rem;
+//     color: #cdcdcd;
+//     border-color: #007fd4;
+//     &-notes {
+//       grid-row: 3;
+//       grid-column: 5;
+//       margin: 1rem;
+//     }
+//     &-noteDetails {
+//       width: 18vw;
+//     }
+//     &-noteFilter {
+//       margin: 0;
+//     }
+//   }
+// }
+
+// .SingleNote {
+//   &__Container {
+//     border-style: groove;
+//     background-color: #3f3f3f;
+//     color: #fcfcfc;
+//     margin: 0 auto 1rem;
+//     display: grid;
+//     grid-template-columns: repeat(5, 1fr);
+//     gap: 5px;
+//     grid-auto-flow: row dense;
+//     width: 50vw;
+//   }
+//   &__Picture {
+//     grid-row: 2;
+//     grid-column: 1;
+//     margin: auto;
+//   }
+//   &__NoteText {
+//     grid-row: 2;
+//     grid-column: 2 / span 4;
+//     padding-right: 1rem;
+//   }
+//   &__InfoStyle {
+//     margin: 0.5rem 0;
+//     grid-row: 1;
+//     grid-column: 3 / span 2;
+//     &__HeaderStyle {
+//       color: #fcfcfc;
+//     }
+//   }
+// }
+
+// .Notes {
+//   &__Container {
+//     margin: auto;
+//     &__SwitchPanel {
+//       margin: auto;
+//       display: flex;
+//       justify-content: center;
+//     }
+//   }
+//   &__ShowNotes {
+//     overflow-y: scroll;
+//     max-height: 35vh;
+//   }
+//   &__Filter {
+//     width: 10vw;
+//     margin: 1rem;
+//     color: #cdcdcd;
+//   }
+// }
+
+.HouseholdInformationDetails {
+  &__Container {
+    color: #ffffff;
+  }
+  &__Form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5px;
+    grid-auto-flow: row dense;
+    padding-top: 2rem;
+    width: 80%;
+    padding: 2rem;
+    margin: 0 12rem;
+    background: #3f3f3f;
+    color: #ffffff;
+    &__Circumstances {
+      grid-row: 1 / span 2;
+    }
+    &__SocialWorker {
+      grid-column: 2;
+    }
+    &__PrevLivSit {
+      grid-row: 2;
+      grid-column: 2;
+    }
+    &__Inputs {
+      width: 20rem;
+    }
+    &__h4 {
+      color: #cdcdcd;
+    }
+    &__p {
+      color: #cdcdcd;
+    }
+  }
+}
+
+.CaseDetailsLabel {
+  color: #ffffff;
+  &__Disabled {
+    color: #cdcdcd;
+  }
+}
+
+.ant-form-item-label {
+  color: #ffffff;
+}
+
+.ant-checkbox {
+  & + span {
+    color: #ffffff;
+  }
+  &-disabled + span {
+    color: #cdcdcd;
+  }
+  &-checked &-inner {
+    border-color: #007fd4 !important ;
+    background-color: #007fd4;
+  }
+  &-checked-disabled &-inner {
+    background-color: #007fd4;
+    border-color: #007fd4 !important;
+  }
+}
+.ant-radio {
+  &-wrapper {
+    color: #ffffff;
+  }
+  &-disabled + span {
+    color: #cdcdcd;
+  }
+}
+
+.ant-radio-checked .ant-radio-inner {
+  border-color: #007fd4 !important ;
+}
+
+.ant-radio-checked .ant-radio-inner:after {
+  background-color: #007fd4;
+}
+
+.ant-radio:hover .ant-radio-inner {
+  border-color: #007fd4;
+}

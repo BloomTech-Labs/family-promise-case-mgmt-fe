@@ -1,6 +1,12 @@
 import { Form, Checkbox, Input, InputNumber, Radio, Button } from 'antd';
 import React, { useState } from 'react';
 
+//              className={
+//     disabled === true
+//     ? 'CaseDetailsLabel__Disabled'
+//     : 'CaseDetailsLabel'
+// }
+
 const initialFormValues = {
   fleeingDomV: false,
   lackOfIncome: false,
@@ -44,7 +50,7 @@ const initialFormValues = {
 
 export const HouseholdInformationForm = props => {
   const [form] = Form.useForm();
-  const [disabled, setDisabled] = useState(false);
+  const [disabled, setDisabled] = useState(true);
 
   const onFinish = values => {
     const updatedHousehold = values;
@@ -55,43 +61,6 @@ export const HouseholdInformationForm = props => {
   const onFinishFailed = errorInfo => {
     console.log('Failed:', errorInfo);
   };
-
-  const style = {
-    display: 'grid',
-    gridTemplateColumns: 'repeat(2, 1fr)',
-    gap: '5px',
-    gridAutoFlow: 'row dense',
-    paddingTop: '2rem',
-    width: '80%',
-    padding: '2rem',
-    margin: '0 12rem ',
-    background: '#3f3f3f',
-    color: '#ffffff',
-  };
-
-  const grid = {
-    gridRow: '2',
-    gridColumn: '2',
-  };
-
-  const socWork = {
-    gridColumn: '2',
-  };
-
-  const sec1 = {
-    gridRow: '1 / span 2',
-  };
-
-  const formSecs = {};
-
-  const inputs = {
-    width: '20rem',
-  };
-
-  const caseContainer = {
-    color: '#ffffff',
-  };
-
   const disableFormItem = () => {
     setDisabled(!disabled);
   };
@@ -104,15 +73,11 @@ export const HouseholdInformationForm = props => {
     color: '#fcfcfc',
   };
 
-  //   const checkBox = {
-  //     color: disabled === true ? labelTextDis : labelText,
-  //     // background: '#007fd4',
-  //   };
-
   return (
-    <div className="HouseholdCase" style={caseContainer}>
+    <div className="HouseholdInformationDetails__Container">
       <Form
         form={form}
+        className="HouseholdInformationDetails__Form"
         name="householdCaseView"
         onFinish={onFinish}
         onFinishFailed={onFinishFailed}
@@ -120,94 +85,59 @@ export const HouseholdInformationForm = props => {
         labelCol={{ span: 8 }}
         wrapperCol={{ span: 100 }}
         layout="horizontal"
-        style={style}
         labelWrap
 
         // style={{ paddingTop: '2rem' }}
       >
-        <section className="CircumstancesCaseView" style={sec1}>
-          <h4 style={labelText}>
+        <section className="HouseholdInformationDetails__Form__Circumstances">
+          <h4 className="HouseholdInformationDetails__Form__h4">
             What Circumstances Brought Client to Open Doors?
           </h4>
           <Form.Item name="fleeingDomV" valuePropName="checked">
-            <Checkbox
-              style={disabled === true ? labelTextDis : labelText}
-              disabled={disabled}
-            >
-              Fleeing Domestic Violence
-            </Checkbox>
+            <Checkbox disabled={disabled}>Fleeing Domestic Violence</Checkbox>
           </Form.Item>
 
           <Form.Item name="lackOfIncome" valuePropName="checked">
-            <Checkbox
-              style={disabled === true ? labelTextDis : labelText}
-              disabled={disabled}
-            >
-              Lack of Income
-            </Checkbox>
+            <Checkbox disabled={disabled}>Lack of Income</Checkbox>
           </Form.Item>
 
           <Form.Item name="lostJob" valuePropName="checked">
-            <Checkbox
-              style={disabled === true ? labelTextDis : labelText}
-              disabled={disabled}
-            >
-              Lost Job
-            </Checkbox>
+            <Checkbox disabled={disabled}>Lost Job</Checkbox>
           </Form.Item>
 
           <Form.Item name="familyConflict" valuePropName="checked">
-            <Checkbox
-              style={disabled === true ? labelTextDis : labelText}
-              disabled={disabled}
-            >
-              Family Conflict
-            </Checkbox>
+            <Checkbox disabled={disabled}>Family Conflict</Checkbox>
           </Form.Item>
 
           <Form.Item name="familyRej" valuePropName="checked">
-            <Checkbox
-              style={disabled === true ? labelTextDis : labelText}
-              disabled={disabled}
-            >
+            <Checkbox disabled={disabled}>
               Family Rejection/LGBTQ+ Issue
             </Checkbox>
           </Form.Item>
 
           <Form.Item name="lackOfAffHous" valuePropName="checked">
-            <Checkbox
-              style={disabled === true ? labelTextDis : labelText}
-              disabled={disabled}
-            >
-              Lack of Affordable Housing
-            </Checkbox>
+            <Checkbox disabled={disabled}>Lack of Affordable Housing</Checkbox>
           </Form.Item>
 
           <Form.Item name="eviction" valuePropName="checked">
-            <Checkbox
-              style={disabled === true ? labelTextDis : labelText}
-              disabled={disabled}
-            >
-              Eviction
-            </Checkbox>
+            <Checkbox disabled={disabled}>Eviction</Checkbox>
           </Form.Item>
 
           <Form.Item name="other" valuePropName="checked">
-            <Checkbox
-              style={disabled === true ? labelTextDis : labelText}
-              disabled={disabled}
-            >
-              Other
-            </Checkbox>
+            <Checkbox disabled={disabled}>Other</Checkbox>
           </Form.Item>
 
-          <Form.Item name="otherText" label="" style={inputs}>
+          <Form.Item
+            name="otherText"
+            label=""
+            className="HouseholdInformationDetails__Form__Inputs"
+          >
             <Input disabled={disabled} />
           </Form.Item>
 
-          <p>
+          <p className="HouseholdInformationDetails__Form__p">
             Number of times Client has experienced homelessness in the past 3
-            years:
+            years
           </p>
           <Form.Item
             name="numTimesHomeless"
@@ -216,19 +146,29 @@ export const HouseholdInformationForm = props => {
           >
             <InputNumber style={{ width: '20rem' }} disabled={disabled} />
           </Form.Item>
-          <p>Total time spent homeless in the past 3 years</p>
+          <p className="HouseholdInformationDetails__Form__p">
+            Total time spent homeless in the past 3 years
+          </p>
           <Form.Item
-            name="tottimeHomeless"
+            name="totTimeHomeless"
             rules={[{ type: 'number', message: 'Number Required' }]}
             placeholder={0}
           >
             <InputNumber style={{ width: '20rem' }} disabled={disabled} />
           </Form.Item>
-          <p>Length of stay in previous living situation</p>
+          <p className="HouseholdInformationDetails__Form__p">
+            Length of stay in previous living situation
+          </p>
           <Form.Item
             name="lengthOfStayPrevY"
             label={
-              <label style={disabled === true ? labelTextDis : labelText}>
+              <label
+                className={
+                  disabled === true
+                    ? 'CaseDetailsLabel__Disabled'
+                    : 'CaseDetailsLabel'
+                }
+              >
                 Years
               </label>
             }
@@ -242,7 +182,13 @@ export const HouseholdInformationForm = props => {
           <Form.Item
             name="lengthOfStayPrevM"
             label={
-              <label style={disabled === true ? labelTextDis : labelText}>
+              <label
+                className={
+                  disabled === true
+                    ? 'CaseDetailsLabel__Disabled'
+                    : 'CaseDetailsLabel'
+                }
+              >
                 Months
               </label>
             }
@@ -250,41 +196,44 @@ export const HouseholdInformationForm = props => {
             rules={[{ type: 'number', message: 'Number Required' }]}
             placeholder={0}
           >
-            <InputNumber
-              disabled={disabled}
-              style={disabled === true ? labelTextDis : labelText}
-            />
+            <InputNumber disabled={disabled} />
           </Form.Item>
 
-          <p>Does Client or family member have a disability</p>
+          <p className="HouseholdInformationDetails__Form__p">
+            Does Client or family member have a disability
+          </p>
           <Form.Item name="disability">
             <Radio.Group disabled={disabled}>
-              <Radio
-                style={disabled === true ? labelTextDis : labelText}
-                value={true}
-              >
-                Yes
-              </Radio>
-              <Radio
-                style={disabled === true ? labelTextDis : labelText}
-                value={false}
-              >
-                No
-              </Radio>
+              <Radio value={true}>Yes</Radio>
+              <Radio value={false}>No</Radio>
             </Radio.Group>
           </Form.Item>
-          <p>If yes, who has the disability and what is it?</p>
-          <Form.Item name="disabilityText">
-            <Input disabled={disabled} placeholder="Text Here" style={inputs} />
+          <p className="HouseholdInformationDetails__Form__p">
+            If yes, who has the disability and what is it?
+          </p>
+          <Form.Item name="disabiltyText" label="">
+            <Input
+              disabled={disabled}
+              placeholder="Text Here"
+              className="HouseholdInformationDetails__Form__Inputs"
+            />
           </Form.Item>
         </section>
 
-        <section className="LengthTimeHomelessCase" style={formSecs}>
-          <h4 style={labelText}>How long has the Client been homeless</h4>
+        <section className="LengthTimeHomelessCase">
+          <h4 className="HouseholdInformationDetails__Form__h4">
+            How long has the Client been homeless
+          </h4>
           <Form.Item
             name="howLongA"
             label={
-              <label style={disabled === true ? labelTextDis : labelText}>
+              <label
+                className={
+                  disabled === true
+                    ? 'CaseDetailsLabel__Disabled'
+                    : 'CaseDetailsLabel'
+                }
+              >
                 a. Living in a place not meant for human habitation
               </label>
             }
@@ -298,7 +247,13 @@ export const HouseholdInformationForm = props => {
           <Form.Item
             name="howLongB"
             label={
-              <label style={disabled === true ? labelTextDis : labelText}>
+              <label
+                className={
+                  disabled === true
+                    ? 'CaseDetailsLabel__Disabled'
+                    : 'CaseDetailsLabel'
+                }
+              >
                 b. Emergency Shelter
               </label>
             }
@@ -312,7 +267,13 @@ export const HouseholdInformationForm = props => {
           <Form.Item
             name="howLongC"
             label={
-              <label style={disabled === true ? labelTextDis : labelText}>
+              <label
+                className={
+                  disabled === true
+                    ? 'CaseDetailsLabel__Disabled'
+                    : 'CaseDetailsLabel'
+                }
+              >
                 c. Traditional Housing
               </label>
             }
@@ -326,7 +287,13 @@ export const HouseholdInformationForm = props => {
           <Form.Item
             name="howLongD"
             label={
-              <label style={disabled === true ? labelTextDis : labelText}>
+              <label
+                className={
+                  disabled === true
+                    ? 'CaseDetailsLabel__Disabled'
+                    : 'CaseDetailsLabel'
+                }
+              >
                 d. Fleeing Domestic Violence
               </label>
             }
@@ -340,7 +307,13 @@ export const HouseholdInformationForm = props => {
           <Form.Item
             name="howLongE"
             label={
-              <label style={disabled === true ? labelTextDis : labelText}>
+              <label
+                className={
+                  disabled === true
+                    ? 'CaseDetailsLabel__Disabled'
+                    : 'CaseDetailsLabel'
+                }
+              >
                 e. Unsheltered
               </label>
             }
@@ -354,7 +327,13 @@ export const HouseholdInformationForm = props => {
           <Form.Item
             name="howLongTotal"
             label={
-              <label style={disabled === true ? labelTextDis : labelText}>
+              <label
+                className={
+                  disabled === true
+                    ? 'CaseDetailsLabel__Disabled'
+                    : 'CaseDetailsLabel'
+                }
+              >
                 Total
               </label>
             }
@@ -366,44 +345,43 @@ export const HouseholdInformationForm = props => {
           </Form.Item>
         </section>
 
-        <section className="CPSInvolvement" style={formSecs}>
+        <section className="CPSInvolvement">
           <h4 style={labelText}>CPS Involvement</h4>
           <Form.Item name="activeCase" valuePropName="checked">
-            <Checkbox
-              style={disabled === true ? labelTextDis : labelText}
-              disabled={disabled}
-            >
-              Active Case
-            </Checkbox>
+            <Checkbox disabled={disabled}>Active Case</Checkbox>
           </Form.Item>
           <Form.Item name="pastIncident" valuePropName="checked">
-            <Checkbox
-              style={disabled === true ? labelTextDis : labelText}
-              disabled={disabled}
-            >
-              Past Incident
-            </Checkbox>
+            <Checkbox disabled={disabled}>Past Incident</Checkbox>
           </Form.Item>
           <Form.Item name="pastExplanation" label="">
-            <Input disabled={disabled} placeholder="Text Here" style={inputs} />
+            <Input
+              disabled={disabled}
+              placeholder="Text Here"
+              className="HouseholdInformationDetails__Form__Inputs"
+            />
           </Form.Item>
 
           <Form.Item name="moreThanOnePastIncident" valuePropName="checked">
-            <Checkbox
-              style={disabled === true ? labelTextDis : labelText}
-              disabled={disabled}
-            >
-              Past Incident
-            </Checkbox>
+            <Checkbox disabled={disabled}>Past Incident</Checkbox>
           </Form.Item>
           <Form.Item name="moreThanOneExplanation" label="">
-            <Input disabled={disabled} placeholder="Text Here" style={inputs} />
+            <Input
+              disabled={disabled}
+              placeholder="Text Here"
+              className="HouseholdInformationDetails__Form__Inputs"
+            />
           </Form.Item>
 
           <Form.Item
             name="receiveSec8Vouch"
             label={
-              <label style={disabled === true ? labelTextDis : labelText}>
+              <label
+                className={
+                  disabled === true
+                    ? 'CaseDetailsLabel__Disabled'
+                    : 'CaseDetailsLabel'
+                }
+              >
                 Received a Section 8 Housing Voucher in the past three years
               </label>
             }
@@ -425,11 +403,17 @@ export const HouseholdInformationForm = props => {
           </Form.Item>
         </section>
 
-        <section className="PreviousLivSitCase" style={grid}>
+        <section className="HouseholdInformationDetails__Form__PrevLivSit">
           <Form.Item
             name="prevLivSit"
             label={
-              <label style={disabled === true ? labelTextDis : labelText}>
+              <label
+                className={
+                  disabled === true
+                    ? 'CaseDetailsLabel__Disabled'
+                    : 'CaseDetailsLabel'
+                }
+              >
                 Previous Living Situation
               </label>
             }
@@ -438,62 +422,54 @@ export const HouseholdInformationForm = props => {
             <Input
               disabled={disabled}
               placeholder="Description Here"
-              style={inputs}
+              className="HouseholdInformationDetails__Form__Inputs"
             />
           </Form.Item>
 
           <Form.Item
             name="interpreter"
             label={
-              <label style={disabled === true ? labelTextDis : labelText}>
+              <label
+                className={
+                  disabled === true
+                    ? 'CaseDetailsLabel__Disabled'
+                    : 'CaseDetailsLabel'
+                }
+              >
                 Client needs interpreter?
               </label>
             }
             colon={false}
           >
             <Radio.Group disabled={disabled}>
-              <Radio
-                style={disabled === true ? labelTextDis : labelText}
-                value={true}
-              >
-                Yes
-              </Radio>
-              <Radio
-                style={disabled === true ? labelTextDis : labelText}
-                value={false}
-              >
-                No
-              </Radio>
+              <Radio value={true}>Yes</Radio>
+              <Radio value={false}>No</Radio>
             </Radio.Group>
           </Form.Item>
 
           <Form.Item
             name="transportationAcc"
             label={
-              <label style={disabled === true ? labelTextDis : labelText}>
+              <label
+                className={
+                  disabled === true
+                    ? 'CaseDetailsLabel__Disabled'
+                    : 'CaseDetailsLabel'
+                }
+              >
                 Access to transportation?
               </label>
             }
             colon={false}
           >
             <Radio.Group disabled={disabled}>
-              <Radio
-                style={disabled === true ? labelTextDis : labelText}
-                value={true}
-              >
-                Yes
-              </Radio>
-              <Radio
-                style={disabled === true ? labelTextDis : labelText}
-                value={false}
-              >
-                No
-              </Radio>
+              <Radio value={true}>Yes</Radio>
+              <Radio value={false}>No</Radio>
             </Radio.Group>
           </Form.Item>
         </section>
 
-        <section className="FamilyHistoryCase" style={formSecs}>
+        <section className="FamilyHistoryCase">
           <h4 style={labelText}>Client or family member have a history of:</h4>
           <Form.Item name="physIll" valuePropName="checked">
             <Checkbox
@@ -538,12 +514,20 @@ export const HouseholdInformationForm = props => {
           </Form.Item>
         </section>
 
-        <section className="SocialWorkerCase" style={socWork}>
-          <h4 style={labelText}>Social Worker Contact Information</h4>
+        <section className="HouseholdInformationDetails__Form__SocialWorker">
+          <h4 className="HouseholdInformationDetails__Form__h4">
+            Social Worker Contact Information
+          </h4>
           <Form.Item
             name="socialWorkerName"
             label={
-              <label style={disabled === true ? labelTextDis : labelText}>
+              <label
+                className={
+                  disabled === true
+                    ? 'CaseDetailsLabel__Disabled'
+                    : 'CaseDetailsLabel'
+                }
+              >
                 Name
               </label>
             }
@@ -552,13 +536,19 @@ export const HouseholdInformationForm = props => {
             <Input
               disabled={disabled}
               placeholder="Firstname Lastname"
-              style={inputs}
+              className="HouseholdInformationDetails__Form__Inputs"
             />
           </Form.Item>
           <Form.Item
             name="socialWorkerEmail"
             label={
-              <label style={disabled === true ? labelTextDis : labelText}>
+              <label
+                className={
+                  disabled === true
+                    ? 'CaseDetailsLabel__Disabled'
+                    : 'CaseDetailsLabel'
+                }
+              >
                 Email
               </label>
             }
@@ -567,14 +557,20 @@ export const HouseholdInformationForm = props => {
             <Input
               disabled={disabled}
               placeholder="email@email.com"
-              style={inputs}
+              className="HouseholdInformationDetails__Form__Inputs"
             />
           </Form.Item>
 
           <Form.Item
             name="socialWorkerPhone"
             label={
-              <label style={disabled === true ? labelTextDis : labelText}>
+              <label
+                className={
+                  disabled === true
+                    ? 'CaseDetailsLabel__Disabled'
+                    : 'CaseDetailsLabel'
+                }
+              >
                 Phone Number
               </label>
             }
@@ -583,7 +579,7 @@ export const HouseholdInformationForm = props => {
             <Input
               disabled={disabled}
               placeholder="(555) 555-5555"
-              style={inputs}
+              className="HouseholdInformationDetails__Form__Inputs"
             />
           </Form.Item>
         </section>
