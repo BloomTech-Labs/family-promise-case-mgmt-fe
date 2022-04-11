@@ -1,12 +1,6 @@
 import { Form, Checkbox, Input, InputNumber, Radio, Button } from 'antd';
 import React, { useState } from 'react';
 
-//              className={
-//     disabled === true
-//     ? 'CaseDetailsLabel__Disabled'
-//     : 'CaseDetailsLabel'
-// }
-
 const initialFormValues = {
   fleeingDomV: false,
   lackOfIncome: false,
@@ -65,14 +59,6 @@ export const HouseholdInformationForm = props => {
     setDisabled(!disabled);
   };
 
-  const labelText = {
-    color: '#cdcdcd',
-  };
-
-  const labelTextDis = {
-    color: '#fcfcfc',
-  };
-
   return (
     <div className="HouseholdInformationDetails__Container">
       <Form
@@ -86,8 +72,6 @@ export const HouseholdInformationForm = props => {
         wrapperCol={{ span: 100 }}
         layout="horizontal"
         labelWrap
-
-        // style={{ paddingTop: '2rem' }}
       >
         <section className="HouseholdInformationDetails__Form__Circumstances">
           <h4 className="HouseholdInformationDetails__Form__h4">
@@ -346,7 +330,9 @@ export const HouseholdInformationForm = props => {
         </section>
 
         <section className="CPSInvolvement">
-          <h4 style={labelText}>CPS Involvement</h4>
+          <h4 className="HouseholdInformationDetails__Form__h4">
+            CPS Involvement
+          </h4>
           <Form.Item name="activeCase" valuePropName="checked">
             <Checkbox disabled={disabled}>Active Case</Checkbox>
           </Form.Item>
@@ -388,13 +374,21 @@ export const HouseholdInformationForm = props => {
           >
             <Radio.Group disabled={disabled}>
               <Radio
-                style={disabled === true ? labelTextDis : labelText}
+                className={
+                  disabled === true
+                    ? 'ant-radio-disabled + span'
+                    : 'ant-radio-wrapper'
+                }
                 value={true}
               >
                 Yes
               </Radio>
               <Radio
-                style={disabled === true ? labelTextDis : labelText}
+                className={
+                  disabled === true
+                    ? 'ant-radio-disabled + span'
+                    : 'ant-radio-wrapper'
+                }
                 value={false}
               >
                 No
@@ -470,47 +464,26 @@ export const HouseholdInformationForm = props => {
         </section>
 
         <section className="FamilyHistoryCase">
-          <h4 style={labelText}>Client or family member have a history of:</h4>
+          <h4 className="HouseholdInformationDetails__Form__h4">
+            Client or family member have a history of:
+          </h4>
           <Form.Item name="physIll" valuePropName="checked">
-            <Checkbox
-              style={disabled === true ? labelTextDis : labelText}
-              disabled={disabled}
-            >
-              Physical Illness
-            </Checkbox>
+            <Checkbox disabled={disabled}>Physical Illness</Checkbox>
           </Form.Item>
           <Form.Item name="mentalIll" valuePropName="checked">
-            <Checkbox
-              style={disabled === true ? labelTextDis : labelText}
-              disabled={disabled}
-            >
-              Mental Illness
-            </Checkbox>
+            <Checkbox disabled={disabled}>Mental Illness</Checkbox>
           </Form.Item>
           <Form.Item name="famConflictHist" valuePropName="checked">
-            <Checkbox
-              style={disabled === true ? labelTextDis : labelText}
-              disabled={disabled}
-            >
-              Family Conflict
-            </Checkbox>
+            <Checkbox disabled={disabled}>Family Conflict</Checkbox>
           </Form.Item>
           <Form.Item name="personalViol" valuePropName="checked">
-            <Checkbox
-              style={disabled === true ? labelTextDis : labelText}
-              disabled={disabled}
-            >
+            <Checkbox disabled={disabled}>
               Personal Violence (being physically, sexually, verbally, or
               emotionally abused)
             </Checkbox>
           </Form.Item>
           <Form.Item name="subAbuse" valuePropName="checked">
-            <Checkbox
-              style={disabled === true ? labelTextDis : labelText}
-              disabled={disabled}
-            >
-              Substance Abuse
-            </Checkbox>
+            <Checkbox disabled={disabled}>Substance Abuse</Checkbox>
           </Form.Item>
         </section>
 
