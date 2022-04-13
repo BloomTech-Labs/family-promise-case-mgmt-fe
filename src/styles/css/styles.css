@@ -133,3 +133,59 @@
 .ant-radio:hover .ant-radio-inner {
   border-color: #007fd4;
 }
+.ClientFamilyInformation__Form {
+  grid-template-columns: repeat(2, 1fr);
+  gap: 5px;
+  grid-auto-flow: row dense;
+  background: #3f3f3f;
+  color: #ffffff;
+}
+.ClientFamilyInformation__Form__InitialDate {
+  margin: 0 0 2rem 62rem;
+  padding-top: 2rem;
+}
+.ClientFamilyInformation__Form__h1 {
+  color: #cdcdcd;
+  text-align: center;
+}
+.ClientFamilyInformation__Form__SectionGrid2 {
+  display: flex;
+  justify-content: space-evenly;
+}
+.ClientFamilyInformation__Form__SectionGrid3 {
+  display: flex;
+  justify-content: space-around;
+}
+.ClientFamilyInformation__Form__SmallInputs {
+  width: 7rem;
+}
+.ClientFamilyInformation__Form__SectionGrid1 {
+  grid-row: 1 / span 2;
+}
+.ClientFamilyInformation__Form__VeteranStatus {
+  display: flex;
+  flex-direction: row-reverse;
+  margin: 0rem 11rem;
+}
+.ClientFamilyInformation__Form__FamilyMembers__Container {
+  display: flex;
+  justify-content: space-between;
+  margin: 0rem 6rem;
+}
+.ClientFamilyInformation__Form__FamilyMembers__formItem {
+  display: flow-root;
+}
+.ClientFamilyInformation__Form__FamilyMembers__IsPregnant {
+  display: flex;
+}
+.ClientFamilyInformation__Inputs {
+  width: 20rem;
+}
+.ClientFamilyInformation__Inputs__ItemLabel {
+  color: #ffffff;
+  width: 25vw;
+}
+.ClientFamilyInformation__Inputs__ItemLabel__Small {
+  color: #ffffff;
+  width: 100%;
+}
