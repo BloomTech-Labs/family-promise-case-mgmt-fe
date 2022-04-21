@@ -22,7 +22,6 @@ import { Cases } from './components/pages/Cases';
 import { CaseView } from './components/pages/CaseView';
 import { ClientIntakeForm } from './components/common/ClientIntakeForm';
 import { LayoutTemplate } from './components/pages/LayoutTemplate';
-import { Notes } from './components/common/CaseDetailsForms/Notes';
 import { CaseDetails } from './components/pages/CaseDetails';
 
 import './styles/css/styles.css';

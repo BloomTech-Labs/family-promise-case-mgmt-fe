@@ -33,62 +33,39 @@ export const Notes = () => {
     setArchived(false);
   };
 
-  const notesContainerStyle = {
-    margin: 'auto',
-  };
-
-  const showNotes = {
-    overflowY: 'scroll',
-    maxHeight: '30vh',
-  };
-
-  const notesSwitchPanelStyle = {
-    margin: 'auto',
-    display: 'flex',
-    justifyContent: 'center',
-  };
-
-  const buttonStyle = {
-    margin: '1rem',
-    color: '#CDCDCD',
-    background: '#007FD4',
-    borderColor: '#007FD4',
-    width: '18vw',
-  };
-
-  const searchStyle = {
-    width: '10vw',
-    margin: '1rem',
-    color: '#cdcdcd',
-  };
-
   return (
-    <div className="notesContainer" style={notesContainerStyle}>
-      <span className="notesSwitchPanel" style={notesSwitchPanelStyle}>
-        <Button style={buttonStyle} onClick={showCurrent}>
+    <div className="Notes__Container">
+      <span className="Notes__Container__SwitchPanel">
+        <Button
+          type="primary"
+          className="ant-btn-primary-noteDetails"
+          onClick={showCurrent}
+        >
           Current
         </Button>
-        <Button style={buttonStyle} onClick={showArchive}>
+        <Button
+          type="primary"
+          className="ant-btn-primary-noteDetails"
+          onClick={showArchive}
+        >
           Archive
         </Button>
         <Search
           placeholder="filter"
           bordered={false}
-          style={searchStyle}
+          className="Notes__Filter"
           enterButton={
             <Button
-              style={{
-                color: '#CDCDCD',
-                background: '#007FD4',
-                borderColor: '#007FD4',
-              }}
+              type="primary"
+              className="ant-btn-primary"
+              style={{ margin: '0' }}
             >
               Filter
             </Button>
           }
         />
       </span>
-      <div className="showNotes" style={showNotes}>
+      <div className="Notes__ShowNotes">
         {archived === true ? (
           <div>
             <SingleNote props={initialFormValuesArchived} />
