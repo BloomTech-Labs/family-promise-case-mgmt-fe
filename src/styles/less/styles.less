@@ -73,6 +73,40 @@
   font-size: 1.25rem;
 }
 
+.HouseholdInformationDetails {
+  &__Container {
+    color: #ffffff;
+  }
+  &__Form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5px;
+    grid-auto-flow: row dense;
+    padding-top: 2rem;
+    width: 80%;
+    padding: 2rem;
+    margin: 0 12rem;
+    background: #3f3f3f;
+    color: #ffffff;
+    &__Circumstances {
+      grid-row: 1 / span 2;
+    }
+    &__SocialWorker {
+      grid-column: 2;
+    }
+    &__PrevLivSit {
+      grid-row: 2;
+      grid-column: 2;
+    }
+    &__Inputs {
+      width: 20rem;
+    }
+    &__h4 {
+      color: #cdcdcd;
+    }
+    &__p {
+      color: #cdcdcd;
+
 .ant-btn {
   &-primary {
     margin: 1rem;
@@ -92,6 +126,113 @@
   }
 }
 
+.CaseDetailsLabel {
+  color: #ffffff;
+  &__Disabled {
+    color: #cdcdcd;
+  }
+}
+
+.ant-form-item-label {
+  color: #ffffff;
+}
+
+.ant-checkbox {
+  & + span {
+    color: #ffffff;
+  }
+  &-disabled + span {
+    color: #cdcdcd;
+  }
+  &-checked &-inner {
+    border-color: #007fd4 !important ;
+    background-color: #007fd4;
+  }
+  &-checked-disabled &-inner {
+    background-color: #007fd4;
+    border-color: #007fd4 !important;
+  }
+}
+.ant-radio {
+  &-wrapper {
+    color: #ffffff;
+  }
+  &-disabled + span {
+    color: #cdcdcd;
+  }
+}
+
+.ant-radio-checked .ant-radio-inner {
+  border-color: #007fd4 !important ;
+}
+
+.ant-radio-checked .ant-radio-inner:after {
+  background-color: #007fd4;
+}
+
+.ant-radio:hover .ant-radio-inner {
+  border-color: #007fd4;
+}
+
+.ClientFamilyInformation {
+  &__Form {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5px;
+    grid-auto-flow: row dense;
+    background: #3f3f3f;
+    color: #ffffff;
+    &__InitialDate {
+      margin: 0 0 2rem 62rem;
+      padding-top: 2rem;
+    }
+    &__h1 {
+      color: #cdcdcd;
+      text-align: center;
+    }
+    &__SectionGrid2 {
+      display: flex;
+      justify-content: space-evenly;
+    }
+    &__SectionGrid3 {
+      display: flex;
+      justify-content: space-around;
+    }
+    &__SmallInputs {
+      width: 7rem;
+    }
+    &__SectionGrid1 {
+      grid-row: 1 / span 2;
+    }
+    &__VeteranStatus {
+      display: flex;
+      flex-direction: row-reverse;
+      margin: 0rem 11rem;
+    }
+    &__FamilyMembers {
+      &__Container {
+        display: flex;
+        justify-content: space-between;
+        margin: 0rem 6rem;
+      }
+      &__formItem {
+        display: flow-root;
+      }
+      &__IsPregnant {
+        display: flex;
+      }
+    }
+  }
+  &__Inputs {
+    width: 20rem;
+    &__ItemLabel {
+      color: #ffffff;
+      width: 25vw;
+      &__Small {
+        color: #ffffff;
+        width: 100%;
+      }
+    }
+=======
 .SingleNote {
   &__Container {
     border-style: groove;
