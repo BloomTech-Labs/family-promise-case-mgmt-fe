@@ -12,6 +12,7 @@ import {
 import { PlusOutlined } from '@ant-design/icons';
 import AdultFamilyMember from './FamilyMembers/AdultFamilyMember';
 import ChildFamilyMember from './FamilyMembers/ChildFamilyMember';
+import Finances from './Finances'
 
 const ClientFamilyInfo = () => {
   //Inline styles added temporarily
@@ -251,6 +252,7 @@ const ClientFamilyInfo = () => {
       </Form.Item>
       <AdultFamilyMember />
       <ChildFamilyMember />
+      <Finances />
     </div>
   );
 };
