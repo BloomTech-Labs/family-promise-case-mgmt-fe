@@ -31,3 +31,4 @@ Remember that this project is licensed under the MIT license, and by submitting 
 
 See [Backend Documentation](https://github.com/BloomTech-Labs/family-promise-case-mgmt-be) for details on the backend of our project.
 
+BloomTech Labs
