@@ -25,6 +25,8 @@ import { LayoutTemplate } from './components/pages/LayoutTemplate';
 import { Notes } from './components/common/CaseDetailsForms/Notes';
 import { CaseDetails } from './components/pages/CaseDetails';
 
+import Header from './components/common/Header';
+
 import './styles/css/styles.css';
 
 ReactDOM.render(
@@ -63,6 +65,9 @@ function App() {
         <SecureRoute path="/example-list" component={ExampleListPage} />
         <SecureRoute path="/layouttemplate" component={LayoutTemplate} />
         <SecureRoute path="/" exact />
+
+        <SecureRoute path="/dashheader" component={Header} />
+
         <Route component={NotFoundPage} />
       </Switch>
     </Security>
