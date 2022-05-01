@@ -1,6 +1,7 @@
 import { Form, Button, DatePicker } from 'antd';
 import React from 'react';
 import ClientFamilyInfo from './IntakeForms/ClientFamilyInfo';
+import Documents from './IntakeForms/Documents';
 //NOTE: Inline Styles added temporarily.
 const sectionContainer = {
   width: '80%',
@@ -35,6 +36,7 @@ const ClientIntakeForm = () => {
     console.log('Form Values: ', values);
     form.resetFields();
   };
+
   return (
     <Form
       name="clientIntakeForm"
@@ -54,6 +56,7 @@ const ClientIntakeForm = () => {
         <DatePicker format="MM/DD/YYYY" />
       </Form.Item>
       <ClientFamilyInfo />
+      <Documents />
 
       <div style={buttonSection}>
         <Form.Item>
