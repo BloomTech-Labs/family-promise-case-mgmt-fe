@@ -16,48 +16,48 @@ import ChildFamilyMember from './FamilyMembers/ChildFamilyMember';
 const ClientFamilyInfo = () => {
   //Inline styles added temporarily
 
-  const subsectionContainer = {
-    border: 'solid 1px #6e6e6e',
-  };
-  const subsectionHeader = {
-    textAlign: 'center',
-    marginBottom: '50px',
-    backgroundColor: 'whiteSmoke',
-    color: '#101010',
-    padding: '20px',
-  };
-  const inputStyles = {
-    width: '20rem',
-  };
+  // const subsectionContainer = {
+  //   border: 'solid 1px #6e6e6e',
+  // };
+  // const subsectionHeader = {
+  //   textAlign: 'center',
+  //   marginBottom: '50px',
+  //   backgroundColor: 'whiteSmoke',
+  //   color: '#101010',
+  //   padding: '20px',
+  // };
+  // const inputStyles = {
+  //   width: '20rem',
+  // };
 
-  const inputStylesShort = {
-    width: '7rem',
-  };
+  // const inputStylesShort = {
+  //   width: '7rem',
+  // };
 
-  const formStyles = {
-    display: 'flex',
-    justifyContent: 'center',
-  };
+  // const formStyles = {
+  //   display: 'flex',
+  //   justifyContent: 'center',
+  // };
 
-  const sectionLeft = {
-    margin: '20px',
-  };
+  // const sectionLeft = {
+  //   margin: '20px',
+  // };
 
-  const sectionRight = {
-    margin: '20px',
-  };
+  // const sectionRight = {
+  //   margin: '20px',
+  // };
 
-  const shortInputContainer = {
-    display: 'flex',
-    justifyContent: 'space-between',
-    margin: '0 10px',
-  };
+  // const shortInputContainer = {
+  //   display: 'flex',
+  //   justifyContent: 'space-between',
+  //   margin: '0 10px',
+  // };
 
-  const checkboxStyles = {
-    display: 'flex',
-    flexDirection: 'column',
-    flexWrap: 'wrap',
-  };
+  // const checkboxStyles = {
+  //   display: 'flex',
+  //   flexDirection: 'column',
+  //   flexWrap: 'wrap',
+  // };
   const { TextArea } = Input;
 
   const historyOptions = [
