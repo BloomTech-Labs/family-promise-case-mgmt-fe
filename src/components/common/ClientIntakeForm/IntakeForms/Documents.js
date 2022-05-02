@@ -1,9 +1,18 @@
 import React, { useState } from 'react';
-import { DatePicker, Form, Input, Divider, Checkbox, Button } from 'antd';
+import {
+  DatePicker,
+  Form,
+  Input,
+  Divider,
+  Checkbox,
+  Button,
+  Row,
+  Col,
+} from 'antd';
 import { PlusOutlined } from '@ant-design/icons';
 
 const Documents = () => {
-  //React state hook used to build out
+  //React state hook used to build out add referral function
   const initialReferral = {
     name: '',
     firstMeeting: '',
@@ -23,11 +32,16 @@ const Documents = () => {
     setReferrals([...referrals, initialReferral]);
   };
 
+  const handleReferralChange = (e, index) => {
+    console.log(e.target, index);
+  };
+
   //Inline styles added temporarily from client family info
 
   const subsectionContainer = {
     border: 'solid 1px #6e6e6e',
   };
+
   const subsectionHeader = {
     textAlign: 'center',
     marginBottom: '50px',
@@ -37,7 +51,6 @@ const Documents = () => {
   };
 
   const formStyles = {
-    color: 'black',
     display: 'flex',
     justifyContent: 'center',
   };
@@ -54,6 +67,20 @@ const Documents = () => {
     flexDirection: 'column',
     flexWrap: 'wrap',
     color: 'black',
+  };
+
+  const referralsContainer = {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    margin: 'auto 5rem',
+  };
+
+  const referralContainer = {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    margin: '0 10px',
   };
 
   const adultsInFamily = [
@@ -141,15 +168,136 @@ const Documents = () => {
       </div>
 
       <Divider style={{ marginBottom: '50px' }} />
-      <Form.Item>
-        <Button
-          style={{ margin: '0 20px' }}
-          icon={<PlusOutlined />}
-          onClick={handleAddReferral}
-        >
-          Add Referral
-        </Button>
-      </Form.Item>
+      <div className="referralsContainer" style={referralsContainer}>
+        <h3>Referrals:</h3>
+        {referrals.map((referral, index) => {
+          return (
+            <section style={referralContainer} layout="vertical">
+              <Row gutter={50}>
+                <Col span={15}>
+                  <Form.Item
+                    label="Name:"
+                    onChange={e => handleReferralChange(e, index)}
+                  >
+                    <Input
+                      name="name"
+                      value={referral.name}
+                      placeholder="John Doe"
+                    />
+                  </Form.Item>
+                </Col>
+                <Col span={9}>
+                  <Form.Item
+                    label="First Meeting:"
+                    onChange={e => handleReferralChange(e, index)}
+                  >
+                    <DatePicker
+                      name="firstMeeting"
+                      value={referral.firstMeeting}
+                      style={{ width: '100%' }}
+                      placeholder="MM-DD-YYYY"
+                    />
+                  </Form.Item>
+                </Col>
+              </Row>
+              <Row gutter={50}>
+                <Col span={18}>
+                  <Form.Item
+                    label="Address (If Available):"
+                    onChange={e => handleReferralChange(e, index)}
+                  >
+                    <Input
+                      name="address"
+                      value={referral.address}
+                      placeholder=""
+                    />
+                  </Form.Item>
+                </Col>
+                <Col span={6}>
+                  <Form.Item
+                    label="Apt. #:"
+                    onChange={e => handleReferralChange(e, index)}
+                  >
+                    <Input name="apt" value={referral.apt} placeholder="" />
+                  </Form.Item>
+                </Col>
+              </Row>
+              <Row gutter={50}>
+                <Col span={14}>
+                  <Form.Item
+                    label="City:"
+                    onChange={e => handleReferralChange(e, index)}
+                  >
+                    <Input name="city" value={referral.city} placeholder="" />
+                  </Form.Item>
+                </Col>
+                <Col span={4}>
+                  <Form.Item
+                    label="State:"
+                    onChange={e => handleReferralChange(e, index)}
+                  >
+                    <Input name="state" value={referral.state} placeholder="" />
+                  </Form.Item>
+                </Col>
+                <Col span={6}>
+                  <Form.Item
+                    label="Zip:"
+                    onChange={e => handleReferralChange(e, index)}
+                  >
+                    <Input name="zip" value={referral.zip} placeholder="" />
+                  </Form.Item>
+                </Col>
+              </Row>
+              <Row gutter={50}>
+                <Col span={15}>
+                  <Form.Item
+                    label="Email:"
+                    onChange={e => handleReferralChange(e, index)}
+                  >
+                    <Input name="email" value={referral.email} placeholder="" />
+                  </Form.Item>
+                </Col>
+              </Row>
+              <Row gutter={50}>
+                <Col span={8}>
+                  <Form.Item
+                    label="Cell:"
+                    onChange={e => handleReferralChange(e, index)}
+                  >
+                    <Input name="cell" value={referral.cell} placeholder="" />
+                  </Form.Item>
+                </Col>
+                <Col span={8}>
+                  <Form.Item
+                    label="Work:"
+                    onChange={e => handleReferralChange(e, index)}
+                  >
+                    <Input name="work" value={referral.work} placeholder="" />
+                  </Form.Item>
+                </Col>
+                <Col span={8}>
+                  <Form.Item
+                    label="Home:"
+                    onChange={e => handleReferralChange(e, index)}
+                  >
+                    <Input name="home" value={referral.home} />
+                  </Form.Item>
+                </Col>
+              </Row>
+              <Divider />
+            </section>
+          );
+        })}
+        <Form.Item style={{ textAlign: 'center' }}>
+          <Button
+            style={{ margin: '0 20px' }}
+            icon={<PlusOutlined />}
+            onClick={handleAddReferral}
+          >
+            Add Referral
+          </Button>
+        </Form.Item>
+      </div>
     </div>
   );
 };
