@@ -1,7 +1,7 @@
+import React from 'react';
 import { Header } from '../../common/Header';
 import CaseTable from '../../common/CaseTable';
 import RecentActivity from '../../common/RecentActivity';
-import React from 'react';
 
 function RenderDashboard() {
   return (

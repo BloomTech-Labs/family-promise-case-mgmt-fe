@@ -14,6 +14,7 @@ const Header = () => {
 
       <Menu
         className="DashHeader_Nav"
+        theme="dark"
         mode="horizontal"
         defaultSelectedKeys={['2']}
       >
