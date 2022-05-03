@@ -53,11 +53,202 @@
   color: white;
 }
 .ant-collapse-content-box {
-  background-color: #3f3f3f;
+  background-color: #1c1c1c;
   color: #cdcdcd;
 }
 .ant-collapse-header {
-  background: #007fd4;
+  background: #101010;
   color: white;
   font-size: 1.25rem;
+}
+
+.HouseholdInformationDetails__Container {
+  color: #ffffff;
+}
+.HouseholdInformationDetails__Form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 5px;
+  grid-auto-flow: row dense;
+  padding-top: 2rem;
+  width: 80%;
+  padding: 2rem;
+  margin: 0 12rem;
+  background: #3f3f3f;
+  color: #ffffff;
+}
+.HouseholdInformationDetails__Form__Circumstances {
+  grid-row: 1 / span 2;
+}
+.HouseholdInformationDetails__Form__SocialWorker {
+  grid-column: 2;
+}
+.HouseholdInformationDetails__Form__PrevLivSit {
+  grid-row: 2;
+  grid-column: 2;
+}
+.HouseholdInformationDetails__Form__Inputs {
+  width: 20rem;
+}
+.HouseholdInformationDetails__Form__h4 {
+  color: #cdcdcd;
+}
+.HouseholdInformationDetails__Form__p {
+  color: #cdcdcd;
+}
+.CaseDetailsLabel {
+  color: #ffffff;
+}
+.CaseDetailsLabel__Disabled {
+  color: #cdcdcd;
+}
+.ant-form-item-label {
+  color: #ffffff;
+}
+.ant-checkbox + span {
+  color: #ffffff;
+}
+.ant-checkbox-disabled + span {
+  color: #cdcdcd;
+}
+.ant-checkbox-checked .ant-checkbox-inner {
+  border-color: #007fd4 !important;
+  background-color: #007fd4;
+}
+.ant-checkbox-checked-disabled .ant-checkbox-inner {
+  background-color: #007fd4;
+  border-color: #007fd4 !important;
+}
+.ant-radio-wrapper {
+  color: #ffffff;
+}
+.ant-radio-disabled + span {
+  color: #cdcdcd;
+}
+.ant-radio-checked .ant-radio-inner {
+  border-color: #007fd4 !important;
+}
+.ant-radio-checked .ant-radio-inner:after {
+  background-color: #007fd4;
+}
+.ant-radio:hover .ant-radio-inner {
+  border-color: #007fd4;
+}
+.ClientFamilyInformation__Form {
+  grid-template-columns: repeat(2, 1fr);
+  gap: 5px;
+  grid-auto-flow: row dense;
+  background: #3f3f3f;
+  color: #ffffff;
+}
+.ClientFamilyInformation__Form__InitialDate {
+  margin: 0 0 2rem 62rem;
+  padding-top: 2rem;
+}
+.ClientFamilyInformation__Form__h1 {
+  color: #cdcdcd;
+  text-align: center;
+}
+.ClientFamilyInformation__Form__SectionGrid2 {
+  display: flex;
+  justify-content: space-evenly;
+}
+.ClientFamilyInformation__Form__SectionGrid3 {
+  display: flex;
+  justify-content: space-around;
+}
+.ClientFamilyInformation__Form__SmallInputs {
+  width: 7rem;
+}
+.ClientFamilyInformation__Form__SectionGrid1 {
+  grid-row: 1 / span 2;
+}
+.ClientFamilyInformation__Form__VeteranStatus {
+  display: flex;
+  flex-direction: row-reverse;
+  margin: 0rem 11rem;
+}
+.ClientFamilyInformation__Form__FamilyMembers__Container {
+  display: flex;
+  justify-content: space-between;
+  margin: 0rem 6rem;
+}
+.ClientFamilyInformation__Form__FamilyMembers__formItem {
+  display: flow-root;
+}
+.ClientFamilyInformation__Form__FamilyMembers__IsPregnant {
+  display: flex;
+}
+.ClientFamilyInformation__Inputs {
+  width: 20rem;
+}
+.ClientFamilyInformation__Inputs__ItemLabel {
+  color: #ffffff;
+  width: 25vw;
+}
+.ClientFamilyInformation__Inputs__ItemLabel__Small {
+  color: #ffffff;
+  width: 100%;
+}
+.ant-btn-primary {
+  margin: 1rem;
+  color: #cdcdcd;
+  border-color: #007fd4;
+}
+.ant-btn-primary-notes {
+  grid-row: 3;
+  grid-column: 5;
+  margin: 1rem;
+}
+.ant-btn-primary-noteDetails {
+  width: 18vw;
+}
+.ant-btn-primary-noteFilter {
+  margin: 0;
+}
+.SingleNote__Container {
+  border-style: groove;
+  background-color: #3f3f3f;
+  color: #fcfcfc;
+  margin: 0 auto 1rem;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 5px;
+  grid-auto-flow: row dense;
+  width: 50vw;
+}
+.SingleNote__Picture {
+  grid-row: 2;
+  grid-column: 1;
+  margin: auto;
+}
+.SingleNote__NoteText {
+  grid-row: 2;
+  grid-column: 2 / span 4;
+  padding-right: 1rem;
+}
+.SingleNote__InfoStyle {
+  margin: 0.5rem 0;
+  grid-row: 1;
+  grid-column: 3 / span 2;
+}
+.SingleNote__InfoStyle__HeaderStyle {
+  color: #fcfcfc;
+}
+.Notes__Container {
+  margin: auto;
+}
+.Notes__Container__SwitchPanel {
+  margin: auto;
+  display: flex;
+  justify-content: center;
+}
+.Notes__ShowNotes {
+  overflow-y: scroll;
+  max-height: 35vh;
+}
+.Notes__Filter {
+  width: 10vw;
+  margin: 1rem;
+  color: #cdcdcd;
 }

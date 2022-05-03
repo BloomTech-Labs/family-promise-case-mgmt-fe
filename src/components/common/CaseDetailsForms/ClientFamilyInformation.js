@@ -32,45 +32,13 @@ const initialFormValues = {
 const ClientFamilyInfoForm = () => {
   const [form] = Form.useForm();
 
-  const style = {
-    gridTemplateColumns: 'repeat(2, 1fr)',
-    gap: '5px',
-    gridAutoFlow: 'row dense',
-    background: '#3f3f3f',
-    color: '#ffffff',
-  };
-
-  const sec3 = {
-    display: 'flex',
-    justifyContent: 'space-around',
-    margin: '0rem 6rem',
-  };
-
-  const labelText = {
-    color: '#cdcdcd',
-    textAlign: 'center',
-  };
-
-  const sec1 = {
-    gridRow: '1 / span 2',
-  };
-
-  const inputs = {
-    width: '20rem',
-  };
-
   const dateFormat = 'MM/DD/YYYY';
-
-  const sec2 = {
-    display: 'flex',
-    justifyContent: 'space-evenly',
-  };
 
   return (
     <div className="ClientFamilyForm">
       <Form
         form={form}
-        style={style}
+        className="ClientFamilyInformation__Form"
         initialValues={initialFormValues}
         layout="vertical"
         labelCol={{ span: 8 }}
@@ -78,30 +46,54 @@ const ClientFamilyInfoForm = () => {
         labelWrap
       >
         <Form.Item
-          style={{ margin: '0 0 2rem 62rem', paddingTop: '2rem' }}
-          label={<label style={{ color: '#FFFFFF' }}>Initial Date:</label>}
+          className="ClientFamilyInformation__Form__InitialDate"
+          label={
+            <label className="ClientFamilyInformation__Inputs__ItemLabel">
+              Initial Date:
+            </label>
+          }
         >
           <DatePicker placeholder="MM-DD-YYYY" format={dateFormat} />
         </Form.Item>
-        <h1 style={labelText}>Head of Household</h1>
-        <div className="sec1Container" style={sec2}>
-          <section style={sec1}>
+        <h1 className="ClientFamilyInformation__Form__h1">Head of Household</h1>
+        <div className="ClientFamilyInformation__Form__SectionGrid2">
+          <section className="ClientFamilyInformation__Form__SectionGrid1">
             <Form.Item
-              label={<label style={{ color: '#FFFFFF' }}>First Name:</label>}
+              label={
+                <label className="ClientFamilyInformation__Inputs__ItemLabel">
+                  First Name:
+                </label>
+              }
             >
-              <Input placeholder="First Name" style={inputs} />
+              <Input
+                placeholder="First Name"
+                className="ClientFamilyInformation__Form__Inputs"
+              />
             </Form.Item>
-            <Form.Item label={<label style={{ color: '#FFFFFF' }}>SSN:</label>}>
+            <Form.Item
+              label={
+                <label className="ClientFamilyInformation__Inputs__ItemLabel">
+                  SSN:
+                </label>
+              }
+            >
               <InputNumber
                 placeholder="XXX - XXX - XXXX"
-                style={inputs}
+                className="ClientFamilyInformation__Form__Inputs"
                 name="SSN"
               />
             </Form.Item>
             <Form.Item
-              label={<label style={{ color: '#FFFFFF' }}>Ethnicity:</label>}
+              label={
+                <label className="ClientFamilyInformation__Inputs__ItemLabel">
+                  Ethnicity:
+                </label>
+              }
             >
-              <Select style={inputs} placeholder="-- Select --">
+              <Select
+                className="ClientFamilyInformation__Form__Inputs"
+                placeholder="-- Select --"
+              >
                 <Select.Option value="American Indian or Alaska Native" />
                 <Select.Option value="Asian" />
                 <Select.Option value="Black or African American" />
@@ -113,9 +105,16 @@ const ClientFamilyInfoForm = () => {
               </Select>
             </Form.Item>
             <Form.Item
-              label={<label style={{ color: '#FFFFFF' }}>Gender:</label>}
+              label={
+                <label className="ClientFamilyInformation__Inputs__ItemLabel">
+                  Gender:
+                </label>
+              }
             >
-              <Select style={inputs} placeholder="-- Select --">
+              <Select
+                className="ClientFamilyInformation__Form__Inputs"
+                placeholder="-- Select --"
+              >
                 <Select.Option value="Male" />
                 <Select.Option value="Female" />
                 <Select.Option value="Transgender Male" />
@@ -126,27 +125,50 @@ const ClientFamilyInfoForm = () => {
             </Form.Item>
             <Form.Item
               label={
-                <label style={{ color: '#FFFFFF' }}>
+                <label className="ClientFamilyInformation__Inputs__ItemLabel">
                   If Gender Self-Describe:
                 </label>
               }
             >
-              <Input placeholder="Self Describe" style={inputs} />
+              <Input
+                placeholder="Self Describe"
+                className="ClientFamilyInformation__Form__Inputs"
+              />
             </Form.Item>
           </section>
-          <section style={sec1}>
+          <section className="ClientFamilyInformation__Form__SectionGrid1">
             <Form.Item
-              label={<label style={{ color: '#FFFFFF' }}>Last Name:</label>}
+              label={
+                <label className="ClientFamilyInformation__Inputs__ItemLabel">
+                  Last Name:
+                </label>
+              }
             >
-              <Input placeholder="Last Name" style={inputs} />
+              <Input
+                placeholder="Last Name"
+                className="ClientFamilyInformation__Form__Inputs"
+              />
             </Form.Item>
-            <Form.Item label={<label style={{ color: '#FFFFFF' }}>DOB:</label>}>
+            <Form.Item
+              label={
+                <label className="ClientFamilyInformation__Inputs__ItemLabel">
+                  DOB:
+                </label>
+              }
+            >
               <DatePicker placeholder="MM-DD-YYYY" format={dateFormat} />
             </Form.Item>
             <Form.Item
-              label={<label style={{ color: '#FFFFFF' }}>Race:</label>}
+              label={
+                <label className="ClientFamilyInformation__Inputs__ItemLabel">
+                  Race:
+                </label>
+              }
             >
-              <Select style={inputs} placeholder="-- Select --">
+              <Select
+                className="ClientFamilyInformation__Form__Inputs"
+                placeholder="-- Select --"
+              >
                 <Select.Option value="American Indian or Alaska Native" />
                 <Select.Option value="Asian" />
                 <Select.Option value="Black or African American" />
@@ -156,12 +178,15 @@ const ClientFamilyInfoForm = () => {
             </Form.Item>
             <Form.Item
               label={
-                <label style={{ color: '#FFFFFF', display: 'contents' }}>
+                <label className="ClientFamilyInformation__Inputs__ItemLabel">
                   Sexual Orientation:
                 </label>
               }
             >
-              <Select style={inputs} placeholder="-- Select --">
+              <Select
+                className="ClientFamilyInformation__Form__Inputs"
+                placeholder="-- Select --"
+              >
                 <Select.Option value="Asexual" />
                 <Select.Option value="Bisexual" />
                 <Select.Option value="Gay" />
@@ -176,77 +201,107 @@ const ClientFamilyInfoForm = () => {
             </Form.Item>
             <Form.Item
               label={
-                <label style={{ color: '#FFFFFF' }}>
+                <label className="ClientFamilyInformation__Inputs__ItemLabel">
                   If Sexual Orientation Other:
                 </label>
               }
             >
-              <Input placeholder="Other" style={inputs} />
+              <Input
+                placeholder="Other"
+                className="ClientFamilyInformation__Inputs"
+              />
             </Form.Item>
           </section>
         </div>
         <br />
-        <h1 style={labelText}>Last Known Address</h1>
-        <div className="section2Container">
-          <section style={sec2}>
+        <h1 className="ClientFamilyInformation__Form__h1">
+          Last Known Address
+        </h1>
+        <div className="ClientFamilyInformation__Form__SectionGrid3__Container">
+          <section className="ClientFamilyInformation__Form__SectionGrid2">
             <Form.Item
-              label={<label style={{ color: '#FFFFFF' }}>Address:</label>}
+              label={
+                <label className="ClientFamilyInformation__Inputs__ItemLabel">
+                  Address:
+                </label>
+              }
             >
-              <Input placeholder="Address" style={inputs} />
+              <Input
+                placeholder="Address"
+                className="ClientFamilyInformation__Form__Inputs"
+              />
             </Form.Item>
             <Form.Item
-              label={<label style={{ color: '#FFFFFF' }}>Apt #:</label>}
+              label={
+                <label className="ClientFamilyInformation__Inputs__ItemLabel">
+                  Apt #:
+                </label>
+              }
             >
-              <Input placeholder="Apt #" style={inputs} />
-            </Form.Item>
-          </section>
-          <section
-            style={{
-              display: 'flex',
-              justifyContent: 'space-evenly',
-              margin: '0rem 3rem',
-            }}
-          >
-            <Form.Item
-              label={<label style={{ color: '#FFFFFF' }}>City:</label>}
-            >
-              <Input placeholder="City Name" style={inputs} />
-            </Form.Item>
-            <Form.Item
-              label={<label style={{ color: '#FFFFFF' }}>State:</label>}
-            >
-              <Input placeholder="State Abbrv." style={{ width: '7rem' }} />
-            </Form.Item>
-            <Form.Item
-              label={<label style={{ color: '#FFFFFF' }}>Zip::</label>}
-            >
-              <InputNumber placeholder="Zip Code" style={{ width: '7rem' }} />
+              <Input
+                placeholder="Apt #"
+                className="ClientFamilyInformation__Form__Inputs"
+              />
             </Form.Item>
           </section>
-          <section
-            style={{
-              display: 'flex',
-              flexDirection: 'row-reverse',
-              margin: '0rem 11rem',
-            }}
-          >
+          <section className="ClientFamilyInformation__Form__SectionGrid3">
             <Form.Item
-              label={<label style={{ color: '#FFFFFF' }}>Veteran?:</label>}
+              label={
+                <label className="ClientFamilyInformation__Inputs__ItemLabel__Small">
+                  City:
+                </label>
+              }
+            >
+              <Input
+                placeholder="City Name"
+                className="ClientFamilyInformation__Form__Inputs"
+              />
+            </Form.Item>
+            <Form.Item
+              label={
+                <label className="ClientFamilyInformation__Inputs__ItemLabel__Small">
+                  State:
+                </label>
+              }
+            >
+              <Input
+                placeholder="State Abbrv."
+                className="ClientFamilyInformation__Form__SmallInputs"
+              />
+            </Form.Item>
+            <Form.Item
+              label={
+                <label className="ClientFamilyInformation__Inputs__ItemLabel__Small">
+                  Zip:
+                </label>
+              }
+            >
+              <InputNumber
+                placeholder="Zip Code"
+                className="ClientFamilyInformation__Form__SmallInputs"
+              />
+            </Form.Item>
+          </section>
+          <section className="ClientFamilyInformation__Form__VeteranStatus">
+            <Form.Item
+              label={
+                <label className="ClientFamilyInformation__Inputs__ItemLabel">
+                  Veteran?:
+                </label>
+              }
             >
               <Radio.Group>
-                <Radio style={{ color: '#FFFFFF' }} value={1}>
-                  Yes
-                </Radio>
-                <Radio style={{ color: '#FFFFFF' }} value={2}>
-                  No
-                </Radio>
+                <Radio value={1}>Yes</Radio>
+                <Radio value={2}>No</Radio>
               </Radio.Group>
             </Form.Item>
           </section>
         </div>
-        <div style={sec3} className="section3Container">
+        <div className="ClientFamilyInformation__Form__FamilyMembers__Container">
           <section>
-            <h1 style={labelText}>Family Members</h1>
+            <h1 className="ClientFamilyInformation__Form__h1">
+              Family Members
+            </h1>
             <Button
               style={{
                 margin: '1rem',
@@ -260,29 +315,28 @@ const ClientFamilyInfoForm = () => {
             </Button>
           </section>
           <section>
-            <h1 style={labelText}>Client Or Family Member Pregnant</h1>
-            <div style={{ display: 'flex' }}>
+            <h1 className="ClientFamilyInformation__Form__h1">
+              Client Or Family Member Pregnant
+            </h1>
+            <div className="ClientFamilyInformation__Form__FamilyMembers__IsPregnant">
               <Form.Item
-                style={{ display: 'contents' }}
                 label={
-                  <label style={{ color: '#FFFFFF' }}>
+                  <label className="ClientFamilyInformation__Inputs__ItemLabel">
                     Client or Family Member is Pregnant
                   </label>
                 }
               >
                 <Radio.Group>
-                  <Radio style={{ color: '#FFFFFF' }} value={1}>
-                    Yes
-                  </Radio>
-                  <Radio style={{ color: '#FFFFFF' }} value={2}>
-                    No
-                  </Radio>
+                  <Radio value={1}>Yes</Radio>
+                  <Radio value={2}>No</Radio>
                 </Radio.Group>
               </Form.Item>
               <Form.Item
-                style={{ display: 'flow-root' }}
+                className="ClientFamilyInformation__Form__FamilyMembers__formItem"
                 label={
-                  <label style={{ color: '#FFFFFF' }}>If Yes, Due Date:</label>
+                  <label className="ClientFamilyInformation__Inputs__ItemLabel">
+                    If Yes, Due Date:
+                  </label>
                 }
               >
                 <DatePicker placeholder="MM-DD-YYYY" format={dateFormat} />
@@ -290,11 +344,13 @@ const ClientFamilyInfoForm = () => {
             </div>
             <Form.Item
               label={
-                <label style={{ color: '#FFFFFF' }}>Which Family Member?</label>
+                <label className="ClientFamilyInformation__Inputs__ItemLabel">
+                  Which Family Member?
+                </label>
               }
             >
               <Input
-                style={inputs}
+                className="ClientFamilyInformation__Form__Inputs"
                 placeholder="Spouse, Domestic Partner, Child, Etc..."
               />
             </Form.Item>
