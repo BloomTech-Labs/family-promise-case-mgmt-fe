@@ -33,7 +33,10 @@ const Documents = () => {
   };
 
   const handleReferralChange = (e, index) => {
-    console.log(e.target, index);
+    console.log(e, e.target, index);
+    if (e.target) {
+      console.log(e.target);
+    }
   };
 
   //Inline styles added temporarily from client family info
@@ -209,7 +212,7 @@ const Documents = () => {
                     <Input
                       name="address"
                       value={referral.address}
-                      placeholder=""
+                      placeholder="123 Anywhere Street"
                     />
                   </Form.Item>
                 </Col>
@@ -218,7 +221,11 @@ const Documents = () => {
                     label="Apt. #:"
                     onChange={e => handleReferralChange(e, index)}
                   >
-                    <Input name="apt" value={referral.apt} placeholder="" />
+                    <Input
+                      name="apt"
+                      value={referral.apt}
+                      placeholder="Apt #"
+                    />
                   </Form.Item>
                 </Col>
               </Row>
@@ -228,7 +235,11 @@ const Documents = () => {
                     label="City:"
                     onChange={e => handleReferralChange(e, index)}
                   >
-                    <Input name="city" value={referral.city} placeholder="" />
+                    <Input
+                      name="city"
+                      value={referral.city}
+                      placeholder="City Name"
+                    />
                   </Form.Item>
                 </Col>
                 <Col span={4}>
@@ -236,7 +247,11 @@ const Documents = () => {
                     label="State:"
                     onChange={e => handleReferralChange(e, index)}
                   >
-                    <Input name="state" value={referral.state} placeholder="" />
+                    <Input
+                      name="state"
+                      value={referral.state}
+                      placeholder="State Abbrv."
+                    />
                   </Form.Item>
                 </Col>
                 <Col span={6}>
@@ -244,7 +259,11 @@ const Documents = () => {
                     label="Zip:"
                     onChange={e => handleReferralChange(e, index)}
                   >
-                    <Input name="zip" value={referral.zip} placeholder="" />
+                    <Input
+                      name="zip"
+                      value={referral.zip}
+                      placeholder="Zip Code"
+                    />
                   </Form.Item>
                 </Col>
               </Row>
@@ -254,7 +273,11 @@ const Documents = () => {
                     label="Email:"
                     onChange={e => handleReferralChange(e, index)}
                   >
-                    <Input name="email" value={referral.email} placeholder="" />
+                    <Input
+                      name="email"
+                      value={referral.email}
+                      placeholder="user@email.com"
+                    />
                   </Form.Item>
                 </Col>
               </Row>
@@ -264,7 +287,11 @@ const Documents = () => {
                     label="Cell:"
                     onChange={e => handleReferralChange(e, index)}
                   >
-                    <Input name="cell" value={referral.cell} placeholder="" />
+                    <Input
+                      name="cell"
+                      value={referral.cell}
+                      placeholder="555-555-5555"
+                    />
                   </Form.Item>
                 </Col>
                 <Col span={8}>
@@ -272,7 +299,11 @@ const Documents = () => {
                     label="Work:"
                     onChange={e => handleReferralChange(e, index)}
                   >
-                    <Input name="work" value={referral.work} placeholder="" />
+                    <Input
+                      name="work"
+                      value={referral.work}
+                      placeholder="555-555-5555"
+                    />
                   </Form.Item>
                 </Col>
                 <Col span={8}>
@@ -280,7 +311,11 @@ const Documents = () => {
                     label="Home:"
                     onChange={e => handleReferralChange(e, index)}
                   >
-                    <Input name="home" value={referral.home} />
+                    <Input
+                      name="home"
+                      value={referral.home}
+                      placeholder="555-555-5555"
+                    />
                   </Form.Item>
                 </Col>
               </Row>
