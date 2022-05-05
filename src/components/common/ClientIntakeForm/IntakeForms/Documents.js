@@ -27,7 +27,38 @@ const Documents = () => {
     work: '',
     home: '',
   };
+
+  const initialDocuments = {
+    client_id: false,
+    completed_hfca: false,
+    valid_driver: false,
+    valid_social: false,
+    dshs_wic_tanf_snap: false,
+    responsible_renters_course: false,
+    birth_cert_for_children: false,
+    child_enrolled_school: false,
+    childcare: false,
+    food_assistance: false,
+    clothing_assistance: false,
+    counseling_services: false,
+    addiction_resources: false,
+    mentor_programs: false,
+    youth_services: false,
+    budgeting: false,
+    can_text_employment_opportunities: false,
+    can_text_apartment_listings: false,
+    can_text_career_fairs: false,
+    can_add_referrals: false,
+    referrals_name: false,
+    referrals_address: false,
+    referrals_cell: false,
+    referrals_home: false,
+    referrals_work: false,
+    referrals_email: false,
+  };
+
   const [referrals, setReferrals] = useState([initialReferral]);
+  const [documents, setDocuments] = useState(initialDocuments);
 
   const handleAddReferral = () => {
     setReferrals([...referrals, initialReferral]);
@@ -44,6 +75,12 @@ const Documents = () => {
       previousReferrals[index].firstMeeting = Moment(string, 'MM-DD-YYYY');
       setReferrals(previousReferrals);
     }
+  };
+
+  const handleDeleteReferral = index => {
+    const previousReferrals = [...referrals];
+    previousReferrals.splice(index, 1);
+    setReferrals(previousReferrals);
   };
 
   //Inline styles added temporarily from client family info
@@ -97,43 +134,52 @@ const Documents = () => {
     {
       label:
         'Completed the HFCA (Homeless Families Coordinated Assesment)  within the past 90 days',
-      value: 'completedHFCA',
+      value: 'completed_hfca',
     },
     {
       label: "Valid Driver's License or State Identification Card",
-      value: 'validID',
+      value: 'valid_driver',
     },
     {
       label: 'A valid social security card for everyone in the household',
-      value: 'validSocialSecurityCards',
+      value: 'valid_social',
     },
     {
       label: 'Signed up for benifits through DSHS (WIC, TANF, SNAP)',
-      value: 'benefitsDSHS',
+      value: 'dshs_wic_tanf_snap',
     },
     {
       label: 'Completed the Responsible Renters Course',
-      value: 'responsibleRentersCourse',
+      value: 'responsible_renters_course',
     },
     {
       label: 'Birth Certificates for children in the household',
-      value: 'birthCertificates',
+      value: 'birth_cert_for_children',
     },
   ];
 
   const ifApplicable = [
-    { label: 'Children Enrolled in School', value: 'childrenInSchool' },
+    { label: 'Children Enrolled in School', value: 'child_enrolled_school' },
     { label: 'Childcare', value: 'childcare' },
   ];
 
   const additionalInformation = [
-    { label: 'Food/meal assistance', value: 'mealAssistance' },
-    { label: 'Clothing assistance', value: 'clothingAssistance' },
-    { label: 'Counseling services', value: 'counselingServices' },
-    { label: 'Addiction/recovery resources', value: 'addictionResources' },
-    { label: 'Mentor programs', value: 'mentorPrograms' },
-    { label: 'Youth services/programming', value: 'youthServices' },
+    { label: 'Food/meal assistance', value: 'food_assistance' },
+    { label: 'Clothing assistance', value: 'clothing_assistance' },
+    { label: 'Counseling services', value: 'counseling_services' },
+    { label: 'Addiction/recovery resources', value: 'addiction_resources' },
+    { label: 'Mentor programs', value: 'mentor_programs' },
+    { label: 'Youth services/programming', value: 'youth_services' },
     { label: 'Budgeting', value: 'budgeting' },
+  ];
+
+  const textUpdates = [
+    { label: 'Employment opportunities', value: 'child_enrolled_school' },
+    { label: 'Apartment listings', value: 'childcare' },
+    {
+      label: 'Career fairs and job trainings/programs',
+      value: 'child_enrolled_school',
+    },
   ];
 
   return (
@@ -307,6 +353,17 @@ const Documents = () => {
                   </Form.Item>
                 </Col>
               </Row>
+              {index !== 0 ? (
+                <Form.Item style={{ textAlign: 'center' }}>
+                  <Button
+                    style={{ margin: '0 20px' }}
+                    icon={<PlusOutlined />}
+                    onClick={() => handleDeleteReferral(index)}
+                  >
+                    Delete Referral
+                  </Button>
+                </Form.Item>
+              ) : null}
               <Divider />
             </section>
           );
