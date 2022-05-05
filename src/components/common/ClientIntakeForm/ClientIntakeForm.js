@@ -10,6 +10,7 @@ const sectionContainer = {
   alignContent: 'center',
   margin: 'auto',
   backgroundColor: '#3F3F3F',
+  color: 'white',
 };
 
 const buttonSection = {
@@ -28,6 +29,7 @@ const prime = {
   backgroundColor: '#3F3F3F',
   margin: '10px',
   border: 'none',
+  color: '#FFFFF0',
 };
 
 const ClientIntakeForm = () => {
@@ -47,7 +49,7 @@ const ClientIntakeForm = () => {
       layout="vertical"
       style={sectionContainer}
     >
-      <h1 style={{ textAlign: 'center' }}>Intake Form</h1>
+      <h1 style={{ textAlign: 'center', color: '#FFFFF0' }}>Intake Form</h1>
       <Form.Item
         label="Inital Intake Date"
         style={{ marginBottom: '50px' }}

@@ -22,8 +22,9 @@ const ClientFamilyInfo = () => {
   const subsectionHeader = {
     textAlign: 'center',
     marginBottom: '50px',
-    backgroundColor: 'whiteSmoke',
-    color: '#101010',
+    background: '#3f3f3f',
+    color: 'white',
+
     padding: '20px',
   };
   const inputStyles = {
@@ -78,18 +79,30 @@ const ClientFamilyInfo = () => {
 
       <h2 style={subsectionHeader}>Client/Family Information</h2>
 
-      <Divider>Head of Household</Divider>
+      <Divider style={{ color: '#ffffff' }}>Head of Household</Divider>
       <div className="hohContainer" style={formStyles}>
         <section style={sectionLeft}>
-          <Form.Item label="First Name" name="hohFirstName" initialValue="">
+          <Form.Item
+            label={<label style={{ color: 'white' }}>First Name</label>}
+            name="hohFirstName"
+            initialValue=""
+          >
             <Input placeholder="First Name" style={inputStyles} />
           </Form.Item>
 
-          <Form.Item label="SSN" name="hohSSN" initialValue="">
+          <Form.Item
+            label={<label style={{ color: 'white' }}>SSN</label>}
+            name="hohSSN"
+            initialValue=""
+          >
             <Input placeholder="XXX-XX-XXXX" style={inputStyles} />
           </Form.Item>
 
-          <Form.Item label="Ethnicity" name="hohEthnicity" initialValue="">
+          <Form.Item
+            label={<label style={{ color: 'white' }}>Ethnicity</label>}
+            name="hohEthnicity"
+            initialValue=""
+          >
             <Select style={inputStyles} placeholder="-- Select --">
               <Select.Option value="American Indian or Alaska Native" />
               <Select.Option value="Asian" />
@@ -103,7 +116,7 @@ const ClientFamilyInfo = () => {
           </Form.Item>
 
           <Form.Item
-            label="Sexual Orientation"
+            label={<label style={{ color: 'white' }}>Sexual Orientation</label>}
             name="hohSexualOrientaion"
             initialValue=""
           >
@@ -120,11 +133,19 @@ const ClientFamilyInfo = () => {
             </Select>
           </Form.Item>
 
-          <Form.Item label="If Other" name="hohOther" initialValue="">
+          <Form.Item
+            label={<label style={{ color: 'white' }}>If Other</label>}
+            name="hohOther"
+            initialValue=""
+          >
             <TextArea placeholder="Other" style={inputStyles} />
           </Form.Item>
 
-          <Form.Item label="Veteran?" name="hohVeteran" initialValue="">
+          <Form.Item
+            label={<label style={{ color: 'white' }}>Veteran?</label>}
+            name="hohVeteran"
+            initialValue=""
+          >
             <Radio.Group>
               <Radio value={true}>Yes</Radio>
               <Radio value={false}>No</Radio>
@@ -214,7 +235,7 @@ const ClientFamilyInfo = () => {
         </section>
       </div>
 
-      <Divider>Last Known Address</Divider>
+      <Divider style={{ color: '#ffffff' }}>Last Known Address</Divider>
       <div style={formStyles}>
         <section style={sectionLeft}>
           <Form.Item label="Address 1" name="address1" initialValue="">
@@ -242,7 +263,9 @@ const ClientFamilyInfo = () => {
         </section>
       </div>
 
-      <Divider style={{ marginBottom: '50px' }}>Family Members</Divider>
+      <Divider style={{ marginBottom: '50px', color: '#ffffff' }}>
+        Family Members
+      </Divider>
       {/* The button below should be used to add a new family member subform to the ClinentFamilyInfo component. This  subform will be an adult or child family member, see the family members folder for each subform component. See the client intake wireframe for an example of how adding a family member should work.  */}
       <Form.Item>
         <Button style={{ margin: '0 20px' }} icon={<PlusOutlined />}>

@@ -48,23 +48,35 @@ const AdultFamilyMember = () => {
       </Divider>
       <div style={formStyles}>
         <section style={sectionLeft}>
-          <Form.Item label="First Name" name="adultFirstname" initialValue="">
+          <Form.Item
+            label={<label style={{ color: 'white' }}>First Name</label>}
+            name="adultFirstname"
+            initialValue=""
+          >
             <Input placeholder="First Name" style={inputStyles} />
           </Form.Item>
 
           <Form.Item
-            label="Relation to HoH"
+            label={<label style={{ color: 'white' }}>Relation to HoH</label>}
             name="adultRealtionHoh"
             initialValue=""
           >
             <Input placeholder="Relation" style={inputStyles} />
           </Form.Item>
 
-          <Form.Item label="SSN" name="adultSSN" initialValue="">
+          <Form.Item
+            label={<label style={{ color: 'white' }}>SSN</label>}
+            name="adultSSN"
+            initialValue=""
+          >
             <Input placeholder="XXX-XX-XXXX" style={inputStyles} />
           </Form.Item>
 
-          <Form.Item label="Race" name="adultrace" initialValue="">
+          <Form.Item
+            label={<label style={{ color: 'white' }}>Race</label>}
+            name="adultrace"
+            initialValue=""
+          >
             <Select style={inputStyles} placeholder="-- Select --">
               <Select.Option value="American Indian or Alaska Native" />
               <Select.Option value="Asian" />
@@ -75,7 +87,9 @@ const AdultFamilyMember = () => {
           </Form.Item>
 
           <Form.Item
-            label="Sexual Orientation"
+            label={
+              <label style={{ color: 'white' }}>Sexual Orientation </label>
+            }
             name="adultSexualOrientation"
             initialValue=""
           >
@@ -92,18 +106,30 @@ const AdultFamilyMember = () => {
             </Select>
           </Form.Item>
 
-          <Form.Item label="Other" name="adultOther" initialValue="">
+          <Form.Item
+            label={<label style={{ color: 'white' }}>Other</label>}
+            name="adultOther"
+            initialValue=""
+          >
             <TextArea style={inputStyles} />
           </Form.Item>
 
-          <Form.Item label="Veteran?" name="isAdultVeteran" initialValue="">
+          <Form.Item
+            label={<label style={{ color: 'white' }}>Veteran?</label>}
+            name="isAdultVeteran"
+            initialValue=""
+          >
             <Radio.Group>
               <Radio value={true}>Yes</Radio>
               <Radio value={false}>No</Radio>
             </Radio.Group>
           </Form.Item>
           <Form.Item
-            label="Does Family Member have Documented Disabilities?"
+            label={
+              <label style={{ color: 'white' }}>
+                Does Family Member Have Documented Disabilities?
+              </label>
+            }
             name="isAdultDisabled"
             initialValue=""
           >
@@ -114,7 +140,11 @@ const AdultFamilyMember = () => {
           </Form.Item>
 
           <Form.Item
-            label="If yes what disablities?"
+            label={
+              <label style={{ color: 'white' }}>
+                If Yes, What Disabilities?
+              </label>
+            }
             name="adultDisabilities"
             initialValue=""
           >
@@ -123,15 +153,27 @@ const AdultFamilyMember = () => {
         </section>
 
         <section style={sectionRight}>
-          <Form.Item label="Last Name" name="adultLastName" initialValue="">
+          <Form.Item
+            label={<label style={{ color: 'white' }}>Last Name</label>}
+            name="adultLastName"
+            initialValue=""
+          >
             <Input placeholder="Last Name" style={inputStyles} />
           </Form.Item>
 
-          <Form.Item label="DOB" name="adultDOB" initialValue="">
+          <Form.Item
+            label={<label style={{ color: 'white' }}>DOB</label>}
+            name="adultDOB"
+            initialValue=""
+          >
             <DatePicker format="MM-DD-YYYY" />
           </Form.Item>
 
-          <Form.Item label="Ethnicity" name="adultEthnicity" initialValue="">
+          <Form.Item
+            label={<label style={{ color: 'white' }}>Ethnicity</label>}
+            name="adultEthnicity"
+            initialValue=""
+          >
             <Select style={inputStyles} placeholder="-- Select --">
               <Select.Option value="American Indian or Alaska Native" />
               <Select.Option value="Asian" />
@@ -144,7 +186,11 @@ const AdultFamilyMember = () => {
             </Select>
           </Form.Item>
 
-          <Form.Item label="Gender" name="adultGender" initialValue="">
+          <Form.Item
+            label={<label style={{ color: 'white' }}>Gender</label>}
+            name="adultGender"
+            initialValue=""
+          >
             <Select style={inputStyles} placeholder="-- Select --">
               <Select.Option value="Male" />
               <Select.Option value="Female" />
@@ -155,14 +201,18 @@ const AdultFamilyMember = () => {
             </Select>
           </Form.Item>
           <Form.Item
-            label="Self-Describe:"
+            label={<label style={{ color: 'white' }}>Self Describe</label>}
             name="adultSelfDescribe"
             initialValue=""
           >
             <TextArea style={inputStyles} />
           </Form.Item>
 
-          <Form.Item label="Pregnant?" name="isAdultPregnant" initialValue="">
+          <Form.Item
+            label={<label style={{ color: 'white' }}>Pregnant?</label>}
+            name="isAdultPregnant"
+            initialValue=""
+          >
             <Radio.Group>
               <Radio value={true}>Yes</Radio>
               <Radio value={false}>No</Radio>
@@ -170,7 +220,11 @@ const AdultFamilyMember = () => {
           </Form.Item>
 
           <Form.Item
-            label="If yes, when is the due date?"
+            label={
+              <label style={{ color: 'white' }}>
+                If yes, when is the due date?
+              </label>
+            }
             name="adultDueDate"
             initialValue=""
           >
@@ -178,7 +232,11 @@ const AdultFamilyMember = () => {
           </Form.Item>
 
           <Form.Item
-            label="Does Family Member have a history of:"
+            label={
+              <label style={{ color: 'white' }}>
+                Does the family member have a history of
+              </label>
+            }
             name="adultHistory"
             initialValue=""
           >
