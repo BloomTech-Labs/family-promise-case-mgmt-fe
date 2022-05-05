@@ -33,11 +33,16 @@ const Documents = () => {
     setReferrals([...referrals, initialReferral]);
   };
 
-  const handleReferralChange = (e, index) => {
+  const handleReferralChange = (e, index, string) => {
     if (e.target) {
       const { name, value } = e.target;
+      const previousReferrals = [...referrals];
+      previousReferrals[index][name] = value;
+      setReferrals(previousReferrals);
     } else {
-      console.log(Moment(e).format('MM-DD-YYYY'));
+      const previousReferrals = [...referrals];
+      previousReferrals[index].firstMeeting = Moment(string, 'MM-DD-YYYY');
+      setReferrals(previousReferrals);
     }
   };
 
@@ -195,8 +200,11 @@ const Documents = () => {
                       name="firstMeeting"
                       value={referral.firstMeeting}
                       style={{ width: '100%' }}
+                      format="MM-DD-YYYY"
                       placeholder="MM-DD-YYYY"
-                      onChange={e => handleReferralChange(e, index)}
+                      onChange={(e, string) =>
+                        handleReferralChange(e, index, string)
+                      }
                     />
                   </Form.Item>
                 </Col>
