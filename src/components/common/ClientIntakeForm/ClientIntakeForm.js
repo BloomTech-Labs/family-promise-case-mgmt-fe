@@ -9,20 +9,23 @@ const sectionContainer = {
   justifyContent: 'center',
   alignContent: 'center',
   margin: 'auto',
+  backgroundColor: '#3F3F3F',
 };
 
 const buttonSection = {
   display: 'flex',
   justifyContent: 'center',
   marginTop: '50px',
+  backgroundColor: '#3F3F3F',
 };
 
 const btn = {
   margin: '10px',
+  backgroundColor: '#3F3F3F',
 };
 
 const prime = {
-  backgroundColor: '#007FD3',
+  backgroundColor: '#3F3F3F',
   margin: '10px',
   border: 'none',
 };
