@@ -9,6 +9,7 @@ import {
   Row,
   Col,
 } from 'antd';
+import Moment from 'moment';
 import { PlusOutlined } from '@ant-design/icons';
 
 const Documents = () => {
@@ -33,9 +34,10 @@ const Documents = () => {
   };
 
   const handleReferralChange = (e, index) => {
-    console.log(e, e.target, index);
     if (e.target) {
-      console.log(e.target);
+      const { name, value } = e.target;
+    } else {
+      console.log(Moment(e).format('MM-DD-YYYY'));
     }
   };
 
@@ -93,7 +95,7 @@ const Documents = () => {
       value: 'completedHFCA',
     },
     {
-      label: 'Valid Driver`s License or State Identification Card',
+      label: "Valid Driver's License or State Identification Card",
       value: 'validID',
     },
     {
@@ -178,143 +180,121 @@ const Documents = () => {
             <section style={referralContainer} layout="vertical">
               <Row gutter={50}>
                 <Col span={15}>
-                  <Form.Item
-                    label="Name:"
-                    onChange={e => handleReferralChange(e, index)}
-                  >
+                  <Form.Item label="Name:">
                     <Input
                       name="name"
                       value={referral.name}
                       placeholder="John Doe"
+                      onChange={e => handleReferralChange(e, index)}
                     />
                   </Form.Item>
                 </Col>
                 <Col span={9}>
-                  <Form.Item
-                    label="First Meeting:"
-                    onChange={e => handleReferralChange(e, index)}
-                  >
+                  <Form.Item label="First Meeting:">
                     <DatePicker
                       name="firstMeeting"
                       value={referral.firstMeeting}
                       style={{ width: '100%' }}
                       placeholder="MM-DD-YYYY"
+                      onChange={e => handleReferralChange(e, index)}
                     />
                   </Form.Item>
                 </Col>
               </Row>
               <Row gutter={50}>
                 <Col span={18}>
-                  <Form.Item
-                    label="Address (If Available):"
-                    onChange={e => handleReferralChange(e, index)}
-                  >
+                  <Form.Item label="Address (If Available):">
                     <Input
                       name="address"
                       value={referral.address}
                       placeholder="123 Anywhere Street"
+                      onChange={e => handleReferralChange(e, index)}
                     />
                   </Form.Item>
                 </Col>
                 <Col span={6}>
-                  <Form.Item
-                    label="Apt. #:"
-                    onChange={e => handleReferralChange(e, index)}
-                  >
+                  <Form.Item label="Apt. #:">
                     <Input
                       name="apt"
                       value={referral.apt}
                       placeholder="Apt #"
+                      onChange={e => handleReferralChange(e, index)}
                     />
                   </Form.Item>
                 </Col>
               </Row>
               <Row gutter={50}>
                 <Col span={14}>
-                  <Form.Item
-                    label="City:"
-                    onChange={e => handleReferralChange(e, index)}
-                  >
+                  <Form.Item label="City:">
                     <Input
                       name="city"
                       value={referral.city}
                       placeholder="City Name"
+                      onChange={e => handleReferralChange(e, index)}
                     />
                   </Form.Item>
                 </Col>
                 <Col span={4}>
-                  <Form.Item
-                    label="State:"
-                    onChange={e => handleReferralChange(e, index)}
-                  >
+                  <Form.Item label="State:">
                     <Input
                       name="state"
                       value={referral.state}
                       placeholder="State Abbrv."
+                      onChange={e => handleReferralChange(e, index)}
                     />
                   </Form.Item>
                 </Col>
                 <Col span={6}>
-                  <Form.Item
-                    label="Zip:"
-                    onChange={e => handleReferralChange(e, index)}
-                  >
+                  <Form.Item label="Zip:">
                     <Input
                       name="zip"
                       value={referral.zip}
                       placeholder="Zip Code"
+                      onChange={e => handleReferralChange(e, index)}
                     />
                   </Form.Item>
                 </Col>
               </Row>
               <Row gutter={50}>
                 <Col span={15}>
-                  <Form.Item
-                    label="Email:"
-                    onChange={e => handleReferralChange(e, index)}
-                  >
+                  <Form.Item label="Email:">
                     <Input
                       name="email"
                       value={referral.email}
                       placeholder="user@email.com"
+                      onChange={e => handleReferralChange(e, index)}
                     />
                   </Form.Item>
                 </Col>
               </Row>
               <Row gutter={50}>
                 <Col span={8}>
-                  <Form.Item
-                    label="Cell:"
-                    onChange={e => handleReferralChange(e, index)}
-                  >
+                  <Form.Item label="Cell:">
                     <Input
                       name="cell"
                       value={referral.cell}
                       placeholder="555-555-5555"
+                      onChange={e => handleReferralChange(e, index)}
                     />
                   </Form.Item>
                 </Col>
                 <Col span={8}>
-                  <Form.Item
-                    label="Work:"
-                    onChange={e => handleReferralChange(e, index)}
-                  >
+                  <Form.Item label="Work:">
                     <Input
                       name="work"
                       value={referral.work}
                       placeholder="555-555-5555"
+                      onChange={e => handleReferralChange(e, index)}
                     />
                   </Form.Item>
                 </Col>
                 <Col span={8}>
-                  <Form.Item
-                    label="Home:"
-                    onChange={e => handleReferralChange(e, index)}
-                  >
+                  <Form.Item label="Home:">
                     <Input
                       name="home"
                       value={referral.home}
                       placeholder="555-555-5555"
+                      onChange={e => handleReferralChange(e, index)}
                     />
                   </Form.Item>
                 </Col>
