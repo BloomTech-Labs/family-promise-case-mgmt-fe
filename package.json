@@ -12,7 +12,7 @@
     "axios": "^0.21.4",
     "craco-less": "^2.0.0",
     "plotly.js": "^1.54.6",
-    "react": "^16.13.1",
+    "react": "^16.14.0",
     "react-dom": "^16.13.1",
     "react-plotly.js": "^2.4.0",
     "react-redux": "^7.2.6",
