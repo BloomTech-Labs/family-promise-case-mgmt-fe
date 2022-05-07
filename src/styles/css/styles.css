@@ -252,3 +252,24 @@
   margin: 1rem;
   color: #cdcdcd;
 }
+.CaseDetails {
+  display: flex;
+  flex-flow: row nowrap;
+}
+.CaseDetails__LeftSide {
+  width: 50%;
+}
+.CaseDetails__LeftSideHead {
+  display: flex;
+  flex-flow: row nowrap;
+}
+.CaseDetails__LeftSideBtnsContainer {
+  display: flex; 
+  flex-flow: column nowrap;
+}
+.CaseDetails__LeftSideBtns {
+  margin-top: 0.75rem;
+}
+.CaseDetails__RightSide {
+  width: 50%;
+}
