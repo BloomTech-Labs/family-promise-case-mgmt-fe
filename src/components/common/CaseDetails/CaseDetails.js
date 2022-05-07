@@ -17,21 +17,40 @@ const CaseDetails = () => {
           <Button type="default">ALL CASES</Button>
         </div>
         <div className="CaseDetails__LeftSideBtnsContainer">
-          <Card>Basic info here</Card>
+          <Card className="CaseDetails__Leftside__OverviewHead">
+            <div className="Leftside__overviewSection1">HOH: Name here</div>
+            <div className="Leftside__overviewSection2">EDU: high compl</div>
+            <div className="Leftside__overviewSection3">EMP: FT</div>
+          </Card>
           <Button type="block" className="CaseDetails__LeftSideBtns">
-            Test
+            <span>Head of Household</span>
+            <span>HoH name here</span>
+            <Button type="ghost">Update</Button>
           </Button>
           <Button type="block" className="CaseDetails__LeftSideBtns">
-            Test
+            <span>Family Members</span>
+            <span>Closest member here</span>
+            <Button type="ghost">Update</Button>
           </Button>
           <Button type="block" className="CaseDetails__LeftSideBtns">
-            Test
+            <span>Family Size</span>
+            <span>Number here</span>
+            <Button type="ghost">Update</Button>
           </Button>
           <Button type="block" className="CaseDetails__LeftSideBtns">
-            Test
+            <span>Education Status</span>
+            <span>Highest EDU completed</span>
+            <Button type="ghost">Update</Button>
           </Button>
           <Button type="block" className="CaseDetails__LeftSideBtns">
-            Test
+            <span>Prior History of Homelessness</span>
+            <span>History here</span>
+            <Button type="ghost">Update</Button>
+          </Button>
+          <Button type="block" className="CaseDetails__LeftSideBtns">
+            <span>Employment Status</span>
+            <span>Status here</span>
+            <Button type="ghost">Update</Button>
           </Button>
         </div>
       </div>

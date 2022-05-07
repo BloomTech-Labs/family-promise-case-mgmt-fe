@@ -263,12 +263,40 @@
   display: flex;
   flex-flow: row nowrap;
 }
+.CaseDetails__LeftSideHead h2 {
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+.CaseDetails__Leftside__OverviewHead {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  width: 100%;
+}
+.Leftside__overviewSection1 {
+  justify-self: flex-start;
+}
+.Leftside__overviewSection1 {
+  justify-self: center;
+}
+.Leftside__overviewSection1 {
+  justify-self: flex-end;
+}
 .CaseDetails__LeftSideBtnsContainer {
   display: flex; 
   flex-flow: column nowrap;
 }
 .CaseDetails__LeftSideBtns {
   margin-top: 0.75rem;
+  height: 4rem;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.ButtonBarMargins {
+  margin-left: 5rem;
+  margin-right: 5rem;
 }
 .CaseDetails__RightSide {
   width: 50%;
