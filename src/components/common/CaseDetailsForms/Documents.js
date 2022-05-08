@@ -97,16 +97,16 @@ const Documents = () => {
   return (
     <Form
       form={form}
-      className="ClientFamilyInformation__Form"
+      className="ClientDocuments__Form"
       initialValues={initialDocuments}
       layout="vertical"
       labelCol={{ span: 8 }}
       wrapperCol={{ span: 100 }}
       labelWrap
     >
-      <div className="Documents_checkboxGroupContainer">
-        <section className="Documents_checkboxGroup">
-          <h3>
+      <div className="ClientDocuments__checkboxGroupContainer">
+        <section className="ClientDocuments__checkboxGroup">
+          <h3 className="ClientDocuments_sectionHeader">
             <b>Adults in family have:</b>
           </h3>
           <Form.Item name="completed_hfca" valuePropName="checked">
@@ -139,8 +139,8 @@ const Documents = () => {
             </Checkbox>
           </Form.Item>
         </section>
-        <section className="Documents_checkboxGroup">
-          <h3>(If Applicable):</h3>
+        <section className="ClientDocuments__checkboxGroup">
+          <h3 className="ClientDocuments_sectionHeader">(If Applicable):</h3>
           <Form.Item name="child_enrolled_school" valuePropName="checked">
             <Checkbox>Children Enrolled in School</Checkbox>
           </Form.Item>
@@ -148,8 +148,8 @@ const Documents = () => {
             <Checkbox>Childcare</Checkbox>
           </Form.Item>
         </section>
-        <section className="Documents_checkboxGroup">
-          <h3>
+        <section className="ClientDocuments__checkboxGroup">
+          <h3 className="ClientDocuments_sectionHeader">
             <b>Would you like to receive information about:</b>
           </h3>
           <Form.Item name="food_assistance" valuePropName="checked">
@@ -174,8 +174,8 @@ const Documents = () => {
             <Checkbox>Budgeting</Checkbox>
           </Form.Item>
         </section>
-        <section className="Documents_checkboxGroup">
-          <h3>
+        <section className="ClientDocuments__checkboxGroup">
+          <h3 className="ClientDocuments_sectionHeader">
             <b>Would you like to receive text updates about:</b>
           </h3>
           <Form.Item
@@ -195,135 +195,184 @@ const Documents = () => {
 
       <Divider style={{ marginBottom: '50px' }} />
 
-      <div className="Documents_referralsContainer">
-        <h3>Referrals:</h3>
+      <div className="ClientDocuments__referralsContainer">
+        <h3 className="ClientDocuments_sectionHeader">
+          <b>Referrals:</b>
+        </h3>
         {referrals.map((referral, index) => {
           return (
-            <section className="Documents_referralContainer" layout="vertical">
-              <Row gutter={50}>
-                <Col span={15}>
-                  <Form.Item label="Name:" layout="vertical">
-                    <Input
-                      name="name"
-                      value={referral.name}
-                      placeholder="John Doe"
-                      onChange={e => handleReferralChange(e, index)}
-                    />
-                  </Form.Item>
-                </Col>
-                <Col span={9}>
-                  <Form.Item label="First Meeting:">
-                    <DatePicker
-                      name="firstMeeting"
-                      value={referral.firstMeeting}
-                      style={{ width: '100%' }}
-                      format="MM-DD-YYYY"
-                      placeholder="MM-DD-YYYY"
-                      onChange={(e, string) =>
-                        handleReferralChange(e, index, string)
-                      }
-                    />
-                  </Form.Item>
-                </Col>
-              </Row>
-              <Row gutter={50}>
-                <Col span={18}>
-                  <Form.Item label="Address (If Available):">
-                    <Input
-                      name="address"
-                      value={referral.address}
-                      placeholder="123 Anywhere Street"
-                      onChange={e => handleReferralChange(e, index)}
-                    />
-                  </Form.Item>
-                </Col>
-                <Col span={6}>
-                  <Form.Item label="Apt. #:">
-                    <Input
-                      name="apt"
-                      value={referral.apt}
-                      placeholder="Apt #"
-                      onChange={e => handleReferralChange(e, index)}
-                    />
-                  </Form.Item>
-                </Col>
-              </Row>
-              <Row gutter={50}>
-                <Col span={14}>
-                  <Form.Item label="City:">
-                    <Input
-                      name="city"
-                      value={referral.city}
-                      placeholder="City Name"
-                      onChange={e => handleReferralChange(e, index)}
-                    />
-                  </Form.Item>
-                </Col>
-                <Col span={4}>
-                  <Form.Item label="State:">
-                    <Input
-                      name="state"
-                      value={referral.state}
-                      placeholder="State Abbrv."
-                      onChange={e => handleReferralChange(e, index)}
-                    />
-                  </Form.Item>
-                </Col>
-                <Col span={6}>
-                  <Form.Item label="Zip:">
-                    <Input
-                      name="zip"
-                      value={referral.zip}
-                      placeholder="Zip Code"
-                      onChange={e => handleReferralChange(e, index)}
-                    />
-                  </Form.Item>
-                </Col>
-              </Row>
-              <Row gutter={50}>
-                <Col span={15}>
-                  <Form.Item label="Email:">
-                    <Input
-                      name="email"
-                      value={referral.email}
-                      placeholder="user@email.com"
-                      onChange={e => handleReferralChange(e, index)}
-                    />
-                  </Form.Item>
-                </Col>
-              </Row>
-              <Row gutter={50}>
-                <Col span={8}>
-                  <Form.Item label="Cell:">
-                    <Input
-                      name="cell"
-                      value={referral.cell}
-                      placeholder="555-555-5555"
-                      onChange={e => handleReferralChange(e, index)}
-                    />
-                  </Form.Item>
-                </Col>
-                <Col span={8}>
-                  <Form.Item label="Work:">
-                    <Input
-                      name="work"
-                      value={referral.work}
-                      placeholder="555-555-5555"
-                      onChange={e => handleReferralChange(e, index)}
-                    />
-                  </Form.Item>
-                </Col>
-                <Col span={8}>
-                  <Form.Item label="Home:">
-                    <Input
-                      name="home"
-                      value={referral.home}
-                      placeholder="555-555-5555"
-                      onChange={e => handleReferralChange(e, index)}
-                    />
-                  </Form.Item>
-                </Col>
-              </Row>
+            <section
+              className="ClientDocuments__referralContainer"
+              layout="vertical"
+            >
+              <Form.Item
+                label={
+                  <label className="ClientDocuments__Input__ItemLabel">
+                    Name:
+                  </label>
+                }
+              >
+                <Input
+                  name="name"
+                  value={referral.name}
+                  placeholder="John Doe"
+                  onChange={e => handleReferralChange(e, index)}
+                  className="ClientDocuments__Input__Name"
+                />
+              </Form.Item>
+              <Form.Item
+                label={
+                  <label className="ClientDocuments__Input__ItemLabel">
+                    First Meeting:
+                  </label>
+                }
+              >
+                <DatePicker
+                  name="firstMeeting"
+                  value={referral.firstMeeting}
+                  format="MM-DD-YYYY"
+                  placeholder="MM-DD-YYYY"
+                  onChange={(e, string) =>
+                    handleReferralChange(e, index, string)
+                  }
+                  className="ClientDocuments__DatePicker"
+                />
+              </Form.Item>
+              <Form.Item
+                label={
+                  <label className="ClientDocuments__Input__ItemLabel">
+                    Address (If Available):
+                  </label>
+                }
+              >
+                <Input
+                  name="address"
+                  value={referral.address}
+                  placeholder="123 Anywhere Street"
+                  onChange={e => handleReferralChange(e, index)}
+                  className="ClientDocuments__Input__Address"
+                />
+              </Form.Item>
+              <Form.Item
+                label={
+                  <label className="ClientDocuments__Input__ItemLabel">
+                    Apt #:
+                  </label>
+                }
+              >
+                <Input
+                  name="apt"
+                  value={referral.apt}
+                  placeholder="Apt #"
+                  onChange={e => handleReferralChange(e, index)}
+                  className="ClientDocuments__Input__Apt"
+                />
+              </Form.Item>
+              <Form.Item
+                label={
+                  <label className="ClientDocuments__Input__ItemLabel">
+                    City:
+                  </label>
+                }
+              >
+                <Input
+                  name="city"
+                  value={referral.city}
+                  placeholder="City Name"
+                  onChange={e => handleReferralChange(e, index)}
+                  className="ClientDocuments__Input__City"
+                />
+              </Form.Item>
+              <Form.Item
+                label={
+                  <label className="ClientDocuments__Input__ItemLabel">
+                    State:
+                  </label>
+                }
+              >
+                <Input
+                  name="state"
+                  value={referral.state}
+                  placeholder="State Abbrv."
+                  onChange={e => handleReferralChange(e, index)}
+                  className="ClientDocuments__Input__State"
+                />
+              </Form.Item>
+              <Form.Item
+                label={
+                  <label className="ClientDocuments__Input__ItemLabel">
+                    Zip:
+                  </label>
+                }
+              >
+                <Input
+                  name="zip"
+                  value={referral.zip}
+                  placeholder="Zip Code"
+                  onChange={e => handleReferralChange(e, index)}
+                  className="ClientDocuments__Input__Zip"
+                />
+              </Form.Item>
+              <Form.Item
+                label={
+                  <label className="ClientDocuments__Input__ItemLabel">
+                    Email:
+                  </label>
+                }
+              >
+                <Input
+                  name="email"
+                  value={referral.email}
+                  placeholder="user@email.com"
+                  onChange={e => handleReferralChange(e, index)}
+                  className="ClientDocuments__Input__Email"
+                />
+              </Form.Item>
+              <Form.Item
+                label={
+                  <label className="ClientDocuments__Input__ItemLabel">
+                    Cell:
+                  </label>
+                }
+              >
+                <Input
+                  name="cell"
+                  value={referral.cell}
+                  placeholder="555-555-5555"
+                  onChange={e => handleReferralChange(e, index)}
+                  className="ClientDocuments__Input__Cell"
+                />
+              </Form.Item>
+              <Form.Item
+                label={
+                  <label className="ClientDocuments__Input__ItemLabel">
+                    Work:
+                  </label>
+                }
+              >
+                <Input
+                  name="work"
+                  value={referral.work}
+                  placeholder="555-555-5555"
+                  onChange={e => handleReferralChange(e, index)}
+                  className="ClientDocuments__Input__Work"
+                />
+              </Form.Item>
+              <Form.Item
+                label={
+                  <label className="ClientDocuments__Input__ItemLabel">
+                    Home:
+                  </label>
+                }
+              >
+                <Input
+                  name="home"
+                  value={referral.home}
+                  placeholder="555-555-5555"
+                  onChange={e => handleReferralChange(e, index)}
+                  className="ClientDocuments__Input__Home"
+                />
+              </Form.Item>
               {index !== 0 ? (
                 <Form.Item style={{ textAlign: 'center' }}>
                   <Button

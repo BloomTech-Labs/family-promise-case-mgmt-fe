@@ -253,35 +253,95 @@
   color: #cdcdcd;
 }
 
-.Documents_formContainer {
+.ClientDocuments__Form {
   display: flex;
+  flex-direction: column;
   justify-content: center;
-};
+  padding-top: 2rem;
+  width: 80%;
+  padding: 2rem;
+  margin: 0 12rem;
+  background: #3f3f3f;
+  color: #ffffff;
+}
 
-.Documents_checkboxContainer {
+.ClientDocuments__checkboxGroupContainer {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   margin: 0 10px;
-};
+}
 
-.Documents_checkboxGroup {
+.ClientDocuments__checkboxGroup {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
 
-};
+}
 
-.Documents_referralsContainer {
+.ClientDocuments__referralsContainer {
   display: flex;
   flex-direction: column;
   justify-content: center;
   margin: auto 5rem,
-};
+}
 
-.Documents_referralContainer {
+.ClientDocuments__referralContainer {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-flow: row wrap;
+  justify-content: space-between;
   margin: 0 10px;
-};
+}
+
+.ClientDocuments__Input__Name {
+  width: 50rem;
+}
+
+.ClientDocuments__DatePicker {
+  width: 20rem;
+}
+
+.ClientDocuments__Input__Address {
+  width: 52rem;
+}
+
+.ClientDocuments__Input__Apt {
+  width: 18rem;
+}
+
+.ClientDocuments__Input__City {
+  width: 45rem;
+}
+
+.ClientDocuments__Input__State {
+  width: 10rem;
+}
+
+.ClientDocuments__Input__Zip {
+  width: 10rem;
+}
+
+.ClientDocuments__Input__Email {
+  width: 56rem;
+}
+
+.ClientDocuments__Input__Cell {
+  width: 25rem;
+}
+
+.ClientDocuments__Input__Work {
+  width: 25rem;
+}
+
+.ClientDocuments__Input__Home {
+  width: 25rem;
+}
+
+.ClientDocuments__Input__ItemLabel {
+  color: #ffffff;
+}
+
+.ClientDocuments_sectionHeader {
+  color: #ffffff;
+}
+
