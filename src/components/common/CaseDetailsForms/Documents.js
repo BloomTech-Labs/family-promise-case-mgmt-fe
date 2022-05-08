@@ -94,58 +94,6 @@ const Documents = () => {
     setReferrals(previousReferrals);
   };
 
-  const adultsInFamily = [
-    {
-      label:
-        'Completed the HFCA (Homeless Families Coordinated Assesment)  within the past 90 days',
-      value: 'completed_hfca',
-    },
-    {
-      label: "Valid Driver's License or State Identification Card",
-      value: 'valid_driver',
-    },
-    {
-      label: 'A valid social security card for everyone in the household',
-      value: 'valid_social',
-    },
-    {
-      label: 'Signed up for benifits through DSHS (WIC, TANF, SNAP)',
-      value: 'dshs_wic_tanf_snap',
-    },
-    {
-      label: 'Completed the Responsible Renters Course',
-      value: 'responsible_renters_course',
-    },
-    {
-      label: 'Birth Certificates for children in the household',
-      value: 'birth_cert_for_children',
-    },
-  ];
-
-  const ifApplicable = [
-    { label: 'Children Enrolled in School', value: 'child_enrolled_school' },
-    { label: 'Childcare', value: 'childcare' },
-  ];
-
-  const additionalInformation = [
-    { label: 'Food/meal assistance', value: 'food_assistance' },
-    { label: 'Clothing assistance', value: 'clothing_assistance' },
-    { label: 'Counseling services', value: 'counseling_services' },
-    { label: 'Addiction/recovery resources', value: 'addiction_resources' },
-    { label: 'Mentor programs', value: 'mentor_programs' },
-    { label: 'Youth services/programming', value: 'youth_services' },
-    { label: 'Budgeting', value: 'budgeting' },
-  ];
-
-  const textUpdates = [
-    { label: 'Employment opportunities', value: 'child_enrolled_school' },
-    { label: 'Apartment listings', value: 'childcare' },
-    {
-      label: 'Career fairs and job trainings/programs',
-      value: 'child_enrolled_school',
-    },
-  ];
-
   return (
     <Form
       form={form}
@@ -156,31 +104,91 @@ const Documents = () => {
       wrapperCol={{ span: 100 }}
       labelWrap
     >
-      <div className="Documents_formContainer">
-        <section className="Documents_checkboxGroupContainer">
-          <Form.Item
-            label="Adults in family have:"
-            className="Documents_checkboxGroup"
-          >
-            <Checkbox.Group options={adultsInFamily} />
+      <div className="Documents_checkboxGroupContainer">
+        <section className="Documents_checkboxGroup">
+          <h3>
+            <b>Adults in family have:</b>
+          </h3>
+          <Form.Item name="completed_hfca" valuePropName="checked">
+            <Checkbox>
+              Completed the HFCA (Homeless Families Coordinated Assesment){' '}
+              <b>within the past 90 days</b>
+            </Checkbox>
           </Form.Item>
-          <Form.Item
-            label="(If Applicable):"
-            className="Documents_checkboxGroup"
-          >
-            <Checkbox.Group options={ifApplicable} />
+          <Form.Item name="valid_driver" valuePropName="checked">
+            <Checkbox>
+              Valid Driver's License or State Identification Card
+            </Checkbox>
           </Form.Item>
-          <Form.Item
-            label="Would you like to receive information about:"
-            className="Documents_checkboxGroup"
-          >
-            <Checkbox.Group options={additionalInformation} />
+          <Form.Item name="valid_social" valuePropName="checked">
+            <Checkbox>
+              A valid social security card for everyone in the household
+            </Checkbox>
           </Form.Item>
+          <Form.Item name="dshs_wic_tanf_snap" valuePropName="checked">
+            <Checkbox>
+              Signed up for benifits through DSHS (WIC, TANF, SNAP)
+            </Checkbox>
+          </Form.Item>
+          <Form.Item name="responsible_renters_course" valuePropName="checked">
+            <Checkbox>Completed the Responsible Renters Course</Checkbox>
+          </Form.Item>
+          <Form.Item name="birth_cert_for_children" valuePropName="checked">
+            <Checkbox>
+              Birth Certificates for children in the household
+            </Checkbox>
+          </Form.Item>
+        </section>
+        <section className="Documents_checkboxGroup">
+          <h3>(If Applicable):</h3>
+          <Form.Item name="child_enrolled_school" valuePropName="checked">
+            <Checkbox>Children Enrolled in School</Checkbox>
+          </Form.Item>
+          <Form.Item name="childcare" valuePropName="checked">
+            <Checkbox>Childcare</Checkbox>
+          </Form.Item>
+        </section>
+        <section className="Documents_checkboxGroup">
+          <h3>
+            <b>Would you like to receive information about:</b>
+          </h3>
+          <Form.Item name="food_assistance" valuePropName="checked">
+            <Checkbox>Food/meal assistance</Checkbox>
+          </Form.Item>
+          <Form.Item name="clothing_assistance" valuePropName="checked">
+            <Checkbox>Clothing assistance</Checkbox>
+          </Form.Item>
+          <Form.Item name="counseling_services" valuePropName="checked">
+            <Checkbox>Counseling services</Checkbox>
+          </Form.Item>
+          <Form.Item name="addiction_resources" valuePropName="checked">
+            <Checkbox>Addiction/recovery resources</Checkbox>
+          </Form.Item>
+          <Form.Item name="mentor_programs" valuePropName="checked">
+            <Checkbox>Mentor programs</Checkbox>
+          </Form.Item>
+          <Form.Item name="youth_services" valuePropName="checked">
+            <Checkbox>Youth services/programming</Checkbox>
+          </Form.Item>
+          <Form.Item name="budgeting" valuePropName="checked">
+            <Checkbox>Budgeting</Checkbox>
+          </Form.Item>
+        </section>
+        <section className="Documents_checkboxGroup">
+          <h3>
+            <b>Would you like to receive text updates about:</b>
+          </h3>
           <Form.Item
-            label="Would you like to receive text updates about:"
-            className="Documents_checkboxGroup"
+            name="can_text_employment_opportunities"
+            valuePropName="checked"
           >
-            <Checkbox.Group options={textUpdates} />
+            <Checkbox>Employment opportunities</Checkbox>
+          </Form.Item>
+          <Form.Item name="can_text_apartment_listings" valuePropName="checked">
+            <Checkbox>Apartment listings</Checkbox>
+          </Form.Item>
+          <Form.Item name="can_text_career_fairs" valuePropName="checked">
+            <Checkbox>Career fairs and job trainings/programs</Checkbox>
           </Form.Item>
         </section>
       </div>
