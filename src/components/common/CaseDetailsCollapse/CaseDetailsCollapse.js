@@ -1,8 +1,8 @@
 import React from 'react';
 import { Button, Collapse } from 'antd';
 import ClientFamilyInfoForm from '../CaseDetailsForms/ClientFamilyInformation';
-
 import { HouseholdInformationForm } from '../CaseDetailsForms/HouseholdInformationForm';
+import Documents from '../CaseDetailsForms/Documents';
 import { initialFormValues, Notes } from '../CaseDetailsForms/Notes';
 import SingleNote from '../CaseDetailsForms/SingleNote';
 
@@ -79,8 +79,7 @@ const CaseDetailsCollapse = () => {
           <p>{text}</p>
         </Panel>
         <Panel header="Documents" key="documents">
-          {/* insert Documents Form here and delete p tag w/ dummy text */}
-          <p>{text}</p>
+          <Documents />
         </Panel>
         <Panel header="Goals/Strengths/Obstacles" key="goalsStrengthsObstacles">
           {/* insert Goals/Strengths/Obstacles Form here and delete p tag w/ dummy text */}

@@ -252,3 +252,36 @@
   margin: 1rem;
   color: #cdcdcd;
 }
+
+.Documents_formContainer {
+  display: flex;
+  justify-content: center;
+};
+
+.Documents_checkboxContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 0 10px;
+};
+
+.Documents_checkboxGroup {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+
+};
+
+.Documents_referralsContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: auto 5rem,
+};
+
+.Documents_referralContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 10px;
+};

@@ -49,16 +49,27 @@ const Documents = () => {
     can_text_apartment_listings: false,
     can_text_career_fairs: false,
     can_add_referrals: false,
-    referrals_name: false,
-    referrals_address: false,
-    referrals_cell: false,
-    referrals_home: false,
-    referrals_work: false,
-    referrals_email: false,
+    referrals: [
+      {
+        name: '',
+        firstMeeting: '',
+        address: '',
+        apt: '',
+        city: '',
+        state: '',
+        zip: '',
+        email: '',
+        cell: '',
+        work: '',
+        home: '',
+      },
+    ],
   };
 
   const [referrals, setReferrals] = useState([initialReferral]);
   const [documents, setDocuments] = useState(initialDocuments);
+
+  const [form] = Form.useForm();
 
   const handleAddReferral = () => {
     setReferrals([...referrals, initialReferral]);
@@ -81,53 +92,6 @@ const Documents = () => {
     const previousReferrals = [...referrals];
     previousReferrals.splice(index, 1);
     setReferrals(previousReferrals);
-  };
-
-  //Inline styles added temporarily from client family info
-
-  const subsectionContainer = {
-    border: 'solid 1px #6e6e6e',
-  };
-
-  const subsectionHeader = {
-    textAlign: 'center',
-    marginBottom: '50px',
-    backgroundColor: 'whiteSmoke',
-    color: '#101010',
-    padding: '20px',
-  };
-
-  const formStyles = {
-    display: 'flex',
-    justifyContent: 'center',
-  };
-
-  const checkboxContainer = {
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'space-between',
-    margin: '0 10px',
-  };
-
-  const checkboxStyles = {
-    display: 'flex',
-    flexDirection: 'column',
-    flexWrap: 'wrap',
-    color: 'black',
-  };
-
-  const referralsContainer = {
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center',
-    margin: 'auto 5rem',
-  };
-
-  const referralContainer = {
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center',
-    margin: '0 10px',
   };
 
   const adultsInFamily = [
@@ -183,46 +147,54 @@ const Documents = () => {
   ];
 
   return (
-    <div style={subsectionContainer}>
-      {/* 
-            Note:
-            The Form's states and props are encapsulated in the form component using antd's Form or Form.Item. Only a name prop needs to be provided. The data is stored in an object with each form item being a key-value pair. 
-
-            The initial value for each input can be stored within the form component with the 'initialValue' prop. 
-        
-        */}
-
-      <h2 style={subsectionHeader}>Documents</h2>
-
-      <div className="documentsContainer" style={formStyles}>
-        <section style={checkboxContainer}>
-          <Form.Item label="Adults in family have:" name="adultDocuments">
-            <Checkbox.Group options={adultsInFamily} style={checkboxStyles} />
+    <Form
+      form={form}
+      className="ClientFamilyInformation__Form"
+      initialValues={initialDocuments}
+      layout="vertical"
+      labelCol={{ span: 8 }}
+      wrapperCol={{ span: 100 }}
+      labelWrap
+    >
+      <div className="Documents_formContainer">
+        <section className="Documents_checkboxGroupContainer">
+          <Form.Item
+            label="Adults in family have:"
+            className="Documents_checkboxGroup"
+          >
+            <Checkbox.Group options={adultsInFamily} />
           </Form.Item>
-          <Form.Item label="(If Applicable)">
-            <Checkbox.Group options={ifApplicable} style={checkboxStyles} />
+          <Form.Item
+            label="(If Applicable):"
+            className="Documents_checkboxGroup"
+          >
+            <Checkbox.Group options={ifApplicable} />
           </Form.Item>
-          <Form.Item label="Would you like to receive information about:">
-            <Checkbox.Group
-              options={additionalInformation}
-              style={checkboxStyles}
-            />
+          <Form.Item
+            label="Would you like to receive information about:"
+            className="Documents_checkboxGroup"
+          >
+            <Checkbox.Group options={additionalInformation} />
           </Form.Item>
-          <Form.Item label="Would you like to receive text updates about:">
-            <Checkbox.Group options={textUpdates} style={checkboxStyles} />
+          <Form.Item
+            label="Would you like to receive text updates about:"
+            className="Documents_checkboxGroup"
+          >
+            <Checkbox.Group options={textUpdates} />
           </Form.Item>
         </section>
       </div>
 
       <Divider style={{ marginBottom: '50px' }} />
-      <div className="referralsContainer" style={referralsContainer}>
+
+      <div className="Documents_referralsContainer">
         <h3>Referrals:</h3>
         {referrals.map((referral, index) => {
           return (
-            <section style={referralContainer} layout="vertical">
+            <section className="Documents_referralContainer" layout="vertical">
               <Row gutter={50}>
                 <Col span={15}>
-                  <Form.Item label="Name:">
+                  <Form.Item label="Name:" layout="vertical">
                     <Input
                       name="name"
                       value={referral.name}
@@ -369,7 +341,7 @@ const Documents = () => {
           </Button>
         </Form.Item>
       </div>
-    </div>
+    </Form>
   );
 };
 
