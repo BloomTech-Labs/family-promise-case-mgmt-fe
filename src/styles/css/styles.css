@@ -254,8 +254,18 @@
 }
 
 .DashHeader {
-  background-color: #101010;
+  background: #101010;
+
+}
+
+.DashHeader_logo {
+  height: 100px;
+  padding-left: 100px;
 }
 .DashHeader_Menu {
+  height: 1830px;
+  width: 40%;
+  display: flex;
+  justify-content: space-around;
   background-color: #242424;
 }
