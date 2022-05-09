@@ -1,11 +1,11 @@
 import { combineReducers } from 'redux';
 
 import { reducer as client } from './clientReducer';
-import { reducer as document } from './documentReducer';
+import { reducer as documents } from './documentReducer';
 
 const rootReducer = combineReducers({
   client,
-  document,
+  documents,
 });
 
 export default rootReducer;

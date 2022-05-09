@@ -1,4 +1,4 @@
-import { document } from '../actions';
+import { documents } from '../actions';
 
 const intialState = {
   client_id: true,
@@ -32,7 +32,7 @@ const intialState = {
 
 export const reducer = (state = intialState, action) => {
   switch (action.type) {
-    case document.SET_DOCUMENTS:
+    case documents.SET_DOCUMENTS:
       return {
         ...state,
         client_id: action.payload.client_id,
@@ -64,6 +64,8 @@ export const reducer = (state = intialState, action) => {
         referrals_email: action.payload.referrals_email,
         first_meeting_date: action.payload.first_meeting_date,
       };
+    case documents.GET_DOCUMENTS: {
+    }
     default:
       return state;
   }

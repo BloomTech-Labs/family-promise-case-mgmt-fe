@@ -260,7 +260,7 @@
   padding-top: 2rem;
   width: 80%;
   padding: 2rem;
-  margin: 0 12rem;
+  margin: auto;
   background: #3f3f3f;
   color: #ffffff;
 }
@@ -294,47 +294,69 @@
 }
 
 .ClientDocuments__Input__Name {
-  width: 50rem;
+  width: 36vw;
+  max-width: 36vw;
+  min-width: 25vw;
 }
 
 .ClientDocuments__DatePicker {
-  width: 20rem;
+  width: 20vw;
+  max-width: 20vw;
+  min-width: 10vw;
 }
 
 .ClientDocuments__Input__Address {
-  width: 52rem;
+  width: 37vw;
+  max-width: 37vw;
+  min-width: 26vw;
 }
 
 .ClientDocuments__Input__Apt {
-  width: 18rem;
+  width: 12vw;
+  max-width: 12vw;
+  min-width: 9vw;
 }
 
 .ClientDocuments__Input__City {
-  width: 45rem;
+  width: 45vw;
+  max-width: 45vw;
+  min-width: 23vw;
 }
 
 .ClientDocuments__Input__State {
-  width: 10rem;
+  width: 10vw;
+  max-width: 10vw;
+  min-width: 8vw;
 }
 
 .ClientDocuments__Input__Zip {
-  width: 10rem;
+  width: 10vw;
+  max-width: 10vw;
+  min-width: 8vw;
 }
 
 .ClientDocuments__Input__Email {
-  width: 56rem;
+  width: 56vw;
+  max-width: 56vw;
+  min-width: 23vw;
 }
 
 .ClientDocuments__Input__Cell {
-  width: 25rem;
+  width: 16vw;
+  max-width: 16vw;
+  min-width: 13vw;
 }
 
 .ClientDocuments__Input__Work {
-  width: 25rem;
+  width: 16vw;
+  max-width: 16vw;
+  min-width: 13vw;
 }
 
 .ClientDocuments__Input__Home {
-  width: 25rem;
+  width: 16vw;
+  max-width: 16vw;
+  min-width: 13vw;
 }
 
 .ClientDocuments__Input__ItemLabel {

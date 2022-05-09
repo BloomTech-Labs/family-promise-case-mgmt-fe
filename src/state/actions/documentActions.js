@@ -1,16 +1,16 @@
-export const SET_DOCUMENT = 'SET_DOCUMENT';
-export const GET_DOCUMENT = 'GET_DOCUMENT';
+export const SET_DOCUMENTS = 'SET_DOCUMENTS';
+export const GET_DOCUMENTS = 'GET_DOCUMENTS';
 
-export const setDocument = documentData => dispatch => {
+export const setDocuments = documentData => dispatch => {
   dispatch({
-    type: SET_DOCUMENT,
+    type: SET_DOCUMENTS,
     payload: documentData,
   });
 };
 
-export const getDocument = documentData => dispatch => {
+export const getDocuments = documentData => dispatch => {
   dispatch({
-    type: GET_DOCUMENT,
+    type: GET_DOCUMENTS,
     payload: documentData,
   });
 };

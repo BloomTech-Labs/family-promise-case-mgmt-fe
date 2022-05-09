@@ -1,4 +1,4 @@
 import * as client from './clientActions';
-import * as document from './documentActions';
+import * as documents from './documentActions';
 
-export { client, document };
+export { client, documents };
