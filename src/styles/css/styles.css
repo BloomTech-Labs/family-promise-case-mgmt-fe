@@ -252,3 +252,71 @@
   margin: 1rem;
   color: #cdcdcd;
 }
+
+.subsectionContainer {
+  border: solid 1px #6e6e6e;
+  background: #101010;
+}
+
+.subsectionHeader {
+  text-align: center;
+  margin-bottom: 50px;
+  background: #101010;
+  color: #cdcdcd;
+  padding: 20px;
+}
+
+.ant-input {
+  background-color: #2e2e2e;
+}
+
+.inputStyles {
+  width: 20rem;
+  background-color: #2e2e2e;
+}
+
+.inputStylesShort {
+  width: 7rem;
+  background-color: #2e2e2e;
+}
+
+.ant-picker {
+  background-color: #2e2e2e;
+}
+
+.ant-select-selection-item {
+  background-color: #2e2e2e;
+}
+
+.formStyles {
+  display: flex;
+  justify-content: center;
+}
+
+.sectionLeft {
+  margin: 20px;
+}
+
+.sectionRight {
+  margin: 20px;
+}
+
+.shortInputContainer {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 10px;
+}
+
+.checkboxStyles {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.ant-divider-inner-text{
+  color: #ffffff;
+}
+
+.ant-form-item-label > label {
+  color:#ffffff;
+}
