@@ -252,3 +252,10 @@
   margin: 1rem;
   color: #cdcdcd;
 }
+
+.DashHeader {
+  background-color: #101010;
+}
+.DashHeader_Menu {
+  background-color: #242424;
+}

@@ -7,15 +7,14 @@ import { useOktaAuth } from '@okta/okta-react';
 const NavHeader = () => {
   const { authService } = useOktaAuth();
   return (
-    <div className="NavHeader">
+    <div className="DashHeader">
       <img
-        className="NavHeader__logo"
+        className="DashHeader_logo"
         src={fpLogo}
         alt="Family Promise of Spokane"
       />
       <Menu
-        className="NavHeader__Menu"
-        theme="light"
+        className="DashHeader_Menu"
         mode="horizontal"
         defaultSelectedKeys={['2']}
       >
