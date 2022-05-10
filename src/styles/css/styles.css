@@ -27,7 +27,7 @@
   height: 8%;
 }
 .RenderLayoutTemplate .Layout .Content {
-  padding: 0 50px;
+  padding: 10 50px;
 }
 .RenderLayoutTemplate .Layout .Content__Container {
   height: 90%;
@@ -255,12 +255,20 @@
 
 .DashHeader {
   background: #101010;
+  display: flex;
+  justify-content: space-between;
 
 }
-
-.DashHeader_logo {
+.DashHeader__logo {
   height: 100px;
-  padding-left: 100px;
+  width: 409px;
+  margin-left:80px;
+}
+.Placeholder_ProfileLogo{
+  width: 55px;
+  height: 52px;
+  margin-top: 23px;
+  margin-right:55px;
 }
 .DashHeader_Menu {
   height: 1830px;
@@ -268,4 +276,14 @@
   display: flex;
   justify-content: space-around;
   background-color: #242424;
+
+}
+
+.DashHeader_Nav {
+  background-color: #101010;
+}
+
+.ant-menu.ant-menu-dark  {
+  background-color: #262626;
+  height:70px
 }

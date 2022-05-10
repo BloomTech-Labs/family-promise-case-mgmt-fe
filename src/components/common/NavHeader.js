@@ -13,12 +13,8 @@ const NavHeader = () => {
         src={fpLogo}
         alt="Family Promise of Spokane"
       />
-      <Menu
-        className="DashHeader_Menu"
-        mode="horizontal"
-        defaultSelectedKeys={['2']}
-      >
-        <Menu.Item key="dashboard">
+      <Menu mode="horizontal" defaultSelectedKeys={['2']}>
+        <Menu.Item className="Menu_Item" key="dashboard">
           <Link to="dashboard" />
           Dashboard
         </Menu.Item>

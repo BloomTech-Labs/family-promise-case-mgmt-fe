@@ -2,16 +2,25 @@ import React from 'react';
 import { Menu } from 'antd';
 import { Link } from 'react-router-dom';
 import fpLogo from '../../assets/fplogo.png';
-
+import PlaceholderProfileImage from '../../assets/PlaceholderProfileImage.png';
 const Header = () => {
   return (
-    <div className="DashHeader">
-      <img
-        className="DashHeader__logo"
-        src={fpLogo}
-        alt="Family Promise of Spokane"
-      />
+    <div>
+      <div className="DashHeader">
+        <img
+          className="DashHeader__logo"
+          src={fpLogo}
+          alt="Family Promise of Spokane"
+        />
 
+        <img
+          className="Placeholder_ProfileLogo"
+          src={PlaceholderProfileImage}
+          alt="Profile"
+        />
+      </div>
+
+      {/* nav links inside of Menu div */}
       <Menu
         className="DashHeader_Nav"
         theme="dark"
