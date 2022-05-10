@@ -64,9 +64,7 @@ function App() {
         <SecureRoute path="/example-list" component={ExampleListPage} />
         <SecureRoute path="/layouttemplate" component={LayoutTemplate} />
         <SecureRoute path="/" exact />
-
         <SecureRoute path="/dashheader" component={DashHeader} />
-
         <Route component={NotFoundPage} />
       </Switch>
     </Security>

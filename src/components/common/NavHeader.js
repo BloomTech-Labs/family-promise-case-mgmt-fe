@@ -7,9 +7,9 @@ import { useOktaAuth } from '@okta/okta-react';
 const NavHeader = () => {
   const { authService } = useOktaAuth();
   return (
-    <div className="DashHeader">
+    <div className="NavHeader">
       <img
-        className="DashHeader_logo"
+        className="NavHeader_logo"
         src={fpLogo}
         alt="Family Promise of Spokane"
       />

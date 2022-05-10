@@ -289,5 +289,6 @@
   align-items: flex-end;
 }
 .ant-menu-item{
-  margin-right: 80px;
+  margin-right:100px;
+  margin-left:100px;
 }

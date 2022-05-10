@@ -12,7 +12,6 @@ const Header = () => {
           src={fpLogo}
           alt="Family Promise of Spokane"
         />
-
         <img
           className="Placeholder_ProfileLogo"
           src={PlaceholderProfileImage}
@@ -20,7 +19,6 @@ const Header = () => {
         />
       </div>
 
-      {/* nav links inside of Menu div */}
       <Menu
         className="DashHeader_Nav"
         theme="dark"
