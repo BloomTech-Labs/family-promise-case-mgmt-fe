@@ -3,7 +3,8 @@ import { Menu } from 'antd';
 import { Link } from 'react-router-dom';
 import fpLogo from '../../assets/fplogo.png';
 import PlaceholderProfileImage from '../../assets/PlaceholderProfileImage.png';
-const Header = () => {
+
+const DashHeader = () => {
   return (
     <div>
       <div className="DashHeader">
@@ -18,10 +19,8 @@ const Header = () => {
           alt="Profile"
         />
       </div>
-
       <Menu
         className="DashHeader_Nav"
-        theme="dark"
         mode="horizontal"
         defaultSelectedKeys={['2']}
       >
@@ -54,4 +53,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default DashHeader;
