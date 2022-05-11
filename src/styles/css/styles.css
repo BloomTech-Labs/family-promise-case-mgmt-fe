@@ -283,7 +283,7 @@
 }
 .ant-menu-dark.ant-menu-horizontal {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: flex-end;
   padding-right: 120px;
 }
