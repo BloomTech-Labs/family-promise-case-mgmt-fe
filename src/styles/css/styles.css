@@ -254,7 +254,7 @@
 }
 
 .DashHeader {
-  background: #101010;
+  background-color: #101010;
   display: flex;
   justify-content: space-between;
 }
@@ -272,21 +272,18 @@
 .DashHeader_Menu {
   height: 1830px;
   width: 40%;
+  display: flex;
+  justify-content: space-around;
+  background-color: #242424;
 }
-.DashHeader_Nav {
-  background-color:#262626;
-  color: #cdcdcd;
-}
+
 .ant-menu.ant-menu-dark  {
   background-color: #262626;
   height:70px
 }
 .ant-menu-dark.ant-menu-horizontal {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: flex-end;
-}
-.ant-menu-item{
-  margin-right:100px;
-  margin-left:100px;
+  padding-right: 120px;
 }
