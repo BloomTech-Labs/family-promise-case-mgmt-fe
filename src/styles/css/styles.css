@@ -273,6 +273,10 @@
   height: 1830px;
   width: 40%;
 }
+.DashHeader_Nav {
+  background-color:#262626;
+  color: #cdcdcd;
+}
 .ant-menu.ant-menu-dark  {
   background-color: #262626;
   height:70px
