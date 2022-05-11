@@ -272,12 +272,6 @@
 .DashHeader_Menu {
   height: 1830px;
   width: 40%;
-  display: flex;
-  justify-content: space-around;
-  background-color: #242424;
-}
-.DashHeader_Nav {
-  background-color: #101010;
 }
 .ant-menu.ant-menu-dark  {
   background-color: #262626;
