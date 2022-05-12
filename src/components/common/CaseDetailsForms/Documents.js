@@ -1,104 +1,45 @@
 import React, { useState } from 'react';
-import {
-  DatePicker,
-  Form,
-  Input,
-  Divider,
-  Checkbox,
-  Button,
-  Row,
-  Col,
-} from 'antd';
+import { DatePicker, Form, Input, Divider, Checkbox, Button } from 'antd';
 import Moment from 'moment';
 import { PlusOutlined } from '@ant-design/icons';
+import { documents } from '../../../state/actions';
+import { connect } from 'react-redux';
 
-const Documents = () => {
-  //React state hook used to build out add referral function
-  const initialReferral = {
-    name: '',
-    firstMeeting: '',
-    address: '',
-    apt: '',
-    city: '',
-    state: '',
-    zip: '',
-    email: '',
-    cell: '',
-    work: '',
-    home: '',
-  };
-
-  const initialDocuments = {
-    client_id: false,
-    completed_hfca: false,
-    valid_driver: false,
-    valid_social: false,
-    dshs_wic_tanf_snap: false,
-    responsible_renters_course: false,
-    birth_cert_for_children: false,
-    child_enrolled_school: false,
-    childcare: false,
-    food_assistance: false,
-    clothing_assistance: false,
-    counseling_services: false,
-    addiction_resources: false,
-    mentor_programs: false,
-    youth_services: false,
-    budgeting: false,
-    can_text_employment_opportunities: false,
-    can_text_apartment_listings: false,
-    can_text_career_fairs: false,
-    can_add_referrals: false,
-    referrals: [
-      {
-        name: '',
-        firstMeeting: '',
-        address: '',
-        apt: '',
-        city: '',
-        state: '',
-        zip: '',
-        email: '',
-        cell: '',
-        work: '',
-        home: '',
-      },
-    ],
-  };
-
-  const [referrals, setReferrals] = useState([initialReferral]);
-  const [documents, setDocuments] = useState(initialDocuments);
-
+const Documents = props => {
+  const [disabled, setDisabled] = useState(true);
   const [form] = Form.useForm();
 
-  const handleAddReferral = () => {
-    setReferrals([...referrals, initialReferral]);
-  };
+  const handleAddReferral = () => props.addReferral();
 
   const handleReferralChange = (e, index, string) => {
     if (e.target) {
       const { name, value } = e.target;
-      const previousReferrals = [...referrals];
-      previousReferrals[index][name] = value;
-      setReferrals(previousReferrals);
+      props.setReferrals({ [name]: value });
     } else {
-      const previousReferrals = [...referrals];
-      previousReferrals[index].firstMeeting = Moment(string, 'MM-DD-YYYY');
-      setReferrals(previousReferrals);
+      const date = Moment(string, 'MM-DD-YYYY');
+      props.setReferrals({ first_meeting_date: date });
     }
   };
 
   const handleDeleteReferral = index => {
-    const previousReferrals = [...referrals];
-    previousReferrals.splice(index, 1);
-    setReferrals(previousReferrals);
+    props.deleteReferral(index);
+  };
+
+  const handleCheckboxChange = e => {
+    const { checked, id } = e.target;
+    props.setDocuments({ [id]: checked });
+    console.log({ [id]: checked }, props.documents);
+  };
+
+  const toggleEdit = () => {
+    setDisabled(!disabled);
   };
 
   return (
     <Form
       form={form}
       className="ClientDocuments__Form"
-      initialValues={initialDocuments}
+      initialValues={documents}
       layout="vertical"
       labelCol={{ span: 8 }}
       wrapperCol={{ span: 100 }}
@@ -109,69 +50,205 @@ const Documents = () => {
           <h3 className="ClientDocuments_sectionHeader">
             <b>Adults in family have:</b>
           </h3>
-          <Form.Item name="completed_hfca" valuePropName="checked">
-            <Checkbox>
+
+          <Form.Item
+            name="completed_hfca"
+            valuePropName="checked"
+            initialValue={props.documents.completed_hfca}
+          >
+            <Checkbox
+              disabled={disabled}
+              onChange={e => handleCheckboxChange(e)}
+            >
               Completed the HFCA (Homeless Families Coordinated Assesment){' '}
               <b>within the past 90 days</b>
             </Checkbox>
           </Form.Item>
-          <Form.Item name="valid_driver" valuePropName="checked">
-            <Checkbox>
+          <Form.Item
+            name="valid_driver"
+            valuePropName="checked"
+            initialValue={props.documents.valid_driver}
+          >
+            <Checkbox
+              disabled={disabled}
+              onChange={e => handleCheckboxChange(e)}
+            >
               Valid Driver's License or State Identification Card
             </Checkbox>
           </Form.Item>
-          <Form.Item name="valid_social" valuePropName="checked">
-            <Checkbox>
+          <Form.Item
+            name="valid_social"
+            valuePropName="checked"
+            initialValue={props.documents.valid_social}
+          >
+            <Checkbox
+              disabled={disabled}
+              onChange={e => handleCheckboxChange(e)}
+            >
               A valid social security card for everyone in the household
             </Checkbox>
           </Form.Item>
-          <Form.Item name="dshs_wic_tanf_snap" valuePropName="checked">
-            <Checkbox>
+          <Form.Item
+            name="dshs_wic_tanf_snap"
+            valuePropName="checked"
+            initialValue={props.documents.dshs_wic_tanf_snap}
+          >
+            <Checkbox
+              disabled={disabled}
+              onChange={e => handleCheckboxChange(e)}
+            >
               Signed up for benifits through DSHS (WIC, TANF, SNAP)
             </Checkbox>
           </Form.Item>
-          <Form.Item name="responsible_renters_course" valuePropName="checked">
-            <Checkbox>Completed the Responsible Renters Course</Checkbox>
+          <Form.Item
+            name="responsible_renters_course"
+            valuePropName="checked"
+            initialValue={props.documents.responsible_renters_course}
+          >
+            <Checkbox
+              disabled={disabled}
+              onChange={e => handleCheckboxChange(e)}
+            >
+              {' '}
+              Completed the Responsible Renters Course
+            </Checkbox>
           </Form.Item>
-          <Form.Item name="birth_cert_for_children" valuePropName="checked">
-            <Checkbox>
+          <Form.Item
+            name="birth_cert_for_children"
+            valuePropName="checked"
+            initialValue={props.documents.birth_cert_for_children}
+          >
+            <Checkbox
+              disabled={disabled}
+              onChange={e => handleCheckboxChange(e)}
+            >
               Birth Certificates for children in the household
             </Checkbox>
           </Form.Item>
         </section>
         <section className="ClientDocuments__checkboxGroup">
           <h3 className="ClientDocuments_sectionHeader">(If Applicable):</h3>
-          <Form.Item name="child_enrolled_school" valuePropName="checked">
-            <Checkbox>Children Enrolled in School</Checkbox>
+          <Form.Item
+            name="child_enrolled_school"
+            valuePropName="checked"
+            initialValue={props.documents.child_enrolled_school}
+          >
+            <Checkbox
+              disabled={disabled}
+              onChange={e => handleCheckboxChange(e)}
+            >
+              {' '}
+              Children Enrolled in School
+            </Checkbox>
           </Form.Item>
-          <Form.Item name="childcare" valuePropName="checked">
-            <Checkbox>Childcare</Checkbox>
+          <Form.Item
+            name="childcare"
+            valuePropName="checked"
+            initialValue={props.documents.childcare}
+          >
+            <Checkbox
+              disabled={disabled}
+              onChange={e => handleCheckboxChange(e)}
+            >
+              {' '}
+              Childcare
+            </Checkbox>
           </Form.Item>
         </section>
         <section className="ClientDocuments__checkboxGroup">
           <h3 className="ClientDocuments_sectionHeader">
             <b>Would you like to receive information about:</b>
           </h3>
-          <Form.Item name="food_assistance" valuePropName="checked">
-            <Checkbox>Food/meal assistance</Checkbox>
+          <Form.Item
+            name="food_assistance"
+            valuePropName="checked"
+            initialValue={props.documents.food_assistance}
+          >
+            <Checkbox
+              disabled={disabled}
+              onChange={e => handleCheckboxChange(e)}
+            >
+              {' '}
+              Food/meal assistance
+            </Checkbox>
           </Form.Item>
-          <Form.Item name="clothing_assistance" valuePropName="checked">
-            <Checkbox>Clothing assistance</Checkbox>
+          <Form.Item
+            name="clothing_assistance"
+            valuePropName="checked"
+            initialValue={props.documents.clothing_assistance}
+          >
+            <Checkbox
+              disabled={disabled}
+              onChange={e => handleCheckboxChange(e)}
+            >
+              {' '}
+              Clothing assistance
+            </Checkbox>
           </Form.Item>
-          <Form.Item name="counseling_services" valuePropName="checked">
-            <Checkbox>Counseling services</Checkbox>
+          <Form.Item
+            name="counseling_services"
+            valuePropName="checked"
+            initialValue={props.documents.counseling_services}
+          >
+            <Checkbox
+              disabled={disabled}
+              onChange={e => handleCheckboxChange(e)}
+            >
+              {' '}
+              Counseling services
+            </Checkbox>
           </Form.Item>
-          <Form.Item name="addiction_resources" valuePropName="checked">
-            <Checkbox>Addiction/recovery resources</Checkbox>
+          <Form.Item
+            name="addiction_resources"
+            valuePropName="checked"
+            initialValue={props.documents.addiction_resources}
+          >
+            <Checkbox
+              disabled={disabled}
+              onChange={e => handleCheckboxChange(e)}
+            >
+              {' '}
+              Addiction/recovery resources
+            </Checkbox>
           </Form.Item>
-          <Form.Item name="mentor_programs" valuePropName="checked">
-            <Checkbox>Mentor programs</Checkbox>
+          <Form.Item
+            name="mentor_programs"
+            valuePropName="checked"
+            initialValue={props.documents.mentor_programs}
+          >
+            <Checkbox
+              disabled={disabled}
+              onChange={e => handleCheckboxChange(e)}
+            >
+              {' '}
+              Mentor programs
+            </Checkbox>
           </Form.Item>
-          <Form.Item name="youth_services" valuePropName="checked">
-            <Checkbox>Youth services/programming</Checkbox>
+          <Form.Item
+            name="youth_services"
+            valuePropName="checked"
+            initialValue={props.documents.youth_services}
+          >
+            <Checkbox
+              disabled={disabled}
+              onChange={e => handleCheckboxChange(e)}
+            >
+              {' '}
+              Youth services/programming
+            </Checkbox>
           </Form.Item>
-          <Form.Item name="budgeting" valuePropName="checked">
-            <Checkbox>Budgeting</Checkbox>
+          <Form.Item
+            name="budgeting"
+            valuePropName="checked"
+            initialValue={props.documents.budgeting}
+          >
+            <Checkbox
+              disabled={disabled}
+              onChange={e => handleCheckboxChange(e)}
+            >
+              {' '}
+              Budgeting
+            </Checkbox>
           </Form.Item>
         </section>
         <section className="ClientDocuments__checkboxGroup">
@@ -181,14 +258,41 @@ const Documents = () => {
           <Form.Item
             name="can_text_employment_opportunities"
             valuePropName="checked"
+            initialValue={props.documents.can_text_employment_opportunities}
           >
-            <Checkbox>Employment opportunities</Checkbox>
+            <Checkbox
+              disabled={disabled}
+              onChange={e => handleCheckboxChange(e)}
+            >
+              {' '}
+              Employment opportunities
+            </Checkbox>
           </Form.Item>
-          <Form.Item name="can_text_apartment_listings" valuePropName="checked">
-            <Checkbox>Apartment listings</Checkbox>
+          <Form.Item
+            name="can_text_apartment_listings"
+            valuePropName="checked"
+            initialValue={props.documents.can_text_apartment_listings}
+          >
+            <Checkbox
+              disabled={disabled}
+              onChange={e => handleCheckboxChange(e)}
+            >
+              {' '}
+              Apartment listings
+            </Checkbox>
           </Form.Item>
-          <Form.Item name="can_text_career_fairs" valuePropName="checked">
-            <Checkbox>Career fairs and job trainings/programs</Checkbox>
+          <Form.Item
+            name="can_text_career_fairs"
+            valuePropName="checked"
+            initialValue={props.documents.can_text_career_fairs}
+          >
+            <Checkbox
+              disabled={disabled}
+              onChange={e => handleCheckboxChange(e)}
+            >
+              {' '}
+              Career fairs and job trainings/programs
+            </Checkbox>
           </Form.Item>
         </section>
       </div>
@@ -199,7 +303,7 @@ const Documents = () => {
         <h3 className="ClientDocuments_sectionHeader">
           <b>Referrals:</b>
         </h3>
-        {referrals.map((referral, index) => {
+        {props.referrals.map((referral, index) => {
           return (
             <section
               className="ClientDocuments__referralContainer"
@@ -213,9 +317,10 @@ const Documents = () => {
                 }
               >
                 <Input
-                  name="name"
-                  value={referral.name}
+                  disabled={disabled}
+                  name={`name`}
                   placeholder="John Doe"
+                  value={referral.name}
                   onChange={e => handleReferralChange(e, index)}
                   className="ClientDocuments__Input__Name"
                 />
@@ -228,8 +333,9 @@ const Documents = () => {
                 }
               >
                 <DatePicker
-                  name="firstMeeting"
-                  value={referral.firstMeeting}
+                  disabled={disabled}
+                  name="first_meeting_date"
+                  value={Moment(referral.first_meeting_date)}
                   format="MM-DD-YYYY"
                   placeholder="MM-DD-YYYY"
                   onChange={(e, string) =>
@@ -246,6 +352,7 @@ const Documents = () => {
                 }
               >
                 <Input
+                  disabled={disabled}
                   name="address"
                   value={referral.address}
                   placeholder="123 Anywhere Street"
@@ -261,6 +368,7 @@ const Documents = () => {
                 }
               >
                 <Input
+                  disabled={disabled}
                   name="apt"
                   value={referral.apt}
                   placeholder="Apt #"
@@ -276,6 +384,7 @@ const Documents = () => {
                 }
               >
                 <Input
+                  disabled={disabled}
                   name="city"
                   value={referral.city}
                   placeholder="City Name"
@@ -291,6 +400,7 @@ const Documents = () => {
                 }
               >
                 <Input
+                  disabled={disabled}
                   name="state"
                   value={referral.state}
                   placeholder="State Abbrv."
@@ -306,6 +416,7 @@ const Documents = () => {
                 }
               >
                 <Input
+                  disabled={disabled}
                   name="zip"
                   value={referral.zip}
                   placeholder="Zip Code"
@@ -321,6 +432,7 @@ const Documents = () => {
                 }
               >
                 <Input
+                  disabled={disabled}
                   name="email"
                   value={referral.email}
                   placeholder="user@email.com"
@@ -336,6 +448,7 @@ const Documents = () => {
                 }
               >
                 <Input
+                  disabled={disabled}
                   name="cell"
                   value={referral.cell}
                   placeholder="555-555-5555"
@@ -351,6 +464,7 @@ const Documents = () => {
                 }
               >
                 <Input
+                  disabled={disabled}
                   name="work"
                   value={referral.work}
                   placeholder="555-555-5555"
@@ -366,6 +480,7 @@ const Documents = () => {
                 }
               >
                 <Input
+                  disabled={disabled}
                   name="home"
                   value={referral.home}
                   placeholder="555-555-5555"
@@ -376,7 +491,8 @@ const Documents = () => {
               {index !== 0 ? (
                 <Form.Item style={{ textAlign: 'center' }}>
                   <Button
-                    style={{ margin: '0 20px' }}
+                    disabled={disabled}
+                    style={{ margin: '0 30vw', flexBasis: '100%' }}
                     icon={<PlusOutlined />}
                     onClick={() => handleDeleteReferral(index)}
                   >
@@ -390,6 +506,7 @@ const Documents = () => {
         })}
         <Form.Item style={{ textAlign: 'center' }}>
           <Button
+            disabled={disabled}
             style={{ margin: '0 20px' }}
             icon={<PlusOutlined />}
             onClick={handleAddReferral}
@@ -398,8 +515,39 @@ const Documents = () => {
           </Button>
         </Form.Item>
       </div>
+      <section className="CaseSubmit">
+        <Button
+          onClick={toggleEdit}
+          style={{
+            margin: '1rem',
+            color: '#CDCDCD',
+            background: '#007FD4',
+            borderColor: '#007FD4',
+          }}
+          type="primary"
+        >
+          {disabled ? 'Edit' : 'Save Changes'}
+        </Button>
+      </section>
     </Form>
   );
 };
 
-export default Documents;
+const mapStateToProps = state => {
+  return {
+    documents: state.documents,
+    referrals: state.documents.referrals,
+  };
+};
+
+const mapDispatchToProps = dispatch => {
+  return {
+    setDocuments: () => dispatch(documents.setDocuments()),
+    getDocuments: () => dispatch(documents.getDocuments()),
+    setReferrals: () => dispatch(documents.setReferrals()),
+    addReferral: () => dispatch(documents.addReferral()),
+    deleteReferral: () => dispatch(documents.deleteReferral()),
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Documents);
