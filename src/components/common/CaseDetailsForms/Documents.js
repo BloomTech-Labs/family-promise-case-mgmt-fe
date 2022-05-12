@@ -14,10 +14,10 @@ const Documents = props => {
   const handleReferralChange = (e, index, string) => {
     if (e.target) {
       const { name, value } = e.target;
-      props.setReferrals({ [name]: value });
+      props.setReferrals({ data: { [name]: value }, index: index });
     } else {
       const date = Moment(string, 'MM-DD-YYYY');
-      props.setReferrals({ first_meeting_date: date });
+      props.setReferrals({ data: { first_meeting_date: date }, index: index });
     }
   };
 
@@ -542,11 +542,13 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    setDocuments: () => dispatch(documents.setDocuments()),
+    setDocuments: documentData =>
+      dispatch(documents.setDocuments(documentData)),
     getDocuments: () => dispatch(documents.getDocuments()),
-    setReferrals: () => dispatch(documents.setReferrals()),
+    setReferrals: referralData =>
+      dispatch(documents.setReferrals(referralData)),
     addReferral: () => dispatch(documents.addReferral()),
-    deleteReferral: () => dispatch(documents.deleteReferral()),
+    deleteReferral: index => dispatch(documents.deleteReferral(index)),
   };
 };
 

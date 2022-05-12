@@ -17,11 +17,10 @@ export const getDocuments = () => {
   };
 };
 
-export const setReferrals = (referralData, index) => {
+export const setReferrals = referralData => {
   return {
     type: SET_REFERRALS,
     payload: referralData,
-    index: index,
   };
 };
 

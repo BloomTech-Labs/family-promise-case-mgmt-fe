@@ -57,8 +57,8 @@ export const reducer = (state = intialState, action) => {
 
     case documents.SET_REFERRALS:
       const updatedReferrals = state.referrals.map((referral, i) => {
-        if (i === action.index) {
-          return { ...referral, ...action.payload };
+        if (i === action.payload.index) {
+          return { ...referral, ...action.payload.data };
         }
         return referral;
       });
