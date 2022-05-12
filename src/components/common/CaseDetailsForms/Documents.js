@@ -37,35 +37,35 @@ const Documents = props => {
   return (
     <Form
       form={form}
-      className=" ClientDocuments__Form"
+      className="ClientDocuments__Form"
       initialValues={documents}
-      layout=" vertical"
+      layout="vertical"
       labelCol={{ span: 8 }}
       wrapperCol={{ span: 100 }}
       labelWrap
     >
-      <div className=" ClientDocuments__checkboxGroupContainer">
-        <section className=" ClientDocuments__checkboxGroup">
-          <h3 className=" ClientDocuments_sectionHeader">
+      <div className="ClientDocuments__checkboxGroupContainer">
+        <section className="ClientDocuments__checkboxGroup">
+          <h3 className="ClientDocuments_sectionHeader">
             <b>Adults in family have:</b>
           </h3>
 
           <Form.Item
-            name=" completed_hfca"
-            valuePropName=" checked"
+            name="completed_hfca"
+            valuePropName="checked"
             initialValue={props.documents.completed_hfca}
           >
             <Checkbox
               disabled={disabled}
               onChange={e => handleCheckboxChange(e)}
             >
-              Completed the HFCA (Homeless Families Coordinated Assesment){' '}
+              Completed the HFCA (Homeless Families Coordinated Assesment){''}
               <b>within the past 90 days</b>
             </Checkbox>
           </Form.Item>
           <Form.Item
-            name=" valid_driver"
-            valuePropName=" checked"
+            name="valid_driver"
+            valuePropName="checked"
             initialValue={props.documents.valid_driver}
           >
             <Checkbox
@@ -76,8 +76,8 @@ const Documents = props => {
             </Checkbox>
           </Form.Item>
           <Form.Item
-            name=" valid_social"
-            valuePropName=" checked"
+            name="valid_social"
+            valuePropName="checked"
             initialValue={props.documents.valid_social}
           >
             <Checkbox
@@ -88,8 +88,8 @@ const Documents = props => {
             </Checkbox>
           </Form.Item>
           <Form.Item
-            name=" dshs_wic_tanf_snap"
-            valuePropName=" checked"
+            name="dshs_wic_tanf_snap"
+            valuePropName="checked"
             initialValue={props.documents.dshs_wic_tanf_snap}
           >
             <Checkbox
@@ -100,21 +100,21 @@ const Documents = props => {
             </Checkbox>
           </Form.Item>
           <Form.Item
-            name=" responsible_renters_course"
-            valuePropName=" checked"
+            name="responsible_renters_course"
+            valuePropName="checked"
             initialValue={props.documents.responsible_renters_course}
           >
             <Checkbox
               disabled={disabled}
               onChange={e => handleCheckboxChange(e)}
             >
-              {' '}
+              {''}
               Completed the Responsible Renters Course
             </Checkbox>
           </Form.Item>
           <Form.Item
-            name=" birth_cert_for_children"
-            valuePropName=" checked"
+            name="birth_cert_for_children"
+            valuePropName="checked"
             initialValue={props.documents.birth_cert_for_children}
           >
             <Checkbox
@@ -125,171 +125,171 @@ const Documents = props => {
             </Checkbox>
           </Form.Item>
         </section>
-        <section className=" ClientDocuments__checkboxGroup">
-          <h3 className=" ClientDocuments_sectionHeader">(If Applicable):</h3>
+        <section className="ClientDocuments__checkboxGroup">
+          <h3 className="ClientDocuments_sectionHeader">(If Applicable):</h3>
           <Form.Item
-            name=" child_enrolled_school"
-            valuePropName=" checked"
+            name="child_enrolled_school"
+            valuePropName="checked"
             initialValue={props.documents.child_enrolled_school}
           >
             <Checkbox
               disabled={disabled}
               onChange={e => handleCheckboxChange(e)}
             >
-              {' '}
+              {''}
               Children Enrolled in School
             </Checkbox>
           </Form.Item>
           <Form.Item
-            name=" childcare"
-            valuePropName=" checked"
+            name="childcare"
+            valuePropName="checked"
             initialValue={props.documents.childcare}
           >
             <Checkbox
               disabled={disabled}
               onChange={e => handleCheckboxChange(e)}
             >
-              {' '}
+              {''}
               Childcare
             </Checkbox>
           </Form.Item>
         </section>
-        <section className=" ClientDocuments__checkboxGroup">
-          <h3 className=" ClientDocuments_sectionHeader">
+        <section className="ClientDocuments__checkboxGroup">
+          <h3 className="ClientDocuments_sectionHeader">
             <b>Would you like to receive information about:</b>
           </h3>
           <Form.Item
-            name=" food_assistance"
-            valuePropName=" checked"
+            name="food_assistance"
+            valuePropName="checked"
             initialValue={props.documents.food_assistance}
           >
             <Checkbox
               disabled={disabled}
               onChange={e => handleCheckboxChange(e)}
             >
-              {' '}
+              {''}
               Food/meal assistance
             </Checkbox>
           </Form.Item>
           <Form.Item
-            name=" clothing_assistance"
-            valuePropName=" checked"
+            name="clothing_assistance"
+            valuePropName="checked"
             initialValue={props.documents.clothing_assistance}
           >
             <Checkbox
               disabled={disabled}
               onChange={e => handleCheckboxChange(e)}
             >
-              {' '}
+              {''}
               Clothing assistance
             </Checkbox>
           </Form.Item>
           <Form.Item
-            name=" counseling_services"
-            valuePropName=" checked"
+            name="counseling_services"
+            valuePropName="checked"
             initialValue={props.documents.counseling_services}
           >
             <Checkbox
               disabled={disabled}
               onChange={e => handleCheckboxChange(e)}
             >
-              {' '}
+              {''}
               Counseling services
             </Checkbox>
           </Form.Item>
           <Form.Item
-            name=" addiction_resources"
-            valuePropName=" checked"
+            name="addiction_resources"
+            valuePropName="checked"
             initialValue={props.documents.addiction_resources}
           >
             <Checkbox
               disabled={disabled}
               onChange={e => handleCheckboxChange(e)}
             >
-              {' '}
+              {''}
               Addiction/recovery resources
             </Checkbox>
           </Form.Item>
           <Form.Item
-            name=" mentor_programs"
-            valuePropName=" checked"
+            name="mentor_programs"
+            valuePropName="checked"
             initialValue={props.documents.mentor_programs}
           >
             <Checkbox
               disabled={disabled}
               onChange={e => handleCheckboxChange(e)}
             >
-              {' '}
+              {''}
               Mentor programs
             </Checkbox>
           </Form.Item>
           <Form.Item
-            name=" youth_services"
-            valuePropName=" checked"
+            name="youth_services"
+            valuePropName="checked"
             initialValue={props.documents.youth_services}
           >
             <Checkbox
               disabled={disabled}
               onChange={e => handleCheckboxChange(e)}
             >
-              {' '}
+              {''}
               Youth services/programming
             </Checkbox>
           </Form.Item>
           <Form.Item
-            name=" budgeting"
-            valuePropName=" checked"
+            name="budgeting"
+            valuePropName="checked"
             initialValue={props.documents.budgeting}
           >
             <Checkbox
               disabled={disabled}
               onChange={e => handleCheckboxChange(e)}
             >
-              {' '}
+              {''}
               Budgeting
             </Checkbox>
           </Form.Item>
         </section>
-        <section className=" ClientDocuments__checkboxGroup">
-          <h3 className=" ClientDocuments_sectionHeader">
+        <section className="ClientDocuments__checkboxGroup">
+          <h3 className="ClientDocuments_sectionHeader">
             <b>Would you like to receive text updates about:</b>
           </h3>
           <Form.Item
-            name=" can_text_employment_opportunities"
-            valuePropName=" checked"
+            name="can_text_employment_opportunities"
+            valuePropName="checked"
             initialValue={props.documents.can_text_employment_opportunities}
           >
             <Checkbox
               disabled={disabled}
               onChange={e => handleCheckboxChange(e)}
             >
-              {' '}
+              {''}
               Employment opportunities
             </Checkbox>
           </Form.Item>
           <Form.Item
-            name=" can_text_apartment_listings"
-            valuePropName=" checked"
+            name="can_text_apartment_listings"
+            valuePropName="checked"
             initialValue={props.documents.can_text_apartment_listings}
           >
             <Checkbox
               disabled={disabled}
               onChange={e => handleCheckboxChange(e)}
             >
-              {' '}
+              {''}
               Apartment listings
             </Checkbox>
           </Form.Item>
           <Form.Item
-            name=" can_text_career_fairs"
-            valuePropName=" checked"
+            name="can_text_career_fairs"
+            valuePropName="checked"
             initialValue={props.documents.can_text_career_fairs}
           >
             <Checkbox
               disabled={disabled}
               onChange={e => handleCheckboxChange(e)}
             >
-              {' '}
+              {''}
               Career fairs and job trainings/programs
             </Checkbox>
           </Form.Item>
@@ -298,19 +298,19 @@ const Documents = props => {
 
       <Divider style={{ marginBottom: '50px' }} />
 
-      <div className=" ClientDocuments__referralsContainer">
-        <h3 className=" ClientDocuments_sectionHeader">
+      <div className="ClientDocuments__referralsContainer">
+        <h3 className="ClientDocuments_sectionHeader">
           <b>Referrals:</b>
         </h3>
         {props.referrals.map((referral, index) => {
           return (
             <section
-              className=" ClientDocuments__referralContainer"
-              layout=" vertical"
+              className="ClientDocuments__referralContainer"
+              layout="vertical"
             >
               <Form.Item
                 label={
-                  <label className=" ClientDocuments__Input__ItemLabel">
+                  <label className="ClientDocuments__Input__ItemLabel">
                     Name:
                   </label>
                 }
@@ -318,173 +318,173 @@ const Documents = props => {
                 <Input
                   disabled={disabled}
                   name={`name`}
-                  placeholder=" John Doe"
+                  placeholder="John Doe"
                   value={referral.name}
                   onChange={e => handleReferralChange(e, index)}
-                  className=" ClientDocuments__Input__Name"
+                  className="ClientDocuments__Input__Name"
                 />
               </Form.Item>
               <Form.Item
                 label={
-                  <label className=" ClientDocuments__Input__ItemLabel">
+                  <label className="ClientDocuments__Input__ItemLabel">
                     First Meeting:
                   </label>
                 }
               >
                 <DatePicker
                   disabled={disabled}
-                  name=" first_meeting_date"
+                  name="first_meeting_date"
                   value={Moment(referral.first_meeting_date)}
-                  format=" MM-DD-YYYY"
-                  placeholder=" MM-DD-YYYY"
+                  format="MM-DD-YYYY"
+                  placeholder="MM-DD-YYYY"
                   onChange={(e, string) =>
                     handleReferralChange(e, index, string)
                   }
-                  className=" ClientDocuments__DatePicker"
+                  className="ClientDocuments__DatePicker"
                 />
               </Form.Item>
               <Form.Item
                 label={
-                  <label className=" ClientDocuments__Input__ItemLabel">
+                  <label className="ClientDocuments__Input__ItemLabel">
                     Address (If Available):
                   </label>
                 }
               >
                 <Input
                   disabled={disabled}
-                  name=" address"
+                  name="address"
                   value={referral.address}
-                  placeholder=" 123 Anywhere Street"
+                  placeholder="123 Anywhere Street"
                   onChange={e => handleReferralChange(e, index)}
-                  className=" ClientDocuments__Input__Address"
+                  className="ClientDocuments__Input__Address"
                 />
               </Form.Item>
               <Form.Item
                 label={
-                  <label className=" ClientDocuments__Input__ItemLabel">
+                  <label className="ClientDocuments__Input__ItemLabel">
                     Apt #:
                   </label>
                 }
               >
                 <Input
                   disabled={disabled}
-                  name=" apt"
+                  name="apt"
                   value={referral.apt}
-                  placeholder=" Apt #"
+                  placeholder="Apt #"
                   onChange={e => handleReferralChange(e, index)}
-                  className=" ClientDocuments__Input__Apt"
+                  className="ClientDocuments__Input__Apt"
                 />
               </Form.Item>
               <Form.Item
                 label={
-                  <label className=" ClientDocuments__Input__ItemLabel">
+                  <label className="ClientDocuments__Input__ItemLabel">
                     City:
                   </label>
                 }
               >
                 <Input
                   disabled={disabled}
-                  name=" city"
+                  name="city"
                   value={referral.city}
-                  placeholder=" City Name"
+                  placeholder="City Name"
                   onChange={e => handleReferralChange(e, index)}
-                  className=" ClientDocuments__Input__City"
+                  className="ClientDocuments__Input__City"
                 />
               </Form.Item>
               <Form.Item
                 label={
-                  <label className=" ClientDocuments__Input__ItemLabel">
+                  <label className="ClientDocuments__Input__ItemLabel">
                     State:
                   </label>
                 }
               >
                 <Input
                   disabled={disabled}
-                  name=" state"
+                  name="state"
                   value={referral.state}
-                  placeholder=" State Abbrv."
+                  placeholder="State Abbrv."
                   onChange={e => handleReferralChange(e, index)}
-                  className=" ClientDocuments__Input__State"
+                  className="ClientDocuments__Input__State"
                 />
               </Form.Item>
               <Form.Item
                 label={
-                  <label className=" ClientDocuments__Input__ItemLabel">
+                  <label className="ClientDocuments__Input__ItemLabel">
                     Zip:
                   </label>
                 }
               >
                 <Input
                   disabled={disabled}
-                  name=" zip"
+                  name="zip"
                   value={referral.zip}
-                  placeholder=" Zip Code"
+                  placeholder="Zip Code"
                   onChange={e => handleReferralChange(e, index)}
-                  className=" ClientDocuments__Input__Zip"
+                  className="ClientDocuments__Input__Zip"
                 />
               </Form.Item>
               <Form.Item
                 label={
-                  <label className=" ClientDocuments__Input__ItemLabel">
+                  <label className="ClientDocuments__Input__ItemLabel">
                     Email:
                   </label>
                 }
               >
                 <Input
                   disabled={disabled}
-                  name=" email"
+                  name="email"
                   value={referral.email}
-                  placeholder=" user@email.com"
+                  placeholder="user@email.com"
                   onChange={e => handleReferralChange(e, index)}
-                  className=" ClientDocuments__Input__Email"
+                  className="ClientDocuments__Input__Email"
                 />
               </Form.Item>
               <Form.Item
                 label={
-                  <label className=" ClientDocuments__Input__ItemLabel">
+                  <label className="ClientDocuments__Input__ItemLabel">
                     Cell:
                   </label>
                 }
               >
                 <Input
                   disabled={disabled}
-                  name=" cell"
+                  name="cell"
                   value={referral.cell}
-                  placeholder=" 555-555-5555"
+                  placeholder="555-555-5555"
                   onChange={e => handleReferralChange(e, index)}
-                  className=" ClientDocuments__Input__Cell"
+                  className="ClientDocuments__Input__Cell"
                 />
               </Form.Item>
               <Form.Item
                 label={
-                  <label className=" ClientDocuments__Input__ItemLabel">
+                  <label className="ClientDocuments__Input__ItemLabel">
                     Work:
                   </label>
                 }
               >
                 <Input
                   disabled={disabled}
-                  name=" work"
+                  name="work"
                   value={referral.work}
-                  placeholder=" 555-555-5555"
+                  placeholder="555-555-5555"
                   onChange={e => handleReferralChange(e, index)}
-                  className=" ClientDocuments__Input__Work"
+                  className="ClientDocuments__Input__Work"
                 />
               </Form.Item>
               <Form.Item
                 label={
-                  <label className=" ClientDocuments__Input__ItemLabel">
+                  <label className="ClientDocuments__Input__ItemLabel">
                     Home:
                   </label>
                 }
               >
                 <Input
                   disabled={disabled}
-                  name=" home"
+                  name="home"
                   value={referral.home}
-                  placeholder=" 555-555-5555"
+                  placeholder="555-555-5555"
                   onChange={e => handleReferralChange(e, index)}
-                  className=" ClientDocuments__Input__Home"
+                  className="ClientDocuments__Input__Home"
                 />
               </Form.Item>
               {index !== 0 ? (
@@ -514,7 +514,7 @@ const Documents = props => {
           </Button>
         </Form.Item>
       </div>
-      <section className=" CaseSubmit">
+      <section className="CaseSubmit">
         <Button
           onClick={toggleEdit}
           style={{
@@ -523,7 +523,7 @@ const Documents = props => {
             background: '#007FD4',
             borderColor: '#007FD4',
           }}
-          type=" primary"
+          type="primary"
         >
           {disabled ? 'Edit' : 'Save Changes'}
         </Button>
