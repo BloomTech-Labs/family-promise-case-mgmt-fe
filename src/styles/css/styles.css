@@ -252,3 +252,30 @@
   margin: 1rem;
   color: #cdcdcd;
 }
+
+/*styles for feature/Finance-component*/
+
+.subsectionHeader {
+  text-align: center;
+  margin-bottom: 50px;
+  background-color: #706f6f;
+  padding: 20px;
+}
+
+.borderStyled {
+  width: 5rem;
+  border: 1px solid black;
+}
+
+.grid {
+  display: grid;
+  /* gridTemplateColumns: 1fr 1fr 1fr 1fr; */
+  margin: '0px 40px';
+}
+
+.containerStyles {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: start;
+  margin-left: '40px';
+}
