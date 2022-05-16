@@ -1,4 +1,4 @@
 import * as client from './clientActions';
-import * as documents from './documentActions';
+import * as contactPreferences from './contactPreferencesActions';
 
-export { client, documents };
+export { client, contactPreferences };

@@ -253,7 +253,7 @@
   color: #cdcdcd;
 }
 
-.ClientDocuments__Form {
+.ClientContactPreferences__checkboxGroupContainer {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -261,109 +261,23 @@
   width: 80%;
   padding: 2rem;
   margin: auto;
-  background: #3f3f3f;
-  color: #ffffff;
 }
 
-.ClientDocuments__checkboxGroupContainer {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  margin: 0 10px;
-}
-
-.ClientDocuments__checkboxGroup {
+.ClientContactPreferences__checkboxGroup {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
 
 }
 
-.ClientDocuments__referralsContainer {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin: auto 5rem,
+.ClientContactPreferences__subsectionContainer {
+  border: solid 1px #6e6e6e;
 }
 
-.ClientDocuments__referralContainer {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-between;
-  margin: 0 10px;
+.ClientContactPreferences__subsectionHeader {
+  text-align: center;
+  margin-bottom: 50px;
+  background-color: whiteSmoke;
+  color: #101010;
+  padding: 20px;
 }
-
-.ClientDocuments__Input__Name {
-  width: 36vw;
-  max-width: 36vw;
-  min-width: 25vw;
-}
-
-.ClientDocuments__DatePicker {
-  width: 20vw;
-  max-width: 20vw;
-  min-width: 10vw;
-}
-
-.ClientDocuments__Input__Address {
-  width: 37vw;
-  max-width: 37vw;
-  min-width: 26vw;
-}
-
-.ClientDocuments__Input__Apt {
-  width: 12vw;
-  max-width: 12vw;
-  min-width: 9vw;
-}
-
-.ClientDocuments__Input__City {
-  width: 45vw;
-  max-width: 45vw;
-  min-width: 23vw;
-}
-
-.ClientDocuments__Input__State {
-  width: 10vw;
-  max-width: 10vw;
-  min-width: 8vw;
-}
-
-.ClientDocuments__Input__Zip {
-  width: 10vw;
-  max-width: 10vw;
-  min-width: 8vw;
-}
-
-.ClientDocuments__Input__Email {
-  width: 56vw;
-  max-width: 56vw;
-  min-width: 23vw;
-}
-
-.ClientDocuments__Input__Cell {
-  width: 16vw;
-  max-width: 16vw;
-  min-width: 13vw;
-}
-
-.ClientDocuments__Input__Work {
-  width: 16vw;
-  max-width: 16vw;
-  min-width: 13vw;
-}
-
-.ClientDocuments__Input__Home {
-  width: 16vw;
-  max-width: 16vw;
-  min-width: 13vw;
-}
-
-.ClientDocuments__Input__ItemLabel {
-  color: #ffffff;
-}
-
-.ClientDocuments_sectionHeader {
-  color: #ffffff;
-}
-
