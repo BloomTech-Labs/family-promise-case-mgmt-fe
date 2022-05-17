@@ -1,7 +1,7 @@
 import React from 'react';
 import { DatePicker, Form, Input, Button, Table, Space } from 'antd';
 import Moment from 'moment';
-import { PlusOutlined } from '@ant-design/icons';
+import { PlusOutlined, DeleteOutlined, EditOutlined } from '@ant-design/icons';
 import { connect } from 'react-redux';
 import { referral } from '../../../../state/actions';
 
@@ -17,8 +17,8 @@ const Documents = props => {
       key: 'actions',
       render: (text, record) => (
         <Space size="middle">
-          <Button>{'edit'}</Button>
-          <Button>{'delete'}</Button>
+          <Button>{EditOutlined}</Button>
+          <Button>{DeleteOutlined}</Button>
         </Space>
       ),
     },
@@ -44,7 +44,7 @@ const Documents = props => {
       <h2 className="ClientContactPreferences__subsectionHeader">Referrals</h2>
 
       <div className="ClientDocuments__referralFormContainer">
-        <Table dataSource={props.referrals} columns={columns} />
+        <Table columns={columns} />
         <section
           className="ClientDocuments__referralContainer"
           layout="vertical"

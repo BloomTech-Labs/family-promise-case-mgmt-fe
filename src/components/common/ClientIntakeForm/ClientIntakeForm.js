@@ -2,6 +2,7 @@ import { Form, Button, DatePicker } from 'antd';
 import React from 'react';
 import ClientFamilyInfo from './IntakeForms/ClientFamilyInfo';
 import ContactPreferences from './IntakeForms/ContactPreferences';
+import Referrals from './IntakeForms/Referrals';
 //NOTE: Inline Styles added temporarily.
 const sectionContainer = {
   width: '80%',
@@ -57,6 +58,7 @@ const ClientIntakeForm = () => {
       </Form.Item>
       <ClientFamilyInfo />
       <ContactPreferences />
+      <Referrals />
 
       <div style={buttonSection}>
         <Form.Item>
