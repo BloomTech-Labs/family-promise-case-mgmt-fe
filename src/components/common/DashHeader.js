@@ -2,19 +2,30 @@ import React from 'react';
 import { Menu } from 'antd';
 import { Link } from 'react-router-dom';
 import fpLogo from '../../assets/fplogo.png';
-import { useOktaAuth } from '@okta/okta-react';
+import PlaceholderProfileImage from '../../assets/PlaceholderProfileImage.png';
 
-const NavHeader = () => {
-  const { authService } = useOktaAuth();
+const DashHeader = () => {
   return (
-    <div className="NavHeader">
-      <img
-        className="NavHeader_logo"
-        src={fpLogo}
-        alt="Family Promise of Spokane"
-      />
-      <Menu mode="horizontal" defaultSelectedKeys={['2']}>
-        <Menu.Item className="Menu_Item" key="dashboard">
+    <div>
+      <div className="DashHeader">
+        <img
+          className="DashHeader__logo"
+          src={fpLogo}
+          alt="Family Promise of Spokane"
+        />
+        <img
+          className="Placeholder_ProfileLogo"
+          src={PlaceholderProfileImage}
+          alt="Profile"
+        />
+      </div>
+      <Menu
+        className="DashHeader_Nav"
+        theme="dark"
+        mode="horizontal"
+        defaultSelectedKeys={['2']}
+      >
+        <Menu.Item key="dashboard">
           <Link to="dashboard" />
           Dashboard
         </Menu.Item>
@@ -38,18 +49,9 @@ const NavHeader = () => {
           <Link to="client-intake-form" />
           Intake
         </Menu.Item>
-        <Menu.Item
-          key="logout"
-          onClick={() => {
-            authService.logout();
-          }}
-        >
-          <Link to="/" />
-          Logout
-        </Menu.Item>
       </Menu>
     </div>
   );
 };
 
-export default NavHeader;
+export default DashHeader;
