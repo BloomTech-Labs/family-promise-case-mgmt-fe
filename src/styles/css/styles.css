@@ -367,7 +367,7 @@
   margin: auto;
 }
 
-.ClientDocuments__referralContainer {
+.referralContainer {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;

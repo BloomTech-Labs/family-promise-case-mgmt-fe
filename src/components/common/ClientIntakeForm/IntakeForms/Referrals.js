@@ -29,11 +29,12 @@ const Documents = props => {
     },
   ];
   
-  // const expandable = {
-  //   expandedRowRender: record => 
-  //   (<p>{record.description}</p>),
-  //   rowExpandable: record => record.name !== 'Not Expandable',
-  // }
+  const expandable = {
+    expandedRowRender: record => 
+    (<div><p>{record.address}{record.apt !== "" ? ` ${record.apt},` : ","} {record.city}, {record.state} {record.zip} </p>
+    <p>{record.cell !== "" ? `cell: ${record.cell}`: null} {record.home !== "" ? `home: ${record.home}`: null} {record.work !== "" ? `work: ${record.work}`: null}</p>
+    <p>{record.emial !== "" ? `email: ${record.email}`: null}</p></div>),
+  }
   
   const onFinish = (values) => {
     if(typeof referralIndex === "number") {
@@ -71,14 +72,16 @@ const Documents = props => {
     <div className="subsectionContainer">
       <h2 className="subsectionHeader">Referrals</h2>
 
-      <div className="ClientDocuments__referralFormContainer">
-        <Table dataSource={[...props.referrals]} columns={columns} 
-        expandable={{
-      expandedRowRender: record => <p style={{ margin: 0 }}>{record.description}</p>,
-      rowExpandable: record => record.name !== 'Not Expandable',
-    }}/>
+      <div className="referralFormContainer">
+        <Table 
+          dataSource={[...props.referrals]} 
+          columns={columns} 
+          expandable={expandable}
+          pagination={{ pageSize: 50 }} 
+          scroll={{ y: 240 }}
+        />
         <section
-          className="ClientDocuments__referralContainer"
+          className="referralContainer"
           layout="vertical"
         >
           <Form.Item
