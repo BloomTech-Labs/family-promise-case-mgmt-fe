@@ -1,17 +1,5 @@
 import { referral } from '../actions';
-
-const initialReferral = {
-  name: '',
-  address: '',
-  city: '',
-  state: '',
-  zip: '',
-  cell: '',
-  home: '',
-  work: '',
-  email: '',
-  first_meeting_date: '',
-};
+import Moment from 'moment';
 
 const intialState = [
   {
@@ -25,31 +13,28 @@ const intialState = [
     home: '555-555-5555',
     work: '555-555-5555',
     email: 'test@test.com',
-    first_meeting_date: '04-17-1998',
+    first_meeting_date: Moment('04-17-1998', 'MM-DD-YYYY'),
   },
 ];
 
 export const reducer = (state = intialState, action) => {
   switch (action.type) {
-    case referral.SET_REFERRALS:
-      const updatedReferrals = state.map((referral, i) => {
-        if (i === action.payload.index) {
-          return { ...referral, ...action.payload.data };
-        }
-        return referral;
-      });
-      return updatedReferrals;
-
     case referral.DELETE_REFERRAL:
       const filteredReferrals = state.filter(
         (referral, index) => index !== action.index
       );
       return filteredReferrals;
 
-    case referral.ADD_REFERRAL:
+    case referral.SAVE_REFERRAL:
       const newReferrals = [...state];
-      newReferrals.push(initialReferral);
+      newReferrals.push(action.payload);
       return newReferrals;
+
+    case referral.EDIT_REFERRAL:
+      const updatedReferrals = [...state];
+      updatedReferrals[action.index] = action.payload
+      console.log(updatedReferrals)
+      return updatedReferrals;
 
     default:
       return state;

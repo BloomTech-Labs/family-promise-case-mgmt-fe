@@ -39,6 +39,7 @@ const ClientIntakeForm = () => {
   };
 
   return (
+    <div>
     <Form
       name="clientIntakeForm"
       form={form}
@@ -58,7 +59,7 @@ const ClientIntakeForm = () => {
       </Form.Item>
       <ClientFamilyInfo />
       <ContactPreferences />
-      <Referrals />
+      
 
       <div style={buttonSection}>
         <Form.Item>
@@ -74,6 +75,8 @@ const ClientIntakeForm = () => {
         </Form.Item>
       </div>
     </Form>
+    <Referrals />
+    </div>
   );
 };
 

@@ -1,17 +1,19 @@
-export const SET_REFERRALS = 'SET_REFERRALS';
 export const DELETE_REFERRAL = 'DELETE_REFERRAL';
-export const ADD_REFERRAL = 'ADD_REFERRAL';
+export const SAVE_REFERRAL = 'SAVE_REFERRAL';
+export const EDIT_REFERRAL = 'EDIT_REFERRAL';
 
-export const setReferrals = referralData => {
+export const saveReferral = referralData => {
   return {
-    type: SET_REFERRALS,
+    type: SAVE_REFERRAL,
     payload: referralData,
   };
 };
 
-export const addReferral = () => {
+export const editReferral = (referralData, index) => {
   return {
-    type: ADD_REFERRAL,
+    type: EDIT_REFERRAL,
+    payload: referralData,
+    index: index
   };
 };
 
