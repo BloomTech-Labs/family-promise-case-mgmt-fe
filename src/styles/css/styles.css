@@ -270,7 +270,6 @@
 .FP_ProfilePic{
   width: 75px;
   height: 75px;
-  margin:41px 65px 19px 0px;
   line-height:75px;
   background-color: #484848;
   font-size:36px;
@@ -365,11 +364,13 @@
 }
 /*Targeting Upload-button */
 .ant-upload.ant-upload-select-picture-card{
+  display:flex;
+  align-items: flex-end;
   position:absolute;
   right: 30px;
   border-radius: 50%;
   width: 75px;
   height: 75px;
   background-color: #101010;
-  margin:10px 65px 19px 0px;
+  margin-top:20px; 
 }
