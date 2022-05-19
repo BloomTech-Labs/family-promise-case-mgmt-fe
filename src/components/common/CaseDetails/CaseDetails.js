@@ -9,6 +9,7 @@ import {
   DatePicker,
   Select,
   Radio,
+  Checkbox,
 } from 'antd';
 
 import '../../../styles/css/styles.css';
@@ -136,6 +137,18 @@ const CaseDetails = () => {
                     <Radio value={1}>Yes</Radio>
                     <Radio value={2}>No</Radio>
                   </Radio.Group>
+                </Form.Item>
+                <Form.Item
+                  label="Does Client have Documented Disabilities?"
+                  name="CDD"
+                >
+                  <Radio.Group>
+                    <Radio value={1}>Yes</Radio>
+                    <Radio value={2}>No</Radio>
+                  </Radio.Group>
+                </Form.Item>
+                <Form.Item label="If yes what disabilities?">
+                  <Input />
                 </Form.Item>
                 <Form.Item></Form.Item>
               </Form>
