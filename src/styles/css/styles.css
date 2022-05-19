@@ -263,12 +263,18 @@
   height: 100px;
   width: 409px;
   margin-left:80px;
+  margin-top: 17px;
+  margin-bottom: 18px;
 }
-.Placeholder_ProfileLogo{
-  width: 55px;
-  height: 52px;
-  margin-top: 23px;
-  margin-right:65px;
+/* Changed the className from PlaceholderProfileImage to FP_ProfilePic and used line-height to center the text,changed the background color, adjusted margins, and resized text  */
+.FP_ProfilePic{
+  width: 75px;
+  height: 75px;
+  margin:41px 65px 19px 0px;
+  line-height:75px;
+  background-color: #484848;
+  font-size:36px;
+  font-weight: bolder;
 }
 .DashHeader_Menu {
   height: 1830px;

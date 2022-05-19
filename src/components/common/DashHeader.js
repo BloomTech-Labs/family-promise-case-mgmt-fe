@@ -1,8 +1,8 @@
 import React from 'react';
 import { Menu } from 'antd';
 import { Link } from 'react-router-dom';
+import { Avatar } from 'antd';
 import fpLogo from '../../assets/fplogo.png';
-import PlaceholderProfileImage from '../../assets/PlaceholderProfileImage.png';
 
 const DashHeader = () => {
   return (
@@ -13,11 +13,8 @@ const DashHeader = () => {
           src={fpLogo}
           alt="Family Promise of Spokane"
         />
-        <img
-          className="Placeholder_ProfileLogo"
-          src={PlaceholderProfileImage}
-          alt="Profile"
-        />
+        {/* Replaced PlaceholderProfileImage with AntD Avatar */}
+        <Avatar className="FP_ProfilePic">FP</Avatar>
       </div>
       <Menu
         className="DashHeader_Nav"
