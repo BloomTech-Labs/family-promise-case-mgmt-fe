@@ -363,3 +363,13 @@
   color:#ffffff;
 
 }
+/*Targeting Upload-button */
+.ant-upload.ant-upload-select-picture-card{
+  position:absolute;
+  right: 30px;
+  border-radius: 50%;
+  width: 75px;
+  height: 75px;
+  background-color: #101010;
+  margin:10px 65px 19px 0px;
+}
