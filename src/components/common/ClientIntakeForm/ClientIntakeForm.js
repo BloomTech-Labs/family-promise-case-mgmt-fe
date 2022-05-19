@@ -38,40 +38,42 @@ const ClientIntakeForm = () => {
   };
 
   return (
-    <Form
-      name="clientIntakeForm"
-      form={form}
-      onFinish={onFinish}
-      onSubmit={e => e.preventDefault()}
-      layout="vertical"
-      style={sectionContainer}
-    >
-      <h1 style={{ textAlign: 'center' }}>Intake Form</h1>
-      <Form.Item
-        label="Inital Intake Date"
-        style={{ marginBottom: '50px' }}
-        name="intakeDate"
-        initialValue=""
+    <div>
+      <Form
+        name="clientIntakeForm"
+        form={form}
+        onFinish={onFinish}
+        onSubmit={e => e.preventDefault()}
+        layout="vertical"
+        style={sectionContainer}
       >
-        <DatePicker format="MM/DD/YYYY" />
-      </Form.Item>
-      <ClientFamilyInfo />
+        <h1 style={{ textAlign: 'center' }}>Intake Form</h1>
+        <Form.Item
+          label="Inital Intake Date"
+          style={{ marginBottom: '50px' }}
+          name="intakeDate"
+          initialValue=""
+        >
+          <DatePicker format="MM/DD/YYYY" />
+        </Form.Item>
+        <ClientFamilyInfo />
+
+        <div style={buttonSection}>
+          <Form.Item>
+            <Button style={prime} htmlType="submit" type="primary">
+              Submit
+            </Button>
+          </Form.Item>
+
+          <Form.Item>
+            <Button style={btn} type="default">
+              Cancel
+            </Button>
+          </Form.Item>
+        </div>
+      </Form>
       <ContactPreferences />
-
-      <div style={buttonSection}>
-        <Form.Item>
-          <Button style={prime} htmlType="submit" type="primary">
-            Submit
-          </Button>
-        </Form.Item>
-
-        <Form.Item>
-          <Button style={btn} type="default">
-            Cancel
-          </Button>
-        </Form.Item>
-      </div>
-    </Form>
+    </div>
   );
 };
 

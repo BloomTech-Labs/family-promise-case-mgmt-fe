@@ -66,6 +66,7 @@
     "@testing-library/react": "^10.2.1",
     "@testing-library/user-event": "^7.2.1",
     "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-prettier": "^3.1.4",
     "eslint-plugin-react-hooks": "^4.0.4",
     "husky": "^4.2.5",
     "jest-canvas-mock": "^2.2.0",
@@ -75,7 +76,6 @@
     "lint-staged": "^10.2.11",
     "prettier-eslint-cli": "^4.2.1",
     "prompts": "^2.3.2",
-    "yaml": "^1.10.0",
-    "eslint-plugin-prettier": "^3.1.4"
+    "yaml": "^1.10.0"
   }
 }
