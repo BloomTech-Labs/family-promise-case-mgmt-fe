@@ -268,12 +268,15 @@
 }
 /* Changed the className from PlaceholderProfileImage to FP_ProfilePic and used line-height to center the text,changed the background color, adjusted margins, and resized text  */
 .FP_ProfilePic{
+  display: flex;
+  align-items: center;
   width: 75px;
   height: 75px;
   line-height:75px;
   background-color: #484848;
   font-size:36px;
   font-weight: bolder;
+  margin-bottom: 20px;
 }
 .DashHeader_Menu {
   height: 1830px;
@@ -362,10 +365,10 @@
   color:#ffffff;
 
 }
-/*Targeting Upload-button */
+/*Targeting Upload-button Profile on line 270 */
 .ant-upload.ant-upload-select-picture-card{
   display:flex;
-  align-items: flex-end;
+  align-items: center;
   position:absolute;
   right: 30px;
   border-radius: 50%;
@@ -373,4 +376,15 @@
   height: 75px;
   background-color: #101010;
   margin-top:20px; 
+}
+.PlusOutline{
+  color:#101010;
+}
+.UploadButton {
+  background-color:#484848;
+}
+.Avatar-img{
+  border-radius: 50%;
+  height: 78px;
+  width: 78px;
 }
