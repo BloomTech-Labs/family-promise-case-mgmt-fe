@@ -365,7 +365,7 @@
   color:#ffffff;
 
 }
-/*Targeting Upload-button Profile on line 270 */
+/*Targeting UploadButton Profile on line 270 */
 .ant-upload.ant-upload-select-picture-card{
   display:flex;
   align-items: center;
@@ -379,9 +379,6 @@
 }
 .PlusOutline{
   color:#101010;
-}
-.UploadButton {
-  background-color:#484848;
 }
 .Avatar-img{
   border-radius: 50%;

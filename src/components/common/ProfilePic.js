@@ -37,13 +37,14 @@ class ProfilePic extends React.Component {
           loading: false,
         })
       );
+      console.log(getImage);
     }
   };
 
   render() {
     const { loading, imageUrl } = this.state;
     const uploadButton = (
-      <div classname="UploadButton">
+      <div className="UploadButton">
         {loading ? (
           <LoadingOutlined className="LoadingOutline" />
         ) : (
