@@ -3,6 +3,7 @@ import { Avatar, Upload, message } from 'antd';
 import { LoadingOutlined, PlusOutlined } from '@ant-design/icons';
 
 function getImage(img, callback) {
+  // LINE 7: converts image to data url
   const reader = new FileReader();
   reader.addEventListener('load', () => callback(reader.result));
   reader.readAsDataURL(img);
