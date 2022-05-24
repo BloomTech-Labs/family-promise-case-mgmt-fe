@@ -42,7 +42,7 @@ const initialFormValues = {
   socialWorkerPhone: '(555) 123-4567',
 };
 
-export const HouseholdInformationForm = props => {
+const HouseholdInformationForm = props => {
   const [form] = Form.useForm();
   const [disabled, setDisabled] = useState(true);
 
@@ -587,3 +587,5 @@ export const HouseholdInformationForm = props => {
     </div>
   );
 };
+
+export default HouseholdInformationForm;

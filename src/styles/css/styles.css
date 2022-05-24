@@ -255,6 +255,7 @@
 .CaseDetails {
   display: flex;
   flex-flow: row nowrap;
+  background-color: black;
 }
 .CaseDetails__LeftSide {
   width: 50%;
@@ -262,42 +263,80 @@
 .CaseDetails__LeftSideHead {
   display: flex;
   flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+  margin-right: 1rem;
+  margin-left: 1rem;
 }
 .CaseDetails__LeftSideHead h2 {
   margin-left: 2rem;
   margin-right: 2rem;
+  margin-bottom: 0rem;
+  font-size: 36px;
+  color: white;
 }
-.CaseDetails__Leftside__OverviewHead {
+.CaseDetails__LeftSideHead h3 {
+  color: white;
+  font-size: 24px;
+  margin-bottom: 0rem;
+  margin-top: .5rem;;
+}
+.CaseDetails__LeftSideHead Button {
+  width: 256.34px;
+  height: 48.16px;
+  background: #333333;
+  border-radius: 25px 0px 10px;
+  color: white;
+  border-color: #007fd4;
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-around;
-  width: 100%;
-}
-.Leftside__overviewSection1 {
-  justify-self: flex-start;
-}
-.Leftside__overviewSection1 {
-  justify-self: center;
-}
-.Leftside__overviewSection1 {
-  justify-self: flex-end;
+  align-items: center;
 }
 .CaseDetails__LeftSideBtnsContainer {
   display: flex; 
   flex-flow: column nowrap;
+  margin: 1rem;
 }
-.CaseDetails__LeftSideBtns {
-  margin-top: 0.75rem;
-  height: 4rem;
+.CaseDetails__Leftside__gridHead {
+  width: 100%;
+  background-color: black;
+  color: white;
+  height: 3.5rem;
   display: flex;
   flex-flow: row nowrap;
-  justify-content: space-between;
   align-items: center;
 }
-.ButtonBarMargins {
-  margin-left: 5rem;
-  margin-right: 5rem;
+.gridColumns {
+  display: flex;
+  justify-content: center;
 }
 .CaseDetails__RightSide {
   width: 50%;
+}
+.ant-collapse > .ant-collapse-item {
+  margin-bottom: 1rem;
+  border-bottom: 0px;
+}
+.mainCollapse {
+  border: 0;
+  background-color: black;
+}
+.ant-collapse-header {
+  background-color: #007fd4;
+}
+.ant-collapse-content-box {
+  background-color: #007fd4;
+}
+.Leftside__Bottom__ButtonsContainer{
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  margin: 1rem;
+}
+.leftSideBottomButtons {
+  background-color: #007fd4;
+  border: 0;
+  color: white;
 }
