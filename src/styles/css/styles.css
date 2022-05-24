@@ -273,7 +273,7 @@
   margin-left: 2rem;
   margin-right: 2rem;
   margin-bottom: 0rem;
-  font-size: 36px;
+  font-size: 48px;
   color: white;
 }
 .CaseDetails__LeftSideHead h3 {
@@ -312,11 +312,8 @@
   display: flex;
   justify-content: center;
 }
-.CaseDetails__RightSide {
-  width: 50%;
-}
 .ant-collapse > .ant-collapse-item {
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
   border-bottom: 0px;
 }
 .mainCollapse {
@@ -339,4 +336,68 @@
   background-color: #007fd4;
   border: 0;
   color: white;
+}
+.CaseDetails__RightSide {
+  width: 50%;
+}
+.Rightside__Head {
+  margin: 1rem;
+  margin-left: 4rem;
+  margin-bottom: 0rem;
+  font-size: 30px;
+}
+.Rightside__Header {
+  color: white;
+  font-size: 48px;
+  margin-bottom: 0rem;
+}
+.Rightside__SearchBar {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  margin-right: 1rem;
+  margin-left: 1rem;
+}
+.Rightside__SearchBar img {
+  margin-bottom: 1rem;
+  margin-right: 1rem;
+}
+.Rightside__SearchBar h3 {
+  color: #d2d2d7;
+  opacity: 0.5;
+  font-size: 36px;
+}
+.SearchBar {
+  background-color: black;
+  height: 2rem;
+  width: 25rem;
+  margin-left: 1rem;
+  margin-bottom: 0.5rem;
+  border: 2px solid #CDCDCD;
+  border-radius: 20px 0px 10px;
+  color:  #cdcdcd;
+}
+.ant-input {
+  background-color: black;
+}
+.ant-input-prefix {
+  margin-top: 1rem;
+}
+.Rightside__Notes__BoxandButton {
+  width: 91.5%;
+}
+.Rightside__Notes__BoxandButton > .ant-space > .ant-space-item > .ant-input {
+  background-color: #CDCDCD;
+  margin: 1rem;
+  margin-top: .5rem;
+}
+.Rightside__Notes__BoxandButton > .ant-space {
+  width: 100%;
+}
+.saveNoteButton {
+  background-color: #007fd4;
+  border: 0;
+  color: white;
+  margin-left: 1rem;
+  width: 10rem;
 }

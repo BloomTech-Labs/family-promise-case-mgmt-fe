@@ -1,12 +1,17 @@
 import React from 'react';
-import { Button, Collapse } from 'antd';
+import { Button, Collapse, Input, Space } from 'antd';
 
 import '../../../styles/css/styles.css';
 import arrow from '../../../assets/VectorarrowForAllCases.png';
+import filter from '../../../assets/filterIcon.PNG';
+import SearchIcon from './SearchIcon';
+
 import ClientFamilyInformationForm from '../CaseDetailsForms/ClientFamilyInformation';
 import HouseholdInformationForm from '../CaseDetailsForms/HouseholdInformationForm';
+import Notes from '../CaseDetailsForms/Notes';
 
 const { Panel } = Collapse;
+const { TextArea } = Input;
 
 const CaseDetails = () => {
   return (
@@ -30,28 +35,30 @@ const CaseDetails = () => {
           </div> */}
           <Collapse accordion className="mainCollapse">
             <Panel header="CLIENT/FAMILY INFORMATION" key="1" showArrow={false}>
-              <ClientFamilyInformationForm />
+              {/* <ClientFamilyInformationForm /> */}
+              <p>When form is built, we can add it here</p>
             </Panel>
             <Panel header="HOUSEHOLD INFORMATION" key="2" showArrow={false}>
-              <HouseholdInformationForm />
+              {/* <HouseholdInformationForm /> */}
+              <p>When form is built, we can add it here</p>
             </Panel>
             <Panel header="EDUCATION" key="3" showArrow={false}>
-              <p>When form is buuilt, we can add it here</p>
+              <p>When form is built, we can add it here</p>
             </Panel>
             <Panel header="EMPLOYMENT" key="4" showArrow={false}>
-              <p>When form is buuilt, we can add it here</p>
+              <p>When form is built, we can add it here</p>
             </Panel>
             <Panel header="FINANCES" key="5" showArrow={false}>
-              <p>When form is buuilt, we can add it here</p>
+              <p>When form is built, we can add it here</p>
             </Panel>
             <Panel header="INSURANCE" key="6" showArrow={false}>
-              <p>When form is buuilt, we can add it here</p>
+              <p>When form is built, we can add it here</p>
             </Panel>
             <Panel header="DOCUMENTS" key="7" showArrow={false}>
-              <p>When form is buuilt, we can add it here</p>
+              <p>When form is built, we can add it here</p>
             </Panel>
             <Panel header="GOALS/STRENGTHS" key="8" showArrow={false}>
-              <p>When form is buuilt, we can add it here</p>
+              <p>When form is built, we can add it here</p>
             </Panel>
           </Collapse>
         </div>
@@ -70,7 +77,33 @@ const CaseDetails = () => {
           </Button>
         </div>
       </div>
-      <div className="CaseDetails__RightSide"></div>
+      <div className="CaseDetails__RightSide">
+        <div className="Rightside__Head">
+          <h2 className="Rightside__Header">Case Notes</h2>
+        </div>
+        <div className="Rightside__SearchBar">
+          <img src={filter} alt="Sign for filtering with a search bar" />
+          <h3>Filter Case Notes</h3>
+          <div>
+            <Space direction="vertical">
+              <Input
+                prefix={<SearchIcon className="searchIcon" />}
+                placeholder="Search for keywords"
+                className="SearchBar"
+              />
+            </Space>
+          </div>
+        </div>
+        <div className="Rightside__Notes__BoxandButton">
+          <Space direction="vertical">
+            <TextArea rows={6} />
+          </Space>
+          <Button type="Default" className="saveNoteButton">
+            Save Note
+          </Button>
+        </div>
+        <div className="Rightside__PreviousNotes"></div>
+      </div>
     </div>
   );
 };
