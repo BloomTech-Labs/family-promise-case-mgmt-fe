@@ -3,6 +3,7 @@ import React from 'react';
 import ClientFamilyInfo from './IntakeForms/ClientFamilyInfo';
 import ContactPreferences from './IntakeForms/ContactPreferences';
 import Referrals from './IntakeForms/Referrals';
+import DocumentUpload from './IntakeForms/DocumentUpload';
 //NOTE: Inline Styles added temporarily.
 const sectionContainer = {
   width: '80%',
@@ -75,6 +76,7 @@ const ClientIntakeForm = () => {
       </Form>
       <ContactPreferences />
       <Referrals />
+      <DocumentUpload />
     </div>
   );
 };
