@@ -79,8 +79,4 @@ class ProfilePic extends React.Component {
   }
 }
 
-// const ProfilePic = () => {
-//   return <Avatar className="FP_ProfilePic">FP</Avatar>;
-// };
-
 export default ProfilePic;
