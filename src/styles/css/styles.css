@@ -253,7 +253,6 @@
   color: #cdcdcd;
 }
 
-
 .DashHeader {
   background-color: #101010;
   display: flex;
@@ -262,13 +261,13 @@
 .DashHeader__logo {
   height: 100px;
   width: 409px;
-  margin-left:80px;
+  margin-left: 80px;
 }
-.Placeholder_ProfileLogo{
+.Placeholder_ProfileLogo {
   width: 55px;
   height: 52px;
   margin-top: 23px;
-  margin-right:65px;
+  margin-right: 65px;
 }
 .DashHeader_Menu {
   height: 1830px;
@@ -278,9 +277,9 @@
   background-color: #242424;
 }
 
-.ant-menu.ant-menu-dark  {
+.ant-menu.ant-menu-dark {
   background-color: #262626;
-  height:70px
+  height: 70px;
 }
 .ant-menu-dark.ant-menu-horizontal {
   display: flex;
@@ -349,11 +348,10 @@
   flex-wrap: wrap;
 }
 
-.ant-divider-inner-text{
+.ant-divider-inner-text {
   color: #ffffff;
 }
 
 .ant-form-item-label > label {
-  color:#ffffff;
-
+  color: #ffffff;
 }

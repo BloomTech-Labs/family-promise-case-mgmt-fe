@@ -1,0 +1,31 @@
+label {
+  color: black;
+}
+
+.financeHeader {
+  text-align: center;
+  margin-bottom: 50px;
+  background-color: #706f6f;
+  padding: 20px;
+}
+
+.financeGrid {
+  display: grid;
+  margin: 0px 40px;
+}
+
+.financeContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: start;
+  margin-left: 40px;
+}
+
+.border {
+  width: 5rem;
+  border: 1px solid black;
+}
+
+.ant-input.border {
+  background-color: white;
+}
