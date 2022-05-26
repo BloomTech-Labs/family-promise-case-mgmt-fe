@@ -1,5 +1,6 @@
 //Basic and antD imports
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Button, Collapse, Input, Space } from 'antd';
 
 //Style and icon imports
@@ -12,16 +13,16 @@ import SearchIcon from './SearchIcon';
 const { Panel } = Collapse;
 const { TextArea } = Input;
 
-const CaseDetails = () => {
+//When connecting to the backend, be sure to replace placeholderArray with api array
+//Change the placeholder data for the notes section into api data
+//Add keys to mapped data when we have an id from api data
+
+function CaseDetails() {
   //State slices for filtered search bar
   const [filterSearch, setFilterSearch] = useState('');
   const [filteredResults, setFilteredResults] = useState([]);
 
   //onClick handler for buttons
-  const allCasesHandler = event => {
-    console.log('Itsworking!!!');
-  };
-
   const generateFormHandler = event => {
     console.log('Itsworking!!!');
   };
@@ -70,10 +71,12 @@ const CaseDetails = () => {
       <div className="CaseDetails__LeftSide">
         <div className="CaseDetails__LeftSideHead">
           <h2>Doe, John</h2>
-          <Button type="Primary" onClick={allCasesHandler}>
-            ALL CASES
-            <img src={arrow} alt="Arrow for all cases button" />
-          </Button>
+          <Link to="/cases">
+            <Button type="Primary">
+              ALL CASES
+              <img src={arrow} alt="Arrow for all cases button" />
+            </Button>
+          </Link>
         </div>
         <div className="CaseDetails__LeftSideBtnsContainer">
           <Collapse accordion className="mainCollapse">
@@ -186,6 +189,6 @@ const CaseDetails = () => {
       </div>
     </div>
   );
-};
+}
 
 export default CaseDetails;
