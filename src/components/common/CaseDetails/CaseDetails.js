@@ -1,45 +1,86 @@
-import React from 'react';
+//Basic and antD imports
+import React, { useState } from 'react';
 import { Button, Collapse, Input, Space } from 'antd';
 
+//Style and icon imports
 import '../../../styles/css/styles.css';
 import arrow from '../../../assets/VectorarrowForAllCases.png';
 import filter from '../../../assets/filterIcon.PNG';
 import SearchIcon from './SearchIcon';
 
-import ClientFamilyInformationForm from '../CaseDetailsForms/ClientFamilyInformation';
-import HouseholdInformationForm from '../CaseDetailsForms/HouseholdInformationForm';
-import Notes from '../CaseDetailsForms/Notes';
-
+//AntD special component peices
 const { Panel } = Collapse;
 const { TextArea } = Input;
 
 const CaseDetails = () => {
+  //State slices for filtered search bar
+  const [filterSearch, setFilterSearch] = useState('');
+  const [filteredResults, setFilteredResults] = useState([]);
+
+  //onClick handler for buttons
+  const allCasesHandler = event => {
+    console.log('Itsworking!!!');
+  };
+
+  const generateFormHandler = event => {
+    console.log('Itsworking!!!');
+  };
+
+  const hfcaHandler = event => {
+    console.log('Itsworking!!!');
+  };
+
+  const hvcPacketHandler = event => {
+    console.log('Itsworking!!!');
+  };
+
+  const printDocuHandler = event => {
+    console.log('Itsworking!!!');
+  };
+
+  const saveNotesHandler = event => {
+    console.log('Itsworking!!!');
+  };
+
+  //onChange for filtered search bar
+  let placeholderArray = [
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doeiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enimad minim veniam, quis nostrud exercitation ullamco laboris nisi utaliquip ex ea commodo consequat. Duis aute irure dolor inreprehenderit in voluptate velit esse cillum dolore eu fugiat nullapariatur. Excepteur sint occaecat cupidatat non proident, sunt inculpa qui officia deserunt mollit anim id est laborum.',
+  ];
+  const filterSearchHandler = filterValue => {
+    setFilterSearch(filterValue);
+    //Once backend connected, change placeholderArray to API data instead
+    if (filterValue !== '') {
+      const filteredData = placeholderArray.filter(item => {
+        return Object.values(item)
+          .join('')
+          .toLowerCase()
+          .includes(filterValue.toLowerCase());
+      });
+      setFilteredResults(filteredData);
+    } else {
+      setFilteredResults(placeholderArray);
+    }
+  };
+
+  //onChange for adding a note text field
+  const addNoteHandler = event => {};
+
   return (
     <div className="CaseDetails">
       <div className="CaseDetails__LeftSide">
         <div className="CaseDetails__LeftSideHead">
           <h2>Doe, John</h2>
-          {/* <h3>000-000-0000</h3> */}
-          <Button type="Primary">
+          <Button type="Primary" onClick={allCasesHandler}>
             ALL CASES
             <img src={arrow} alt="Arrow for all cases button" />
           </Button>
         </div>
         <div className="CaseDetails__LeftSideBtnsContainer">
-          {/* <div>
-            <Row className="CaseDetails__Leftside__gridHead">
-              <Col span={8} className="gridColumns">HoH Here</Col>
-              <Col span={8} className="gridColumns">HoH Phone Here</Col>
-              <Col span={8} className="gridColumns">HoH Email Here</Col>
-            </Row>
-          </div> */}
           <Collapse accordion className="mainCollapse">
             <Panel header="CLIENT/FAMILY INFORMATION" key="1" showArrow={false}>
-              {/* <ClientFamilyInformationForm /> */}
               <p>When form is built, we can add it here</p>
             </Panel>
             <Panel header="HOUSEHOLD INFORMATION" key="2" showArrow={false}>
-              {/* <HouseholdInformationForm /> */}
               <p>When form is built, we can add it here</p>
             </Panel>
             <Panel header="EDUCATION" key="3" showArrow={false}>
@@ -63,16 +104,32 @@ const CaseDetails = () => {
           </Collapse>
         </div>
         <div className="Leftside__Bottom__ButtonsContainer">
-          <Button type="Default" className="leftSideBottomButtons">
+          <Button
+            type="Default"
+            className="leftSideBottomButtons"
+            onClick={generateFormHandler}
+          >
             Generate Form
           </Button>
-          <Button type="Default" className="leftSideBottomButtons">
+          <Button
+            type="Default"
+            className="leftSideBottomButtons"
+            onClick={hfcaHandler}
+          >
             HFCA
           </Button>
-          <Button type="Default" className="leftSideBottomButtons">
+          <Button
+            type="Default"
+            className="leftSideBottomButtons"
+            onClick={hvcPacketHandler}
+          >
             HVC Packet
           </Button>
-          <Button type="Default" className="leftSideBottomButtons">
+          <Button
+            type="Default"
+            className="leftSideBottomButtons"
+            onClick={printDocuHandler}
+          >
             Print Documents
           </Button>
         </div>
@@ -90,51 +147,41 @@ const CaseDetails = () => {
                 prefix={<SearchIcon className="searchIcon" />}
                 placeholder="Search for keywords"
                 className="SearchBar"
+                onChange={event => filterSearchHandler(event.target.value)}
               />
             </Space>
           </div>
         </div>
         <div className="Rightside__Notes__BoxandButton">
           <Space direction="vertical">
-            <TextArea rows={6} />
+            <TextArea rows={6} onChange={addNoteHandler} />
           </Space>
-          <Button type="Default" className="saveNoteButton">
+          <Button
+            type="Default"
+            className="saveNoteButton"
+            onClick={saveNotesHandler}
+          >
             Save Note
           </Button>
         </div>
         <div className="Rightside__PreviousNotes">
-          <h3>Old Note 1</h3>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum.
-          </p>
-          <br />
-          <h3>Old Note 2</h3>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum.
-          </p>
-          <br />
-          <h3>Old Note 3</h3>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum.
-          </p>
+          {filterSearch.length > 1
+            ? filteredResults.map(item => {
+                return (
+                  <div>
+                    <h3>Title here</h3>
+                    <p>Note goes here.</p>
+                  </div>
+                );
+              })
+            : placeholderArray.map(item => {
+                return (
+                  <div>
+                    <h3>Title here2</h3>
+                    <p>Note goes here.2</p>
+                  </div>
+                );
+              })}
         </div>
       </div>
     </div>
