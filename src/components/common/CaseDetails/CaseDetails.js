@@ -16,11 +16,16 @@ const { TextArea } = Input;
 //When connecting to the backend, be sure to replace placeholderArray with api array
 //Change the placeholder data for the notes section into api data
 //Add keys to mapped data when we have an id from api data
+//Once all of the forms have been added to this page the four buttons at the bottom right side will need to be setup with that data.
+//Once all forms have been made they an be imported and added to the collapsible panels
 
 function CaseDetails() {
   //State slices for filtered search bar
   const [filterSearch, setFilterSearch] = useState('');
   const [filteredResults, setFilteredResults] = useState([]);
+
+  //State slices for adding notes
+  const [newNote, setNewNote] = useState('');
 
   //onClick handler for buttons
   const generateFormHandler = event => {
@@ -40,7 +45,7 @@ function CaseDetails() {
   };
 
   const saveNotesHandler = event => {
-    console.log('Itsworking!!!');
+    placeholderArray.push(newNote);
   };
 
   //onChange for filtered search bar
@@ -64,7 +69,9 @@ function CaseDetails() {
   };
 
   //onChange for adding a note text field
-  const addNoteHandler = event => {};
+  const addNoteHandler = event => {
+    setNewNote(event.target.value);
+  };
 
   return (
     <div className="CaseDetails">

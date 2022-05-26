@@ -335,13 +335,16 @@
 .Leftside__Bottom__ButtonsContainer{
   display: flex;
   flex-flow: row nowrap;
-  justify-content: space-between;
+  justify-content: flex-start;
   margin: 1rem;
 }
 .leftSideBottomButtons {
   background-color: #007fd4;
   border: 0;
   color: #cdcdcd;
+  width: 10rem;
+  margin-right: 1.5rem;
+  border-radius: 4px;
 }
 .leftSideBottomButtons:hover {
   background-color: #007fd4;
@@ -410,6 +413,7 @@
 .saveNoteButton {
   background-color: #007fd4;
   border: 0;
+  border-radius: 4px;
   color: #cdcdcd;
   margin-left: 1rem;
   width: 10rem;
