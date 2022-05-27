@@ -187,8 +187,26 @@ function CaseDetails() {
             : placeholderArray.map(item => {
                 return (
                   <div>
-                    <h3>Title here2</h3>
-                    <p>Note goes here.2</p>
+                    <div>
+                      <h3>Title here2</h3>
+                      <p>Note goes here.2</p>
+                    </div>
+                    <div>
+                      <h3>Title here2</h3>
+                      <p>Note goes here.2</p>
+                    </div>
+                    <div>
+                      <h3>Title here2</h3>
+                      <p>Note goes here.2</p>
+                    </div>
+                    <div>
+                      <h3>Title here2</h3>
+                      <p>Note goes here.2</p>
+                    </div>
+                    <div>
+                      <h3>Title here2</h3>
+                      <p>Note goes here.2</p>
+                    </div>
                   </div>
                 );
               })}
