@@ -1,53 +1,70 @@
-import React from 'react';
+import React, { useState } from 'react';
 import AWS from 'aws-sdk';
-import { message, Upload } from 'antd';
+import { message, Progress, Upload } from 'antd';
 import { connect } from 'react-redux';
 import { document } from '../../../../state/actions';
 import { InboxOutlined } from '@ant-design/icons';
 
-const S3_BUCKET = 'family-promise-case-management';
 const REGION = 'us-east-1';
 
 AWS.config.update({
-  accessKeyId: process.env.ACCESS_KEY_ID,
-  secretAccessKey: process.env.SECRET_ACCESS_KEY,
+  accessKeyId: process.env.REACT_APP_ACCESS_KEY_ID,
+  secretAccessKey: process.env.REACT_SECRET_ACCESS_KEY,
 });
 
+// AWS.Credentials(process.env.ACCESS_KEY_ID,process.env.SECRET_ACCESS_KEY);
+
 const myBucket = new AWS.S3({
-  params: { Bucket: S3_BUCKET },
+  params: { Bucket: process.env.REACT_APP_BUCKET },
   region: REGION,
 });
+
+const sign_s3 = (req, res) => {
+  const s3 = new AWS.S3(); // Create a new instance of S3
+  const fileName = req.body.fileName;
+  const fileType = req.body.fileType;
+
+  const s3Params = {
+    Bucket: process.env.REACT_APP_BUCKET,
+    Key: fileName,
+    Expires: 500,
+    ContentType: fileType,
+    ACL: 'public-read',
+  };
+
+  s3.getSignedUrl('putObject', s3Params, (err, data) => {
+    if (err) {
+      console.log(err);
+      res.json({ success: false, error: err });
+    }
+
+    const returnData = {
+      signedRequest: data,
+      url: `https://${s3Params.Bucket}.s3.amazonaws.com/${fileName}`,
+    };
+  });
+};
 
 const props = {
   name: 'file',
   multiple: false,
-
-  onChange(info) {
-    const { status } = info.file;
-
-    if (status !== 'uploading') {
-      console.log(info.file, info.fileList);
-    }
-
-    if (status === 'done') {
-      message.success(`${info.file.name} file uploaded successfully.`);
-    } else if (status === 'error') {
-      message.error(`${info.file.name} file upload failed.`);
-    }
-  },
-
-  onDrop(e) {
-    console.log('Dropped files', e.dataTransfer.files);
-  },
 };
 
 const Documents = props => {
+  const [progress, setProgress] = useState(0);
+  const [success, setSuccess] = useState(false);
+  const [url, setURL] = useState('');
+
+  const upload = e => {
+    console.log(e);
+  };
+
   return (
     <div className="sectionContainer">
       <div className="subsectionContainer">
         <h2 className="subsectionHeader">Documents</h2>
         <div className="documentUploadContainer">
-          <Upload.Dragger {...props}>
+          <Upload.Dragger name="file" multiple={false} customRequest={upload}>
             <p className="ant-upload-drag-icon">
               <InboxOutlined />
             </p>
@@ -55,6 +72,7 @@ const Documents = props => {
               Click or drag file to this area to upload
             </p>
             <p className="ant-upload-hint"></p>
+            {progress > 0 ? <Progress percent={progress} /> : null}
           </Upload.Dragger>
         </div>
       </div>
