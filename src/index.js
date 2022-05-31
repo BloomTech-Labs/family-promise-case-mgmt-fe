@@ -23,7 +23,6 @@ import { CaseView } from './components/pages/CaseView';
 import { ClientIntakeForm } from './components/common/ClientIntakeForm';
 import { LayoutTemplate } from './components/pages/LayoutTemplate';
 import { CaseDetails } from './components/pages/CaseDetails';
-import sign_s3 from './components/common/Controllers/DocumentUploadController';
 
 import './styles/css/styles.css';
 

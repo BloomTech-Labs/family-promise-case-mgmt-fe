@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import AWS from 'aws-sdk';
 import {
   message,
   Progress,
@@ -20,7 +19,6 @@ import {
   ExclamationCircleOutlined,
 } from '@ant-design/icons';
 import axios from 'axios';
-import { sign_s3 } from '../../Controllers/DocumentUploadController';
 
 const props = {
   name: 'file',
@@ -125,7 +123,7 @@ const Documents = props => {
     let fileType = fileParts[1];
     console.log('Preparing the upload');
     axios
-      .post('https://localhost:8000/sign-s3', {
+      .post('http://localhost:8000/api/documents/sign_s3', {
         fileName: fileName,
         fileType: fileType,
       })
