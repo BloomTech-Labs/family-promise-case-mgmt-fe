@@ -1,5 +1,5 @@
 export const EDIT_DOCUMENT = 'EDIT_DOCUMENT';
-export const ADD_DOCUMENT = 'ADD_DOCUMENT';
+export const ADD_DOCUMENTS = 'ADD_DOCUMENTS';
 export const GET_DOCUMENTS = 'GET_DOCUMENTS';
 
 export const editDocument = data => {
@@ -9,9 +9,9 @@ export const editDocument = data => {
   };
 };
 
-export const addDocument = data => {
+export const addDocuments = data => {
   return {
-    type: ADD_DOCUMENT,
+    type: ADD_DOCUMENTS,
     payload: data,
   };
 };

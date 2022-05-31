@@ -7,7 +7,7 @@ export const reducer = (state = intialState, action) => {
     case document.EDIT_DOCUMENT:
       return action.payload;
 
-    case document.ADD_DOCUMENT:
+    case document.ADD_DOCUMENTS:
       return action.payload;
 
     default:
