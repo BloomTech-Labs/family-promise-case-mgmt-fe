@@ -144,6 +144,15 @@ const Documents = props => {
           .then(result => {
             console.log('Response from s3', result);
             setSuccess(true);
+            setDocuments([
+              ...documents,
+              {
+                ...e.file,
+                name: e.file.name,
+                documentType: documentType,
+                success: true,
+              },
+            ]);
           })
           .catch(error => {
             alert('ERROR ' + JSON.stringify(error));
@@ -152,15 +161,6 @@ const Documents = props => {
       .catch(error => {
         alert(JSON.stringify(error));
       });
-    setDocuments([
-      ...documents,
-      {
-        ...e.file,
-        name: e.file.name,
-        documentType: documentType,
-        success: success,
-      },
-    ]);
   };
 
   const onFinish = e => {};
