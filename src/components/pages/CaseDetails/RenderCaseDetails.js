@@ -3,7 +3,7 @@ import { useLocation } from 'react-router-dom';
 import { Layout, Card } from 'antd';
 import NavHeader from '../../common/NavHeader';
 import BreadCrumbs from '../../common/BreadCrumbs';
-import { CaseDetailsCollapse } from '../../common/CaseDetailsCollapse';
+import { CaseDetails } from '../../common/CaseDetails';
 const { Header, Content, Footer } = Layout;
 
 const RenderCaseDetails = () => {
@@ -19,7 +19,7 @@ const RenderCaseDetails = () => {
           <BreadCrumbs pathname={location.pathname} />
           <div className="Content__Container">
             <Card className="Content__Container-Card">
-              <CaseDetailsCollapse />
+              <CaseDetails />
             </Card>
           </div>
         </Content>
