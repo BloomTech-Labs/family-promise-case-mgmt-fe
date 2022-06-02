@@ -24,6 +24,7 @@ import { ClientIntakeForm } from './components/common/ClientIntakeForm';
 import { LayoutTemplate } from './components/pages/LayoutTemplate';
 import { CaseDetails } from './components/pages/CaseDetails';
 
+import { RecentCases } from './components/pages/RecentCases';
 import DashHeader from './components/common/DashHeader';
 
 import './styles/css/styles.css';
@@ -65,6 +66,7 @@ function App() {
         <SecureRoute path="/layouttemplate" component={LayoutTemplate} />
         <SecureRoute path="/" exact />
         <SecureRoute path="/dashheader" component={DashHeader} />
+        <SecureRoute path="/recent-cases" component={RecentCases} />
         <Route component={NotFoundPage} />
       </Switch>
     </Security>
