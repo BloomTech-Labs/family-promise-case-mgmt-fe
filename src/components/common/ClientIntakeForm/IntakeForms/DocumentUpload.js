@@ -115,7 +115,7 @@ const Documents = props => {
   const upload = async e => {
     setSuccess(false);
     console.log(e.file.name, { ...e.file });
-    setDocumentType(null);
+
     setDisabled(true);
     let file = e.file;
     let fileParts = e.file.name.split('.');
@@ -153,16 +153,18 @@ const Documents = props => {
                 success: true,
               },
             ]);
+            // axios
+            //   .put('http://localhost:8000/api/documents/sign_s3', (id, {[documentType]:}))
           })
           .catch(error => {
             alert('ERROR ' + JSON.stringify(error));
           });
       })
       .catch(error => {
-        alert(JSON.stringify(error));
+        alert('ERROR ' + JSON.stringify(error));
       });
   };
-
+  // setDocumentType(null);
   const onFinish = e => {};
 
   const onSelect = e => {

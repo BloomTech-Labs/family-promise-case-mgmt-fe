@@ -4,6 +4,7 @@ import ClientFamilyInfo from './IntakeForms/ClientFamilyInfo';
 import ContactPreferences from './IntakeForms/ContactPreferences';
 import Referrals from './IntakeForms/Referrals';
 import DocumentUpload from './IntakeForms/DocumentUpload';
+import ClientSearch from './IntakeForms/ClientSearch';
 //NOTE: Inline Styles added temporarily.
 const sectionContainer = {
   width: '80%',
@@ -41,6 +42,7 @@ const ClientIntakeForm = () => {
 
   return (
     <div>
+      <ClientSearch />
       <Form
         name="clientIntakeForm"
         form={form}
