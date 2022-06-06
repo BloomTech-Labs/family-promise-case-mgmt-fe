@@ -93,6 +93,14 @@ const Documents = props => {
     },
   ];
 
+  useEffect(() => {
+    axios
+      .get(`http://localhost:8000/api/${props.client.id}/`)
+      .then(documents => {
+        props.setDocuments(documents)
+      })
+  })
+
   const upload = async e => {
     console.log(e.file.name, { ...e.file });
 
@@ -212,9 +220,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    getDocuments: () => dispatch(document.getDocuments()),
     addDocument: data => dispatch(document.addDocument(data)),
-    editDocument: () => dispatch(document.editDocument()),
+    setDocuments: data => dispatch(document.setDocuments(data))
   };
 };
 

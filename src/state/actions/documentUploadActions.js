@@ -1,13 +1,6 @@
-export const EDIT_DOCUMENT = 'EDIT_DOCUMENT';
 export const ADD_DOCUMENT = 'ADD_DOCUMENT';
-export const GET_DOCUMENTS = 'GET_DOCUMENTS';
+export const SET_DOCUMENTS = 'SET_DOCUMENTS';
 
-export const editDocument = data => {
-  return {
-    type: EDIT_DOCUMENT,
-    payload: data,
-  };
-};
 
 export const addDocument = data => {
   return {
@@ -16,8 +9,9 @@ export const addDocument = data => {
   };
 };
 
-export const getDocuments = () => {
+export const setDocuments = data => {
   return {
-    type: GET_DOCUMENTS,
+    type: SET_DOCUMENTS,
+    payload: data,
   };
 };
