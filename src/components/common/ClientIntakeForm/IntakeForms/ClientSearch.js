@@ -35,7 +35,7 @@ const ClientSearch = props => {
     <div className="searchBarContainer">
       <Select
         showSearch
-        placeholder="Select a person"
+        placeholder="Select a client"
         optionFilterProp="children"
         filterOption={(input, option) =>
           option.children.toLowerCase().includes(input.toLowerCase())

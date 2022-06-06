@@ -1,14 +1,5 @@
 import React, { useState } from 'react';
-import {
-  message,
-  Progress,
-  Select,
-  Upload,
-  Form,
-  Button,
-  Table,
-  Space,
-} from 'antd';
+import { Select, Upload, Button, Table, Space } from 'antd';
 import { connect } from 'react-redux';
 import { document } from '../../../../state/actions';
 import {
@@ -19,11 +10,6 @@ import {
   ExclamationCircleOutlined,
 } from '@ant-design/icons';
 import axios from 'axios';
-
-const props = {
-  name: 'file',
-  multiple: false,
-};
 
 const documentOptions = [
   {
@@ -67,11 +53,6 @@ const documentTypeFilter = [
 ];
 
 const Documents = props => {
-  const [form] = Form.useForm();
-  const [progress, setProgress] = useState(0);
-  const [success, setSuccess] = useState(false);
-  const [url, setURL] = useState('');
-  const [documents, setDocuments] = useState([]);
   const [disabled, setDisabled] = useState(true);
   const [documentType, setDocumentType] = useState(null);
 
@@ -113,7 +94,6 @@ const Documents = props => {
   ];
 
   const upload = async e => {
-    setSuccess(false);
     console.log(e.file.name, { ...e.file });
 
     setDisabled(true);
@@ -131,8 +111,8 @@ const Documents = props => {
         var returnData = response.data.data.returnData;
         var signedRequest = returnData.signedRequest;
         var url = returnData.url;
-        setURL(url);
         console.log('Recieved a signed request ' + signedRequest);
+        console.log(returnData);
 
         var options = {
           headers: {
@@ -143,29 +123,33 @@ const Documents = props => {
           .put(signedRequest, file, options)
           .then(result => {
             console.log('Response from s3', result);
-            setSuccess(true);
-            setDocuments([
-              ...documents,
-              {
-                ...e.file,
-                name: e.file.name,
-                documentType: documentType,
-                success: true,
-              },
-            ]);
-            // axios
-            //   .put('http://localhost:8000/api/documents/sign_s3', (id, {[documentType]:}))
+            const documentObj = {
+              name: fileName,
+              success: true,
+              url: url,
+              documentType: documentType,
+            };
+            props.addDocument([documentType, documentObj]);
+            axios
+              .post(
+                `http://localhost:8000/api/documents/${props.client.id}/update`,
+                { [documentType]: documentObj }
+              )
+              .then(result => {
+                console.log(result);
+              })
+              .catch(error => {
+                alert('ERROR ' + error);
+              });
           })
           .catch(error => {
-            alert('ERROR ' + JSON.stringify(error));
+            alert('ERROR ' + error);
           });
       })
       .catch(error => {
-        alert('ERROR ' + JSON.stringify(error));
+        alert('ERROR ' + error);
       });
   };
-  // setDocumentType(null);
-  const onFinish = e => {};
 
   const onSelect = e => {
     setDisabled(false);
@@ -173,12 +157,7 @@ const Documents = props => {
   };
 
   return (
-    <Form
-      name="referralForm"
-      form={form}
-      onFinish={onFinish}
-      className="sectionContainer"
-    >
+    <div className="sectionContainer">
       <div className="subsectionContainer">
         <h2 className="subsectionHeader">Documents</h2>
         <div className="documentUploadContainer">
@@ -189,9 +168,12 @@ const Documents = props => {
             disabled={disabled}
             showUploadList={false}
           >
-            {documents.length > 0 ? (
+            {Object.values(props.documents).length > 0 ? (
               <div>
-                <Table dataSource={documents} columns={columns} />
+                <Table
+                  dataSource={Object.values(props.documents)}
+                  columns={columns}
+                />
                 <p className="ant-upload-text">
                   Click or drag file to this area to upload
                 </p>
@@ -206,7 +188,6 @@ const Documents = props => {
                 </p>
               </div>
             )}
-            {progress > 0 ? <Progress percent={progress} /> : null}
           </Upload.Dragger>
           <div className="documentUploadControl">
             <Select
@@ -215,32 +196,24 @@ const Documents = props => {
               onSelect={onSelect}
               value={documentType}
             ></Select>
-            <Form.Item style={{ textAlign: 'center' }}>
-              <Button
-                style={{ margin: '0 20px' }}
-                htmlType="submit"
-                type="primary"
-              >
-                Upload
-              </Button>
-            </Form.Item>
           </div>
         </div>
       </div>
-    </Form>
+    </div>
   );
 };
 
 const mapStateToProps = state => {
   return {
     documents: state.document,
+    client: state.client,
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
     getDocuments: () => dispatch(document.getDocuments()),
-    addDocument: () => dispatch(document.addDocuments()),
+    addDocument: data => dispatch(document.addDocument(data)),
     editDocument: () => dispatch(document.editDocument()),
   };
 };
