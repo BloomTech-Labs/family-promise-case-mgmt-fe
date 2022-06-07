@@ -13,6 +13,15 @@ export const reducer = (state = intialState, action) => {
       console.log(action.payload);
       return action.payload;
 
+    case document.REMOVE_DOCUMENT:
+      const newState = {};
+      Object.entries(state).forEach(document => {
+        if (document[0] !== action.payload.documentType) {
+          newState[document[0]] = document[1];
+        }
+      });
+      return newState;
+
     default:
       return state;
   }

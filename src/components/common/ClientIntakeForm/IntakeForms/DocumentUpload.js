@@ -73,8 +73,10 @@ const Documents = props => {
       key: 'options',
       render: (text, record, i) => (
         <Space size="middle">
-          <Button icon={<EditOutlined />}></Button>
-          <Button icon={<DeleteOutlined />}></Button>
+          <Button
+            icon={<DeleteOutlined />}
+            onClick={e => handleDelete(record)}
+          ></Button>
         </Space>
       ),
     },
@@ -94,13 +96,30 @@ const Documents = props => {
   ];
 
   useEffect(() => {
-    axios
-      .get(`http://localhost:8000/api/documents/${props.client.id}`)
-      .then(documents => {
-        console.log(documents.data);
-        props.setDocuments(documents.data);
-      });
+    if (props.client.id != 0) {
+      axios
+        .get(`http://localhost:8000/api/documents/${props.client.id}`)
+        .then(documents => {
+          console.log(documents.data);
+          props.setDocuments(documents.data);
+        })
+        .catch(error => {
+          alert('ERROR ' + error);
+        });
+    }
   }, [props.client]);
+
+  const handleDelete = file => {
+    axios
+      .post(`http://localhost:8000/api/documents/${props.client.id}`, file)
+      .then(response => {
+        console.log(response);
+        props.deleteDocument(file);
+      })
+      .catch(error => {
+        alert('ERROR ' + error);
+      });
+  };
 
   const upload = async e => {
     console.log(e.file.name, { ...e.file });
@@ -137,6 +156,7 @@ const Documents = props => {
               success: true,
               url: url,
               documentType: documentType,
+              extension: fileType,
             };
             props.addDocument([documentType, documentObj]);
             axios
@@ -223,6 +243,7 @@ const mapDispatchToProps = dispatch => {
   return {
     addDocument: data => dispatch(document.addDocument(data)),
     setDocuments: data => dispatch(document.setDocuments(data)),
+    deleteDocument: data => dispatch(document.removeDocument(data)),
   };
 };
 
