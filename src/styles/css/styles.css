@@ -448,3 +448,15 @@
 .Rightside__PreviousNotes p {
   color: #cdcdcd;
 }
+
+.TableData {
+  display: flex;
+  align-content: flex-start;
+  width: 884px;
+  height: 625px; 
+  margin: 90px 0px 106px 106px; 
+}
+.CasesTitle{
+  margin-left: 390px;
+  margin-top:40px ;
+}

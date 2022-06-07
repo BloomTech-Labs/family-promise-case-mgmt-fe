@@ -143,6 +143,7 @@ const RecentCases = () => {
   return (
     <div>
       <DashHeader />
+      <h1 className="CasesTitle">Recent Cases</h1>
       <div className="TableData">
         <Table columns={columns} dataSource={data} onChange={onChange} />
       </div>
