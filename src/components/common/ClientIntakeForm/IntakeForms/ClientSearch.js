@@ -3,7 +3,6 @@ import { Select } from 'antd';
 import { connect } from 'react-redux';
 import axios from 'axios';
 import { client } from '../../../../state/actions';
-import { setClient } from '../../../../state/actions/clientActions';
 
 const ClientSearch = props => {
   const options = [];
@@ -28,7 +27,7 @@ const ClientSearch = props => {
   }, []);
 
   const handleSelect = client => {
-    setClient({ id: client.value, name: client.label, status: null });
+    props.setClient({ id: client.value, name: client.label, status: null });
   };
 
   return (

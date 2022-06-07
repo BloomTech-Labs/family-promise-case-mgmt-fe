@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Select, Upload, Button, Table, Space } from 'antd';
 import { connect } from 'react-redux';
 import { document } from '../../../../state/actions';
@@ -95,11 +95,12 @@ const Documents = props => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:8000/api/${props.client.id}/`)
+      .get(`http://localhost:8000/api/documents/${props.client.id}`)
       .then(documents => {
-        props.setDocuments(documents)
-      })
-  })
+        console.log(documents.data);
+        props.setDocuments(documents.data);
+      });
+  }, [props.client]);
 
   const upload = async e => {
     console.log(e.file.name, { ...e.file });
@@ -221,7 +222,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     addDocument: data => dispatch(document.addDocument(data)),
-    setDocuments: data => dispatch(document.setDocuments(data))
+    setDocuments: data => dispatch(document.setDocuments(data)),
   };
 };
 
