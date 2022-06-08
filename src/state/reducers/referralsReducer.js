@@ -19,6 +19,9 @@ const intialState = [
 
 export const reducer = (state = intialState, action) => {
   switch (action.type) {
+    case referral.SET_REFERRALS:
+      return action.payload;
+
     case referral.DELETE_REFERRAL:
       const filteredReferrals = state.filter(
         (referral, index) => index !== action.index
@@ -32,8 +35,8 @@ export const reducer = (state = intialState, action) => {
 
     case referral.EDIT_REFERRAL:
       const updatedReferrals = [...state];
-      updatedReferrals[action.index] = action.payload
-      console.log(updatedReferrals)
+      updatedReferrals[action.index] = action.payload;
+      console.log(updatedReferrals);
       return updatedReferrals;
 
     default:

@@ -1,12 +1,21 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { DatePicker, Form, Input, Button, Table, Space } from 'antd';
 import { PlusOutlined, DeleteOutlined, EditOutlined } from '@ant-design/icons';
 import { connect } from 'react-redux';
 import { referral } from '../../../../state/actions';
+import axios from 'axios';
 
-const Documents = props => {
+const Referrals = props => {
   const [form] = Form.useForm();
   const [referralIndex, setReferralIndex] = useState(null);
+
+  useEffect(() => {
+    axios
+      .get(`http://localhost:8000/api/referrals/${props.client.id}/`)
+      .then(referrals => {
+        referral.setReferrals(referrals);
+      });
+  }, [props.client]);
 
   const columns = [
     {
@@ -52,6 +61,8 @@ const Documents = props => {
 
   const onFinish = values => {
     if (typeof referralIndex === 'number') {
+      // axios
+      //   .post(`/${props.client.id}/${}`)
       props.editReferral(values, referralIndex);
       setReferralIndex(null);
     } else {
@@ -277,4 +288,4 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Documents);
+export default connect(mapStateToProps, mapDispatchToProps)(Referrals);
