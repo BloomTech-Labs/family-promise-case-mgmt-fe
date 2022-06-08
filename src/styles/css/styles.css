@@ -365,4 +365,10 @@
   justify-content: center;
   align-content: center;
   margin: auto;
-};
+}
+
+.referralContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
