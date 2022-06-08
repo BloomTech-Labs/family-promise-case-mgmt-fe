@@ -4,16 +4,31 @@ import { PlusOutlined, DeleteOutlined, EditOutlined } from '@ant-design/icons';
 import { connect } from 'react-redux';
 import { referral } from '../../../../state/actions';
 import axios from 'axios';
+import moment from 'moment';
 
 const Referrals = props => {
   const [form] = Form.useForm();
   const [referralIndex, setReferralIndex] = useState(null);
-
   useEffect(() => {
     axios
       .get(`http://localhost:8000/api/referrals/${props.client.id}/`)
       .then(referrals => {
-        referral.setReferrals(referrals);
+        const returnData = [];
+        referrals.data.forEach(referral => {
+          const toReturn = { ...referral };
+          const dateTime = new Date(referral.first_meeting_date);
+          const [month, day, year] = [
+            dateTime.getMonth(),
+            dateTime.getDate(),
+            dateTime.getFullYear(),
+          ];
+          toReturn.first_meeting_date = moment(
+            `${month}-${day}-${year}`,
+            'MM-DD-YYYY'
+          );
+          returnData.push(toReturn);
+        });
+        props.setReferrals(returnData);
       });
   }, [props.client]);
 
@@ -45,7 +60,7 @@ const Referrals = props => {
     expandedRowRender: record => (
       <div>
         <p>
-          {record.address}
+          {record.street_address}
           {record.apt !== '' ? ` ${record.apt},` : ','} {record.city},{' '}
           {record.state} {record.zip}{' '}
         </p>
@@ -61,18 +76,35 @@ const Referrals = props => {
 
   const onFinish = values => {
     if (typeof referralIndex === 'number') {
-      // axios
-      //   .post(`/${props.client.id}/${}`)
-      props.editReferral(values, referralIndex);
-      setReferralIndex(null);
+      const referral_id = props.referrals[referralIndex].referral_id;
+      axios
+        .post(
+          `http://localhost:8000/api/referrals/${props.client.id}/${referral_id}`,
+          values
+        )
+        .then(referral => {
+          props.editReferral(values, referralIndex);
+          setReferralIndex(null);
+        });
     } else {
-      props.saveReferral(values);
+      axios
+        .post(`http://localhost:8000/api/referrals/${props.client.id}`, values)
+        .then(referral => {
+          props.setReferrals(referral.data);
+        });
     }
     form.resetFields();
   };
 
   const handleDeleteReferral = index => {
-    props.deleteReferral(index);
+    const referral_id = props.referrals[index].referral_id;
+    axios
+      .delete(
+        `http://localhost:8000/api/referrals/${props.client.id}/${referral_id}`
+      )
+      .then(response => {
+        props.deleteReferral(index);
+      });
   };
 
   const handleEditReferral = (values, index) => {
@@ -98,7 +130,7 @@ const Referrals = props => {
 
         <div className="referralFormContainer">
           <Table
-            dataSource={[...props.referrals]}
+            dataSource={props.referrals.length > 0 ? [...props.referrals] : []}
             columns={columns}
             expandable={expandable}
             pagination={{ pageSize: 50 }}
@@ -135,10 +167,10 @@ const Referrals = props => {
             <Form.Item
               label={
                 <label className="ClientDocuments__Input__ItemLabel">
-                  Address (If Available):
+                  Street Address (If Available):
                 </label>
               }
-              name="address"
+              name="street_address"
             >
               <Input
                 placeholder="123 Anywhere Street"
@@ -276,6 +308,7 @@ const Referrals = props => {
 const mapStateToProps = state => {
   return {
     referrals: state.referral,
+    client: state.client,
   };
 };
 
@@ -285,6 +318,7 @@ const mapDispatchToProps = dispatch => {
     deleteReferral: index => dispatch(referral.deleteReferral(index)),
     editReferral: (referralData, index) =>
       dispatch(referral.editReferral(referralData, index)),
+    setReferrals: referrals => dispatch(referral.setReferrals(referrals)),
   };
 };
 
