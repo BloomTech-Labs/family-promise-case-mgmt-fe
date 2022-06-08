@@ -66,16 +66,12 @@
   color: #ffffff;
 }
 .HouseholdInformationDetails__Form {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 5px;
-  grid-auto-flow: row dense;
-  padding-top: 2rem;
-  width: 80%;
-  padding: 2rem;
-  margin: 0 12rem;
-  background: #3f3f3f;
-  color: #ffffff;
+  background: #007fd4;
+}
+.CircumstancesContainer {
+  display: flex;
+  flex-flow: row wrap;
+  width: 90%;
 }
 .HouseholdInformationDetails__Form__Circumstances {
   grid-row: 1 / span 2;
@@ -135,60 +131,74 @@
   border-color: #007fd4;
 }
 .ClientFamilyInformation__Form {
-  grid-template-columns: repeat(2, 1fr);
-  gap: 5px;
-  grid-auto-flow: row dense;
-  background: #3f3f3f;
-  color: #ffffff;
+  background: #007fd4;
 }
 .ClientFamilyInformation__Form__InitialDate {
-  margin: 0 0 2rem 62rem;
-  padding-top: 2rem;
+  color: #D2D2D7;
+  margin-left: 1.2rem;
 }
 .ClientFamilyInformation__Form__h1 {
-  color: #cdcdcd;
-  text-align: center;
+  color: #D2D2D7;
+  margin-left: 1.25rem;
 }
 .ClientFamilyInformation__Form__SectionGrid2 {
+  color: #D2D2D7;
   display: flex;
-  justify-content: space-evenly;
-}
-.ClientFamilyInformation__Form__SectionGrid3 {
-  display: flex;
+  flex-flow: row nowrap;
   justify-content: space-around;
 }
+.ClientFamilyInformation__Form__SectionGrid3 {
+  color: #D2D2D7;
+  width: 90%;
+  margin-left: 1.2rem;
+}
 .ClientFamilyInformation__Form__SmallInputs {
-  width: 7rem;
+  color: #D2D2D7;
 }
 .ClientFamilyInformation__Form__SectionGrid1 {
-  grid-row: 1 / span 2;
+  color: #D2D2D7;
+  width: 45%;
+}
+.ant-col-8 {
+  max-width: 20rem;
+  flex: 10;
+}
+.ClientFamilyInformation__Form__Inputs {
+  width: 21rem;
+}
+.CityandState__Container {
+  display: flex;
+  flex-flow: row nowrap;
+}
+.StateMargin {
+  margin-left: 2.2rem;
 }
 .ClientFamilyInformation__Form__VeteranStatus {
-  display: flex;
-  flex-direction: row-reverse;
-  margin: 0rem 11rem;
+  color: #D2D2D7;
+  margin-left: 1.25rem;
 }
 .ClientFamilyInformation__Form__FamilyMembers__Container {
-  display: flex;
-  justify-content: space-between;
-  margin: 0rem 6rem;
+  color: #D2D2D7;
 }
 .ClientFamilyInformation__Form__FamilyMembers__formItem {
-  display: flow-root;
+  color: #D2D2D7;
 }
 .ClientFamilyInformation__Form__FamilyMembers__IsPregnant {
-  display: flex;
+  color: #D2D2D7;
+  margin-left: 1.25rem;
 }
-.ClientFamilyInformation__Inputs {
-  width: 20rem;
+.pregnantFamilyMember__Container {
+  margin-left: 1.25rem;
+}
+.ClientFamilyInformation__Inputs > .ant-input {
+  background-color: #ffffff;
 }
 .ClientFamilyInformation__Inputs__ItemLabel {
-  color: #ffffff;
-  width: 25vw;
+  color: #D2D2D7;
 }
 .ClientFamilyInformation__Inputs__ItemLabel__Small {
-  color: #ffffff;
-  width: 100%;
+  color: #D2D2D7;
+  width: 10rem;
 }
 .ant-btn-primary {
   margin: 1rem;
@@ -391,7 +401,7 @@
   border-radius: 20px 0px 10px;
   color:  #cdcdcd;
 }
-.ant-input {
+.SearchBar > .ant-input {
   background-color: black;
   color: #cdcdcd;
 }

@@ -245,30 +245,33 @@ const ClientFamilyInfoForm = () => {
             </Form.Item>
           </section>
           <section className="ClientFamilyInformation__Form__SectionGrid3">
-            <Form.Item
-              label={
-                <label className="ClientFamilyInformation__Inputs__ItemLabel__Small">
-                  City:
-                </label>
-              }
-            >
-              <Input
-                placeholder="City Name"
-                className="ClientFamilyInformation__Form__Inputs"
-              />
-            </Form.Item>
-            <Form.Item
-              label={
-                <label className="ClientFamilyInformation__Inputs__ItemLabel__Small">
-                  State:
-                </label>
-              }
-            >
-              <Input
-                placeholder="State Abbrv."
-                className="ClientFamilyInformation__Form__SmallInputs"
-              />
-            </Form.Item>
+            <div className="CityandState__Container">
+              <Form.Item
+                label={
+                  <label className="ClientFamilyInformation__Inputs__ItemLabel__Small">
+                    City:
+                  </label>
+                }
+              >
+                <Input
+                  placeholder="City Name"
+                  className="ClientFamilyInformation__Form__Inputs"
+                />
+              </Form.Item>
+              <Form.Item
+                label={
+                  <label className="ClientFamilyInformation__Inputs__ItemLabel__Small StateMargin">
+                    State:
+                  </label>
+                }
+              >
+                <Input
+                  placeholder="State Abbrv."
+                  className="ClientFamilyInformation__Form__SmallInputs StateMargin"
+                  style={{ width: 335 }}
+                />
+              </Form.Item>
+            </div>
             <Form.Item
               label={
                 <label className="ClientFamilyInformation__Inputs__ItemLabel__Small">
@@ -342,18 +345,20 @@ const ClientFamilyInfoForm = () => {
                 <DatePicker placeholder="MM-DD-YYYY" format={dateFormat} />
               </Form.Item>
             </div>
-            <Form.Item
-              label={
-                <label className="ClientFamilyInformation__Inputs__ItemLabel">
-                  Which Family Member?
-                </label>
-              }
-            >
-              <Input
-                className="ClientFamilyInformation__Form__Inputs"
-                placeholder="Spouse, Domestic Partner, Child, Etc..."
-              />
-            </Form.Item>
+            <div className="pregnantFamilyMember__Container">
+              <Form.Item
+                label={
+                  <label className="ClientFamilyInformation__Inputs__ItemLabel">
+                    Which Family Member?
+                  </label>
+                }
+              >
+                <Input
+                  className="ClientFamilyInformation__Form__Inputs"
+                  placeholder="Spouse, Domestic Partner, Child, Etc..."
+                />
+              </Form.Item>
+            </div>
           </section>
         </div>
       </Form>

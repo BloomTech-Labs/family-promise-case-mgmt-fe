@@ -77,40 +77,43 @@ const HouseholdInformationForm = props => {
           <h4 className="HouseholdInformationDetails__Form__h4">
             What Circumstances Brought Client to Open Doors?
           </h4>
-          <Form.Item name="fleeingDomV" valuePropName="checked">
-            <Checkbox disabled={disabled}>Fleeing Domestic Violence</Checkbox>
-          </Form.Item>
+          <div className="CircumstancesContainer">
+            <Form.Item name="fleeingDomV" valuePropName="checked">
+              <Checkbox disabled={disabled}>Fleeing Domestic Violence</Checkbox>
+            </Form.Item>
 
-          <Form.Item name="lackOfIncome" valuePropName="checked">
-            <Checkbox disabled={disabled}>Lack of Income</Checkbox>
-          </Form.Item>
+            <Form.Item name="lackOfIncome" valuePropName="checked">
+              <Checkbox disabled={disabled}>Lack of Income</Checkbox>
+            </Form.Item>
 
-          <Form.Item name="lostJob" valuePropName="checked">
-            <Checkbox disabled={disabled}>Lost Job</Checkbox>
-          </Form.Item>
+            <Form.Item name="lostJob" valuePropName="checked">
+              <Checkbox disabled={disabled}>Lost Job</Checkbox>
+            </Form.Item>
 
-          <Form.Item name="familyConflict" valuePropName="checked">
-            <Checkbox disabled={disabled}>Family Conflict</Checkbox>
-          </Form.Item>
+            <Form.Item name="familyConflict" valuePropName="checked">
+              <Checkbox disabled={disabled}>Family Conflict</Checkbox>
+            </Form.Item>
 
-          <Form.Item name="familyRej" valuePropName="checked">
-            <Checkbox disabled={disabled}>
-              Family Rejection/LGBTQ+ Issue
-            </Checkbox>
-          </Form.Item>
+            <Form.Item name="familyRej" valuePropName="checked">
+              <Checkbox disabled={disabled}>
+                Family Rejection/LGBTQ+ Issue
+              </Checkbox>
+            </Form.Item>
 
-          <Form.Item name="lackOfAffHous" valuePropName="checked">
-            <Checkbox disabled={disabled}>Lack of Affordable Housing</Checkbox>
-          </Form.Item>
+            <Form.Item name="lackOfAffHous" valuePropName="checked">
+              <Checkbox disabled={disabled}>
+                Lack of Affordable Housing
+              </Checkbox>
+            </Form.Item>
 
-          <Form.Item name="eviction" valuePropName="checked">
-            <Checkbox disabled={disabled}>Eviction</Checkbox>
-          </Form.Item>
+            <Form.Item name="eviction" valuePropName="checked">
+              <Checkbox disabled={disabled}>Eviction</Checkbox>
+            </Form.Item>
 
-          <Form.Item name="other" valuePropName="checked">
-            <Checkbox disabled={disabled}>Other</Checkbox>
-          </Form.Item>
-
+            <Form.Item name="other" valuePropName="checked">
+              <Checkbox disabled={disabled}>Other</Checkbox>
+            </Form.Item>
+          </div>
           <Form.Item
             name="otherText"
             label=""

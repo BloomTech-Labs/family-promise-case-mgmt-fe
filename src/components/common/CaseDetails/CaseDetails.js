@@ -9,6 +9,10 @@ import arrow from '../../../assets/VectorarrowForAllCases.png';
 import filter from '../../../assets/filterIcon.PNG';
 import SearchIcon from './SearchIcon';
 
+//Component imports
+import ClientFamilyInfoForm from '../CaseDetailsForms/ClientFamilyInformation';
+import HouseholdInformationForm from '../CaseDetailsForms/HouseholdInformationForm';
+
 //AntD special component peices
 const { Panel } = Collapse;
 const { TextArea } = Input;
@@ -88,10 +92,10 @@ function CaseDetails() {
         <div className="CaseDetails__LeftSideBtnsContainer">
           <Collapse accordion className="mainCollapse">
             <Panel header="CLIENT/FAMILY INFORMATION" key="1" showArrow={false}>
-              <p>When form is built, we can add it here</p>
+              <ClientFamilyInfoForm />
             </Panel>
             <Panel header="HOUSEHOLD INFORMATION" key="2" showArrow={false}>
-              <p>When form is built, we can add it here</p>
+              <HouseholdInformationForm />
             </Panel>
             <Panel header="EDUCATION" key="3" showArrow={false}>
               <p>When form is built, we can add it here</p>
