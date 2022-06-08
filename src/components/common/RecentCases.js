@@ -141,7 +141,7 @@ const onChange = (filters, sorter, extra) => {
 
 const RecentCases = () => {
   return (
-    <div>
+    <div className="RecentCases">
       <DashHeader />
       <h1 className="CasesTitle">Recent Cases</h1>
       <div className="TableData">

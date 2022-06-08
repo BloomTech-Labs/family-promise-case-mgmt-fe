@@ -448,15 +448,20 @@
 .Rightside__PreviousNotes p {
   color: #cdcdcd;
 }
-
+/* RecentCases Styling Component */
+.RecentCases{
+  background-color: #131313;
+}
 .TableData {
   display: flex;
   align-content: flex-start;
-  width: 884px;
+  width: 750px;
   height: 625px; 
-  margin: 90px 0px 106px 106px; 
+  margin: 90px 0px 206px 106px;
+  background-color: #101010; 
 }
 .CasesTitle{
   margin-left: 390px;
-  margin-top:40px ;
+  margin-top: 40px ;
+  color: #d2d2d7;
 }
