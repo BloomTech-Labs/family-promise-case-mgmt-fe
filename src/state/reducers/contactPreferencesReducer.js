@@ -1,17 +1,6 @@
 import { contactPreferences } from '../actions';
 
-const intialState = {
-  food_assistance: false,
-  clothing_assistance: true,
-  counseling_services: false,
-  addiction_resources: true,
-  mentor_programs: false,
-  youth_services: true,
-  budgeting: false,
-  can_text_employment_opportunities: true,
-  can_text_apartment_listings: false,
-  can_text_career_fairs: true,
-};
+const intialState = {};
 
 export const reducer = (state = intialState, action) => {
   switch (action.type) {
