@@ -64,14 +64,21 @@
 
 .HouseholdInformationDetails__Container {
   color: #ffffff;
+  margin-left: 1.5rem;
 }
 .HouseholdInformationDetails__Form {
   background: #007fd4;
+}
+.LengthTimeHomelessCase {
+  width: 100%;
 }
 .CircumstancesContainer {
   display: flex;
   flex-flow: row wrap;
   width: 90%;
+}
+.CircumstancesCheckboxes {
+  margin-left: 1.5rem;
 }
 .HouseholdInformationDetails__Form__Circumstances {
   grid-row: 1 / span 2;
@@ -89,14 +96,54 @@
 .HouseholdInformationDetails__Form__h4 {
   color: #cdcdcd;
 }
+.CPSInvolvement > .ant-form-item {
+  display: flex;
+  flex-flow: column nowrap;
+}
+.CPSInvolvement > .ant-form-item > .ant-col-8 {
+  max-width: 30rem;
+  text-align: left;
+}
+.HomelessTime__SingleContainer > .ant-row {
+  display: flex;
+  flex-flow: column nowrap;
+}
+.HomelessTime__SingleContainer > .ant-row > .ant-col-8 {
+  max-width: 30rem;
+}
+.HomelessTime__Margin {
+  margin-left: 0rem;
+}
+.HomelessTime__SingleContainer > .ant-row > .ant-form-item-label {
+  text-align: left;
+  width: 35rem;
+}
 .HouseholdInformationDetails__Form__p {
   color: #cdcdcd;
+}
+.HouseholdInformationDetails__Form__PrevLivSit > .ant-row {
+  display: flex;
+  flex-flow: column nowrap;
+}
+.HouseholdInformationDetails__Form__PrevLivSit > .ant-row > .ant-col-8 {
+  text-align: left;
+}
+.HouseholdInformationDetails__Form__SocialWorker > .ant-row {
+  display: flex;
+  flex-flow: column nowrap;
+}
+.HouseholdInformationDetails__Form__SocialWorker > .ant-row > .ant-col-8 {
+  text-align: left;
+  max-width: 30rem; 
 }
 .CaseDetailsLabel {
   color: #ffffff;
 }
 .CaseDetailsLabel__Disabled {
   color: #cdcdcd;
+}
+.YearsMargin {
+  margin-left: 0.95rem;
 }
 .ant-form-item-label {
   color: #ffffff;
