@@ -2,134 +2,133 @@ import React from 'react';
 import DashHeader from './DashHeader';
 import { Table } from 'antd';
 
+const sorterString = (a, b) => a.localeCompare(b);
 const columns = [
   //adding info for each column
   {
     title: 'CASE ID',
     dataIndex: 'caseId',
-    sorter: (a, b) => a.caseId.length - b.caseId.length,
+    sorter: (a, b) => a.caseId - b.caseId,
     sortDirections: ['descend'],
   },
   {
     title: 'LAST',
     dataIndex: 'last',
     defaultSortOrder: 'descend',
-    sorter: (a, b) => a.last - b.last,
+    sorter: (a, b) => sorterString(a.last, b.last),
   },
   {
     title: 'FIRST',
     dataIndex: 'first',
     defaultSortOrder: 'descend',
-    sorter: (a, b) => a.first - b.first,
+    sorter: (a, b) => sorterString(a.first, b.first),
   },
   {
     title: 'UPDATED',
     dataIndex: 'updated',
     defaultSortOrder: 'descend',
-    sorter: (a, b) => a.updated - b.updated,
+    sorter: (a, b) => sorterString(a.updated, b.updated),
   },
   {
     title: 'LOCATION',
     dataIndex: 'location',
     defaultSortOrder: 'descend',
-    sorter: (a, b) => a.location - b.location,
+    sorter: (a, b) => sorterString(a.location, b.location),
   },
   {
     title: 'LATEST NOTE',
     dataIndex: 'latestNote',
-    defaultSortOrder: 'descend',
-    sorter: (a, b) => a.latestNote - b.latestNote,
   },
 ];
 
 const data = [
   {
     key: '1',
-    caseId: 'XXXXX',
+    caseId: 1,
     last: 'Lawson',
     first: 'Micheal',
-    updated: 'XX-XX-XXXX',
+    updated: '2022-06-08',
     location: 'Cheney',
     latestNote: 'Met with family.',
   },
   {
     key: '2',
-    caseId: 'XXXXX',
+    caseId: 2,
     last: 'Ferguson',
     first: 'Lindsay',
-    updated: 'XX-XX-XXXX',
+    updated: '2022-06-07',
     location: 'Infant House',
     latestNote: 'Met with family.',
   },
   {
     key: '3',
-    caseId: 'XXXXX',
+    caseId: 3,
     last: 'Funk',
     first: 'Tobias',
-    updated: 'XX-XX-XXXX',
+    updated: '2022-06-07',
     location: 'Hartson',
     latestNote: 'Met with family.',
   },
   {
     key: '4',
-    caseId: 'XXXXX',
+    caseId: 4,
     last: 'Braun',
     first: 'Oma',
-    updated: 'XX-XX-XXXX',
+    updated: '2022-06-05',
     location: 'Hartson',
     latestNote: 'Met with family.',
   },
   {
     key: '5',
-    caseId: 'XXXXX',
+    caseId: 5,
     last: 'Fields',
     first: 'Byron',
-    updated: 'XX-XX-XXXX',
+    updated: '2022-05-31',
     location: 'Family Emergency Shelter',
     latestNote: 'Met with family.',
   },
   {
     key: '6',
-    caseId: 'XXXXX',
+    caseId: 6,
     last: 'Garcia',
     first: 'Fatima',
-    updated: 'XX-XX-XXXX',
+    updated: '2022-05-30',
     location: 'Infant House',
     latestNote: 'Met with family.',
   },
   {
     key: '7',
-    caseId: 'XXXXX',
+    caseId: 7,
     last: 'Rodriguez',
     first: 'Gabriel',
-    updated: 'XX-XX-XXXX',
+    updated: '2022-06-03',
     location: 'Cheney',
     latestNote: 'Met with family.',
   },
   {
     key: '8',
-    caseId: 'XXXXX',
+    caseId: 8,
     last: 'Hayes',
     first: 'Hanna',
-    updated: 'XX-XX-XXXX',
+    updated: '2022-06-03',
     location: 'Mission House',
     latestNote: 'Met with family.',
   },
   {
     key: '9',
-    caseId: 'XXXXX',
+    caseId: 9,
     last: 'McBride',
     first: 'Diya',
-    updated: 'XX-XX-XXXX',
+    updated: '2022-05-31',
     location: 'Family Emergency Shelter',
     latestNote: 'Met with family.',
   },
   {
     key: '10',
-    caseId: 'XXXXX',
+    caseId: 10,
     last: 'Welch',
     first: 'Ali',
-    updated: 'XX-XX-XXXX',
+    updated: '2022-05-29',
     location: 'Mission House',
     latestNote: 'Met with family.',
   },
@@ -145,7 +144,12 @@ const RecentCases = () => {
       <DashHeader />
       <h1 className="CasesTitle">Recent Cases</h1>
       <div className="TableData">
-        <Table columns={columns} dataSource={data} onChange={onChange} />
+        <Table
+          columns={columns}
+          dataSource={data}
+          onChange={onChange}
+          pagination={false}
+        />
       </div>
     </div>
   );

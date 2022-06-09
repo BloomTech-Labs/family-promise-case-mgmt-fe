@@ -465,3 +465,11 @@
   margin-top: 40px ;
   color: #d2d2d7;
 }
+.ant-table-column-title {
+  color:#007fd4;
+}
+.ant-table-thead > tr > th {
+  color: #007fd4;
+  background-color: #484848;
+  border-bottom: 8px solid #101010;
+}
