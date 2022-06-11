@@ -14,19 +14,13 @@ const Referrals = props => {
       .get(`http://localhost:8000/api/referrals/${props.client.id}/`)
       .then(referrals => {
         const returnData = [];
-        referrals.data.forEach(referral => {
-          const toReturn = { ...referral };
+        console.log(referrals.data);
+        referrals.data.forEach((referral, index) => {
+          const transformedReferrals = { ...referral };
           const dateTime = new Date(referral.first_meeting_date);
-          const [month, day, year] = [
-            dateTime.getMonth(),
-            dateTime.getDate(),
-            dateTime.getFullYear(),
-          ];
-          toReturn.first_meeting_date = moment(
-            `${month}-${day}-${year}`,
-            'MM-DD-YYYY'
-          );
-          returnData.push(toReturn);
+          transformedReferrals.first_meeting_date = moment(dateTime);
+          transformedReferrals.key = index;
+          returnData.push(transformedReferrals);
         });
         props.setReferrals(returnData);
       });
@@ -61,15 +55,21 @@ const Referrals = props => {
       <div>
         <p>
           {record.street_address}
-          {record.apt !== '' ? ` ${record.apt},` : ','} {record.city},{' '}
-          {record.state} {record.zip}{' '}
+          {record.apt && record.street_address ? ` ${record.apt},` : ','}{' '}
+          {record.city ? `${record.city}, ` : null}
+          {record.state} {record.zip}
         </p>
         <p>
-          {record.cell !== '' ? `cell: ${record.cell}` : null}{' '}
-          {record.home !== '' ? `home: ${record.home}` : null}{' '}
-          {record.work !== '' ? `work: ${record.work}` : null}
+          {record.cell ? `cell: ${record.cell} ` : null}
+          {record.home ? `home: ${record.home} ` : null}
+          {record.work ? `work: ${record.work}` : null}
         </p>
-        <p>{record.emial !== '' ? `email: ${record.email}` : null}</p>
+        <p>{record.email ? `email: ${record.email}` : null}</p>
+        <p>
+          {record.first_meeting_date
+            ? moment(record.first_meeting_date).format('dddd, MMMM Do YYYY')
+            : null}
+        </p>
       </div>
     ),
   };
@@ -83,6 +83,7 @@ const Referrals = props => {
           values
         )
         .then(referral => {
+          console.log(referral.data);
           props.editReferral(values, referralIndex);
           setReferralIndex(null);
         });
@@ -103,6 +104,7 @@ const Referrals = props => {
         `http://localhost:8000/api/referrals/${props.client.id}/${referral_id}`
       )
       .then(response => {
+        console.log(response.data);
         props.deleteReferral(index);
       });
   };
@@ -134,7 +136,7 @@ const Referrals = props => {
             columns={columns}
             expandable={expandable}
             pagination={{ pageSize: 50 }}
-            scroll={{ y: 240 }}
+            scroll={{ y: 600 }}
           />
           <section className="referralContainer" layout="vertical">
             <Form.Item
