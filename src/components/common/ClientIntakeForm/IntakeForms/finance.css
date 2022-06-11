@@ -1,31 +1,178 @@
 label {
-  color: black;
+  color: white;
 }
 
-.financeHeader {
+/* .financeGrid {
+  display: grid;
+  margin: 0px 40px;
+} */
+
+/* .border {
+  width: 5rem;
+  border: 1px solid black;
+} */
+
+.ant-input.border {
+  width: 5rem;
+  border: 1px solid black;
+}
+
+.subsectionHeader {
   text-align: center;
   margin-bottom: 50px;
-  background-color: #706f6f;
+  background: #101010;
+  color: #cdcdcd;
   padding: 20px;
 }
 
-.financeGrid {
+.subsectionContainer {
+  border: solid 1px #6e6e6e;
+  background: #101010;
   display: grid;
-  margin: 0px 40px;
 }
 
-.financeContainer {
+.financeContainerStyles {
   display: flex;
   flex-wrap: wrap;
   justify-content: start;
   margin-left: 40px;
 }
 
-.border {
-  width: 5rem;
-  border: 1px solid black;
+/*
+.financeContainer {
+  /* display: flex; */
+  /* flex-direction: row; */
+  /* flex-wrap: row wrap; */
+  /* justify-content: space-evenly; */
+  /* margin-left: 40px; */
+  /* margin: 100px; */
+  /* flex-wrap: row wrap; */
+  /* display: grid;
+  gap: 50px; */
+  /* row-gap: 50px; */
+/*
+
+
+
+/*subsectionHeader = reusable code for dark mode*/
+
+  /* margin: 0px; */
+  /* display: flex;
+  flex-direction: row;
+  flex-wrap: row wrap;
+  justify-content: space-evenly; */
+
+
+/* .ant-form-item-control-input-content {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin-left: 10px; */
+  /* flex-direction: row;
+  flex-wrap: row wrap;
+  justify-content: space-evenly; */
+
+  .form-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+
+.input-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: row wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-bottom: 10px;
+  margin-top: 70px;
+  margin-left: 150px;
+  margin-right: 150px;
+}
+
+.labelContainer {
+  margin-left: 10px;
+}
+
+.ant-input {
+  background-color: #2e2e2e;
+  margin-bottom: 10px;
+}
+
+.inputStyles {
+  width: 20rem;
+  background-color: #2e2e2e;
+}
+
+.inputStylesShort {
+  width: 7rem;
+  background-color: #2e2e2e;
+}
+
+/* .amount-container {
+  /* display: flex;
+  flex-direction: row; */
+
+.amount {
+  margin-left: 33px;
+}
+
+/* .amount-elements {
+  
+} */
+
+/* .labelContainer {
+  align-items: center;
+} */
+
+/* .ant-checkbox-wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+} */
+
+/* .ant-checkbox {
+  display: flex;
+  /* flex-direction: row; */
+/* flex-wrap: wrap; */
+
+/* .formItem {
+  display: flex;
+  justify-content: space-evenly;
+} */
+
+.ant-checkbox-wrapper {
+  display: flex;
+  margin: 10px;
+  justify-content: flex-start;
+  /* flex-direction: flex-start;  */
 }
 
 .ant-input.border {
-  background-color: white;
+  background-color: #2e2e2e;
 }
+
+/* .formStyles {
+  display: flex;
+  justify-content: center;
+} */
+
+.Finances__Form {
+  /* grid-template-columns: repeat(2, 1fr); */
+  /* gap: 5px; */
+  /* grid-auto-flow: row dense; */
+  background: black;
+  color: #ffffff;
+}
+/* .checkboxStyles {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+} */
+
+/* .formItem {
+  display: flex;
+  flex-wrap: wrap;
+} */
+
