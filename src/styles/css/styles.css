@@ -355,3 +355,36 @@
 .ant-form-item-label > label {
   color: #ffffff;
 }
+
+/* finances styling */
+
+.Finances_Form_Sections {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.Finances_Form_Container_Styles {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin-left: 125px;
+  margin-right: 125px;
+  margin-bottom: 75px;
+}
+
+.Finances_Form_Label {
+  margin-bottom: 30px;
+}
+
+.Finances_Form_Container_Styles_Subsection {
+  margin-top: 60px;
+  margin-left: -300px;
+  padding-right: 200px;
+}
+
+.Finances_Form_Inputs {
+  color: #ffffff;
+}

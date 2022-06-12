@@ -1,136 +1,144 @@
 import React from 'react';
-import { Form, Input, Checkbox, Select, Button, Divider } from 'antd';
+import { Form, Input, Checkbox } from 'antd';
 import './finance.css';
+// import '.../styles/css/styles.css';
 
 const Finances = () => {
-
   const [form] = Form.useForm();
 
   return (
     <div className="subsectionContainer">
+      <h2 className="subsectionHeader">FINANCES</h2>
       <Form
         form={form}
         className="Finances__Form"
         // initialValues={initialFormValues}
-        layout="horizontal"
-        labelCol={{ span: 8 }}
-        wrapperCol={{ span: 100 }}
-        labelWrap
+        layout="inline"
       >
-        <h2 className="subsectionHeader">Finances</h2>
-
-        <div className="form-container">
-          <section className="financeContainerStyles">
-            <div className="input-container">
-              <Form.Item className="formItem">
-                <div>
-                  <label className="labelContainer">
+        <div className="Finances_Form_Sections">
+          <section>
+            <div className="Finances_Form_Container_Styles">
+              <Form.Item>
+                <Form.Item>
+                  <label className="Finances_Form_Label">
                     Family have history of:
                   </label>
-                </div>
-                <div>
-                  <Checkbox value="eviction" className="ant-checkbox">
+                  <Checkbox value="eviction">
                     <label>Eviction</label>
                   </Checkbox>
-                </div>
-                <div>
-                  <Checkbox value="landlordDebt" className="ant-checkbox">
+                </Form.Item>
+                <Form.Item>
+                  <Checkbox value="landlordDebt">
                     <label>Landlord Debt</label>
                   </Checkbox>
-                </div>
-                <div>
-                  <Checkbox value="criminalHistory" className="ant-checkbox">
+                </Form.Item>
+                <Form.Item>
+                  <Checkbox value="criminalHistory">
                     <label>Criminal History</label>
                   </Checkbox>
-                </div>
-                <div>
-                  <Checkbox value="poorCredit" className="ant-checkbox">
+                </Form.Item>
+                <Form.Item>
+                  <Checkbox value="poorCredit">
                     <label>No Credit History</label>
                   </Checkbox>
-                </div>
-                <div>
-                  <Checkbox value="noRentalHistory" className="ant-checkbox">
+                </Form.Item>
+                <Form.Item>
+                  <Checkbox value="noRentalHistory">
                     <label>No Rental History</label>
                   </Checkbox>
-                </div>
+                </Form.Item>
               </Form.Item>
             </div>
           </section>
 
           <section>
-            <div className="input-container">
-              <Form.Item label="Source of Income:" className="labelContainer">
-                <Checkbox value="TANF" className="ant-checkbox">
-                  <label>TANF</label>
-                </Checkbox>
-                <Checkbox
-                  value="SSI"
-                  className="checkValue"
-                  className="ant-checkbox"
-                >
-                  <label>SSI</label>
-                </Checkbox>
-                <Checkbox value="SSDI" className="ant-checkbox">
-                  <label>SSDI</label>
-                </Checkbox>
-                <Checkbox value="childSupport" className="ant-checkbox">
-                  <label>SSDI</label>
-                </Checkbox>
-                <div className="amount-container">
-                  <Form.Item label={<label>Amount</label>}>
-                    <Input placeholder="$0" name="Amount" />
-                  </Form.Item>
-                </div>
+            <div className="Finances_Form_Container_Styles">
+              <Form.Item>
+                <label className="Finances_Form_Label">
+                  Sources of income:
+                </label>
+                <Form.Item>
+                  <Checkbox value="eviction">
+                    <label>TANF</label>
+                  </Checkbox>
+                </Form.Item>
+                <Form.Item>
+                  <Checkbox value="SSI">
+                    <label>SSI</label>
+                  </Checkbox>
+                </Form.Item>
+                <Form.Item>
+                  <Checkbox value="SSI">
+                    <label>SSI</label>
+                  </Checkbox>
+                </Form.Item>
+                <Form.Item>
+                  <Checkbox value="SSDI">
+                    <label>SSDI</label>
+                  </Checkbox>
+                </Form.Item>
+                <Form.Item>
+                  <Checkbox value="childSupport">
+                    <label>SSDI</label>
+                  </Checkbox>
+                </Form.Item>
+                <Form.Item label={<label>Amount</label>}>
+                  <Input placeholder="$0" name="Amount" />
+                </Form.Item>
               </Form.Item>
             </div>
           </section>
 
           <section>
-            <div className="input-container">
-              <Form.Item className="formItem">
-                <label className="labelContainer">Types Of Debt:</label>
-                <Checkbox value="studentLoan" className="ant-checkbox">
-                  <label>Student Loan</label>
-                </Checkbox>
-                <div className="amount-container">
-                  <Form.Item label={<label>Amount</label>}>
-                    <Input placeholder="$0" name="Amount" />
+            <div className="Finances_Form_Container_Styles">
+              <Form.Item>
+                <span className="Finance_Form_Debt_Label">
+                  <Form.Item>
+                    <label className="Finances_Form_Label">
+                      Types Of Debt:
+                    </label>
                   </Form.Item>
-                </div>
-                <Checkbox value="medicalBills" className="ant-checkbox">
-                  <label>Medical Bills</label>
-                </Checkbox>
-                <div className="amount-container">
-                  <Form.Item label={<label>Amount</label>}>
-                    <Input placeholder="$0" name="Amount" />
-                  </Form.Item>
-                </div>
+                </span>
+                <Form.Item>
+                  <Checkbox value="studentLoan">
+                    <label>Student Loan</label>
+                  </Checkbox>
+                </Form.Item>
+                <Form.Item label={<label>Amount</label>}>
+                  <Input placeholder="$0" name="Amount" />
+                </Form.Item>
+                <Form.Item>
+                  <Checkbox value="medicalBills">
+                    <label>Medical Bills</label>
+                  </Checkbox>
+                </Form.Item>
+                <Form.Item label={<label>Amount</label>}>
+                  <Input placeholder="$0" name="Amount" />
+                </Form.Item>
               </Form.Item>
             </div>
           </section>
 
           <section>
-            <div className="input-container">
-              <Form.Item className="formItem">
-                <Checkbox value="creditCard" className="ant-checkbox">
-                  <label>Credit Card</label>
-                </Checkbox>
-                <div className="amount-container">
-                  <Form.Item label={<label>Amount</label>}>
-                    <Input placeholder="$0" name="Amount" />
-                  </Form.Item>
-                </div>
+            <div className="Finances_Form_Container_Styles">
+              <Form.Item className="Finances_Form_Container_Styles_Subsection">
+                <Form.Item>
+                  <Checkbox value="creditCard">
+                    <label>Credit Card</label>
+                  </Checkbox>
+                </Form.Item>
+                <Form.Item label={<label>Amount</label>}>
+                  <Input placeholder="$0" name="Amount" />
+                </Form.Item>
 
-                <Checkbox value="autoLoan" className="ant-checkbox">
-                  <label>Auto Loan</label>
-                </Checkbox>
-                <div className="amount-container">
-                  <Form.Item
-                    label={<label className="Amount_Label">Amount</label>}
-                  >
-                    <Input placeholder="$0" name="Amount" />
-                  </Form.Item>
-                </div>
+                <Form.Item>
+                  <Checkbox value="autoLoan">
+                    <label>Auto Loan</label>
+                  </Checkbox>
+                </Form.Item>
+                <Form.Item label={<label>Amount</label>}>
+                  <Input placeholder="$0" name="Amount" />
+                </Form.Item>
               </Form.Item>
             </div>
           </section>
