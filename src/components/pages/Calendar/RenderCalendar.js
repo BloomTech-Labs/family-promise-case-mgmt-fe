@@ -1,19 +1,52 @@
 import React from 'react';
 import DashHeader from '../../common/DashHeader';
-import NavHeader from '../../common/NavHeader';
-import Button from '../../common/Button';
-import { Layout, Card } from 'antd';
+
+import { Layout, Card, Button } from 'antd';
 
 const { Sider, Content, Footer } = Layout;
 
 function RenderCalendar() {
+  const createEvent = event => {
+    console.log('The button is working');
+  };
+
+  const searchEvent = event => {
+    console.log('The button is working');
+  };
+
+  const calendars = event => {
+    console.log('The button is working');
+  };
+
   return (
     <div>
       <Layout className="Layout">
         <DashHeader />
         <Layout>
           <Sider>
-            <Button />
+            <div className="sidebarButtonsContainer">
+              <Button
+                type="Default"
+                className="sidebarButton"
+                onClick={createEvent}
+              >
+                CREATE EVENT
+              </Button>
+              <Button
+                type="Default"
+                className="sidebarButton"
+                onClick={searchEvent}
+              >
+                SEARCH EVENT
+              </Button>
+              <Button
+                type="Default"
+                className="sidebarButton"
+                onClick={calendars}
+              >
+                CALENDARS
+              </Button>
+            </div>
             This is Sider
           </Sider>
           <Content>This is Content</Content>
