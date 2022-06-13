@@ -1,7 +1,7 @@
 import React from 'react';
 import DashHeader from '../../common/DashHeader';
 
-import { Layout, Card, Button } from 'antd';
+import { Layout, Card, DatePicker, Form, Button, Input, Space } from 'antd';
 
 const { Sider, Content, Footer } = Layout;
 
@@ -25,6 +25,10 @@ function RenderCalendar() {
         <Layout>
           <Sider>
             <div className="sidebarButtonsContainer">
+              <Form.Item label="Select Date" name="Date" initialValue="">
+                <DatePicker format="MM-DD-YYYY" />
+              </Form.Item>
+
               <Button
                 type="Default"
                 className="sidebarButton"
@@ -49,14 +53,13 @@ function RenderCalendar() {
             </div>
             This is Sider
           </Sider>
-          <Content>This is Content</Content>
+          <Content> Weekly Calendar </Content>
         </Layout>
 
         <Content className="Content">
           <div className="Content__Container">
             <Card className="Content__Container-Card">
-              <Button />
-              Hello
+              Hello from Card component
             </Card>
           </div>
         </Content>
