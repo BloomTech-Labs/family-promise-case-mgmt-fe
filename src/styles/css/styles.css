@@ -448,3 +448,22 @@
 .Rightside__PreviousNotes p {
   color: #cdcdcd;
 }
+.sidebarButtonsContainer{
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  margin: 1rem;
+}
+.sidebarButton {
+  background-color: #007fd4;
+  border: 0;
+  color: #cdcdcd;
+  width: 10rem;
+  margin-right: 1.5rem;
+  border-radius: 4px;
+}
+.sidebarButton:hover {
+  background-color: #007fd4;
+  border: 1px solid #cdcdcd;
+  color: #cdcdcd;
+}
