@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import { document } from '../../../../state/actions';
 import {
   InboxOutlined,
-  EditOutlined,
   DeleteOutlined,
   CheckCircleOutlined,
   ExclamationCircleOutlined,
@@ -96,12 +95,13 @@ const Documents = props => {
   ];
 
   useEffect(() => {
-    if (props.client.id != 0) {
+    if (props.client.id !== 0) {
       axios
         .get(`http://localhost:8000/api/documents/${props.client.id}`)
         .then(documents => {
           console.log(documents.data);
           props.setDocuments(documents.data);
+          console.log(documents.data);
         })
         .catch(error => {
           alert('ERROR ' + error);
@@ -112,8 +112,7 @@ const Documents = props => {
   const handleDelete = file => {
     axios
       .post(`http://localhost:8000/api/documents/${props.client.id}`, file)
-      .then(response => {
-        console.log(response);
+      .then(() => {
         props.deleteDocument(file);
       })
       .catch(error => {
@@ -129,7 +128,6 @@ const Documents = props => {
     let fileParts = e.file.name.split('.');
     let fileName = fileParts[0];
     let fileType = fileParts[1];
-    console.log('Preparing the upload');
     axios
       .post('http://localhost:8000/api/documents/sign_s3', {
         fileName: fileName,
@@ -139,9 +137,6 @@ const Documents = props => {
         var returnData = response.data.data.returnData;
         var signedRequest = returnData.signedRequest;
         var url = returnData.url;
-        console.log('Recieved a signed request ' + signedRequest);
-        console.log(returnData);
-
         var options = {
           headers: {
             'Content-Type': fileType,
@@ -150,7 +145,6 @@ const Documents = props => {
         axios
           .put(signedRequest, file, options)
           .then(result => {
-            console.log('Response from s3', result);
             const documentObj = {
               name: fileName,
               success: true,
@@ -165,7 +159,7 @@ const Documents = props => {
                 { [documentType]: documentObj }
               )
               .then(result => {
-                console.log(result);
+                setDocumentType(null);
               })
               .catch(error => {
                 alert('ERROR ' + error);
