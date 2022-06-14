@@ -142,14 +142,20 @@ const RecentCases = () => {
   return (
     <div className="RecentCases">
       <DashHeader />
-      <h1 className="CasesTitle">Recent Cases</h1>
-      <div className="TableData">
-        <Table
-          columns={columns}
-          dataSource={data}
-          onChange={onChange}
-          pagination={false}
-        />
+      <div className="column">
+        <div className="TableData">
+          <h1 className="CasesTitle">Recent Cases</h1>
+          <Table
+            columns={columns}
+            dataSource={data}
+            onChange={onChange}
+            pagination={false}
+          />
+        </div>
+
+        <div className="RecentActivity">
+          <h1 className="ActivityTitle">Recent Activity</h1>
+        </div>
       </div>
     </div>
   );

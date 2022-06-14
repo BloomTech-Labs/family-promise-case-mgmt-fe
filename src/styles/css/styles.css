@@ -454,14 +454,14 @@
 }
 .TableData {
   display: flex;
-  align-content: flex-start;
+  flex-direction: column;
   width: 750px;
   height:800px; 
   margin: 40px 0px 206px 106px;
   background-color: #101010; 
 }
 .CasesTitle{
-  margin-left: 378px;
+  margin-left: 278px;
   margin-top: 40px ;
   color: #d2d2d7;
 }
@@ -490,4 +490,14 @@
 }
 td.ant-table-column-sort {
   background-color: #706f6f;
+}
+.column {
+  display: flex;
+  flex-direction: row;
+  background-color: #101010;
+}
+.ActivityTitle{
+  margin-left: 398px;
+  margin-top: 40px ;
+  color: #d2d2d7;
 }
