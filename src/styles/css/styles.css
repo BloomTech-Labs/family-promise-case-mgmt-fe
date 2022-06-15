@@ -371,4 +371,199 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+.CaseDetails {
+  display: flex;
+  flex-flow: row nowrap;
+  background-color: black;
+}
+.CaseDetails__LeftSide {
+  width: 50%;
+}
+.CaseDetails__LeftSideHead {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+  margin-right: 1rem;
+  margin-left: 1rem;
+}
+.CaseDetails__LeftSideHead h2 {
+  margin-left: 2rem;
+  margin-right: 2rem;
+  margin-bottom: 0rem;
+  font-size: 48px;
+  color: #D2D2D7;
+}
+.CaseDetails__LeftSideHead h3 {
+  color: #cdcdcd;
+  font-size: 24px;
+  margin-bottom: 0rem;
+  margin-top: .5rem;;
+}
+.CaseDetails__LeftSideHead Button {
+  width: 256.34px;
+  height: 48.16px;
+  background: #333333;
+  border-radius: 25px 0px 10px;
+  color: #cdcdcd;
+  border-color: #007fd4;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  align-items: center;
+}
+.CaseDetails__LeftSideHead Button:hover {
+  background-color: #333333;
+  border-color: #cdcdcd;
+  color: #cdcdcd;
+}
+.CaseDetails__LeftSideBtnsContainer {
+  display: flex; 
+  flex-flow: column nowrap;
+  margin: 1rem;
+}
+.CaseDetails__Leftside__gridHead {
+  width: 100%;
+  background-color: black;
+  color: white;
+  height: 3.5rem;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+}
+.gridColumns {
+  display: flex;
+  justify-content: center;
+}
+.ant-collapse > .ant-collapse-item {
+  margin-bottom: 0.75rem;
+  border-bottom: 0px;
+}
+.mainCollapse {
+  border: 0;
+  background-color: black;
+}
+.ant-collapse > .ant-collapse-item > .ant-collapse-header {
+  background-color: #007fd4;
+  color: #cdcdcd;
+}
+.ant-collapse-content-box {
+  background-color: #007fd4;
+}
+.Leftside__Bottom__ButtonsContainer{
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  margin: 1rem;
+}
+.leftSideBottomButtons {
+  background-color: #007fd4;
+  border: 0;
+  color: #cdcdcd;
+  width: 10rem;
+  margin-right: 1.5rem;
+  border-radius: 4px;
+}
+.leftSideBottomButtons:hover {
+  background-color: #007fd4;
+  border: 1px solid #cdcdcd;
+  color: #cdcdcd;
+}
+.CaseDetails__RightSide {
+  width: 50%;
+}
+.Rightside__Head {
+  margin: 1rem;
+  margin-left: 4rem;
+  margin-bottom: 0rem;
+  font-size: 30px;
+}
+.Rightside__Header {
+  color: #cdcdcd;
+  font-size: 48px;
+  margin-bottom: 0rem;
+}
+.Rightside__SearchBar {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  margin-right: 1rem;
+  margin-left: 1rem;
+}
+.Rightside__SearchBar img {
+  margin-bottom: 1rem;
+  margin-right: 1rem;
+}
+.Rightside__SearchBar h3 {
+  color: #d2d2d7;
+  opacity: 0.5;
+  font-size: 36px;
+}
+.SearchBar {
+  background-color: black;
+  height: 2rem;
+  width: 25rem;
+  margin-left: 1rem;
+  margin-bottom: 0.5rem;
+  border: 2px solid #CDCDCD;
+  border-radius: 20px 0px 10px;
+  color:  #cdcdcd;
+}
+.ant-input {
+  background-color: black;
+  color: #cdcdcd;
+}
+.ant-input-prefix {
+  margin-top: 1rem;
+}
+.Rightside__Notes__BoxandButton {
+  width: 91.5%;
+}
+.Rightside__Notes__BoxandButton > .ant-space > .ant-space-item > .ant-input {
+  background-color: white;
+  margin: 1rem;
+  margin-top: .5rem;
+  color: black;
+}
+.Rightside__Notes__BoxandButton > .ant-space {
+  width: 100%;
+}
+.saveNoteButton {
+  background-color: #007fd4;
+  border: 0;
+  border-radius: 4px;
+  color: #cdcdcd;
+  margin-left: 1rem;
+  width: 10rem;
+}
+.saveNoteButton:hover {
+  background-color: #007fd4;
+  border: 1px solid #cdcdcd;
+  color: #cdcdcd;
+}
+.Rightside__PreviousNotes {
+  width: 91.5%;
+  height: 17rem;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background-color: black;
+  margin-top: 2rem;
+  margin-left: 1rem;
+}
+.Rightside__PreviousNotes::-webkit-scrollbar {
+  background-color: #c4c4c4;
+  width: 0.5rem;
+  border-radius: 10px;
+}
+.Rightside__PreviousNotes::-webkit-scrollbar-thumb {
+  background-color: #333333;
+  width: 0.5rem;
+  border-radius: 10px;
+}
+.Rightside__PreviousNotes h3 {
+  color: #cdcdcd;
+}
+.Rightside__PreviousNotes p {
+  color: #cdcdcd;
 }

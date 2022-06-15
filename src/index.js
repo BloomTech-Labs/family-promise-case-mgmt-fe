@@ -24,6 +24,8 @@ import { ClientIntakeForm } from './components/common/ClientIntakeForm';
 import { LayoutTemplate } from './components/pages/LayoutTemplate';
 import { CaseDetails } from './components/pages/CaseDetails';
 
+import DashHeader from './components/common/DashHeader';
+
 import './styles/css/styles.css';
 
 ReactDOM.render(
@@ -62,7 +64,7 @@ function App() {
         <SecureRoute path="/example-list" component={ExampleListPage} />
         <SecureRoute path="/layouttemplate" component={LayoutTemplate} />
         <SecureRoute path="/" exact />
-
+        <SecureRoute path="/dashheader" component={DashHeader} />
         <Route component={NotFoundPage} />
       </Switch>
     </Security>
