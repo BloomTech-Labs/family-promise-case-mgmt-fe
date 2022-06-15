@@ -1,15 +1,12 @@
-import { client } from '../actions';
+import { contactPreferences } from '../actions';
 
-const intialState = {
-  id: 0,
-  name: 'test',
-  status: 'active',
-};
+const intialState = {};
 
 export const reducer = (state = intialState, action) => {
   switch (action.type) {
-    case client.SET_CLIENT:
+    case contactPreferences.SET_CONTACT_PREFERENCES:
       return action.payload;
+
     default:
       return state;
   }
