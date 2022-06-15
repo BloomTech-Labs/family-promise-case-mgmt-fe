@@ -1,5 +1,6 @@
 import React from 'react';
 import DashHeader from '../../common/DashHeader';
+import SearchIcon from './SearchIcon';
 
 import { Layout, Card, DatePicker, Form, Button, Input, Space } from 'antd';
 
@@ -24,7 +25,19 @@ function RenderCalendar() {
         <DashHeader />
         <Layout>
           <Sider>
-            <div className="sidebarButtonsContainer">
+            <div className="sidebarContainer">
+              <div className="Rightside__SearchBar">
+                <div>
+                  <Space direction="vertical">
+                    <Input
+                      prefix={<SearchIcon className="searchIcon" />}
+                      placeholder="Search Event"
+                      className="SearchEventBar"
+                    />
+                  </Space>
+                </div>
+              </div>
+
               <Form.Item label="Select Date" name="Date" initialValue="">
                 <DatePicker format="MM-DD-YYYY" />
               </Form.Item>
@@ -51,18 +64,17 @@ function RenderCalendar() {
                 CALENDARS
               </Button>
             </div>
-            This is Sider
           </Sider>
-          <Content> Weekly Calendar </Content>
+          <Content>Weekly Calendar</Content>
         </Layout>
 
-        <Content className="Content">
+        {/* <Content className="Content">
           <div className="Content__Container">
             <Card className="Content__Container-Card">
               Hello from Card component
             </Card>
           </div>
-        </Content>
+        </Content> */}
         <Footer className="Footer">
           Family Promise of Spokane ©2022 Created by BloomTech Labs
         </Footer>

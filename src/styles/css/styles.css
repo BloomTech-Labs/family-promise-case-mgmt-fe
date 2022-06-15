@@ -448,22 +448,42 @@
 .Rightside__PreviousNotes p {
   color: #cdcdcd;
 }
-.sidebarButtonsContainer{
+.sidebarContainer{
   display: flex;
   flex-flow: column nowrap;
   justify-content: flex-start;
   margin: 1rem;
 }
 .sidebarButton {
-  background-color: #007fd4;
+  background-color: #c4c4c4;
   border: 0;
-  color: #cdcdcd;
-  width: 10rem;
-  margin-right: 1.5rem;
+  color: #000000;
+  width: 9rem;  
   border-radius: 4px;
+  margin: 0.3rem;
 }
 .sidebarButton:hover {
   background-color: #007fd4;
   border: 1px solid #cdcdcd;
   color: #cdcdcd;
 }
+
+.SearchEventBar {
+  background-color: black;
+  height: 2rem;
+  width: 10rem;  
+  margin-bottom: 0.5rem;
+  border: 2px solid #CDCDCD;
+  border-radius: 20px 0px 10px;
+  color:  #cdcdcd;
+}
+
+.Rightside__SearchBar2 {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+}
+
+
+
+
