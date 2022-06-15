@@ -16,7 +16,7 @@ const RecentActivity = () => {
           <p>
             First Lastname
             <br />
-            XXXX_XX_XX{' '}
+            XXXX_XX_XX
           </p>
           <img className="VectorArrow" src={Vector} alt="arrow" />
           <Button type="primary">View Case</Button>
