@@ -1,5 +1,6 @@
 import React from 'react';
 import DashHeader from './DashHeader';
+import RecentActivity from './RecentActivity';
 import { Table } from 'antd';
 
 const sorterString = (a, b) => a.localeCompare(b);
@@ -155,6 +156,7 @@ const RecentCases = () => {
 
         <div className="RecentActivity">
           <h1 className="ActivityTitle">Recent Activity</h1>
+          <RecentActivity />
         </div>
       </div>
     </div>

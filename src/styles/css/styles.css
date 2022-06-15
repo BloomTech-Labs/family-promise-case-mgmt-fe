@@ -501,3 +501,18 @@ td.ant-table-column-sort {
   margin-top: 40px ;
   color: #d2d2d7;
 }
+/* Targeting the card body of RecentActivity Component */
+.ant-card-body {
+  background-color: #3f3f3f;
+  border-radius: 50px 10px;
+}
+.ant-card-bordered{
+  background-color: #101010;
+  border: 1px solid  #101010;
+}
+.ant-card-meta-title{
+  color:#c4c4c4;
+}
+.ant-card-meta-description {
+  color:#c4c4c4;
+}
