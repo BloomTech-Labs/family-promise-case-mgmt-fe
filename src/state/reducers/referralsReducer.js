@@ -32,8 +32,8 @@ export const reducer = (state = intialState, action) => {
 
     case referral.EDIT_REFERRAL:
       const updatedReferrals = [...state];
-      updatedReferrals[action.index] = action.payload
-      console.log(updatedReferrals)
+      updatedReferrals[action.index] = action.payload;
+      console.log(updatedReferrals);
       return updatedReferrals;
 
     default:
