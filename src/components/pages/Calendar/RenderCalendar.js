@@ -2,7 +2,7 @@ import React from 'react';
 import DashHeader from '../../common/DashHeader';
 import SearchIcon from './SearchIcon';
 
-import { Layout, Card, DatePicker, Form, Button, Input, Space } from 'antd';
+import { Layout, DatePicker, Form, Button, Input, Space } from 'antd';
 
 const { Sider, Content, Footer } = Layout;
 
@@ -24,7 +24,7 @@ function RenderCalendar() {
       <Layout className="Layout">
         <DashHeader />
         <Layout>
-          <Sider>
+          <Sider className="Sider">
             <div className="sidebarContainer">
               <div className="Rightside__SearchBar">
                 <div>
@@ -44,37 +44,31 @@ function RenderCalendar() {
 
               <Button
                 type="Default"
-                className="sidebarButton"
+                className="SidebarButton"
                 onClick={createEvent}
               >
                 CREATE EVENT
               </Button>
               <Button
                 type="Default"
-                className="sidebarButton"
+                className="SidebarButton"
                 onClick={searchEvent}
               >
                 SEARCH EVENT
               </Button>
               <Button
                 type="Default"
-                className="sidebarButton"
+                className="CalendarsButton"
                 onClick={calendars}
               >
                 CALENDARS
               </Button>
             </div>
           </Sider>
-          <Content>Weekly Calendar</Content>
+          <Content className="WeeklyCalendar">
+            <h3> Weekly Calendar is going to be here </h3>
+          </Content>
         </Layout>
-
-        {/* <Content className="Content">
-          <div className="Content__Container">
-            <Card className="Content__Container-Card">
-              Hello from Card component
-            </Card>
-          </div>
-        </Content> */}
         <Footer className="Footer">
           Family Promise of Spokane ©2022 Created by BloomTech Labs
         </Footer>

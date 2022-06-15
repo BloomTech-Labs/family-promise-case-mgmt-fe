@@ -369,8 +369,7 @@
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
-  margin-right: 1rem;
-  margin-left: 1rem;
+  margin-right: 1rem;  
 }
 .Rightside__SearchBar img {
   margin-bottom: 1rem;
@@ -454,15 +453,24 @@
   justify-content: flex-start;
   margin: 1rem;
 }
-.sidebarButton {
+.SidebarButton {
   background-color: #c4c4c4;
   border: 0;
   color: #000000;
   width: 9rem;  
   border-radius: 4px;
-  margin: 0.3rem;
+  margin: 0.5rem;
 }
-.sidebarButton:hover {
+.CalendarsButton {
+  background-color: #c4c4c4;
+  border: 0;
+  color: #000000;
+  width: 9rem;
+  margin-bottom: 5rem;  
+  border-radius: 4px;
+  margin: 0.5rem;
+}
+.SidebarButton:hover {
   background-color: #007fd4;
   border: 1px solid #cdcdcd;
   color: #cdcdcd;
@@ -471,7 +479,8 @@
 .SearchEventBar {
   background-color: black;
   height: 2rem;
-  width: 10rem;  
+  width: 10rem;
+  margin-top: 2em;  
   margin-bottom: 0.5rem;
   border: 2px solid #CDCDCD;
   border-radius: 20px 0px 10px;
@@ -484,6 +493,14 @@
   align-items: center;
 }
 
-
+.Sider{
+  background-color: #000000;
+}
+.WeeklyCalendar{
+  background-color: #101010;  
+}
+.WeeklyCalendar h3 {  
+  color: #cdcdcd;  
+}
 
 
