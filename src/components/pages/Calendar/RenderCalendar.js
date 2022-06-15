@@ -1,10 +1,17 @@
 import React from 'react';
 import DashHeader from '../../common/DashHeader';
 import SearchIcon from './SearchIcon';
-
 import { Layout, DatePicker, Form, Button, Input, Space } from 'antd';
+import moment from 'moment';
 
 const { Sider, Content, Footer } = Layout;
+const weekFormat = 'MM/DD';
+const customWeekStartEndFormat = value =>
+  `${moment(value)
+    .startOf('week')
+    .format(weekFormat)} ~ ${moment(value)
+    .endOf('week')
+    .format(weekFormat)}`;
 
 function RenderCalendar() {
   const createEvent = event => {
@@ -39,7 +46,11 @@ function RenderCalendar() {
               </div>
 
               <Form.Item label="Select Date" name="Date" initialValue="">
-                <DatePicker format="MM-DD-YYYY" />
+                <DatePicker
+                  defaultValue={moment()}
+                  format={customWeekStartEndFormat}
+                  picker="week"
+                />
               </Form.Item>
 
               <Button
