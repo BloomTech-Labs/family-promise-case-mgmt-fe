@@ -32,13 +32,13 @@ function RenderCalendar() {
         <DashHeader />
         <Layout>
           <Sider className="Sider">
-            <div className="sidebarContainer">
+            <div className="SidebarContainer">
               <div className="Rightside__SearchBar">
                 <div>
                   <Space direction="vertical">
                     <Input
                       prefix={<SearchIcon className="searchIcon" />}
-                      placeholder="Search Event"
+                      placeholder="Search event"
                       className="SearchEventBar"
                     />
                   </Space>
@@ -52,28 +52,29 @@ function RenderCalendar() {
                   picker="week"
                 />
               </Form.Item>
-
-              <Button
-                type="Default"
-                className="SidebarButton"
-                onClick={createEvent}
-              >
-                CREATE EVENT
-              </Button>
-              <Button
-                type="Default"
-                className="SidebarButton"
-                onClick={searchEvent}
-              >
-                SEARCH EVENT
-              </Button>
-              <Button
-                type="Default"
-                className="CalendarsButton"
-                onClick={calendars}
-              >
-                CALENDARS
-              </Button>
+              <div className="SidebarButtons">
+                <Button
+                  type="Default"
+                  className="SidebarButton"
+                  onClick={createEvent}
+                >
+                  CREATE EVENT
+                </Button>
+                <Button
+                  type="Default"
+                  className="SidebarButton"
+                  onClick={searchEvent}
+                >
+                  SEARCH EVENT
+                </Button>
+                <Button
+                  type="Default"
+                  className="SidebarButton"
+                  onClick={calendars}
+                >
+                  CALENDARS
+                </Button>
+              </div>
             </div>
           </Sider>
           <Content className="WeeklyCalendar">
