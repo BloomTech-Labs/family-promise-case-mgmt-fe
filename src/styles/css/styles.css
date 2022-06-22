@@ -518,7 +518,9 @@ td.ant-table-column-sort {
   color:#c4c4c4;
 }
 .CardDiv {
-  margin-left: 109px;
+  margin-left:119px;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
 }
 .CardHeader{
   color:#c4c4c4;
@@ -538,3 +540,4 @@ td.ant-table-column-sort {
 .ant-card-meta-avatar{
   margin-top: 15px;
 }
+
