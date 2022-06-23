@@ -358,6 +358,11 @@
 
 /* finances styling */
 
+.ant-form-item-control-input-content {
+  display: flex;
+  flex-direction: column;
+}
+
 .Finances_Form_Sections {
   display: flex;
   flex-direction: row;
@@ -368,18 +373,17 @@
 .Finances_Form_Container_Styles {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
   margin-left: 125px;
   margin-right: 125px;
   margin-bottom: 75px;
 }
 
 .Finances_Form_Label {
-  margin-bottom: 30px;
+  margin-bottom: 25px;
+  color: white;
 }
 
-.Finances_Form_Container_Styles_Subsection {
+.Finances_Form_Container_Styles_Subsection2 {
   margin-top: 60px;
   margin-left: -300px;
   padding-right: 200px;
@@ -387,4 +391,12 @@
 
 .Finances_Form_Inputs {
   color: #ffffff;
+}
+
+.ant-input {
+  color: white;
+}
+
+.Finances_Form_Amount {
+  margin-left: 20px;
 }
