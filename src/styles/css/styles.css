@@ -136,6 +136,25 @@
   text-align: left;
   max-width: 30rem; 
 }
+.editButtonsContainer {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+.editButtonsContainer > .ant-btn-primary {
+  border: 3px solid #007fd4;
+  padding-left: 52px;
+  padding-right: 52px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.editButtonsContainer > .ant-btn-primary:hover {
+  border: 3px solid #cdcdcd;
+}
 .CaseDetailsLabel {
   color: #ffffff;
 }

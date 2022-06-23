@@ -55,6 +55,7 @@ const HouseholdInformationForm = props => {
   const onFinishFailed = errorInfo => {
     console.log('Failed:', errorInfo);
   };
+
   const disableFormItem = () => {
     setDisabled(!disabled);
   };
@@ -591,31 +592,33 @@ const HouseholdInformationForm = props => {
           </Form.Item>
         </section>
         <section className="CaseSubmit">
-          {/* <Button
-            htmlType="submit"
-            disabled={disabled}
-            style={{
-              margin: '1rem',
-              color: '#CDCDCD',
-              background: '#007FD4',
-              borderColor: '#007FD4',
-            }}
-            type="primary"
-          >
-            Save Changes
-          </Button>
-          <Button
-            onClick={disableFormItem}
-            style={{
-              margin: '1rem',
-              color: '#CDCDCD',
-              background: '#007FD4',
-              borderColor: '#007FD4',
-            }}
-            type="primary"
-          >
-            Edit
-          </Button> */}
+          <div className="editButtonsContainer">
+            <Button
+              htmlType="submit"
+              disabled={disabled}
+              style={{
+                margin: '1rem',
+                color: '#CDCDCD',
+                background: '#007FD4',
+                borderWidth: '3px',
+              }}
+              type="primary"
+            >
+              SAVE
+            </Button>
+            <Button
+              onClick={disableFormItem}
+              style={{
+                margin: '1rem',
+                color: '#CDCDCD',
+                background: '#007FD4',
+                borderWidth: '3px',
+              }}
+              type="primary"
+            >
+              EDIT
+            </Button>
+          </div>
         </section>
       </Form>
     </div>
