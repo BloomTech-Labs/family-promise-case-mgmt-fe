@@ -450,18 +450,20 @@
 }
 /* RecentCases Styling Component */
 .RecentCases{
-  background-color: #131313;
+  font-size: larger;
+  background-color: #131313;;
 }
 .TableData {
   display: flex;
   flex-direction: column;
-  width: 750px;
-  height:800px; 
-  margin: 40px 0px 206px 106px;
+  width: 950px;
+  height:1000px; 
+  margin: 40px 0px 206px 100px;
   background-color: #101010; 
 }
 .CasesTitle{
-  margin-left: 278px;
+  font-size: 40px;
+  margin-left: 360px;
   margin-top: 40px ;
   color: #d2d2d7;
 }
@@ -473,11 +475,12 @@
 .ant-table-thead > tr > th {
   color: #007fd4;
   background-color: #484848;
-  border-bottom: 5px solid #101010;
+  border-bottom: 8px solid #101010;
 }
 /* targeting border the table body */
 .ant-table-tbody > tr > td {
-  border-bottom: 5px solid #101010;
+  border-bottom:8px solid #101010;
+  height:74px;
 }
 /* targeting the background of the inner columns, top of the table */
 .ant-table-thead th.ant-table-column-sort {
@@ -497,8 +500,8 @@ td.ant-table-column-sort {
   background-color: #101010;
 }
 .ActivityTitle{
-  margin-left: 398px;
-  margin-top: 40px ;
+  font-size: 40px;
+  margin: 68px 0px 20px 450px;
   color: #d2d2d7;
 }
 /* Targeting the card body of RecentActivity Component */
@@ -520,7 +523,9 @@ td.ant-table-column-sort {
 .CardDiv {
   margin-left:119px;
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: 48ch auto;
+  row-gap:20px;
+  grid-auto-columns: 20px;
 }
 .CardHeader{
   color:#c4c4c4;
@@ -540,4 +545,3 @@ td.ant-table-column-sort {
 .ant-card-meta-avatar{
   margin-top: 15px;
 }
-
