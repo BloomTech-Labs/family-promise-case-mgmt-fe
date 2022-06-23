@@ -3,7 +3,6 @@ import { Avatar, Card, Button } from 'antd';
 import Vector from '../../assets/Vector.png';
 
 const { Meta } = Card;
-console.log({ Meta });
 
 const recentCases = [
   {
