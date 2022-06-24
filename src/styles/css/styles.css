@@ -448,7 +448,6 @@
 .Rightside__PreviousNotes p {
   color: #cdcdcd;
 }
-/* RecentCases Styling Component */
 .RecentCases{
   font-size: larger;
   background-color: #131313;;
@@ -467,26 +466,21 @@
   margin-top: 40px ;
   color: #d2d2d7;
 }
-/* targeting the titles of the 1st and last column */
 .ant-table-column-title {
   color:#007fd4;
 }
-/* targeting the titles of the inner columns */
 .ant-table-thead > tr > th {
   color: #007fd4;
   background-color: #484848;
   border-bottom: 8px solid #101010;
 }
-/* targeting border the table body */
 .ant-table-tbody > tr > td {
   border-bottom:8px solid #101010;
   height:74px;
 }
-/* targeting the background of the inner columns, top of the table */
 .ant-table-thead th.ant-table-column-sort {
   background-color: #484848;
 }
-/* targeting background color of the table header and table body */
 .ant-table-cell {
   background-color: #706f6f;
   color:#cdcdcd;
@@ -504,7 +498,6 @@ td.ant-table-column-sort {
   margin: 68px 0px 20px 450px;
   color: #d2d2d7;
 }
-/* Targeting the card body of RecentActivity Component */
 .ant-card-body {
   background-color: #262626;
   border-radius: 50px 10px;

@@ -5,7 +5,7 @@ import { Table } from 'antd';
 
 const sorterString = (a, b) => a.localeCompare(b);
 const columns = [
-  //adding info for each column
+  //adding columns array with data for each column
   {
     title: 'CASE ID',
     dataIndex: 'caseId',
