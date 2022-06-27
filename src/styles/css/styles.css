@@ -567,3 +567,93 @@
 .Rightside__PreviousNotes p {
   color: #cdcdcd;
 }
+.RecentCases {
+  font-size: larger;
+  background-color: #131313;
+}
+.TableData {
+  display: flex;
+  flex-direction: column;
+  width: 950px;
+  height: 1000px;
+  margin: 40px 0px 206px 100px;
+  background-color: #101010;
+}
+.CasesTitle {
+  font-size: 40px;
+  margin-left: 360px;
+  margin-top: 40px;
+  color: #d2d2d7;
+}
+.ant-table-column-title {
+  color: #007fd4;
+}
+.ant-table-thead > tr > th {
+  color: #007fd4;
+  background-color: #484848;
+  border-bottom: 8px solid #101010;
+}
+.ant-table-tbody > tr > td {
+  border-bottom: 8px solid #101010;
+  height: 74px;
+}
+.ant-table-thead th.ant-table-column-sort {
+  background-color: #484848;
+}
+.ant-table-cell {
+  background-color: #706f6f;
+  color:#cdcdcd;
+}
+td.ant-table-column-sort {
+  background-color: #706f6f;
+}
+.column {
+  display: flex;
+  flex-direction: row;
+  background-color: #101010;
+}
+.ActivityTitle {
+  font-size: 40px;
+  margin: 68px 0px 20px 450px;
+  color: #d2d2d7;
+}
+.ant-card-body {
+  background-color: #262626;
+  border-radius: 50px 10px;
+  width: 400px;
+}
+.ant-card-bordered {
+  background-color: #101010;
+  border: 1px solid #101010;
+}
+.ant-card-meta-title {
+  color: #c4c4c4;
+}
+.ant-card-meta-description {
+  color: #c4c4c4;
+}
+.CardDiv {
+  margin-left: 119px;
+  display: grid;
+  grid-template-columns: 48ch auto;
+  row-gap: 20px;
+  grid-auto-columns: 20px;
+}
+.CardHeader {
+  color: #c4c4c4;
+  display: flex;
+  flex-direction: row;
+  align-content: flex-start;
+  justify-content: space-between;
+}
+.ant-btn-primary {
+  border-radius: 25px;
+  margin: 1px;
+}
+.VectorArrow {
+  width: 23px;
+  height: 23px;
+}
+.ant-card-meta-avatar {
+  margin-top: 15px;
+}
