@@ -25,6 +25,7 @@ import { LayoutTemplate } from './components/pages/LayoutTemplate';
 import { CaseDetails } from './components/pages/CaseDetails';
 import { Calendar } from './components/pages/Calendar';
 
+import { RecentCases } from './components/pages/RecentCases';
 import DashHeader from './components/common/DashHeader';
 
 import './styles/css/styles.css';
@@ -67,6 +68,7 @@ function App() {
         <SecureRoute path="/" exact />
         <SecureRoute path="/dashheader" component={DashHeader} />
         <SecureRoute path="/calendar" component={Calendar} />
+        <SecureRoute path="/recent-cases" component={RecentCases} />
         <Route component={NotFoundPage} />
       </Switch>
     </Security>
