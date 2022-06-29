@@ -130,7 +130,7 @@ const Finances = () => {
 
           <section>
             <div className="Finances_Form_Container_Styles">
-              <Form.Item>
+              <Form.Item className="Finances_Form_Container_Styles_Subsection1">
                 <label className="Finances_Form_Label">
                   Sources of income:
                 </label>
@@ -154,14 +154,20 @@ const Finances = () => {
                     <label>SSDI</label>
                   </Checkbox>
                 </Form.Item>
-                <Form.Item>
-                  <Checkbox value="childSupport">
-                    <label>SSDI</label>
-                  </Checkbox>
-                </Form.Item>
-                <Form.Item label={<label>Amount</label>}>
-                  <Input placeholder="$0" name="Amount" />
-                </Form.Item>
+
+                <div className="Finances_Form_Amount_Container">
+                  <Form.Item
+                 
+                      label="Amount::"
+                      className="Finances_Form_Amount_Label">
+                <Input
+                      placeholder="$0"
+                      name="Amount"
+                      className="Finances_Form_Amount_Input"
+            
+                    />
+               </Form.Item>
+                </div>
               </Form.Item>
             </div>
           </section>
@@ -181,21 +187,37 @@ const Finances = () => {
                     <label>Student Loan</label>
                   </Checkbox>
                 </Form.Item>
-                <Form.Item
-                  label={<label className="Finances_Form_Amount">Amount</label>}
-                >
-                  <Input placeholder="$0" name="Amount" />
-                </Form.Item>
+                <div className="Finances_Form_Amount_Container">
+                  <Form.Item
+                 
+                      label="Amount::"
+                      className="Finances_Form_Amount_Label">
+                <Input
+                      placeholder="$0"
+                      name="Amount"
+                      className="Finances_Form_Amount_Input"
+            
+                    />
+               </Form.Item>
+                </div>
                 <Form.Item>
                   <Checkbox value="medicalBills">
                     <label>Medical Bills</label>
                   </Checkbox>
                 </Form.Item>
-                <Form.Item
-                  label={<label className="Finances_Form_Amount">Amount</label>}
-                >
-                  <Input placeholder="$0" name="Amount" />
-                </Form.Item>
+                <div className="Finances_Form_Amount_Container">
+                  <Form.Item
+                 
+                      label="Amount::"
+                      className="Finances_Form_Amount_Label">
+                <Input
+                      placeholder="$0"
+                      name="Amount"
+                      className="Finances_Form_Amount_Input"
+            
+                    />
+               </Form.Item>
+                </div>
               </Form.Item>
             </div>
           </section>
@@ -208,25 +230,40 @@ const Finances = () => {
                     <label>Credit Card</label>
                   </Checkbox>
                 </Form.Item>
-                <Form.Item
-                  label={<label className="Finances_Form_Amount">Amount</label>}
-                >
-                  <Input placeholder="$0" name="Amount" />
-                </Form.Item>
+                <div className="Finances_Form_Amount_Container">
+                  <Form.Item
+                 
+                      label="Amount::"
+                      className="Finances_Form_Amount_Label">
+                <Input
+                      placeholder="$0"
+                      name="Amount"
+                    />
+               </Form.Item>
+                </div>
 
                 <Form.Item>
                   <Checkbox value="autoLoan">
                     <label>Auto Loan</label>
                   </Checkbox>
                 </Form.Item>
-                <Form.Item
-                  label={<label className="Finances_Form_Amount">Amount</label>}
-                >
-                  <Input placeholder="$0" name="Amount" />
-                </Form.Item>
+                <div className="Finances_Form_Amount_Container">
+                  <Form.Item
+                 
+                      label="Amount::"
+                      className="Finances_Form_Amount_Label">
+                <Input
+                      placeholder="$0"
+                      name="Amount"
+                      className="Finances_Form_Amount_Input"
+            
+                    />
+               </Form.Item>
+                </div>
               </Form.Item>
             </div>
           </section>
+        
         </div>
       </Form>
     </div>

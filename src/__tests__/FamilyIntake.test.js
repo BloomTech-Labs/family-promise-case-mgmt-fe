@@ -16,21 +16,19 @@ Object.defineProperty(window, 'matchMedia', {
     removeEventListener: jest.fn(),
     dispatchEvent: jest.fn(),
   })),
-  
 });
 
 describe('<FamilyIntake/> test suite ', () => {
-  
   afterEach(() => {
     jest.clearAllMocks();
   });
 
   test('Sanity Check: renders without error', () => {
-    render(<FamilyIntake/>);
+    render(<FamilyIntake />);
   });
 
   test('All inputs reflect the value the user has typed', () => {
-    render(<FamilyIntake/>);
+    render(<FamilyIntake />);
     const inputs = screen.queryAllByRole('textbox');
     inputs.forEach(testField => {
       userEvent.type(testField, 'Hello, this is a test');
