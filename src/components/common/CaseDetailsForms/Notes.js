@@ -23,7 +23,7 @@ export const initialFormValuesArchived = {
   archived: true,
 };
 
-export const Notes = () => {
+const Notes = () => {
   const [archived, setArchived] = useState(false);
 
   const showArchive = () => {
@@ -83,3 +83,5 @@ export const Notes = () => {
     </div>
   );
 };
+
+export default Notes;

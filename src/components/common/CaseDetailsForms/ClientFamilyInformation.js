@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   Form,
   Select,
@@ -31,6 +31,21 @@ const initialFormValues = {
 
 const ClientFamilyInfoForm = () => {
   const [form] = Form.useForm();
+  const [disabled, setDisabled] = useState(true);
+
+  const onFinish = values => {
+    const updatedHousehold = values;
+    console.log(updatedHousehold);
+    setDisabled(!disabled);
+  };
+
+  const onFinishFailed = errorInfo => {
+    console.log('Failed:', errorInfo);
+  };
+
+  const disableFormItem = () => {
+    setDisabled(!disabled);
+  };
 
   const dateFormat = 'MM/DD/YYYY';
 
@@ -39,6 +54,8 @@ const ClientFamilyInfoForm = () => {
       <Form
         form={form}
         className="ClientFamilyInformation__Form"
+        onFinish={onFinish}
+        onFinishFailed={onFinishFailed}
         initialValues={initialFormValues}
         layout="vertical"
         labelCol={{ span: 8 }}
@@ -53,7 +70,11 @@ const ClientFamilyInfoForm = () => {
             </label>
           }
         >
-          <DatePicker placeholder="MM-DD-YYYY" format={dateFormat} />
+          <DatePicker
+            placeholder="MM-DD-YYYY"
+            format={dateFormat}
+            disabled={disabled}
+          />
         </Form.Item>
         <h1 className="ClientFamilyInformation__Form__h1">Head of Household</h1>
         <div className="ClientFamilyInformation__Form__SectionGrid2">
@@ -68,6 +89,7 @@ const ClientFamilyInfoForm = () => {
               <Input
                 placeholder="First Name"
                 className="ClientFamilyInformation__Form__Inputs"
+                disabled={disabled}
               />
             </Form.Item>
             <Form.Item
@@ -81,6 +103,7 @@ const ClientFamilyInfoForm = () => {
                 placeholder="XXX - XXX - XXXX"
                 className="ClientFamilyInformation__Form__Inputs"
                 name="SSN"
+                disabled={disabled}
               />
             </Form.Item>
             <Form.Item
@@ -93,6 +116,7 @@ const ClientFamilyInfoForm = () => {
               <Select
                 className="ClientFamilyInformation__Form__Inputs"
                 placeholder="-- Select --"
+                disabled={disabled}
               >
                 <Select.Option value="American Indian or Alaska Native" />
                 <Select.Option value="Asian" />
@@ -114,6 +138,7 @@ const ClientFamilyInfoForm = () => {
               <Select
                 className="ClientFamilyInformation__Form__Inputs"
                 placeholder="-- Select --"
+                disabled={disabled}
               >
                 <Select.Option value="Male" />
                 <Select.Option value="Female" />
@@ -133,6 +158,7 @@ const ClientFamilyInfoForm = () => {
               <Input
                 placeholder="Self Describe"
                 className="ClientFamilyInformation__Form__Inputs"
+                disabled={disabled}
               />
             </Form.Item>
           </section>
@@ -147,6 +173,7 @@ const ClientFamilyInfoForm = () => {
               <Input
                 placeholder="Last Name"
                 className="ClientFamilyInformation__Form__Inputs"
+                disabled={disabled}
               />
             </Form.Item>
             <Form.Item
@@ -156,7 +183,11 @@ const ClientFamilyInfoForm = () => {
                 </label>
               }
             >
-              <DatePicker placeholder="MM-DD-YYYY" format={dateFormat} />
+              <DatePicker
+                placeholder="MM-DD-YYYY"
+                format={dateFormat}
+                disabled={disabled}
+              />
             </Form.Item>
             <Form.Item
               label={
@@ -168,6 +199,7 @@ const ClientFamilyInfoForm = () => {
               <Select
                 className="ClientFamilyInformation__Form__Inputs"
                 placeholder="-- Select --"
+                disabled={disabled}
               >
                 <Select.Option value="American Indian or Alaska Native" />
                 <Select.Option value="Asian" />
@@ -186,6 +218,7 @@ const ClientFamilyInfoForm = () => {
               <Select
                 className="ClientFamilyInformation__Form__Inputs"
                 placeholder="-- Select --"
+                disabled={disabled}
               >
                 <Select.Option value="Asexual" />
                 <Select.Option value="Bisexual" />
@@ -209,6 +242,7 @@ const ClientFamilyInfoForm = () => {
               <Input
                 placeholder="Other"
                 className="ClientFamilyInformation__Inputs"
+                disabled={disabled}
               />
             </Form.Item>
           </section>
@@ -229,6 +263,7 @@ const ClientFamilyInfoForm = () => {
               <Input
                 placeholder="Address"
                 className="ClientFamilyInformation__Form__Inputs"
+                disabled={disabled}
               />
             </Form.Item>
             <Form.Item
@@ -241,34 +276,40 @@ const ClientFamilyInfoForm = () => {
               <Input
                 placeholder="Apt #"
                 className="ClientFamilyInformation__Form__Inputs"
+                disabled={disabled}
               />
             </Form.Item>
           </section>
           <section className="ClientFamilyInformation__Form__SectionGrid3">
-            <Form.Item
-              label={
-                <label className="ClientFamilyInformation__Inputs__ItemLabel__Small">
-                  City:
-                </label>
-              }
-            >
-              <Input
-                placeholder="City Name"
-                className="ClientFamilyInformation__Form__Inputs"
-              />
-            </Form.Item>
-            <Form.Item
-              label={
-                <label className="ClientFamilyInformation__Inputs__ItemLabel__Small">
-                  State:
-                </label>
-              }
-            >
-              <Input
-                placeholder="State Abbrv."
-                className="ClientFamilyInformation__Form__SmallInputs"
-              />
-            </Form.Item>
+            <div className="CityandState__Container">
+              <Form.Item
+                label={
+                  <label className="ClientFamilyInformation__Inputs__ItemLabel__Small">
+                    City:
+                  </label>
+                }
+              >
+                <Input
+                  placeholder="City Name"
+                  className="ClientFamilyInformation__Form__Inputs"
+                  disabled={disabled}
+                />
+              </Form.Item>
+              <Form.Item
+                label={
+                  <label className="ClientFamilyInformation__Inputs__ItemLabel__Small StateMargin">
+                    State:
+                  </label>
+                }
+              >
+                <Input
+                  placeholder="State Abbrv."
+                  className="ClientFamilyInformation__Form__SmallInputs StateMargin"
+                  style={{ width: 335 }}
+                  disabled={disabled}
+                />
+              </Form.Item>
+            </div>
             <Form.Item
               label={
                 <label className="ClientFamilyInformation__Inputs__ItemLabel__Small">
@@ -279,6 +320,7 @@ const ClientFamilyInfoForm = () => {
               <InputNumber
                 placeholder="Zip Code"
                 className="ClientFamilyInformation__Form__SmallInputs"
+                disabled={disabled}
               />
             </Form.Item>
           </section>
@@ -291,8 +333,12 @@ const ClientFamilyInfoForm = () => {
               }
             >
               <Radio.Group>
-                <Radio value={1}>Yes</Radio>
-                <Radio value={2}>No</Radio>
+                <Radio value={1} disabled={disabled}>
+                  Yes
+                </Radio>
+                <Radio value={2} disabled={disabled}>
+                  No
+                </Radio>
               </Radio.Group>
             </Form.Item>
           </section>
@@ -310,6 +356,7 @@ const ClientFamilyInfoForm = () => {
                 borderColor: '#007FD4',
               }}
               type="primary"
+              disabled={disabled}
             >
               + Add Member
             </Button>
@@ -327,8 +374,12 @@ const ClientFamilyInfoForm = () => {
                 }
               >
                 <Radio.Group>
-                  <Radio value={1}>Yes</Radio>
-                  <Radio value={2}>No</Radio>
+                  <Radio value={1} disabled={disabled}>
+                    Yes
+                  </Radio>
+                  <Radio value={2} disabled={disabled}>
+                    No
+                  </Radio>
                 </Radio.Group>
               </Form.Item>
               <Form.Item
@@ -339,21 +390,57 @@ const ClientFamilyInfoForm = () => {
                   </label>
                 }
               >
-                <DatePicker placeholder="MM-DD-YYYY" format={dateFormat} />
+                <DatePicker
+                  placeholder="MM-DD-YYYY"
+                  format={dateFormat}
+                  disabled={disabled}
+                />
               </Form.Item>
             </div>
-            <Form.Item
-              label={
-                <label className="ClientFamilyInformation__Inputs__ItemLabel">
-                  Which Family Member?
-                </label>
-              }
-            >
-              <Input
-                className="ClientFamilyInformation__Form__Inputs"
-                placeholder="Spouse, Domestic Partner, Child, Etc..."
-              />
-            </Form.Item>
+            <div className="pregnantFamilyMember__Container">
+              <Form.Item
+                label={
+                  <label className="ClientFamilyInformation__Inputs__ItemLabel">
+                    Which Family Member?
+                  </label>
+                }
+              >
+                <Input
+                  className="ClientFamilyInformation__Form__Inputs"
+                  placeholder="Spouse, Domestic Partner, Child, Etc..."
+                  disabled={disabled}
+                />
+              </Form.Item>
+            </div>
+          </section>
+          <section>
+            <div className="editButtonsContainer">
+              <Button
+                htmlType="submit"
+                disabled={disabled}
+                style={{
+                  margin: '1rem',
+                  color: '#CDCDCD',
+                  background: '#007FD4',
+                  borderWidth: '3px',
+                }}
+                type="primary"
+              >
+                SAVE
+              </Button>
+              <Button
+                onClick={disableFormItem}
+                style={{
+                  margin: '1rem',
+                  color: '#CDCDCD',
+                  background: '#007FD4',
+                  borderWidth: '3px',
+                }}
+                type="primary"
+              >
+                EDIT
+              </Button>
+            </div>
           </section>
         </div>
       </Form>

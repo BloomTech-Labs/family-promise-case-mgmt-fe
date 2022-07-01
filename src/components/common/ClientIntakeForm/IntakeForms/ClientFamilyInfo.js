@@ -16,48 +16,48 @@ import ChildFamilyMember from './FamilyMembers/ChildFamilyMember';
 const ClientFamilyInfo = () => {
   //Inline styles added temporarily
 
-  const subsectionContainer = {
-    border: 'solid 1px #6e6e6e',
-  };
-  const subsectionHeader = {
-    textAlign: 'center',
-    marginBottom: '50px',
-    backgroundColor: 'whiteSmoke',
-    color: '#101010',
-    padding: '20px',
-  };
-  const inputStyles = {
-    width: '20rem',
-  };
+  // const subsectionContainer = {
+  //   border: 'solid 1px #6e6e6e',
+  // };
+  // const subsectionHeader = {
+  //   textAlign: 'center',
+  //   marginBottom: '50px',
+  //   backgroundColor: 'whiteSmoke',
+  //   color: '#101010',
+  //   padding: '20px',
+  // };
+  // const inputStyles = {
+  //   width: '20rem',
+  // };
 
-  const inputStylesShort = {
-    width: '7rem',
-  };
+  // const inputStylesShort = {
+  //   width: '7rem',
+  // };
 
-  const formStyles = {
-    display: 'flex',
-    justifyContent: 'center',
-  };
+  // const formStyles = {
+  //   display: 'flex',
+  //   justifyContent: 'center',
+  // };
 
-  const sectionLeft = {
-    margin: '20px',
-  };
+  // const sectionLeft = {
+  //   margin: '20px',
+  // };
 
-  const sectionRight = {
-    margin: '20px',
-  };
+  // const sectionRight = {
+  //   margin: '20px',
+  // };
 
-  const shortInputContainer = {
-    display: 'flex',
-    justifyContent: 'space-between',
-    margin: '0 10px',
-  };
+  // const shortInputContainer = {
+  //   display: 'flex',
+  //   justifyContent: 'space-between',
+  //   margin: '0 10px',
+  // };
 
-  const checkboxStyles = {
-    display: 'flex',
-    flexDirection: 'column',
-    flexWrap: 'wrap',
-  };
+  // const checkboxStyles = {
+  //   display: 'flex',
+  //   flexDirection: 'column',
+  //   flexWrap: 'wrap',
+  // };
   const { TextArea } = Input;
 
   const historyOptions = [
@@ -67,7 +67,7 @@ const ClientFamilyInfo = () => {
     { label: 'Substance Dependence', value: 'substanceDependence' },
   ];
   return (
-    <div style={subsectionContainer}>
+    <div className="subsectionContainer">
       {/* 
         Note:
         The Form's states and props are encapsulated in the form component using antd's Form or Form.Item. Only a name prop needs to be provided. The data is stored in an object with each form item being a key-value pair. 
@@ -76,21 +76,26 @@ const ClientFamilyInfo = () => {
       
       */}
 
-      <h2 style={subsectionHeader}>Client/Family Information</h2>
+      <h2 className="subsectionHeader">Client/Family Information</h2>
 
       <Divider>Head of Household</Divider>
-      <div className="hohContainer" style={formStyles}>
-        <section style={sectionLeft}>
-          <Form.Item label="First Name" name="hohFirstName" initialValue="">
-            <Input placeholder="First Name" style={inputStyles} />
+      <div className="hohContainer formStyles">
+        <section className="sectionLeft">
+          <Form.Item
+            label="First Name"
+            name="hohFirstName"
+            style={{ color: 'red' }}
+            initialValue=""
+          >
+            <Input placeholder="First Name" className="inputStyles" />
           </Form.Item>
 
           <Form.Item label="SSN" name="hohSSN" initialValue="">
-            <Input placeholder="XXX-XX-XXXX" style={inputStyles} />
+            <Input placeholder="XXX-XX-XXXX" className="inputStyles" />
           </Form.Item>
 
           <Form.Item label="Ethnicity" name="hohEthnicity" initialValue="">
-            <Select style={inputStyles} placeholder="-- Select --">
+            <Select className="inputStyles" placeholder="-- Select --">
               <Select.Option value="American Indian or Alaska Native" />
               <Select.Option value="Asian" />
               <Select.Option value="Black or African American" />
@@ -107,7 +112,7 @@ const ClientFamilyInfo = () => {
             name="hohSexualOrientaion"
             initialValue=""
           >
-            <Select style={inputStyles} placeholder="-- Select --">
+            <Select className="inputStyles" placeholder="-- Select --">
               <Select.Option value="Asexual" />
               <Select.Option value="Bisexual" />
               <Select.Option value="Gay" />
@@ -121,7 +126,7 @@ const ClientFamilyInfo = () => {
           </Form.Item>
 
           <Form.Item label="If Other" name="hohOther" initialValue="">
-            <TextArea placeholder="Other" style={inputStyles} />
+            <TextArea placeholder="Other" className="inputStyles" />
           </Form.Item>
 
           <Form.Item label="Veteran?" name="hohVeteran" initialValue="">
@@ -147,13 +152,16 @@ const ClientFamilyInfo = () => {
             name="hohDisabilities"
             initialValue=""
           >
-            <TextArea placeholder="Describe Disabilities" style={inputStyles} />
+            <TextArea
+              placeholder="Describe Disabilities"
+              className="inputStyles"
+            />
           </Form.Item>
         </section>
 
-        <section style={sectionRight}>
+        <section className="sectionRight">
           <Form.Item label="Last Name" name="hohLastName" initialValue="">
-            <Input placeholder="Last Name" style={inputStyles} />
+            <Input placeholder="Last Name" className="inputStyles" />
           </Form.Item>
 
           <Form.Item label="DOB" name="hohDOB" initialValue="">
@@ -161,7 +169,7 @@ const ClientFamilyInfo = () => {
           </Form.Item>
 
           <Form.Item label="Race" name="hohRace" initialValue="">
-            <Select style={inputStyles} placeholder="-- Select --">
+            <Select className="inputStyles" placeholder="-- Select --">
               <Select.Option value="American Indian or Alaska Native" />
               <Select.Option value="Asian" />
               <Select.Option value="Black or African American" />
@@ -171,7 +179,7 @@ const ClientFamilyInfo = () => {
           </Form.Item>
 
           <Form.Item label="Gender" name="hohGender" initialValue="">
-            <Select style={inputStyles} placeholder="-- Select --">
+            <Select className="inputStyles" placeholder="-- Select --">
               <Select.Option value="Male" />
               <Select.Option value="Female" />
               <Select.Option value="Transgender Male" />
@@ -186,7 +194,7 @@ const ClientFamilyInfo = () => {
             name="hohSelfDescribe"
             initialValue=""
           >
-            <TextArea placeholder="Self-Describe" style={inputStyles} />
+            <TextArea placeholder="Self-Describe" className="inputStyles" />
           </Form.Item>
 
           <Form.Item label="Pregnant?" name="hohPregnant" initialValue="">
@@ -209,34 +217,37 @@ const ClientFamilyInfo = () => {
             name="hohHistory"
             initialValue=""
           >
-            <Checkbox.Group options={historyOptions} style={checkboxStyles} />
+            <Checkbox.Group
+              options={historyOptions}
+              className="checkboxStyles"
+            />
           </Form.Item>
         </section>
       </div>
 
       <Divider>Last Known Address</Divider>
-      <div style={formStyles}>
-        <section style={sectionLeft}>
+      <div className="hohContainer formStyles">
+        <section className="sectionLeft">
           <Form.Item label="Address 1" name="address1" initialValue="">
-            <Input placeholder="123 Somewhere Rd." style={inputStyles} />
+            <Input placeholder="123 Somewhere Rd." className="inputStyles" />
           </Form.Item>
           <Form.Item label="City" name="city" initialValue="">
-            <Input placeholder="City Name" style={inputStyles} />
+            <Input placeholder="City Name" className="inputStyles" />
           </Form.Item>
         </section>
 
-        <section style={sectionRight}>
+        <section className="sectionRight">
           <Form.Item label="Address 2" name="address2" initialValue="">
-            <Input placeholder="Apt. #" style={inputStyles} />
+            <Input placeholder="Apt. #" className="inputStyles" />
           </Form.Item>
 
-          <section style={shortInputContainer}>
+          <section className="shortInputContainer">
             <Form.Item label="State" name="state" initialValue="">
-              <Input placeholder="State Abbrv." style={inputStylesShort} />
+              <Input placeholder="State Abbrv." className="inputStylesShort" />
             </Form.Item>
 
             <Form.Item label="Zip" name="zip" initialValue="">
-              <Input placeholder="Zip Code" style={inputStylesShort} />
+              <Input placeholder="Zip Code" className="inputStylesShort" />
             </Form.Item>
           </section>
         </section>

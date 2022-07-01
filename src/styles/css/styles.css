@@ -27,7 +27,7 @@
   height: 8%;
 }
 .RenderLayoutTemplate .Layout .Content {
-  padding: 0 50px;
+  padding: 10 50px;
 }
 .RenderLayoutTemplate .Layout .Content__Container {
   height: 90%;
@@ -64,18 +64,21 @@
 
 .HouseholdInformationDetails__Container {
   color: #ffffff;
+  margin-left: 1.5rem;
 }
 .HouseholdInformationDetails__Form {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 5px;
-  grid-auto-flow: row dense;
-  padding-top: 2rem;
-  width: 80%;
-  padding: 2rem;
-  margin: 0 12rem;
-  background: #3f3f3f;
-  color: #ffffff;
+  background: #007fd4;
+}
+.LengthTimeHomelessCase {
+  width: 100%;
+}
+.CircumstancesContainer {
+  display: flex;
+  flex-flow: row wrap;
+  width: 90%;
+}
+.CircumstancesCheckboxes {
+  margin-left: 1.5rem;
 }
 .HouseholdInformationDetails__Form__Circumstances {
   grid-row: 1 / span 2;
@@ -93,14 +96,73 @@
 .HouseholdInformationDetails__Form__h4 {
   color: #cdcdcd;
 }
+.CPSInvolvement > .ant-form-item {
+  display: flex;
+  flex-flow: column nowrap;
+}
+.CPSInvolvement > .ant-form-item > .ant-col-8 {
+  max-width: 30rem;
+  text-align: left;
+}
+.HomelessTime__SingleContainer > .ant-row {
+  display: flex;
+  flex-flow: column nowrap;
+}
+.HomelessTime__SingleContainer > .ant-row > .ant-col-8 {
+  max-width: 30rem;
+}
+.HomelessTime__Margin {
+  margin-left: 0rem;
+}
+.HomelessTime__SingleContainer > .ant-row > .ant-form-item-label {
+  text-align: left;
+  width: 35rem;
+}
 .HouseholdInformationDetails__Form__p {
   color: #cdcdcd;
+}
+.HouseholdInformationDetails__Form__PrevLivSit > .ant-row {
+  display: flex;
+  flex-flow: column nowrap;
+}
+.HouseholdInformationDetails__Form__PrevLivSit > .ant-row > .ant-col-8 {
+  text-align: left;
+}
+.HouseholdInformationDetails__Form__SocialWorker > .ant-row {
+  display: flex;
+  flex-flow: column nowrap;
+}
+.HouseholdInformationDetails__Form__SocialWorker > .ant-row > .ant-col-8 {
+  text-align: left;
+  max-width: 30rem; 
+}
+.editButtonsContainer {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+.editButtonsContainer > .ant-btn-primary {
+  border: 3px solid #007fd4;
+  padding-left: 52px;
+  padding-right: 52px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.editButtonsContainer > .ant-btn-primary:hover {
+  border: 3px solid #cdcdcd;
 }
 .CaseDetailsLabel {
   color: #ffffff;
 }
 .CaseDetailsLabel__Disabled {
   color: #cdcdcd;
+}
+.YearsMargin {
+  margin-left: 0.95rem;
 }
 .ant-form-item-label {
   color: #ffffff;
@@ -135,60 +197,74 @@
   border-color: #007fd4;
 }
 .ClientFamilyInformation__Form {
-  grid-template-columns: repeat(2, 1fr);
-  gap: 5px;
-  grid-auto-flow: row dense;
-  background: #3f3f3f;
-  color: #ffffff;
+  background: #007fd4;
 }
 .ClientFamilyInformation__Form__InitialDate {
-  margin: 0 0 2rem 62rem;
-  padding-top: 2rem;
+  color: #D2D2D7;
+  margin-left: 1.2rem;
 }
 .ClientFamilyInformation__Form__h1 {
-  color: #cdcdcd;
-  text-align: center;
+  color: #D2D2D7;
+  margin-left: 1.25rem;
 }
 .ClientFamilyInformation__Form__SectionGrid2 {
+  color: #D2D2D7;
   display: flex;
-  justify-content: space-evenly;
-}
-.ClientFamilyInformation__Form__SectionGrid3 {
-  display: flex;
+  flex-flow: row nowrap;
   justify-content: space-around;
 }
+.ClientFamilyInformation__Form__SectionGrid3 {
+  color: #D2D2D7;
+  width: 90%;
+  margin-left: 1.2rem;
+}
 .ClientFamilyInformation__Form__SmallInputs {
-  width: 7rem;
+  color: #D2D2D7;
 }
 .ClientFamilyInformation__Form__SectionGrid1 {
-  grid-row: 1 / span 2;
+  color: #D2D2D7;
+  width: 45%;
+}
+.ant-col-8 {
+  max-width: 20rem;
+  flex: 10;
+}
+.ClientFamilyInformation__Form__Inputs {
+  width: 21rem;
+}
+.CityandState__Container {
+  display: flex;
+  flex-flow: row nowrap;
+}
+.StateMargin {
+  margin-left: 2.2rem;
 }
 .ClientFamilyInformation__Form__VeteranStatus {
-  display: flex;
-  flex-direction: row-reverse;
-  margin: 0rem 11rem;
+  color: #D2D2D7;
+  margin-left: 1.25rem;
 }
 .ClientFamilyInformation__Form__FamilyMembers__Container {
-  display: flex;
-  justify-content: space-between;
-  margin: 0rem 6rem;
+  color: #D2D2D7;
 }
 .ClientFamilyInformation__Form__FamilyMembers__formItem {
-  display: flow-root;
+  color: #D2D2D7;
 }
 .ClientFamilyInformation__Form__FamilyMembers__IsPregnant {
-  display: flex;
+  color: #D2D2D7;
+  margin-left: 1.25rem;
 }
-.ClientFamilyInformation__Inputs {
-  width: 20rem;
+.pregnantFamilyMember__Container {
+  margin-left: 1.25rem;
+}
+.ClientFamilyInformation__Inputs > .ant-input {
+  background-color: #ffffff;
 }
 .ClientFamilyInformation__Inputs__ItemLabel {
-  color: #ffffff;
-  width: 25vw;
+  color: #D2D2D7;
 }
 .ClientFamilyInformation__Inputs__ItemLabel__Small {
-  color: #ffffff;
-  width: 100%;
+  color: #D2D2D7;
+  width: 10rem;
 }
 .ant-btn-primary {
   margin: 1rem;
@@ -253,7 +329,48 @@
   color: #cdcdcd;
 }
 
+
 /*styles for feature/Finance-component*/
+
+.DashHeader {
+  background-color: #101010;
+  display: flex;
+  justify-content: space-between;
+}
+.DashHeader__logo {
+  height: 100px;
+  width: 409px;
+  margin-left:80px;
+}
+.Placeholder_ProfileLogo{
+  width: 55px;
+  height: 52px;
+  margin-top: 23px;
+  margin-right:65px;
+}
+.DashHeader_Menu {
+  height: 1830px;
+  width: 40%;
+  display: flex;
+  justify-content: space-around;
+  background-color: #242424;
+}
+
+.ant-menu.ant-menu-dark  {
+  background-color: #262626;
+  height:70px
+}
+.ant-menu-dark.ant-menu-horizontal {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  padding-right: 120px;
+}
+
+.subsectionContainer {
+  border: solid 1px #6e6e6e;
+  background: #101010;
+}
 
 .subsectionHeader {
   text-align: center;
@@ -278,4 +395,403 @@
   flex-wrap: wrap;
   justify-content: start;
   margin-left: '40px';
+  background: #101010;
+  color: #cdcdcd;
+  padding: 20px;
+}
+
+.ant-input {
+  background-color: #2e2e2e;
+}
+
+.inputStyles {
+  width: 20rem;
+  background-color: #2e2e2e;
+}
+
+.inputStylesShort {
+  width: 7rem;
+  background-color: #2e2e2e;
+}
+
+.ant-picker {
+  background-color: #2e2e2e;
+}
+
+.ant-select-selection-item {
+  background-color: #2e2e2e;
+}
+
+.formStyles {
+  display: flex;
+  justify-content: center;
+}
+
+.sectionLeft {
+  margin: 20px;
+}
+
+.sectionRight {
+  margin: 20px;
+}
+
+.shortInputContainer {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 10px;
+}
+
+.checkboxStyles {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.ant-divider-inner-text{
+  color: #ffffff;
+}
+
+.ant-form-item-label > label {
+  color:#ffffff;
+
+}
+
+.sectionContainer {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  margin: auto;
+}
+
+.referralContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+.CaseDetails {
+  display: flex;
+  flex-flow: row nowrap;
+  background-color: black;
+}
+.CaseDetails__LeftSide {
+  width: 50%;
+}
+.CaseDetails__LeftSideHead {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+  margin-right: 1rem;
+  margin-left: 1rem;
+}
+.CaseDetails__LeftSideHead h2 {
+  margin-left: 2rem;
+  margin-right: 2rem;
+  margin-bottom: 0rem;
+  font-size: 48px;
+  color: #D2D2D7;
+}
+.CaseDetails__LeftSideHead h3 {
+  color: #cdcdcd;
+  font-size: 24px;
+  margin-bottom: 0rem;
+  margin-top: .5rem;;
+}
+.CaseDetails__LeftSideHead Button {
+  width: 256.34px;
+  height: 48.16px;
+  background: #333333;
+  border-radius: 25px 0px 10px;
+  color: #cdcdcd;
+  border-color: #007fd4;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  align-items: center;
+}
+.CaseDetails__LeftSideHead Button:hover {
+  background-color: #333333;
+  border-color: #cdcdcd;
+  color: #cdcdcd;
+}
+.CaseDetails__LeftSideBtnsContainer {
+  display: flex; 
+  flex-flow: column nowrap;
+  margin: 1rem;
+}
+.CaseDetails__Leftside__gridHead {
+  width: 100%;
+  background-color: black;
+  color: white;
+  height: 3.5rem;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+}
+.gridColumns {
+  display: flex;
+  justify-content: center;
+}
+.ant-collapse > .ant-collapse-item {
+  margin-bottom: 0.75rem;
+  border-bottom: 0px;
+}
+.mainCollapse {
+  border: 0;
+  background-color: black;
+}
+.ant-collapse > .ant-collapse-item > .ant-collapse-header {
+  background-color: #007fd4;
+  color: #cdcdcd;
+}
+.ant-collapse-content-box {
+  background-color: #007fd4;
+}
+.Leftside__Bottom__ButtonsContainer{
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  margin: 1rem;
+}
+.leftSideBottomButtons {
+  background-color: #007fd4;
+  border: 0;
+  color: #cdcdcd;
+  width: 10rem;
+  margin-right: 1.5rem;
+  border-radius: 4px;
+}
+.leftSideBottomButtons:hover {
+  background-color: #007fd4;
+  border: 1px solid #cdcdcd;
+  color: #cdcdcd;
+}
+.CaseDetails__RightSide {
+  width: 50%;
+}
+.Rightside__Head {
+  margin: 1rem;
+  margin-left: 4rem;
+  margin-bottom: 0rem;
+  font-size: 30px;
+}
+.Rightside__Header {
+  color: #cdcdcd;
+  font-size: 48px;
+  margin-bottom: 0rem;
+}
+.Rightside__SearchBar {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  margin-right: 1rem;  
+}
+.Rightside__SearchBar img {
+  margin-bottom: 1rem;
+  margin-right: 1rem;
+}
+.Rightside__SearchBar h3 {
+  color: #d2d2d7;
+  opacity: 0.5;
+  font-size: 36px;
+}
+.SearchBar {
+  background-color: black;
+  height: 2rem;
+  width: 25rem;
+  margin-left: 1rem;
+  margin-bottom: 0.5rem;
+  border: 2px solid #CDCDCD;
+  border-radius: 20px 0px 10px;
+  color:  #cdcdcd;
+}
+.SearchBar > .ant-input {
+  background-color: black;
+  color: #cdcdcd;
+}
+.ant-input-prefix {
+  margin-top: 1rem;
+}
+.Rightside__Notes__BoxandButton {
+  width: 91.5%;
+}
+.Rightside__Notes__BoxandButton > .ant-space > .ant-space-item > .ant-input {
+  background-color: white;
+  margin: 1rem;
+  margin-top: .5rem;
+  color: black;
+}
+.Rightside__Notes__BoxandButton > .ant-space {
+  width: 100%;
+}
+.saveNoteButton {
+  background-color: #007fd4;
+  border: 0;
+  border-radius: 4px;
+  color: #cdcdcd;
+  margin-left: 1rem;
+  width: 10rem;
+}
+.saveNoteButton:hover {
+  background-color: #007fd4;
+  border: 1px solid #cdcdcd;
+  color: #cdcdcd;
+}
+.Rightside__PreviousNotes {
+  width: 91.5%;
+  height: 17rem;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background-color: black;
+  margin-top: 2rem;
+  margin-left: 1rem;
+}
+.Rightside__PreviousNotes::-webkit-scrollbar {
+  background-color: #c4c4c4;
+  width: 0.5rem;
+  border-radius: 10px;
+}
+.Rightside__PreviousNotes::-webkit-scrollbar-thumb {
+  background-color: #333333;
+  width: 0.5rem;
+  border-radius: 10px;
+}
+.Rightside__PreviousNotes h3 {
+  color: #cdcdcd;
+}
+.Rightside__PreviousNotes p {
+  color: #cdcdcd;
+}
+.SidebarContainer{
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  margin: 1rem;
+}
+.SidebarButton {
+  background-color: #c4c4c4;
+  border: 0;
+  color: #000000;
+  width: 9rem;  
+  border-radius: 4px;
+  margin: 0.5rem;
+}
+.SidebarButton:hover {
+  background-color: #007fd4;
+  border: 1px solid #cdcdcd;
+  color: #cdcdcd;
+}
+.SidebarButtons {
+  margin-bottom: 5rem;
+}
+.SearchEventBar {
+  background-color: black;
+  height: 2rem;
+  width: 10rem;
+  margin-top: 2em;  
+  margin-bottom: 0.5rem;
+  border: 2px solid #CDCDCD;
+  border-radius: 20px 0px 10px;
+  color:  #cdcdcd;
+}
+.Sider{
+  background-color: #000000;
+}
+.WeeklyCalendar{
+  background-color: #101010;  
+}
+.WeeklyCalendar h3 {  
+  color: #cdcdcd;  
+}
+.RecentCases {
+  font-size: larger;
+  background-color: #131313;
+}
+.TableData {
+  display: flex;
+  flex-direction: column;
+  width: 950px;
+  height: 1000px;
+  margin: 40px 0px 206px 100px;
+  background-color: #101010;
+}
+.CasesTitle {
+  font-size: 40px;
+  margin-left: 360px;
+  margin-top: 40px;
+  color: #d2d2d7;
+}
+.ant-table-column-title {
+  color: #007fd4;
+}
+.ant-table-thead > tr > th {
+  color: #007fd4;
+  background-color: #484848;
+  border-bottom: 8px solid #101010;
+}
+.ant-table-tbody > tr > td {
+  border-bottom: 8px solid #101010;
+  height: 74px;
+}
+.ant-table-thead th.ant-table-column-sort {
+  background-color: #484848;
+}
+.ant-table-cell {
+  background-color: #706f6f;
+  color:#cdcdcd;
+}
+td.ant-table-column-sort {
+  background-color: #706f6f;
+}
+.column {
+  display: flex;
+  flex-direction: row;
+  background-color: #101010;
+}
+.ActivityTitle {
+  font-size: 40px;
+  margin: 68px 0px 20px 450px;
+  color: #d2d2d7;
+}
+.ant-card-body {
+  background-color: #262626;
+  border-radius: 50px 10px;
+  width: 400px;
+}
+.ant-card-bordered {
+  background-color: #101010;
+  border: 1px solid #101010;
+}
+.ant-card-meta-title {
+  color: #c4c4c4;
+}
+.ant-card-meta-description {
+  color: #c4c4c4;
+}
+.CardDiv {
+  margin-left: 119px;
+  display: grid;
+  grid-template-columns: 48ch auto;
+  row-gap: 20px;
+  grid-auto-columns: 20px;
+}
+.CardHeader {
+  color: #c4c4c4;
+  display: flex;
+  flex-direction: row;
+  align-content: flex-start;
+  justify-content: space-between;
+}
+.ant-btn-primary {
+  border-radius: 25px;
+  margin: 1px;
+}
+.VectorArrow {
+  width: 23px;
+  height: 23px;
+}
+.ant-card-meta-avatar {
+  margin-top: 15px;
 }
