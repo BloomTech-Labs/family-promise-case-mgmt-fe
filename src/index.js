@@ -54,6 +54,7 @@ function App() {
 
   return (
     <Security {...config} onAuthRequired={authHandler}>
+      
       <Switch>
         <Route path="/login" component={LoginPage} />
         <Route path="/implicit/callback" component={LoginCallback} />

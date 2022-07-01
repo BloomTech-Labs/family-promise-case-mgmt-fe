@@ -1,10 +1,12 @@
 import { Form, Button, DatePicker } from 'antd';
 import React from 'react';
 import ClientFamilyInfo from './IntakeForms/ClientFamilyInfo';
+import Finances from './IntakeForms/Finances';
 import ContactPreferences from './IntakeForms/ContactPreferences';
 import Referrals from './IntakeForms/Referrals';
 import DocumentUpload from './IntakeForms/DocumentUpload';
 import ClientSearch from './IntakeForms/ClientSearch';
+
 //NOTE: Inline Styles added temporarily.
 const sectionContainer = {
   width: '80%',
@@ -51,6 +53,16 @@ const ClientIntakeForm = () => {
         layout="vertical"
         style={sectionContainer}
       >
+        <DatePicker format="MM/DD/YYYY" />
+      </Form.Item>
+      <ClientFamilyInfo />
+      <Finances />
+
+      <div style={buttonSection}>
+        <Form.Item>
+          <Button style={prime} htmlType="submit" type="primary">
+            Submit
+          </Button>
         <h1 style={{ textAlign: 'center' }}>Intake Form</h1>
         <Form.Item
           label="Inital Intake Date"
