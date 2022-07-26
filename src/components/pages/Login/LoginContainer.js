@@ -31,8 +31,7 @@ const LoginContainer = () => {
         display: 'page',
         scopes,
       },
-    }
-    );
+    });
 
     widget.renderEl(
       { el: '#sign-in-widget' },
@@ -46,12 +45,12 @@ const LoginContainer = () => {
         throw err;
       }
     );
-    return () => { widget.remove(); };    
+    return () => {
+      widget.remove();
+    };
   }, []);
 
-
   return <div id="sign-in-widget" />;
-
 };
 
 export default LoginContainer;

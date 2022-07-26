@@ -13,7 +13,7 @@ export const editReferral = (referralData, index) => {
   return {
     type: EDIT_REFERRAL,
     payload: referralData,
-    index: index
+    index: index,
   };
 };
 

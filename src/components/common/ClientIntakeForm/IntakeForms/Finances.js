@@ -1,6 +1,6 @@
 import React from 'react';
 import { Form, Input, Checkbox, Select, Button, Divider } from 'antd';
-import './styles/css/styles.css';
+import '../../../../styles/css/styles.css';
 
 const Finances = () => {
   // const subsectionHeader = {
@@ -10,20 +10,20 @@ const Finances = () => {
   //   padding: '20px',
   // };
 
-  // const financeHistoryOptions = [
-  //   { label: 'Eviction', value: 'eviction' },
-  //   { label: 'Landlord Debt', value: 'landlordDebt' },
-  //   { label: 'Criminal History', value: 'criminalHistory' },
-  //   { label: 'Poor Credit', value: 'poorCredit' },
-  //   { label: 'No Rental History', value: 'noRentalHistory' },
-  // ];
+  const financeHistoryOptions = [
+    { label: 'Eviction', value: 'eviction' },
+    { label: 'Landlord Debt', value: 'landlordDebt' },
+    { label: 'Criminal History', value: 'criminalHistory' },
+    { label: 'Poor Credit', value: 'poorCredit' },
+    { label: 'No Rental History', value: 'noRentalHistory' },
+  ];
 
-  // const incomeSourceOptions = [
-  //   { label: 'TANF', value: 'TANF' },
-  //   { label: 'SSI', value: 'SSI' },
-  //   { label: 'SSDI', value: 'SSDI' },
-  //   { label: 'Child Support', value: 'childSupport' },
-  // ];
+  const incomeSourceOptions = [
+    { label: 'TANF', value: 'TANF' },
+    { label: 'SSI', value: 'SSI' },
+    { label: 'SSDI', value: 'SSDI' },
+    { label: 'Child Support', value: 'childSupport' },
+  ];
 
   // const borderStyled = {
   //   width: '5rem',

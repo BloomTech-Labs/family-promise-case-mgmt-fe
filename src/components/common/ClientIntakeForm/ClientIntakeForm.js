@@ -44,7 +44,7 @@ const ClientIntakeForm = () => {
 
   return (
     <div>
-      <ClientSearch />
+      {/* <ClientSearch /> */}
       <Form
         name="clientIntakeForm"
         form={form}
@@ -54,38 +54,39 @@ const ClientIntakeForm = () => {
         style={sectionContainer}
       >
         <DatePicker format="MM/DD/YYYY" />
-      </Form.Item>
-      <ClientFamilyInfo />
-      <Finances />
-
-      <div style={buttonSection}>
-        <Form.Item>
-          <Button style={prime} htmlType="submit" type="primary">
-            Submit
-          </Button>
-        <h1 style={{ textAlign: 'center' }}>Intake Form</h1>
-        <Form.Item
-          label="Inital Intake Date"
-          style={{ marginBottom: '50px' }}
-          name="intakeDate"
-          initialValue=""
-        >
-          <DatePicker format="MM/DD/YYYY" />
-        </Form.Item>
         <ClientFamilyInfo />
+        <Finances />
 
         <div style={buttonSection}>
           <Form.Item>
             <Button style={prime} htmlType="submit" type="primary">
               Submit
             </Button>
+            <h1 style={{ textAlign: 'center' }}>Intake Form</h1>
           </Form.Item>
+          <Form.Item
+            label="Inital Intake Date"
+            style={{ marginBottom: '50px' }}
+            name="intakeDate"
+            initialValue=""
+          >
+            <DatePicker format="MM/DD/YYYY" />
+          </Form.Item>
+          <ClientFamilyInfo />
 
-          <Form.Item>
-            <Button style={btn} type="default">
-              Cancel
-            </Button>
-          </Form.Item>
+          <div style={buttonSection}>
+            <Form.Item>
+              <Button style={prime} htmlType="submit" type="primary">
+                Submit
+              </Button>
+            </Form.Item>
+
+            <Form.Item>
+              <Button style={btn} type="default">
+                Cancel
+              </Button>
+            </Form.Item>
+          </div>
         </div>
       </Form>
       <ContactPreferences />
