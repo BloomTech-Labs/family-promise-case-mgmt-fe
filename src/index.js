@@ -29,6 +29,7 @@ import { RecentCases } from './components/pages/RecentCases';
 import DashHeader from './components/common/DashHeader';
 
 import './styles/css/styles.css';
+import { CMLogin } from './components/pages/CMLogin';
 
 ReactDOM.render(
   <Router>
@@ -69,6 +70,7 @@ function App() {
         <SecureRoute path="/dashheader" component={DashHeader} />
         <SecureRoute path="/calendar" component={Calendar} />
         <SecureRoute path="/recent-cases" component={RecentCases} />
+        <SecureRoute path="/cm-login" component={CMLogin} />
         <Route component={NotFoundPage} />
       </Switch>
     </Security>
