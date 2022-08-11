@@ -795,6 +795,32 @@ td.ant-table-column-sort {
   margin-top: 15px;
 }
 
-#sign-in-widget{
-  background-color: #131313;
+.RenderCMLogin{
+  background-color: #101010;
 }
+
+#okta-sign-in.auth-container .o-form-head {
+  color: #d2d2d7;
+}
+
+#okta-sign-in.auth-container.main-container {
+  background-color: #101010;
+}
+
+#okta-sign-in.auth-container.main-container {
+  border-color: #101010;
+}
+
+#okta-sign-in.auth-container .okta-sign-in-header {
+  border-bottom-color: #101010;
+}
+
+#okta-sign-in * {
+  color: #d2d2d7;
+}
+
+#okta-sign-in.auth-container a.link:link {
+  color: #d2d2d7;
+}
+
+

@@ -34,7 +34,7 @@ const RenderCMLogin = () => {
     });
 
     widget.renderEl(
-      { el: '#sign-in-widget' },
+      { el: '#cm-sign-in-widget' },
       () => {
         /**
          * In this flow, the success handler will not be called because we redirect
@@ -50,7 +50,11 @@ const RenderCMLogin = () => {
     };
   }, []);
 
-  return <div id="sign-in-widget" />;
+  return (
+    <div className="RenderCMLogin">
+      <div id="cm-sign-in-widget" />
+    </div>
+  );
 };
 
 export default RenderCMLogin;
