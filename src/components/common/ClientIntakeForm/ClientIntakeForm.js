@@ -5,6 +5,8 @@ import Finances from './IntakeForms/Finances';
 import ContactPreferences from './IntakeForms/ContactPreferences';
 import Referrals from './IntakeForms/Referrals';
 import DocumentUpload from './IntakeForms/DocumentUpload';
+import EducationIntake from './IntakeForms/EducationIntake';
+import EmploymentIntake from './IntakeForms/EmploymentIntake';
 import ClientSearch from './IntakeForms/ClientSearch';
 
 //NOTE: Inline Styles added temporarily.
@@ -55,6 +57,8 @@ const ClientIntakeForm = () => {
       >
         <DatePicker format="MM/DD/YYYY" />
         <ClientFamilyInfo />
+        <EducationIntake />
+        <EmploymentIntake />
         <Finances />
 
         <div style={buttonSection}>
@@ -73,7 +77,6 @@ const ClientIntakeForm = () => {
             <DatePicker format="MM/DD/YYYY" />
           </Form.Item>
           <ClientFamilyInfo />
-
           <div style={buttonSection}>
             <Form.Item>
               <Button style={prime} htmlType="submit" type="primary">
