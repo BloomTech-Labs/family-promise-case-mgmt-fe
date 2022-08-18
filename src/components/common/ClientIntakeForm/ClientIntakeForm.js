@@ -2,6 +2,12 @@ import { Form, Button, DatePicker } from 'antd';
 import React from 'react';
 import ClientFamilyInfo from './IntakeForms/ClientFamilyInfo';
 import Finances from './IntakeForms/Finances';
+import ContactPreferences from './IntakeForms/ContactPreferences';
+import Referrals from './IntakeForms/Referrals';
+import DocumentUpload from './IntakeForms/DocumentUpload';
+import EducationIntake from './IntakeForms/EducationIntake';
+import EmploymentIntake from './IntakeForms/EmploymentIntake';
+import ClientSearch from './IntakeForms/ClientSearch';
 
 //NOTE: Inline Styles added temporarily.
 const sectionContainer = {
@@ -37,41 +43,59 @@ const ClientIntakeForm = () => {
     console.log('Form Values: ', values);
     form.resetFields();
   };
+
   return (
-    <Form
-      name="clientIntakeForm"
-      form={form}
-      onFinish={onFinish}
-      onSubmit={e => e.preventDefault()}
-      layout="vertical"
-      style={sectionContainer}
-    >
-      <h1 style={{ textAlign: 'center' }}>Intake Form</h1>
-      <Form.Item
-        label="Inital Intake Date"
-        style={{ marginBottom: '50px' }}
-        name="intakeDate"
-        initialValue=""
+    <div>
+      {/* <ClientSearch /> */}
+      <Form
+        name="clientIntakeForm"
+        form={form}
+        onFinish={onFinish}
+        onSubmit={e => e.preventDefault()}
+        layout="vertical"
+        style={sectionContainer}
       >
         <DatePicker format="MM/DD/YYYY" />
-      </Form.Item>
-      <ClientFamilyInfo />
-      <Finances />
+        <ClientFamilyInfo />
+        <EducationIntake />
+        <EmploymentIntake />
+        <Finances />
 
-      <div style={buttonSection}>
-        <Form.Item>
-          <Button style={prime} htmlType="submit" type="primary">
-            Submit
-          </Button>
-        </Form.Item>
+        <div style={buttonSection}>
+          <Form.Item>
+            <Button style={prime} htmlType="submit" type="primary">
+              Submit
+            </Button>
+            <h1 style={{ textAlign: 'center' }}>Intake Form</h1>
+          </Form.Item>
+          <Form.Item
+            label="Inital Intake Date"
+            style={{ marginBottom: '50px' }}
+            name="intakeDate"
+            initialValue=""
+          >
+            <DatePicker format="MM/DD/YYYY" />
+          </Form.Item>
+          <ClientFamilyInfo />
+          <div style={buttonSection}>
+            <Form.Item>
+              <Button style={prime} htmlType="submit" type="primary">
+                Submit
+              </Button>
+            </Form.Item>
 
-        <Form.Item>
-          <Button style={btn} type="default">
-            Cancel
-          </Button>
-        </Form.Item>
-      </div>
-    </Form>
+            <Form.Item>
+              <Button style={btn} type="default">
+                Cancel
+              </Button>
+            </Form.Item>
+          </div>
+        </div>
+      </Form>
+      <ContactPreferences />
+      <Referrals />
+      <DocumentUpload />
+    </div>
   );
 };
 
