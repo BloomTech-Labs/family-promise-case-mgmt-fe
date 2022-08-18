@@ -31,6 +31,8 @@ import DashHeader from './components/common/DashHeader';
 import './styles/css/styles.css';
 import { CMLogin } from './components/pages/CMLogin';
 
+import Finances from './components/common/ClientIntakeForm/IntakeForms/Finances';
+
 ReactDOM.render(
   <Router>
     <React.StrictMode>
@@ -48,8 +50,8 @@ function App() {
   const history = useHistory();
 
   const authHandler = () => {
-    // We pass this to our <Security /> component that wraps our routes.
-    // It'll automatically check if userToken is available and push back to login if not :)
+    //We pass this to our <Security /> component that wraps our routes.
+    //It'll automatically check if userToken is available and push back to login if not :)
     history.push('/login');
   };
 
@@ -57,11 +59,11 @@ function App() {
     <Security {...config} onAuthRequired={authHandler}>
       <Switch>
         <Route path="/login" component={LoginPage} />
-        <Route path="/implicit/callback" component={LoginCallback} />
+        <Route path="/implicit/callback" component={LoginCallback} />{' '}
         {/* any of the routes you need secured should be registered as SecureRoutes */}
         <SecureRoute path="/cases/:caseID" component={CaseView} />
         <SecureRoute path="/case-details" component={CaseDetails} />
-        <SecureRoute path="/cases" component={Cases} />
+        <SecureRoute path="/cases" component={Cases} />{' '}
         <SecureRoute path="/client-intake-form" component={ClientIntakeForm} />
         <SecureRoute path="/profile-list" component={ProfileListPage} />
         <SecureRoute path="/example-list" component={ExampleListPage} />

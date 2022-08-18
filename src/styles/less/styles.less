@@ -52,16 +52,16 @@
       color: white;
     }
     &-header {
-    background: #007fd4;
-    color: white;
-    font-size: 1.25rem;
+      background: #007fd4;
+      color: white;
+      font-size: 1.25rem;
     }
     &-item {
-    color: white;
+      color: white;
     }
     &-content-box {
-    background-color: #1c1c1c;
-    color: #cdcdcd;
+      background-color: #1c1c1c;
+      color: #cdcdcd;
     }
   }
 }
@@ -106,25 +106,25 @@
     &__p {
       color: #cdcdcd;
     }
-   .ant-btn {
-    &-primary {
-      margin: 1rem;
-      color: #cdcdcd;
-      border-color: #007fd4;
-      &-notes {
-        grid-row: 3;
-        grid-column: 5;
+    .ant-btn {
+      &-primary {
         margin: 1rem;
-      }
-      &-noteDetails {
-        width: 18vw;
-      }
-      &-noteFilter {
-        margin: 0;
+        color: #cdcdcd;
+        border-color: #007fd4;
+        &-notes {
+          grid-row: 3;
+          grid-column: 5;
+          margin: 1rem;
+        }
+        &-noteDetails {
+          width: 18vw;
+        }
+        &-noteFilter {
+          margin: 0;
+        }
       }
     }
   }
-}
 }
 
 .CaseDetailsLabel {
@@ -233,55 +233,57 @@
         width: 100%;
       }
     }
-.SingleNote {
-  &__Container {
-    border-style: groove;
-    background-color: #3f3f3f;
-    color: #fcfcfc;
-    margin: 0 auto 1rem;
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 5px;
-    grid-auto-flow: row dense;
-    width: 50vw;
-  }
-  &__Picture {
-    grid-row: 2;
-    grid-column: 1;
-    margin: auto;
-  }
-  &__NoteText {
-    grid-row: 2;
-    grid-column: 2 / span 4;
-    padding-right: 1rem;
-  }
-  &__InfoStyle {
-    margin: 0.5rem 0;
-    grid-row: 1;
-    grid-column: 3 / span 2;
-    &__HeaderStyle {
-      color: #fcfcfc;
+    .SingleNote {
+      &__Container {
+        border-style: groove;
+        background-color: #3f3f3f;
+        color: #fcfcfc;
+        margin: 0 auto 1rem;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 5px;
+        grid-auto-flow: row dense;
+        width: 50vw;
+      }
+      &__Picture {
+        grid-row: 2;
+        grid-column: 1;
+        margin: auto;
+      }
+      &__NoteText {
+        grid-row: 2;
+        grid-column: 2 / span 4;
+        padding-right: 1rem;
+      }
+      &__InfoStyle {
+        margin: 0.5rem 0;
+        grid-row: 1;
+        grid-column: 3 / span 2;
+        &__HeaderStyle {
+          color: #fcfcfc;
+        }
+      }
     }
-  }
-}
 
-.Notes {
-  &__Container {
-    margin: auto;
-    &__SwitchPanel {
-      margin: auto;
-      display: flex;
-      justify-content: center;
+    .Notes {
+      &__Container {
+        margin: auto;
+        &__SwitchPanel {
+          margin: auto;
+          display: flex;
+          justify-content: center;
+        }
+      }
+      &__ShowNotes {
+        overflow-y: scroll;
+        max-height: 35vh;
+      }
+      &__Filter {
+        width: 10vw;
+        margin: 1rem;
+        color: #cdcdcd;
+      }
     }
-  }
-  &__ShowNotes {
-    overflow-y: scroll;
-    max-height: 35vh;
-  }
-  &__Filter {
-    width: 10vw;
-    margin: 1rem;
-    color: #cdcdcd;
   }
 }
 

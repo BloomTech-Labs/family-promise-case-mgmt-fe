@@ -329,8 +329,6 @@
   color: #cdcdcd;
 }
 
-/*styles for feature/Finance-component*/
-
 .DashHeader {
   background-color: #101010;
   display: flex;
@@ -453,6 +451,60 @@
 .ant-form-item-label > label {
   color: #ffffff;
 }
+
+
+/* finances styling */
+
+.ant-form-item-control-input-content {
+  display: flex;
+  flex-direction: column;
+  margin-top: 5px;
+}
+
+.ant-input {
+  color: white;
+  margin-left: 10px;
+}
+
+.Finances_Form_Inputs {
+  color: #ffffff;
+}
+
+.Finances_Form_Label {
+  margin-bottom: 25px;
+  color: white;
+}
+
+.Finances_Form_Amount_Container {
+  margin-bottom: 20px;
+  margin-top: 12px;
+  margin-left: 15px;
+}
+
+.Finances_Form_Amount_Label {
+  display: inline-block;
+}
+
+.Finances_Form_Sections {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 5px;
+  padding-top: 2rem;
+  margin: 0 12rem;
+}
+
+.Finances_Form_Container_Styles {
+  display: flex;
+  flex-direction: row;
+}
+
+.Finances_Form_Container_Styles_Subsection1 {
+  margin-left: 125px;
+  margin-top: 10px;
+}
+
+.Finances_Form_Container_Styles_Subsection2 {
+  margin-top: 53px;
 
 .sectionContainer {
   width: 80%;
