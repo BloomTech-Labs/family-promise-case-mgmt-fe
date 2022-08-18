@@ -1,4 +1,4 @@
-import { Form, Button, DatePicker } from 'antd';
+import { Form, DatePicker } from 'antd';
 import React from 'react';
 import ClientFamilyInfo from './IntakeForms/ClientFamilyInfo';
 import Finances from './IntakeForms/Finances';
@@ -7,32 +7,15 @@ import Referrals from './IntakeForms/Referrals';
 import DocumentUpload from './IntakeForms/DocumentUpload';
 import EducationIntake from './IntakeForms/EducationIntake';
 import EmploymentIntake from './IntakeForms/EmploymentIntake';
-import ClientSearch from './IntakeForms/ClientSearch';
 
 //NOTE: Inline Styles added temporarily.
 const sectionContainer = {
-  width: '80%',
+  width: '100%',
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'center',
   alignContent: 'center',
   margin: 'auto',
-};
-
-const buttonSection = {
-  display: 'flex',
-  justifyContent: 'center',
-  marginTop: '50px',
-};
-
-const btn = {
-  margin: '10px',
-};
-
-const prime = {
-  backgroundColor: '#007FD3',
-  margin: '10px',
-  border: 'none',
 };
 
 const ClientIntakeForm = () => {
@@ -60,41 +43,10 @@ const ClientIntakeForm = () => {
         <EducationIntake />
         <EmploymentIntake />
         <Finances />
-
-        <div style={buttonSection}>
-          <Form.Item>
-            <Button style={prime} htmlType="submit" type="primary">
-              Submit
-            </Button>
-            <h1 style={{ textAlign: 'center' }}>Intake Form</h1>
-          </Form.Item>
-          <Form.Item
-            label="Inital Intake Date"
-            style={{ marginBottom: '50px' }}
-            name="intakeDate"
-            initialValue=""
-          >
-            <DatePicker format="MM/DD/YYYY" />
-          </Form.Item>
-          <ClientFamilyInfo />
-          <div style={buttonSection}>
-            <Form.Item>
-              <Button style={prime} htmlType="submit" type="primary">
-                Submit
-              </Button>
-            </Form.Item>
-
-            <Form.Item>
-              <Button style={btn} type="default">
-                Cancel
-              </Button>
-            </Form.Item>
-          </div>
-        </div>
+        <ContactPreferences />
+        <Referrals />
+        <DocumentUpload />
       </Form>
-      <ContactPreferences />
-      <Referrals />
-      <DocumentUpload />
     </div>
   );
 };

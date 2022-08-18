@@ -94,20 +94,23 @@ const Documents = props => {
     },
   ];
 
-  useEffect(() => {
-    if (props.client.id !== 0) {
-      axios
-        .get(`http://localhost:8000/api/documents/${props.client.id}`)
-        .then(documents => {
-          console.log(documents.data);
-          props.setDocuments(documents.data);
-          console.log(documents.data);
-        })
-        .catch(error => {
-          alert('ERROR ' + error);
-        });
-    }
-  }, [props.client]);
+  useEffect(
+    props => {
+      if (props.client.id !== 0) {
+        axios
+          .get(`http://localhost:8000/api/documents/${props.client.id}`)
+          .then(documents => {
+            console.log(documents.data);
+            props.setDocuments(documents.data);
+            console.log(documents.data);
+          })
+          .catch(error => {
+            alert('ERROR ' + error);
+          });
+      }
+    },
+    [props.client]
+  );
 
   const handleDelete = file => {
     axios

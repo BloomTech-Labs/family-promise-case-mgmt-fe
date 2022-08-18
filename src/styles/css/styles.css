@@ -390,7 +390,7 @@
 .containerStyles {
   display: flex;
   flex-wrap: wrap;
-  justify-content: start;
+  justify-content: flex-start;
   margin-left: '40px';
   background: #101010;
   color: #cdcdcd;

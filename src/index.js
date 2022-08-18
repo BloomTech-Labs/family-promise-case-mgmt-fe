@@ -31,8 +31,6 @@ import DashHeader from './components/common/DashHeader';
 import './styles/css/styles.css';
 import { CMLogin } from './components/pages/CMLogin';
 
-import Finances from './components/common/ClientIntakeForm/IntakeForms/Finances';
-
 ReactDOM.render(
   <Router>
     <React.StrictMode>
