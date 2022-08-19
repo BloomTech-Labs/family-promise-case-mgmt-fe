@@ -452,7 +452,6 @@
   color: #ffffff;
 }
 
-
 /* finances styling */
 
 .ant-form-item-control-input-content {
@@ -848,7 +847,7 @@ td.ant-table-column-sort {
   margin-top: 15px;
 }
 
-.RenderCMLogin{
+.RenderCMLogin {
   background-color: #101010;
 }
 
@@ -875,5 +874,3 @@ td.ant-table-column-sort {
 #okta-sign-in.auth-container a.link:link {
   color: #d2d2d7;
 }
-
-
