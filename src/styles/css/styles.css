@@ -874,3 +874,58 @@ td.ant-table-column-sort {
 #okta-sign-in.auth-container a.link:link {
   color: #d2d2d7;
 }
+
+.section-left {
+  margin: 20px;
+}
+
+.section-right {
+  margin: 20px;
+}
+
+.AddFamilyMember_Form {
+  grid-template-columns: repeat(2, 1fr);
+  gap: 5px;
+  grid-auto-flow: row dense;
+  background: #3f3f3f;
+  color: #ffffff;
+}
+
+.AddFamilyMember_Form {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.ant-btn {
+  background-color: gray;
+  width: 135px;
+  height: 40px;
+  align-self: center;
+  color: white;
+}
+
+.family-member {
+  writing-mode: vertical-lr;
+  transform: rotate(-180deg);
+  color: white;
+}
+
+.family-member-container {
+  width: 50px;
+  margin-bottom: 20px;
+}
+
+.child-container {
+  border-top: solid 1px #6e6e6e;
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+.ant-select-selector {
+  background: grey;
+  color: white;
+}
+
+/* .AddFamilyMember__Form__Inputs{
+  width: 100%;
+} */
