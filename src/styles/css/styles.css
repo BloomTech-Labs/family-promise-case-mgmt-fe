@@ -875,7 +875,181 @@ td.ant-table-column-sort {
   color: #d2d2d7;
 }
 
+
+
+
+.family-member {
+  writing-mode: vertical-lr;
+  transform: rotate(-180deg);
+  color: white;
+}
+
+.top-section-container {
+  margin-bottom: 75px;
+}
+
 .section-left {
+  width: 100%;
+  margin-left: 40px;
+  margin-right: 40px; 
+}
+
+.section-right {
+  margin-left: 40px;
+  margin-right: 40px;
+  width: 100%;
+}
+
+.bottom-section-container {
+  margin-bottom: 75px;
+}
+
+.subSection_container{
+  display: flex;
+  flex-direction: column;
+  margin-right: 20px;
+  justify-content: space-evenly;
+}
+
+/* .FamMemberLabel{
+  margin-left: 40px;
+  display: flex;
+  justify-content: space-around;
+} */
+
+/* .ant-divider-horizontal {
+  color: white;
+} */
+
+/*.section-left {
+  margin: 0px 80px;
+  display: flex;
+  flex-direction: column; 
+  align-content: flex-start;
+}
+
+.section-right {
+  margin: 0px 80px;
+} */
+
+/* .AddFamilyMember_Form_Sections {
+  justify-content: left;
+  align-content: center;
+  margin: auto;
+} */
+
+/*.AddFamilyMember_Form_Sections {
+ /* margin-left: 0px; */
+/* display: grid;
+  grid-template-columns: repeat(2, 1fr); */
+/* gap: 5px; */
+/* padding-top: 2rem; */
+/* margin: 0 12rem; */
+
+/* .AddFamilyMember_Form {
+  display: flex;
+  justify-content: space-evenly;
+} */
+
+/* .top-section-container {
+  margin-bottom: 75px;
+  display: flex;
+  flex-direction: column; 
+  align-content: flex-start; */
+/* grid-template-columns: repeat(2, 1fr);
+  gap: 5px;
+  grid-auto-flow: row dense; */
+/* display: flex;
+  flex-direction: column;
+  justify-content: space-evenly; */
+/* justify-content: flex-start; */
+
+/* .bottom-section-container {
+  margin-bottom: 75px;
+  display: flex;
+  flex-direction: column; 
+} */
+
+/* .inputStyles2 {
+  color: white;
+  background-color: #3f3f3f;
+} */
+
+/* .ant-form-item-label {
+  align-content: flex-start;
+} */
+
+/* .adultFirstname.ant-input {
+  align-items: flex-start;
+}  */
+
+/* .ant-select-selection-search-input {
+  width: 20rem;
+  background-color: #2e2e2e;
+} */
+/* 
+#inputStyles {
+  width: 20rem;
+  background-color: #2e2e2e;
+} */
+/* 
+.ant-select-selector {
+  background-color: black;
+} */
+
+/* .AddFamilyMember_select {
+  background-color: hotpink;
+} */
+
+/*.AddFamilyMember_select {
+  /* -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: #20d492; */
+/* width: 100%;
+    padding: 10px 20px;
+    font-size: 22px; */
+
+/*.family-member-container {
+  /* width: 50px;
+  margin-bottom: 20px; */
+/* display: flex;
+  flex-direction: column;
+  justify-content: stretch; */
+/*
+
+/* .section-left {
+  margin: 20px;
+}
+
+.section-right {
+  margin: 20px;
+}
+
+.family-member {
+  writing-mode: vertical-lr;
+  transform: rotate(-180deg);
+  color: white;
+}
+
+.family-member-container {
+  width: 50px;
+  margin-bottom: 20px;
+}
+
+/* .ant-form-item-control-input {
+  background-color: gray;
+} */
+/* 
+.AddFamilyMember_Form {
+  grid-template-columns: repeat(2, 1fr);
+  gap: 5px;
+  grid-auto-flow: row dense;
+  background: #3f3f3f;
+  color: #ffffff;
+} */
+
+/* .section-left {
   margin: 20px;
 }
 
@@ -894,17 +1068,17 @@ td.ant-table-column-sort {
 .AddFamilyMember_Form {
   display: flex;
   justify-content: space-evenly;
-}
-
+} */
+/* 
 .ant-btn {
   background-color: gray;
   width: 135px;
   height: 40px;
   align-self: center;
   color: white;
-}
+} */
 
-.family-member {
+/* .family-member {
   writing-mode: vertical-lr;
   transform: rotate(-180deg);
   color: white;
@@ -924,7 +1098,7 @@ td.ant-table-column-sort {
 .ant-select-selector {
   background: grey;
   color: white;
-}
+} */
 
 /* .AddFamilyMember__Form__Inputs{
   width: 100%;

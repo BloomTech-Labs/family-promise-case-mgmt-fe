@@ -12,7 +12,7 @@ import {
 import { PlusOutlined } from '@ant-design/icons';
 import AdultFamilyMember from './FamilyMembers/AdultFamilyMember';
 import ChildFamilyMember from './FamilyMembers/ChildFamilyMember';
-import AddFamilyMember from './FamilyMembers/AddFamilyMember';
+import AddFamilyMembers from './FamilyMembers/AddFamilyMembers';
 
 const ClientFamilyInfo = () => {
   //Inline styles added temporarily
@@ -76,9 +76,7 @@ const ClientFamilyInfo = () => {
         The initial value for each input can be stored within the form component with the 'initialValue' prop. 
       
       */}
-
       <h2 className="subsectionHeader">Client/Family Information</h2>
-
       <Divider>Head of Household</Divider>
       <div className="hohContainer formStyles">
         <section className="sectionLeft">
@@ -225,7 +223,6 @@ const ClientFamilyInfo = () => {
           </Form.Item>
         </section>
       </div>
-
       <Divider>Last Known Address</Divider>
       <div className="hohContainer formStyles">
         <section className="sectionLeft">
@@ -253,7 +250,6 @@ const ClientFamilyInfo = () => {
           </section>
         </section>
       </div>
-
       <Divider style={{ marginBottom: '50px' }}>Family Members</Divider>
       {/* The button below should be used to add a new family member subform to the ClinentFamilyInfo component. This  subform will be an adult or child family member, see the family members folder for each subform component. See the client intake wireframe for an example of how adding a family member should work.  */}
       <Form.Item>
@@ -261,7 +257,7 @@ const ClientFamilyInfo = () => {
           Add Family Member
         </Button>
       </Form.Item>
-      <AddFamilyMember />
+      <AddFamilyMembers />;
     </div>
   );
 };
