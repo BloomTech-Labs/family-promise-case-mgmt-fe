@@ -875,8 +875,9 @@ td.ant-table-column-sort {
   color: #d2d2d7;
 }
 
-
-
+.family-member-container {
+  margin-top: 50px;
+}
 
 .family-member {
   writing-mode: vertical-lr;
@@ -886,51 +887,29 @@ td.ant-table-column-sort {
 
 .top-section-container {
   margin-bottom: 75px;
-}
-
-.section-left {
-  width: 100%;
-  margin-left: 40px;
-  margin-right: 40px; 
-}
-
-.section-right {
-  margin-left: 40px;
-  margin-right: 40px;
-  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-left: 25px;
+  width: 300px;
 }
 
 .bottom-section-container {
   margin-bottom: 75px;
-}
-
-.subSection_container{
+  margin-top: 50px;
   display: flex;
   flex-direction: column;
-  margin-right: 20px;
-  justify-content: space-evenly;
+  margin-left: 60px;
+  margin-left: 25px;
+  width: 300px;
 }
 
-/* .FamMemberLabel{
-  margin-left: 40px;
-  display: flex;
-  justify-content: space-around;
-} */
-
-/* .ant-divider-horizontal {
+.divider {
   color: white;
-} */
-
-/*.section-left {
-  margin: 0px 80px;
-  display: flex;
-  flex-direction: column; 
-  align-content: flex-start;
 }
 
-.section-right {
-  margin: 0px 80px;
-} */
+.ant-divider-horizontal {
+  background-color: white;
+}
 
 /* .AddFamilyMember_Form_Sections {
   justify-content: left;

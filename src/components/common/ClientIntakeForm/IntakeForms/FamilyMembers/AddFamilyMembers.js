@@ -23,58 +23,64 @@ const AddFamilyMembers = () => {
         <div>
           <section className="section-left">
             <div className="top-section-container">
-              <Form.Item
-                label="First Name::"
-                name="adultFirstname"
-                initialValue=""
-              >
-                <Input placeholder="John" />
-              </Form.Item>
-              <Form.Item label="SSN::" name="adultSSN" initialValue="">
-                <Input placeholder="XXX-XX-XXXX" />
-              </Form.Item>
+              <div className="AddFamilyMembers_Form_Container_Styles">
+                <Form.Item
+                  label="First Name::"
+                  name="adultFirstname"
+                  initialValue=""
+                >
+                  <Input placeholder="John" />
+                </Form.Item>
+                <Form.Item label="SSN::" name="adultSSN" initialValue="">
+                  <Input placeholder="XXX-XX-XXXX" />
+                </Form.Item>
 
-              <Form.Item label="Race: " name="adultRace" initialValue="">
-                <Select placeholder="-- Select --">
-                  <Select.Option value="American Indian or Alaska Native" />
-                  <Select.Option value="Asian" />
-                  <Select.Option value="Black or African American" />
-                  <Select.Option value="Native Hawaiian or Other Pacific Islander" />
-                  <Select.Option value="White" />
-                </Select>
-              </Form.Item>
+                <Form.Item label="Race: " name="adultRace" initialValue="">
+                  <Select placeholder="-- Select --">
+                    <Select.Option value="American Indian or Alaska Native" />
+                    <Select.Option value="Asian" />
+                    <Select.Option value="Black or African American" />
+                    <Select.Option value="Native Hawaiian or Other Pacific Islander" />
+                    <Select.Option value="White" />
+                  </Select>
+                </Form.Item>
 
-              <Form.Item
-                label="Sexual Orientation::"
-                name="adultOrientation"
-                initialValue=""
-              >
-                <Select placeholder="-- Select --">
-                  <Select.Option value="Asexual" />
-                  <Select.Option value="Bisexual" />
-                  <Select.Option value="Gay" />
-                  <Select.Option value="Lesbian" />
-                  <Select.Option value="Heterosexual/Straight" />
-                  <Select.Option value="Pansexual" />
-                  <Select.Option value="Queer" />
-                  <Select.Option value="Preferred Not to Answer" />
-                  <Select.Option value="Other" />
-                </Select>
-              </Form.Item>
+                <Form.Item
+                  label="Sexual Orientation::"
+                  name="adultOrientation"
+                  initialValue=""
+                >
+                  <Select placeholder="-- Select --">
+                    <Select.Option value="Asexual" />
+                    <Select.Option value="Bisexual" />
+                    <Select.Option value="Gay" />
+                    <Select.Option value="Lesbian" />
+                    <Select.Option value="Heterosexual/Straight" />
+                    <Select.Option value="Pansexual" />
+                    <Select.Option value="Queer" />
+                    <Select.Option value="Preferred Not to Answer" />
+                    <Select.Option value="Other" />
+                  </Select>
+                </Form.Item>
 
-              <Form.Item
-                label="If Sexual Orientation Is Other::"
-                name="adultOther"
-                initialValue=""
-              >
-                <Input placeholder="Other" />
-              </Form.Item>
-              <Form.Item label="Veteran?" name="isAdultVeteran" initialValue="">
-                <Radio.Group>
-                  <Radio value={true}>Yes</Radio>
-                  <Radio value={false}>No</Radio>
-                </Radio.Group>
-              </Form.Item>
+                <Form.Item
+                  label="If Sexual Orientation Is Other::"
+                  name="adultOther"
+                  initialValue=""
+                >
+                  <Input placeholder="Other" />
+                </Form.Item>
+                <Form.Item
+                  label="Veteran?"
+                  name="isAdultVeteran"
+                  initialValue=""
+                >
+                  <Radio.Group>
+                    <Radio value={true}>Yes</Radio>
+                    <Radio value={false}>No</Radio>
+                  </Radio.Group>
+                </Form.Item>
+              </div>
             </div>
           </section>
         </div>
@@ -141,12 +147,12 @@ const AddFamilyMembers = () => {
             </div>
           </section>
         </div>
-      </Form>
+        {/* </Form> */}
 
-      <Divider></Divider>
+        <Divider></Divider>
 
-      <div className="child-container"> </div>
-      <Form form={form} className="AddFamilyMember__Form" layout="inline">
+        <div className="child-container"> </div>
+        {/* <Form form={form} layout="inline"> */}
         <div className="family-member-container">
           <h1 className="family-member">Family Member: Child</h1>
         </div>
