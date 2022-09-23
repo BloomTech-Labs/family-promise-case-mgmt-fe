@@ -10,9 +10,8 @@ import {
   Button,
 } from 'antd';
 import { PlusOutlined } from '@ant-design/icons';
+
 import AdultFamilyMember from './FamilyMembers/AdultFamilyMember';
-import ChildFamilyMember from './FamilyMembers/ChildFamilyMember';
-import AddFamilyMembers from './FamilyMembers/AddFamilyMembers';
 
 const ClientFamilyInfo = () => {
   //Inline styles added temporarily
@@ -257,7 +256,7 @@ const ClientFamilyInfo = () => {
           Add Family Member
         </Button>
       </Form.Item>
-      <AddFamilyMembers />;
+      <AdultFamilyMember />;
     </div>
   );
 };
