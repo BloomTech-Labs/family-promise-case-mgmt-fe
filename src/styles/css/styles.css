@@ -875,27 +875,39 @@ td.ant-table-column-sort {
   color: #d2d2d7;
 }
 
+.family-member {
+  color: white;
+  transform: rotate(-180deg);
+  writing-mode: vertical-lr;
+}
 
-/* .inputStyles {
-  width: 20rem;
+.AddFamilyMember_InputStyles {
+  width: 17rem;
 };
 
-.formStyles {
+/* .subSection_container{
   display: flex;
   justify-content: center;
-};
+} */
 
-.sectionLeft {
+/* .formStyles {
+  display: flex;
+  justify-content: center;
+}; */
+
+/* .sectionLeft {
   margin: 20px;
 };
 
 .sectionRight {
-  margin: 20px;
-};
+  margin: 10px;
+}; */
 
+
+/* 
 .checkboxStyles {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-}; */
-
+  justify-content: space-evenly;
+}; */ 

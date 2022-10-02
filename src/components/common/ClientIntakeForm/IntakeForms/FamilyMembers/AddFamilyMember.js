@@ -9,7 +9,7 @@ import {
   Divider,
 } from 'antd';
 
-const Fam = () => {
+const AddFamilyMember = () => {
   const [form] = Form.useForm();
 
   // return (
@@ -306,7 +306,7 @@ const Fam = () => {
           <h1 className="family-member">Family Member: Adult</h1>
         </div>
         <div>
-          <section className="section-left">
+          <section className="sectionLeft">
             <div className="top-section-container">
               <div className="subSection_container">
                 <Form.Item
@@ -314,13 +314,22 @@ const Fam = () => {
                   name="adultFirstname"
                   initialValue=""
                 >
-                  <Input placeholder="John" />
+                  <Input
+                    placeholder="John"
+                    className="AddFamilyMember_InputStyles"
+                  />
                 </Form.Item>
                 <Form.Item label="SSN::" name="adultSSN" initialValue="">
-                  <Input placeholder="XXX-XX-XXXX" />
+                  <Input
+                    placeholder="XXX-XX-XXXX"
+                    className="AddFamilyMember_InputStyles"
+                  />
                 </Form.Item>
                 <Form.Item label="Race::" initialValue="">
-                  <Select className="inputStyles" placeholder="-- Select --">
+                  <Select
+                    className="AddFamilyMember_InputStyles"
+                    placeholder="-- Select --"
+                  >
                     <Select.Option value="American Indian or Alaska Native" />
                     <Select.Option value="Asian" />
                     <Select.Option value="Black or African American" />
@@ -329,7 +338,10 @@ const Fam = () => {
                   </Select>
                 </Form.Item>
                 <Form.Item label="Sexual Orientation::" initialValue="">
-                  <Select placeholder="-- Select --">
+                  <Select
+                    className="AddFamilyMember_InputStyles"
+                    placeholder="-- Select --"
+                  >
                     <Select.Option value="Asexual" />
                     <Select.Option value="Bisexual" />
                     <Select.Option value="Gay" />
@@ -342,26 +354,15 @@ const Fam = () => {
                   </Select>
                 </Form.Item>
 
-                {/* <Form.Item
-            label="Interested in working in: "
-            name="WantedWork"
-            initialValue=""
-          >
-            <Select className="inputStyles2" placeholder="-- Select --">
-              <Select.Option value="Retail/Sales" />
-              <Select.Option value="Fast Food" />
-              <Select.Option value="Hospitality" />
-              <Select.Option value="Wharehouse" />
-              <Select.Option value="Truck Driving" />
-            </Select>
-
-          </Form.Item> */}
                 <Form.Item
                   label="If Sexual Orientation Is Other::"
                   name="adultOther"
                   initialValue=""
                 >
-                  <Input placeholder="Other" />
+                  <Input
+                    placeholder="Other"
+                    className="AddFamilyMember_InputStyles"
+                  />
                 </Form.Item>
                 <Form.Item
                   label="Veteran?"
@@ -379,20 +380,26 @@ const Fam = () => {
         </div>
 
         <div>
-          <section className="section-right">
+          <section className="sectionRight">
             <div className="top-section-container">
               <Form.Item
                 label="Last Name::"
                 name="adultLastName"
                 initialValue=""
               >
-                <Input placeholder="Doe" />
+                <Input
+                  placeholder="Doe"
+                  className="AddFamilyMember_InputStyles"
+                />
               </Form.Item>
               <Form.Item label="DOB::" name="adultDOB" initialValue="">
                 <DatePicker format="MM-DD-YYYY" />
               </Form.Item>
               <Form.Item label="Gender::" initialValue="">
-                <Select placeholder="-- Select --">
+                <Select
+                  placeholder="-- Select --"
+                  className="AddFamilyMember_InputStyles"
+                >
                   <Select.Option value="Male" />
                   <Select.Option value="Female" />
                   <Select.Option value="Transgender Male" />
@@ -407,7 +414,10 @@ const Fam = () => {
                 name="adultSelfDescribe"
                 initialValue=""
               >
-                <Input placeholder="Self Describe" />
+                <Input
+                  placeholder="Self Describe"
+                  className="AddFamilyMember_InputStyles"
+                />
               </Form.Item>
 
               <Form.Item
@@ -415,7 +425,10 @@ const Fam = () => {
                 name="adultRealtionHoh"
                 initialValue=""
               >
-                <Input placeholder="Relation" />
+                <Input
+                  placeholder="Relation"
+                  className="AddFamilyMember_InputStyles"
+                />
               </Form.Item>
 
               <Form.Item
@@ -449,17 +462,23 @@ const Fam = () => {
           <h1 className="family-member">Family Member: Child</h1>
         </div>
         <div>
-          <section className="section-left">
+          <section className="sectionLeft">
             <div className="bottom-section-container">
               <Form.Item
                 label="First Name::"
                 name="childFirstname"
                 initialValue=""
               >
-                <Input placeholder="Jane" />
+                <Input
+                  placeholder="Jane"
+                  className="AddFamilyMember_InputStyles"
+                />
               </Form.Item>
               <Form.Item label="SSN::" name="childSSN" initialValue="">
-                <Input placeholder="XXX-XX-XXXX" />
+                <Input
+                  placeholder="XXX-XX-XXXX"
+                  className="AddFamilyMember_InputStyles"
+                />
               </Form.Item>
               <Form.Item label="Race::" initialValue="">
                 <Select placeholder="-- Select --">
@@ -471,7 +490,10 @@ const Fam = () => {
                 </Select>
               </Form.Item>
               <Form.Item label="Sexual Orientation::">
-                <Select placeholder="-- Select --" className="inputStyles">
+                <Select
+                  placeholder="-- Select --"
+                  className="AddFamilyMember_InputStyles"
+                >
                   <Select.Option value="Asexual" />
                   <Select.Option value="Bisexual" />
                   <Select.Option value="Gay" />
@@ -488,34 +510,46 @@ const Fam = () => {
                 name="childOther"
                 initialValue=""
               >
-                <Input placeholder="Other" />
+                <Input
+                  placeholder="Other"
+                  className="AddFamilyMember_InputStyles"
+                />
               </Form.Item>
               <Form.Item
                 label="Last School Attended::"
                 name="childLastSchool"
                 initialValue=""
               >
-                <Input placeholder="School Name" />
+                <Input
+                  placeholder="School Name"
+                  className="AddFamilyMember_InputStyles"
+                />
               </Form.Item>
             </div>
           </section>
         </div>
 
         <div>
-          <section className="section-right">
+          <section className="sectionRight">
             <div className="bottom-section-container">
               <Form.Item
                 label="Last Name::"
                 name="adultLastName"
                 initialValue=""
               >
-                <Input placeholder="Doe" />
+                <Input
+                  placeholder="Doe"
+                  className="AddFamilyMember_InputStyles"
+                />
               </Form.Item>
               <Form.Item label="DOB::" name="adultDOB" initialValue="">
                 <DatePicker format="MM-DD-YYYY" />
               </Form.Item>
               <Form.Item label="Gender::" initialValue="">
-                <Select placeholder="-- Select --">
+                <Select
+                  placeholder="-- Select --"
+                  className="AddFamilyMember_InputStyles"
+                >
                   <Select.Option value="Male" />
                   <Select.Option value="Female" />
                   <Select.Option value="Transgender Male" />
@@ -530,7 +564,10 @@ const Fam = () => {
                 name="childSelfDescribe"
                 initialValue=""
               >
-                <Input placeholder="Self Describe" />
+                <Input
+                  placeholder="Self Describe"
+                  className="AddFamilyMember_InputStyles"
+                />
               </Form.Item>
 
               <Form.Item
@@ -538,14 +575,20 @@ const Fam = () => {
                 name="childRealtionHoh"
                 initialValue=""
               >
-                <Input placeholder="Relation" />
+                <Input
+                  placeholder="Relation"
+                  className="AddFamilyMember_InputStyles"
+                />
               </Form.Item>
               <Form.Item
                 label="Current Or Last Completed Grade::"
                 name="childGrade"
                 initialValue=""
               >
-                <Input placeholder="Grade" />
+                <Input
+                  placeholder="Grade"
+                  className="AddFamilyMember_InputStyles"
+                />
               </Form.Item>
             </div>
           </section>
@@ -555,4 +598,4 @@ const Fam = () => {
   );
 };
 
-export default Fam;
+export default AddFamilyMember;

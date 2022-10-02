@@ -35,12 +35,12 @@ const AdultFamilyMember = () => {
   // };
   const { TextArea } = Input;
 
-  const historyOptions = [
-    { label: 'Physical Illness', value: 'physicalIllness' },
-    { label: 'Mental Illness', value: 'mentalIllenss' },
-    { label: 'Personal Violence', value: 'personalViolence' },
-    { label: 'Substance Dependence', value: 'substanceDependence' },
-  ];
+  // const historyOptions = [
+  //   { label: 'Physical Illness', value: 'physicalIllness' },
+  //   { label: 'Mental Illness', value: 'mentalIllenss' },
+  //   { label: 'Personal Violence', value: 'personalViolence' },
+  //   { label: 'Substance Dependence', value: 'substanceDependence' },
+  // ];
   // return (
   //   <div>
   //     <Divider orientation="left" orientationMargin={'20px'}>
@@ -191,9 +191,9 @@ const AdultFamilyMember = () => {
 
   return (
     <div>
-      {/* <Divider orientation="left" orientationMargin={'20px'}>
-          Adult
-        </Divider> */}
+      <Divider orientation="left" orientationMargin={'20px'}>
+        Adult:
+      </Divider>
       <div className="formStyles">
         <section className="sectionLeft">
           <Form.Item label="First Name" name="adultFirstname" initialValue="">
@@ -333,23 +333,25 @@ const AdultFamilyMember = () => {
             name="adultHistory"
             initialValue=""
           >
-            <Form.Item>
-              <Checkbox value="eviction">
-                <label>Physical Illness</label>
-              </Checkbox>
+            <div className="checkboxStyles">
+              <Form.Item>
+                <Checkbox value="eviction">
+                  <label>Physical Illness</label>
+                </Checkbox>
 
-              <Checkbox value="eviction">
-                <label>Mental Illness</label>
-              </Checkbox>
+                <Checkbox value="eviction">
+                  <label>Mental Illness</label>
+                </Checkbox>
 
-              <Checkbox value="eviction">
-                <label>Personal Violence</label>
-              </Checkbox>
+                <Checkbox value="eviction">
+                  <label>Personal Violence</label>
+                </Checkbox>
 
-              <Checkbox value="eviction">
-                <label>Substance Dependence</label>
-              </Checkbox>
-            </Form.Item>
+                <Checkbox value="eviction">
+                  <label>Substance Dependence</label>
+                </Checkbox>
+              </Form.Item>
+            </div>
           </Form.Item>
         </section>
       </div>
