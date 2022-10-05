@@ -935,6 +935,18 @@ td.ant-table-column-sort {
   color: white;
 }
 
+.ant-form-item-control-input{
+  display: inline-block
+}
+
+.ant-form-item-label {
+  margin-top: 20px;
+  margin-left: 10px;
+}
+/* .AddFamilyMember_Label_Styles{
+  margin-left: 10px;
+}  */
+
 /* .AddFamilyMember_InputSyling{
   display: inline-flex;
 } */
