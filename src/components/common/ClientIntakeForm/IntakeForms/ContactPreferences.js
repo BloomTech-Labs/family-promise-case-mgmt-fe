@@ -4,21 +4,12 @@ import { contactPreferences } from '../../../../state/actions';
 import { connect } from 'react-redux';
 
 const ContactPreferences = props => {
-  const [form] = Form.useForm();
-
-  const onFinish = checkboxData => {
-    props.setContactPreferences(checkboxData);
-  };
-
   return (
-    <Form.Item
+    <section
       name="clientIntakeForm"
-      form={form}
-      onFinish={onFinish}
-      onSubmit={e => e.preventDefault()}
       layout="vertical"
       className="sectionContainer"
-      initialValues={props.contactPreferences}
+      initialvalues={props.contactPreferences}
     >
       <div className="subsectionContainer">
         <h2 className="subsectionHeader">Contact Preferences</h2>
@@ -107,7 +98,7 @@ const ContactPreferences = props => {
           </Button>
         </Form.Item>
       </div>
-    </Form.Item>
+    </section>
   );
 };
 

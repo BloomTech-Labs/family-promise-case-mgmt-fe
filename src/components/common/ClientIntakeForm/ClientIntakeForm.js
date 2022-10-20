@@ -42,8 +42,9 @@ const ClientIntakeForm = () => {
         <EducationIntake />
         <EmploymentIntake />
         <Finances />
-        {/* <ContactPreferences /> */}
-        {/* <Referrals /> */}
+
+        <ContactPreferences />
+        <Referrals />
         {/* <DocumentUpload /> */}
       </Form>
     </div>
