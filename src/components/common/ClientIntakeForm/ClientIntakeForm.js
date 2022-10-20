@@ -45,7 +45,7 @@ const ClientIntakeForm = () => {
 
         <ContactPreferences />
         <Referrals />
-        {/* <DocumentUpload /> */}
+        <DocumentUpload />
       </Form>
     </div>
   );

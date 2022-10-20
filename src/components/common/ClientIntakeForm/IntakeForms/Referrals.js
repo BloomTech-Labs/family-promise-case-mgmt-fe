@@ -77,8 +77,6 @@ const Documents = props => {
   return (
     <Form.Item
       name="referralForm"
-      form={form}
-      onFinish={onFinish}
       layout="vertical"
       className="sectionContainer"
     >
@@ -264,7 +262,10 @@ const Documents = props => {
 
 const mapStateToProps = state => {
   return {
-    referrals: state.referral,
+    referrals: state.referral.map((client, index) => ({
+      ...client,
+      key: client.email + index,
+    })),
   };
 };
 
