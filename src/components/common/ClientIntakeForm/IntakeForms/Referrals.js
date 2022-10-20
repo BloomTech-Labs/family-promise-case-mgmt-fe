@@ -75,7 +75,7 @@ const Documents = props => {
   };
 
   return (
-    <Form
+    <Form.Item
       name="referralForm"
       form={form}
       onFinish={onFinish}
@@ -258,7 +258,7 @@ const Documents = props => {
           ) : null}
         </div>
       </div>
-    </Form>
+    </Form.Item>
   );
 };
 

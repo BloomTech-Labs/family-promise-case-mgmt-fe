@@ -11,7 +11,7 @@ const ContactPreferences = props => {
   };
 
   return (
-    <Form
+    <Form.Item
       name="clientIntakeForm"
       form={form}
       onFinish={onFinish}
@@ -107,7 +107,7 @@ const ContactPreferences = props => {
           </Button>
         </Form.Item>
       </div>
-    </Form>
+    </Form.Item>
   );
 };
 

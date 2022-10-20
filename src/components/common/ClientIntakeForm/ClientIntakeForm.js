@@ -21,7 +21,6 @@ const sectionContainer = {
 const ClientIntakeForm = () => {
   const [form] = Form.useForm();
 
-  //onFinish is AntDs version on onSubmit;
   const onFinish = values => {
     console.log('Form Values: ', values);
     form.resetFields();
@@ -38,14 +37,14 @@ const ClientIntakeForm = () => {
         layout="vertical"
         style={sectionContainer}
       >
-        <DatePicker format="MM/DD/YYYY" />
+        <DatePicker format="MM/DsD/YYYY" />
         <ClientFamilyInfo />
         <EducationIntake />
         <EmploymentIntake />
         <Finances />
-        <ContactPreferences />
-        <Referrals />
-        <DocumentUpload />
+        {/* <ContactPreferences /> */}
+        {/* <Referrals /> */}
+        {/* <DocumentUpload /> */}
       </Form>
     </div>
   );

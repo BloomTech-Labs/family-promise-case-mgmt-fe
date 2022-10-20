@@ -1,49 +1,135 @@
 import React from 'react';
-import { Form, Input, Checkbox } from 'antd';
+import { Form, Checkbox } from 'antd';
+import { useState } from 'react';
+
+const initialFormValues = {
+  eviction: false,
+  landlordDebt: false,
+  criminalHistory: false,
+  poorCredit: false,
+  opName: false,
+  eviction: false,
+  SSI: false,
+  SSI: false,
+  SSDI: false,
+  studentLoan: false,
+  medicalBills: false,
+  creditCard: false,
+  autoLoan: false,
+};
+
+const familyHistory = [
+  {
+    name: 'eviction',
+    label: 'Eviction',
+  },
+  {
+    name: 'landlordDebt',
+    label: 'Landlord Debt',
+  },
+  {
+    name: 'criminalHistory',
+    label: 'Criminal History',
+  },
+  {
+    name: 'poorCredit',
+    label: 'No Credit History',
+  },
+  {
+    name: 'noRentalHistory',
+    label: 'No Rental History',
+  },
+];
+
+const incomeSource = [
+  {
+    name: 'TANF',
+    label: 'TANF',
+  },
+  {
+    name: 'SSI',
+    label: 'SSI',
+  },
+  {
+    name: 'SSDI',
+    label: 'SSDI',
+  },
+  {
+    name: 'childSupport',
+    label: 'Child Support',
+  },
+];
 
 const Finances = () => {
   const [form] = Form.useForm();
+  const [formValues, setFormValues] = useState(initialFormValues);
+
+  const onChange = e => {
+    e.preventDefault();
+    setFormValues({ ...formValues, [e.target.name]: !e.target.value });
+  };
 
   return (
     <div className="subsectionContainer">
       <h2 className="subsectionHeader">FINANCES</h2>
-      <Form form={form} className="Finances__Form" layout="inline">
-        <div className="Finances_Form_Sections">
-          <section>
-            <div className="Finances_Form_Container_Styles">
-              <Form.Item>
-                <Form.Item>
-                  <label className="Finances_Form_Label">
-                    Family have history of:
-                  </label>
-                  <Checkbox value="eviction">
-                    <label>Eviction</label>
-                  </Checkbox>
-                </Form.Item>
-                <Form.Item>
-                  <Checkbox value="landlordDebt">
-                    <label>Landlord Debt</label>
-                  </Checkbox>
-                </Form.Item>
-                <Form.Item>
-                  <Checkbox value="criminalHistory">
-                    <label>Criminal History</label>
-                  </Checkbox>
-                </Form.Item>
-                <Form.Item>
-                  <Checkbox value="poorCredit">
-                    <label>No Credit History</label>
-                  </Checkbox>
-                </Form.Item>
-                <Form.Item>
-                  <Checkbox value="noRentalHistory">
-                    <label>No Rental History</label>
-                  </Checkbox>
-                </Form.Item>
-              </Form.Item>
+      <Form.Item form={form} className="Finances__Form" layout="inline">
+        <div
+          className="Finances_Form_Sections"
+          style={{
+            display: 'flex',
+            width: 'full',
+            justifyContent: 'space-between',
+          }}
+        >
+          <section style={{ width: '45%' }}>
+            <div className="Finances_Form_Label">Family have history of: </div>
+            <div
+              className="Finances_Form_Container_Styles"
+              style={{ display: 'flex', flexDirection: 'column' }}
+            >
+              {familyHistory.map(info => (
+                <div key={info.name} className="Finances_Form_Container_Styles">
+                  <Form.Item>
+                    <Checkbox
+                      name={info.name}
+                      checked={formValues[info.name]}
+                      value={formValues[info.name]}
+                      onChange={onChange}
+                    >
+                      <label>{info.label}</label>
+                    </Checkbox>
+                  </Form.Item>
+                </div>
+              ))}
+              ;
             </div>
           </section>
 
+          <section style={{ width: '45%' }}>
+            <div className="Finances_Form_Label">Source of Income:</div>
+            <div
+              className="Finances_Form_Container_Styles"
+              style={{ display: 'flex', flexDirection: 'column' }}
+            >
+              {incomeSource.map(info => (
+                <div key={info.name} className="Finances_Form_Container_Styles">
+                  <Form.Item>
+                    <Checkbox
+                      name={info.name}
+                      checked={formValues[info.name]}
+                      value={formValues[info.name]}
+                      onChange={onChange}
+                    >
+                      <label>{info.label}</label>
+                    </Checkbox>
+                  </Form.Item>
+                </div>
+              ))}
+              ;
+            </div>
+          </section>
+
+          {/* 
           <section>
             <div className="Finances_Form_Container_Styles">
               <Form.Item className="Finances_Form_Container_Styles_Subsection1">
@@ -51,22 +137,22 @@ const Finances = () => {
                   Sources of income:
                 </label>
                 <Form.Item>
-                  <Checkbox value="eviction">
+                  <Checkbox value={formValues.eviction}>
                     <label>TANF</label>
                   </Checkbox>
                 </Form.Item>
                 <Form.Item>
-                  <Checkbox value="SSI">
+                  <Checkbox value={formValues.SSI}>
                     <label>SSI</label>
                   </Checkbox>
                 </Form.Item>
                 <Form.Item>
-                  <Checkbox value="SSI">
+                  <Checkbox value={formValues.SSI}>
                     <label>SSI</label>
                   </Checkbox>
                 </Form.Item>
                 <Form.Item>
-                  <Checkbox value="SSDI">
+                  <Checkbox value={formValues.SSDI}>
                     <label>SSDI</label>
                   </Checkbox>
                 </Form.Item>
@@ -85,7 +171,9 @@ const Finances = () => {
                 </div>
               </Form.Item>
             </div>
-          </section>
+          </section> */}
+
+          {/* 
 
           <section>
             <div className="Finances_Form_Container_Styles">
@@ -167,9 +255,9 @@ const Finances = () => {
                 </div>
               </Form.Item>
             </div>
-          </section>
+          </section> */}
         </div>
-      </Form>
+      </Form.Item>
     </div>
   );
 };
