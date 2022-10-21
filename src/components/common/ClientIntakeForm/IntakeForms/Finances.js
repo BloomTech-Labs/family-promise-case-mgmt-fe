@@ -8,8 +8,6 @@ const initialFormValues = {
   criminalHistory: false,
   poorCredit: false,
   opName: false,
-  eviction: false,
-  SSI: false,
   SSI: false,
   SSDI: false,
   studentLoan: false,
