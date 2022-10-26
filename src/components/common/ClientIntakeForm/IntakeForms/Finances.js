@@ -174,7 +174,7 @@ const Finances = () => {
                       placeholder="$0"
                       name="Amount"
                       className="Finances_Form_Amount_Input"
-                      style={{ width: '55%' }}
+                      style={{ width: '55%', padding: 1 }}
                     />
                   </Form.Item>
                 </div>
