@@ -1,5 +1,5 @@
 import React from 'react';
-import { Form, Checkbox } from 'antd';
+import { Form, Checkbox, Input } from 'antd';
 import { useState } from 'react';
 
 const initialFormValues = {
@@ -55,6 +55,25 @@ const incomeSource = [
   {
     name: 'childSupport',
     label: 'Child Support',
+  },
+];
+
+const typesOfDebt = [
+  {
+    name: 'studentLoan',
+    label: 'Student Loan',
+  },
+  {
+    name: 'creditCard',
+    label: 'Credit Card',
+  },
+  {
+    name: 'medicalBills',
+    label: 'Medical Bills',
+  },
+  {
+    name: 'autoLoan',
+    label: 'Auto Loan',
   },
 ];
 
@@ -123,137 +142,48 @@ const Finances = () => {
                   </Form.Item>
                 </div>
               ))}
+              <Input
+                placeholder="$0"
+                name="Amount"
+                className="Finances_Form_Amount_Input"
+                // adjust width of amount box
+                width="5%"
+              />
               ;
             </div>
           </section>
 
-          {/* 
-          <section>
-            <div className="Finances_Form_Container_Styles">
-              <Form.Item className="Finances_Form_Container_Styles_Subsection1">
-                <label className="Finances_Form_Label">
-                  Sources of income:
-                </label>
-                <Form.Item>
-                  <Checkbox value={formValues.eviction}>
-                    <label>TANF</label>
-                  </Checkbox>
-                </Form.Item>
-                <Form.Item>
-                  <Checkbox value={formValues.SSI}>
-                    <label>SSI</label>
-                  </Checkbox>
-                </Form.Item>
-                <Form.Item>
-                  <Checkbox value={formValues.SSI}>
-                    <label>SSI</label>
-                  </Checkbox>
-                </Form.Item>
-                <Form.Item>
-                  <Checkbox value={formValues.SSDI}>
-                    <label>SSDI</label>
-                  </Checkbox>
-                </Form.Item>
-
-                <div className="Finances_Form_Amount_Container">
-                  <Form.Item
-                    label="Amount::"
-                    className="Finances_Form_Amount_Label"
-                  >
+          {/*  TYPES OF DEBT */}
+          <section style={{ width: '45%' }}>
+            <div className="Finances_Form_Label">Types of Debt:</div>
+            <div
+              className="Finances_Form_Container_Styles"
+              style={{ display: 'flex', flexDirection: 'column' }}
+            >
+              {typesOfDebt.map(info => (
+                <div key={info.name} className="Finances_Form_Container_Styles">
+                  <Form.Item>
+                    <Checkbox
+                      name={info.name}
+                      checked={formValues[info.name]}
+                      value={formValues[info.name]}
+                      onChange={onChange}
+                    >
+                      <label>{info.label}</label>
+                    </Checkbox>
                     <Input
                       placeholder="$0"
                       name="Amount"
                       className="Finances_Form_Amount_Input"
+                      // adjust width of amount box
+                      width="5%"
                     />
                   </Form.Item>
                 </div>
-              </Form.Item>
-            </div>
-          </section> */}
-
-          {/* 
-
-          <section>
-            <div className="Finances_Form_Container_Styles">
-              <Form.Item>
-                <Form.Item>
-                  <label className="Finances_Form_Label">Types Of Debt:</label>
-                </Form.Item>
-                <Form.Item>
-                  <Checkbox value="studentLoan">
-                    <label>Student Loan</label>
-                  </Checkbox>
-                </Form.Item>
-                <div className="Finances_Form_Amount_Container">
-                  <Form.Item
-                    label="Amount::"
-                    className="Finances_Form_Amount_Label"
-                  >
-                    <Input
-                      placeholder="$0"
-                      name="Amount"
-                      className="Finances_Form_Amount_Input"
-                    />
-                  </Form.Item>
-                </div>
-                <Form.Item>
-                  <Checkbox value="medicalBills">
-                    <label>Medical Bills</label>
-                  </Checkbox>
-                </Form.Item>
-                <div className="Finances_Form_Amount_Container">
-                  <Form.Item
-                    label="Amount::"
-                    className="Finances_Form_Amount_Label"
-                  >
-                    <Input
-                      placeholder="$0"
-                      name="Amount"
-                      className="Finances_Form_Amount_Input"
-                    />
-                  </Form.Item>
-                </div>
-              </Form.Item>
+              ))}
+              ;
             </div>
           </section>
-
-          <section>
-            <div className="Finances_Form_Container_Styles">
-              <Form.Item className="Finances_Form_Container_Styles_Subsection2">
-                <Form.Item>
-                  <Checkbox value="creditCard">
-                    <label>Credit Card</label>
-                  </Checkbox>
-                </Form.Item>
-                <div className="Finances_Form_Amount_Container">
-                  <Form.Item
-                    label="Amount::"
-                    className="Finances_Form_Amount_Label"
-                  >
-                    <Input placeholder="$0" name="Amount" />
-                  </Form.Item>
-                </div>
-
-                <Form.Item>
-                  <Checkbox value="autoLoan">
-                    <label>Auto Loan</label>
-                  </Checkbox>
-                </Form.Item>
-                <div className="Finances_Form_Amount_Container">
-                  <Form.Item
-                    label="Amount::"
-                    className="Finances_Form_Amount_Label"
-                  >
-                    <Input
-                      placeholder="$0"
-                      name="Amount"
-                      className="Finances_Form_Amount_Input"
-                    />
-                  </Form.Item>
-                </div>
-              </Form.Item>
-            </div>
-          </section> */}
         </div>
       </Form.Item>
     </div>
