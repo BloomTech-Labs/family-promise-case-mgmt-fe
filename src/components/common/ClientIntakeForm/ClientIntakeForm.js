@@ -1,4 +1,4 @@
-import { Form, DatePicker } from 'antd';
+import { Form, DatePicker, Button, Space } from 'antd';
 import React from 'react';
 import ClientFamilyInfo from './IntakeForms/ClientFamilyInfo';
 import Finances from './IntakeForms/Finances';
@@ -46,6 +46,17 @@ const ClientIntakeForm = () => {
         <ContactPreferences />
         <Referrals />
         <DocumentUpload />
+        <div align="middle">
+          <Space size="large">
+            <Button type="danger" size="large" onClick={onFinish}>
+              CANCEL
+            </Button>
+            {/* need to add functionality to both the cancel and submit button */}
+            <Button type="primary" size="large" onClick={onFinish}>
+              SUBMIT
+            </Button>
+          </Space>
+        </div>
       </Form>
     </div>
   );

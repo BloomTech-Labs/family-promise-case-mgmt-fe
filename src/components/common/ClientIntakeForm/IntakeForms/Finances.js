@@ -175,7 +175,6 @@ const Finances = () => {
                       placeholder="$0"
                       name="Amount"
                       className="Finances_Form_Amount_Input"
-                      // adjust width of amount box
                       width="5%"
                     />
                   </Form.Item>
