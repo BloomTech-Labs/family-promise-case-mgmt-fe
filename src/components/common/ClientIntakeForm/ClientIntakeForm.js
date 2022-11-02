@@ -48,11 +48,22 @@ const ClientIntakeForm = () => {
         <DocumentUpload />
         <div align="middle">
           <Space size="large">
-            <Button type="danger" size="large" onClick={onFinish}>
+            <Button
+              size="large"
+              shape="omitted"
+              style={{ backgroundColor: 'grey', color: 'white' }}
+              background-color="red"
+              onClick={onFinish}
+            >
               CANCEL
             </Button>
             {/* need to add functionality to both the cancel and submit button */}
-            <Button type="primary" size="large" onClick={onFinish}>
+            <Button
+              type="primary"
+              shape="omitted"
+              size="large"
+              onClick={onFinish}
+            >
               SUBMIT
             </Button>
           </Space>
