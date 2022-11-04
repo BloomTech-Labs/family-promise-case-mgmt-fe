@@ -6,17 +6,32 @@ const PrintNotes = () => {
 
   useEffect(() => {
     axios
-      .get('http://localhost:8000/api/clients/2/notes')
+      //update the 1 state based on which client we are viewing
+      .get('http://localhost:8000/api/clients/1/notes')
       .then(res => {
         setNotes(res.data);
       })
       .catch(err => console.log(err));
   }, []);
 
+  console.log(notes);
+
   return (
     <>
-      {notes.length > 1
-        ? notes.map(note => <div key={note.id}>{note.message}</div>)
+      <header className="printNotesHeader">
+        <div>Family Promise</div>
+        <div>{notes[0].client_id}</div>
+      </header>
+      {notes.length
+        ? notes.map(note => (
+            <div key={note.id}>
+              <section>
+                <div>{note.created_at}</div>
+                <div>{note.created_by}</div>
+              </section>
+              <section>{note.message}</section>
+            </div>
+          ))
         : 'No notes for this client yet'}
     </>
   );
