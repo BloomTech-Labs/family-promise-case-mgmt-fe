@@ -146,6 +146,11 @@ function CaseDetails() {
           >
             Print Documents
           </Button>
+          <Link to="/case-notes/print">
+            <Button type="Default" className="leftSideBottomButtons">
+              Print Notes
+            </Button>
+          </Link>
         </div>
       </div>
       <div className="CaseDetails__RightSide">
