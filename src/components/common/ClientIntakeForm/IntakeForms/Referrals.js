@@ -50,15 +50,15 @@ const Documents = props => {
     ),
   };
 
-  const onFinish = values => {
-    if (typeof referralIndex === 'number') {
-      props.editReferral(values, referralIndex);
-      setReferralIndex(null);
-    } else {
-      props.saveReferral(values);
-    }
-    form.resetFields();
-  };
+  // const onFinish = values => {
+  //   if (typeof referralIndex === 'number') {
+  //     props.editReferral(values, referralIndex);
+  //     setReferralIndex(null);
+  //   } else {
+  //     props.saveReferral(values);
+  //   }
+  //   form.resetFields();
+  // };
 
   const handleDeleteReferral = index => {
     props.deleteReferral(index);

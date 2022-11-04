@@ -2,6 +2,7 @@ import axios from 'axios';
 
 // we will define a bunch of API calls here.
 const apiUrl = `${process.env.REACT_APP_API_URI}/profiles`;
+const apiFormUrl = `${process.env.REACT_APP_API_URI}/1/intake`;
 
 const sleep = time =>
   new Promise(resolve => {
@@ -49,4 +50,17 @@ const getProfileData = authState => {
   }
 };
 
-export { sleep, getExampleData, getProfileData, getDSData };
+const submitForm = intakeObj => {
+  try {
+    return axios.post(apiFormUrl, intakeObj).then(res => {
+      console.log(res.data);
+    });
+  } catch (error) {
+    return new Promise(() => {
+      console.log(error);
+      return [];
+    });
+  }
+};
+
+export { sleep, getExampleData, getProfileData, getDSData, submitForm };

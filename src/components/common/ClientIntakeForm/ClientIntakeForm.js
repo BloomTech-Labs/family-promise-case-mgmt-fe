@@ -1,5 +1,5 @@
 import { Form, DatePicker, Button, Space } from 'antd';
-import React from 'react';
+import React, { useState } from 'react';
 import ClientFamilyInfo from './IntakeForms/ClientFamilyInfo';
 import Finances from './IntakeForms/Finances';
 import ContactPreferences from './IntakeForms/ContactPreferences';
@@ -7,6 +7,7 @@ import Referrals from './IntakeForms/Referrals';
 import DocumentUpload from './IntakeForms/DocumentUpload';
 import EducationIntake from './IntakeForms/EducationIntake';
 import EmploymentIntake from './IntakeForms/EmploymentIntake';
+import { submitForm } from '../../../api';
 
 //NOTE: Inline Styles added temporarily.
 const sectionContainer = {
@@ -18,13 +19,20 @@ const sectionContainer = {
   margin: 'auto',
 };
 
-const ClientIntakeForm = () => {
+const ClientIntakeForm = onChange => {
   const [form] = Form.useForm();
 
   const onFinish = values => {
     console.log('Form Values: ', values);
     form.resetFields();
   };
+
+  const [fields, setFields] = useState([
+    {
+      name: ['name'],
+      value: 'Chris',
+    },
+  ]);
 
   return (
     <div>
@@ -62,7 +70,12 @@ const ClientIntakeForm = () => {
               type="primary"
               shape="omitted"
               size="large"
-              onClick={onFinish}
+              onClick={
+                (onChange = newFields => {
+                  setFields(newFields);
+                  submitForm(fields);
+                })
+              }
             >
               SUBMIT
             </Button>
