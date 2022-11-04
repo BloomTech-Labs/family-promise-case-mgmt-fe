@@ -24,6 +24,7 @@ import { ClientIntakeForm } from './components/common/ClientIntakeForm';
 import { LayoutTemplate } from './components/pages/LayoutTemplate';
 import { CaseDetails } from './components/pages/CaseDetails';
 import { Calendar } from './components/pages/Calendar';
+import PrintNotes from './components/common/CaseDetails/printNotes';
 
 import { RecentCases } from './components/pages/RecentCases';
 import DashHeader from './components/common/DashHeader';
@@ -62,6 +63,7 @@ function App() {
         <SecureRoute path="/cases/:caseID" component={CaseView} />
         <SecureRoute path="/case-details" component={CaseDetails} />
         <SecureRoute path="/cases" component={Cases} />{' '}
+        <SecureRoute path="/case-notes/print" component={PrintNotes} />
         <SecureRoute path="/client-intake-form" component={ClientIntakeForm} />
         <SecureRoute path="/profile-list" component={ProfileListPage} />
         <SecureRoute path="/example-list" component={ExampleListPage} />
