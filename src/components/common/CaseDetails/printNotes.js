@@ -14,6 +14,31 @@ const PrintNotes = () => {
       .catch(err => console.log(err));
   }, []);
 
+  //changes the formata of the date given
+  let stringVersionMMDDYY = '';
+  let mmddyy = [];
+  let yy = '';
+  let mm = '';
+  let dd = '';
+
+  //grabs the MM/DD/YYYY in array format
+  for (let i = 0; i < notes.length; i++) {
+    mmddyy = notes[i].created_at.split('');
+  }
+
+  //loops over MM/DD/YYYY array and builds a readable date format
+  for (let i = 0; i < mmddyy.length; i++) {
+    if (mmddyy[i] === 'T') break;
+    if (i < 4) {
+      yy += mmddyy[i];
+    } else if (i < 8) {
+      mm += mmddyy[i];
+    } else {
+      dd += mmddyy[i];
+    }
+    stringVersionMMDDYY = mm + dd + '-' + yy;
+  }
+
   return (
     <div className="containerForPrintNotesComp">
       <header className="printNotesHeader">
