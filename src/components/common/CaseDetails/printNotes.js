@@ -29,6 +29,7 @@ const PrintNotes = () => {
   //loops over MM/DD/YYYY array and builds a readable date format
   for (let i = 0; i < mmddyy.length; i++) {
     if (mmddyy[i] === 'T') break;
+    if (i === 4) continue;
     if (i < 4) {
       yy += mmddyy[i];
     } else if (i < 8) {
@@ -52,7 +53,7 @@ const PrintNotes = () => {
             <div className="printNotesContainer" key={note.id}>
               <section className="printNotesSectionContainer">
                 <div className="notesHeading notesHeading1">
-                  Added on: {notes.created_on}
+                  Added on: {stringVersionMMDDYY}
                 </div>
                 <div className="notesHeading notesHeading2">
                   Added by: {note.created_by}
