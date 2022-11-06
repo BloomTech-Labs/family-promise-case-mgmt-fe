@@ -65,7 +65,6 @@ const ClientIntakeForm = onChange => {
             >
               CANCEL
             </Button>
-            {/* need to add functionality to both the cancel and submit button */}
             <Button
               type="primary"
               shape="omitted"
