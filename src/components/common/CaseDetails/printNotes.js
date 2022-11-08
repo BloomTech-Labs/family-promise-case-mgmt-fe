@@ -14,30 +14,10 @@ const PrintNotes = () => {
       .catch(err => console.log(err));
   }, []);
 
-  //changes the formata of the date given
-  let stringVersionMMDDYY = '';
-  let mmddyy = [];
-  let yy = '';
-  let mm = '';
-  let dd = '';
-
-  //grabs the MM/DD/YYYY in array format
-  for (let i = 0; i < notes.length; i++) {
-    mmddyy = notes[i].created_at.split('');
-  }
-
-  //loops over MM/DD/YYYY array and builds a readable date format
-  for (let i = 0; i < mmddyy.length; i++) {
-    if (mmddyy[i] === 'T') break;
-    if (i === 4) continue;
-    if (i < 4) {
-      yy += mmddyy[i];
-    } else if (i < 8) {
-      mm += mmddyy[i];
-    } else {
-      dd += mmddyy[i];
-    }
-    stringVersionMMDDYY = mm + dd + '-' + yy;
+  //format the date
+  function formatDate(index) {
+    const date = new Date(notes[index].created_at).toLocaleString();
+    return date;
   }
 
   return (
@@ -49,11 +29,11 @@ const PrintNotes = () => {
         </div>
       </header>
       {notes.length
-        ? notes.map(note => (
+        ? notes.map((note, i) => (
             <div className="printNotesContainer" key={note.id}>
               <section className="printNotesSectionContainer">
                 <div className="notesHeading notesHeading1">
-                  Added on: {stringVersionMMDDYY}
+                  Added on: {formatDate(i)}
                 </div>
                 <div className="notesHeading notesHeading2">
                   Added by: {note.created_by}
