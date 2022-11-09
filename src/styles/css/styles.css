@@ -861,7 +861,7 @@ td.ant-table-column-sort {
 }
 
 .headerDivPrintNotes{
-  margin-top: 2%;
+  margin-bottom: .5%;
   margin-right: 2%;
   height: 3vh;
   font-size: 1.5rem;
