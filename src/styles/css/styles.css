@@ -857,17 +857,21 @@ td.ant-table-column-sort {
   margin-bottom: 3%;
   display: flex;
   justify-content: space-between;
+  align-items:flex-end;
 }
 
 .headerDivPrintNotes{
-  font-size: 3.5rem;
+  margin-top: 2%;
+  margin-right: 2%;
+  height: 3vh;
+  font-size: 1.5rem;
   font-family: 'Times New Roman', Times, serif;
-  padding: 1%;
-  padding-right: 5%;
 }
 
 .logoInHeader{
-  height: 11vh;
+  margin-left: 2%;
+  height: 6vh;
+  margin-top: 1%;
 }
 
 .printNotesContainer{
