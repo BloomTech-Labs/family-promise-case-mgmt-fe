@@ -716,6 +716,11 @@
 .Rightside__PreviousNotes p {
   color: #cdcdcd;
 }
+
+.Rightside__PreviousNotes span{
+  color:#8D4982;
+  font-size:10px;
+}
 .SidebarContainer {
   display: flex;
   flex-flow: column nowrap;

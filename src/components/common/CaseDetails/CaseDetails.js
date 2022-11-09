@@ -28,6 +28,11 @@ function CaseDetails() {
   const [filterSearch, setFilterSearch] = useState('');
   const [filteredResults, setFilteredResults] = useState([]);
 
+  //State slice for notes
+  const [notes, setNotes] = useState([
+    { note: 'place holder note', date: '11/9/2022' },
+  ]);
+
   //State slices for adding notes
   const [newNote, setNewNote] = useState('');
 
@@ -49,12 +54,20 @@ function CaseDetails() {
   };
 
   const saveNotesHandler = event => {
-    placeholderArray.push(newNote);
+    //Create a time stamp in MM/DD/YYYY fomate
+    let timeStamp = Date.now();
+    let date = new Date(timeStamp);
+    let month = date.getMonth() + 1;
+    let year = date.getFullYear();
+    let day = date.getDate();
+
+    let finalTimeStamp = `${month}/${day}/${year}`;
+    setNotes([...notes, { note: newNote, date: finalTimeStamp }]);
   };
 
   //onChange for filtered search bar
   let placeholderArray = [
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doeiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enimad minim veniam, quis nostrud exercitation ullamco laboris nisi utaliquip ex ea commodo consequat. Duis aute irure dolor inreprehenderit in voluptate velit esse cillum dolore eu fugiat nullapariatur. Excepteur sint occaecat cupidatat non proident, sunt inculpa qui officia deserunt mollit anim id est laborum.',
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis',
   ];
   const filterSearchHandler = filterValue => {
     setFilterSearch(filterValue);
@@ -188,28 +201,15 @@ function CaseDetails() {
                   </div>
                 );
               })
-            : placeholderArray.map(item => {
+            : notes.map(item => {
                 return (
                   <div>
                     <div>
                       <h3>Title here2</h3>
-                      <p>Note goes here.2</p>
-                    </div>
-                    <div>
-                      <h3>Title here2</h3>
-                      <p>Note goes here.2</p>
-                    </div>
-                    <div>
-                      <h3>Title here2</h3>
-                      <p>Note goes here.2</p>
-                    </div>
-                    <div>
-                      <h3>Title here2</h3>
-                      <p>Note goes here.2</p>
-                    </div>
-                    <div>
-                      <h3>Title here2</h3>
-                      <p>Note goes here.2</p>
+                      <p>
+                        {item.note}
+                        <span>{item.date}</span>
+                      </p>
                     </div>
                   </div>
                 );
