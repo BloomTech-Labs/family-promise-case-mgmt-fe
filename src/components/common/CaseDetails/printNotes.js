@@ -14,15 +14,13 @@ const PrintNotes = props => {
 
   useEffect(() => {
     getClientsNotes(tempClientObj.id).then(res => setNotes(res));
-  }, []);
+  }, []); //eslint-disable-line
 
   //format the date
   function formatDate(index) {
     const date = new Date(notes[index].created_at).toLocaleString();
     return date;
   }
-
-  console.log(notes);
 
   return (
     <div className="containerForPrintNotesComp">
