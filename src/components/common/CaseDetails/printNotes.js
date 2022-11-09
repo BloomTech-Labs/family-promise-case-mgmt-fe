@@ -1,17 +1,19 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import { getClientsNotes } from '../../../api/index';
+import { connect } from 'react-redux';
+import familyPromiseIcon from '../../../assets/fplogo.png';
 
-const PrintNotes = () => {
+const PrintNotes = props => {
   const [notes, setNotes] = useState([]);
+  //When clientNotes is built out, replace everything using tempObject with props
+  //or you can replace with redux when redux is working
+  const tempClientObj = {
+    name: 'John Doe',
+    id: 1,
+  };
 
   useEffect(() => {
-    //update the 1 with state based on which client we are viewing
-    axios
-      .get('http://localhost:8000/api/clients/1/notes')
-      .then(res => {
-        setNotes(res.data);
-      })
-      .catch(err => console.log(err));
+    getClientsNotes(tempClientObj.id).then(res => setNotes(res));
   }, []);
 
   //format the date
@@ -23,9 +25,13 @@ const PrintNotes = () => {
   return (
     <div className="containerForPrintNotesComp">
       <header className="printNotesHeader">
-        <div className="headerDivPrintNotes">Family Promise</div>
+        <img
+          className="logoInHeader"
+          src={familyPromiseIcon}
+          alt="family promise logo"
+        ></img>
         <div className="headerDivPrintNotes">
-          {notes.length < 1 ? '' : `Client id: ${notes[1].client_id}`}
+          Client Name: {tempClientObj.name}
         </div>
       </header>
       {notes.length
@@ -47,4 +53,4 @@ const PrintNotes = () => {
   );
 };
 
-export default PrintNotes;
+export default connect(st => st)(PrintNotes);
