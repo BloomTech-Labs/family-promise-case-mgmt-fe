@@ -22,6 +22,8 @@ const PrintNotes = props => {
     return date;
   }
 
+  console.log(notes);
+
   return (
     <div className="containerForPrintNotesComp">
       <header className="printNotesHeader">
