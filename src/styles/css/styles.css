@@ -866,6 +866,10 @@ td.ant-table-column-sort {
   padding-right: 5%;
 }
 
+.logoInHeader{
+  height: 11vh;
+}
+
 .printNotesContainer{
   width: 80%;
   margin: 0 auto;
