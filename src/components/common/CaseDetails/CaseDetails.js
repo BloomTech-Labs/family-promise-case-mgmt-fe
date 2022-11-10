@@ -1,7 +1,8 @@
 //Basic and antD imports
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Button, Collapse, Input, Space } from 'antd';
+import axios from 'axios';
 
 //Style and icon imports
 import '../../../styles/css/styles.css';
@@ -30,11 +31,22 @@ function CaseDetails() {
 
   //State slice for notes
   const [notes, setNotes] = useState([
-    { note: 'place holder note', date: '11/9/2022' },
+    { message: 'place holder note', date: '11/9/2022' },
   ]);
 
   //State slices for adding notes
   const [newNote, setNewNote] = useState('');
+
+  // placeholder number for client number;
+  const clientId = 1;
+
+  //fetching notes from the backend with axios
+  useEffect(() => {
+    axios
+      .get(`http://localhost:8000/api/clients/${clientId}/notes`)
+      .then(res => setNotes(res.data))
+      .catch(err => console.log(err));
+  }, []);
 
   //onClick handler for buttons
   const generateFormHandler = event => {
@@ -56,13 +68,28 @@ function CaseDetails() {
   const saveNotesHandler = event => {
     //Create a time stamp in MM/DD/YYYY fomate
     let timeStamp = Date.now();
-    let date = new Date(timeStamp);
-    let month = date.getMonth() + 1;
-    let year = date.getFullYear();
-    let day = date.getDate();
+    new Intl.DateTimeFormat('en-US', {
+      year: 'numeric',
+      month: '2-digit',
+      day: '2-digit',
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit',
+    }).format(timeStamp);
 
-    let finalTimeStamp = `${month}/${day}/${year}`;
-    setNotes([...notes, { note: newNote, date: finalTimeStamp }]);
+    //Creating a note to Post
+    let savedNote = {
+      id: `${Date.now()}`,
+      client_id: clientId,
+      source_view: 'caseview',
+      message: newNote,
+      created_at: '2022-11-03T23:22:03.616Z',
+      delete_at: null,
+      created_by: '1',
+    };
+
+    //Post the note to the backend
+    setNotes([...notes, savedNote]);
   };
 
   //onChange for filtered search bar
@@ -202,13 +229,18 @@ function CaseDetails() {
                 );
               })
             : notes.map(item => {
+                let date = new Date(item.created_at);
+                let month = date.getMonth();
+                let year = date.getFullYear();
+                let day = date.getDate();
+
                 return (
                   <div>
                     <div>
                       <h3>Title here2</h3>
                       <p>
-                        {item.note}
-                        <span>{item.date}</span>
+                        {item.message}
+                        <span>{`${month}/${day}/${year}`}</span>
                       </p>
                     </div>
                   </div>
