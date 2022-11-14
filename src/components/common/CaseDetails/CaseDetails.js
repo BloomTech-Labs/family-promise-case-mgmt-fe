@@ -79,17 +79,22 @@ function CaseDetails() {
 
     //Creating a note to Post
     let savedNote = {
-      id: `${Date.now()}`,
       client_id: clientId,
       source_view: 'caseview',
       message: newNote,
-      created_at: '2022-11-03T23:22:03.616Z',
-      delete_at: null,
       created_by: '1',
     };
 
     //Post the note to the backend
-    setNotes([...notes, savedNote]);
+    axios
+      .post(`http://localhost:8000/api/clients/${clientId}/notes`, savedNote)
+      .then(res => console.log(res.data))
+      .catch(err => console.error(err.message));
+
+    axios
+      .get(`http://localhost:8000/api/clients/${clientId}/notes`)
+      .then(res => setNotes(res.data))
+      .catch(err => console.log(err));
   };
 
   //onChange for filtered search bar
