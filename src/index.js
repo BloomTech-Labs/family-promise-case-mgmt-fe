@@ -25,19 +25,15 @@ import './styles/css/styles.css';
 import { CMLogin } from './components/pages/CMLogin';
 
 import PrivateRoute from './components/common/PrivateRoute';
-import { Auth0Provider } from '@auth0/auth0-react';
+import Auth0ProviderWithHistory from './auth/Auth0ProviderWithHistory';
 
 ReactDOM.render(
   <Router>
     <React.StrictMode>
       <Provider store={store}>
-        <Auth0Provider
-          domain="dev-hz2ks357.us.auth0.com"
-          clientId="mQ2HIpRyqF97iuz7V0iPRJ3V0Yo4s82y"
-          redirectUri={window.location.origin}
-        >
+        <Auth0ProviderWithHistory>
           <App />
-        </Auth0Provider>
+        </Auth0ProviderWithHistory>
       </Provider>
     </React.StrictMode>
   </Router>,
@@ -47,8 +43,8 @@ ReactDOM.render(
 function App() {
   return (
     <Switch>
-      <Route path="/" component={TempLandingPage} />
-      {/* any of the routes you need secured should be registered as SecureRoutes */}
+      <Route exact path="/" component={TempLandingPage} />
+      {/* any of the routes you need secured should be registered as PrivateRoutes */}
       <PrivateRoute path="/cases/:caseID" component={CaseView} />
       <PrivateRoute path="/case-details" component={CaseDetails} />
       <PrivateRoute path="/cases" component={Cases} />{' '}

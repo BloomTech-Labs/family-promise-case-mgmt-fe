@@ -180,17 +180,17 @@ function CaseDetails() {
         </div>
         <div className="Rightside__PreviousNotes">
           {filterSearch.length > 1
-            ? filteredResults.map(item => {
+            ? filteredResults.map((item, idx) => {
                 return (
-                  <div>
+                  <div key={idx}>
                     <h3>Title here</h3>
                     <p>Note goes here.</p>
                   </div>
                 );
               })
-            : placeholderArray.map(item => {
+            : placeholderArray.map((item, idx) => {
                 return (
-                  <div>
+                  <div key={idx}>
                     <div>
                       <h3>Title here2</h3>
                       <p>Note goes here.2</p>
