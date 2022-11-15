@@ -16,7 +16,7 @@ import { ClientIntakeForm } from './components/common/ClientIntakeForm';
 import { LayoutTemplate } from './components/pages/LayoutTemplate';
 import { CaseDetails } from './components/pages/CaseDetails';
 import { Calendar } from './components/pages/Calendar';
-import Temp from './components/tempComponent';
+import { TempLandingPage } from './components/pages/TempLandingPage';
 
 import { RecentCases } from './components/pages/RecentCases';
 import DashHeader from './components/common/DashHeader';
@@ -47,7 +47,7 @@ ReactDOM.render(
 function App() {
   return (
     <Switch>
-      <Route path="/" component={Temp} />
+      <Route path="/" component={TempLandingPage} />
       {/* any of the routes you need secured should be registered as SecureRoutes */}
       <PrivateRoute path="/cases/:caseID" component={CaseView} />
       <PrivateRoute path="/case-details" component={CaseDetails} />
