@@ -7,6 +7,8 @@ function LoadingComponent(props) {
   return <div>{message}</div>;
 }
 
+//this is for no reason
+
 export default LoadingComponent;
 
 LoadingComponent.propTypes = {
