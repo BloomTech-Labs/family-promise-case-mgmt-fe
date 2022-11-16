@@ -66,17 +66,6 @@ function CaseDetails() {
   };
 
   const saveNotesHandler = event => {
-    //Create a time stamp in MM/DD/YYYY fomate
-    let timeStamp = Date.now();
-    new Intl.DateTimeFormat('en-US', {
-      year: 'numeric',
-      month: '2-digit',
-      day: '2-digit',
-      hour: '2-digit',
-      minute: '2-digit',
-      second: '2-digit',
-    }).format(timeStamp);
-
     //Creating a note to Post
     let savedNote = {
       client_id: clientId,
@@ -90,11 +79,6 @@ function CaseDetails() {
       .post(`http://localhost:8000/api/clients/${clientId}/notes`, savedNote)
       .then(res => console.log(res.data))
       .catch(err => console.error(err.message));
-
-    axios
-      .get(`http://localhost:8000/api/clients/${clientId}/notes`)
-      .then(res => setNotes(res.data))
-      .catch(err => console.log(err));
   };
 
   //onChange for filtered search bar
