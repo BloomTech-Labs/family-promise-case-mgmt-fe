@@ -883,13 +883,7 @@ td.ant-table-column-sort {
 }
 
 .AddFamilyMember_SectionLeft {
-  margin-left: 30px;
-  /* width: 100% auto; */
-  /* display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-content: baseline;
-  margin: auto;  */
+  margin-left: 20px;
 }
 
 .AddFamilyMember_InputStyles {
