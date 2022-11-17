@@ -1,7 +1,8 @@
 //Basic and antD imports
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Button, Collapse, Input, Space } from 'antd';
+import axios from 'axios';
 
 //Style and icon imports
 import '../../../styles/css/styles.css';
@@ -28,8 +29,24 @@ function CaseDetails() {
   const [filterSearch, setFilterSearch] = useState('');
   const [filteredResults, setFilteredResults] = useState([]);
 
+  //State slice for notes
+  const [notes, setNotes] = useState([
+    { message: 'place holder note', date: '11/9/2022' },
+  ]);
+
   //State slices for adding notes
   const [newNote, setNewNote] = useState('');
+
+  // placeholder number for client number;
+  const clientId = 1;
+
+  //fetching notes from the backend with axios
+  useEffect(() => {
+    axios
+      .get(`http://localhost:8000/api/clients/${clientId}/notes`)
+      .then(res => setNotes(res.data))
+      .catch(err => console.log(err));
+  }, []);
 
   //onClick handler for buttons
   const generateFormHandler = event => {
@@ -49,12 +66,24 @@ function CaseDetails() {
   };
 
   const saveNotesHandler = event => {
-    placeholderArray.push(newNote);
+    //Creating a note to Post
+    let savedNote = {
+      client_id: clientId,
+      source_view: 'caseview',
+      message: newNote,
+      created_by: '1',
+    };
+
+    //Post the note to the backend
+    axios
+      .post(`http://localhost:8000/api/clients/${clientId}/notes`, savedNote)
+      .then(res => console.log(res.data))
+      .catch(err => console.error(err.message));
   };
 
   //onChange for filtered search bar
   let placeholderArray = [
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doeiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enimad minim veniam, quis nostrud exercitation ullamco laboris nisi utaliquip ex ea commodo consequat. Duis aute irure dolor inreprehenderit in voluptate velit esse cillum dolore eu fugiat nullapariatur. Excepteur sint occaecat cupidatat non proident, sunt inculpa qui officia deserunt mollit anim id est laborum.',
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis',
   ];
   const filterSearchHandler = filterValue => {
     setFilterSearch(filterValue);
@@ -193,28 +222,20 @@ function CaseDetails() {
                   </div>
                 );
               })
-            : placeholderArray.map(item => {
+            : notes.map(item => {
+                let date = new Date(item.created_at);
+                let month = date.getMonth();
+                let year = date.getFullYear();
+                let day = date.getDate();
+
                 return (
                   <div>
                     <div>
                       <h3>Title here2</h3>
-                      <p>Note goes here.2</p>
-                    </div>
-                    <div>
-                      <h3>Title here2</h3>
-                      <p>Note goes here.2</p>
-                    </div>
-                    <div>
-                      <h3>Title here2</h3>
-                      <p>Note goes here.2</p>
-                    </div>
-                    <div>
-                      <h3>Title here2</h3>
-                      <p>Note goes here.2</p>
-                    </div>
-                    <div>
-                      <h3>Title here2</h3>
-                      <p>Note goes here.2</p>
+                      <p>
+                        {item.message}
+                        <span>{`${month}/${day}/${year}`}</span>
+                      </p>
                     </div>
                   </div>
                 );
