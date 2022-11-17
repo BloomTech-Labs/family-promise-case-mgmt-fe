@@ -1,10 +1,10 @@
-import { getAuthToken } from '../actions';
+import { setAuthToken } from '../actions';
 
 const intialState = {};
 
 export const reducer = (state = intialState, action) => {
   switch (action.type) {
-    case getAuthToken.GET_TOKEN:
+    case setAuthToken.GET_TOKEN:
       return action.payload;
     default:
       return state;
