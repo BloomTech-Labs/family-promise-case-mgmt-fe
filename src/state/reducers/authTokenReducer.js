@@ -1,6 +1,6 @@
-import { getAuthToken } from '../actions/authTokenAction';
+import { getAuthToken } from '../actions';
 
-const intialState = '';
+const intialState = {};
 
 export const reducer = (state = intialState, action) => {
   switch (action.type) {
