@@ -177,6 +177,11 @@ function CaseDetails() {
           >
             Save Note
           </Button>
+          <Link to="/case-notes/print">
+            <Button type="Default" className="saveNoteButton">
+              Print Notes
+            </Button>
+          </Link>
         </div>
         <div className="Rightside__PreviousNotes">
           {filterSearch.length > 1

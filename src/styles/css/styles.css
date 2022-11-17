@@ -852,6 +852,54 @@ td.ant-table-column-sort {
   background-color: #101010;
 }
 
+.printNotesHeader{
+  border-bottom: 1px solid;
+  margin-bottom: 3%;
+  display: flex;
+  justify-content: space-between;
+  align-items:flex-end;
+}
+
+.headerDivPrintNotes{
+  margin-bottom: .5%;
+  margin-right: 2%;
+  height: 3vh;
+  font-size: 1.5rem;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.logoInHeader{
+  margin-left: 2%;
+  height: 6vh;
+  margin-top: 1%;
+}
+
+.printNotesContainer{
+  width: 80%;
+  margin: 0 auto;
+}
+
+.printNotesSectionContainer{
+  padding-bottom: .5%;
+  padding-left: .5%;
+  display: flex;
+}
+
+.notesHeading{
+  font-weight: bold;
+  margin-top: 3%;
+  font-size: medium;
+}
+
+.notesHeading2{
+  margin-left: 5%;
+}
+
+.theLiteralNotesMessage{
+  font-size: 1.2rem;
+  font-family: 'Times New Roman', Times, serif;
+}
+
 #okta-sign-in.auth-container .o-form-head {
   color: #d2d2d7;
 }
