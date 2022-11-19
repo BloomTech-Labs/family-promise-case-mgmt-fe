@@ -13,6 +13,8 @@ import SearchIcon from './SearchIcon';
 import ClientFamilyInfoForm from '../CaseDetailsForms/ClientFamilyInformation';
 import HouseholdInformationForm from '../CaseDetailsForms/HouseholdInformationForm';
 
+import { connect } from 'react-redux';
+import * as actions from '../../../state/actions/profileAction';
 //AntD special component peices
 const { Panel } = Collapse;
 const { TextArea } = Input;
@@ -51,6 +53,8 @@ function CaseDetails(props) {
   const saveNotesHandler = event => {
     placeholderArray.push(newNote);
   };
+
+  console.log(props.profile.name);
 
   //onChange for filtered search bar
   let placeholderArray = [
@@ -220,4 +224,4 @@ function CaseDetails(props) {
   );
 }
 
-export default CaseDetails;
+export default connect(st => st, actions)(CaseDetails);

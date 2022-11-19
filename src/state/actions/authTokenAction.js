@@ -1,8 +1,8 @@
-export const GET_TOKEN = 'GET_TOKEN';
+export const SET_TOKEN = 'SET_TOKEN';
 
 export const setAuthToken = token => {
   return {
-    type: GET_TOKEN,
+    type: SET_TOKEN,
     payload: token,
   };
 };

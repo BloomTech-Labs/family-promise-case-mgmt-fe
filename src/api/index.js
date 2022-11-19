@@ -42,8 +42,8 @@ const getProfileData = (id, isAuthenticated, token) => {
       })
       .then(response => response.data);
   } catch (error) {
+    console.error(error);
     return new Promise(() => {
-      console.log(error);
       return [];
     });
   }
