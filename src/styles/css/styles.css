@@ -35,8 +35,10 @@
 .RenderLayoutTemplate .Layout .Content__Container-Card {
   height: 100%;
 }
-.RenderLayoutTemplate .Layout .Footer {
+.Footer {
+  background-color: #101010;
   text-align: center;
+  color: white;
 }
 .BreadCrumbs {
   margin: 16px 0;
@@ -522,12 +524,13 @@
   justify-content: space-around;
 }
 .CaseDetails {
+  width: 220%;
   display: flex;
   flex-flow: row nowrap;
   background-color: black;
 }
 .CaseDetails__LeftSide {
-  width: 50%;
+  width: 250%;
 }
 .CaseDetails__LeftSideHead {
   display: flex;
@@ -543,7 +546,7 @@
   margin-right: 2rem;
   margin-bottom: 0rem;
   font-size: 48px;
-  color: #d2d2d7;
+  color: white;
 }
 .CaseDetails__LeftSideHead h3 {
   color: #cdcdcd;
@@ -621,7 +624,8 @@
   color: #cdcdcd;
 }
 .CaseDetails__RightSide {
-  width: 50%;
+  width: auto;
+  margin-left: 10%;
 }
 .Rightside__Head {
   margin: 1rem;
@@ -635,6 +639,7 @@
   margin-bottom: 0rem;
 }
 .Rightside__SearchBar {
+  width: 150%;
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
@@ -652,7 +657,7 @@
 .SearchBar {
   background-color: black;
   height: 2rem;
-  width: 25rem;
+  width: 30rem;
   margin-left: 1rem;
   margin-bottom: 0.5rem;
   border: 2px solid #cdcdcd;
@@ -667,7 +672,7 @@
   margin-top: 1rem;
 }
 .Rightside__Notes__BoxandButton {
-  width: 91.5%;
+  width: 125%;
 }
 .Rightside__Notes__BoxandButton > .ant-space > .ant-space-item > .ant-input {
   background-color: white;
@@ -692,7 +697,7 @@
   color: #cdcdcd;
 }
 .Rightside__PreviousNotes {
-  width: 91.5%;
+  width: 125%;
   height: 17rem;
   overflow-x: hidden;
   overflow-y: auto;
@@ -808,7 +813,7 @@ td.ant-table-column-sort {
   color: #d2d2d7;
 }
 .ant-card-body {
-  background-color: #262626;
+  /* background-color: #262626; */
   border-radius: 50px 10px;
   width: 400px;
 }
