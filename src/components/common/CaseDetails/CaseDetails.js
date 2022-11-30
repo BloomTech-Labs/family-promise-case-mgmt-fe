@@ -81,15 +81,11 @@ function CaseDetails() {
       .catch(err => console.error(err.message));
   };
 
-  //onChange for filtered search bar
-  let placeholderArray = [
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis',
-  ];
   const filterSearchHandler = filterValue => {
     setFilterSearch(filterValue);
     //Once backend connected, change placeholderArray to API data instead
     if (filterValue !== '') {
-      const filteredData = placeholderArray.filter(item => {
+      const filteredData = notes.filter(item => {
         return Object.values(item)
           .join('')
           .toLowerCase()
@@ -97,7 +93,7 @@ function CaseDetails() {
       });
       setFilteredResults(filteredData);
     } else {
-      setFilteredResults(placeholderArray);
+      setFilteredResults(notes);
     }
   };
 
@@ -210,10 +206,18 @@ function CaseDetails() {
         <div className="Rightside__PreviousNotes">
           {filterSearch.length > 1
             ? filteredResults.map(item => {
+                let date = new Date(item.created_at);
+                let month = date.getMonth();
+                let year = date.getFullYear();
+                let day = date.getDate();
+
                 return (
                   <div>
                     <h3>Title here</h3>
-                    <p>Note goes here.</p>
+                    <p>
+                      {item.message}
+                      <span>{`${month}/${day}/${year}`}</span>
+                    </p>
                   </div>
                 );
               })
