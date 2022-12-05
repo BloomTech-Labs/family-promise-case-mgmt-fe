@@ -810,7 +810,7 @@ td.ant-table-column-sort {
 .ant-card-body {
   background-color: #262626;
   border-radius: 50px 10px;
-  width: 400px;
+  width: fit-content;
 }
 .ant-card-bordered {
   background-color: #101010;

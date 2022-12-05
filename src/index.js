@@ -10,7 +10,6 @@ import {
 import { Security, LoginCallback, SecureRoute } from '@okta/okta-react';
 import { Provider } from 'react-redux';
 import store from './state';
-
 import 'antd/dist/antd.less';
 
 import { NotFoundPage } from './components/pages/NotFound';
