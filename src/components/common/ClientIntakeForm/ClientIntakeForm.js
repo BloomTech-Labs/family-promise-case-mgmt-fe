@@ -45,7 +45,7 @@ const ClientIntakeForm = onChange => {
         layout="vertical"
         style={sectionContainer}
       >
-        <DatePicker format="MM/DsD/YYYY" />
+        <DatePicker format="MM/DD/YYYY" />
         <ClientFamilyInfo />
         <EducationIntake />
         <EmploymentIntake />
