@@ -99,9 +99,7 @@ const Documents = props => {
       axios
         .get(`http://localhost:8000/api/documents/${props.client.id}`)
         .then(documents => {
-          console.log(documents.data);
           props.setDocuments(documents.data);
-          console.log(documents.data);
         })
         .catch(error => {
           alert('ERROR ' + error);
