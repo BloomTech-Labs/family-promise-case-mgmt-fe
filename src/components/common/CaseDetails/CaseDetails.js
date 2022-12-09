@@ -14,6 +14,8 @@ import SearchIcon from './SearchIcon';
 import ClientFamilyInfoForm from '../CaseDetailsForms/ClientFamilyInformation';
 import HouseholdInformationForm from '../CaseDetailsForms/HouseholdInformationForm';
 
+import { connect } from 'react-redux';
+import * as actions from '../../../state/actions/profileAction';
 //AntD special component peices
 const { Panel } = Collapse;
 const { TextArea } = Input;
@@ -24,7 +26,7 @@ const { TextArea } = Input;
 //Once all of the forms have been added to this page the four buttons at the bottom right side will need to be setup with that data.
 //Once all forms have been made they an be imported and added to the collapsible panels
 
-function CaseDetails() {
+function CaseDetails(props) {
   //State slices for filtered search bar
   const [filterSearch, setFilterSearch] = useState('');
   const [filteredResults, setFilteredResults] = useState([]);
@@ -214,22 +216,17 @@ function CaseDetails() {
         </div>
         <div className="Rightside__PreviousNotes">
           {filterSearch.length > 1
-            ? filteredResults.map(item => {
+            ? filteredResults.map((item, idx) => {
                 return (
-                  <div>
+                  <div key={idx}>
                     <h3>Title here</h3>
                     <p>Note goes here.</p>
                   </div>
                 );
               })
-            : notes.map(item => {
-                let date = new Date(item.created_at);
-                let month = date.getMonth();
-                let year = date.getFullYear();
-                let day = date.getDate();
-
+            : placeholderArray.map((item, idx) => {
                 return (
-                  <div>
+                  <div key={idx}>
                     <div>
                       <h3>Title here2</h3>
                       <p>
@@ -246,4 +243,4 @@ function CaseDetails() {
   );
 }
 
-export default CaseDetails;
+export default connect(st => st, actions)(CaseDetails);

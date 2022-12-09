@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 // we will define a bunch of API calls here.
-const apiUrl = `${process.env.REACT_APP_API_URI}/profiles`;
+const apiRootUrl = process.env.REACT_APP_API_URI;
 
 const sleep = time =>
   new Promise(resolve => {
@@ -14,11 +14,11 @@ const getExampleData = () => {
     .then(response => response.data);
 };
 
-const getAuthHeader = authState => {
-  if (!authState.isAuthenticated) {
+const getAuthHeader = (isAuthenticated, token) => {
+  if (!isAuthenticated) {
     throw new Error('Not authenticated');
   }
-  return { Authorization: `Bearer ${authState.idToken}` };
+  return { Authorization: `Bearer ${token}` };
 };
 
 const getDSData = (url, authState) => {
@@ -34,16 +34,16 @@ const getDSData = (url, authState) => {
     .catch(err => err);
 };
 
-const apiAuthGet = authHeader => {
-  return axios.get(apiUrl, { headers: authHeader });
-};
-
-const getProfileData = authState => {
+const getProfileData = (id, isAuthenticated, token) => {
   try {
-    return apiAuthGet(getAuthHeader(authState)).then(response => response.data);
+    return axios
+      .get(apiRootUrl + `/profile/${id}`, {
+        headers: getAuthHeader(isAuthenticated, token),
+      })
+      .then(response => response.data);
   } catch (error) {
+    console.error(error);
     return new Promise(() => {
-      console.log(error);
       return [];
     });
   }
