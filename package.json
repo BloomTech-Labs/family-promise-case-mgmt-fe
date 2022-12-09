@@ -7,7 +7,7 @@
   "dependencies": {
     "@auth0/auth0-react": "^1.10.1",
     "@craco/craco": "^6.4.3",
-    "@okta/okta-react": "^3.0.2",
+    "@okta/okta-react": "^3.0.11",
     "@okta/okta-signin-widget": "^4.1.2",
     "antd": "^4.18.3",
     "aws-sdk": "^2.1142.0",
