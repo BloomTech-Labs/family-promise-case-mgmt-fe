@@ -1,7 +1,7 @@
-import React, { useState } from "react";
-import { Modal, Button } from "antd";
-import "./styles.css";
-import "antd/dist/antd.css";
+import React, { useState } from 'react';
+import { Modal, Button } from 'antd';
+import './styles.css';
+import 'antd/dist/antd.css';
 
 // Requires antd 4.23.4 to be installed as a dependency to funtion properly
 
@@ -11,9 +11,9 @@ export default function App() {
   return (
     <div
       style={{
-        display: "block",
+        display: 'block',
         width: 700,
-        padding: 30
+        padding: 30,
       }}
     >
       <h4>History Popup Time Stamp Button Using Ant-Design Modal</h4>

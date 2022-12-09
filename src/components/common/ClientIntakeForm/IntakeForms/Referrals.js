@@ -50,15 +50,15 @@ const Documents = props => {
     ),
   };
 
-  const onFinish = values => {
-    if (typeof referralIndex === 'number') {
-      props.editReferral(values, referralIndex);
-      setReferralIndex(null);
-    } else {
-      props.saveReferral(values);
-    }
-    form.resetFields();
-  };
+  // const onFinish = values => {
+  //   if (typeof referralIndex === 'number') {
+  //     props.editReferral(values, referralIndex);
+  //     setReferralIndex(null);
+  //   } else {
+  //     props.saveReferral(values);
+  //   }
+  //   form.resetFields();
+  // };
 
   const handleDeleteReferral = index => {
     props.deleteReferral(index);
@@ -75,10 +75,8 @@ const Documents = props => {
   };
 
   return (
-    <Form
+    <Form.Item
       name="referralForm"
-      form={form}
-      onFinish={onFinish}
       layout="vertical"
       className="sectionContainer"
     >
@@ -258,13 +256,16 @@ const Documents = props => {
           ) : null}
         </div>
       </div>
-    </Form>
+    </Form.Item>
   );
 };
 
 const mapStateToProps = state => {
   return {
-    referrals: state.referral,
+    referrals: state.referral.map((client, index) => ({
+      ...client,
+      key: client.email + index,
+    })),
   };
 };
 
