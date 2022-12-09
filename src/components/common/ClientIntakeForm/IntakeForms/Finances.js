@@ -128,20 +128,25 @@ const Finances = () => {
               className="Finances_Form_Container_Styles"
               style={{ display: 'flex', flexDirection: 'column' }}
             >
-              {incomeSource.map(info => (
-                <div key={info.name} className="Finances_Form_Container_Styles">
-                  <Form.Item>
-                    <Checkbox
-                      name={info.name}
-                      checked={formValues[info.name]}
-                      value={formValues[info.name]}
-                      onChange={onChange}
-                    >
-                      <label>{info.label}</label>
-                    </Checkbox>
-                  </Form.Item>
-                </div>
-              ))}
+              {incomeSource.map(info => {
+                return (
+                  <div
+                    key={info.name}
+                    className="Finances_Form_Container_Styles"
+                  >
+                    <Form.Item>
+                      <Checkbox
+                        name={info.name}
+                        checked={formValues[info.name]}
+                        value={formValues[info.name]}
+                        onChange={onChange}
+                      >
+                        <label>{info.label}</label>
+                      </Checkbox>
+                    </Form.Item>
+                  </div>
+                );
+              })}
               <Input
                 placeholder="$0"
                 name="Amount"
@@ -159,26 +164,31 @@ const Finances = () => {
               className="Finances_Form_Container_Styles"
               style={{ display: 'flex', flexDirection: 'column' }}
             >
-              {typesOfDebt.map(info => (
-                <div key={info.name} className="Finances_Form_Container_Styles">
-                  <Form.Item>
-                    <Checkbox
-                      name={info.name}
-                      checked={formValues[info.name]}
-                      value={formValues[info.name]}
-                      onChange={onChange}
-                    >
-                      <label>{info.label}</label>
-                    </Checkbox>
-                    <Input
-                      placeholder="$0"
-                      name="Amount"
-                      className="Finances_Form_Amount_Input"
-                      style={{ width: '55%', padding: 1 }}
-                    />
-                  </Form.Item>
-                </div>
-              ))}
+              {typesOfDebt.map(info => {
+                return (
+                  <div
+                    key={info.name}
+                    className="Finances_Form_Container_Styles"
+                  >
+                    <Form.Item>
+                      <Checkbox
+                        name={info.name}
+                        checked={formValues[info.name]}
+                        value={formValues[info.name]}
+                        onChange={onChange}
+                      >
+                        <label>{info.label}</label>
+                      </Checkbox>
+                      <Input
+                        placeholder="$0"
+                        name="Amount"
+                        className="Finances_Form_Amount_Input"
+                        style={{ width: '55%', padding: 1 }}
+                      />
+                    </Form.Item>
+                  </div>
+                );
+              })}
               ;
             </div>
           </section>
