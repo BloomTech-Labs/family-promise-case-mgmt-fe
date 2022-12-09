@@ -1,29 +1,22 @@
 // this is a comment
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {
-  BrowserRouter as Router,
-  Route,
-  useHistory,
-  Switch,
-} from 'react-router-dom';
-import { Security, LoginCallback, SecureRoute } from '@okta/okta-react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import store from './state';
-
 import 'antd/dist/antd.less';
 
 import { NotFoundPage } from './components/pages/NotFound';
 import { ExampleListPage } from './components/pages/ExampleList';
 import { ProfileListPage } from './components/pages/ProfileList';
-import { LoginPage } from './components/pages/Login';
-import { config } from './utils/oktaConfig';
 import { Cases } from './components/pages/Cases';
 import { CaseView } from './components/pages/CaseView';
 import { ClientIntakeForm } from './components/common/ClientIntakeForm';
 import { LayoutTemplate } from './components/pages/LayoutTemplate';
 import { CaseDetails } from './components/pages/CaseDetails';
 import { Calendar } from './components/pages/Calendar';
+import { TempLandingPage } from './components/pages/TempLandingPage';
+import PrintNotes from './components/common/CaseDetails/printNotes';
 
 import { RecentCases } from './components/pages/RecentCases';
 import DashHeader from './components/common/DashHeader';
@@ -31,11 +24,16 @@ import DashHeader from './components/common/DashHeader';
 import './styles/css/styles.css';
 import { CMLogin } from './components/pages/CMLogin';
 
+import PrivateRoute from './components/common/PrivateRoute';
+import Auth0ProviderWithHistory from './auth/Auth0ProviderWithHistory';
+
 ReactDOM.render(
   <Router>
     <React.StrictMode>
       <Provider store={store}>
-        <App />
+        <Auth0ProviderWithHistory>
+          <App />
+        </Auth0ProviderWithHistory>
       </Provider>
     </React.StrictMode>
   </Router>,
@@ -43,36 +41,23 @@ ReactDOM.render(
 );
 
 function App() {
-  // The reason to declare App this way is so that we can use any helper functions we'd need for business logic, in our case auth.
-  // React Router has a nifty useHistory hook we can use at this level to ensure we have security around our routes.
-  const history = useHistory();
-
-  const authHandler = () => {
-    //We pass this to our <Security /> component that wraps our routes.
-    //It'll automatically check if userToken is available and push back to login if not :)
-    history.push('/login');
-  };
-
   return (
-    <Security {...config} onAuthRequired={authHandler}>
-      <Switch>
-        <Route path="/login" component={LoginPage} />
-        <Route path="/implicit/callback" component={LoginCallback} />{' '}
-        {/* any of the routes you need secured should be registered as SecureRoutes */}
-        <SecureRoute path="/cases/:caseID" component={CaseView} />
-        <SecureRoute path="/case-details" component={CaseDetails} />
-        <SecureRoute path="/cases" component={Cases} />{' '}
-        <SecureRoute path="/client-intake-form" component={ClientIntakeForm} />
-        <SecureRoute path="/profile-list" component={ProfileListPage} />
-        <SecureRoute path="/example-list" component={ExampleListPage} />
-        <SecureRoute path="/layouttemplate" component={LayoutTemplate} />
-        <SecureRoute path="/" exact />
-        <SecureRoute path="/dashheader" component={DashHeader} />
-        <SecureRoute path="/calendar" component={Calendar} />
-        <SecureRoute path="/recent-cases" component={RecentCases} />
-        <SecureRoute path="/cm-login" component={CMLogin} />
-        <Route component={NotFoundPage} />
-      </Switch>
-    </Security>
+    <Switch>
+      <Route exact path="/" component={TempLandingPage} />
+      {/* any of the routes you need secured should be registered as PrivateRoutes */}
+      <PrivateRoute path="/cases/:caseID" component={CaseView} />
+      <PrivateRoute path="/case-details" component={CaseDetails} />
+      <PrivateRoute path="/cases" component={Cases} />{' '}
+      <PrivateRoute path="/client-intake-form" component={ClientIntakeForm} />
+      <PrivateRoute path="/profile-list" component={ProfileListPage} />
+      <PrivateRoute path="/example-list" component={ExampleListPage} />
+      <PrivateRoute path="/layouttemplate" component={LayoutTemplate} />
+      <PrivateRoute path="/" exact />
+      <PrivateRoute path="/dashheader" component={DashHeader} />
+      <PrivateRoute path="/calendar" component={Calendar} />
+      <PrivateRoute path="/recent-cases" component={RecentCases} />
+      <PrivateRoute path="/cm-login" component={CMLogin} />
+      <PrivateRoute component={NotFoundPage} />
+    </Switch>
   );
 }

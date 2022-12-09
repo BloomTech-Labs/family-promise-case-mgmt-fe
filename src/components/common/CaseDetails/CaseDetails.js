@@ -14,6 +14,8 @@ import SearchIcon from './SearchIcon';
 import ClientFamilyInfoForm from '../CaseDetailsForms/ClientFamilyInformation';
 import HouseholdInformationForm from '../CaseDetailsForms/HouseholdInformationForm';
 
+import { connect } from 'react-redux';
+import * as actions from '../../../state/actions/profileAction';
 //AntD special component peices
 const { Panel } = Collapse;
 const { TextArea } = Input;
@@ -24,7 +26,7 @@ const { TextArea } = Input;
 //Once all of the forms have been added to this page the four buttons at the bottom right side will need to be setup with that data.
 //Once all forms have been made they an be imported and added to the collapsible panels
 
-function CaseDetails() {
+function CaseDetails(props) {
   //State slices for filtered search bar
   const [filterSearch, setFilterSearch] = useState('');
   const [filteredResults, setFilteredResults] = useState([]);
@@ -81,6 +83,10 @@ function CaseDetails() {
       .catch(err => console.error(err.message));
   };
 
+  //onChange for filtered search bar
+  let placeholderArray = [
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis',
+  ];
   const filterSearchHandler = filterValue => {
     setFilterSearch(filterValue);
     //Once backend connected, change placeholderArray to API data instead
@@ -202,6 +208,11 @@ function CaseDetails() {
           >
             Save Note
           </Button>
+          <Link to="/case-notes/print">
+            <Button type="Default" className="saveNoteButton">
+              Print Notes
+            </Button>
+          </Link>
         </div>
         <div className="Rightside__PreviousNotes">
           {filterSearch.length > 1
@@ -212,7 +223,7 @@ function CaseDetails() {
                 let day = date.getDate();
 
                 return (
-                  <div>
+                  <div key={idx}>
                     <h3>Title here</h3>
                     <p>
                       {item.message}
@@ -245,4 +256,4 @@ function CaseDetails() {
   );
 }
 
-export default CaseDetails;
+export default connect(st => st, actions)(CaseDetails);
