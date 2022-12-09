@@ -4,9 +4,7 @@ import { Form, Select } from 'antd';
 const EducationIntake = () => {
   return (
     <div className="subsectionContainer">
-      <h2 h2 className="subsectionHeader">
-        Education
-      </h2>
+      <h2 className="subsectionHeader">Education</h2>
 
       <div className="hohContainer formStyles">
         <section className="sectionLeft">

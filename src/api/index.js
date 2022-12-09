@@ -49,4 +49,15 @@ const getProfileData = (id, isAuthenticated, token) => {
   }
 };
 
-export { sleep, getExampleData, getProfileData, getDSData };
+const getClientsNotes = clientId => {
+  try {
+    return axios
+      .get(`http://localhost:8000/api/clients/${clientId}/notes`)
+      .then(res => res.data)
+      .catch(err => console.log(err));
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export { sleep, getExampleData, getProfileData, getDSData, getClientsNotes };

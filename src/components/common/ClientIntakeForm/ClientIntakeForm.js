@@ -1,5 +1,5 @@
-import { Form, DatePicker } from 'antd';
-import React from 'react';
+import { Form, DatePicker, Button, Space } from 'antd';
+import React, { useState } from 'react';
 import ClientFamilyInfo from './IntakeForms/ClientFamilyInfo';
 import Finances from './IntakeForms/Finances';
 import ContactPreferences from './IntakeForms/ContactPreferences';
@@ -7,6 +7,7 @@ import Referrals from './IntakeForms/Referrals';
 import DocumentUpload from './IntakeForms/DocumentUpload';
 import EducationIntake from './IntakeForms/EducationIntake';
 import EmploymentIntake from './IntakeForms/EmploymentIntake';
+import { submitForm } from '../../../api';
 
 //NOTE: Inline Styles added temporarily.
 const sectionContainer = {
@@ -18,14 +19,20 @@ const sectionContainer = {
   margin: 'auto',
 };
 
-const ClientIntakeForm = () => {
+const ClientIntakeForm = onChange => {
   const [form] = Form.useForm();
 
-  //onFinish is AntDs version on onSubmit;
   const onFinish = values => {
     console.log('Form Values: ', values);
     form.resetFields();
   };
+
+  const [fields, setFields] = useState([
+    {
+      name: ['name'],
+      value: 'Chris',
+    },
+  ]);
 
   return (
     <div>
@@ -43,9 +50,36 @@ const ClientIntakeForm = () => {
         <EducationIntake />
         <EmploymentIntake />
         <Finances />
+
         <ContactPreferences />
         <Referrals />
         <DocumentUpload />
+        <div align="middle">
+          <Space size="large">
+            <Button
+              size="large"
+              shape="omitted"
+              style={{ backgroundColor: 'grey', color: 'white' }}
+              background-color="red"
+              onClick={onFinish}
+            >
+              CANCEL
+            </Button>
+            <Button
+              type="primary"
+              shape="omitted"
+              size="large"
+              onClick={
+                (onChange = newFields => {
+                  setFields(newFields);
+                  submitForm(fields);
+                })
+              }
+            >
+              SUBMIT
+            </Button>
+          </Space>
+        </div>
       </Form>
     </div>
   );
