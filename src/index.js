@@ -16,7 +16,6 @@ import { LayoutTemplate } from './components/pages/LayoutTemplate';
 import { CaseDetails } from './components/pages/CaseDetails';
 import { Calendar } from './components/pages/Calendar';
 import { TempLandingPage } from './components/pages/TempLandingPage';
-import PrintNotes from './components/common/CaseDetails/printNotes';
 
 import { RecentCases } from './components/pages/RecentCases';
 import DashHeader from './components/common/DashHeader';

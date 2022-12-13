@@ -24,7 +24,7 @@ const PrivateRoute = ({ component, ...args }) => {
         })
         .catch(err => console.log(err));
     }
-  }, [getAccessTokenSilently, isAuthenticated, user]);
+  }, [getAccessTokenSilently, isAuthenticated, user, args]);
 
   return (
     <Route
