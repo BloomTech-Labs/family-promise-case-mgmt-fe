@@ -84,9 +84,7 @@ function CaseDetails(props) {
   };
 
   //onChange for filtered search bar
-  let placeholderArray = [
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis',
-  ];
+
   const filterSearchHandler = filterValue => {
     setFilterSearch(filterValue);
     //Once backend connected, change placeholderArray to API data instead
@@ -223,7 +221,7 @@ function CaseDetails(props) {
                 let day = date.getDate();
 
                 return (
-                  <div key={idx}>
+                  <div key={item}>
                     <h3>Title here</h3>
                     <p>
                       {item.message}

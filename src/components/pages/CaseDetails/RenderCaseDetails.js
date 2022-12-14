@@ -1,15 +1,10 @@
 import React from 'react';
-import { useLocation } from 'react-router-dom';
 import { Layout, Card } from 'antd';
-import NavHeader from '../../common/NavHeader';
-import BreadCrumbs from '../../common/BreadCrumbs';
 import DashHeader from '../../common/DashHeader';
 import { CaseDetails } from '../../common/CaseDetails';
-const { Header, Content, Footer } = Layout;
+const { Content, Footer } = Layout;
 
 const RenderCaseDetails = () => {
-  const location = useLocation();
-
   return (
     <div className="RenderLayoutTemplate">
       {/* <Layout className="Layout"> */}
