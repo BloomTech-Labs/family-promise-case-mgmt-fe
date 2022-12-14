@@ -31,6 +31,8 @@ import DashHeader from './components/common/DashHeader';
 import './styles/css/styles.css';
 import { CMLogin } from './components/pages/CMLogin';
 
+import { Clients } from './components/common/CaseDetails/Clients';
+
 ReactDOM.render(
   <Router>
     <React.StrictMode>
@@ -56,6 +58,7 @@ function App() {
   return (
     <Security {...config} onAuthRequired={authHandler}>
       <Switch>
+        <Route path="/clients" component={Clients} />
         <Route path="/login" component={LoginPage} />
         <Route path="/implicit/callback" component={LoginCallback} />{' '}
         {/* any of the routes you need secured should be registered as SecureRoutes */}
