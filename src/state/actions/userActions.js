@@ -1,9 +1,10 @@
+import { dispatch } from 'react-redux';
 export const GET_CURRENT_USER = 'GET_CURRENT_USER';
-export const GET_CLIENTS = "GET_CLIENTS";
-export const ERROR_ACTION = "ERROR_ACTION";
-
+export const GET_CLIENTS = 'GET_CLIENTS';
+export const ERROR_ACTION = 'ERROR_ACTION';
 // const clientData = [
 //   {
+
 //     household_id: 1,
 //     first_name: 'Joe',
 //     last_name: 'Goldberg',
@@ -61,27 +62,25 @@ export const ERROR_ACTION = "ERROR_ACTION";
 // ];
 
 export const getCurrentUser = userData => dispatch => {
-  return ({
+  return {
     type: GET_CURRENT_USER,
     payload: userData,
-  })
-  .catch(err => {
+  }.catch(err => {
     dispatch({
       type: ERROR_ACTION,
-      payload: err.message
+      payload: err.message,
     });
   });
 };
 
 export const getUsersClients = clientData => {
-  return ({
+  return {
     type: GET_CLIENTS,
     payload: clientData,
-  })
-  .catch(err => {
+  }.catch(err => {
     dispatch({
       type: ERROR_ACTION,
-      payload: err.message
+      payload: err.message,
     });
   });
 };
