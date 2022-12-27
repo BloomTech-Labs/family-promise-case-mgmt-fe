@@ -24,15 +24,24 @@ import './styles/css/styles.css';
 import { CMLogin } from './components/pages/CMLogin';
 
 import PrivateRoute from './components/common/PrivateRoute';
-import Auth0ProviderWithHistory from './auth/Auth0ProviderWithHistory';
+// import Auth0ProviderWithHistory from './auth/Auth0ProviderWithHistory';
+import { Auth0Provider } from '@auth0/auth0-react';
 
 ReactDOM.render(
   <Router>
     <React.StrictMode>
       <Provider store={store}>
-        <Auth0ProviderWithHistory>
+        {/* <Auth0ProviderWithHistory> */}
+        <Auth0Provider
+          domain={process.env.REACT_APP_OKTA_ISSUER_URI}
+          clientId={process.env.REACT_APP_CLIENT_ID}
+          redirectUri={window.location.origin}
+          // onRedirectCallback={onRedirectCallback}
+          cacheLocation="localstorage"
+        >
           <App />
-        </Auth0ProviderWithHistory>
+        </Auth0Provider>
+        {/* </Auth0ProviderWithHistory> */}
       </Provider>
     </React.StrictMode>
   </Router>,

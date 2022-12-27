@@ -64,9 +64,9 @@
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^5.16.4",
-    "@testing-library/react": "^13.2.0",
+    "@testing-library/react": "^12.1.5",
     "@testing-library/user-event": "^13.5.0",
-    "eslint": "7.11.0",
+    "eslint": "^7.11.0",
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-prettier": "^3.1.4",
     "eslint-plugin-react-hooks": "^4.0.4",
@@ -77,7 +77,6 @@
     "kleur": "^4.1.1",
     "lint-staged": "^10.2.11",
     "prettier-eslint-cli": "^5.0.0",
-    "prompts": "^2.3.2",
-    "eslint": "^7.11.0"
+    "prompts": "^2.3.2"
   }
 }

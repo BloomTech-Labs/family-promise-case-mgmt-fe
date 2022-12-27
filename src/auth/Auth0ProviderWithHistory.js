@@ -11,8 +11,8 @@ const Auth0ProviderWithHistory = ({ children }) => {
 
   return (
     <Auth0Provider
-      domain="dev-hz2ks357.us.auth0.com"
-      clientId="mQ2HIpRyqF97iuz7V0iPRJ3V0Yo4s82y"
+      domain={process.env.REACT_APP_OKTA_ISSUER_URI}
+      clientId={process.env.REACT_APP_CLIENT_ID}
       redirectUri={window.location.origin}
       onRedirectCallback={onRedirectCallback}
       cacheLocation="localstorage"

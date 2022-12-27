@@ -6,8 +6,13 @@ const TempLandingPage = () => {
 
   return (
     <>
-      <button onClick={() => loginWithRedirect()}>Log In</button>
-      <button onClick={() => logout({ returnTo: window.location.origin })}>
+      <button data-testid="loginBtn" onClick={() => loginWithRedirect()}>
+        Log In
+      </button>
+      <button
+        data-testid="logoutBtn"
+        onClick={() => logout({ returnTo: window.location.origin })}
+      >
         Log Out
       </button>
     </>
