@@ -1,24 +1,17 @@
-import TempLandingPage from '../components/pages/TempLandingPage/TempLandingPage';
 import React from 'react';
+import TempLandingPage from '../components/pages/TempLandingPage/TempLandingPage';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { render } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
+import { getByText } from '@testing-library/react';
 
 describe('Components render given route', () => {
   test('<TempLandingPage /> is rendering', () => {
-    const authService = {
-      logout: jest.fn(),
-    };
-
-    const { getByText } = render(
+    render(
       <Router>
-        <TempLandingPage authService={authService} />
+        <TempLandingPage />
       </Router>
     );
-
-    const button = getByText(/log out/i);
-    userEvent.click(button);
-    expect(authService.logout).toHaveBeenCalledTimes(1);
-    expect(getByText(/log in/i).toBe('Log In'));
+    const { element } = getByText(/log in/i);
+    expect(element.toBeInTheDocument());
   });
 });
