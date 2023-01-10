@@ -21,7 +21,6 @@ import { RecentCases } from './components/pages/RecentCases';
 import DashHeader from './components/common/DashHeader';
 
 import './styles/css/styles.css';
-import { CMLogin } from './components/pages/CMLogin';
 
 import PrivateRoute from './components/common/PrivateRoute';
 import Auth0ProviderWithHistory from './auth/Auth0ProviderWithHistory';
@@ -55,7 +54,6 @@ function App() {
       <PrivateRoute path="/dashheader" component={DashHeader} />
       <PrivateRoute path="/calendar" component={Calendar} />
       <PrivateRoute path="/recent-cases" component={RecentCases} />
-      <PrivateRoute path="/cm-login" component={CMLogin} />
       <PrivateRoute component={NotFoundPage} />
     </Switch>
   );
