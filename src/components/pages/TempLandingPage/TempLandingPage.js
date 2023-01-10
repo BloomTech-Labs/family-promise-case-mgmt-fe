@@ -7,6 +7,7 @@ const TempLandingPage = () => {
   return (
     <>
       <button
+        data-testid="loginBtn"
         onClick={() =>
           loginWithRedirect({
             redirectUri: `${window.location.origin}/case-details`,
