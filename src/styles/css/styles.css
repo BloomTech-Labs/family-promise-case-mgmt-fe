@@ -31,9 +31,11 @@
 }
 .RenderLayoutTemplate .Layout .Content__Container {
   height: 90%;
+  margin: auto;
 }
 .RenderLayoutTemplate .Layout .Content__Container-Card {
   height: 100%;
+  margin: auto;
 }
 .Footer {
   background-color: #101010;
@@ -524,13 +526,13 @@
   justify-content: space-around;
 }
 .CaseDetails {
-  width: 220%;
+  width: 100%;
   display: flex;
   flex-flow: row nowrap;
   background-color: black;
 }
 .CaseDetails__LeftSide {
-  width: 250%;
+  width: 50%;
 }
 .CaseDetails__LeftSideHead {
   display: flex;
@@ -624,7 +626,7 @@
   color: #cdcdcd;
 }
 .CaseDetails__RightSide {
-  width: auto;
+  width: 50%;
   margin-left: 10%;
 }
 .Rightside__Head {
@@ -639,7 +641,7 @@
   margin-bottom: 0rem;
 }
 .Rightside__SearchBar {
-  width: 150%;
+  /* width: 150%; */
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
@@ -672,7 +674,7 @@
   margin-top: 1rem;
 }
 .Rightside__Notes__BoxandButton {
-  width: 125%;
+  width: auto;
 }
 .Rightside__Notes__BoxandButton > .ant-space > .ant-space-item > .ant-input {
   background-color: white;
@@ -681,7 +683,7 @@
   color: black;
 }
 .Rightside__Notes__BoxandButton > .ant-space {
-  width: 100%;
+  width: auto;
 }
 .saveNoteButton {
   background-color: #007fd4;
@@ -697,7 +699,7 @@
   color: #cdcdcd;
 }
 .Rightside__PreviousNotes {
-  width: 125%;
+  width: auto;
   height: 17rem;
   overflow-x: hidden;
   overflow-y: auto;
