@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 
-import LoginContainer from '../components/pages/Login/LoginContainer';
+import LoginContainer from '../components/pages/Login/LoginContainer.js';
 
 describe('<LoginContainer /> test suite', () => {
   test('sign in widget mounts successfully', () => {
