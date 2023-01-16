@@ -37,7 +37,7 @@ const getDSData = (url, authState) => {
 const getProfileData = (id, isAuthenticated, token) => {
   try {
     return axios
-      .get(apiRootUrl + `/profile/${id}`, {
+      .get(apiRootUrl + `profile/${id}`, {
         headers: getAuthHeader(isAuthenticated, token),
       })
       .then(response => response.data);
