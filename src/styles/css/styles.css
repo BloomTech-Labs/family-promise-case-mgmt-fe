@@ -729,15 +729,22 @@ h3 {
   width: 0.5rem;
   border-radius: 10px;
 }
-.Rightside__PreviousNotes h3 {
-  color: #cdcdcd;
-  font-size: 24px;
-}
-.Rightside__PreviousNotes p {
-  color: #cdcdcd;
+.NoteLine {
+  display:flex;
+  justify-content: space-between;
 }
 
-.Rightside__PreviousNotes span{
+.NoteLine h3 {
+  color: #cdcdcd;
+  font-size: 18px;
+}
+
+.NoteLine p {
+  color: #cdcdcd;
+  width: 75%;
+}
+
+.NoteLine span{
   color:#8D4982;
   font-size:10px;
 }
