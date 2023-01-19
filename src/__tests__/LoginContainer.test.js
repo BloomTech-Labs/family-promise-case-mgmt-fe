@@ -2,10 +2,14 @@ import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { render, fireEvent, screen, waitFor } from '@testing-library/react';
 
-import LoginContainer from '../components/pages/Login/LoginContainer.js';
 import TempLandingPage from '../components/pages/TempLandingPage/TempLandingPage.js';
 
 describe('<LoginContainer /> test suite', () => {
+  const userTesting = {
+    username: 'bear001@maildrop.cc',
+    password: 'Test001Test',
+  };
+
   const { getByTestId } = render(
     <Router>
       <TempLandingPage />
@@ -17,10 +21,27 @@ describe('<LoginContainer /> test suite', () => {
   });
 
   test('user can log in', async () => {
-    waitFor(() => fireEvent.click(screen.getByText(/log in/i)));
-
-    await waitFor(() => screen.getByText(/doe, john/i));
-
-    expect(screen.getByText(/doe, john/i)).toHaveTextContent('Doe, John');
+    waitFor(() => fireEvent.click(screen.getByText(/log out/i))).then(() => {
+      waitFor(() => fireEvent.click(screen.getByText(/log in/i))).then(
+        async () => {
+          await waitFor(() =>
+            fireEvent.paste(
+              userTesting.username,
+              screen.getByText(/email address/i)
+            )
+          );
+          await waitFor(() =>
+            fireEvent.paste(userTesting.password, screen.getByText(/password/i))
+          );
+          waitFor(() => fireEvent.click(screen.getByText(/continue/i))).then(
+            () => {
+              expect(screen.getByText(/doe, john/i)).toHaveTextContent(
+                'Doe, John'
+              );
+            }
+          );
+        }
+      );
+    });
   });
 });
