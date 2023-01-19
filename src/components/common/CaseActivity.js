@@ -20,22 +20,25 @@ export default function CaseActivity() {
     { time: new Date(2021, 10, 2), actor: 'Woohyeok', type: 'closed' },
   ];
   return (
-    <div className="Rightside__PreviousNotes">
-      {dummyData.map(entry => {
-        const { time, actor, type } = entry;
-        let month = time.getMonth();
-        let day = time.getDate();
-        let year = time.getFullYear();
+    <div>
+      <div className="Rightside__PreviousNotes">
+        <h3>History</h3>
+        {dummyData.map(entry => {
+          const { time, actor, type } = entry;
+          let month = time.getMonth();
+          let day = time.getDate();
+          let year = time.getFullYear();
 
-        return (
-          <div key={entry} className="NoteLine">
-            <p>
-              The case was {type} by {actor}.
-            </p>
-            <span>{`${month}/${day}/${year}`}</span>
-          </div>
-        );
-      })}
+          return (
+            <div key={entry} className="NoteLine">
+              <p>
+                The case was {type} by {actor}.
+              </p>
+              <span>{`${month}/${day}/${year}`}</span>
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 }

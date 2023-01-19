@@ -729,6 +729,12 @@ h3 {
   width: 0.5rem;
   border-radius: 10px;
 }
+
+.Rightside__PreviousNotes h3 {
+  color: #cdcdcd;
+  font-size: 24px;
+}
+
 .NoteLine {
   display:flex;
   justify-content: space-between;
