@@ -1,11 +1,10 @@
 import React from 'react';
 
 export default function CaseNotes(props) {
-  const { filterSearch, filteredResults, notes } = props;
   return (
     <div className="Rightside__PreviousNotes">
-      {filterSearch.length > 1
-        ? filteredResults.map(item => {
+      {props.filterSearch.length > 1
+        ? props.filteredResults.map(item => {
             let date = new Date(item.created_at);
             let month = date.getMonth();
             let year = date.getFullYear();
@@ -21,7 +20,7 @@ export default function CaseNotes(props) {
               </div>
             );
           })
-        : notes.map(item => {
+        : props.notes.map(item => {
             let date = new Date(item.created_at);
             let month = date.getMonth();
             let year = date.getFullYear();
