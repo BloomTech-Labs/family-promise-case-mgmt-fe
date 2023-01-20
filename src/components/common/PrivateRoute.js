@@ -18,7 +18,7 @@ const PrivateRoute = ({ component, ...args }) => {
           //you will eventually change this hard-coded 1 in the getProfileData function to "user.sub"
           //The model for getProfileData only finds by Id, it does not create a profile, (which is want we want here)
           //We may need another route that will create it.  Not sure what Jake/Ash wanna do.
-          getProfileData(1, isAuthenticated, args.token)
+          getProfileData(1, isAuthenticated, args.authToken)
             .then(res => args.setProfile(res))
             .catch(err => console.log(err));
         })
