@@ -21,13 +21,7 @@ const { Title } = Typography;
 const TempLandingPage = () => {
   const { loginWithRedirect, logout } = useAuth0();
   const { isAuthenticated } = useAuth0();
-  const onFinish = values => {
-    console.log('Success:', values);
-  };
-  const onFinishFailed = errorInfo => {
-    console.log('Failed:', errorInfo);
-  };
-  //this is a return
+
   return (
     <>
       <Layout>
