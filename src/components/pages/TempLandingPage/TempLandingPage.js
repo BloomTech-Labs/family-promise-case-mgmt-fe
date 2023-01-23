@@ -15,15 +15,14 @@ import { Typography } from 'antd';
 import { FaFacebookF, FaTwitter, FaInstagram } from 'react-icons/fa';
 import { HiUsers, HiHomeModern } from 'react-icons/hi';
 import { BsFillMapFill } from 'react-icons/bs';
+import LoginContainer from '../Login/LoginContainer';
+import LogoutContainer from '../Logout/LogoutContainer';
 const { Header, Footer, Content } = Layout;
 const { Title } = Typography;
 
 const TempLandingPage = () => {
   const { loginWithRedirect, logout } = useAuth0();
   const { isAuthenticated } = useAuth0();
-
-  return (
-    <>
       <Layout>
         <Header className="landing-header">
           <img className="fam-promise-logo" src={FPLogo} />
@@ -153,6 +152,8 @@ const TempLandingPage = () => {
           <img className="fam-promise-logo" src={FPLogo} />
         </Footer>
       </Layout>
+      <LoginContainer />
+      <LogoutContainer />
     </>
   );
 };
