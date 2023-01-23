@@ -52,19 +52,19 @@ function CaseDetails(props) {
 
   //onClick handler for buttons
   const generateFormHandler = event => {
-    console.log('Itsworking!!!');
+    console.log('Its working!!!');
   };
 
   const hfcaHandler = event => {
-    console.log('Itsworking!!!');
+    console.log('Its working!!!');
   };
 
   const hvcPacketHandler = event => {
-    console.log('Itsworking!!!');
+    console.log('Its working!!!');
   };
 
   const printDocuHandler = event => {
-    console.log('Itsworking!!!');
+    console.log('Its working!!!');
   };
 
   const saveNotesHandler = event => {
