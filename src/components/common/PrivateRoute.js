@@ -9,7 +9,7 @@ import { getProfileData } from '../../api/index';
 
 const PrivateRoute = ({ component, ...args }) => {
   const { getAccessTokenSilently, user, isAuthenticated } = useAuth0();
-
+  // issue with .envs - there's an extra slash on http://localhost:8080, making things be wonky (http://localhost:8080/ needs to become http://localhost:8080)
   useEffect(() => {
     if (!args.token) {
       getAccessTokenSilently()
@@ -24,7 +24,9 @@ const PrivateRoute = ({ component, ...args }) => {
         })
         .catch(err => console.log(err));
     }
-  }, [getAccessTokenSilently, isAuthenticated, user, args]);
+    //getAccessTokenSilently, isAuthenticated, user, args
+    //removed from dependency array - nothing seems to break, but keeping here just in case.
+  }, []);
 
   return (
     <Route
