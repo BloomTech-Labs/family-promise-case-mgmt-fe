@@ -16,6 +16,9 @@ import HouseholdInformationForm from '../CaseDetailsForms/HouseholdInformationFo
 
 import { connect } from 'react-redux';
 import * as actions from '../../../state/actions/profileAction';
+import CaseNotes from '../CaseNotes';
+import CaseActivity from '../CaseActivity';
+
 //AntD special component peices
 const { Panel } = Collapse;
 const { TextArea } = Input;
@@ -43,6 +46,7 @@ function CaseDetails(props) {
   const clientId = 1;
 
   //fetching notes from the backend with axios
+  // NOTE: Currently doesn't re-render with addition of new notes. Outside scope of current ticket, but this should probably be addressed when timestampping is correctly implemented. --Billy Dean
   useEffect(() => {
     axios
       .get(`http://localhost:8000/api/clients/${clientId}/notes`)
@@ -212,43 +216,12 @@ function CaseDetails(props) {
             </Button>
           </Link>
         </div>
-        <div className="Rightside__PreviousNotes">
-          {filterSearch.length > 1
-            ? filteredResults.map(item => {
-                let date = new Date(item.created_at);
-                let month = date.getMonth();
-                let year = date.getFullYear();
-                let day = date.getDate();
-
-                return (
-                  <div key={item}>
-                    <h3>Title here</h3>
-                    <p>
-                      {item.message}
-                      <span>{`${month}/${day}/${year}`}</span>
-                    </p>
-                  </div>
-                );
-              })
-            : notes.map(item => {
-                let date = new Date(item.created_at);
-                let month = date.getMonth();
-                let year = date.getFullYear();
-                let day = date.getDate();
-
-                return (
-                  <div>
-                    <div>
-                      <h3>Title here2</h3>
-                      <p>
-                        {item.message}
-                        <span>{`${month}/${day}/${year}`}</span>
-                      </p>
-                    </div>
-                  </div>
-                );
-              })}
-        </div>
+        <CaseNotes
+          filterSearch={filterSearch}
+          filteredResults={filteredResults}
+          notes={notes}
+        />
+        <CaseActivity />
       </div>
     </div>
   );

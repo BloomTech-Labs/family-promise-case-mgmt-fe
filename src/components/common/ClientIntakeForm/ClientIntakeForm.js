@@ -26,7 +26,7 @@ const ClientIntakeForm = onChange => {
     console.log('Form Values: ', values);
     form.resetFields();
   };
-
+  // eslint-disable-next-line
   const [fields, setFields] = useState([
     {
       name: ['name'],

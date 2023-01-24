@@ -1,4 +1,19 @@
 /***  Variables  ***/
+
+/*** Re: Style Guidelines on Figma ***/
+
+h1 {
+  font-size: 48;
+}
+
+h2 {
+  font-size: 36;
+}
+
+h3 {
+  font-size: 24;
+}
+
 /*** COMPONENTS  ***/
 .NavHeader {
   display: flex;
@@ -31,9 +46,11 @@
 }
 .RenderLayoutTemplate .Layout .Content__Container {
   height: 90%;
+  margin: auto;
 }
 .RenderLayoutTemplate .Layout .Content__Container-Card {
   height: 100%;
+  margin: auto;
 }
 .Footer {
   background-color: #101010;
@@ -524,13 +541,13 @@
   justify-content: space-around;
 }
 .CaseDetails {
-  width: 220%;
+  width: 100%;
   display: flex;
   flex-flow: row nowrap;
   background-color: black;
 }
 .CaseDetails__LeftSide {
-  width: 250%;
+  width: 50%;
 }
 .CaseDetails__LeftSideHead {
   display: flex;
@@ -545,7 +562,7 @@
   margin-left: 2rem;
   margin-right: 2rem;
   margin-bottom: 0rem;
-  font-size: 48px;
+  font-size: 36px;
   color: white;
 }
 .CaseDetails__LeftSideHead h3 {
@@ -624,42 +641,38 @@
   color: #cdcdcd;
 }
 .CaseDetails__RightSide {
-  width: auto;
-  margin-left: 10%;
+  width: 45%;
 }
 .Rightside__Head {
   margin: 1rem;
   margin-left: 4rem;
   margin-bottom: 0rem;
-  font-size: 30px;
+  font-size: 36px;
 }
 .Rightside__Header {
   color: #cdcdcd;
-  font-size: 48px;
+  font-size: 36px;
   margin-bottom: 0rem;
 }
 .Rightside__SearchBar {
-  width: 150%;
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
-  margin-right: 1rem;
+  justify-content: space-between;
+  width: 100%;
 }
 .Rightside__SearchBar img {
-  margin-bottom: 1rem;
-  margin-right: 1rem;
+  height: 20px;
+  margin-bottom: 0.5rem;
 }
 .Rightside__SearchBar h3 {
   color: #d2d2d7;
   opacity: 0.5;
-  font-size: 36px;
+  font-size: 24px;
 }
 .SearchBar {
   background-color: black;
   height: 2rem;
-  width: 30rem;
-  margin-left: 1rem;
-  margin-bottom: 0.5rem;
   border: 2px solid #cdcdcd;
   border-radius: 20px 0px 10px;
   color: #cdcdcd;
@@ -667,12 +680,13 @@
 .SearchBar > .ant-input {
   background-color: black;
   color: #cdcdcd;
+  width: 100%;
 }
 .ant-input-prefix {
   margin-top: 1rem;
 }
 .Rightside__Notes__BoxandButton {
-  width: 125%;
+  width: auto;
 }
 .Rightside__Notes__BoxandButton > .ant-space > .ant-space-item > .ant-input {
   background-color: white;
@@ -681,7 +695,7 @@
   color: black;
 }
 .Rightside__Notes__BoxandButton > .ant-space {
-  width: 100%;
+  width: auto;
 }
 .saveNoteButton {
   background-color: #007fd4;
@@ -697,7 +711,7 @@
   color: #cdcdcd;
 }
 .Rightside__PreviousNotes {
-  width: 125%;
+  width: auto;
   height: 17rem;
   overflow-x: hidden;
   overflow-y: auto;
@@ -715,14 +729,28 @@
   width: 0.5rem;
   border-radius: 10px;
 }
+
 .Rightside__PreviousNotes h3 {
   color: #cdcdcd;
-}
-.Rightside__PreviousNotes p {
-  color: #cdcdcd;
+  font-size: 24px;
 }
 
-.Rightside__PreviousNotes span{
+.NoteLine {
+  display: flex;
+  justify-content: space-between;
+}
+
+.NoteLine h3 {
+  color: #cdcdcd;
+  font-size: 18px;
+}
+
+.NoteLine p {
+  color: #cdcdcd;
+  width: 75%;
+}
+
+.NoteLine span {
   color:#8D4982;
   font-size:10px;
 }
@@ -821,7 +849,7 @@ td.ant-table-column-sort {
 .ant-card-body {
   /* background-color: #262626; */
   border-radius: 50px 10px;
-  width: fit-content;
+  width: 100%;
 }
 .ant-card-bordered {
   background-color: #101010;
@@ -935,4 +963,129 @@ td.ant-table-column-sort {
   color: #d2d2d7;
 }
 
+/* Landing Page Styles */
+.fam-promise-logo{
+  width: 300px;
+  padding: .25rem;
+}
+.fp-image{
+  width:40vw;
+  height: 50vh;
+  margin:2rem 5rem 2rem 5rem;
+
+}
+.left-side-login-col{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin:0 5rem 2rem 5rem;
+
+}
+.right-side-login-col{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.landing-header{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-color: #333333;
+  height: 6rem;
+}
+.landing-footer{
+  background-color: #333333;
+
+}
+.login-wrapper {
+  width: 30vw;
+  justify-content: flex-start;
+
+ }
+ .info-bar{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding: 1rem;
+  background-color: #8d4982;
+  width: 40vw;
+  height: 20vh;
+  margin:2rem 0rem 2rem 0rem;
+
+ }
+ .info-bar-icons{
+  font-size: 2.5rem;
+  font-weight: lighter;
+ }
+ .info-desc{
+  margin: 0;
+  padding: 0;
+  color: #fec357;
+  font-weight: lighter;
+  text-align: center;
+ }
+ .info-col{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+ }
+.slogan-background{
+  background-color: #8d4982;
+  padding: 0.5rem; 
+  text-align: center;
+  margin: 2rem;
+  color: white;
+  width: 40vw;
+  height: auto;
+  margin:2rem 5rem 2rem 5rem;
+  position: absolute;
+  top:50%;
+}
+.mission-quote{
+  text-align: left;
+  width: 40vw;
+  height: auto;
+}
+.donate-button{
+  background-color: #fec357;
+  border:none;
+  border-radius: .25rem;
+  width: 10rem;
+  height: 2rem;
+  margin: 2rem;
+  font-size: 1.25rem;
+  font-weight: lighter;
+}
+.donate-button:hover {
+  opacity: 0.8;
+}
+.social-icons{
+  color:#000000;
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-right: 3.5rem;
+}
+.social-icons:hover {
+  opacity: .8;
+}
+.social-wrapper{
+  width: 30vw;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+@media (max-width: 768px) {
+  .fam-promise-logo {
+    width: 150px;
+    height: 40px;
+  }
+}
+@media (max-width: 600px) {
+  .fam-promise-logo {
+    width: 100px;
+    height: 30px;
+  }
+}
 
