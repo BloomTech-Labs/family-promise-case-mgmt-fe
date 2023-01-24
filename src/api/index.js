@@ -18,7 +18,7 @@ const getAuthHeader = (isAuthenticated, token) => {
   if (!isAuthenticated) {
     throw new Error('Not authenticated');
   }
-  return { Authorization: `Bearer ${token}` };
+  return { authorization: `Bearer ${token}` };
 };
 
 const getDSData = (url, authState) => {
@@ -35,9 +35,17 @@ const getDSData = (url, authState) => {
 };
 
 const getProfileData = (id, isAuthenticated, token) => {
+  //the issue is with the apiRootUrl var - now what it is, idk. almost seems like it's too slow when the URL is set as a variable. This works for now, will look into the other issue later.
+
+  // axios.get(`http://localhost:8000/profile/${id}`, {
+  //   headers: getAuthHeader(isAuthenticated, token),
+  // }).then(res => {
+  //   console.log(res.data);
+  // }).catch(err => console.log('this is the new try error:' + err));
+
   try {
     return axios
-      .get(apiRootUrl + `/profile/${id}`, {
+      .get(`http://localhost:8000/profile/${id}`, {
         headers: getAuthHeader(isAuthenticated, token),
       })
       .then(response => response.data);
