@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { DatePicker, Form, Input, Button, Table, Space } from 'antd';
 import { PlusOutlined, DeleteOutlined, EditOutlined } from '@ant-design/icons';
 import { connect } from 'react-redux';
-import { referral } from '../../../../state/actions';
+import { referral } from '../../../state/actions';
 
 const Documents = props => {
   const [form] = Form.useForm();
