@@ -1,6 +1,7 @@
 import { combineReducers } from 'redux';
 
 import { reducer as client } from './clientReducer';
+import { reducer as clients } from './clientsReducer';
 import { reducer as contactPreferences } from './contactPreferencesReducer';
 import { reducer as referral } from './referralsReducer';
 import { reducer as document } from './documentUploadReducer';
@@ -9,6 +10,7 @@ import { reducer as profile } from './profileReducer';
 
 const rootReducer = combineReducers({
   client,
+  clients,
   contactPreferences,
   referral,
   document,
