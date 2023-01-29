@@ -31,7 +31,8 @@ const PrivateRoute = ({ component, ...args }) => {
             id: user.sub,
           });
 
-          // getProfileData(user.sub, isAuthenticated, args.token) This is Trying to gather information from our own api but now auth0 is responsible for giving us the information about the user.
+          // getProfileData(user.sub, isAuthenticated, args.token)
+          // This is Trying to gather user information from our own api but now Auth0 is responsible for giving us the information about the user.
           //   .then(res => {
           //     args.setProfile(res);
           //     console.log(args);
