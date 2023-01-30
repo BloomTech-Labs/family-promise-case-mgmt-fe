@@ -8,8 +8,8 @@ const CaseView = () => {
     familySize: 4,
     history: [
       { action: 'opened', date: Date.now() },
-      { action: 'opened', date: Date.now() },
-      { action: 'opened', date: Date.now() },
+      { action: 'changed', date: Date.now() },
+      { action: 'closed', date: Date.now() },
     ],
     documents: 'https://www.google.com',
     applications: 'https://www.google.com',
