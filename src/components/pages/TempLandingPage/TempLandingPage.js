@@ -23,6 +23,8 @@ const { Title } = Typography;
 const TempLandingPage = () => {
   const { loginWithRedirect, logout } = useAuth0();
   const { isAuthenticated } = useAuth0();
+  return (
+    <>
       <Layout>
         <Header className="landing-header">
           <img className="fam-promise-logo" src={FPLogo} />
@@ -152,8 +154,8 @@ const TempLandingPage = () => {
           <img className="fam-promise-logo" src={FPLogo} />
         </Footer>
       </Layout>
-      <LoginContainer />
-      <LogoutContainer />
+      {/* //<LoginContainer /> */}
+      {/* //<LogoutContainer /> */}
     </>
   );
 };
