@@ -1,4 +1,5 @@
 import React from 'react';
+import CaseActivity from '../pages/CaseView/CaseActivity';
 
 const CaseDashboard = ({ familyData }) => {
   return (
@@ -16,6 +17,7 @@ const CaseDashboard = ({ familyData }) => {
           >
             History
           </a>
+          <CaseActivity history={familyData.history} />
         </p>
         <p>
           Documents:{' '}
