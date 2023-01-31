@@ -4,7 +4,7 @@ import ClientFamilyInfo from './IntakeForms/ClientFamilyInfo';
 import Finances from './IntakeForms/Finances';
 import ContactPreferences from './IntakeForms/ContactPreferences';
 import Referrals from './IntakeForms/Referrals';
-import DocumentUpload from './IntakeForms/DocumentUpload';
+import DocumentUpload from './IntakeForms/DocumentsIntake';
 import EducationIntake from './IntakeForms/EducationIntake';
 import EmploymentIntake from './IntakeForms/EmploymentIntake';
 // import { submitForm } from '../../../api';

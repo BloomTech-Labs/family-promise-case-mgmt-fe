@@ -178,6 +178,7 @@
 .ant-checkbox-checked .ant-checkbox-inner {
   border-color: #007fd4 !important;
   background-color: #007fd4;
+
 }
 .ant-checkbox-checked-disabled .ant-checkbox-inner {
   background-color: #007fd4;
@@ -943,4 +944,8 @@ td.ant-table-column-sort {
   padding-left: 1rem;
 }
 
+
+.documentUploadContainer {
+  padding-left: 3rem;
+}
 
