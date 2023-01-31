@@ -154,8 +154,8 @@ const TempLandingPage = () => {
           <img className="fam-promise-logo" src={FPLogo} />
         </Footer>
       </Layout>
-      <LoginContainer />
-      <LogoutContainer />
+      {/* //<LoginContainer /> */}
+      {/* //<LogoutContainer /> */}
     </>
   );
 };
