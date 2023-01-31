@@ -6,6 +6,15 @@ const LoginContainer = () => {
 
   return (
     <button
+      style={{
+        backgroundColor: '#006fba',
+        color: 'white',
+        borderRadius: '.25rem',
+        width: '12rem',
+        height: '2.5rem',
+        border: '0px',
+        marginRight: '1rem',
+      }}
       data-testid="loginBtn"
       onClick={() =>
         loginWithRedirect({
