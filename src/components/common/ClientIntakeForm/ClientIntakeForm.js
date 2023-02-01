@@ -7,6 +7,7 @@ import Referrals from './IntakeForms/Referrals';
 import DocumentUpload from './IntakeForms/DocumentUpload';
 import EducationIntake from './IntakeForms/EducationIntake';
 import EmploymentIntake from './IntakeForms/EmploymentIntake';
+import Insurance from './IntakeForms/InsuranceIntake';
 // import { submitForm } from '../../../api';
 
 //NOTE: Inline Styles added temporarily.
@@ -50,6 +51,7 @@ const ClientIntakeForm = onChange => {
         <EducationIntake />
         <EmploymentIntake />
         <Finances />
+        <Insurance />
 
         <ContactPreferences />
         <Referrals />
