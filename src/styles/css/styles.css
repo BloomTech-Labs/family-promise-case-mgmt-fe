@@ -393,6 +393,7 @@ h3 {
   margin-bottom: 50px;
   background-color: #706f6f;
   padding: 20px;
+  font-size: 36px;
 }
 
 .borderStyled {
@@ -470,7 +471,6 @@ h3 {
 .ant-form-item-label > label {
   color: #ffffff;
 }
-
 
 /* finances styling */
 
@@ -751,8 +751,8 @@ h3 {
 }
 
 .NoteLine span {
-  color:#8D4982;
-  font-size:10px;
+  color: #8d4982;
+  font-size: 10px;
 }
 
 .SidebarContainer {
@@ -887,54 +887,54 @@ td.ant-table-column-sort {
   margin-top: 15px;
 }
 
-.RenderCMLogin{
+.RenderCMLogin {
   background-color: #101010;
 }
 
-.printNotesHeader{
+.printNotesHeader {
   border-bottom: 1px solid;
   margin-bottom: 3%;
   display: flex;
   justify-content: space-between;
-  align-items:flex-end;
+  align-items: flex-end;
 }
 
-.headerDivPrintNotes{
-  margin-bottom: .5%;
+.headerDivPrintNotes {
+  margin-bottom: 0.5%;
   margin-right: 2%;
   height: 3vh;
   font-size: 1.5rem;
   font-family: 'Times New Roman', Times, serif;
 }
 
-.logoInHeader{
+.logoInHeader {
   margin-left: 2%;
   height: 6vh;
   margin-top: 1%;
 }
 
-.printNotesContainer{
+.printNotesContainer {
   width: 80%;
   margin: 0 auto;
 }
 
-.printNotesSectionContainer{
-  padding-bottom: .5%;
-  padding-left: .5%;
+.printNotesSectionContainer {
+  padding-bottom: 0.5%;
+  padding-left: 0.5%;
   display: flex;
 }
 
-.notesHeading{
+.notesHeading {
   font-weight: bold;
   margin-top: 3%;
   font-size: medium;
 }
 
-.notesHeading2{
+.notesHeading2 {
   margin-left: 5%;
 }
 
-.theLiteralNotesMessage{
+.theLiteralNotesMessage {
   font-size: 1.2rem;
   font-family: 'Times New Roman', Times, serif;
 }
@@ -964,46 +964,42 @@ td.ant-table-column-sort {
 }
 
 /* Landing Page Styles */
-.fam-promise-logo{
+.fam-promise-logo {
   width: 300px;
-  padding: .25rem;
+  padding: 0.25rem;
 }
-.fp-image{
-  width:40vw;
+.fp-image {
+  width: 40vw;
   height: 50vh;
-  margin:2rem 5rem 2rem 5rem;
-
+  margin: 2rem 5rem 2rem 5rem;
 }
-.left-side-login-col{
+.left-side-login-col {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin:0 5rem 2rem 5rem;
-
+  margin: 0 5rem 2rem 5rem;
 }
-.right-side-login-col{
+.right-side-login-col {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
 }
-.landing-header{
+.landing-header {
   display: flex;
   flex-direction: row;
   justify-content: center;
   background-color: #333333;
   height: 6rem;
 }
-.landing-footer{
+.landing-footer {
   background-color: #333333;
-
 }
 .login-wrapper {
   width: 30vw;
   justify-content: flex-start;
-
- }
- .info-bar{
+}
+.info-bar {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
@@ -1011,46 +1007,45 @@ td.ant-table-column-sort {
   background-color: #8d4982;
   width: 40vw;
   height: 20vh;
-  margin:2rem 0rem 2rem 0rem;
-
- }
- .info-bar-icons{
+  margin: 2rem 0rem 2rem 0rem;
+}
+.info-bar-icons {
   font-size: 2.5rem;
   font-weight: lighter;
- }
- .info-desc{
+}
+.info-desc {
   margin: 0;
   padding: 0;
   color: #fec357;
   font-weight: lighter;
   text-align: center;
- }
- .info-col{
+}
+.info-col {
   display: flex;
   flex-direction: column;
   justify-content: center;
- }
-.slogan-background{
+}
+.slogan-background {
   background-color: #8d4982;
-  padding: 0.5rem; 
+  padding: 0.5rem;
   text-align: center;
   margin: 2rem;
   color: white;
   width: 40vw;
   height: auto;
-  margin:2rem 5rem 2rem 5rem;
+  margin: 2rem 5rem 2rem 5rem;
   position: absolute;
-  top:50%;
+  top: 50%;
 }
-.mission-quote{
+.mission-quote {
   text-align: left;
   width: 40vw;
   height: auto;
 }
-.donate-button{
+.donate-button {
   background-color: #fec357;
-  border:none;
-  border-radius: .25rem;
+  border: none;
+  border-radius: 0.25rem;
   width: 10rem;
   height: 2rem;
   margin: 2rem;
@@ -1060,22 +1055,28 @@ td.ant-table-column-sort {
 .donate-button:hover {
   opacity: 0.8;
 }
-.social-icons{
-  color:#000000;
+.social-icons {
+  color: #000000;
   width: 1.5rem;
   height: 1.5rem;
   margin-right: 3.5rem;
 }
 .social-icons:hover {
-  opacity: .8;
+  opacity: 0.8;
 }
-.social-wrapper{
+.social-wrapper {
   width: 30vw;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
 }
+
+.educationContainer {
+  height: 458px;
+  margin-left: 100px;
+}
+
 @media (max-width: 768px) {
   .fam-promise-logo {
     width: 150px;
@@ -1088,4 +1089,3 @@ td.ant-table-column-sort {
     height: 30px;
   }
 }
-
