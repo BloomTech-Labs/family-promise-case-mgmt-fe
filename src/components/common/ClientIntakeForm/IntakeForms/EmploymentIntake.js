@@ -38,36 +38,59 @@ const EmploymentIntake = () => {
             className="inputStyles employmentInformation__Inputs"
             placeholder="-- Select --"
           >
-            <Select.Option value="Yes" />
-            <Select.Option value="No" />
-          </Select>
-        </Form.Item>
-        <Form.Item
-          label="If yes, what are the skills and/or certifications:"
-          name="Skills"
-          initialValue=""
-        >
-          <TextArea
-            placeholder="Name of Company"
-            className="inputStyles employmentInformation__Inputs employmentInformation__Inputs--long-text"
-          />
-        </Form.Item>
-        <Form.Item
-          label="Interested in working in: "
-          name="WantedWork"
-          initialValue=""
-        >
-          <Select
-            className="inputStyles employmentInformation__Inputs"
-            placeholder="-- Select --"
+            <Select
+              className="inputStyles employmentInformation__Inputs"
+              placeholder="-- Select --"
+            >
+              <Select.Option value="Yes (Full-Time)" />
+              <Select.Option value="Yes (Part-Time)" />
+              <Select.Option value="Seasonal/Temporary Employment" />
+              <Select.Option value="No Due to a Documented Mental/Physical Condition" />
+              <Select.Option value="No" />
+            </Select>
+          </Form.Item>
+          <Form.Item
+            label="Skills/Certifications"
+            name="SkillsCertifications"
+            initialValue=""
           >
-            <Select.Option value="Retail/Sales" />
-            <Select.Option value="Fast Food" />
-            <Select.Option value="Hospitality" />
-            <Select.Option value="Wharehouse" />
-            <Select.Option value="Truck Driving" />
-          </Select>
-        </Form.Item>
+            <Select
+              className="inputStyles employmentInformation__Inputs"
+              placeholder="-- Select --"
+            >
+              <Select.Option value="Yes" />
+              <Select.Option value="No" />
+            </Select>
+          </Form.Item>
+          <Form.Item
+            label="If yes, what are the skills and/or certifications:"
+            name="Skills"
+            initialValue=""
+          >
+            <TextArea
+              placeholder="Name of Company"
+              className="inputStyles employmentInformation__Inputs employmentInformation__Inputs--long-text"
+            />
+          </Form.Item>
+        </section>
+        <section className="sectionRight">
+          <Form.Item
+            label="Interested in working in: "
+            name="WantedWork"
+            initialValue=""
+          >
+            <Select
+              className="inputStyles employmentInformation__Inputs"
+              placeholder="-- Select --"
+            >
+              <Select.Option value="Retail/Sales" />
+              <Select.Option value="Fast Food" />
+              <Select.Option value="Hospitality" />
+              <Select.Option value="Wharehouse" />
+              <Select.Option value="Truck Driving" />
+            </Select>
+          </Form.Item>
+        </section>
       </div>
     </div>
   );

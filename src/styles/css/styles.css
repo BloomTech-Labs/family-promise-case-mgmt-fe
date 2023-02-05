@@ -923,7 +923,7 @@ td.ant-table-column-sort {
   font-size: 36px;
   margin-bottom: 2rem;
 }
-.employmentInformation {
+.employmentInformation .hohContainer {
   display: flex;
   flex-wrap: wrap;
 }
