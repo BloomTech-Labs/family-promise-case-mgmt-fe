@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 export default function CaseActivity() {
   const historyDummyData = [
@@ -8,6 +8,11 @@ export default function CaseActivity() {
     { action: 'closed', date: '08-16-2019' },
   ];
 
+  const [expandView, setExpandView] = useState(true);
+  const toggleExpandedView = () => {
+    setExpandView(!expandView);
+  };
+
   return (
     <>
       <div>
@@ -16,12 +21,14 @@ export default function CaseActivity() {
           <span style={{ fontWeight: 'bold' }}>Latest Activity:</span>{' '}
           {historyDummyData[0].action}: {historyDummyData[0].date}
         </p>
-        <button>Expanded View</button>
+        <button onClick={toggleExpandedView}>View All Activity</button>
       </div>
-      {}
+      {expandView && <ExpandedActivity />}
     </>
   );
 }
+
+const ExpandedStyles = {};
 
 const ExpandedActivity = () => {
   return (
