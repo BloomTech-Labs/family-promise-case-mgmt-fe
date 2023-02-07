@@ -28,12 +28,22 @@ export default function CaseActivity() {
   );
 }
 
-const ExpandedStyles = {};
+const expandedStyles = {
+  div: {
+    display: 'absolute',
+    width: '100%',
+    height: '80vh',
+    top: '0',
+    left: '0',
+    backgroundColor: 'rgb(0,0,0, .6)',
+  },
+  h3: {},
+};
 
 const ExpandedActivity = () => {
   return (
-    <div>
-      <h2>Expanded</h2>
+    <div style={expandedStyles.div}>
+      <h3>Case Activity</h3>
     </div>
   );
 };

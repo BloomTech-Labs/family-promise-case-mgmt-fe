@@ -6,11 +6,7 @@ const CaseView = () => {
     householdId: 123456789,
     active: true,
     familySize: 4,
-    history: [
-      { action: 'opened', date: Date.now() },
-      { action: 'changed', date: Date.now() },
-      { action: 'closed', date: Date.now() },
-    ],
+    history: 'https://www.google.com',
     documents: 'https://www.google.com',
     applications: 'https://www.google.com',
     headOfHousehold: {

@@ -17,8 +17,8 @@ const CaseDashboard = ({ familyData }) => {
           >
             History
           </a>
-          <CaseActivity history={familyData.history} />
         </p>
+        <CaseActivity />
         <p>
           Documents:{' '}
           <a
