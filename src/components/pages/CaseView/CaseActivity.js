@@ -9,6 +9,8 @@ export default function CaseActivity() {
   ];
 
   const [expandView, setExpandView] = useState(false);
+  const [caseHistoryData, setCaseHistoryData] = useState(historyDummyData);
+
   const toggleExpandedView = () => {
     setExpandView(!expandView);
   };
@@ -29,6 +31,7 @@ export default function CaseActivity() {
 
 const expandedStyles = {
   div: {
+    marginTop: '2em',
     display: 'absolute',
     width: '100%',
     height: '80vh',
