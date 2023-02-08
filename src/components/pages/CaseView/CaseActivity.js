@@ -23,7 +23,10 @@ export default function CaseActivity() {
         </button>
       </div>
       {expandView && (
-        <ExpandedActivity toggleExpandedView={toggleExpandedView} />
+        <ExpandedActivity
+          caseHistoryData={caseHistoryData}
+          toggleExpandedView={toggleExpandedView}
+        />
       )}
     </>
   );
@@ -34,13 +37,12 @@ const expandedStyles = {
     marginTop: '2em',
     display: 'absolute',
     width: '100%',
-    height: '80vh',
     top: '0',
     left: '0',
-    backgroundColor: 'rgb(51,51,51, .5)',
+    backgroundColor: 'black',
   },
   titleDiv: {
-    backgroundColor: 'rgb(51,51,51, .75)',
+    backgroundColor: 'rgb(51,51,51, .90)',
     margin: 0,
     width: '100%',
     padding: 0,
@@ -54,9 +56,40 @@ const expandedStyles = {
     marginLeft: '2em',
   },
   closeButton: {},
+  legendDiv: {
+    width: '100%',
+    height: '4em',
+    display: 'flex',
+    justifyContent: 'space-around',
+    alignItems: 'center',
+    backgroundColor: 'rgb(51,51,51, .99)',
+    marginTop: '.5em',
+    marginBottom: '.5em',
+  },
+  legendP: {
+    fontSize: '1.2em',
+    color: '#006FBA',
+    fontWeight: '500',
+    textAlign: 'center',
+  },
+  itemDiv: {
+    width: '100%',
+    height: '4em',
+    display: 'flex',
+    justifyContent: 'space-around',
+    alignItems: 'center',
+    backgroundColor: '#6E6E6E',
+    marginTop: '.5em',
+    marginBottom: '.5em',
+  },
+  itemP: {
+    color: 'white',
+    fontWeight: '400',
+    textAlign: 'center',
+  },
 };
 
-const ExpandedActivity = ({ toggleExpandedView }) => {
+const ExpandedActivity = ({ toggleExpandedView, caseHistoryData }) => {
   return (
     <div style={expandedStyles.div}>
       <div style={expandedStyles.titleDiv}>
@@ -64,6 +97,23 @@ const ExpandedActivity = ({ toggleExpandedView }) => {
         <button onClick={toggleExpandedView} style={expandedStyles.closeButton}>
           close
         </button>
+      </div>
+      <div>
+        <div style={expandedStyles.legendDiv}>
+          <p style={expandedStyles.legendP}>Modification</p>
+          <p style={expandedStyles.legendP}>Date</p>
+        </div>
+        {caseHistoryData.map(item => {
+          return (
+            <>
+              <div style={expandedStyles.itemDiv}>
+                <p style={expandedStyles.itemP}>{item.action}</p>
+                <p style={expandedStyles.itemP}>{item.date}</p>
+              </div>
+            </>
+          );
+        })}
+        ;
       </div>
     </div>
   );
