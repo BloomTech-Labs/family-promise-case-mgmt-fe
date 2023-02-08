@@ -8,7 +8,7 @@ export default function CaseActivity() {
     { action: 'closed', date: '08-16-2019' },
   ];
 
-  const [expandView, setExpandView] = useState(true);
+  const [expandView, setExpandView] = useState(false);
   const toggleExpandedView = () => {
     setExpandView(!expandView);
   };
@@ -16,14 +16,13 @@ export default function CaseActivity() {
   return (
     <>
       <div>
-        {/* This gets the last two changes and displays them */}
-        <p>
-          <span style={{ fontWeight: 'bold' }}>Latest Activity:</span>{' '}
-          {historyDummyData[0].action}: {historyDummyData[0].date}
-        </p>
-        <button onClick={toggleExpandedView}>View All Activity</button>
+        <button style={{ marginLeft: '1em' }} onClick={toggleExpandedView}>
+          View Case Activity
+        </button>
       </div>
-      {expandView && <ExpandedActivity />}
+      {expandView && (
+        <ExpandedActivity toggleExpandedView={toggleExpandedView} />
+      )}
     </>
   );
 }
@@ -35,15 +34,34 @@ const expandedStyles = {
     height: '80vh',
     top: '0',
     left: '0',
-    backgroundColor: 'rgb(0,0,0, .6)',
+    backgroundColor: 'rgb(51,51,51, .5)',
   },
-  h3: {},
+  titleDiv: {
+    backgroundColor: 'rgb(51,51,51, .75)',
+    margin: 0,
+    width: '100%',
+    padding: 0,
+    display: 'flex',
+    justifyContent: 'space-between',
+  },
+  h3: {
+    fontSize: '24px',
+    textAlign: 'center',
+    color: '#006FBA',
+    marginLeft: '2em',
+  },
+  closeButton: {},
 };
 
-const ExpandedActivity = () => {
+const ExpandedActivity = ({ toggleExpandedView }) => {
   return (
     <div style={expandedStyles.div}>
-      <h3>Case Activity</h3>
+      <div style={expandedStyles.titleDiv}>
+        <h3 style={expandedStyles.h3}>Case Activity</h3>
+        <button onClick={toggleExpandedView} style={expandedStyles.closeButton}>
+          close
+        </button>
+      </div>
     </div>
   );
 };
