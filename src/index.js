@@ -1,29 +1,30 @@
 // this is a comment
+import 'antd/dist/antd.less';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { Provider } from 'react-redux';
-import store from './state';
-import 'antd/dist/antd.less';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { store } from './state/store';
 
-import { NotFoundPage } from './components/pages/NotFound';
-import { ExampleListPage } from './components/pages/ExampleList';
-import { ProfileListPage } from './components/pages/ProfileList';
+import { ClientIntakeForm } from './components/common/ClientIntakeForm';
+import { Calendar } from './components/pages/Calendar';
+import { CaseDetails } from './components/pages/CaseDetails';
 import { Cases } from './components/pages/Cases';
 import { CaseView } from './components/pages/CaseView';
-import { ClientIntakeForm } from './components/common/ClientIntakeForm';
+import { ExampleListPage } from './components/pages/ExampleList';
 import { LayoutTemplate } from './components/pages/LayoutTemplate';
-import { CaseDetails } from './components/pages/CaseDetails';
-import { Calendar } from './components/pages/Calendar';
+import { NotFoundPage } from './components/pages/NotFound';
+import { ProfileListPage } from './components/pages/ProfileList';
 import { TempLandingPage } from './components/pages/TempLandingPage';
 
-import { RecentCases } from './components/pages/RecentCases';
 import DashHeader from './components/common/DashHeader';
+import { RecentCases } from './components/pages/RecentCases';
 
 import './styles/css/styles.css';
 
-import PrivateRoute from './components/common/PrivateRoute';
+import { useAuth0 } from '@auth0/auth0-react';
 import Auth0ProviderWithHistory from './auth/Auth0ProviderWithHistory';
+import PrivateRoute from './components/common/PrivateRoute';
 
 ReactDOM.render(
   <Router>
@@ -39,6 +40,9 @@ ReactDOM.render(
 );
 
 function App() {
+  // authVar and console.log will be removed
+  const { user } = useAuth0();
+  console.log(user);
   return (
     <Switch>
       <Route exact path="/" component={TempLandingPage} />
