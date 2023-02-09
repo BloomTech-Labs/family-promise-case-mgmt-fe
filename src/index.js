@@ -1,9 +1,10 @@
 // this is a comment
 import 'antd/dist/antd.less';
-import React from 'react';
+import React, { useEffect } from 'react';
 import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
+import { Provider, useDispatch, useSelector } from 'react-redux';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { setUser } from './state/features/user/userSlice';
 import { store } from './state/store';
 
 import { ClientIntakeForm } from './components/common/ClientIntakeForm';
@@ -40,9 +41,16 @@ ReactDOM.render(
 );
 
 function App() {
-  // authVar and console.log will be removed
+  // stateUser and console.log will be removed!!!!
+  const stateUser = useSelector(store => store.user);
   const { user } = useAuth0();
-  console.log(user);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(setUser(user));
+  }, [user]);
+
+  console.log(stateUser);
+
   return (
     <Switch>
       <Route exact path="/" component={TempLandingPage} />
