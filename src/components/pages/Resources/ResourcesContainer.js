@@ -1,7 +1,10 @@
 import React from 'react';
+import RenderResources from './RenderResources';
 
-const ResourcesContainer = () => {
-  return <>test</>;
-};
-
-export default ResourcesContainer;
+export default function ResourcesContainer() {
+  return (
+    <>
+      <RenderResources />
+    </>
+  );
+}
