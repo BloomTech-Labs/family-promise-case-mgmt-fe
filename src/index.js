@@ -46,10 +46,12 @@ function App() {
   const { user } = useAuth0();
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(setUser(user));
+    if (user) {
+      dispatch(setUser(user));
+    }
   }, [user]);
 
-  console.log(stateUser);
+  // console.log(user, stateUser);
 
   return (
     <Switch>
