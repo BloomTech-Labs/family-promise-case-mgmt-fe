@@ -2,9 +2,18 @@ import React from 'react';
 import DashHeader from '../../common/DashHeader';
 import SearchIcon from '../../common/CaseDetails/SearchIcon';
 
-import { Layout, Space, Input, Content, Sider, Footer } from 'antd';
+import { Layout, Space, Input, Button } from 'antd';
+const { Sider, Content, Footer } = Layout;
 
 export default function RenderResources() {
+  function searchResourcesBtn(evt) {
+    console.log('search button works');
+  }
+
+  function handleChange(evt) {
+    console.log(evt.target);
+  }
+
   return (
     <div className="RenderResources">
       <DashHeader />
@@ -12,18 +21,28 @@ export default function RenderResources() {
         <Layout className="Layout">
           <Sider className="Sider">
             <div className="SidebarContainer">
-              <div>
+              <div className="sectionContainer">
                 <Space direction="vertical">
                   <Input
                     prefix={<SearchIcon className="searchIcon" />}
                     placeholder="Search resources"
                     className="SearchBar"
+                    onChange={handleChange}
                   />
+                  <Button
+                    type="Default"
+                    className="SidebarButton"
+                    onClick={searchResourcesBtn}
+                  >
+                    SEARCH
+                  </Button>
                 </Space>
               </div>
             </div>
           </Sider>
-          <Content className="Content"></Content>
+          <Content className="Content">
+            <h1>Resources</h1>
+          </Content>
         </Layout>
       </div>
       <Footer className="Footer">
