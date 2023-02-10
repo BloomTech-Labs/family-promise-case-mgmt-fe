@@ -3,7 +3,7 @@ import DashHeader from '../../common/DashHeader';
 import SearchIcon from '../../common/CaseDetails/SearchIcon';
 
 import { Layout, Space, Input, Button } from 'antd';
-const { Sider, Content, Footer } = Layout;
+const { Sider, Header, Footer } = Layout;
 
 export default function RenderResources() {
   function searchResourcesBtn(evt) {
@@ -17,6 +17,9 @@ export default function RenderResources() {
   return (
     <div className="RenderResources">
       <DashHeader />
+      <div className="ResourceHeader">
+        <h3>Resources</h3>
+      </div>
       <div className="containerStyles">
         <Layout className="Layout">
           <Sider className="Sider">
@@ -40,9 +43,17 @@ export default function RenderResources() {
               </div>
             </div>
           </Sider>
-          <Content className="Content">
-            <h1>Resources</h1>
-          </Content>
+
+          <div className="ResourcesRight">
+            <div>
+              <ul>
+                <li>Resource 1</li>
+                <li>Resource 2</li>
+                <li>Resource 3</li>
+                <li>Resource 4</li>
+              </ul>
+            </div>
+          </div>
         </Layout>
       </div>
       <Footer className="Footer">

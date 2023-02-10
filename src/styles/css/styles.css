@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Manjari:wght@100;400;700&display=swap');
+
+
 /***  Variables  ***/
 
 /*** Re: Style Guidelines on Figma ***/
@@ -1088,4 +1091,26 @@ td.ant-table-column-sort {
     width: 100px;
     height: 30px;
   }
+}
+
+
+.ResourcesRight{
+  display: flex;
+  width: 100%;
+  background-color: #101010;
+}
+
+.ResourceHeader{
+  display: flex;
+  width: 100% auto;
+  
+  background-color: #101010;
+  color: #cdcdcd;
+  font-size: 1.5rem;
+  font-family: 'Manjari', sans-serif;
+}
+
+.ResourceHeader h3{
+  color:#cdcdcd;
+  margin: 30px;
 }
