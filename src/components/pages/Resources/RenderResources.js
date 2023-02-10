@@ -1,30 +1,34 @@
 import React from 'react';
 import DashHeader from '../../common/DashHeader';
-import BreadCrumbs from '../../common/BreadCrumbs';
-import { useLocation } from 'react-router-dom';
+import SearchIcon from '../../common/CaseDetails/SearchIcon';
 
-import { Layout } from 'antd';
-const { Header, Content, Footer } = Layout;
+import { Layout, Space, Input, Content, Sider, Footer } from 'antd';
 
 export default function RenderResources() {
-  const location = useLocation();
-
   return (
     <div className="RenderResources">
       <DashHeader />
-      <Header className="Header">
-        <h1>Resources</h1>
-      </Header>
-      <div>
+      <div className="containerStyles">
         <Layout className="Layout">
-          <Content className="Content">
-            <BreadCrumbs pathname={location.pathname} />
-          </Content>
-          <Footer className="Footer">
-            Family Promise of Spokane ©2022 Created by BloomTech Labs
-          </Footer>
+          <Sider className="Sider">
+            <div className="SidebarContainer">
+              <div>
+                <Space direction="vertical">
+                  <Input
+                    prefix={<SearchIcon className="searchIcon" />}
+                    placeholder="Search resources"
+                    className="SearchBar"
+                  />
+                </Space>
+              </div>
+            </div>
+          </Sider>
+          <Content className="Content"></Content>
         </Layout>
       </div>
+      <Footer className="Footer">
+        Family Promise of Spokane ©2022 Created by BloomTech Labs
+      </Footer>
     </div>
   );
 }
