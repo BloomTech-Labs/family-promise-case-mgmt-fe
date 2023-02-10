@@ -1093,24 +1093,81 @@ td.ant-table-column-sort {
   }
 }
 
+/* Resources Styles */
 
-.ResourcesRight{
+.RenderResources{
   display: flex;
-  width: 100%;
-  background-color: #101010;
+  flex-direction: column;
 }
 
 .ResourceHeader{
   display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100% auto;
-  
   background-color: #101010;
   color: #cdcdcd;
   font-size: 1.5rem;
   font-family: 'Manjari', sans-serif;
 }
 
-.ResourceHeader h3{
+.ResourceHeader h2{
   color:#cdcdcd;
+  margin-top: 30px;
+}
+
+
+.SearchContainer{
+  width: 50% auto;
+  display: flex;
+  flex-direction: column;
+  margin-top: -20px;
+  background-color: #101010;
+}
+
+.search-bar{
+  display: flex;
+  align-items: baseline;
+  padding: 0 1% 0 1%;
+}
+
+.search-bar h3{
+  color:#cdcdcd;
+  text-align: center;
   margin: 30px;
 }
+
+.ResourcesRight{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  width: 100%;
+  background-color: #101010;
+  border: solid red 2px;
+}
+
+.ResourcesRight a{
+ color: #9e5291; 
+
+}
+
+.CurrentResource {
+  background-color: #101010;
+  color:#cdcdcd;
+  padding: 1%;
+  border: solid red 2px;
+  width: 100% auto; 
+}
+
+.CurrentResource h4{
+ color: #9e5291; 
+}
+
+
+
+.ResourceBody{
+  display: flex;
+  flex-direction: column;
+}
+
+
