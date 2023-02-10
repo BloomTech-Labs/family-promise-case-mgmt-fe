@@ -2,7 +2,7 @@
 import 'antd/dist/antd.less';
 import React, { useEffect } from 'react';
 import ReactDOM from 'react-dom';
-import { Provider, useDispatch, useSelector } from 'react-redux';
+import { Provider, useDispatch } from 'react-redux';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { setUser } from './state/features/user/userSlice';
 import { store } from './state/store';
@@ -41,8 +41,6 @@ ReactDOM.render(
 );
 
 function App() {
-  // stateUser and console.log will be removed!!!!
-  const stateUser = useSelector(store => store.user);
   const { user } = useAuth0();
   const dispatch = useDispatch();
   useEffect(() => {
@@ -51,7 +49,7 @@ function App() {
     }
   }, [user]);
 
-  // console.log(user, stateUser);
+  console.log(user);
 
   return (
     <Switch>
