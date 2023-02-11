@@ -57,9 +57,15 @@ export default function RenderResources() {
           <div className="cr-wrap">
             <section className="resource-list">
               <h3>Recently Viewed</h3>
+
               <div className="resource-links-wrap">
-                <div className="resource-link">
-                  This is a resource
+                <div className="resource-link-odd">
+                  <p>This is a resource</p>
+                  <button className="resource-btn">View</button>
+                </div>
+
+                <div className="resource-link-even">
+                  <p>This is a resource</p>
                   <button className="resource-btn">View</button>
                 </div>
               </div>

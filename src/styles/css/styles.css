@@ -1187,20 +1187,32 @@ td.ant-table-column-sort {
 .resource-links-wrap{
   width: 100%;
   display: flex;
+  flex-direction: column;
 }
 
-.resource-link{
+.resource-link-odd{
   display: flex;
   width: 100%;
   align-items: center;
   text-align: center;
-  background-color: #cdcdcd; 
+  color: #006fba;
+  border: solid #006fba 2px;
+}
+
+.resource-link-even{
+  display: flex;
+  width: 100%;
+  align-items: center;
+  text-align: center;
+  color: #cdcdcd;
+  background-color: #1b2630;
+  border: solid #1b1b1b 2px;
 }
 
 .resource-btn{
   width: 40%;
   height: 50px;
-  background: #333333;
+  background-color: #027fd3;
   border-radius: 25px 0px 10px;
   color: #cdcdcd;
   border-color: #007fd4;
@@ -1208,6 +1220,12 @@ td.ant-table-column-sort {
   flex-flow: row nowrap;
   justify-content: space-around;
   align-items: center;
+}
+
+.resource-btn:hover {
+  background-color: #1b2630;
+  border-color: #027fd3;
+  color: #027fd3;
 }
 
 
