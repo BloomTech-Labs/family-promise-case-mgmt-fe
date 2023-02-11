@@ -1098,7 +1098,8 @@ td.ant-table-column-sort {
 .RenderResources{
   display: flex;
   flex-direction: column;
-  height: 100% auto;
+  height: auto;
+  background-color: #101010;
 }
 
 .ResourceHeader{
@@ -1115,7 +1116,6 @@ td.ant-table-column-sort {
   color:#cdcdcd;
   margin-top: 30px;
   font-family: 'Manjari', sans-serif;
-  font-size: 36px;
 }
 
 
@@ -1149,13 +1149,20 @@ td.ant-table-column-sort {
 .CurrentResource h3{
   color:#cdcdcd;
  font-family: 'Manjari', sans-serif;
- font-size: 1.5rem;
- margin-top: 10px;
  text-align: center;
+}
+
+.CurrentResource h4{
+  color: #9e5291;
+  font-weight: bold;
+  padding: 1.5% 5% 0 5%;
+  /* padding-left: 5%;
+  padding-right: 5%; */
 }
 
 .CurrentResource p{
   margin: 30px 0 0 30px;
+  padding: 0 5% 0 10%;
 }
 
 
@@ -1176,9 +1183,8 @@ td.ant-table-column-sort {
 
 .resource-list h3{
   color:#cdcdcd;
- font-family: 'Manjari', sans-serif;
- font-size: 1.5rem;
- text-align: center;
+  font-family: 'Manjari', sans-serif;
+  text-align: center;
   width: 100%;
 }
 
@@ -1189,13 +1195,19 @@ td.ant-table-column-sort {
   width: 80%;
 }
 
+.resource-link{
+  display: flex;
+  padding-left: 12%;
+  padding-top: 1.5%;
+  color: #9e5291;
+}
 
 .rl-odd{
   display: flex;
   width: 100%;
   align-items: center;
   text-align: center;
-  border: solid #006fba 2px;
+  /* border: solid #006fba 2px; */
 }
 
 .rl-odd h4{
@@ -1236,5 +1248,4 @@ td.ant-table-column-sort {
   border-color: #027fd3;
   color: #027fd3;
 }
-
 
