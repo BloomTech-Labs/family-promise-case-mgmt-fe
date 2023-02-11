@@ -12,10 +12,12 @@ const { Sider, Footer } = Layout;
 export default function RenderResources() {
   function searchResourcesBtn(evt) {
     // console.log('search button works');
+    // can search by tag system using API
   }
 
   function handleChange(evt) {
     // console.log(evt.target);
+    //input will trigger evt to render onto current resource
   }
 
   return (
@@ -23,49 +25,48 @@ export default function RenderResources() {
       <DashHeader />
       <div className="ResourceHeader">
         <h2>Resources</h2>
+        <div className="SearchContainer">
+          <div className="search-bar">
+            <Input
+              prefix={<SearchIcon className="searchIcon" />}
+              placeholder="Search resources"
+              className="SearchBar"
+              onChange={handleChange}
+            />
+            <Button
+              type="Default"
+              className="SidebarButton"
+              onClick={searchResourcesBtn}
+            >
+              SEARCH
+            </Button>
+          </div>
+        </div>
       </div>
       <div className="ResourceBody">
         <Layout className="Layout">
-          <div className="SearchContainer">
-            <div className="search-bar">
-              {/* <h3>Search Resources</h3> */}
-              <Input
-                prefix={<SearchIcon className="searchIcon" />}
-                placeholder="Search resources"
-                className="SearchBar"
-                onChange={handleChange}
-              />
-              <Button
-                type="Default"
-                className="SidebarButton"
-                onClick={searchResourcesBtn}
-              >
-                SEARCH
-              </Button>
-            </div>
-          </div>
-          {/* <List className='ResourceList'
-              // passing Axios request helper function as a callback.
-              getItemsData={ getExampleData }
-              // component that shows while waiting for API request
-              // to complete
-              LoadingComponent={() => <div>Loading Items...</div>}
-              // passing in a component that receives new data and returns JSX elements.
-              RenderItems={ RenderExampleListPage }
-            />
-            */}
           <div className="cr-wrap">
             <section className="resource-list">
               <h3>Recently Viewed</h3>
 
               <div className="resource-links-wrap">
-                <div className="resource-link-odd">
-                  <p>This is a resource</p>
+                <div className="resource-link rl-odd">
+                  <h4>This is a resource</h4>
                   <button className="resource-btn">View</button>
                 </div>
 
-                <div className="resource-link-even">
-                  <p>This is a resource</p>
+                <div className="resource-link rl-even">
+                  <h4>This is a resource</h4>
+                  <button className="resource-btn">View</button>
+                </div>
+
+                <div className="resource-link rl-odd">
+                  <h4>This is a resource</h4>
+                  <button className="resource-btn">View</button>
+                </div>
+
+                <div className="resource-link rl-even">
+                  <h4>This is a resource</h4>
                   <button className="resource-btn">View</button>
                 </div>
               </div>
