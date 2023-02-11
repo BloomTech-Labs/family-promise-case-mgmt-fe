@@ -28,7 +28,7 @@ export default function RenderResources() {
         <Layout className="Layout">
           <div className="SearchContainer">
             <div className="search-bar">
-              <h3>Search Resources</h3>
+              {/* <h3>Search Resources</h3> */}
               <Input
                 prefix={<SearchIcon className="searchIcon" />}
                 placeholder="Search resources"
@@ -54,31 +54,29 @@ export default function RenderResources() {
               RenderItems={ RenderExampleListPage }
             />
             */}
-          <div className="CurrentResource">
-            <h4> Current Resource Title </h4>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip
-            </p>
+          <div className="cr-wrap">
+            <section className="resource-list">
+              <h3>Recently Viewed</h3>
+              <div className="resource-links-wrap">
+                <div className="resource-link">
+                  This is a resource
+                  <button className="resource-btn">View</button>
+                </div>
+              </div>
+            </section>
+            <section className="CurrentResource">
+              <h3> Current Resource Sample </h3>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip
+              </p>
 
-            <a href="#">Resource Link</a>
-          </div>
-          <div className="ResourcesRight">
-            <h3>Resources List</h3>
-            <a href="#">Resource 1</a>
-            <a href="#">Resource 2</a>
-            <a href="#">Resource 3</a>
-            <a href="#">Resource 4</a>
-            <a href="#">Resource 5</a>
-            <a href="#">Resource 6</a>
-            <a href="#">Resource 7</a>
-            <a href="#">Resource 8</a>
-            <a href="#">Resource 9</a>
-            <a href="#">Resource 10</a>
-            <a href="#">Resource 11</a>
-            <a href="#">Resource 12</a>
+              <a href="#" className="resource-link">
+                External link
+              </a>
+            </section>
           </div>
         </Layout>
       </div>

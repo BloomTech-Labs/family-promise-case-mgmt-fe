@@ -1098,6 +1098,7 @@ td.ant-table-column-sort {
 .RenderResources{
   display: flex;
   flex-direction: column;
+  height: 100% auto;
 }
 
 .ResourceHeader{
@@ -1108,66 +1109,105 @@ td.ant-table-column-sort {
   background-color: #101010;
   color: #cdcdcd;
   font-size: 1.5rem;
-  font-family: 'Manjari', sans-serif;
 }
 
 .ResourceHeader h2{
   color:#cdcdcd;
   margin-top: 30px;
+  font-family: 'Manjari', sans-serif;
 }
 
 
 .SearchContainer{
-  width: 50% auto;
+  width: 30% auto;
   display: flex;
-  flex-direction: column;
   margin-top: -20px;
   background-color: #101010;
 }
 
 .search-bar{
   display: flex;
-  align-items: baseline;
-  padding: 0 1% 0 1%;
+  align-items: center;
+  justify-content: baseline;
+  padding: 0 1% 0 1.5%;
+  width: 25%;
 }
 
-.search-bar h3{
-  color:#cdcdcd;
-  text-align: center;
-  margin: 30px;
-}
-
-.ResourcesRight{
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  width: 100%;
+.cr-wrap{
   background-color: #101010;
-  border: solid red 2px;
-}
-
-.ResourcesRight a{
- color: #9e5291; 
-
+  display: flex;
 }
 
 .CurrentResource {
-  background-color: #101010;
   color:#cdcdcd;
   padding: 1%;
-  border: solid red 2px;
   width: 100% auto; 
+  padding-left: 1%;
+  padding-right: 1%;
 }
 
-.CurrentResource h4{
- color: #9e5291; 
+.CurrentResource h3{
+  color:#cdcdcd;
+ font-family: 'Manjari', sans-serif;
+ font-size: 1.5rem;
+ margin-top: 10px;
+ text-align: center;
 }
 
+.CurrentResource p{
+  margin: 30px 0 0 30px;
+}
 
 
 .ResourceBody{
   display: flex;
   flex-direction: column;
+}
+
+.resource-list{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 55%;
+  padding-left: 1%;
+  padding-right: 1%;
+}
+
+.resource-list h3{
+  margin-top: -40px;
+  color:#cdcdcd;
+ font-family: 'Manjari', sans-serif;
+ font-size: 1.5rem;
+ text-align: center;
+  width: 100%;
+}
+
+
+.resource-links-wrap{
+  width: 100%;
+  display: flex;
+}
+
+.resource-link{
+  display: flex;
+  width: 100%;
+  align-items: center;
+  text-align: center;
+  background-color: #cdcdcd; 
+}
+
+.resource-btn{
+  width: 40%;
+  height: 50px;
+  background: #333333;
+  border-radius: 25px 0px 10px;
+  color: #cdcdcd;
+  border-color: #007fd4;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  align-items: center;
 }
 
 
