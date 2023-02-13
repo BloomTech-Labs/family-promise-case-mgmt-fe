@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import DashHeader from '../../common/DashHeader';
 import SearchIcon from '../../common/CaseDetails/SearchIcon';
 
@@ -20,12 +20,22 @@ export default function RenderResources() {
     //input will trigger evt to render onto current resource
   }
 
+  function toggleActive(evt) {
+    if (evt.currentTarget.classList.contains('r-tab-active')) {
+      evt.currentTarget.classList.remove('r-tab-active');
+      console.log('Button no longer active');
+    } else {
+      evt.currentTarget.classList.add('r-tab-active');
+      console.log('Button is now active');
+    }
+  }
+
   return (
     <div className="RenderResources">
       <DashHeader />
       <div className="ResourceHeader">
         <h2>Resources</h2>
-        <div className="SearchContainer">
+        <div className="ResearchSearchContainer">
           <div className="search-bar">
             <Input
               prefix={<SearchIcon className="searchIcon" />}
@@ -43,6 +53,40 @@ export default function RenderResources() {
           </div>
         </div>
       </div>
+
+      <div className="tab-container">
+        <button onClick={toggleActive} className="r-tab">
+          Category Resource
+        </button>
+        <button onClick={toggleActive} className="r-tab">
+          Category Resource
+        </button>
+        <button onClick={toggleActive} className="r-tab">
+          Category Resource
+        </button>
+        <button onClick={toggleActive} className="r-tab">
+          Category Resource
+        </button>
+        <button onClick={toggleActive} className="r-tab">
+          Category Resource
+        </button>
+        <button onClick={toggleActive} className="r-tab">
+          Category Resource
+        </button>
+        <button onClick={toggleActive} className="r-tab">
+          Category Resource
+        </button>
+        <button onClick={toggleActive} className="r-tab">
+          Category Resource
+        </button>
+        <button onClick={toggleActive} className="r-tab">
+          Category Resource
+        </button>
+        <button onClick={toggleActive} className="r-tab">
+          Category Resource
+        </button>
+      </div>
+
       <div className="ResourceBody">
         <Layout className="Layout">
           <div className="cr-wrap">
@@ -94,7 +138,7 @@ export default function RenderResources() {
               </p>
 
               <a href="#" className="resource-link">
-                External link
+                Visit Website
               </a>
             </section>
           </div>
