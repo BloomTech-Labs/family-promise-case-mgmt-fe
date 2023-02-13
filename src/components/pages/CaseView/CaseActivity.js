@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 
 export default function CaseActivity() {
+  // When using real data, please comment out the dummyData, and initialize the caseHistoryData to the history props passed in.
+
   const historyDummyData = [
     { action: 'opened', date: '12-03-2009' },
     { action: 'changed', date: '11-07-2009' },
@@ -8,6 +10,7 @@ export default function CaseActivity() {
     { action: 'closed', date: '08-16-2019' },
   ];
 
+  // State is used to determine whether the Expanded View should be rendered on the DOM
   const [expandView, setExpandView] = useState(false);
   const [caseHistoryData, setCaseHistoryData] = useState(historyDummyData);
 
@@ -32,6 +35,7 @@ export default function CaseActivity() {
   );
 }
 
+// A custom styles object is used to not clog or interfere with the css files used site-wide, and allowing localized styling changes.
 const expandedStyles = {
   div: {
     marginTop: '2em',

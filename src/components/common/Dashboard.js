@@ -18,6 +18,7 @@ const CaseDashboard = ({ familyData }) => {
             History
           </a>
         </p>
+        {/* Case Activity Component renders a button that leads to an expanded view within CaseActivity.js */}
         <CaseActivity />
         <p>
           Documents:{' '}
