@@ -25,7 +25,6 @@ export default function ClientData() {
         })
         .catch(err => console.log(err));
     }
-    console.log(number);
     number++;
   }, []);
 
