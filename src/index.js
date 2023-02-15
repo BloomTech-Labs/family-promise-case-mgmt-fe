@@ -49,8 +49,6 @@ function App() {
     }
   }, [user]);
 
-  console.log(user);
-
   return (
     <Switch>
       <Route exact path="/" component={TempLandingPage} />
