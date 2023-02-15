@@ -10,7 +10,8 @@ const { Footer } = Layout;
 export default function ResourcesContainer() {
   function searchResourcesBtn(evt) {
     // console.log('search button works');
-    // can search by tag system using API
+    // can search by tag system, suggest for case managers to be able
+    // to add, customize their own tags for easier tracking
   }
 
   function handleChange(evt) {
@@ -41,6 +42,7 @@ export default function ResourcesContainer() {
           </div>
         </div>
       </div>
+
       <RenderResources />
 
       <Footer className="Footer">

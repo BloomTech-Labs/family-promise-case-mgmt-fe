@@ -2,36 +2,126 @@ import React from 'react';
 
 export default function RenderResource() {
   return (
-    <section className="CurrentResource">
-      <h3> Current Resource Sample </h3>
+    <section className="tab-container">
+      {/* resources categorized by topic */}
+      <div className="r-tab">
+        <div className="r-tab-header">
+          <h4> Resource Section Tab </h4>
+          {/* on click will route to page with list of related resources */}
+          <button onClick={null} className="r-tab-btn">
+            VIEW
+          </button>
+        </div>
+        {/* brief summary of section and what that resource is used for + who it is aimed for */}
+        <p>
+          Short description lorem ipsum dolor sit amet, duis congue luptatum cum
+          in, malorum ponderum dissentias ei qui. No per unum eros ancillae,
+          nonumy aliquam nominavi cu per.
+        </p>
+      </div>
 
-      <h4> Summary </h4>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip tempor
-        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-        quis nostrud exercitation ullamco laboris nisi ut aliquip
-      </p>
-      <h4> Details </h4>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip tempor
-        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-        quis nostrud exercitation ullamco laboris nisi ut aliquip
-      </p>
+      <div className="r-tab">
+        <div className="r-tab-header">
+          <h4> Resource Section Tab </h4>
+          <button onClick={null} className="r-tab-btn">
+            VIEW
+          </button>
+        </div>
 
-      <a href="#" className="resource-link">
-        Visit Website
-      </a>
+        <p>
+          Short description lorem ipsum dolor sit amet, duis congue luptatum cum
+          in, malorum ponderum dissentias ei qui. No per unum eros ancillae,
+          nonumy aliquam nominavi cu per.
+        </p>
+      </div>
 
-      <div className="resource-tags">
-        <ul>
-          <li>tag</li>
-          <li>tag</li>
-          <li>tag</li>
-        </ul>
+      <div className="r-tab">
+        <div className="r-tab-header">
+          <h4> Resource Section Tab </h4>
+          <button onClick={null} className="r-tab-btn">
+            VIEW
+          </button>
+        </div>
+
+        <p>
+          Short description lorem ipsum dolor sit amet, duis congue luptatum cum
+          in, malorum ponderum dissentias ei qui. No per unum eros ancillae,
+          nonumy aliquam nominavi cu per.
+        </p>
+      </div>
+
+      <div className="r-tab">
+        <div className="r-tab-header">
+          <h4> Resource Section Tab </h4>
+          <button onClick={null} className="r-tab-btn">
+            VIEW
+          </button>
+        </div>
+
+        <p>
+          Short description lorem ipsum dolor sit amet, duis congue luptatum cum
+          in, malorum ponderum dissentias ei qui. No per unum eros ancillae,
+          nonumy aliquam nominavi cu per.
+        </p>
+      </div>
+
+      <div className="r-tab">
+        <div className="r-tab-header">
+          <h4> Resource Section Tab </h4>
+          <button onClick={null} className="r-tab-btn">
+            VIEW
+          </button>
+        </div>
+
+        <p>
+          Short description lorem ipsum dolor sit amet, duis congue luptatum cum
+          in, malorum ponderum dissentias ei qui. No per unum eros ancillae,
+          nonumy aliquam nominavi cu per.
+        </p>
+      </div>
+
+      <div className="r-tab">
+        <div className="r-tab-header">
+          <h4> Resource Section Tab </h4>
+          <button onClick={null} className="r-tab-btn">
+            VIEW
+          </button>
+        </div>
+
+        <p>
+          Short description lorem ipsum dolor sit amet, duis congue luptatum cum
+          in, malorum ponderum dissentias ei qui. No per unum eros ancillae,
+          nonumy aliquam nominavi cu per.
+        </p>
+      </div>
+
+      <div className="r-tab">
+        <div className="r-tab-header">
+          <h4> Resource Section Tab </h4>
+          <button onClick={null} className="r-tab-btn">
+            VIEW
+          </button>
+        </div>
+
+        <p>
+          Short description lorem ipsum dolor sit amet, duis congue luptatum cum
+          in, malorum ponderum dissentias ei qui. No per unum eros ancillae,
+          nonumy aliquam nominavi cu per.
+        </p>
+      </div>
+      <div className="r-tab">
+        <div className="r-tab-header">
+          <h4> Resource Section Tab </h4>
+          <button onClick={null} className="r-tab-btn">
+            VIEW
+          </button>
+        </div>
+
+        <p>
+          Short description lorem ipsum dolor sit amet, duis congue luptatum cum
+          in, malorum ponderum dissentias ei qui. No per unum eros ancillae,
+          nonumy aliquam nominavi cu per.
+        </p>
       </div>
     </section>
   );

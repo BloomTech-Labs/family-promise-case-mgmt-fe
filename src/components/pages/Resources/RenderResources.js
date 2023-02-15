@@ -1,169 +1,57 @@
 import React, { useState } from 'react';
-import RenderResource from './RenderResource';
+import { useHistory } from 'react-router-dom';
 
 export default function RenderResources() {
-  function toggleActive(evt) {
-    if (evt.currentTarget.classList.contains('r-tab-active')) {
-      evt.currentTarget.classList.remove('r-tab-active');
-      console.log('Button no longer active');
-    } else {
-      evt.currentTarget.classList.add('r-tab-active');
-      console.log('Button is now active');
-    }
+  // route path to /resources/:resourceID
+  const history = useHistory();
+
+  function routeToResource() {
+    history.push('/resources/:resourceId');
   }
 
   return (
     <div className="RenderResources">
+      <div className="pinned-container">
+        {/* would need to add button to add to pinned resources */}
+        <div className="pinned-header">
+          <h3>Pinned Resources</h3>
+        </div>
+
+        <div className="pinned-resource">
+          <h4>This is a Pinned Resource</h4>
+          <button>&#x25B8;</button>
+        </div>
+      </div>
+
       <div className="ResourceBody">
-        <section className="tab-container">
-          <div className="r-tab">
-            <div className="r-tab-header">
-              <h4> Resource Section Tab </h4>
-              <button className="r-tab-btn">VIEW</button>
-            </div>
-
-            <p>
-              Short description lorem ipsum dolor sit amet, duis congue luptatum
-              cum in, malorum ponderum dissentias ei qui. No per unum eros
-              ancillae, nonumy aliquam nominavi cu per.
-            </p>
-          </div>
-
-          <div className="r-tab">
-            <div className="r-tab-header">
-              <h4> Resource Section Tab </h4>
-              <button className="r-tab-btn">VIEW</button>
-            </div>
-
-            <p>
-              Short description lorem ipsum dolor sit amet, duis congue luptatum
-              cum in, malorum ponderum dissentias ei qui. No per unum eros
-              ancillae, nonumy aliquam nominavi cu per.
-            </p>
-          </div>
-
-          <div className="r-tab">
-            <div className="r-tab-header">
-              <h4> Resource Section Tab </h4>
-              <button className="r-tab-btn">VIEW</button>
-            </div>
-
-            <p>
-              Short description lorem ipsum dolor sit amet, duis congue luptatum
-              cum in, malorum ponderum dissentias ei qui. No per unum eros
-              ancillae, nonumy aliquam nominavi cu per.
-            </p>
-          </div>
-
-          <div className="r-tab">
-            <div className="r-tab-header">
-              <h4> Resource Section Tab </h4>
-              <button className="r-tab-btn">VIEW</button>
-            </div>
-
-            <p>
-              Short description lorem ipsum dolor sit amet, duis congue luptatum
-              cum in, malorum ponderum dissentias ei qui. No per unum eros
-              ancillae, nonumy aliquam nominavi cu per.
-            </p>
-          </div>
-
-          <div className="r-tab">
-            <div className="r-tab-header">
-              <h4> Resource Section Tab </h4>
-              <button className="r-tab-btn">VIEW</button>
-            </div>
-
-            <p>
-              Short description lorem ipsum dolor sit amet, duis congue luptatum
-              cum in, malorum ponderum dissentias ei qui. No per unum eros
-              ancillae, nonumy aliquam nominavi cu per.
-            </p>
-          </div>
-
-          <div className="r-tab">
-            <div className="r-tab-header">
-              <h4> Resource Section Tab </h4>
-              <button className="r-tab-btn">VIEW</button>
-            </div>
-
-            <p>
-              Short description lorem ipsum dolor sit amet, duis congue luptatum
-              cum in, malorum ponderum dissentias ei qui. No per unum eros
-              ancillae, nonumy aliquam nominavi cu per.
-            </p>
-          </div>
-
-          <div className="r-tab">
-            <div className="r-tab-header">
-              <h4> Resource Section Tab </h4>
-              <button className="r-tab-btn">VIEW</button>
-            </div>
-
-            <p>
-              Short description lorem ipsum dolor sit amet, duis congue luptatum
-              cum in, malorum ponderum dissentias ei qui. No per unum eros
-              ancillae, nonumy aliquam nominavi cu per.
-            </p>
-          </div>
-
-          <div className="r-tab">
-            <div className="r-tab-header">
-              <h4> Resource Section Tab </h4>
-              <button className="r-tab-btn">VIEW</button>
-            </div>
-
-            <p>
-              Short description lorem ipsum dolor sit amet, duis congue luptatum
-              cum in, malorum ponderum dissentias ei qui. No per unum eros
-              ancillae, nonumy aliquam nominavi cu per.
-            </p>
-          </div>
-
-          <div className="r-tab">
-            <div className="r-tab-header">
-              <h4> Resource Section Tab </h4>
-              <button className="r-tab-btn">VIEW</button>
-            </div>
-
-            <p>
-              Short description lorem ipsum dolor sit amet, duis congue luptatum
-              cum in, malorum ponderum dissentias ei qui. No per unum eros
-              ancillae, nonumy aliquam nominavi cu per.
-            </p>
-          </div>
-          <div className="r-tab">
-            <div className="r-tab-header">
-              <h4> Resource Section Tab </h4>
-              <button className="r-tab-btn">VIEW</button>
-            </div>
-
-            <p>
-              Short description lorem ipsum dolor sit amet, duis congue luptatum
-              cum in, malorum ponderum dissentias ei qui. No per unum eros
-              ancillae, nonumy aliquam nominavi cu per.
-            </p>
-          </div>
-        </section>
-
-        <section className="r-section-lists">
+        <section className="Resource">
           <div className="r-tab-header">
-            <h4> Resource Title</h4>
-            <p>
-              Short description lorem ipsum dolor sit amet, duis congue luptatum
-              cum in, malorum ponderum dissentias ei qui. No per unum eros
-              ancillae, nonumy aliquam nominavi cu per.
-            </p>
-            <button className="r-tab-btn">VIEW</button>
-            <ul className="r-tags">
-              <li>tag</li>
-              <li>tag</li>
-              <li>tag</li>
-            </ul>
+            <h3> Resource Title</h3>
+            {/* pin/ unpin functionality */}
+            <button className="resource-pin">pin</button>
           </div>
-        </section>
+          <h4>Description</h4>
+          <p>
+            Short description lorem ipsum dolor sit amet, duis congue luptatum
+            cum in, malorum ponderum dissentias ei qui. No per unum eros
+            ancillae, nonumy aliquam nominavi cu per.
+          </p>
+          <h4>Contact</h4>
+          {/* contact info readily available for case managers, updated by api */}
+          <div className="resource-contacts">
+            <button>Website</button>
+            <button>Phone</button>
+            <button>Address</button>
+          </div>
 
-        {/* <RenderResource/> */}
+          {/* tagging system will help make resources easier, quicker to find for case managers
+            if they want to skip searching through categories */}
+          <ul className="r-tags">
+            <li># tag</li>
+            <li># tag</li>
+            <li># tag</li>
+          </ul>
+        </section>
       </div>
     </div>
   );
