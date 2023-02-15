@@ -4,7 +4,7 @@ const initialState = {};
 
 const documentSlice = createSlice({
   name: 'documents',
-  initialState, // not sure what the initialState should be.....
+  initialState, 
   reducers: {},
 });
 
