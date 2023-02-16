@@ -2,6 +2,12 @@ import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
 export default function RenderResources() {
+  const blackStar = '★';
+  const whiteStar = '✰';
+
+  const [pinned, setPinned] = useState(false);
+  const [pin, setPin] = useState(whiteStar);
+
   // route path to /resources/:resourceID
   const history = useHistory();
 
@@ -9,6 +15,15 @@ export default function RenderResources() {
     history.push('/resources/:resourceId');
   }
 
+  function togglePin() {
+    if (pinned === false) {
+      setPinned(true);
+      setPin(whiteStar);
+    } else {
+      setPinned(false);
+      setPin(blackStar);
+    }
+  }
   return (
     <div className="RenderResources">
       <div className="pinned-container">
@@ -25,10 +40,12 @@ export default function RenderResources() {
 
       <div className="ResourceBody">
         <section className="Resource">
-          <div className="r-tab-header">
+          <div className="Resource-Header">
             <h3> Resource Title</h3>
             {/* pin/ unpin functionality */}
-            <button className="resource-pin">pin</button>
+            <button className="resource-pin" onClick={togglePin}>
+              {pin}
+            </button>
           </div>
           <h4>Description</h4>
           <p>
@@ -39,13 +56,14 @@ export default function RenderResources() {
           <h4>Contact</h4>
           {/* contact info readily available for case managers, updated by api */}
           <div className="resource-contacts">
-            <button>Website</button>
-            <button>Phone</button>
-            <button>Address</button>
+            <button className="SidebarButton">Website</button>
+            <button className="SidebarButton">Phone</button>
+            <button className="SidebarButton">Address</button>
           </div>
 
           {/* tagging system will help make resources easier, quicker to find for case managers
             if they want to skip searching through categories */}
+          {/* need to give ability to update tags  */}
           <ul className="r-tags">
             <li># tag</li>
             <li># tag</li>

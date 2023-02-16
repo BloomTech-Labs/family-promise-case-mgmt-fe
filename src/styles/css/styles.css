@@ -1229,31 +1229,44 @@ td.ant-table-column-sort {
   width: 50%;
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
   background-color: #101010;
   color:#cdcdcd;
 }
 
-.r-tab-header{
+.Resource h4{
+  color:#cdcdcd;
+  margin-top: 30px;
+}
+
+.Resource-Header{
   display: flex;
   align-items: baseline;
+  justify-content: space-between;
 }
 
 .resource-pin{
   width: 40px;
   height: 40px;
-  background-color: #fec357;
-  border: none;
+  background-color: #101010;
+  border: solid #791b89 2px;
   border-radius: 50px;
+  color: #791b89;
+  font-weight: 650;
 }
 
-.r-tab-header h3{
+.resource-pin:hover{
+  background-color: #fec357;
+  color: #791b89;
+}
+
+.Resource-Header h3{
   color:#cdcdcd;
   font-family: 'Manjari', sans-serif;
-  margin-left:30px;
   margin-top: 30px;
 }
 
-.r-tab-header p{
+.Resource-Header p{
   margin-left:30px;
   margin-top: 30px;
   padding: 0 2% 0 2%;
@@ -1261,32 +1274,12 @@ td.ant-table-column-sort {
 
 .resource-contacts{
   display: flex;
-  margin-left: 30px;
-  padding-left: 2%;
-}
+  justify-content: space-between;
+  }
 
 .resource-contacts button{
-  margin: 1%;
-  width: 100px;
-  height: 45px;
-  background-color: #007fd4;
-  border-radius: 25px 0px 10px;
-  color: #333333;
-  border-color: #007fd4;
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-around;
-  align-items: center;
-  text-transform: uppercase;
+ border: none;
 }
-
-.resource-contacts button:hover{
-  background-color: #333333;
-  border-color: #007fd4;
-  color: #cdcdcd;
-}
-
-
 
 .r-tags{
   display: flex;
@@ -1323,8 +1316,9 @@ td.ant-table-column-sort {
 .pinned-resource{
   display: flex;
   justify-content: space-between;
+  align-items: center;
   color: #cdcdcd;
-  border: solid #007fd4 2px;
+  border: solid #1c1c1c 2px;
   padding: 2%;
 }
 
