@@ -17,6 +17,7 @@ import { CaseDetails } from './components/pages/CaseDetails';
 import { Calendar } from './components/pages/Calendar';
 import { TempLandingPage } from './components/pages/TempLandingPage';
 import { Resources } from './components/pages/Resources';
+import { ResourceView } from './components/pages/ResourceView';
 
 import { RecentCases } from './components/pages/RecentCases';
 import DashHeader from './components/common/DashHeader';
@@ -46,8 +47,9 @@ function App() {
       {/* any of the routes you need secured should be registered as PrivateRoutes */}
       <PrivateRoute path="/cases/:caseID" component={CaseView} />
       <PrivateRoute path="/case-details" component={CaseDetails} />
-      <PrivateRoute path="/resources" component={Resources} />
       <PrivateRoute path="/cases" component={Cases} />{' '}
+      <PrivateRoute path="/resources" component={Resources} />
+      <PrivateRoute path="/resources/:resourceID" component={ResourceView} />
       <PrivateRoute path="/client-intake-form" component={ClientIntakeForm} />
       <PrivateRoute path="/profile-list" component={ProfileListPage} />
       <PrivateRoute path="/example-list" component={ExampleListPage} />
