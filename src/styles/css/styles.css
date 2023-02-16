@@ -1216,6 +1216,7 @@ td.ant-table-column-sort {
 .ResourceBody{
   display: flex;
   justify-content: center;
+  width: 75%;
 }
 
 .resource-list h3{
@@ -1226,7 +1227,7 @@ td.ant-table-column-sort {
 }
 
 .Resource{
-  width: 50%;
+  width: 70%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -1240,24 +1241,26 @@ td.ant-table-column-sort {
 }
 
 .Resource-Header{
+  padding-top: 1%;
   display: flex;
-  align-items: baseline;
+  align-items: center;
   justify-content: space-between;
 }
 
 .resource-pin{
-  width: 40px;
-  height: 40px;
-  background-color: #101010;
-  border: solid #791b89 2px;
-  border-radius: 50px;
-  color: #791b89;
+  width: 50px;
+  height: 28px;
+  background-color: #007fd4;
+  border: solid #007fd4 2px;
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
+  color: #101010;
   font-weight: 650;
 }
 
 .resource-pin:hover{
-  background-color: #fec357;
-  color: #791b89;
+  background-color: #2e2e2e;
+  color: #007fd4;
 }
 
 .Resource-Header h3{
@@ -1283,6 +1286,7 @@ td.ant-table-column-sort {
 
 .r-tags{
   display: flex;
+  justify-content: space-around;
 }
 
 .r-tags li{

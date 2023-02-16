@@ -2,11 +2,8 @@ import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
 export default function RenderResources() {
-  const blackStar = '★';
-  const whiteStar = '✰';
-
   const [pinned, setPinned] = useState(false);
-  const [pin, setPin] = useState(whiteStar);
+  const [pin, setPin] = useState('pin');
 
   // route path to /resources/:resourceID
   const history = useHistory();
@@ -18,10 +15,10 @@ export default function RenderResources() {
   function togglePin() {
     if (pinned === false) {
       setPinned(true);
-      setPin(whiteStar);
+      setPin('unpin');
     } else {
       setPinned(false);
-      setPin(blackStar);
+      setPin('pin');
     }
   }
   return (
