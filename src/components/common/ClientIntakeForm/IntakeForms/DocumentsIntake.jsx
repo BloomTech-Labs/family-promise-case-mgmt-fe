@@ -26,6 +26,12 @@ const DocumentsIntake = () => {
     'Budgeting',
   ];
 
+  const textOptions = [
+    'Employment opportunities',
+    'Apartment listings',
+    'Career fairs and job trainings/programs',
+  ];
+
   return (
     <div className="sectionContainer">
       <div className="subsectionContainer">
@@ -52,6 +58,18 @@ const DocumentsIntake = () => {
             }
           >
             {recOptions.map(option => (
+              <Checkbox>{option}</Checkbox>
+            ))}
+          </Form.Item>
+
+          <Form.Item
+            label={
+              <p style={{ fontWeight: 'bold' }}>
+                Would you like to receive text updates about:
+              </p>
+            }
+          >
+            {textOptions.map(option => (
               <Checkbox>{option}</Checkbox>
             ))}
           </Form.Item>
