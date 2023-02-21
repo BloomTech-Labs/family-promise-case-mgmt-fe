@@ -16,6 +16,16 @@ const DocumentsIntake = () => {
     'Birth Certificates for children in the household',
   ];
 
+  const recOptions = [
+    'Food/meal assistance',
+    'Clothin assistance',
+    'Counseling Services',
+    'Addiction/recovery resources',
+    'Mentor Programs',
+    'Youth services / programming',
+    'Budgeting',
+  ];
+
   return (
     <div className="sectionContainer">
       <div className="subsectionContainer">
@@ -27,11 +37,23 @@ const DocumentsIntake = () => {
             {haveOptions.map(option => (
               <Checkbox>{option}</Checkbox>
             ))}
-            <Checkbox>Test</Checkbox>
           </Form.Item>
+
           <Form.Item label={<span>(If Applicable)</span>}>
             <Checkbox>Children Enrolled in School</Checkbox>
             <Checkbox>Childcare</Checkbox>
+          </Form.Item>
+
+          <Form.Item
+            label={
+              <p style={{ fontWeight: 'bold' }}>
+                Would you like to receive information about:
+              </p>
+            }
+          >
+            {recOptions.map(option => (
+              <Checkbox>{option}</Checkbox>
+            ))}
           </Form.Item>
         </div>
       </div>
