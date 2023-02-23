@@ -16,6 +16,7 @@ import { LayoutTemplate } from './components/pages/LayoutTemplate';
 import { CaseDetails } from './components/pages/CaseDetails';
 import { Calendar } from './components/pages/Calendar';
 import { TempLandingPage } from './components/pages/TempLandingPage';
+import { Resources } from './components/pages/Resources';
 
 import { RecentCases } from './components/pages/RecentCases';
 import DashHeader from './components/common/DashHeader';
@@ -54,6 +55,7 @@ function App() {
       <PrivateRoute path="/dashheader" component={DashHeader} />
       <PrivateRoute path="/calendar" component={Calendar} />
       <PrivateRoute path="/recent-cases" component={RecentCases} />
+      <PrivateRoute path="/resources" component={Resources} />
       <PrivateRoute component={NotFoundPage} />
     </Switch>
   );
