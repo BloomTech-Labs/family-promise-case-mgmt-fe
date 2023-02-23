@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
+// import data from './resourcesDataTemp';
 
-const ResourcesTable = () => {
+const ResourcesTable = ({ setDetails }) => {
   const [resources, setResources] = useState([]);
+  const handleDetails = details => {
+    setDetails(details);
+  };
   return (
     <table>
       <tr>
@@ -20,7 +24,9 @@ const ResourcesTable = () => {
               <td>{resource.resourceType}</td>
               <td>{resource.qualifications ? 'yes' : 'no'}</td>
               <td>
-                <button>Details</button>
+                <button onClick={() => handleDetails(resource.details)}>
+                  Details
+                </button>
               </td>
             </tr>
           );
