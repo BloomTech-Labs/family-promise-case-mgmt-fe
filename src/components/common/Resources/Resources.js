@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import ResourcesTable from './ResourcesTable';
+import DetailsView from './DetailsView';
 
 const Resources = () => {
   const [details, setDetails] = useState('');
@@ -13,6 +14,7 @@ const Resources = () => {
       </div>
       <div className="Resources__RightSide">
         <h2>Details View</h2>
+        <DetailsView details={details} />
       </div>
     </div>
   );

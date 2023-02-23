@@ -1,7 +1,7 @@
 import React from 'react';
 
-const DetailsView = () => {
-  return <></>;
+const DetailsView = ({ details }) => {
+  return <p>{details}</p>;
 };
 
 export default DetailsView;
