@@ -602,6 +602,20 @@ h3 {
   flex-flow: row nowrap;
   align-items: center;
 }
+
+.Resources{
+  width: 100vw;
+  height: 40vh;
+}
+
+.Resources__LeftSide{
+  width: 70%;
+}
+
+.Resources__RightSide{
+  width: 30%;
+}
+
 .gridColumns {
   display: flex;
   justify-content: center;

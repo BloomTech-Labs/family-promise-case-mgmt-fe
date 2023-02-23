@@ -1,9 +1,10 @@
 import React from 'react';
 import { Layout, Card } from 'antd';
 import DashHeader from '../../common/DashHeader';
+import { Resources } from '../../common/Resources';
 const { Content, Footer, Header } = Layout;
 
-const Resources = () => {
+const ResourcesContainer = () => {
   return (
     <div className="RenderLayoutTemplate">
       <Layout className="Layout">
@@ -13,7 +14,7 @@ const Resources = () => {
         <Content className="Content">
           <div className="Content__Container">
             <Card className="Content__Container-Card">
-              {/* <div style={{height: '100%'}}></div> */}
+              <Resources />
             </Card>
           </div>
         </Content>
@@ -25,4 +26,4 @@ const Resources = () => {
   );
 };
 
-export default Resources;
+export default ResourcesContainer;
