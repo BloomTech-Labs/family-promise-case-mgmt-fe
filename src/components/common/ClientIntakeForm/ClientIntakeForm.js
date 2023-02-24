@@ -27,7 +27,7 @@ const ClientIntakeForm = onChange => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:8000/api/clients/${params.clientID}`)
+      .get(`${process.env.REACT_APP_API_URI}api/clients/${params.clientID}`)
       .then(res => {
         setClientInfo(res.data.clients);
       });
