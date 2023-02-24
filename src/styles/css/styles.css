@@ -993,5 +993,5 @@ td.ant-table-column-sort {
 
 .employmentIntakeContainer {
   flex-direction: column;
-  margin-left: 3rem;
+  margin: 0 3rem;
 }
