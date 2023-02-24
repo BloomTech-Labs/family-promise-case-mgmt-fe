@@ -18,6 +18,7 @@ import { Calendar } from './components/pages/Calendar';
 import { TempLandingPage } from './components/pages/TempLandingPage';
 import { Resources } from './components/pages/Resources';
 import { ResourceView } from './components/pages/ResourceView';
+import { ResourceSectionContainer } from './components/pages/ResourceSection';
 
 import { RecentCases } from './components/pages/RecentCases';
 import DashHeader from './components/common/DashHeader';
@@ -50,6 +51,10 @@ function App() {
       <PrivateRoute path="/cases" component={Cases} />{' '}
       <PrivateRoute path="/resources" component={Resources} />
       <PrivateRoute path="/resources/:resourceID" component={ResourceView} />
+      <PrivateRoute
+        path="/resources/:sectionID"
+        component={ResourceSectionContainer}
+      />
       <PrivateRoute path="/client-intake-form" component={ClientIntakeForm} />
       <PrivateRoute path="/profile-list" component={ProfileListPage} />
       <PrivateRoute path="/example-list" component={ExampleListPage} />
