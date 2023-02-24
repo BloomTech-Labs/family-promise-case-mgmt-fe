@@ -30,7 +30,8 @@ const ClientIntakeForm = onChange => {
       .get(`${process.env.REACT_APP_API_URI}api/clients/${params.clientID}`)
       .then(res => {
         setClientInfo(res.data.clients);
-      });
+      })
+      .catch(err => console.log(err));
   }, []);
 
   const [form] = Form.useForm();
