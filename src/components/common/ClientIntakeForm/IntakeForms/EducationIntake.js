@@ -5,7 +5,7 @@ const EducationIntake = () => {
   const [value, setValue] = useState(1);
 
   return (
-    <div className="subsectionContainer">
+    <div className="subsectionContainer educationInformation">
       <h2 className="subsectionHeader">Education</h2>
 
       <section className="educationContainer">
