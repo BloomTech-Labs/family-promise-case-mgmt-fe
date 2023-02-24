@@ -8,12 +8,12 @@ const Resources = () => {
   return (
     <div className="Resources">
       <div className="Resources__LeftSide">
-        <h2>Resources</h2>
+        <h2 className="Resources__Title">Resources</h2>
         <ResourcesTable setDetails={setDetails} />
-        <button>Add Resource</button>
+        <button className="Resources__Button">ADD RESOURCE</button>
       </div>
       <div className="Resources__RightSide">
-        <h2>Details View</h2>
+        <h2 className="Resources__Title">Details View</h2>
         <DetailsView details={details} />
       </div>
     </div>
