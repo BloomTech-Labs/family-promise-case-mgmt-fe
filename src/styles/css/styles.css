@@ -619,10 +619,14 @@ h3 {
 }
 
 .Resources__LeftSide{
-  width: 70%;
+  width: 60%;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.Resources__Table{
+  width: 90%;
 }
 
 .Resources__Button{
@@ -637,7 +641,10 @@ h3 {
 }
 
 .Resources__RightSide{
-  width: 30%;
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .gridColumns {
