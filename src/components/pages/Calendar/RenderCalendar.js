@@ -3,6 +3,7 @@ import DashHeader from '../../common/DashHeader';
 import SearchIcon from './SearchIcon';
 import { Layout, DatePicker, Form, Button, Input, Space } from 'antd';
 import moment from 'moment';
+import WeeklyView from './WeeklyView';
 
 const { Sider, Content, Footer } = Layout;
 const weekFormat = 'MM/DD';
@@ -77,7 +78,9 @@ function RenderCalendar() {
               </div>
             </div>
           </Sider>
-          <Content className="WeeklyCalendar"></Content>
+          <Content className="WeeklyCalendar">
+            <WeeklyView />
+          </Content>
         </Layout>
         <Footer className="Footer">
           Family Promise of Spokane ©2022 Created by BloomTech Labs
