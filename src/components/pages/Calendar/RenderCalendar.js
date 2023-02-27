@@ -77,9 +77,7 @@ function RenderCalendar() {
               </div>
             </div>
           </Sider>
-          <Content className="WeeklyCalendar">
-            <h3> Weekly Calendar is going to be here </h3>
-          </Content>
+          <Content className="WeeklyCalendar"></Content>
         </Layout>
         <Footer className="Footer">
           Family Promise of Spokane ©2022 Created by BloomTech Labs
