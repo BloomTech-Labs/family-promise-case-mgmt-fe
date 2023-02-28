@@ -27,7 +27,11 @@ const TempLandingPage = () => {
     <>
       <Layout>
         <Header className="landing-header">
-          <img className="fam-promise-logo" src={FPLogo} />
+          <img
+            className="fam-promise-logo"
+            src={FPLogo}
+            alt="Family Promise Logo"
+          />
         </Header>
         <Content
           style={{
@@ -86,7 +90,9 @@ const TempLandingPage = () => {
               </div>
             </div>
             <div className="login-wrapper">
-              <Button
+              <LoginContainer />
+              <LogoutContainer />
+              {/* <Button
                 style={{
                   backgroundColor: '#006fba',
                   color: 'white',
@@ -103,7 +109,7 @@ const TempLandingPage = () => {
                 htmlType="submit"
               >
                 Login
-              </Button>
+              </Button> */}
               <Title style={{ fontSize: '1rem', marginTop: '1rem' }}>
                 {' '}
                 Follow Us on Social Media!
@@ -130,7 +136,11 @@ const TempLandingPage = () => {
             </div>
           </div>
           <div className="left-side-landing-col">
-            <img src={FPImage} className="fp-image" />
+            <img
+              src={FPImage}
+              className="fp-image"
+              alt="A mother and her two young children returning home."
+            />
             <div className="slogan-background">
               <Title style={{ color: 'white', fontWeight: 'lighter' }}>
                 WE ARE FAMILY PROMISE
@@ -151,11 +161,13 @@ const TempLandingPage = () => {
           </button>
         )}
         <Footer className="landing-footer">
-          <img className="fam-promise-logo" src={FPLogo} />
+          <img
+            className="fam-promise-logo"
+            src={FPLogo}
+            alt="Family Promise Logo"
+          />
         </Footer>
       </Layout>
-      {/* //<LoginContainer /> */}
-      {/* //<LogoutContainer /> */}
     </>
   );
 };
