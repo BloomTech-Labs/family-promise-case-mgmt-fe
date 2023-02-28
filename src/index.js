@@ -46,7 +46,10 @@ function App() {
       <PrivateRoute path="/cases/:caseID" component={CaseView} />
       <PrivateRoute path="/case-details" component={CaseDetails} />
       <PrivateRoute path="/cases" component={Cases} />{' '}
-      <PrivateRoute path="/client-intake-form" component={ClientIntakeForm} />
+      <PrivateRoute
+        path="/:clientID/client-intake-form/"
+        component={ClientIntakeForm}
+      />
       <PrivateRoute path="/profile-list" component={ProfileListPage} />
       <PrivateRoute path="/example-list" component={ExampleListPage} />
       <PrivateRoute path="/layouttemplate" component={LayoutTemplate} />

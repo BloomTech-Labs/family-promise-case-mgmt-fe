@@ -1,23 +1,8 @@
 /***  Variables  ***/
-
-/*** Re: Style Guidelines on Figma ***/
-
-h1 {
-  font-size: 48;
-}
-
-h2 {
-  font-size: 36;
-}
-
-h3 {
-  font-size: 24;
-}
-
 /*** COMPONENTS  ***/
 .NavHeader {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   height: 6vh;
   margin-top: 1%;
 }
@@ -42,20 +27,16 @@ h3 {
   height: 8%;
 }
 .RenderLayoutTemplate .Layout .Content {
-  padding: 10 50px;
+  padding: 0 50px;
 }
 .RenderLayoutTemplate .Layout .Content__Container {
   height: 90%;
-  margin: auto;
 }
 .RenderLayoutTemplate .Layout .Content__Container-Card {
   height: 100%;
-  margin: auto;
 }
-.Footer {
-  background-color: #101010;
+.RenderLayoutTemplate .Layout .Footer {
   text-align: center;
-  color: white;
 }
 .BreadCrumbs {
   margin: 16px 0;
@@ -63,15 +44,15 @@ h3 {
 .ant-collapse .ant-collapse-item .ant-collapse-header {
   color: white;
 }
-.ant-collapse-header {
+.ant-collapse .ant-collapse-item-header {
   background: #007fd4;
   color: white;
   font-size: 1.25rem;
 }
-.ant-collapse-item {
+.ant-collapse .ant-collapse-item-item {
   color: white;
 }
-.ant-collapse-content-box {
+.ant-collapse .ant-collapse-item-content-box {
   background-color: #1c1c1c;
   color: #cdcdcd;
 }
@@ -80,24 +61,20 @@ h3 {
   color: white;
   font-size: 1.25rem;
 }
-
 .HouseholdInformationDetails__Container {
   color: #ffffff;
-  margin-left: 1.5rem;
 }
 .HouseholdInformationDetails__Form {
-  background: #007fd4;
-}
-.LengthTimeHomelessCase {
-  width: 100%;
-}
-.CircumstancesContainer {
-  display: flex;
-  flex-flow: row wrap;
-  width: 90%;
-}
-.CircumstancesCheckboxes {
-  margin-left: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 5px;
+  grid-auto-flow: row dense;
+  padding-top: 2rem;
+  width: 80%;
+  padding: 2rem;
+  margin: 0 12rem;
+  background: #3f3f3f;
+  color: #ffffff;
 }
 .HouseholdInformationDetails__Form__Circumstances {
   grid-row: 1 / span 2;
@@ -115,73 +92,30 @@ h3 {
 .HouseholdInformationDetails__Form__h4 {
   color: #cdcdcd;
 }
-.CPSInvolvement > .ant-form-item {
-  display: flex;
-  flex-flow: column nowrap;
-}
-.CPSInvolvement > .ant-form-item > .ant-col-8 {
-  max-width: 30rem;
-  text-align: left;
-}
-.HomelessTime__SingleContainer > .ant-row {
-  display: flex;
-  flex-flow: column nowrap;
-}
-.HomelessTime__SingleContainer > .ant-row > .ant-col-8 {
-  max-width: 30rem;
-}
-.HomelessTime__Margin {
-  margin-left: 0rem;
-}
-.HomelessTime__SingleContainer > .ant-row > .ant-form-item-label {
-  text-align: left;
-  width: 35rem;
-}
 .HouseholdInformationDetails__Form__p {
   color: #cdcdcd;
 }
-.HouseholdInformationDetails__Form__PrevLivSit > .ant-row {
-  display: flex;
-  flex-flow: column nowrap;
+.HouseholdInformationDetails__Form .ant-btn-primary {
+  margin: 1rem;
+  color: #cdcdcd;
+  border-color: #007fd4;
 }
-.HouseholdInformationDetails__Form__PrevLivSit > .ant-row > .ant-col-8 {
-  text-align: left;
+.HouseholdInformationDetails__Form .ant-btn-primary-notes {
+  grid-row: 3;
+  grid-column: 5;
+  margin: 1rem;
 }
-.HouseholdInformationDetails__Form__SocialWorker > .ant-row {
-  display: flex;
-  flex-flow: column nowrap;
+.HouseholdInformationDetails__Form .ant-btn-primary-noteDetails {
+  width: 18vw;
 }
-.HouseholdInformationDetails__Form__SocialWorker > .ant-row > .ant-col-8 {
-  text-align: left;
-  max-width: 30rem;
-}
-.editButtonsContainer {
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: flex-start;
-  align-items: center;
-}
-.editButtonsContainer > .ant-btn-primary {
-  border: 3px solid #007fd4;
-  padding-left: 52px;
-  padding-right: 52px;
-  padding-bottom: 10px;
-  padding-top: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.editButtonsContainer > .ant-btn-primary:hover {
-  border: 3px solid #cdcdcd;
+.HouseholdInformationDetails__Form .ant-btn-primary-noteFilter {
+  margin: 0;
 }
 .CaseDetailsLabel {
   color: #ffffff;
 }
 .CaseDetailsLabel__Disabled {
   color: #cdcdcd;
-}
-.YearsMargin {
-  margin-left: 0.95rem;
 }
 .ant-form-item-label {
   color: #ffffff;
@@ -216,92 +150,62 @@ h3 {
   border-color: #007fd4;
 }
 .ClientFamilyInformation__Form {
-  background: #007fd4;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 5px;
+  grid-auto-flow: row dense;
+  background: #3f3f3f;
+  color: #ffffff;
 }
 .ClientFamilyInformation__Form__InitialDate {
-  color: #d2d2d7;
-  margin-left: 1.2rem;
+  margin: 0 0 2rem 62rem;
+  padding-top: 2rem;
 }
 .ClientFamilyInformation__Form__h1 {
-  color: #d2d2d7;
-  margin-left: 1.25rem;
+  color: #cdcdcd;
+  text-align: center;
 }
 .ClientFamilyInformation__Form__SectionGrid2 {
-  color: #d2d2d7;
   display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-around;
+  justify-content: space-evenly;
 }
 .ClientFamilyInformation__Form__SectionGrid3 {
-  color: #d2d2d7;
-  width: 90%;
-  margin-left: 1.2rem;
+  display: flex;
+  justify-content: space-around;
 }
 .ClientFamilyInformation__Form__SmallInputs {
-  color: #d2d2d7;
+  width: 7rem;
 }
 .ClientFamilyInformation__Form__SectionGrid1 {
-  color: #d2d2d7;
-  width: 45%;
-}
-.ant-col-8 {
-  max-width: 20rem;
-  flex: 10;
-}
-.ClientFamilyInformation__Form__Inputs {
-  width: 21rem;
-}
-.CityandState__Container {
-  display: flex;
-  flex-flow: row nowrap;
-}
-.StateMargin {
-  margin-left: 2.2rem;
+  grid-row: 1 / span 2;
 }
 .ClientFamilyInformation__Form__VeteranStatus {
-  color: #d2d2d7;
-  margin-left: 1.25rem;
+  display: flex;
+  flex-direction: row-reverse;
+  margin: 0rem 11rem;
 }
 .ClientFamilyInformation__Form__FamilyMembers__Container {
-  color: #d2d2d7;
+  display: flex;
+  justify-content: space-around;
+  margin: 0rem 6rem;
 }
 .ClientFamilyInformation__Form__FamilyMembers__formItem {
-  color: #d2d2d7;
+  display: flow-root;
 }
 .ClientFamilyInformation__Form__FamilyMembers__IsPregnant {
-  color: #d2d2d7;
-  margin-left: 1.25rem;
+  display: flex;
 }
-.pregnantFamilyMember__Container {
-  margin-left: 1.25rem;
-}
-.ClientFamilyInformation__Inputs > .ant-input {
-  background-color: #ffffff;
+.ClientFamilyInformation__Inputs {
+  width: 20rem;
 }
 .ClientFamilyInformation__Inputs__ItemLabel {
-  color: #d2d2d7;
+  color: #ffffff;
+  width: 25vw;
 }
 .ClientFamilyInformation__Inputs__ItemLabel__Small {
-  color: #d2d2d7;
-  width: 10rem;
+  color: #ffffff;
+  width: 100%;
 }
-.ant-btn-primary {
-  margin: 1rem;
-  color: #cdcdcd;
-  border-color: #007fd4;
-}
-.ant-btn-primary-notes {
-  grid-row: 3;
-  grid-column: 5;
-  margin: 1rem;
-}
-.ant-btn-primary-noteDetails {
-  width: 18vw;
-}
-.ant-btn-primary-noteFilter {
-  margin: 0;
-}
-.SingleNote__Container {
+.ClientFamilyInformation__Inputs .SingleNote__Container {
   border-style: groove;
   background-color: #3f3f3f;
   color: #fcfcfc;
@@ -312,37 +216,37 @@ h3 {
   grid-auto-flow: row dense;
   width: 50vw;
 }
-.SingleNote__Picture {
+.ClientFamilyInformation__Inputs .SingleNote__Picture {
   grid-row: 2;
   grid-column: 1;
   margin: auto;
 }
-.SingleNote__NoteText {
+.ClientFamilyInformation__Inputs .SingleNote__NoteText {
   grid-row: 2;
   grid-column: 2 / span 4;
   padding-right: 1rem;
 }
-.SingleNote__InfoStyle {
+.ClientFamilyInformation__Inputs .SingleNote__InfoStyle {
   margin: 0.5rem 0;
   grid-row: 1;
   grid-column: 3 / span 2;
 }
-.SingleNote__InfoStyle__HeaderStyle {
+.ClientFamilyInformation__Inputs .SingleNote__InfoStyle__HeaderStyle {
   color: #fcfcfc;
 }
-.Notes__Container {
+.ClientFamilyInformation__Inputs .Notes__Container {
   margin: auto;
 }
-.Notes__Container__SwitchPanel {
+.ClientFamilyInformation__Inputs .Notes__Container__SwitchPanel {
   margin: auto;
   display: flex;
   justify-content: center;
 }
-.Notes__ShowNotes {
+.ClientFamilyInformation__Inputs .Notes__ShowNotes {
   overflow-y: scroll;
   max-height: 35vh;
 }
-.Notes__Filter {
+.ClientFamilyInformation__Inputs .Notes__Filter {
   width: 10vw;
   margin: 1rem;
   color: #cdcdcd;
@@ -398,32 +302,20 @@ h3 {
 
 .borderStyled {
   width: 5rem;
-  border: 1px solid black;
 }
 
-.grid {
-  display: grid;
-  /* gridTemplateColumns: 1fr 1fr 1fr 1fr; */
-  margin: '0px 40px';
-}
-
-.containerStyles {
+.educationInformation {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  margin-left: '40px';
-  background: #101010;
-  color: #cdcdcd;
-  padding: 20px;
+  justify-content: center;
+  flex-direction: column;
 }
 
-.ant-input {
-  background-color: #2e2e2e;
+.educationContainer {
+  margin-left: 3rem;
 }
 
-.inputStyles {
+.educationInformation__Inputs {
   width: 20rem;
-  background-color: #2e2e2e;
 }
 
 .inputStylesShort {
@@ -1020,10 +912,20 @@ td.ant-table-column-sort {
   font-weight: lighter;
   text-align: center;
 }
-.info-col {
+.info-col {}
+.educationInformation .subsectionHeader {
+  height: 5rem;
+  background-color: #C4C4C4;
+  padding-block: 1rem;
+  width: 100%;
+  text-align: center;
+  margin: 0;
+  font-size: 36px;
+  margin-bottom: 2rem;
+}
+.employmentInformation .hohContainer {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-wrap: wrap;
 }
 .slogan-background {
   background-color: #8d4982;
@@ -1069,13 +971,8 @@ td.ant-table-column-sort {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: flex-start;
 }
 
-.educationContainer {
-  height: 458px;
-  margin-left: 100px;
-}
 
 @media (max-width: 768px) {
   .fam-promise-logo {
@@ -1083,9 +980,18 @@ td.ant-table-column-sort {
     height: 40px;
   }
 }
-@media (max-width: 600px) {
-  .fam-promise-logo {
-    width: 100px;
-    height: 30px;
-  }
+.employmentInformation .subsectionHeader {
+  height: 5rem;
+  background-color: #C4C4C4;
+  padding-block: 1rem;
+  width: 100%;
+  text-align: center;
+  margin: 0;
+  font-size: 36px;
+  margin-bottom: 2rem;
+}
+
+.employmentIntakeContainer {
+  flex-direction: column;
+  margin: 0 3rem;
 }
