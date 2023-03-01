@@ -3,6 +3,7 @@ import { Menu } from 'antd';
 import { Link } from 'react-router-dom';
 import fpLogo from '../../assets/fplogo.png';
 import PlaceholderProfileImage from '../../assets/PlaceholderProfileImage.png';
+import FormInput from './FormInput';
 
 const DashHeader = () => {
   return (
@@ -12,6 +13,11 @@ const DashHeader = () => {
           className="DashHeader__logo"
           src={fpLogo}
           alt="Family Promise of Spokane"
+        />
+        <FormInput
+          placeholder="Find ...."
+          name="searchInput"
+          labelId="searchInput"
         />
         <img
           className="Placeholder_ProfileLogo"
