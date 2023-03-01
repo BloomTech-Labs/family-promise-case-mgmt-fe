@@ -4,8 +4,12 @@ import { Menu } from 'antd';
 import styled from 'styled-components';
 import fpLogo from '../../assets/fplogo.png';
 import PlaceholderProfileImage from '../../assets/PlaceholderProfileImage.png';
+<<<<<<< HEAD
 // import FormInput from './FormInput';
 import SearchBar from './SearchBar/SearchBar';
+=======
+import FormInput from './FormInput';
+>>>>>>> 2276226 (very first search input placerholder)
 
 const DashHeaderContainer = styled.div`
   display: flex;
@@ -25,6 +29,7 @@ const ProfileImage = styled.img`
 
 const DashHeader = () => {
   return (
+<<<<<<< HEAD
 <<<<<<< HEAD
     <div>
       <div className="DashHeader">
@@ -53,13 +58,44 @@ const DashHeader = () => {
         defaultSelectedKeys={['2']}
       >
 =======
+=======
+>>>>>>> 2276226 (very first search input placerholder)
     <>
       <DashHeaderContainer>
         <Logo src={fpLogo} alt="Family Promise of Spokane" />
         <ProfileImage src={PlaceholderProfileImage} alt="Profile" />
       </DashHeaderContainer>
       <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['dashboard']}>
+<<<<<<< HEAD
 >>>>>>> 0473dc2 (Updated Dashheader and fixed spacing issues (#91))
+=======
+=======
+    <div>
+      <div className="DashHeader">
+        <img
+          className="DashHeader__logo"
+          src={fpLogo}
+          alt="Family Promise of Spokane"
+        />
+        <FormInput
+          placeholder="Find ...."
+          name="searchInput"
+          labelId="searchInput"
+        />
+        <img
+          className="Placeholder_ProfileLogo"
+          src={PlaceholderProfileImage}
+          alt="Profile"
+        />
+      </div>
+      <Menu
+        className="DashHeader_Nav"
+        theme="dark"
+        mode="horizontal"
+        defaultSelectedKeys={['2']}
+      >
+>>>>>>> 47aa996 (very first search input placerholder)
+>>>>>>> 2276226 (very first search input placerholder)
         <Menu.Item key="dashboard">
           <Link to="dashboard">Dashboard</Link>
         </Menu.Item>
