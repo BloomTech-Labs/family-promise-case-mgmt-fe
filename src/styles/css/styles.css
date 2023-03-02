@@ -494,6 +494,81 @@
   flex-flow: row nowrap;
   align-items: center;
 }
+
+.Resources{
+  width: 70%;
+  color: white;
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding-top: 10vh;
+  margin-left: 15%;
+}
+
+.Resources__Title{
+  color: white;
+  font-size: xx-large;
+}
+
+.ant-card-bordered.Resource__Card{
+  border: solid 3px #151515;
+  border-radius: 1rem;
+  background-color: #0f0f0f;
+  color: white;
+  transition: .5s;
+}
+
+.ant-card-bordered.Resource__Card:hover{
+  background-color: #1c1c1c;
+  transition: .5s;
+}
+
+.ant-card-bordered.Resource__Card:active{
+  transition: 0s;
+  background-color: #0f0f0f;
+}
+
+.ant-card-bordered.Resource__Card > .ant-card-head{
+  border-bottom: solid 3px #151515;
+  color: #0070bc;
+  font-weight: bold;
+}
+
+.ant-space-compact.ant-space-compact-block.ant-dropdown-button.Filter__Button{
+  justify-content: flex-end;
+  margin-bottom: 1rem;
+  width: 1270px;
+}
+
+.ant-dropdown-menu{
+  background-color: #0f0f0f;
+}
+
+.ant-dropdown-menu-item:hover{
+  background-color: #1c1c1c;
+}
+
+.Filter__Input.ant-input{
+  margin: 0px;
+}
+
+.Resource__List{
+  width: 100%;
+}
+
+.Resources__Button{
+  background-color: #007fd4;
+  border: none;
+  padding: .8rem 1.5rem;
+  color: #000000;
+  font-weight: bold;
+  align-self: flex-start;
+  margin-top: 5rem;
+  margin-left: 2rem;
+}
+
 .gridColumns {
   display: flex;
   justify-content: center;
