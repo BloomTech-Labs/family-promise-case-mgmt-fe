@@ -8,6 +8,7 @@ import Referrals from './Referrals';
 import DocumentUpload from './IntakeForms/DocumentUpload';
 import EducationIntake from './IntakeForms/EducationIntake';
 import EmploymentIntake from './IntakeForms/EmploymentIntake';
+import Insurance from './IntakeForms/InsuranceIntake';
 import axios from 'axios';
 // import { submitForm } from '../../../api';
 
@@ -48,25 +49,22 @@ const ClientIntakeForm = onChange => {
   ]);
 
   return (
-    <>
-      {clientInfo ? (
-        <div>
-          {/* <ClientSearch /> */}
-          <Form
-            name="clientIntakeForm"
-            form={form}
-            onFinish={onFinish}
-            onSubmit={e => e.preventDefault()}
-            layout="vertical"
-            style={sectionContainer}
-          >
-            <DatePicker format="MM/DD/YYYY" />
-            <ClientFamilyInfo />
-            <EducationIntake
-              education={clientInfo ? clientInfo.education_level : null}
-            />
-            <EmploymentIntake />
-            <Finances />
+    <div>
+      {/* <ClientSearch /> */}
+      <Form
+        name="clientIntakeForm"
+        form={form}
+        onFinish={onFinish}
+        onSubmit={e => e.preventDefault()}
+        layout="vertical"
+        style={sectionContainer}
+      >
+        <DatePicker format="MM/DD/YYYY" />
+        <ClientFamilyInfo />
+        <EducationIntake />
+        <EmploymentIntake />
+        <Finances />
+        <Insurance />
 
             <ContactPreferences />
             <Referrals />
