@@ -1,101 +1,187 @@
-import { Badge, Calendar } from 'antd';
+//---- Imports ----//
+import React from 'react';
+import DashHeader from '../../common/DashHeader';
+import SearchIcon from './SearchIcon';
 
-const getListData = value => {
-  let listData;
-  switch (value.date()) {
-    case 8:
-      listData = [
-        {
-          type: 'warning',
-          content: 'This is warning event.',
-        },
-        {
-          type: 'success',
-          content: 'This is usual event.',
-        },
-      ];
-      break;
-    case 10:
-      listData = [
-        {
-          type: 'warning',
-          content: 'This is warning event.',
-        },
-        {
-          type: 'success',
-          content: 'This is usual event.',
-        },
-        {
-          type: 'error',
-          content: 'This is error event.',
-        },
-      ];
-      break;
-    case 15:
-      listData = [
-        {
-          type: 'warning',
-          content: 'This is warning event',
-        },
-        {
-          type: 'success',
-          content: 'This is very long usual event。。....',
-        },
-        {
-          type: 'error',
-          content: 'This is error event 1.',
-        },
-        {
-          type: 'error',
-          content: 'This is error event 2.',
-        },
-        {
-          type: 'error',
-          content: 'This is error event 3.',
-        },
-        {
-          type: 'error',
-          content: 'This is error event 4.',
-        },
-      ];
-      break;
-    default:
-  }
-  return listData || [];
-};
-const getMonthData = value => {
-  if (value.month() === 8) {
-    return 1394;
-  }
-};
-const WeeklyView = () => {
-  const monthCellRender = value => {
-    const num = getMonthData(value);
-    return num ? (
-      <div className="notes-month">
-        <section>{num}</section>
-        <span>Backlog number</span>
-      </div>
-    ) : null;
-  };
-  const dateCellRender = value => {
-    const listData = getListData(value);
-    return (
-      <ul className="events">
-        {listData.map(item => (
-          <li key={item.content}>
-            <Badge status={item.type} text={item.content} />
-          </li>
-        ))}
-      </ul>
-    );
-  };
+//---- Constants and Functions ----//
 
+//---- WeeklyView Render ----//
+function WeeklyView() {
   return (
-    <Calendar
-      dateCellRender={dateCellRender}
-      monthCellRender={monthCellRender}
-    />
+    <div className="weekly-cal">
+      <div
+        className="week-header"
+        style={{
+          marginLeft: '3%',
+        }}
+      >
+        <ul
+          className="weekdays"
+          style={{
+            color: 'white',
+            fontSize: '2rem',
+            listStyle: 'none',
+            display: 'flex',
+            flexFlow: 'row wrap',
+            textAlign: 'center',
+            marginBottom: '0px',
+          }}
+        >
+          <li
+            style={{
+              width: 'calc(100% / 7)',
+            }}
+          >
+            Sun
+          </li>
+          <li
+            style={{
+              width: 'calc(100% / 7)',
+            }}
+          >
+            Mon
+          </li>
+          <li
+            style={{
+              width: 'calc(100% / 7)',
+            }}
+          >
+            Tue
+          </li>
+          <li
+            style={{
+              width: 'calc(100% / 7)',
+            }}
+          >
+            Wed
+          </li>
+          <li
+            style={{
+              width: 'calc(100% / 7)',
+            }}
+          >
+            Thu
+          </li>
+          <li
+            style={{
+              width: 'calc(100% / 7)',
+            }}
+          >
+            Fri
+          </li>
+          <li
+            style={{
+              width: 'calc(100% / 7)',
+            }}
+          >
+            Sat
+          </li>
+        </ul>
+
+        <ul
+          className="dates"
+          style={{
+            color: 'white',
+            fontSize: '1.7rem',
+            listStyle: 'none',
+            display: 'flex',
+            flexFlow: 'row wrap',
+            textAlign: 'center',
+            marginTop: '0px',
+          }}
+        >
+          <li
+            style={{
+              width: 'calc(100% / 7)',
+            }}
+          >
+            1
+          </li>
+          <li
+            style={{
+              width: 'calc(100% / 7)',
+            }}
+          >
+            2
+          </li>
+          <li
+            style={{
+              width: 'calc(100% / 7)',
+            }}
+          >
+            3
+          </li>
+          <li
+            style={{
+              width: 'calc(100% / 7)',
+            }}
+          >
+            4
+          </li>
+          <li
+            style={{
+              width: 'calc(100% / 7)',
+            }}
+          >
+            5
+          </li>
+          <li
+            style={{
+              width: 'calc(100% / 7)',
+            }}
+          >
+            6
+          </li>
+          <li
+            style={{
+              width: 'calc(100% / 7)',
+            }}
+          >
+            7
+          </li>
+        </ul>
+      </div>
+
+      <div className="week-body">
+        <p
+          className="local-time"
+          style={{
+            color: 'white',
+            fontWeight: 'bold',
+            marginLeft: '30px',
+          }}
+        >
+          GMT-05
+        </p>
+        <ul
+          className="times"
+          style={{
+            color: 'grey',
+            listStyle: 'none',
+            display: 'flex',
+            flexFlow: 'column wrap',
+            textAlign: 'right',
+            marginRight: '94.6%',
+          }}
+        >
+          <li>7 AM</li>
+          <li>8 AM</li>
+          <li>9 AM</li>
+          <li>10 AM</li>
+          <li>11 AM</li>
+          <li>12 PM</li>
+          <li>1 PM</li>
+          <li>2 PM</li>
+          <li>3 PM</li>
+          <li>4 PM</li>
+          <li>5 PM</li>
+          <li>6 PM</li>
+          <li>7 PM</li>
+        </ul>
+      </div>
+    </div>
   );
-};
+}
+
+//---- Export ----//
 export default WeeklyView;
