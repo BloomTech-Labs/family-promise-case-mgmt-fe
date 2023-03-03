@@ -49,22 +49,24 @@ const ClientIntakeForm = onChange => {
   ]);
 
   return (
-    <div>
-      {/* <ClientSearch /> */}
-      <Form
-        name="clientIntakeForm"
-        form={form}
-        onFinish={onFinish}
-        onSubmit={e => e.preventDefault()}
-        layout="vertical"
-        style={sectionContainer}
-      >
-        <DatePicker format="MM/DD/YYYY" />
-        <ClientFamilyInfo />
-        <EducationIntake />
-        <EmploymentIntake />
-        <Finances />
-        <Insurance />
+    <>
+      {clientInfo ? (
+        <div>
+          {/* <ClientSearch /> */}
+          <Form
+            name="clientIntakeForm"
+            form={form}
+            onFinish={onFinish}
+            onSubmit={e => e.preventDefault()}
+            layout="vertical"
+            style={sectionContainer}
+          >
+            <DatePicker format="MM/DD/YYYY" />
+            <ClientFamilyInfo />
+            <EducationIntake />
+            <EmploymentIntake />
+            <Finances />
+            <Insurance />
 
             <ContactPreferences />
             <Referrals />
