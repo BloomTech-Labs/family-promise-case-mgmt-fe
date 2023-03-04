@@ -26,6 +26,7 @@ const ResourcesDisplay = () => {
   const [formResourceType, setFormResourceType] = useState('');
   const [formQualifications, setFormQualifications] = useState('');
   const [formDetails, setFormDetails] = useState('');
+  const [editId, setEditId] = useState('');
 
   const filterItems = item => {
     console.log(
@@ -65,10 +66,12 @@ const ResourcesDisplay = () => {
 
   const toggleModal = () => {
     setModalIsOpen(!modalIsOpen);
+    clearForm();
   };
 
   const toggleSubmitModal = () => {
     setSubmitModalIsOpen(!submitModalIsOpen);
+    clearForm();
   };
 
   const toggleOpen = () => {
@@ -78,6 +81,7 @@ const ResourcesDisplay = () => {
   const onSubmit = event => {
     event.preventDefault();
     const newResource = {
+      id: data.length - 1, //temporary 'fake' id will be replaced with an id given by a database
       title: formResourceTitle,
       content: {
         phoneNumber: formPhoneNumber,
@@ -92,11 +96,70 @@ const ResourcesDisplay = () => {
 
     setData([...data, newResource]);
 
+    clearForm();
+
+    toggleSubmitModal();
+  };
+
+  const handleDelete = id => {
+    //axios call would go here
+    //endpoint does not currently exist
+
+    setData(
+      data.filter(item => {
+        return item.id !== id;
+      })
+    );
+  };
+
+  const clearForm = () => {
     setFormResourceTitle('');
     setFormResourceType('');
     setFormQualifications('');
     setFormPhoneNumber('');
     setFormDetails('');
+    setEditId('');
+  };
+
+  const handleEdit = id => {
+    const [resource] = data.filter(item => {
+      return item.id === id;
+    });
+
+    toggleModal();
+    toggleSubmitModal();
+
+    setEditId(id);
+    setFormResourceTitle(resource.title);
+    setFormPhoneNumber(resource.content.phoneNumber);
+    setFormResourceType(resource.content.resourceType);
+    setFormQualifications(resource.content.qualifications);
+    setFormDetails(resource.content.details);
+  };
+
+  const onApply = event => {
+    event.preventDefault();
+
+    //axios call would go here
+    //endpoint does not currently exist
+
+    const changedResource = {
+      id: editId, //temporary 'fake' id will be replaced with an id given by a database
+      title: formResourceTitle,
+      content: {
+        phoneNumber: formPhoneNumber,
+        resourceType: formResourceType,
+        qualifications: formQualifications,
+        details: formDetails,
+      },
+    };
+
+    setData([
+      ...data.filter(item => {
+        return item.id !== editId;
+      }),
+      changedResource,
+    ]);
 
     toggleSubmitModal();
   };
@@ -180,15 +243,31 @@ const ResourcesDisplay = () => {
         <p className="Resource__Details">
           Details: {` ${details ? details.content.details : ''}`}
         </p>
+        {/* {console.log(details.id)} */}
+        <button
+          className="Resource__DeleteButton"
+          onClick={() => handleDelete(details.id)}
+        >
+          Delete
+        </button>
+        <button
+          className="Resource__EditButton"
+          onClick={() => handleEdit(details.id)}
+        >
+          Edit
+        </button>
       </Modal>
       <Modal
         className="Resources__Modal SubmitModal"
-        title="Add a Resource"
+        title={editId ? `Edit ${formResourceTitle}` : 'Add a Resource'}
         footer={''}
         onCancel={toggleSubmitModal}
         open={submitModalIsOpen}
       >
-        <Form className="SubmitModal__Form" onSubmit={onSubmit}>
+        <Form
+          className="SubmitModal__Form"
+          onSubmit={editId ? onApply : onSubmit}
+        >
           <Form.Item label="Resource Title">
             <Input
               className="SubmitModal__Input"
@@ -239,7 +318,9 @@ const ResourcesDisplay = () => {
               onChange={e => setFormDetails(e.target.value)}
             />
           </Form.Item>
-          <button onClick={onSubmit}>Submit</button>
+          <button onClick={editId ? onApply : onSubmit}>
+            {editId ? 'Apply' : 'Submit'}
+          </button>
         </Form>
       </Modal>
       <button className="Resources__Button" onClick={toggleSubmitModal}>

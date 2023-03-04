@@ -507,9 +507,8 @@
   margin-left: 15%;
 }
 
-.Resources__Title{
-  color: white;
-  font-size: xx-large;
+.Resource__EditButton{
+  margin-right: 0;
 }
 
 .ant-card-bordered.Resource__Card{
