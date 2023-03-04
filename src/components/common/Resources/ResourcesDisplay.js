@@ -1,11 +1,24 @@
 import React, { useState } from 'react';
-import { List, Card, Modal, Dropdown, Input, Checkbox } from 'antd';
+import {
+  List,
+  Card,
+  Modal,
+  Dropdown,
+  Input,
+  Checkbox,
+  Form,
+  Select,
+  Button,
+} from 'antd';
 import { FilterOutlined } from '@ant-design/icons';
 import { dataSource } from './resourcesDataTemp';
+
+const { TextArea } = Input;
 
 const ResourcesDisplay = () => {
   const [details, setDetails] = useState('');
   const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [submitModalIsOpen, setSubmitModalIsOpen] = useState(false);
   const [filter, setFilter] = useState('');
   const [open, setOpen] = useState(false);
   const [data, setData] = useState(dataSource);
@@ -46,12 +59,23 @@ const ResourcesDisplay = () => {
     setDetails(details);
   };
 
+  const handleFormChange = event => {};
+
   const toggleModal = () => {
     setModalIsOpen(!modalIsOpen);
   };
 
+  const toggleSubmitModal = () => {
+    setSubmitModalIsOpen(!submitModalIsOpen);
+  };
+
   const toggleOpen = () => {
     setOpen(!open);
+  };
+
+  const onSubmit = event => {
+    event.preventDefault();
+    console.log('Form Submitted');
   };
 
   const items = [
@@ -134,7 +158,44 @@ const ResourcesDisplay = () => {
           Details: {` ${details ? details.content.details : ''}`}
         </p>
       </Modal>
-      <button className="Resources__Button">ADD RESOURCE</button>
+      <Modal
+        className="Resources__Modal SubmitModal"
+        title="Add a Resource"
+        footer={''}
+        onCancel={toggleSubmitModal}
+        open={submitModalIsOpen}
+      >
+        <Form className="SubmitModal__Form" onSubmit={onSubmit}>
+          <Form.Item label="Resource Title">
+            <Input
+              className="SubmitModal__Input"
+              placeholder="Resource Title"
+            />
+          </Form.Item>
+
+          <Form.Item label="Phone Number">
+            <Input className="SubmitModal__Input" placeholder="Phone number" />
+          </Form.Item>
+
+          <Form.Item label="Resource Type">
+            <Input className="SubmitModal__Input" placeholder="Resource Type" />
+          </Form.Item>
+          <Form.Item label="Qualifications">
+            <Select className="SubmitModal__Input">
+              <Select.Option value="Yes" />
+              <Select.Option value="No" />
+            </Select>
+          </Form.Item>
+
+          <Form.Item label="Details">
+            <TextArea placeholder="Details" />
+          </Form.Item>
+          <button onClick={onSubmit}>Submit</button>
+        </Form>
+      </Modal>
+      <button className="Resources__Button" onClick={toggleSubmitModal}>
+        ADD RESOURCE
+      </button>
     </>
   );
 };

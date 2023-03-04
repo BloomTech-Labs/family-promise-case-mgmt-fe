@@ -1070,3 +1070,22 @@ td.ant-table-column-sort {
   flex-direction: column;
   margin: 0 3rem;
 }
+
+.SubmitModal{
+  color: black;
+}
+
+.SubmitModal__Input {
+  color: black;
+}
+
+.SubmitModal__Form {
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+}
+
+.ant-form-item-label > label {
+  color: black;
+}
