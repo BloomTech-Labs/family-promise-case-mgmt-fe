@@ -1079,11 +1079,19 @@ td.ant-table-column-sort {
   color: black;
 }
 
+.ant-select:not(.ant-select-customize-input) .ant-select-selector{
+  width: 5rem;
+}
+
 .SubmitModal__Form {
 display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
+}
+
+.SubmitModal__TextArea {
+  color: black;
 }
 
 .ant-form-item-label > label {

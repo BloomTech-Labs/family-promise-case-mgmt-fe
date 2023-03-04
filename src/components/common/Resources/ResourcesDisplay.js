@@ -8,7 +8,6 @@ import {
   Checkbox,
   Form,
   Select,
-  Button,
 } from 'antd';
 import { FilterOutlined } from '@ant-design/icons';
 import { dataSource } from './resourcesDataTemp';
@@ -22,6 +21,11 @@ const ResourcesDisplay = () => {
   const [filter, setFilter] = useState('');
   const [open, setOpen] = useState(false);
   const [data, setData] = useState(dataSource);
+  const [formResourceTitle, setFormResourceTitle] = useState('');
+  const [formPhoneNumber, setFormPhoneNumber] = useState('');
+  const [formResourceType, setFormResourceType] = useState('');
+  const [formQualifications, setFormQualifications] = useState('');
+  const [formDetails, setFormDetails] = useState('');
 
   const filterItems = item => {
     console.log(
@@ -59,8 +63,6 @@ const ResourcesDisplay = () => {
     setDetails(details);
   };
 
-  const handleFormChange = event => {};
-
   const toggleModal = () => {
     setModalIsOpen(!modalIsOpen);
   };
@@ -75,7 +77,28 @@ const ResourcesDisplay = () => {
 
   const onSubmit = event => {
     event.preventDefault();
-    console.log('Form Submitted');
+    const newResource = {
+      title: formResourceTitle,
+      content: {
+        phoneNumber: formPhoneNumber,
+        resourceType: formResourceType,
+        qualifications: formQualifications,
+        details: formDetails,
+      },
+    };
+
+    //axios call would go here
+    //endpoint does not currently exist
+
+    setData([...data, newResource]);
+
+    setFormResourceTitle('');
+    setFormResourceType('');
+    setFormQualifications('');
+    setFormPhoneNumber('');
+    setFormDetails('');
+
+    toggleSubmitModal();
   };
 
   const items = [
@@ -169,26 +192,52 @@ const ResourcesDisplay = () => {
           <Form.Item label="Resource Title">
             <Input
               className="SubmitModal__Input"
+              name="title"
+              value={formResourceTitle}
               placeholder="Resource Title"
+              onChange={e => setFormResourceTitle(e.target.value)}
             />
           </Form.Item>
 
           <Form.Item label="Phone Number">
-            <Input className="SubmitModal__Input" placeholder="Phone number" />
+            <Input
+              className="SubmitModal__Input"
+              name="phone"
+              value={formPhoneNumber}
+              placeholder="Phone number"
+              onChange={e => setFormPhoneNumber(e.target.value)}
+            />
           </Form.Item>
 
           <Form.Item label="Resource Type">
-            <Input className="SubmitModal__Input" placeholder="Resource Type" />
+            <Input
+              className="SubmitModal__Input"
+              name="type"
+              value={formResourceType}
+              placeholder="Resource Type"
+              onChange={e => setFormResourceType(e.target.value)}
+            />
           </Form.Item>
           <Form.Item label="Qualifications">
-            <Select className="SubmitModal__Input">
+            <Select
+              className="SubmitModal__Dropdown"
+              name="qualifications"
+              value={formQualifications}
+              onChange={e => setFormQualifications(e)}
+            >
               <Select.Option value="Yes" />
               <Select.Option value="No" />
             </Select>
           </Form.Item>
 
           <Form.Item label="Details">
-            <TextArea placeholder="Details" />
+            <TextArea
+              className="SubmitModal__TextArea"
+              placeholder="Details"
+              name="details"
+              value={formDetails}
+              onChange={e => setFormDetails(e.target.value)}
+            />
           </Form.Item>
           <button onClick={onSubmit}>Submit</button>
         </Form>
