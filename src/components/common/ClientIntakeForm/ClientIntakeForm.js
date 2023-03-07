@@ -6,7 +6,7 @@ import ContactPreferences from './IntakeForms/ContactPreferences';
 import Referrals from './IntakeForms/Referrals';
 import DocumentUpload from './IntakeForms/DocumentUpload';
 import EducationIntake from './IntakeForms/EducationIntake';
-import EmploymentIntake from './IntakeForms/EmploymentIntake';
+import EmploymentIntake from './IntakeForms/Employment/EmploymentIntake';
 // import { submitForm } from '../../../api';
 
 //NOTE: Inline Styles added temporarily.

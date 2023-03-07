@@ -183,6 +183,11 @@
   background-color: #007fd4;
   border-color: #007fd4 !important;
 }
+.ant-checkbox-group {
+    display: flex;
+    flex-direction: column;
+    margin-right: 0;
+}
 .ant-radio-wrapper {
   color: #ffffff;
 }
@@ -424,10 +429,12 @@
 .formStyles {
   display: flex;
   justify-content: center;
+  margin-bottom: 50px;
 }
 
 .sectionLeft {
-  margin: 20px;
+  margin-left: 1.2rem;
+  color: #cdcdcd;
 }
 
 .sectionRight {
@@ -453,8 +460,19 @@
 .ant-form-item-label > label {
   color: #ffffff;
 }
-
-
+/* Employment Intake Forms styling */
+h4, .ant-form-title {
+  color: #ffffff;
+}
+#EmploymentIntake {
+  padding-right: 100px;
+}
+#EmploymentIntakeTwo {
+  padding-left: 100px;
+}
+.ant-typography {
+    color: #ffffff;
+}
 /* finances styling */
 
 .ant-form-item-control-input-content {
@@ -909,6 +927,9 @@ td.ant-table-column-sort {
 .theLiteralNotesMessage{
   font-size: 1.2rem;
   font-family: 'Times New Roman', Times, serif;
+}
+.employmentSectionTitles{
+  color: red
 }
 
 #okta-sign-in.auth-container .o-form-head {
