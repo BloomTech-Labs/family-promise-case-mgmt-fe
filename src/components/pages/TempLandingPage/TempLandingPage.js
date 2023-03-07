@@ -92,7 +92,7 @@ const TempLandingPage = () => {
             <div className="login-wrapper">
               <LoginContainer />
               <LogoutContainer />
-              {/* <Button
+              <Button
                 style={{
                   backgroundColor: '#006fba',
                   color: 'white',
@@ -109,7 +109,7 @@ const TempLandingPage = () => {
                 htmlType="submit"
               >
                 Login
-              </Button> */}
+              </Button>
               <Title style={{ fontSize: '1rem', marginTop: '1rem' }}>
                 {' '}
                 Follow Us on Social Media!
