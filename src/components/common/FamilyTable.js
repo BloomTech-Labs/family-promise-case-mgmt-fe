@@ -20,7 +20,7 @@ const FamilyMembersTable = ({ familyData }) => {
       dataIndex: 'gender',
     },
     {
-      title: 'rel. to guardian',
+      title: 'Relationship to Head of Household',
       dataIndex: 'relationshipToGuardian',
     },
     {
