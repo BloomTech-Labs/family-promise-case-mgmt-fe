@@ -186,19 +186,97 @@ function WeeklyView() {
               border: '2px dotted cyan',
             }}
           >
-            <li>7 AM</li>
-            <li>8 AM</li>
-            <li>9 AM</li>
-            <li>10 AM</li>
-            <li>11 AM</li>
-            <li>12 PM</li>
-            <li>1 PM</li>
-            <li>2 PM</li>
-            <li>3 PM</li>
-            <li>4 PM</li>
-            <li>5 PM</li>
-            <li>6 PM</li>
-            <li>7 PM</li>
+            <li
+              style={{
+                paddingBottom: '25px',
+              }}
+            >
+              7 AM
+            </li>
+            <li
+              style={{
+                paddingBottom: '25px',
+              }}
+            >
+              8 AM
+            </li>
+            <li
+              style={{
+                paddingBottom: '25px',
+              }}
+            >
+              9 AM
+            </li>
+            <li
+              style={{
+                paddingBottom: '25px',
+              }}
+            >
+              10 AM
+            </li>
+            <li
+              style={{
+                paddingBottom: '25px',
+              }}
+            >
+              11 AM
+            </li>
+            <li
+              style={{
+                paddingBottom: '25px',
+              }}
+            >
+              12 PM
+            </li>
+            <li
+              style={{
+                paddingBottom: '25px',
+              }}
+            >
+              1 PM
+            </li>
+            <li
+              style={{
+                paddingBottom: '25px',
+              }}
+            >
+              2 PM
+            </li>
+            <li
+              style={{
+                paddingBottom: '25px',
+              }}
+            >
+              3 PM
+            </li>
+            <li
+              style={{
+                paddingBottom: '25px',
+              }}
+            >
+              4 PM
+            </li>
+            <li
+              style={{
+                paddingBottom: '25px',
+              }}
+            >
+              5 PM
+            </li>
+            <li
+              style={{
+                paddingBottom: '25px',
+              }}
+            >
+              6 PM
+            </li>
+            <li
+              style={{
+                paddingBottom: '25px',
+              }}
+            >
+              7 PM
+            </li>
           </ul>
         </div>
         {/* --- Body-Rows --- */}
@@ -214,27 +292,40 @@ function WeeklyView() {
           }}
         >
           <div
+            style={{
+              border: '2px dotted orange',
+              height: '35px',
+            }}
+          >
+            spacer
+          </div>
+          {/* --- Row 1 --- */}
+          <div
             className="7am-row"
             style={{
               width: '100%',
             }}
           >
             <ul
-              className="1am-times"
+              className="sun-times"
               style={{
                 color: 'white',
-                backgroundColor: 'grey',
                 listStyle: 'none',
                 paddingLeft: '0px',
                 display: 'flex',
                 flexFlow: 'row wrap',
                 textAlign: 'center',
-                border: '2px dotted cyan',
+                borderBottom: '1.5px solid #D9D9D9',
+                margin: '0px',
               }}
             >
               <li
                 style={{
                   width: 'calc(100% / 7)',
+                  padding: '10px 0px 15px 0px',
+                  backgroundColor: '#363636',
+                  borderLeft: '15px solid #101010',
+                  borderRight: '15px solid #101010',
                 }}
               >
                 Placeholder
@@ -242,6 +333,10 @@ function WeeklyView() {
               <li
                 style={{
                   width: 'calc(100% / 7)',
+                  padding: '10px 0px 15px 0px',
+                  backgroundColor: '#363636',
+                  borderLeft: '15px solid #101010',
+                  borderRight: '15px solid #101010',
                 }}
               >
                 Placeholder
@@ -249,6 +344,10 @@ function WeeklyView() {
               <li
                 style={{
                   width: 'calc(100% / 7)',
+                  padding: '10px 0px 15px 0px',
+                  backgroundColor: '#363636',
+                  borderLeft: '15px solid #101010',
+                  borderRight: '15px solid #101010',
                 }}
               >
                 Placeholder
@@ -256,6 +355,10 @@ function WeeklyView() {
               <li
                 style={{
                   width: 'calc(100% / 7)',
+                  padding: '10px 0px 15px 0px',
+                  backgroundColor: '#363636',
+                  borderLeft: '15px solid #101010',
+                  borderRight: '15px solid #101010',
                 }}
               >
                 Placeholder
@@ -263,6 +366,10 @@ function WeeklyView() {
               <li
                 style={{
                   width: 'calc(100% / 7)',
+                  padding: '10px 0px 15px 0px',
+                  backgroundColor: '#363636',
+                  borderLeft: '15px solid #101010',
+                  borderRight: '15px solid #101010',
                 }}
               >
                 Placeholder
@@ -270,6 +377,10 @@ function WeeklyView() {
               <li
                 style={{
                   width: 'calc(100% / 7)',
+                  padding: '10px 0px 15px 0px',
+                  backgroundColor: '#363636',
+                  borderLeft: '15px solid #101010',
+                  borderRight: '15px solid #101010',
                 }}
               >
                 Placeholder
@@ -277,6 +388,209 @@ function WeeklyView() {
               <li
                 style={{
                   width: 'calc(100% / 7)',
+                  padding: '10px 0px 15px 0px',
+                  backgroundColor: '#363636',
+                  borderLeft: '15px solid #101010',
+                  borderRight: '15px solid #101010',
+                }}
+              >
+                Placeholder
+              </li>
+            </ul>
+          </div>
+          {/* --- Row 2 --- */}
+          <div
+            className="8am-row"
+            style={{
+              width: '100%',
+            }}
+          >
+            <ul
+              className="mon-times"
+              style={{
+                color: 'white',
+                listStyle: 'none',
+                paddingLeft: '0px',
+                display: 'flex',
+                flexFlow: 'row wrap',
+                textAlign: 'center',
+                borderBottom: '1.5px solid #D9D9D9',
+                margin: '0px',
+              }}
+            >
+              <li
+                style={{
+                  width: 'calc(100% / 7)',
+                  padding: '10px 0px 15px 0px',
+                  backgroundColor: '#363636',
+                  borderLeft: '15px solid #101010',
+                  borderRight: '15px solid #101010',
+                }}
+              >
+                Placeholder
+              </li>
+              <li
+                style={{
+                  width: 'calc(100% / 7)',
+                  padding: '10px 0px 15px 0px',
+                  backgroundColor: '#363636',
+                  borderLeft: '15px solid #101010',
+                  borderRight: '15px solid #101010',
+                }}
+              >
+                Placeholder
+              </li>
+              <li
+                style={{
+                  width: 'calc(100% / 7)',
+                  padding: '10px 0px 15px 0px',
+                  backgroundColor: '#363636',
+                  borderLeft: '15px solid #101010',
+                  borderRight: '15px solid #101010',
+                }}
+              >
+                Placeholder
+              </li>
+              <li
+                style={{
+                  width: 'calc(100% / 7)',
+                  padding: '10px 0px 15px 0px',
+                  backgroundColor: '#363636',
+                  borderLeft: '15px solid #101010',
+                  borderRight: '15px solid #101010',
+                }}
+              >
+                Placeholder
+              </li>
+              <li
+                style={{
+                  width: 'calc(100% / 7)',
+                  padding: '10px 0px 15px 0px',
+                  backgroundColor: '#363636',
+                  borderLeft: '15px solid #101010',
+                  borderRight: '15px solid #101010',
+                }}
+              >
+                Placeholder
+              </li>
+              <li
+                style={{
+                  width: 'calc(100% / 7)',
+                  padding: '10px 0px 15px 0px',
+                  backgroundColor: '#363636',
+                  borderLeft: '15px solid #101010',
+                  borderRight: '15px solid #101010',
+                }}
+              >
+                Placeholder
+              </li>
+              <li
+                style={{
+                  width: 'calc(100% / 7)',
+                  padding: '10px 0px 15px 0px',
+                  backgroundColor: '#363636',
+                  borderLeft: '15px solid #101010',
+                  borderRight: '15px solid #101010',
+                }}
+              >
+                Placeholder
+              </li>
+            </ul>
+          </div>
+
+          {/* --- Row 3 --- */}
+          <div
+            className="8am-row"
+            style={{
+              width: '100%',
+            }}
+          >
+            <ul
+              className="mon-times"
+              style={{
+                color: 'white',
+                listStyle: 'none',
+                paddingLeft: '0px',
+                display: 'flex',
+                flexFlow: 'row wrap',
+                textAlign: 'center',
+                borderBottom: '1.5px solid #D9D9D9',
+                margin: '0px',
+              }}
+            >
+              <li
+                style={{
+                  width: 'calc(100% / 7)',
+                  padding: '10px 0px 15px 0px',
+                  backgroundColor: '#363636',
+                  borderLeft: '15px solid #101010',
+                  borderRight: '15px solid #101010',
+                }}
+              >
+                Placeholder
+              </li>
+              <li
+                style={{
+                  width: 'calc(100% / 7)',
+                  padding: '10px 0px 15px 0px',
+                  backgroundColor: '#363636',
+                  borderLeft: '15px solid #101010',
+                  borderRight: '15px solid #101010',
+                }}
+              >
+                Placeholder
+              </li>
+              <li
+                style={{
+                  width: 'calc(100% / 7)',
+                  padding: '10px 0px 15px 0px',
+                  backgroundColor: '#363636',
+                  borderLeft: '15px solid #101010',
+                  borderRight: '15px solid #101010',
+                }}
+              >
+                Placeholder
+              </li>
+              <li
+                style={{
+                  width: 'calc(100% / 7)',
+                  padding: '10px 0px 15px 0px',
+                  backgroundColor: '#363636',
+                  borderLeft: '15px solid #101010',
+                  borderRight: '15px solid #101010',
+                }}
+              >
+                Placeholder
+              </li>
+              <li
+                style={{
+                  width: 'calc(100% / 7)',
+                  padding: '10px 0px 15px 0px',
+                  backgroundColor: '#363636',
+                  borderLeft: '15px solid #101010',
+                  borderRight: '15px solid #101010',
+                }}
+              >
+                Placeholder
+              </li>
+              <li
+                style={{
+                  width: 'calc(100% / 7)',
+                  padding: '10px 0px 15px 0px',
+                  backgroundColor: '#363636',
+                  borderLeft: '15px solid #101010',
+                  borderRight: '15px solid #101010',
+                }}
+              >
+                Placeholder
+              </li>
+              <li
+                style={{
+                  width: 'calc(100% / 7)',
+                  padding: '10px 0px 15px 0px',
+                  backgroundColor: '#363636',
+                  borderLeft: '15px solid #101010',
+                  borderRight: '15px solid #101010',
                 }}
               >
                 Placeholder
