@@ -1,20 +1,11 @@
 import React from 'react';
-import { Form, Input, Select, Radio, Space, Typography, Checkbox } from 'antd';
+import { Form, Input, Radio, Space } from 'antd';
 import { useState } from 'react';
 
 const EmploymentSkillCert = () => {
-  const { Text, Title } = Typography;
-  const [SkillCertForm] = Form.useForm();
   const [skillsCertificationsvalue, skillsCertificationssetValue] = useState(
     ''
   );
-  // const onChange = e => {
-  //   console.log('radio checked', e.target.value);
-  //   setValue(e.target.value);
-  // };
-  // const onChange = checkedValues => {
-  //   console.log('checked = ', checkedValues);
-  // };
 
   return (
     <>
@@ -34,10 +25,7 @@ const EmploymentSkillCert = () => {
           <h4>If yes, what are they?</h4>
         </div>
         <Form.Item>
-          <Input
-            placeholder="List Skills Here"
-            // onChange={(e) => setName(e.target.value)}
-          />
+          <Input placeholder="List Skills Here" />
         </Form.Item>
       </Form>
     </>

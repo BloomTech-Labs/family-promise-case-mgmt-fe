@@ -3,17 +3,7 @@ import { Form, Radio, Space } from 'antd';
 import { useState } from 'react';
 
 const EmploymentRadioEmployed = () => {
-  // const [EmployeedForm] = Form.useForm();
   const [currentlyEmployedvalue, currentlyEmployedsetValue] = useState('');
-  // const [skillsCertificationsvalue, skillsCertificationssetValue] =
-  // useState('');
-  // const onChange = e => {
-  //   console.log('radio checked', e.target.value);
-  //   setValue(e.target.value);
-  // };
-  // const onChange = checkedValues => {
-  //   console.log('checked = ', checkedValues);
-  // };
 
   return (
     <Form>

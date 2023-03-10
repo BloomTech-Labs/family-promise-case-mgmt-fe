@@ -1,6 +1,5 @@
 import React from 'react';
 import { Form, Typography } from 'antd';
-import { useState } from 'react';
 
 const EmploymentHistory = () => {
   const { Text } = Typography;
