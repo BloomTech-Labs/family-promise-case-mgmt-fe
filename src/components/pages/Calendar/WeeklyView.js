@@ -1,6 +1,7 @@
 //---- Imports ----//
 import React from 'react';
 import Weekdays from '../../common/WeeklyView/Weekdays';
+import Times from '../../common/WeeklyView/Times';
 
 //---- Constants and Functions ----//
 
@@ -20,128 +21,8 @@ function WeeklyView() {
           flexFlow: 'row wrap',
         }}
       >
-        <div
-          className="list-of-times"
-          style={{
-            marginLeft: '1%',
-            width: '3.5%',
-          }}
-        >
-          <p
-            className="local-time"
-            style={{
-              color: 'white',
-              fontWeight: 'bold',
-              textAlign: 'center',
-            }}
-          >
-            GMT-05
-          </p>
-          <ul
-            className="times"
-            style={{
-              color: 'grey',
-              listStyle: 'none',
-              paddingLeft: '0px',
-              display: 'flex',
-              flexFlow: 'column wrap',
-              textAlign: 'right',
-              border: '2px dotted cyan',
-            }}
-          >
-            <li
-              style={{
-                paddingBottom: '25px',
-              }}
-            >
-              7 AM
-            </li>
-            <li
-              style={{
-                paddingBottom: '25px',
-              }}
-            >
-              8 AM
-            </li>
-            <li
-              style={{
-                paddingBottom: '25px',
-              }}
-            >
-              9 AM
-            </li>
-            <li
-              style={{
-                paddingBottom: '25px',
-              }}
-            >
-              10 AM
-            </li>
-            <li
-              style={{
-                paddingBottom: '25px',
-              }}
-            >
-              11 AM
-            </li>
-            <li
-              style={{
-                paddingBottom: '25px',
-              }}
-            >
-              12 PM
-            </li>
-            <li
-              style={{
-                paddingBottom: '25px',
-              }}
-            >
-              1 PM
-            </li>
-            <li
-              style={{
-                paddingBottom: '25px',
-              }}
-            >
-              2 PM
-            </li>
-            <li
-              style={{
-                paddingBottom: '25px',
-              }}
-            >
-              3 PM
-            </li>
-            <li
-              style={{
-                paddingBottom: '25px',
-              }}
-            >
-              4 PM
-            </li>
-            <li
-              style={{
-                paddingBottom: '25px',
-              }}
-            >
-              5 PM
-            </li>
-            <li
-              style={{
-                paddingBottom: '25px',
-              }}
-            >
-              6 PM
-            </li>
-            <li
-              style={{
-                paddingBottom: '25px',
-              }}
-            >
-              7 PM
-            </li>
-          </ul>
-        </div>
+        <Times />
+
         {/* --- Body-Rows --- */}
         <div
           className="daily-breakdown"
