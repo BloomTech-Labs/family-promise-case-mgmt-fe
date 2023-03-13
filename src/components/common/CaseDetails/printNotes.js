@@ -6,6 +6,8 @@ import familyPromiseIcon from '../../../assets/fplogo.png';
 const PrintNotes = props => {
   const [notes, setNotes] = useState([]);
 
+  const { clientName } = props;
+
   //When clientNotes is built out, replace everything using tempObject with props
   //or you can replace with redux when redux is working
   const tempClientObj = {
