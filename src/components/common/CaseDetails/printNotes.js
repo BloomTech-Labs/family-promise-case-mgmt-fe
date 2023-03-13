@@ -31,6 +31,11 @@ const PrintNotes = ({ clientName, clientId }) => {
     if (error) {
       return <div>Error: {error}</div>;
     }
+
+    if (loading) {
+      return <div>Loading...</div>;
+    }
+
     return date;
   }
 
