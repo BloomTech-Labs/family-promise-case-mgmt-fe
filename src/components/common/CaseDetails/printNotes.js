@@ -33,9 +33,7 @@ const PrintNotes = props => {
           src={familyPromiseIcon}
           alt="family promise logo"
         ></img>
-        <div className="headerDivPrintNotes">
-          Client Name: {tempClientObj.name}
-        </div>
+        <div className="headerDivPrintNotes">Client Name: {clientName}</div>
       </header>
       {notes.length
         ? notes.map((note, i) => (
