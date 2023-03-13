@@ -24,7 +24,7 @@ times.forEach((item, index) => {
     <li
       key={index}
       style={{
-        paddingBottom: '25px',
+        height: '55px',
       }}
     >
       {item}
@@ -47,7 +47,7 @@ function Times() {
         style={{
           color: 'white',
           fontWeight: 'bold',
-          textAlign: 'center',
+          textAlign: 'right',
         }}
       >
         GMT-05
@@ -62,7 +62,6 @@ function Times() {
           display: 'flex',
           flexFlow: 'column wrap',
           textAlign: 'right',
-          border: '2px dotted cyan',
         }}
       >
         {timeList}

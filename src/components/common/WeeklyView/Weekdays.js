@@ -55,7 +55,6 @@ function Weekdays() {
           flexFlow: 'row wrap',
           textAlign: 'center',
           marginBottom: '0px',
-          border: '2px dotted green',
         }}
       >
         {dayList}
@@ -72,7 +71,6 @@ function Weekdays() {
           flexFlow: 'row wrap',
           textAlign: 'center',
           marginBottom: '0px',
-          border: '2px dotted green',
         }}
       >
         {dateList}
