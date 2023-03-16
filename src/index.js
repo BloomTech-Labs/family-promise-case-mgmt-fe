@@ -10,6 +10,7 @@ import { store } from './state/store';
 import { ClientIntakeForm } from './components/common/ClientIntakeForm';
 import { Calendar } from './components/pages/Calendar';
 import { CaseDetails } from './components/pages/CaseDetails';
+import { Dashboard } from './components/pages/Dashboard';
 import { Cases } from './components/pages/Cases';
 import { CaseView } from './components/pages/CaseView';
 import { ExampleListPage } from './components/pages/ExampleList';
@@ -56,6 +57,7 @@ function App() {
       {/* any of the routes you need secured should be registered as PrivateRoutes */}
       <PrivateRoute path="/cases/:caseID" component={CaseView} />
       <PrivateRoute path="/case-details" component={CaseDetails} />
+      <PrivateRoute path="/dashboard" component={Dashboard} />
       <PrivateRoute path="/cases" component={Cases} />{' '}
       <PrivateRoute
         path="/:clientID/client-intake-form/"
