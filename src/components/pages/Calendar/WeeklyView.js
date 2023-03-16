@@ -5,6 +5,27 @@ import Times from '../../common/WeeklyView/Times';
 import WeeklyRows from '../../common/WeeklyView/WeeklyRow';
 
 //---- Constants and Functions ----//
+// - Setting month date - //
+const months = [
+  'January',
+  'February',
+  'March',
+  'April',
+  'May',
+  'June',
+  'July',
+  'August',
+  'Semptember',
+  'October',
+  'November',
+  'December',
+];
+
+let currDate = new Date(),
+  currMonth = currDate.getMonth(),
+  currYear = currDate.getFullYear();
+
+// - Render several rows - //
 const rows = [];
 
 for (let i = 0; i < 13; i++) {
@@ -16,6 +37,17 @@ function WeeklyView() {
   return (
     <div className="weekly-cal">
       {/* --- Header --- */}
+      <h2
+        style={{
+          marginLeft: '5.5%',
+          color: 'white',
+          fontSize: '2rem',
+          fontWeight: 'bolder',
+          textAlign: 'center',
+        }}
+      >
+        {months[currMonth]} {currYear}
+      </h2>
       <Weekdays />
 
       {/* --- Body-Times --- */}
