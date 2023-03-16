@@ -13,6 +13,7 @@ Family Promise helps local communities coordinate their compassion to address th
 
 - DO NOT fork the repo. Clone directly!
 - run: `npm install` to download all dependencies.
+- run: `npm install rechart` to download all chart dependencies.
 - run: `npm start` to start your local development server.
 
 > When using Okta for authentication, the app will need to run locally on port 3000.
