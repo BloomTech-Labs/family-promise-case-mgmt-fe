@@ -7,18 +7,18 @@ import WeeklyRows from '../../common/WeeklyView/WeeklyRow';
 //---- Constants and Functions ----//
 // - Setting month date - //
 const months = [
-  'January',
-  'February',
-  'March',
-  'April',
-  'May',
-  'June',
-  'July',
-  'August',
-  'Semptember',
-  'October',
-  'November',
-  'December',
+  'JANUARY',
+  'FEBRUARY',
+  'MARCH',
+  'APRIL',
+  'MAY',
+  'JUNE',
+  'JULY',
+  'AUGUST',
+  'SEPTEMBER',
+  'OCTOBER',
+  'NOVEMBER',
+  'DECEMBER',
 ];
 
 let currDate = new Date(),
@@ -41,7 +41,7 @@ function WeeklyView() {
         style={{
           marginLeft: '5.5%',
           color: 'white',
-          fontSize: '2rem',
+          fontSize: '2.1rem',
           fontWeight: 'bolder',
           textAlign: 'center',
         }}

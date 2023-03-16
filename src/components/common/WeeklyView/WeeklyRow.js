@@ -36,12 +36,13 @@ function WeeklyRows() {
   return (
     <div
       style={{
-        width: '100%',
+        width: '99%',
       }}
     >
       <ul
         style={{
-          color: 'white',
+          color: '#d3d3d3',
+          fontSize: '1.2rem',
           listStyle: 'none',
           paddingLeft: '0px',
           display: 'flex',
