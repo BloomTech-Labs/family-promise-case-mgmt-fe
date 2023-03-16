@@ -1,5 +1,6 @@
 export const dataSource = [
   {
+    id: 0,
     title: 'Resource 1',
     content: {
       phoneNumber: '555-555-1234',
@@ -9,6 +10,7 @@ export const dataSource = [
     },
   },
   {
+    id: 1,
     title: 'Resource 2',
     content: {
       phoneNumber: '555-555-5678',
