@@ -1,5 +1,6 @@
 /***  Variables  ***/
 /*** COMPONENTS  ***/
+
 .NavHeader {
   display: flex;
   justify-content: space-around;
@@ -23,7 +24,7 @@
   height: 100%;
 }
 .RenderLayoutTemplate .Layout .Header {
-  background: white;
+  background: rgb(0, 0, 0);
   height: 8%;
 }
 .RenderLayoutTemplate .Layout .Content {
