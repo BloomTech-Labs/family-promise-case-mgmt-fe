@@ -18,10 +18,20 @@ days.forEach((item, index) => {
   );
 });
 
-const dates = ['1', '2', '3', '4', '5', '6', '7'];
+// - Calculating actual dates - //
+let currDate = new Date();
+
+let lastSunday = currDate.getDate() - currDate.getDay();
+// - Fill in the week based off the last Sunday - //
+const week = [];
+for (let i = 0; i < 7; i++) {
+  let nextDay = lastSunday++;
+  week.push(nextDay);
+}
+
 let dateList = [];
-// - Creates numerical dates, will need JS - //
-dates.forEach((item, index) => {
+// - Creates numerical dates - //
+week.forEach((item, index) => {
   dateList.push(
     <li
       key={index}
@@ -33,6 +43,8 @@ dates.forEach((item, index) => {
     </li>
   );
 });
+
+console.log('This is the thing:' + week);
 
 //---- WeeklyView Render ----//
 function Weekdays() {
