@@ -1,6 +1,7 @@
 import React from 'react';
 import DashHeader from '../../common/DashHeader';
 import { Layout, Row, Col, Card, Statistic } from 'antd';
+import styled from 'styled-components';
 import {
   TeamOutlined,
   HomeOutlined,
@@ -19,6 +20,10 @@ import {
   Pie,
   Cell,
 } from 'recharts';
+
+const DashboardContent = styled.div`
+  margin-top: 72px;
+`;
 
 const { Header, Content, Footer } = Layout;
 
@@ -45,9 +50,11 @@ const RenderDashboard = () => {
   return (
     <div className="RenderCases">
       <Layout className="Layout">
-        <Header className="Header"></Header>
+        <Header className="Header">
+          <DashHeader />
+        </Header>
         <Content className="Content">
-          <div className="DashboardContainer">
+          <DashboardContent>
             <Row gutter={[16, 16]}>
               <Col span={6}>
                 <Card className="DashboardCard" bordered={false}>
@@ -86,9 +93,6 @@ const RenderDashboard = () => {
                 </Card>
               </Col>
             </Row>
-          </div>
-          <div className="DashboardContainer">
-            <Row gutter={[16, 16]}>{/* Your existing statistic cards */}</Row>
             <Row gutter={[16, 16]} style={{ marginTop: 32 }}>
               <Col span={12}>
                 <Card className="DashboardCard" bordered={false}>
@@ -137,7 +141,7 @@ const RenderDashboard = () => {
                 </Card>
               </Col>
             </Row>
-          </div>
+          </DashboardContent>
         </Content>
       </Layout>
     </div>
