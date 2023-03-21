@@ -18,7 +18,7 @@ const times = [
   '7 PM',
 ];
 let timeList = [];
-// - Creates days of the week - //
+// - Creates times based on above array - //
 times.forEach((item, index) => {
   timeList.push(
     <li
@@ -32,7 +32,7 @@ times.forEach((item, index) => {
   );
 });
 
-//---- WeeklyView Render ----//
+//---- Creates column of times to the left of main content ----//
 function Times() {
   return (
     <div

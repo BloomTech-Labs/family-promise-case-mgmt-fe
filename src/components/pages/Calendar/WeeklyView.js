@@ -5,7 +5,7 @@ import Times from '../../common/WeeklyView/Times';
 import WeeklyRows from '../../common/WeeklyView/WeeklyRow';
 
 //---- Constants and Functions ----//
-// - Setting month date - //
+// - Months array - //
 const months = [
   'JANUARY',
   'FEBRUARY',
@@ -20,7 +20,7 @@ const months = [
   'NOVEMBER',
   'DECEMBER',
 ];
-
+// - Setting month date - //
 let currDate = new Date(),
   currMonth = currDate.getMonth(),
   currYear = currDate.getFullYear();
@@ -71,13 +71,12 @@ function WeeklyView() {
             alignItems: 'center',
           }}
         >
+          {/* --- Spacer --- */}
           <div
             style={{
               height: '50px',
             }}
-          >
-            spacer
-          </div>
+          ></div>
 
           {rows}
         </div>

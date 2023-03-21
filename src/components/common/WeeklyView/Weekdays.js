@@ -4,7 +4,7 @@ import React from 'react';
 //---- Constants and Functions ----//
 const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 let dayList = [];
-// - Creates days of the week - //
+// - Creates days of the week with dry code - //
 days.forEach((item, index) => {
   dayList.push(
     <li
@@ -18,7 +18,7 @@ days.forEach((item, index) => {
   );
 });
 
-// - Calculating actual dates - //
+// - Calculating current date - //
 let currDate = new Date();
 
 let lastSunday = currDate.getDate() - currDate.getDay();
@@ -30,7 +30,7 @@ for (let i = 0; i < 7; i++) {
 }
 
 let dateList = [];
-// - Creates numerical dates - //
+// - Creates numerical dates with dry code - //
 week.forEach((item, index) => {
   dateList.push(
     <li

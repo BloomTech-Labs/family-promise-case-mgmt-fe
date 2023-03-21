@@ -12,7 +12,7 @@ const weekly = [
   'SatTime',
 ];
 let weeklyList = [];
-// - Creates days of the week - //
+// - Creates table of potential events with placeholder text to show how it would render - //
 weekly.forEach((item, index) => {
   weeklyList.push(
     <li
@@ -31,7 +31,7 @@ weekly.forEach((item, index) => {
   );
 });
 
-//---- WeeklyView Render ----//
+//---- Row Render ----//
 function WeeklyRows() {
   return (
     <div
