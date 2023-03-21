@@ -3,6 +3,7 @@ import React from 'react';
 import Weekdays from '../../common/WeeklyView/Weekdays';
 import Times from '../../common/WeeklyView/Times';
 import WeeklyRows from '../../common/WeeklyView/WeeklyRow';
+import DaySelector from '../../common/WeeklyView/DaySelector';
 
 //---- Constants and Functions ----//
 // - Months array - //
@@ -37,17 +38,28 @@ function WeeklyView() {
   return (
     <div className="weekly-cal">
       {/* --- Header --- */}
-      <h2
+      <div
+        className="header"
         style={{
-          marginLeft: '5.5%',
-          color: 'white',
-          fontSize: '2.1rem',
-          fontWeight: 'bolder',
-          textAlign: 'center',
+          display: 'flex',
+          flexFlow: 'row wrap',
         }}
       >
-        {months[currMonth]} {currYear}
-      </h2>
+        <DaySelector />
+        <h2
+          style={{
+            width: '84%',
+            color: 'white',
+            fontSize: '2.1rem',
+            fontWeight: 'bolder',
+            textAlign: 'center',
+          }}
+        >
+          {months[currMonth]} {currYear}
+        </h2>
+      </div>
+
+      {/* --- Days and Dates --- */}
       <Weekdays />
 
       {/* --- Body-Times --- */}
