@@ -3,17 +3,10 @@ import { getClientsNotes } from '../../../api/index';
 import { connect } from 'react-redux';
 import familyPromiseIcon from '../../../assets/fplogo.png';
 
-const PrintNotes = ({ clientName, clientId }) => {
+export const PrintNotes = ({ clientName, clientId }) => {
   const [notes, setNotes] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-
-  //When clientNotes is built out, replace everything using tempObject with props
-  //or you can replace with redux when redux is working
-  const tempClientObj = {
-    name: 'John Doe',
-    id: 1,
-  };
 
   useEffect(() => {
     setLoading(true);
