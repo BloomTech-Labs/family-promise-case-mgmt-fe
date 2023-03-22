@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+<<<<<<< HEAD
 import { Input, Modal, DatePicker, Form } from 'antd';
 import { SearchOutlined } from '@ant-design/icons';
 import SearchResults from './SearchResults';
@@ -76,10 +77,29 @@ function Search(props) {
   // handle search form submission
   const handleSearch = e => {
     e.preventDefault();
+=======
+import { Input, Space, Modal } from 'antd';
+import { SearchOutlined } from '@ant-design/icons';
+import SearchIcon from '../../pages/Calendar/SearchIcon';
+import SearchResults from './SearchResults';
+import 'antd/dist/antd.dark.css';
+
+function Search(props) {
+  // Set up state to keep track of search term and search criteria
+  const [searchTerm, setSearchTerm] = useState('');
+  const [searchCriteria, setSearchCriteria] = useState('');
+  const [isModalVisible, setIsModalVisible] = useState(false); // Initialize the modal visibility state
+
+  // Function to handle search form submission
+  const handleSearch = e => {
+    e.preventDefault();
+    console.log('onSubmit', props.onSubmit);
+>>>>>>> 23c08b3 (entered search icon and main search functionality added)
     props.onSubmit(searchTerm, searchCriteria);
   };
 
   const handleModalOk = () => {
+<<<<<<< HEAD
     setIsModalVisible(false);
   };
 
@@ -125,6 +145,69 @@ function Search(props) {
             id="search-criteria"
             value={searchCriteria}
             onChange={handleSearchCriteriaChange}
+=======
+    console.log('handle modal ok'); // Log the new event data to the console
+    setIsModalVisible(false);
+  };
+
+  const handleModalCancel = () => {
+    setIsModalVisible(false);
+    // TO DO : clear search results
+  };
+
+  return (
+    <div>
+      <div className="">
+        <div className="Rightside__SearchBar">
+          <div>
+            <Space direction="vertical">
+              <Input
+                prefix={<SearchIcon className="searchIcon" />}
+                placeholder="Search "
+                className="SearchEventBar"
+                //onChange={e => setSearchTerm(e.target.value)}
+                onSelect={e => setIsModalVisible(true)} // Show the modal when the search input is clicked}
+                readOnly={true}
+              />
+            </Space>
+          </div>
+        </div>
+      </div>
+
+      {/* Modal for search view-results */}
+      <Modal
+        title="Search"
+        visible={isModalVisible}
+        onOk={handleModalOk}
+        onCancel={handleModalCancel}
+        keyboard={true} // allows user to close modal with esc key
+        // okButtonProps={{ disabled: false , type:'text' }}
+        // cancelButtonProps={{ disabled: true, type:'text' }}
+        // cancelText=" "
+        // okText="Close"
+        centered
+        footer={null}
+        // destroyOnClose='true'
+        //focusTriggerAfterClose='false'
+      >
+        <form onSubmit={handleSearch}>
+          <label htmlFor="searchTerm">Search Term:</label>
+          <input
+            autoFocus
+            className={` ant-input`}
+            type="text"
+            id="searchTerm"
+            value={searchTerm}
+            onChange={e => setSearchTerm(e.target.value)}
+          />
+
+          <label htmlFor="searchCriteria">Search Criteria:</label>
+          <select
+            className={` ant-dropdown-menu`}
+            id="searchCriteria"
+            value={searchCriteria}
+            onChange={e => setSearchCriteria(e.target.value)}
+>>>>>>> 23c08b3 (entered search icon and main search functionality added)
           >
             <option value="">Select Search Criteria</option>
             <option value="name">Name</option>
@@ -139,16 +222,24 @@ function Search(props) {
             Search
           </button>
         </form>
+<<<<<<< HEAD
 
         <SearchResults
           searchResults={props.searchResults}
           searchTerm={searchTerm}
         />
+=======
+        <SearchResults searchResults={props.searchResults} />
+>>>>>>> 23c08b3 (entered search icon and main search functionality added)
       </Modal>
     </div>
   );
 }
 
+<<<<<<< HEAD
+=======
+//formerly FamilyPromiseCMS
+>>>>>>> 23c08b3 (entered search icon and main search functionality added)
 function SearchBar(props) {
   // Set up state to keep track of search results
   const [searchResults, setSearchResults] = useState([]);
@@ -166,25 +257,35 @@ function SearchBar(props) {
     // Perform search based on search criteria
     const results = [
       {
+<<<<<<< HEAD
         key: '1',
+=======
+>>>>>>> 23c08b3 (entered search icon and main search functionality added)
         name: 'John Doe',
         caseManager: 'Jane Smith',
         dateRange: '01/01/2023 - 02/01/2023',
       },
       {
+<<<<<<< HEAD
         key: '2',
+=======
+>>>>>>> 23c08b3 (entered search icon and main search functionality added)
         name: 'Jane Smith',
         caseManager: 'John Doe',
         dateRange: '02/01/2023 - 03/01/2023',
       },
       {
+<<<<<<< HEAD
         key: '3',
+=======
+>>>>>>> 23c08b3 (entered search icon and main search functionality added)
         name: 'Bob Johnson',
         caseManager: 'Jane Smith',
         dateRange: '03/01/2023 - 04/01/2023',
       },
     ];
 
+<<<<<<< HEAD
     const filteredResults = results.filter(result => {
       const isNameMatch = result.name
         .toLowerCase()
@@ -227,6 +328,36 @@ function SearchBar(props) {
       searchResults={searchResults}
       setSearchResults={setSearchResults}
     />
+=======
+    console.log(
+      'pio',
+      results[0].name.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+    // Filter search results based on search criteria
+    const filteredResults = results.filter(result => {
+      if (searchCriteria === 'name') {
+        return result.name.toLowerCase().includes(searchTerm.toLowerCase());
+      } else if (searchCriteria === 'caseManager') {
+        return result.caseManager
+          .toLowerCase()
+          .includes(searchTerm.toLowerCase());
+      } else if (searchCriteria === 'dateRange') {
+        return result.dateRange
+          .toLowerCase()
+          .includes(searchTerm.toLowerCase());
+      }
+      return 'void';
+    });
+    console.log('filteredResults', filteredResults);
+    return filteredResults;
+    // return 'pio';
+  };
+
+  return (
+    <div>
+      <Search onSubmit={handleSearchSubmit} searchResults={searchResults} />
+    </div>
+>>>>>>> 23c08b3 (entered search icon and main search functionality added)
   );
 }
 
