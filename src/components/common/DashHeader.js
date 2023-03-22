@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import fpLogo from '../../assets/fplogo.png';
 import PlaceholderProfileImage from '../../assets/PlaceholderProfileImage.png';
 // import FormInput from './FormInput';
-import SearchBar from './SearchBar';
+import SearchBar from './SearchBar/SearchBar';
 
 const DashHeader = () => {
   return (
