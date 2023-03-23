@@ -13,7 +13,7 @@ Family Promise helps local communities coordinate their compassion to address th
 
 - DO NOT fork the repo. Clone directly!
 - run: `npm install` to download all dependencies.
-- run: `npm install moment` to download dependencies for the calender
+- run: `npm install moment` to download dependencies for the calendar
 - run: `npm install rechart` to download all chart dependencies.
 - run: `npm start` to start your local development server.
 
