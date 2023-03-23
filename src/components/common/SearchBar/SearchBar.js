@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
-import { Input, Space, Modal } from 'antd';
-import { SearchOutlined } from '@ant-design/icons';
+import React, { useState, useCallback } from 'react';
+import { Input, Modal, Space } from 'antd';
+import { SearchOutlined, FileSearchOutlined } from '@ant-design/icons';
+// import { SearchOutlined } from '@ant-design/icons';
 import SearchIcon from '../../pages/Calendar/SearchIcon';
 import SearchResults from './SearchResults';
 import 'antd/dist/antd.dark.css';
@@ -10,6 +11,13 @@ function Search(props) {
   const [searchTerm, setSearchTerm] = useState('');
   const [searchCriteria, setSearchCriteria] = useState('');
   const [isModalVisible, setIsModalVisible] = useState(false); // Initialize the modal visibility state
+
+  const inputSearchRef = useCallback(inputElement => {
+    console.log('input called', inputElement);
+    if (inputElement) {
+      inputElement.focus();
+    }
+  }, []);
 
   // Function to handle search form submission
   const handleSearch = e => {
@@ -25,49 +33,34 @@ function Search(props) {
 
   const handleModalCancel = () => {
     setIsModalVisible(false);
-    // TO DO : clear search results
+    // TO DO : clear search results  Rightside__SearchBar   SearchOutlined
   };
 
   return (
-    <div>
-      <div className="">
-        <div className="Rightside__SearchBar">
-          <div>
-            <Space direction="vertical">
-              <Input
-                prefix={<SearchIcon className="searchIcon" />}
-                placeholder="Search "
-                className="SearchEventBar"
-                //onChange={e => setSearchTerm(e.target.value)}
-                onSelect={e => setIsModalVisible(true)} // Show the modal when the search input is clicked}
-                readOnly={true}
-              />
-            </Space>
-          </div>
-        </div>
-      </div>
+    <div className="SearchBoxContainer">
+      <Input
+        prefix={<SearchOutlined className="inputSearchBar-prefix" />}
+        placeholder="Search "
+        className="inputSearchBar"
+        onClick={e => setIsModalVisible(true)}
+        readOnly={true}
+      />
 
       {/* Modal for search view-results */}
       <Modal
         title="Search"
-        visible={isModalVisible}
+        open={isModalVisible}
         onOk={handleModalOk}
         onCancel={handleModalCancel}
-        keyboard={true} // allows user to close modal with esc key
-        // okButtonProps={{ disabled: false , type:'text' }}
-        // cancelButtonProps={{ disabled: true, type:'text' }}
-        // cancelText=" "
-        // okText="Close"
+        keyboard={true}
         centered
         footer={null}
-        // destroyOnClose='true'
-        //focusTriggerAfterClose='false'
       >
         <form onSubmit={handleSearch}>
           <label htmlFor="searchTerm">Search Term:</label>
           <input
-            autoFocus
-            className={` ant-input`}
+            ref={inputSearchRef}
+            className={`ant-input`}
             type="text"
             id="searchTerm"
             value={searchTerm}
@@ -94,7 +87,10 @@ function Search(props) {
             Search
           </button>
         </form>
-        <SearchResults searchResults={props.searchResults} />
+        <SearchResults
+          searchResults={props.searchResults}
+          searchTerm={searchTerm}
+        />
       </Modal>
     </div>
   );
@@ -158,11 +154,7 @@ function SearchBar(props) {
     // return 'pio';
   };
 
-  return (
-    <div>
-      <Search onSubmit={handleSearchSubmit} searchResults={searchResults} />
-    </div>
-  );
+  return <Search onSubmit={handleSearchSubmit} searchResults={searchResults} />;
 }
 
 export default SearchBar;

@@ -11,6 +11,7 @@ const DashHeaderContainer = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 0.5rem 1rem;
+  gap: 1rem;
 `;
 
 const Logo = styled.img`

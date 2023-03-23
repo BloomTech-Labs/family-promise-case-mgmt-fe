@@ -1097,3 +1097,20 @@ align-items: center;
 .ant-form-item-label > label {
   color: black;
 }
+
+.SearchBoxContainer{
+  margin-left: auto;
+}
+
+.inputSearchBar {
+  background-color: black;
+  width: 6.3rem;
+  border: 1px solid rgba(204, 204, 204, 0.3);
+  border-radius: 20px 0px 10px;
+  color: #cdcdcd;
+}
+
+.inputSearchBar-prefix {
+  margin-top: -4px;
+  color: #0070bc;
+}
