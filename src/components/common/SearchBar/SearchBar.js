@@ -1,39 +1,94 @@
-import React, { useState, useCallback } from 'react';
-import { Input, Modal, Space } from 'antd';
-import { SearchOutlined, FileSearchOutlined } from '@ant-design/icons';
-// import { SearchOutlined } from '@ant-design/icons';
-import SearchIcon from '../../pages/Calendar/SearchIcon';
+import React, { useState } from 'react';
+import { Input, Modal, DatePicker, Form } from 'antd';
+import { SearchOutlined } from '@ant-design/icons';
 import SearchResults from './SearchResults';
 import 'antd/dist/antd.dark.css';
+import moment from 'moment';
+
+function InputSearch(props) {
+  const { setSearchTerm, searchTerm, searchCriteria } = props;
+  const inputTypes = { SEARCH: 'search', DATE: 'date' };
+  const inputType =
+    searchCriteria === 'dateRange' ? inputTypes.DATE : inputTypes.SEARCH;
+  const { RangePicker } = DatePicker;
+
+  const dateFormat = 'MM/DD/YYYY';
+
+  //handle search term change
+  const handleSearchTermChange = e => {
+    setSearchTerm(e.target.value);
+    console.log('handleSearchTermChange', searchTerm);
+  };
+
+  // handle date range change
+  const handleRangePickerChange = value => {
+    console.log('value', value);
+    const dateRange = value.map(date => date.format(dateFormat));
+    console.log('dateRange', dateRange);
+    const formattedDateRange = dateRange.join(' - ');
+    setSearchTerm(formattedDateRange);
+  };
+
+  if (inputType === inputTypes.SEARCH) {
+    return (
+      <div>
+        <label htmlFor="searchTerm"></label>
+        <Input
+          className={`ant-input`}
+          type={inputType}
+          id="searchTerm"
+          onChange={handleSearchTermChange}
+          value={searchTerm}
+        />
+      </div>
+    );
+  }
+
+  if (inputType === inputTypes.DATE) {
+    return (
+      <div>
+        <Form.Item label="" name="Date" initialValue="">
+          <RangePicker
+            defaultValue={[moment(), moment()]}
+            format={dateFormat}
+            placement="bottomLeft"
+            allowEmpty={false}
+            allowClear={false}
+            onChange={handleRangePickerChange}
+          />
+        </Form.Item>
+      </div>
+    );
+  }
+}
 
 function Search(props) {
-  // Set up state to keep track of search term and search criteria
+  // Set up state to keep track of search term , search criteria and modal visibility
   const [searchTerm, setSearchTerm] = useState('');
   const [searchCriteria, setSearchCriteria] = useState('');
-  const [isModalVisible, setIsModalVisible] = useState(false); // Initialize the modal visibility state
+  const [isModalVisible, setIsModalVisible] = useState(false);
+  // handle search criteria change
+  const handleSearchCriteriaChange = e => {
+    setSearchCriteria(e.target.value);
+    console.log('handleSearchCriteriaChange', searchCriteria);
+  };
 
-  const inputSearchRef = useCallback(inputElement => {
-    console.log('input called', inputElement);
-    if (inputElement) {
-      inputElement.focus();
-    }
-  }, []);
-
-  // Function to handle search form submission
+  // handle search form submission
   const handleSearch = e => {
     e.preventDefault();
-    console.log('onSubmit', props.onSubmit);
     props.onSubmit(searchTerm, searchCriteria);
   };
 
   const handleModalOk = () => {
-    console.log('handle modal ok'); // Log the new event data to the console
     setIsModalVisible(false);
   };
 
+  // handle modal cancel and clear search term,  search criteria and search results from state
   const handleModalCancel = () => {
+    setSearchTerm('');
+    setSearchCriteria('');
     setIsModalVisible(false);
-    // TO DO : clear search results  Rightside__SearchBar   SearchOutlined
+    props.setSearchResults([]);
   };
 
   return (
@@ -46,7 +101,6 @@ function Search(props) {
         readOnly={true}
       />
 
-      {/* Modal for search view-results */}
       <Modal
         title="Search"
         open={isModalVisible}
@@ -55,24 +109,22 @@ function Search(props) {
         keyboard={true}
         centered
         footer={null}
+        width={700}
+        destroyOnClose={true}
+        mask={true}
       >
         <form onSubmit={handleSearch}>
-          <label htmlFor="searchTerm">Search Term:</label>
-          <input
-            ref={inputSearchRef}
-            className={`ant-input`}
-            type="text"
-            id="searchTerm"
-            value={searchTerm}
-            onChange={e => setSearchTerm(e.target.value)}
+          <InputSearch
+            setSearchTerm={setSearchTerm}
+            searchTerm={searchTerm}
+            searchCriteria={searchCriteria}
           />
-
-          <label htmlFor="searchCriteria">Search Criteria:</label>
+          <label htmlFor="search-criteria"></label>
           <select
             className={` ant-dropdown-menu`}
-            id="searchCriteria"
+            id="search-criteria"
             value={searchCriteria}
-            onChange={e => setSearchCriteria(e.target.value)}
+            onChange={handleSearchCriteriaChange}
           >
             <option value="">Select Search Criteria</option>
             <option value="name">Name</option>
@@ -87,6 +139,7 @@ function Search(props) {
             Search
           </button>
         </form>
+
         <SearchResults
           searchResults={props.searchResults}
           searchTerm={searchTerm}
@@ -96,7 +149,6 @@ function Search(props) {
   );
 }
 
-//formerly FamilyPromiseCMS
 function SearchBar(props) {
   // Set up state to keep track of search results
   const [searchResults, setSearchResults] = useState([]);
@@ -114,47 +166,68 @@ function SearchBar(props) {
     // Perform search based on search criteria
     const results = [
       {
+        key: '1',
         name: 'John Doe',
         caseManager: 'Jane Smith',
         dateRange: '01/01/2023 - 02/01/2023',
       },
       {
+        key: '2',
         name: 'Jane Smith',
         caseManager: 'John Doe',
         dateRange: '02/01/2023 - 03/01/2023',
       },
       {
+        key: '3',
         name: 'Bob Johnson',
         caseManager: 'Jane Smith',
         dateRange: '03/01/2023 - 04/01/2023',
       },
     ];
 
-    console.log(
-      'pio',
-      results[0].name.toLowerCase().includes(searchTerm.toLowerCase())
-    );
-    // Filter search results based on search criteria
     const filteredResults = results.filter(result => {
+      const isNameMatch = result.name
+        .toLowerCase()
+        .includes(searchTerm.toLowerCase());
+      const isCaseManagerMatch = result.caseManager
+        .toLowerCase()
+        .includes(searchTerm.toLowerCase());
+      const isDateRangeMatch = result.dateRange
+        .toLowerCase()
+        .includes(searchTerm.toLowerCase());
+
+      // Search by name
       if (searchCriteria === 'name') {
-        return result.name.toLowerCase().includes(searchTerm.toLowerCase());
-      } else if (searchCriteria === 'caseManager') {
-        return result.caseManager
-          .toLowerCase()
-          .includes(searchTerm.toLowerCase());
-      } else if (searchCriteria === 'dateRange') {
-        return result.dateRange
-          .toLowerCase()
-          .includes(searchTerm.toLowerCase());
+        return isNameMatch;
       }
-      return 'void';
+      // Search by case manager
+      else if (searchCriteria === 'caseManager') {
+        return isCaseManagerMatch;
+      }
+      // Search by date range
+      else if (searchCriteria === 'dateRange') {
+        return isDateRangeMatch;
+      }
+      // Search by all
+      // else if (searchCriteria === 'all') {
+      //   if (isNameMatch || isCaseManagerMatch || isDateRangeMatch) {
+      //     return true;
+      //   }
+      // }
+      return [];
     });
-    console.log('filteredResults', filteredResults);
+    // console.log('filteredResults', filteredResults);
     return filteredResults;
-    // return 'pio';
   };
 
-  return <Search onSubmit={handleSearchSubmit} searchResults={searchResults} />;
+  // return <Search onSubmit={handleSearchSubmit} searchResults={searchResults} setSearchResults={setSearchResults} />;
+  return (
+    <Search
+      onSubmit={handleSearchSubmit}
+      searchResults={searchResults}
+      setSearchResults={setSearchResults}
+    />
+  );
 }
 
 export default SearchBar;

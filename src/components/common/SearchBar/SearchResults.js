@@ -1,6 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Table, Divider, Empty } from 'antd';
-import { FileUnknownFilled } from '@ant-design/icons';
+// import { FileUnknownFilled } from '@ant-design/icons';
 
 function Results(props) {
   //const { name, caseManager, dateRange } = props.searchResults;
@@ -9,7 +10,7 @@ function Results(props) {
       title: 'Name',
       dataIndex: 'name',
       key: 'name',
-      render: name => <a>{name}</a>,
+      render: name => <Link to={`/cases/${name}`}>{name}</Link>,
     },
     {
       title: 'Case Manager',
