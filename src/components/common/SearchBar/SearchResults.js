@@ -1,5 +1,4 @@
 import React from 'react';
-<<<<<<< HEAD
 import { Link } from 'react-router-dom';
 import { Table, Divider, Empty } from 'antd';
 // import { FileUnknownFilled } from '@ant-design/icons';
@@ -28,23 +27,6 @@ function Results(props) {
     <div>
       <h2>Results</h2>
       <Table columns={columns} dataSource={props.searchResults} />
-=======
-
-function Results(props) {
-  //const { name, caseManager, dateRange } = props.searchResults;
-
-  return (
-    <div>
-      <h2>Results</h2>
-      {props.searchResults.map(({ name, caseManager, dateRange }) => (
-        <div key={name}>
-          <p>name : {name} </p>
-          <p>Case Manager : {caseManager}</p>
-          <p>Date Range : {dateRange}</p>
-        </div>
-      ))}
-      {/* {`${name} ${caseManager} ${dateRange}  `} */};
->>>>>>> 23c08b3 (entered search icon and main search functionality added)
     </div>
   );
 }
@@ -55,7 +37,6 @@ function SearchResults(props) {
   if (results) {
     return <Results searchResults={props.searchResults} />;
   }
-<<<<<<< HEAD
 
   if (props.searchTerm !== '' && !results) {
     return (
@@ -71,13 +52,6 @@ function SearchResults(props) {
   }
 
   return <p></p>;
-=======
-  return (
-    <div>
-      <p>{`results ? : ${results.toString()} `}</p>
-    </div>
-  );
->>>>>>> 23c08b3 (entered search icon and main search functionality added)
 }
 
 export default SearchResults;
