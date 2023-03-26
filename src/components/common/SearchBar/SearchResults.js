@@ -25,14 +25,16 @@ function Results(props) {
   ];
   return (
     <div>
-      <h2>Results</h2>
+      <Divider dashed className="SearchResultsDivider">
+        Results
+      </Divider>
       <Table columns={columns} dataSource={props.searchResults} />
     </div>
   );
 }
 
 function SearchResults(props) {
-  console.log('search results', props.searchResults);
+  // console.log('search results', props.searchResults);
   const results = props.searchResults.length > 0 ? props.searchResults : false;
   if (results) {
     return <Results searchResults={props.searchResults} />;
@@ -40,18 +42,17 @@ function SearchResults(props) {
 
   if (props.searchTerm !== '' && !results) {
     return (
-      <div>
-        <Divider dashed />
+      <>
         <Empty
           description={
-            'The search tearm did not match any case. Please refine your search'
+            'The search term did not match any case. Please refine your search'
           }
         />
-      </div>
+      </>
     );
   }
 
-  return <p></p>;
+  return <></>;
 }
 
 export default SearchResults;

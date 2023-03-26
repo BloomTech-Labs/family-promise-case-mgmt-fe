@@ -375,7 +375,7 @@
 
 .ant-input {
   color: white;
-  margin-left: 10px;
+  /* margin-left: 10px; */
 }
 
 .Finances_Form_Inputs {
@@ -1079,7 +1079,7 @@ td.ant-table-column-sort {
   color: black;
 }
 
-.ant-select:not(.ant-select-customize-input) .ant-select-selector{
+.ant-select:not(.ant-select-customize-input):not(.searchCriteria) .ant-select-selector{
   width: 5rem;
 }
 
@@ -1113,4 +1113,13 @@ align-items: center;
 .inputSearchBar-prefix {
   margin-top: -4px;
   color: #0070bc;
+}
+
+
+.searchCriteria{
+  width: 10rem;
+}
+
+.SearchResultsDivider .ant-divider-inner-text{
+  color: rgba(255, 255, 255, 0.2);
 }
