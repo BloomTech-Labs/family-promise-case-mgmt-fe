@@ -375,7 +375,7 @@
 
 .ant-input {
   color: white;
-  margin-left: 10px;
+  /* margin-left: 10px; */
 }
 
 .Finances_Form_Inputs {
@@ -650,7 +650,7 @@
   width: 100%;
 }
 .ant-input-prefix {
-  margin-top: 1rem;
+  margin-top: 0.5rem;
 }
 .Rightside__Notes__BoxandButton {
   width: auto;
@@ -1079,7 +1079,7 @@ td.ant-table-column-sort {
   color: black;
 }
 
-.ant-select:not(.ant-select-customize-input) .ant-select-selector{
+.ant-select:not(.ant-select-customize-input):not(.searchCriteria) .ant-select-selector{
   width: 5rem;
 }
 
@@ -1096,4 +1096,30 @@ align-items: center;
 
 .ant-form-item-label > label {
   color: black;
+}
+
+.SearchBoxContainer{
+  margin-left: auto;
+}
+
+.inputSearchBar {
+  background-color: black;
+  width: 6.3rem;
+  border: 1px solid rgba(204, 204, 204, 0.3);
+  border-radius: 20px 0px 10px;
+  color: #cdcdcd;
+}
+
+.inputSearchBar-prefix {
+  margin-top: -4px;
+  color: #0070bc;
+}
+
+
+.searchCriteria{
+  width: 10rem;
+}
+
+.SearchResultsDivider .ant-divider-inner-text{
+  color: rgba(255, 255, 255, 0.2);
 }

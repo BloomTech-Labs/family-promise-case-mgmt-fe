@@ -4,6 +4,24 @@ import { Menu } from 'antd';
 import styled from 'styled-components';
 import fpLogo from '../../assets/fplogo.png';
 import PlaceholderProfileImage from '../../assets/PlaceholderProfileImage.png';
+import SearchBar from './SearchBar/SearchBar';
+
+const DashHeaderContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  gap: 1rem;
+`;
+
+const Logo = styled.img`
+  height: 40px;
+`;
+
+const ProfileImage = styled.img`
+  height: 40px;
+  border-radius: 50%;
+`;
 
 const DashHeaderContainer = styled.div`
   display: flex;
@@ -26,6 +44,7 @@ const DashHeader = () => {
     <>
       <DashHeaderContainer>
         <Logo src={fpLogo} alt="Family Promise of Spokane" />
+        <SearchBar />
         <ProfileImage src={PlaceholderProfileImage} alt="Profile" />
       </DashHeaderContainer>
       <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['dashboard']}>
