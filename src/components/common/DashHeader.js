@@ -39,12 +39,27 @@ const ProfileImage = styled.img`
   border-radius: 50%;
 `;
 
+const DashHeaderContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem;
+`;
+
+const Logo = styled.img`
+  height: 40px;
+`;
+
+const ProfileImage = styled.img`
+  height: 40px;
+  border-radius: 50%;
+`;
+
 const DashHeader = () => {
   return (
     <>
       <DashHeaderContainer>
         <Logo src={fpLogo} alt="Family Promise of Spokane" />
-        <SearchBar />
         <ProfileImage src={PlaceholderProfileImage} alt="Profile" />
       </DashHeaderContainer>
       <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['dashboard']}>
