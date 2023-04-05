@@ -15,8 +15,9 @@ Family Promise helps local communities coordinate their compassion to address th
 - run: `npm install` to download all dependencies.
 - run: `npm install moment` to download dependencies for the calendar
 - run: `npm install rechart` to download all chart dependencies.
+- run: `npm install styled-components` to install components for Dashheader.js
 - run: `npm start` to start your local development server.
-- run: `npm pm install styled-components` to install components for Dashheader.js
+
 
 > When using Okta for authentication, the app will need to run locally on port 3000.
 
