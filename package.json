@@ -13,13 +13,17 @@
     "aws-sdk": "^2.1142.0",
     "axios": "^0.21.4",
     "craco-less": "^1.20.0",
+    "moment": "^2.29.4",
     "react-dom": "^18.2.0",
     "react-icons": "^4.7.1",
     "react-plotly.js": "^2.4.0",
     "react-redux": "^7.2.6",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
-    "redux-thunk": "^2.4.2"
+    "rechart": "^0.0.1",
+    "recharts": "^2.5.0",
+    "redux-thunk": "^2.4.2",
+    "styled-components": "^5.3.9"
   },
   "scripts": {
     "start": "node start.js",
