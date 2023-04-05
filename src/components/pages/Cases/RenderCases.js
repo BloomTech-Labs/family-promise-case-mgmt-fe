@@ -4,6 +4,7 @@ import { Layout } from 'antd';
 import DashHeader from '../../common/DashHeader';
 import BreadCrumbs from '../../common/BreadCrumbs';
 import { useLocation } from 'react-router-dom';
+import HistoryPopup from '../../common/HistoryPopup';
 const { Header, Content, Footer } = Layout;
 
 export default function RenderCases() {
@@ -19,6 +20,7 @@ export default function RenderCases() {
           <BreadCrumbs pathname={location.pathname} />
           <ClientListTable />
         </Content>
+        <HistoryPopup />
         <Footer className="Footer">
           Family Promise of Spokane ©2022 Created by BloomTech Labs
         </Footer>

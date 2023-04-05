@@ -1,13 +1,27 @@
 import React, { useState } from 'react';
 import { Modal, Button } from 'antd';
-import './styles.css';
 import 'antd/dist/antd.css';
+import axios from 'axios';
+import moment from 'moment';
 
 // Requires antd 4.23.4 to be installed as a dependency to funtion properly
-
-export default function App() {
+const HistoryPopup = () => {
   const [isModalVisible, setIsModalVisible] = useState(false);
+  const [timestamp, setTimestamp] = useState('');
 
+  const handleClick = async () => {
+    try {
+      const response = await axios.post(
+        `http://localhost:8000/api/clients/5/notes`,
+        {
+          timestamp: moment().toISOString(),
+        }
+      );
+      setTimestamp(response.data.timestamp);
+    } catch (error) {
+      console.log(error);
+    }
+  };
   return (
     <div
       style={{
@@ -37,9 +51,13 @@ export default function App() {
           }}
         >
           <p>Push To Record a Time Stamp on History Page</p>
-          <button>Make Stamp</button>
+          <Button type="secondary" onClick={handleClick}>
+            Make Stamp
+          </Button>
         </Modal>
       </>
     </div>
   );
-}
+};
+
+export default HistoryPopup;
