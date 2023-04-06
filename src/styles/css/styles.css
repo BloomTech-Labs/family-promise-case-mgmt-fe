@@ -158,55 +158,6 @@
   background: #3f3f3f;
   color: #ffffff;
 }
-/* .ClientFamilyInformation__Form__InitialDate {
-  margin: 0 0 2rem 62rem;
-  padding-top: 2rem;
-}
-.ClientFamilyInformation__Form__h1 {
-  color: #cdcdcd;
-  text-align: center;
-}
-.ClientFamilyInformation__Form__SectionGrid2 {
-  display: flex;
-  justify-content: space-evenly;
-}
-.ClientFamilyInformation__Form__SectionGrid3 {
-  display: flex;
-  justify-content: space-around;
-}
-.ClientFamilyInformation__Form__SmallInputs {
-  width: 7rem;
-}
-.ClientFamilyInformation__Form__SectionGrid1 {
-  grid-row: 1 / span 2;
-}
-.ClientFamilyInformation__Form__VeteranStatus {
-  display: flex;
-  flex-direction: row-reverse;
-  margin: 0rem 11rem;
-} */
-/* .ClientFamilyInformation__Form__FamilyMembers__Container {
-  display: flex;
-  justify-content: space-around;
-  margin: 0rem 6rem;
-}
-.ClientFamilyInformation__Form__FamilyMembers__formItem {
-  display: flow-root;
-}
-.ClientFamilyInformation__Form__FamilyMembers__IsPregnant {
-  display: flex;
-}
-.ClientFamilyInformation__Inputs {
-  width: 20rem;
-}
-.ClientFamilyInformation__Inputs__ItemLabel {
-  color: #ffffff;
-  width: 25vw;
-}
-.ClientFamilyInformation__Inputs__ItemLabel__Small {
-  color: #ffffff;
-  width: 100%;
-} */
 .ClientFamilyInformation__Inputs .SingleNote__Container {
   border-style: groove;
   background-color: #3f3f3f;
@@ -224,7 +175,7 @@
   margin: auto;
 }
 .ClientFamilyInformation__Inputs .SingleNote__NoteText {
-  grid-row: 2;
+  grid-row: 1;
   grid-column: 2 / span 4;
   padding-right: 1rem;
 }
@@ -237,22 +188,7 @@
   color: #fcfcfc;
 }
 .ClientFamilyInformation__Inputs .Notes__Container {
-  margin: auto;
-}
-.ClientFamilyInformation__Inputs .Notes__Container__SwitchPanel {
-  margin: auto;
-  display: flex;
-  justify-content: center;
-}
-.ClientFamilyInformation__Inputs .Notes__ShowNotes {
-  overflow-y: scroll;
-  max-height: 35vh;
-}
-.ClientFamilyInformation__Inputs .Notes__Filter {
-  width: 10vw;
-  margin: 1rem;
-  color: #cdcdcd;
-}
+    margin: auto;}
 
 .DashHeader {
   background-color: #101010;
