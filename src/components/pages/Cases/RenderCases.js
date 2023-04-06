@@ -4,7 +4,6 @@ import { Layout } from 'antd';
 import DashHeader from '../../common/DashHeader';
 import BreadCrumbs from '../../common/BreadCrumbs';
 import { useLocation } from 'react-router-dom';
-import HistoryPopup from '../../common/HistoryPopup';
 const { Header, Content, Footer } = Layout;
 
 export default function RenderCases() {
