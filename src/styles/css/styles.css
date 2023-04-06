@@ -152,13 +152,12 @@
   border-color: #007fd4;
 }
 .ClientFamilyInformation__Form {
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(1, 1fr);
   gap: 5px;
   grid-auto-flow: row dense;
   background: #3f3f3f;
   color: #ffffff;
 }
-
 .ClientFamilyInformation__Inputs .SingleNote__Container {
   border-style: groove;
   background-color: #3f3f3f;

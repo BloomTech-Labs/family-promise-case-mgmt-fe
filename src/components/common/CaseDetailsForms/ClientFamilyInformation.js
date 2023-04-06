@@ -42,7 +42,16 @@ const ClientFamilyInfoForm = () => {
   const onFinishFailed = errorInfo => {
     console.log('Failed:', errorInfo);
   };
-
+  const formItemLayout = {
+    labelCol: {
+      xs: { span: 24 },
+      sm: { span: 6 },
+    },
+    wrapperCol: {
+      xs: { span: 24 },
+      sm: { span: 14 },
+    },
+  };
   const disableFormItem = () => {
     setDisabled(!disabled);
   };
@@ -52,6 +61,7 @@ const ClientFamilyInfoForm = () => {
   return (
     <div className="ClientFamilyForm">
       <Form
+        style={{ maxWidth: 600 }}
         form={form}
         className="ClientFamilyInformation__Form"
         onFinish={onFinish}
@@ -60,6 +70,7 @@ const ClientFamilyInfoForm = () => {
         layout="inline"
         labelCol={{ span: 8 }}
         wrapperCol={{ span: 100 }}
+        style={{ maxWidth: 600 }}
         labelWrap
       >
         <h1 className="ClientFamilyInformation__Form__h1">Head of Household</h1>
