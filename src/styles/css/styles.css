@@ -156,8 +156,8 @@
   gap: 5px;
   grid-auto-flow: row dense;
   background: #3f3f3f;
-  color: #ffffff;
-}
+  color: #ffffff;}
+/* }
 .ClientFamilyInformation__Form__InitialDate {
   margin: 0 0 2rem 62rem;
   padding-top: 2rem;
@@ -184,8 +184,8 @@
   display: flex;
   flex-direction: row-reverse;
   margin: 0rem 11rem;
-}
-.ClientFamilyInformation__Form__FamilyMembers__Container {
+} */
+/* .ClientFamilyInformation__Form__FamilyMembers__Container {
   display: flex;
   justify-content: space-around;
   margin: 0rem 6rem;
@@ -206,7 +206,7 @@
 .ClientFamilyInformation__Inputs__ItemLabel__Small {
   color: #ffffff;
   width: 100%;
-}
+} */
 .ClientFamilyInformation__Inputs .SingleNote__Container {
   border-style: groove;
   background-color: #3f3f3f;
@@ -237,8 +237,8 @@
   color: #fcfcfc;
 }
 .ClientFamilyInformation__Inputs .Notes__Container {
-  margin: auto;
-}
+    margin: auto;}
+/* 
 .ClientFamilyInformation__Inputs .Notes__Container__SwitchPanel {
   margin: auto;
   display: flex;
@@ -252,7 +252,7 @@
   width: 10vw;
   margin: 1rem;
   color: #cdcdcd;
-}
+} */
 
 .DashHeader {
   background-color: #101010;

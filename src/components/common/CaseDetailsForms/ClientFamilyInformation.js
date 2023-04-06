@@ -57,7 +57,7 @@ const ClientFamilyInfoForm = () => {
         onFinish={onFinish}
         onFinishFailed={onFinishFailed}
         initialValues={initialFormValues}
-        layout="vertical"
+        layout="inline"
         labelCol={{ span: 8 }}
         wrapperCol={{ span: 100 }}
         labelWrap
