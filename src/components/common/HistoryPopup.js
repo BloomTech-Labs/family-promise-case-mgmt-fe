@@ -7,21 +7,23 @@ import moment from 'moment';
 // Requires antd 4.23.4 to be installed as a dependency to funtion properly
 const HistoryPopup = () => {
   const [isModalVisible, setIsModalVisible] = useState(false);
-  const [timestamp, setTimestamp] = useState('');
 
-  const handleClick = async () => {
-    try {
-      const response = await axios.post(
-        `http://localhost:8000/api/clients/5/notes`,
-        {
-          timestamp: moment().toISOString(),
-        }
-      );
-      setTimestamp(response.data.timestamp);
-    } catch (error) {
-      console.log(error);
-    }
+  const handleClick = () => {
+    const timestamp = moment().format();
+    console.log(timestamp);
+    const clientId = 1; // Replace with the ID of the client that the note belongs to
+    axios
+      .post(`http://localhost:8000/api/clients/${clientId}/notes`, {
+        timestamp,
+      })
+      .then(response => {
+        console.log(response.data);
+      })
+      .catch(error => {
+        console.error(error);
+      });
   };
+
   return (
     <div
       style={{
