@@ -1,12 +1,28 @@
 import React, { useState } from 'react';
 import { Modal, Button } from 'antd';
-import './styles.css';
 import 'antd/dist/antd.css';
+import axios from 'axios';
+import moment from 'moment';
 
 // Requires antd 4.23.4 to be installed as a dependency to funtion properly
-
-export default function App() {
+const HistoryPopup = () => {
   const [isModalVisible, setIsModalVisible] = useState(false);
+
+  const handleClick = () => {
+    const timestamp = moment().format();
+    console.log(timestamp);
+    const clientId = 1; // Replace with the ID of the client that the note belongs to
+    axios
+      .post(`http://localhost:8000/api/clients/${clientId}/notes`, {
+        timestamp,
+      })
+      .then(response => {
+        console.log(response.data);
+      })
+      .catch(error => {
+        console.error(error);
+      });
+  };
 
   return (
     <div
@@ -37,9 +53,13 @@ export default function App() {
           }}
         >
           <p>Push To Record a Time Stamp on History Page</p>
-          <button>Make Stamp</button>
+          <Button type="secondary" onClick={handleClick}>
+            Make Stamp
+          </Button>
         </Modal>
       </>
     </div>
   );
-}
+};
+
+export default HistoryPopup;

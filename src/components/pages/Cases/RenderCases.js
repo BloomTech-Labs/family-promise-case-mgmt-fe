@@ -19,6 +19,7 @@ export default function RenderCases() {
           <BreadCrumbs pathname={location.pathname} />
           <ClientListTable />
         </Content>
+
         <Footer className="Footer">
           Family Promise of Spokane ©2022 Created by BloomTech Labs
         </Footer>

@@ -2,6 +2,7 @@ import React from 'react';
 import { Layout, Card } from 'antd';
 import DashHeader from '../../common/DashHeader';
 import { CaseDetails } from '../../common/CaseDetails';
+import HistoryPopup from '../../common/HistoryPopup';
 const { Content, Footer, Header } = Layout;
 
 const RenderCaseDetails = () => {
@@ -19,6 +20,7 @@ const RenderCaseDetails = () => {
             </Card>
           </div>
         </Content>
+        <HistoryPopup />
         <Footer className="Footer">
           Family Promise of Spokane ©2022 Created by BloomTech Labs
         </Footer>

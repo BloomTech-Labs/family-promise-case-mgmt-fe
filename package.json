@@ -13,6 +13,7 @@
     "aws-sdk": "^2.1142.0",
     "axios": "^0.21.4",
     "craco-less": "^1.20.0",
+    "moment": "^2.29.4",
     "react-dom": "^18.2.0",
     "react-icons": "^4.7.1",
     "react-plotly.js": "^2.4.0",
