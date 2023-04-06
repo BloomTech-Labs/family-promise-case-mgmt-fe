@@ -62,6 +62,7 @@ const ClientFamilyInfoForm = () => {
         wrapperCol={{ span: 100 }}
         labelWrap
       >
+        <h1 className="ClientFamilyInformation__Form__h1">Head of Household</h1>
         <Form.Item
           className="ClientFamilyInformation__Form__InitialDate"
           label={
@@ -76,7 +77,6 @@ const ClientFamilyInfoForm = () => {
             disabled={disabled}
           />
         </Form.Item>
-        <h1 className="ClientFamilyInformation__Form__h1">Head of Household</h1>
         <div className="ClientFamilyInformation__Form__SectionGrid2">
           <section className="ClientFamilyInformation__Form__SectionGrid1">
             <Form.Item

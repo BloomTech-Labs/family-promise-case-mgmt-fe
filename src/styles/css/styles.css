@@ -156,8 +156,10 @@
   gap: 5px;
   grid-auto-flow: row dense;
   background: #3f3f3f;
-  color: #ffffff;}
-/* }
+  color: #ffffff;
+}
+  
+/* 
 .ClientFamilyInformation__Form__InitialDate {
   margin: 0 0 2rem 62rem;
   padding-top: 2rem;
@@ -165,10 +167,6 @@
 .ClientFamilyInformation__Form__h1 {
   color: #cdcdcd;
   text-align: center;
-}
-.ClientFamilyInformation__Form__SectionGrid2 {
-  display: flex;
-  justify-content: space-evenly;
 }
 .ClientFamilyInformation__Form__SectionGrid3 {
   display: flex;
@@ -180,6 +178,8 @@
 .ClientFamilyInformation__Form__SectionGrid1 {
   grid-row: 1 / span 2;
 }
+.ClientFamilyInformation__Form__SectionGrid2 {
+  grid-row: 1 / span 2}
 .ClientFamilyInformation__Form__VeteranStatus {
   display: flex;
   flex-direction: row-reverse;
@@ -196,9 +196,7 @@
 .ClientFamilyInformation__Form__FamilyMembers__IsPregnant {
   display: flex;
 }
-.ClientFamilyInformation__Inputs {
-  width: 20rem;
-}
+
 .ClientFamilyInformation__Inputs__ItemLabel {
   color: #ffffff;
   width: 25vw;
@@ -224,7 +222,7 @@
   margin: auto;
 }
 .ClientFamilyInformation__Inputs .SingleNote__NoteText {
-  grid-row: 2;
+  grid-row: 1;
   grid-column: 2 / span 4;
   padding-right: 1rem;
 }
