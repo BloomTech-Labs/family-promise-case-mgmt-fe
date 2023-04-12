@@ -70,7 +70,7 @@ const HouseholdInformationForm = props => {
         onFinishFailed={onFinishFailed}
         initialValues={initialFormValues}
         labelCol={{ span: 8 }}
-        wrapperCol={{ span: 100 }}
+        wrapperCol={{ span: 50 }}
         layout="horizontal"
         labelWrap
       >

@@ -1,11 +1,10 @@
 import React from 'react';
 import { Layout, Card } from 'antd';
 import DashHeader from '../../common/DashHeader';
-import { CaseDetails } from '../../common/CaseDetails';
-import HistoryPopup from '../../common/HistoryPopup';
+import { Resources } from '../../common/Resources';
 const { Content, Footer, Header } = Layout;
 
-const RenderCaseDetails = () => {
+const ResourcesContainer = () => {
   return (
     <div className="RenderLayoutTemplate">
       <Layout className="Layout">
@@ -13,14 +12,12 @@ const RenderCaseDetails = () => {
           <DashHeader />
         </Header>
         <Content className="Content">
-          {/* <BreadCrumbs pathname={location.pathname} /> */}
           <div className="Content__Container">
             <Card className="Content__Container-Card">
-              <CaseDetails />
+              <Resources />
             </Card>
           </div>
         </Content>
-        <HistoryPopup />
         <Footer className="Footer">
           Family Promise of Spokane ©2022 Created by BloomTech Labs
         </Footer>
@@ -29,4 +26,4 @@ const RenderCaseDetails = () => {
   );
 };
 
-export default RenderCaseDetails;
+export default ResourcesContainer;

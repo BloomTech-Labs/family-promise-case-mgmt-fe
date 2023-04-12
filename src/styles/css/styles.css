@@ -1,23 +1,10 @@
 /***  Variables  ***/
-
-/*** Re: Style Guidelines on Figma ***/
-
-h1 {
-  font-size: 48;
-}
-
-h2 {
-  font-size: 36;
-}
-
-h3 {
-  font-size: 24;
-}
-
 /*** COMPONENTS  ***/
+
+
 .NavHeader {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   height: 6vh;
   margin-top: 1%;
 }
@@ -38,24 +25,20 @@ h3 {
   height: 100%;
 }
 .RenderLayoutTemplate .Layout .Header {
-  background: white;
+  background: rgb(0, 0, 0);
   height: 8%;
 }
 .RenderLayoutTemplate .Layout .Content {
-  padding: 10 50px;
+  padding: 0 50px;
 }
 .RenderLayoutTemplate .Layout .Content__Container {
   height: 90%;
-  margin: auto;
 }
 .RenderLayoutTemplate .Layout .Content__Container-Card {
   height: 100%;
-  margin: auto;
 }
-.Footer {
-  background-color: #101010;
+.RenderLayoutTemplate .Layout .Footer {
   text-align: center;
-  color: white;
 }
 .BreadCrumbs {
   margin: 16px 0;
@@ -63,15 +46,15 @@ h3 {
 .ant-collapse .ant-collapse-item .ant-collapse-header {
   color: white;
 }
-.ant-collapse-header {
+.ant-collapse .ant-collapse-item-header {
   background: #007fd4;
   color: white;
   font-size: 1.25rem;
 }
-.ant-collapse-item {
+.ant-collapse .ant-collapse-item-item {
   color: white;
 }
-.ant-collapse-content-box {
+.ant-collapse .ant-collapse-item-content-box {
   background-color: #1c1c1c;
   color: #cdcdcd;
 }
@@ -80,24 +63,20 @@ h3 {
   color: white;
   font-size: 1.25rem;
 }
-
 .HouseholdInformationDetails__Container {
   color: #ffffff;
-  margin-left: 1.5rem;
 }
 .HouseholdInformationDetails__Form {
-  background: #007fd4;
-}
-.LengthTimeHomelessCase {
-  width: 100%;
-}
-.CircumstancesContainer {
-  display: flex;
-  flex-flow: row wrap;
-  width: 90%;
-}
-.CircumstancesCheckboxes {
-  margin-left: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 5px;
+  grid-auto-flow: row dense;
+  padding-top: 2rem;
+  width: 80%;
+  padding: 2rem;
+  margin: 0 12rem;
+  background: #3f3f3f;
+  color: #ffffff;
 }
 .HouseholdInformationDetails__Form__Circumstances {
   grid-row: 1 / span 2;
@@ -115,73 +94,30 @@ h3 {
 .HouseholdInformationDetails__Form__h4 {
   color: #cdcdcd;
 }
-.CPSInvolvement > .ant-form-item {
-  display: flex;
-  flex-flow: column nowrap;
-}
-.CPSInvolvement > .ant-form-item > .ant-col-8 {
-  max-width: 30rem;
-  text-align: left;
-}
-.HomelessTime__SingleContainer > .ant-row {
-  display: flex;
-  flex-flow: column nowrap;
-}
-.HomelessTime__SingleContainer > .ant-row > .ant-col-8 {
-  max-width: 30rem;
-}
-.HomelessTime__Margin {
-  margin-left: 0rem;
-}
-.HomelessTime__SingleContainer > .ant-row > .ant-form-item-label {
-  text-align: left;
-  width: 35rem;
-}
 .HouseholdInformationDetails__Form__p {
   color: #cdcdcd;
 }
-.HouseholdInformationDetails__Form__PrevLivSit > .ant-row {
-  display: flex;
-  flex-flow: column nowrap;
+.HouseholdInformationDetails__Form .ant-btn-primary {
+  margin: 1rem;
+  color: #cdcdcd;
+  border-color: #007fd4;
 }
-.HouseholdInformationDetails__Form__PrevLivSit > .ant-row > .ant-col-8 {
-  text-align: left;
+.HouseholdInformationDetails__Form .ant-btn-primary-notes {
+  grid-row: 3;
+  grid-column: 5;
+  margin: 1rem;
 }
-.HouseholdInformationDetails__Form__SocialWorker > .ant-row {
-  display: flex;
-  flex-flow: column nowrap;
+.HouseholdInformationDetails__Form .ant-btn-primary-noteDetails {
+  width: 18vw;
 }
-.HouseholdInformationDetails__Form__SocialWorker > .ant-row > .ant-col-8 {
-  text-align: left;
-  max-width: 30rem;
-}
-.editButtonsContainer {
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: flex-start;
-  align-items: center;
-}
-.editButtonsContainer > .ant-btn-primary {
-  border: 3px solid #007fd4;
-  padding-left: 52px;
-  padding-right: 52px;
-  padding-bottom: 10px;
-  padding-top: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.editButtonsContainer > .ant-btn-primary:hover {
-  border: 3px solid #cdcdcd;
+.HouseholdInformationDetails__Form .ant-btn-primary-noteFilter {
+  margin: 0;
 }
 .CaseDetailsLabel {
   color: #ffffff;
 }
 .CaseDetailsLabel__Disabled {
   color: #cdcdcd;
-}
-.YearsMargin {
-  margin-left: 0.95rem;
 }
 .ant-form-item-label {
   color: #ffffff;
@@ -216,92 +152,13 @@ h3 {
   border-color: #007fd4;
 }
 .ClientFamilyInformation__Form {
-  background: #007fd4;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 5px;
+  grid-auto-flow: row dense;
+  background: #3f3f3f;
+  color: #ffffff;
 }
-.ClientFamilyInformation__Form__InitialDate {
-  color: #d2d2d7;
-  margin-left: 1.2rem;
-}
-.ClientFamilyInformation__Form__h1 {
-  color: #d2d2d7;
-  margin-left: 1.25rem;
-}
-.ClientFamilyInformation__Form__SectionGrid2 {
-  color: #d2d2d7;
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-around;
-}
-.ClientFamilyInformation__Form__SectionGrid3 {
-  color: #d2d2d7;
-  width: 90%;
-  margin-left: 1.2rem;
-}
-.ClientFamilyInformation__Form__SmallInputs {
-  color: #d2d2d7;
-}
-.ClientFamilyInformation__Form__SectionGrid1 {
-  color: #d2d2d7;
-  width: 45%;
-}
-.ant-col-8 {
-  max-width: 20rem;
-  flex: 10;
-}
-.ClientFamilyInformation__Form__Inputs {
-  width: 21rem;
-}
-.CityandState__Container {
-  display: flex;
-  flex-flow: row nowrap;
-}
-.StateMargin {
-  margin-left: 2.2rem;
-}
-.ClientFamilyInformation__Form__VeteranStatus {
-  color: #d2d2d7;
-  margin-left: 1.25rem;
-}
-.ClientFamilyInformation__Form__FamilyMembers__Container {
-  color: #d2d2d7;
-}
-.ClientFamilyInformation__Form__FamilyMembers__formItem {
-  color: #d2d2d7;
-}
-.ClientFamilyInformation__Form__FamilyMembers__IsPregnant {
-  color: #d2d2d7;
-  margin-left: 1.25rem;
-}
-.pregnantFamilyMember__Container {
-  margin-left: 1.25rem;
-}
-.ClientFamilyInformation__Inputs > .ant-input {
-  background-color: #ffffff;
-}
-.ClientFamilyInformation__Inputs__ItemLabel {
-  color: #d2d2d7;
-}
-.ClientFamilyInformation__Inputs__ItemLabel__Small {
-  color: #d2d2d7;
-  width: 10rem;
-}
-.ant-btn-primary {
-  margin: 1rem;
-  color: #cdcdcd;
-  border-color: #007fd4;
-}
-.ant-btn-primary-notes {
-  grid-row: 3;
-  grid-column: 5;
-  margin: 1rem;
-}
-.ant-btn-primary-noteDetails {
-  width: 18vw;
-}
-.ant-btn-primary-noteFilter {
-  margin: 0;
-}
-.SingleNote__Container {
+.ClientFamilyInformation__Inputs .SingleNote__Container {
   border-style: groove;
   background-color: #3f3f3f;
   color: #fcfcfc;
@@ -312,41 +169,26 @@ h3 {
   grid-auto-flow: row dense;
   width: 50vw;
 }
-.SingleNote__Picture {
+.ClientFamilyInformation__Inputs .SingleNote__Picture {
   grid-row: 2;
   grid-column: 1;
   margin: auto;
 }
-.SingleNote__NoteText {
-  grid-row: 2;
+.ClientFamilyInformation__Inputs .SingleNote__NoteText {
+  grid-row: 1;
   grid-column: 2 / span 4;
   padding-right: 1rem;
 }
-.SingleNote__InfoStyle {
+.ClientFamilyInformation__Inputs .SingleNote__InfoStyle {
   margin: 0.5rem 0;
   grid-row: 1;
   grid-column: 3 / span 2;
 }
-.SingleNote__InfoStyle__HeaderStyle {
+.ClientFamilyInformation__Inputs .SingleNote__InfoStyle__HeaderStyle {
   color: #fcfcfc;
 }
-.Notes__Container {
-  margin: auto;
-}
-.Notes__Container__SwitchPanel {
-  margin: auto;
-  display: flex;
-  justify-content: center;
-}
-.Notes__ShowNotes {
-  overflow-y: scroll;
-  max-height: 35vh;
-}
-.Notes__Filter {
-  width: 10vw;
-  margin: 1rem;
-  color: #cdcdcd;
-}
+.ClientFamilyInformation__Inputs .Notes__Container {
+    margin: auto;}
 
 .DashHeader {
   background-color: #101010;
@@ -393,36 +235,25 @@ h3 {
   margin-bottom: 50px;
   background-color: #706f6f;
   padding: 20px;
+  font-size: 36px;
 }
 
 .borderStyled {
   width: 5rem;
-  border: 1px solid black;
 }
 
-.grid {
-  display: grid;
-  /* gridTemplateColumns: 1fr 1fr 1fr 1fr; */
-  margin: '0px 40px';
-}
-
-.containerStyles {
+.educationInformation {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  margin-left: '40px';
-  background: #101010;
-  color: #cdcdcd;
-  padding: 20px;
+  justify-content: center;
+  flex-direction: column;
 }
 
-.ant-input {
-  background-color: #2e2e2e;
+.educationContainer {
+  margin-left: 3rem;
 }
 
-.inputStyles {
+.educationInformation__Inputs {
   width: 20rem;
-  background-color: #2e2e2e;
 }
 
 .inputStylesShort {
@@ -471,7 +302,6 @@ h3 {
   color: #ffffff;
 }
 
-
 /* finances styling */
 
 .ant-form-item-control-input-content {
@@ -482,7 +312,7 @@ h3 {
 
 .ant-input {
   color: white;
-  margin-left: 10px;
+  /* margin-left: 10px; */
 }
 
 .Finances_Form_Inputs {
@@ -602,6 +432,80 @@ h3 {
   flex-flow: row nowrap;
   align-items: center;
 }
+
+.Resources{
+  width: 70%;
+  color: white;
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding-top: 10vh;
+  margin-left: 15%;
+}
+
+.Resource__EditButton{
+  margin-right: 0;
+}
+
+.ant-card-bordered.Resource__Card{
+  border: solid 3px #151515;
+  border-radius: 1rem;
+  background-color: #0f0f0f;
+  color: white;
+  transition: .5s;
+}
+
+.ant-card-bordered.Resource__Card:hover{
+  background-color: #1c1c1c;
+  transition: .5s;
+}
+
+.ant-card-bordered.Resource__Card:active{
+  transition: 0s;
+  background-color: #0f0f0f;
+}
+
+.ant-card-bordered.Resource__Card > .ant-card-head{
+  border-bottom: solid 3px #151515;
+  color: #0070bc;
+  font-weight: bold;
+}
+
+.ant-space-compact.ant-space-compact-block.ant-dropdown-button.Filter__Button{
+  justify-content: flex-end;
+  margin-bottom: 1rem;
+  width: 1270px;
+}
+
+.ant-dropdown-menu{
+  background-color: #0f0f0f;
+}
+
+.ant-dropdown-menu-item:hover{
+  background-color: #1c1c1c;
+}
+
+.Filter__Input.ant-input{
+  margin: 0px;
+}
+
+.Resource__List{
+  width: 100%;
+}
+
+.Resources__Button{
+  background-color: #007fd4;
+  border: none;
+  padding: .8rem 1.5rem;
+  color: #000000;
+  font-weight: bold;
+  align-self: flex-start;
+  margin-top: 5rem;
+  margin-left: 2rem;
+}
+
 .gridColumns {
   display: flex;
   justify-content: center;
@@ -683,7 +587,7 @@ h3 {
   width: 100%;
 }
 .ant-input-prefix {
-  margin-top: 1rem;
+  margin-top: 0.5rem;
 }
 .Rightside__Notes__BoxandButton {
   width: auto;
@@ -751,8 +655,8 @@ h3 {
 }
 
 .NoteLine span {
-  color:#8D4982;
-  font-size:10px;
+  color: #8d4982;
+  font-size: 10px;
 }
 
 .SidebarContainer {
@@ -887,54 +791,54 @@ td.ant-table-column-sort {
   margin-top: 15px;
 }
 
-.RenderCMLogin{
+.RenderCMLogin {
   background-color: #101010;
 }
 
-.printNotesHeader{
+.printNotesHeader {
   border-bottom: 1px solid;
   margin-bottom: 3%;
   display: flex;
   justify-content: space-between;
-  align-items:flex-end;
+  align-items: flex-end;
 }
 
-.headerDivPrintNotes{
-  margin-bottom: .5%;
+.headerDivPrintNotes {
+  margin-bottom: 0.5%;
   margin-right: 2%;
   height: 3vh;
   font-size: 1.5rem;
   font-family: 'Times New Roman', Times, serif;
 }
 
-.logoInHeader{
+.logoInHeader {
   margin-left: 2%;
   height: 6vh;
   margin-top: 1%;
 }
 
-.printNotesContainer{
+.printNotesContainer {
   width: 80%;
   margin: 0 auto;
 }
 
-.printNotesSectionContainer{
-  padding-bottom: .5%;
-  padding-left: .5%;
+.printNotesSectionContainer {
+  padding-bottom: 0.5%;
+  padding-left: 0.5%;
   display: flex;
 }
 
-.notesHeading{
+.notesHeading {
   font-weight: bold;
   margin-top: 3%;
   font-size: medium;
 }
 
-.notesHeading2{
+.notesHeading2 {
   margin-left: 5%;
 }
 
-.theLiteralNotesMessage{
+.theLiteralNotesMessage {
   font-size: 1.2rem;
   font-family: 'Times New Roman', Times, serif;
 }
@@ -964,46 +868,42 @@ td.ant-table-column-sort {
 }
 
 /* Landing Page Styles */
-.fam-promise-logo{
+.fam-promise-logo {
   width: 300px;
-  padding: .25rem;
+  padding: 0.25rem;
 }
-.fp-image{
-  width:40vw;
+.fp-image {
+  width: 40vw;
   height: 50vh;
-  margin:2rem 5rem 2rem 5rem;
-
+  margin: 2rem 5rem 2rem 5rem;
 }
-.left-side-login-col{
+.left-side-login-col {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin:0 5rem 2rem 5rem;
-
+  margin: 0 5rem 2rem 5rem;
 }
-.right-side-login-col{
+.right-side-login-col {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
 }
-.landing-header{
+.landing-header {
   display: flex;
   flex-direction: row;
   justify-content: center;
   background-color: #333333;
   height: 6rem;
 }
-.landing-footer{
+.landing-footer {
   background-color: #333333;
-
 }
 .login-wrapper {
   width: 30vw;
   justify-content: flex-start;
-
- }
- .info-bar{
+}
+.info-bar {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
@@ -1011,46 +911,55 @@ td.ant-table-column-sort {
   background-color: #8d4982;
   width: 40vw;
   height: 20vh;
-  margin:2rem 0rem 2rem 0rem;
-
- }
- .info-bar-icons{
+  margin: 2rem 0rem 2rem 0rem;
+}
+.info-bar-icons {
   font-size: 2.5rem;
   font-weight: lighter;
- }
- .info-desc{
+}
+.info-desc {
   margin: 0;
   padding: 0;
   color: #fec357;
   font-weight: lighter;
   text-align: center;
- }
- .info-col{
+}
+.info-col {}
+.educationInformation .subsectionHeader {
+  height: 5rem;
+  background-color: #C4C4C4;
+  padding-block: 1rem;
+  width: 100%;
+  text-align: center;
+  margin: 0;
+  font-size: 36px;
+  margin-bottom: 2rem;
+}
+.employmentInformation .hohContainer {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
- }
-.slogan-background{
+  flex-wrap: wrap;
+}
+.slogan-background {
   background-color: #8d4982;
-  padding: 0.5rem; 
+  padding: 0.5rem;
   text-align: center;
   margin: 2rem;
   color: white;
   width: 40vw;
   height: auto;
-  margin:2rem 5rem 2rem 5rem;
+  margin: 2rem 5rem 2rem 5rem;
   position: absolute;
-  top:50%;
+  top: 50%;
 }
-.mission-quote{
+.mission-quote {
   text-align: left;
   width: 40vw;
   height: auto;
 }
-.donate-button{
+.donate-button {
   background-color: #fec357;
-  border:none;
-  border-radius: .25rem;
+  border: none;
+  border-radius: 0.25rem;
   width: 10rem;
   height: 2rem;
   margin: 2rem;
@@ -1060,32 +969,94 @@ td.ant-table-column-sort {
 .donate-button:hover {
   opacity: 0.8;
 }
-.social-icons{
-  color:#000000;
+.social-icons {
+  color: #000000;
   width: 1.5rem;
   height: 1.5rem;
   margin-right: 3.5rem;
 }
 .social-icons:hover {
-  opacity: .8;
+  opacity: 0.8;
 }
-.social-wrapper{
+.social-wrapper {
   width: 30vw;
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: flex-start;
 }
+
+
 @media (max-width: 768px) {
   .fam-promise-logo {
     width: 150px;
     height: 40px;
   }
 }
-@media (max-width: 600px) {
-  .fam-promise-logo {
-    width: 100px;
-    height: 30px;
-  }
+.employmentInformation .subsectionHeader {
+  height: 5rem;
+  background-color: #C4C4C4;
+  padding-block: 1rem;
+  width: 100%;
+  text-align: center;
+  margin: 0;
+  font-size: 36px;
+  margin-bottom: 2rem;
 }
 
+.employmentIntakeContainer {
+  flex-direction: column;
+  margin: 0 3rem;
+}
+
+.SubmitModal{
+  color: black;
+}
+
+.SubmitModal__Input {
+  color: black;
+}
+
+.ant-select:not(.ant-select-customize-input):not(.searchCriteria) .ant-select-selector{
+  width: 5rem;
+}
+
+.SubmitModal__Form {
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+}
+
+.SubmitModal__TextArea {
+  color: black;
+}
+
+.ant-form-item-label > label {
+  color: black;
+}
+
+.SearchBoxContainer{
+  margin-left: auto;
+}
+
+.inputSearchBar {
+  background-color: black;
+  width: 6.3rem;
+  border: 1px solid rgba(204, 204, 204, 0.3);
+  border-radius: 20px 0px 10px;
+  color: #cdcdcd;
+}
+
+.inputSearchBar-prefix {
+  margin-top: -4px;
+  color: #0070bc;
+}
+
+
+.searchCriteria{
+  width: 10rem;
+}
+
+.SearchResultsDivider .ant-divider-inner-text{
+  color: rgba(255, 255, 255, 0.2);
+}

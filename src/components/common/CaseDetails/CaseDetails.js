@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Button, Collapse, Input, Space } from 'antd';
 import axios from 'axios';
+import CaseNotes from '../CaseNotes';
 
 //Style and icon imports
 import '../../../styles/css/styles.css';
@@ -16,8 +17,6 @@ import HouseholdInformationForm from '../CaseDetailsForms/HouseholdInformationFo
 
 import { connect } from 'react-redux';
 import * as actions from '../../../state/actions/profileAction';
-import CaseNotes from '../CaseNotes';
-import CaseActivity from '../CaseActivity';
 
 //AntD special component peices
 const { Panel } = Collapse;
@@ -34,25 +33,8 @@ function CaseDetails(props) {
   const [filterSearch, setFilterSearch] = useState('');
   const [filteredResults, setFilteredResults] = useState([]);
 
-  //State slice for notes
-  const [notes, setNotes] = useState([
-    { message: 'place holder note', date: '11/9/2022' },
-  ]);
-
-  //State slices for adding notes
-  const [newNote, setNewNote] = useState('');
-
   // placeholder number for client number;
   const clientId = 1;
-
-  //fetching notes from the backend with axios
-  // NOTE: Currently doesn't re-render with addition of new notes. Outside scope of current ticket, but this should probably be addressed when timestampping is correctly implemented. --Billy Dean
-  useEffect(() => {
-    axios
-      .get(`http://localhost:8000/api/clients/${clientId}/notes`)
-      .then(res => setNotes(res.data))
-      .catch(err => console.log(err));
-  }, []);
 
   //onClick handler for buttons
   const generateFormHandler = event => {
@@ -71,44 +53,7 @@ function CaseDetails(props) {
     console.log('Its working!!!');
   };
 
-  const saveNotesHandler = event => {
-    //Creating a note to Post
-    let savedNote = {
-      client_id: clientId,
-      source_view: 'caseview',
-      message: newNote,
-      created_by: '1',
-    };
-
-    //Post the note to the backend
-    axios
-      .post(`http://localhost:8000/api/clients/${clientId}/notes`, savedNote)
-      .then(res => console.log(res.data))
-      .catch(err => console.error(err.message));
-  };
-
   //onChange for filtered search bar
-
-  const filterSearchHandler = filterValue => {
-    setFilterSearch(filterValue);
-    //Once backend connected, change placeholderArray to API data instead
-    if (filterValue !== '') {
-      const filteredData = notes.filter(item => {
-        return Object.values(item)
-          .join('')
-          .toLowerCase()
-          .includes(filterValue.toLowerCase());
-      });
-      setFilteredResults(filteredData);
-    } else {
-      setFilteredResults(notes);
-    }
-  };
-
-  //onChange for adding a note text field
-  const addNoteHandler = event => {
-    setNewNote(event.target.value);
-  };
 
   return (
     <div className="CaseDetails">
@@ -194,34 +139,12 @@ function CaseDetails(props) {
                 prefix={<SearchIcon className="searchIcon" />}
                 placeholder="Search for keywords"
                 className="SearchBar"
-                onChange={event => filterSearchHandler(event.target.value)}
               />
             </Space>
           </div>
         </div>
-        <div className="Rightside__Notes__BoxandButton">
-          <Space direction="vertical">
-            <TextArea rows={6} onChange={addNoteHandler} />
-          </Space>
-          <Button
-            type="Default"
-            className="saveNoteButton"
-            onClick={saveNotesHandler}
-          >
-            Save Note
-          </Button>
-          <Link to="/case-notes/print">
-            <Button type="Default" className="saveNoteButton">
-              Print Notes
-            </Button>
-          </Link>
-        </div>
-        <CaseNotes
-          filterSearch={filterSearch}
-          filteredResults={filteredResults}
-          notes={notes}
-        />
-        <CaseActivity />
+        <div className="Rightside__Notes__BoxandButton"></div>
+        <CaseNotes />
       </div>
     </div>
   );
