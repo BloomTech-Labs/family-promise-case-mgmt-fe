@@ -18,6 +18,7 @@ import { LayoutTemplate } from './components/pages/LayoutTemplate';
 import { NotFoundPage } from './components/pages/NotFound';
 import { ProfileListPage } from './components/pages/ProfileList';
 import { TempLandingPage } from './components/pages/TempLandingPage';
+import { Finaces } from './components/common/FinancesIntake';
 import { Resources } from './components/pages/Resources';
 
 import DashHeader from './components/common/DashHeader';
@@ -27,6 +28,7 @@ import './styles/css/styles.css';
 
 import { useAuth0 } from '@auth0/auth0-react';
 import Auth0ProviderWithHistory from './auth/Auth0ProviderWithHistory';
+import { Finances } from './components/common/FinancesIntake';
 import PrivateRoute from './components/common/PrivateRoute';
 
 ReactDOM.render(
@@ -54,6 +56,7 @@ function App() {
   return (
     <Switch>
       <Route exact path="/" component={TempLandingPage} />
+      <Route exact path="/finances" component={Finances} />
       {/* any of the routes you need secured should be registered as PrivateRoutes */}
       <PrivateRoute path="/cases/:caseID" component={CaseView} />
       <PrivateRoute path="/case-details" component={CaseDetails} />

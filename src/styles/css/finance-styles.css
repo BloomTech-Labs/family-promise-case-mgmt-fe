@@ -1,0 +1,46 @@
+/* Finances Intake Form Styling by AA*/
+
+.financeHeader {
+    background-color: lightgray;
+    /* margin: 0 auto; */
+    text-align: center;
+    vertical-align: middle;
+    height: 7vh;
+}
+
+.finance-flexbox-container {
+ /* border: solid 1px green; */
+ display: flex;
+ justify-content: space-around;
+ height: 40vh;
+}
+
+.bold-text {
+    font-weight: bold;
+    color: rgb(29, 29, 29);
+}
+
+.finance-form-item-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* border: solid 1px red; */
+  width: 30%;
+
+}
+
+.types-of-debt {
+    /* border: solid 1px purple; */
+    width: 40vh;
+    margin: 20px 0px 20px 107px;
+    padding-left: 0px;
+}
+
+.checkbox {
+    margin-right: 2%;
+
+}
+
+.Finances_Form_Inputs{
+    color: rgb(187, 187, 187);
+}
