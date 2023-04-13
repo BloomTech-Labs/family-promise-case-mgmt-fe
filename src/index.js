@@ -18,6 +18,8 @@ import { LayoutTemplate } from './components/pages/LayoutTemplate';
 import { NotFoundPage } from './components/pages/NotFound';
 import { ProfileListPage } from './components/pages/ProfileList';
 import { TempLandingPage } from './components/pages/TempLandingPage';
+import { PrintNotes } from './components/common/CaseDetails/printNotes';
+import { RecentCases } from './components/pages/RecentCases';
 import { Finaces } from './components/common/FinancesIntake';
 import { Resources } from './components/pages/Resources';
 

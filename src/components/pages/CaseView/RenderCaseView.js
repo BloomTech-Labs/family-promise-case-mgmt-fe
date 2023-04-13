@@ -20,9 +20,8 @@ const RenderCaseView = ({ family }) => {
         <Content className="Content">
           <BreadCrumbs pathname={location.pathname} />
           <h1>
-            {family.headOfHousehold.firstname}
-            {family.headOfHousehold.lastname}'s family (household ID:{' '}
-            {family.householdId})
+            {family.headOfHousehold.firstname} {family.headOfHousehold.lastname}
+            's family (household ID: {family.householdId})
           </h1>
           <CaseDashboard familyData={family} />
           <FamilyMembersTable familyData={family} />
