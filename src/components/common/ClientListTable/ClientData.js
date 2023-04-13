@@ -1,33 +1,37 @@
-import React, { useEffect, useState } from 'react';
-import ClientListTable from './ClientListTable';
 import axios from 'axios';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { setClients } from '../../../state/features/clients/clientsSlice';
+import ClientListTable from './ClientListTable';
+
+const url = `https://mocki.io/v1/12303c12-5fe2-42b4-843c-dd141d203cba`;
+
+// without a number to check, it causes an infinite loop and we are unsure why...needs guidance please
+let number = 0;
 
 export default function ClientData() {
   // clientData will be an array of objects, with each object pertaining to a client
-  const [clientData, setClientData] = useState([
-    {
-      id: 'FP0001',
-      first_name: 'Michael',
-      last_name: 'Lawson',
-      case_manager: 'James Browns',
-      status: 'In Progress',
-    },
-  ]);
+
+  const dispatch = useDispatch();
+  const data = useSelector(state => state.clients);
 
   useEffect(() => {
-    axios
-      .get(`https://mocki.io/v1/12303c12-5fe2-42b4-843c-dd141d203cba`)
-      .then(res => {
-        // console.log('client data', res);
-        setClientData(res.data);
-      })
-      .catch(err => console.log(err));
+    if (number === 0) {
+      axios
+        .get(url)
+        .then(res => {
+          console.log('client data', res);
+          dispatch(setClients(res.data));
+        })
+        .catch(err => console.log(err));
+    }
+    number++;
   }, []);
 
   return (
     <>
       <div>
-        <ClientListTable clients={clientData} />
+        <ClientListTable clients={data.clients} />
       </div>
     </>
   );

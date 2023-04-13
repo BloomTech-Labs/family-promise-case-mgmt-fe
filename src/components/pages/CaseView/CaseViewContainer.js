@@ -1,4 +1,5 @@
 import React from 'react';
+import HistoryPopup from '../../common/HistoryPopup';
 import RenderCaseView from './RenderCaseView';
 
 const CaseView = () => {
@@ -71,6 +72,7 @@ const CaseView = () => {
   return (
     <>
       <RenderCaseView family={family} />
+      <HistoryPopup />
     </>
   );
 };
