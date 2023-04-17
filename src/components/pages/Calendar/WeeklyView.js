@@ -22,9 +22,9 @@ const months = [
   'DECEMBER',
 ];
 // - Setting month date - //
-let currDate = new Date(),
-  currMonth = currDate.getMonth(),
-  currYear = currDate.getFullYear();
+const infos = {
+  text: 'this is a test help me plz',
+};
 
 // - Render several rows - //
 const rows = [];
@@ -48,15 +48,13 @@ function WeeklyView() {
         <DaySelector />
         <h2
           style={{
-            width: '84%',
+            width: '77%',
             color: 'white',
             fontSize: '2.1rem',
             fontWeight: 'bolder',
             textAlign: 'center',
           }}
-        >
-          {months[currMonth]} {currYear}
-        </h2>
+        ></h2>
       </div>
 
       {/* --- Days and Dates --- */}
